@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Lazy Load Blocker 设置</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Image Lazy Load Blocker</h1>
+      <p class="subtitle">禁用图片懒加载，强制立即加载所有图片</p>
+    </header>
+
+    <!-- 添加网站 -->
+    <section class="card">
+      <h2>添加网站</h2>
+      <div class="add-site-form">
+        <input
+          type="text"
+          id="domainInput"
+          placeholder="example.com"
+          pattern="[a-zA-Z0-9.-]+"
+        >
+        <select id="strategySelect">
+          <option value="tech-block">技术拦截</option>
+          <option value="scroll-fallback">自动滚动</option>
+          <option value="disabled">禁用扩展</option>
+        </select>
+        <button id="addBtn" class="btn btn-primary">添加</button>
+        <button id="addCurrentBtn" class="btn btn-secondary">添加当前网站</button>
+      </div>
+      <p class="help-text">
+        技术拦截：使用 CSS + JS 强制加载图片<br>
+        自动滚动：通过模拟滚动触发懒加载
+      </p>
+    </section>
+
+    <!-- 网站列表 -->
+    <section class="card">
+      <div class="section-header">
+        <h2>已配置的网站</h2>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="搜索网站..."
+          class="search-input"
+        >
+      </div>
+      <div id="siteList" class="site-list">
+        <!-- 动态填充 -->
+      </div>
+      <div id="emptyState" class="empty-state hidden">
+        暂无配置的网站
+      </div>
+    </section>
+
+    <!-- 全局设置 -->
+    <section class="card">
+      <h2>全局设置</h2>
+      <div class="form-group">
+        <label for="defaultStrategy">默认策略（未配置的网站）</label>
+        <select id="defaultStrategy">
+          <option value="disabled">禁用（推荐）</option>
+          <option value="tech-block">技术拦截</option>
+          <option value="scroll-fallback">自动滚动</option>
+        </select>
+      </div>
+
+      <h3>自动滚动参数</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="scrollSpeed">滚动速度（毫秒）</label>
+          <input type="number" id="scrollSpeed" min="100" max="5000" value="800">
+        </div>
+        <div class="form-group">
+          <label for="stayDuration">底部停留时间（毫秒）</label>
+          <input type="number" id="stayDuration" min="0" max="10000" value="2000">
+        </div>
+      </div>
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" id="returnToTop" checked>
+          完成后返回页面顶部
+        </label>
+      </div>
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" id="showNotification" checked>
+          完成后显示通知
+        </label>
+      </div>
+      <button id="saveGlobalBtn" class="btn btn-primary">保存全局设置</button>
+    </section>
+
+    <!-- 导入/导出 -->
+    <section class="card">
+      <h2>导入/导出配置</h2>
+      <div class="import-export">
+        <button id="exportBtn" class="btn btn-secondary">导出配置</button>
+        <div class="import-wrapper">
+          <input type="file" id="importFile" accept=".json" hidden>
+          <button id="importBtn" class="btn btn-secondary">导入配置</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
