@@ -1,0 +1,13 @@
+# Worktrees
+.worktrees/
+
+# Dependencies
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
