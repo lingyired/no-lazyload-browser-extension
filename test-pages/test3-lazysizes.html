@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试 3: lazysizes 库风格</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 { color: #333; }
+        .description {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            margin: 50px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        /* lazysizes 风格样式 */
+        .lazyload {
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .lazyloading {
+            opacity: 0.5;
+            background: #f0f0f0 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23ccc" stroke-width="8"><animate attributeName="stroke-dasharray" from="0 251" to="251 251" dur="1s" repeatCount="indefinite"/></circle></svg>') center no-repeat;
+        }
+        .lazyloaded {
+            opacity: 1;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        .status {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #FF9800;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>测试页面 3: lazysizes 库风格</h1>
+
+    <div class="description">
+        <strong>懒加载类型：</strong>lazysizes 风格 (lazyload → lazyloading → lazyloaded)<br>
+        <strong>实现方式：</strong>class 切换 + data-src 模式<br>
+        <strong>扩展应禁用：</strong>所有图片应立即显示，移除过渡动画
+    </div>
+
+    <div id="status" class="status">检测中...</div>
+
+    <div style="height: 100px;">
+        <p>向下滚动查看图片 ↓</p>
+    </div>
+
+    <!-- lazysizes 风格图片 -->
+    <div class="image-container">
+        <h3>图片 1 (lazysizes 风格)</h3>
+        <img class="lazyload"
+             data-src="https://picsum.photos/800/400?random=20"
+             alt="Test image 1"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 2 (lazysizes 风格)</h3>
+        <img class="lazyload"
+             data-src="https://picsum.photos/800/400?random=21"
+             alt="Test image 2"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 3 (lazysizes 风格)</h3>
+        <img class="lazyload"
+             data-src="https://picsum.photos/800/400?random=22"
+             alt="Test image 3"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 4 (lazysizes 风格)</h3>
+        <img class="lazyload"
+             data-src="https://picsum.photos/800/400?random=23"
+             alt="Test image 4"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 5 (lazysizes 风格)</h3>
+        <img class="lazyload"
+             data-src="https://picsum.photos/800/400?random=24"
+             alt="Test image 5"
+             width="800" height="400">
+    </div>
+
+    <script>
+        // 模拟 lazysizes 库
+        window.lazySizes = {
+            init: function() {
+                console.log('[LazySizes] Mock initialized');
+            }
+        };
+
+        // 实现 lazysizes 风格的懒加载
+        function initLazySizes() {
+            const lazyImages = document.querySelectorAll('.lazyload');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const src = img.getAttribute('data-src');
+
+                        if (src) {
+                            img.classList.remove('lazyload');
+                            img.classList.add('lazyloading');
+
+                            img.onload = () => {
+                                img.classList.remove('lazyloading');
+                                img.classList.add('lazyloaded');
+                                console.log('[LazySizes] Image loaded:', src);
+                            };
+
+                            img.src = src;
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            }, { rootMargin: '100px' });
+
+            lazyImages.forEach(img => observer.observe(img));
+        }
+
+        document.addEventListener('DOMContentLoaded', initLazySizes);
+
+        // 检测状态
+        function checkImages() {
+            const total = document.querySelectorAll('img[data-src]').length;
+            const loaded = document.querySelectorAll('.lazyloaded').length;
+            document.getElementById('status').textContent =
+                `加载进度: ${loaded}/${total} 张图片`;
+        }
+
+        setInterval(checkImages, 1000);
+        checkImages();
+    </script>
+</body>
+</html>

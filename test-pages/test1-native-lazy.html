@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试 1: 原生懒加载 loading="lazy"</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 { color: #333; }
+        .description {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            margin: 50px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        .status {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>测试页面 1: 原生懒加载 loading="lazy"</h1>
+
+    <div class="description">
+        <strong>懒加载类型：</strong>HTML5 原生 loading="lazy"<br>
+        <strong>预期行为：</strong>页面滚动时图片才会加载<br>
+        <strong>扩展应禁用：</strong>所有图片应立即加载
+    </div>
+
+    <div id="status" class="status">检测中...</div>
+
+    <!-- 一些占位内容，让页面有滚动距离 -->
+    <div style="height: 100px;">
+        <p>向下滚动查看图片 ↓</p>
+    </div>
+
+    <!-- 原生懒加载图片 -->
+    <div class="image-container">
+        <h3>图片 1 (原生懒加载)</h3>
+        <img src="https://picsum.photos/800/400?random=1"
+             loading="lazy"
+             alt="Test image 1"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 2 (原生懒加载)</h3>
+        <img src="https://picsum.photos/800/400?random=2"
+             loading="lazy"
+             alt="Test image 2"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 3 (原生懒加载)</h3>
+        <img src="https://picsum.photos/800/400?random=3"
+             loading="lazy"
+             alt="Test image 3"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 4 (原生懒加载)</h3>
+        <img src="https://picsum.photos/800/400?random=4"
+             loading="lazy"
+             alt="Test image 4"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 5 (原生懒加载)</h3>
+        <img src="https://picsum.photos/800/400?random=5"
+             loading="lazy"
+             alt="Test image 5"
+             width="800" height="400">
+    </div>
+
+    <script>
+        // 检测图片加载状态
+        function checkImages() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            const loaded = Array.from(images).filter(img => img.complete).length;
+            const total = images.length;
+
+            document.getElementById('status').textContent =
+                `加载进度: ${loaded}/${total} 张图片`;
+
+            return { loaded, total };
+        }
+
+        // 每秒检测一次
+        setInterval(checkImages, 1000);
+        checkImages();
+
+        // 监听图片加载事件
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', () => {
+                console.log(`[Native Lazy] Image loaded: ${img.src}`);
+                checkImages();
+            });
+        });
+    </script>
+</body>
+</html>

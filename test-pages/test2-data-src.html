@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试 2: data-src 模式懒加载</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 { color: #333; }
+        .description {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            margin: 50px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        img.loaded {
+            opacity: 1;
+        }
+        img.lazy {
+            opacity: 0;
+        }
+        .status {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>测试页面 2: data-src 模式懒加载</h1>
+
+    <div class="description">
+        <strong>懒加载类型：</strong>data-src / data-original 模式（最常见）<br>
+        <strong>实现方式：</strong>图片初始无 src，通过 IntersectionObserver 滚动到视口时加载<br>
+        <strong>扩展应禁用：</strong>data-src 应立即复制到 src
+    </div>
+
+    <div id="status" class="status">检测中...</div>
+
+    <div style="height: 100px;">
+        <p>向下滚动查看图片 ↓</p>
+    </div>
+
+    <!-- data-src 懒加载图片 -->
+    <div class="image-container">
+        <h3>图片 1 (data-src)</h3>
+        <img class="lazy"
+             data-src="https://picsum.photos/800/400?random=10"
+             alt="Test image 1"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 2 (data-original)</h3>
+        <img class="lazy"
+             data-original="https://picsum.photos/800/400?random=11"
+             alt="Test image 2"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 3 (data-lazy-src)</h3>
+        <img class="lazy"
+             data-lazy-src="https://picsum.photos/800/400?random=12"
+             alt="Test image 3"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 4 (带 data-srcset)</h3>
+        <img class="lazy"
+             data-src="https://picsum.photos/800/400?random=13"
+             data-srcset="https://picsum.photos/400/200?random=13 400w, https://picsum.photos/800/400?random=13 800w"
+             alt="Test image 4"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 5 (data-lazy-srcset)</h3>
+        <img class="lazy"
+             data-lazy-src="https://picsum.photos/800/400?random=14"
+             data-lazy-srcset="https://picsum.photos/400/200?random=14 400w, https://picsum.photos/800/400?random=14 800w"
+             alt="Test image 5"
+             width="800" height="400">
+    </div>
+
+    <script>
+        // 模拟传统的 data-src 懒加载实现
+        document.addEventListener('DOMContentLoaded', () => {
+            const lazyImages = document.querySelectorAll('.lazy');
+
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const src = img.getAttribute('data-src') ||
+                                   img.getAttribute('data-original') ||
+                                   img.getAttribute('data-lazy-src');
+                        const srcset = img.getAttribute('data-srcset') ||
+                                      img.getAttribute('data-lazy-srcset');
+
+                        if (src) {
+                            img.src = src;
+                            if (srcset) img.srcset = srcset;
+                            img.classList.add('loaded');
+                            img.classList.remove('lazy');
+                            console.log('[Data-src Lazy] Image loaded:', src);
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            }, { rootMargin: '50px' });
+
+            lazyImages.forEach(img => imageObserver.observe(img));
+        });
+
+        // 检测状态
+        function checkImages() {
+            const images = document.querySelectorAll('img[data-src], img[data-original], img[data-lazy-src]');
+            const loaded = Array.from(images).filter(img => !img.classList.contains('lazy')).length;
+            const total = images.length;
+
+            document.getElementById('status').textContent =
+                `加载进度: ${loaded}/${total} 张图片`;
+        }
+
+        setInterval(checkImages, 1000);
+        checkImages();
+    </script>
+</body>
+</html>
