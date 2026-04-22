@@ -71,12 +71,16 @@ h1 {
   color: var(--text-secondary);
 }
 
-/* Form elements */
+/* Form elements - simplified */
 .add-site-form {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
   margin-bottom: 12px;
+}
+
+.add-site-form.simple {
+  justify-content: center;
 }
 
 .add-site-form input,
@@ -87,6 +91,10 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 4px;
   font-size: 14px;
+}
+
+.add-site-form button {
+  min-width: 120px;
 }
 
 .help-text {
@@ -138,6 +146,10 @@ h1 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
+}
+
+.section-header.simple {
+  justify-content: flex-start;
 }
 
 .search-input {

@@ -10,43 +10,21 @@
   <div class="container">
     <header>
       <h1>Image Lazy Load Blocker</h1>
-      <p class="subtitle">禁用图片懒加载，强制立即加载所有图片</p>
+      <p class="subtitle">禁用图片图片懒加载，强制立即加载所有图片</p>
     </header>
 
     <!-- 添加网站 -->
     <section class="card">
       <h2>添加网站</h2>
-      <div class="add-site-form">
-        <input
-          type="text"
-          id="domainInput"
-          placeholder="example.com"
-          pattern="[a-zA-Z0-9.-]+"
-        >
-        <select id="strategySelect">
-          <option value="tech-block">技术拦截</option>
-          <option value="scroll-fallback">自动滚动</option>
-          <option value="disabled">禁用扩展</option>
-        </select>
-        <button id="addBtn" class="btn btn-primary">添加</button>
-        <button id="addCurrentBtn" class="btn btn-secondary">添加当前网站</button>
+      <div class="add-site-form simple">
+        <button id="addCurrentBtn" class="btn btn-primary">添加当前网站</button>
       </div>
-      <p class="help-text">
-        技术拦截：使用 CSS + JS 强制加载图片<br>
-        自动滚动：通过模拟滚动触发懒加载
-      </p>
     </section>
 
     <!-- 网站列表 -->
     <section class="card">
-      <div class="section-header">
+      <div class="section-header simple">
         <h2>已配置的网站</h2>
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="搜索网站..."
-          class="search-input"
-        >
       </div>
       <div id="siteList" class="site-list">
         <!-- 动态填充 -->
@@ -59,13 +37,18 @@
     <!-- 全局设置 -->
     <section class="card">
       <h2>全局设置</h2>
-      <div class="form-group">
-        <label for="defaultStrategy">默认策略（未配置的网站）</label>
-        <select id="defaultStrategy">
-          <option value="disabled">禁用（推荐）</option>
-          <option value="tech-block">技术拦截</option>
-          <option value="scroll-fallback">自动滚动</option>
-        </select>
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" id="fallbackToScroll" checked>
+          技术拦截不生效时自动使用滚动兜底
+        </label>
+      </div>
+
+      <div class="form-group checkbox">
+        <label>
+          <input type="checkbox" id="showNotification" checked>
+          完成后显示通知
+        </label>
       </div>
 
       <h3>自动滚动参数</h3>
@@ -83,12 +66,6 @@
         <label>
           <input type="checkbox" id="returnToTop" checked>
           完成后返回页面顶部
-        </label>
-      </div>
-      <div class="form-group checkbox">
-        <label>
-          <input type="checkbox" id="showNotification" checked>
-          完成后显示通知
         </label>
       </div>
       <button id="saveGlobalBtn" class="btn btn-primary">保存全局设置</button>

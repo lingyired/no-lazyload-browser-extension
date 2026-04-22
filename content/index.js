@@ -614,17 +614,34 @@ async function init() {
   strategyResolved = true;
   console.log('[Image Lazy Load Blocker] Final strategy:', strategy);
 
+  // 获取全局配置
+  const globalResponse = await sendMessage(MESSAGE_TYPES.GET_GLOBAL_CONFIG);
+  const globalConfig = globalResponse?.data || {};
+  const fallbackToScroll = globalConfig.fallbackToScroll !== false; // 默认开启
+  const scrollConfig = {
+    scrollSpeed: globalConfig.scrollSpeed || 800,
+    stayDuration: globalConfig.stayDuration || 2000,
+    returnToTop: globalConfig.returnToTop !== false,
+    showNotification: globalConfig.showNotification !== false
+  };
+
   switch (strategy) {
     case STRATEGIES.TECH_BLOCK:
       console.log('[Image Lazy Load Blocker] Applying TECH_BLOCK strategy');
       initCSSInjector();
       hijackLazyLoadLibraries();
+
+      // 如果启用了 fallback，检查是否需要自动滚动兜底
+      if (fallbackToScroll) {
+        console.log('[Image Lazy Load Blocker] Fallback to scroll enabled, setting up check...');
+        setTimeout(() => {
+          checkAndFallback(scrollConfig);
+        }, 3000); // 3秒后检查
+      }
       break;
 
     case STRATEGIES.SCROLL_FALLBACK:
       console.log('[Image Lazy Load Blocker] Applying SCROLL_FALLBACK strategy');
-      const globalResponse = await sendMessage(MESSAGE_TYPES.GET_GLOBAL_CONFIG);
-      const scrollConfig = globalResponse?.data?.scrollConfig;
       initAutoScroller(scrollConfig);
       break;
 
@@ -635,6 +652,51 @@ async function init() {
   }
 
   console.log('[Image Lazy Load Blocker] Initialization complete');
+}
+
+/**
+ * 检查是否还有未加载的懒加载图片，如果有则执行自动滚动兜底
+ */
+function checkAndFallback(scrollConfig) {
+  console.log('[Image Lazy Load Blocker] Checking for unloaded lazy images...');
+
+  // 检查各种可能表示图片未加载的状态
+  const unloadedSelectors = [
+    'img[data-src]',
+    'img[data-original]',
+    'img[data-lazy-src]',
+    'img[data-custom-src]',
+    'img[data-lazy]',
+    'img[data-async]',
+    'img[loading="lazy"]',
+    '.lazy:not(.loaded)',
+    '.lazyload:not(.loaded)',
+    '.custom-lazy:not(.loaded)'
+  ];
+
+  let unloadedCount = 0;
+  unloadedSelectors.forEach(selector => {
+    const elements = document.querySelectorAll(selector);
+    unloadedCount += elements.length;
+    if (elements.length > 0) {
+      console.log(`[Image Lazy Load Blocker] Found ${elements.length} unloaded images with selector: ${selector}`);
+    }
+  });
+
+  // 同时检查图片的 complete 状态
+  const allImages = document.querySelectorAll('img');
+  const incompleteImages = Array.from(allImages).filter(img => !img.complete || img.naturalHeight === 0);
+
+  console.log(`[Image Lazy Load Blocker] Unloaded by selector: ${unloadedCount}, Incomplete images: ${incompleteImages.length}`);
+
+  // 如果还有未加载的图片，执行自动滚动兜底
+  if (unloadedCount > 0 || incompleteImages.length > 5) {
+    console.log('[Image Lazy Load Blocker] Unloaded images detected, triggering auto-scroll fallback...');
+    showNotification('检测到未加载图片，开始自动滚动兜底...');
+    initAutoScroller(scrollConfig);
+  } else {
+    console.log('[Image Lazy Load Blocker] All images appear to be loaded, no fallback needed');
+  }
 }
 
 console.log('[Image Lazy Load Blocker] Scheduling initialization...');

@@ -7,11 +7,12 @@ const STRATEGIES = {
   DISABLED: 'disabled'
 };
 
-const DEFAULT_SCROLL_CONFIG = {
+const DEFAULT_CONFIG = {
   scrollSpeed: 800,
   stayDuration: 2000,
   returnToTop: true,
-  showNotification: true
+  showNotification: true,
+  fallbackToScroll: true
 };
 
 const MESSAGE_TYPES = {
@@ -57,15 +58,12 @@ function showToast(message, duration = 2000) {
 }
 
 /**
- * 获取策略显示文本
+ * HTML 转义
  */
-function getStrategyText(strategy) {
-  const map = {
-    [STRATEGIES.TECH_BLOCK]: '技术拦截',
-    [STRATEGIES.SCROLL_FALLBACK]: '自动滚动',
-    [STRATEGIES.DISABLED]: '禁用扩展'
-  };
-  return map[strategy] || strategy;
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
 }
 
 /**
@@ -74,7 +72,6 @@ function getStrategyText(strategy) {
 async function loadSiteList() {
   const response = await sendMessage(MESSAGE_TYPES.GET_ALL_CONFIGS);
   const configs = response?.data || {};
-  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
 
   const siteList = document.getElementById('siteList');
   const emptyState = document.getElementById('emptyState');
@@ -82,9 +79,8 @@ async function loadSiteList() {
   // 清空列表
   siteList.innerHTML = '';
 
-  // 过滤并排序
+  // 排序
   const entries = Object.entries(configs)
-    .filter(([domain]) => domain.toLowerCase().includes(searchTerm))
     .sort((a, b) => b[1].addedAt - a[1].addedAt);
 
   if (entries.length === 0) {
@@ -103,32 +99,15 @@ async function loadSiteList() {
     item.innerHTML = `
       <div class="site-info">
         <div class="site-domain">${escapeHtml(domain)}</div>
-        <div class="site-strategy">${getStrategyText(config.strategy)}</div>
       </div>
       <div class="site-actions">
-        <select data-domain="${escapeHtml(domain)}">
-          <option value="${STRATEGIES.TECH_BLOCK}" ${config.strategy === STRATEGIES.TECH_BLOCK ? 'selected' : ''}>技术拦截</option>
-          <option value="${STRATEGIES.SCROLL_FALLBACK}" ${config.strategy === STRATEGIES.SCROLL_FALLBACK ? 'selected' : ''}>自动滚动</option>
-          <option value="${STRATEGIES.DISABLED}" ${config.strategy === STRATEGIES.DISABLED ? 'selected' : ''}>禁用扩展</option>
-        </select>
         <button class="btn btn-danger" data-domain="${escapeHtml(domain)}">删除</button>
       </div>
     `;
     siteList.appendChild(item);
   });
 
-  // 绑定事件
-  siteList.querySelectorAll('select').forEach(select => {
-    select.addEventListener('change', async (e) => {
-      const domain = e.target.dataset.domain;
-      await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
-        domain,
-        strategy: e.target.value
-      });
-      showToast('已更新');
-    });
-  });
-
+  // 绑定删除事件
   siteList.querySelectorAll('.btn-danger').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       const domain = e.target.dataset.domain;
@@ -139,56 +118,6 @@ async function loadSiteList() {
       }
     });
   });
-}
-
-/**
- * HTML 转义
- */
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-}
-
-/**
- * 添加网站
- */
-async function addSite() {
-  const domainInput = document.getElementById('domainInput');
-  const strategySelect = document.getElementById('strategySelect');
-
-  let domain = domainInput.value.trim().toLowerCase();
-  if (!domain) {
-    showToast('请输入域名');
-    return;
-  }
-
-  // 从 URL 中提取域名
-  if (domain.includes('://')) {
-    try {
-      domain = new URL(domain).hostname;
-    } catch {
-      showToast('域名格式不正确');
-      return;
-    }
-  }
-
-  // 移除 www. 前缀
-  domain = domain.replace(/^www\./, '');
-
-  if (!domain || !domain.includes('.')) {
-    showToast('请输入有效的域名');
-    return;
-  }
-
-  await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
-    domain,
-    strategy: strategySelect.value
-  });
-
-  domainInput.value = '';
-  loadSiteList();
-  showToast('添加成功');
 }
 
 /**
@@ -209,11 +138,11 @@ async function addCurrentSite() {
     }
 
     const domain = url.hostname.replace(/^www\./, '');
-    const strategySelect = document.getElementById('strategySelect');
 
+    // 默认使用技术拦截
     await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
       domain,
-      strategy: strategySelect.value
+      strategy: STRATEGIES.TECH_BLOCK
     });
 
     loadSiteList();
@@ -230,14 +159,13 @@ async function loadGlobalSettings() {
   const response = await sendMessage(MESSAGE_TYPES.GET_GLOBAL_CONFIG);
   const config = response?.data || {};
 
-  document.getElementById('defaultStrategy').value =
-    config.defaultStrategy || STRATEGIES.DISABLED;
+  const globalConfig = { ...DEFAULT_CONFIG, ...config };
 
-  const scrollConfig = { ...DEFAULT_SCROLL_CONFIG, ...config.scrollConfig };
-  document.getElementById('scrollSpeed').value = scrollConfig.scrollSpeed;
-  document.getElementById('stayDuration').value = scrollConfig.stayDuration;
-  document.getElementById('returnToTop').checked = scrollConfig.returnToTop;
-  document.getElementById('showNotification').checked = scrollConfig.showNotification;
+  document.getElementById('fallbackToScroll').checked = globalConfig.fallbackToScroll;
+  document.getElementById('showNotification').checked = globalConfig.showNotification;
+  document.getElementById('scrollSpeed').value = globalConfig.scrollSpeed;
+  document.getElementById('stayDuration').value = globalConfig.stayDuration;
+  document.getElementById('returnToTop').checked = globalConfig.returnToTop;
 }
 
 /**
@@ -245,13 +173,11 @@ async function loadGlobalSettings() {
  */
 async function saveGlobalSettings() {
   const config = {
-    defaultStrategy: document.getElementById('defaultStrategy').value,
-    scrollConfig: {
-      scrollSpeed: parseInt(document.getElementById('scrollSpeed').value, 10) || 800,
-      stayDuration: parseInt(document.getElementById('stayDuration').value, 10) || 2000,
-      returnToTop: document.getElementById('returnToTop').checked,
-      showNotification: document.getElementById('showNotification').checked
-    }
+    fallbackToScroll: document.getElementById('fallbackToScroll').checked,
+    showNotification: document.getElementById('showNotification').checked,
+    scrollSpeed: parseInt(document.getElementById('scrollSpeed').value, 10) || 800,
+    stayDuration: parseInt(document.getElementById('stayDuration').value, 10) || 2000,
+    returnToTop: document.getElementById('returnToTop').checked
   };
 
   await sendMessage(MESSAGE_TYPES.SET_GLOBAL_CONFIG, { config });
@@ -300,7 +226,7 @@ async function importConfig(file) {
     for (const [domain, config] of Object.entries(data.siteConfigs)) {
       await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
         domain,
-        strategy: config.strategy
+        strategy: config.strategy || STRATEGIES.TECH_BLOCK
       });
     }
 
@@ -324,12 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadGlobalSettings();
 
   // 绑定事件
-  document.getElementById('addBtn').addEventListener('click', addSite);
   document.getElementById('addCurrentBtn').addEventListener('click', addCurrentSite);
-  document.getElementById('domainInput').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') addSite();
-  });
-  document.getElementById('searchInput').addEventListener('input', loadSiteList);
   document.getElementById('saveGlobalBtn').addEventListener('click', saveGlobalSettings);
   document.getElementById('exportBtn').addEventListener('click', exportConfig);
   document.getElementById('importBtn').addEventListener('click', () => {
