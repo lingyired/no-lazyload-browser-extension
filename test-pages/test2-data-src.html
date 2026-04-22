@@ -108,6 +108,48 @@
              width="800" height="400">
     </div>
 
+    <div class="image-container">
+        <h3>图片 6 (data-src)</h3>
+        <img class="lazy"
+             data-src="https://picsum.photos/800/400?random=15"
+             alt="Test image 6"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 7 (data-original)</h3>
+        <img class="lazy"
+             data-original="https://picsum.photos/800/400?random=16"
+             alt="Test image 7"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 8 (data-lazy-src)</h3>
+        <img class="lazy"
+             data-lazy-src="https://picsum.photos/800/400?random=17"
+             alt="Test image 8"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 9 (带 data-srcset)</h3>
+        <img class="lazy"
+             data-src="https://picsum.photos/800/400?random=18"
+             data-srcset="https://picsum.photos/400/200?random=18 400w, https://picsum.photos/800/400?random=18 800w"
+             alt="Test image 9"
+             width="800" height="400">
+    </div>
+
+    <div class="image-container">
+        <h3>图片 10 (data-lazy-srcset)</h3>
+        <img class="lazy"
+             data-lazy-src="https://picsum.photos/800/400?random=19"
+             data-lazy-srcset="https://picsum.photos/400/200?random=19 400w, https://picsum.photos/800/400?random=19 800w"
+             alt="Test image 10"
+             width="800" height="400">
+    </div>
+
     <script>
         // 模拟传统的 data-src 懒加载实现
         document.addEventListener('DOMContentLoaded', () => {
