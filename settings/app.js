@@ -1,6 +1,18 @@
 // settings/app.js
 
-import { STRATEGIES, DEFAULT_SCROLL_CONFIG } from '../shared/constants.js';
+// 内联常量定义
+const STRATEGIES = {
+  TECH_BLOCK: 'tech-block',
+  SCROLL_FALLBACK: 'scroll-fallback',
+  DISABLED: 'disabled'
+};
+
+const DEFAULT_SCROLL_CONFIG = {
+  scrollSpeed: 800,
+  stayDuration: 2000,
+  returnToTop: true,
+  showNotification: true
+};
 
 const MESSAGE_TYPES = {
   GET_ALL_CONFIGS: 'GET_ALL_CONFIGS',
