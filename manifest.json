@@ -24,7 +24,12 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content/index.js"],
+      "js": [
+        {
+          "file": "content/index.js",
+          "type": "module"
+        }
+      ],
       "css": ["content/styles.css"],
       "run_at": "document_start"
     }
