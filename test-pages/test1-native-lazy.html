@@ -142,14 +142,23 @@
     <script>
         // 检测图片加载状态
         function checkImages() {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            const loaded = Array.from(images).filter(img => img.complete).length;
+            // 检测所有带 src 的图片（原生懒加载图片都有 src）
+            const images = document.querySelectorAll('img[src*="picsum.photos"]');
+            const loaded = Array.from(images).filter(img => img.complete && img.naturalHeight > 0).length;
             const total = images.length;
 
-            document.getElementById('status').textContent =
-                `加载进度: ${loaded}/${total} 张图片`;
+            // 同时检测是否有图片被扩展处理过
+            const eagerImages = document.querySelectorAll('img[loading="eager"]');
+            const blockedByExtension = eagerImages.length > 0;
 
-            return { loaded, total };
+            let statusText = `加载进度: ${loaded}/${total} 张图片`;
+            if (blockedByExtension && total > 0) {
+                statusText += ' (扩展已生效)';
+            }
+
+            document.getElementById('status').textContent = statusText;
+
+            return { loaded, total, blockedByExtension };
         }
 
         // 每秒检测一次
@@ -162,6 +171,8 @@
                 console.log(`[Native Lazy] Image loaded: ${img.src}`);
                 checkImages();
             });
+        });
+    </script>
         });
     </script>
 </body>

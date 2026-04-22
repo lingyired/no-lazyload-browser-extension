@@ -179,10 +179,24 @@
 
         // 检测状态
         function checkBackgrounds() {
-            const total = document.querySelectorAll('[data-bg], [data-background]').length;
-            const loaded = document.querySelectorAll('.lazy-bg.loaded').length;
-            document.getElementById('status').textContent =
-                `加载进度: ${loaded}/${total} 个背景`;
+            const bgElements = document.querySelectorAll('[data-bg], [data-background]');
+            const total = bgElements.length;
+            // 已加载的背景：style.backgroundImage 不为空且不为 'none'
+            const loaded = Array.from(bgElements).filter(el => {
+                const bg = el.style.backgroundImage;
+                return bg && bg !== 'none' && bg.includes('url');
+            }).length;
+
+            // 检测扩展是否生效
+            const eagerImages = document.querySelectorAll('img[loading="eager"]');
+            const extensionActive = eagerImages.length > 0;
+
+            let statusText = `加载进度: ${loaded}/${total} 个背景`;
+            if (extensionActive && total > 0) {
+                statusText += ' (扩展已生效)';
+            }
+
+            document.getElementById('status').textContent = statusText;
         }
 
         setInterval(checkBackgrounds, 1000);

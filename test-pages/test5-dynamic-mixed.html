@@ -278,8 +278,16 @@
             ).length;
             const total = allImages.length;
 
-            document.getElementById('status').textContent =
-                `总图片: ${total} | 已加载: ${loaded}`;
+            // 检测扩展是否生效
+            const eagerImages = document.querySelectorAll('img[loading="eager"]');
+            const extensionActive = eagerImages.length > 0;
+
+            let statusText = `总图片: ${total} | 已加载: ${loaded}`;
+            if (extensionActive && total > 0) {
+                statusText += ' (扩展已生效)';
+            }
+
+            document.getElementById('status').textContent = statusText;
         }
 
         // 初始化

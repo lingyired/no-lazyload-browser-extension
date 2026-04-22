@@ -182,12 +182,22 @@
 
         // 检测状态
         function checkImages() {
-            const images = document.querySelectorAll('img[data-src], img[data-original], img[data-lazy-src]');
-            const loaded = Array.from(images).filter(img => !img.classList.contains('lazy')).length;
+            // 检测所有可能曾是懒加载的图片
+            const images = document.querySelectorAll('img[data-src], img[data-original], img[data-lazy-src], img[src*="picsum.photos"]');
+            // 已加载的图片：有 src 且 complete 状态为 true
+            const loaded = Array.from(images).filter(img => img.src && img.complete && img.naturalHeight > 0).length;
             const total = images.length;
 
-            document.getElementById('status').textContent =
-                `加载进度: ${loaded}/${total} 张图片`;
+            // 检测扩展是否生效（检查是否有图片的 loading 被改为 eager）
+            const eagerImages = document.querySelectorAll('img[loading="eager"]');
+            const extensionActive = eagerImages.length > 0;
+
+            let statusText = `加载进度: ${loaded}/${total} 张图片`;
+            if (extensionActive && total > 0) {
+                statusText += ' (扩展已生效)';
+            }
+
+            document.getElementById('status').textContent = statusText;
         }
 
         setInterval(checkImages, 1000);

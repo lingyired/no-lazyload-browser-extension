@@ -192,10 +192,21 @@
 
         // 检测状态
         function checkImages() {
-            const total = document.querySelectorAll('img[data-src]').length;
-            const loaded = document.querySelectorAll('.lazyloaded').length;
-            document.getElementById('status').textContent =
-                `加载进度: ${loaded}/${total} 张图片`;
+            // 检测所有带 data-src 的图片（包括扩展处理后移除 data-src 的）
+            const images = document.querySelectorAll('img[src*="picsum.photos"]');
+            const loaded = Array.from(images).filter(img => img.complete && img.naturalHeight > 0).length;
+            const total = images.length;
+
+            // 检测扩展是否生效
+            const eagerImages = document.querySelectorAll('img[loading="eager"]');
+            const extensionActive = eagerImages.length > 0;
+
+            let statusText = `加载进度: ${loaded}/${total} 张图片`;
+            if (extensionActive && total > 0) {
+                statusText += ' (扩展已生效)';
+            }
+
+            document.getElementById('status').textContent = statusText;
         }
 
         setInterval(checkImages, 1000);
