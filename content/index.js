@@ -10,6 +10,9 @@ const MESSAGE_TYPES = {
   GET_GLOBAL_CONFIG: 'GET_GLOBAL_CONFIG'
 };
 
+// 立即执行同步初始化（在页面加载前拦截关键 API）
+console.log('[Image Lazy Load Blocker] Content script loaded at document_start');
+
 /**
  * 向 background 发送消息
  * @param {string} type
@@ -32,16 +35,21 @@ async function sendMessage(type, data = {}) {
  * 获取当前网站的策略配置
  */
 async function getCurrentSiteStrategy() {
-  const response = await sendMessage(MESSAGE_TYPES.GET_SITE_CONFIG, {
-    url: window.location.href
-  });
+  const url = window.location.href;
+  console.log('[Image Lazy Load Blocker] Checking strategy for:', url);
+
+  const response = await sendMessage(MESSAGE_TYPES.GET_SITE_CONFIG, { url });
+  console.log('[Image Lazy Load Blocker] Site config response:', response);
 
   if (response?.success && response.data) {
     return response.data.strategy;
   }
 
   // 未配置，使用全局默认
+  console.log('[Image Lazy Load Blocker] No site config, checking global config...');
   const globalResponse = await sendMessage(MESSAGE_TYPES.GET_GLOBAL_CONFIG);
+  console.log('[Image Lazy Load Blocker] Global config response:', globalResponse);
+
   if (globalResponse?.success && globalResponse.data) {
     return globalResponse.data.defaultStrategy || DEFAULT_STRATEGY;
   }
@@ -53,18 +61,22 @@ async function getCurrentSiteStrategy() {
  * 初始化内容脚本
  */
 async function init() {
-  const strategy = await getCurrentSiteStrategy();
+  console.log('[Image Lazy Load Blocker] Starting initialization...');
+  console.log('[Image Lazy Load Blocker] Document readyState:', document.readyState);
 
-  console.log('[Image Lazy Load Blocker] Strategy:', strategy);
+  const strategy = await getCurrentSiteStrategy();
+  console.log('[Image Lazy Load Blocker] Final strategy:', strategy);
 
   switch (strategy) {
     case STRATEGIES.TECH_BLOCK:
+      console.log('[Image Lazy Load Blocker] Applying TECH_BLOCK strategy');
       // 技术拦截：CSS + JS
       initCSSInjector();
       initJSInterceptor();
       break;
 
     case STRATEGIES.SCROLL_FALLBACK:
+      console.log('[Image Lazy Load Blocker] Applying SCROLL_FALLBACK strategy');
       // 自动滚动兜底
       const globalResponse = await sendMessage(MESSAGE_TYPES.GET_GLOBAL_CONFIG);
       const scrollConfig = globalResponse?.data?.scrollConfig;
@@ -77,11 +89,18 @@ async function init() {
       console.log('[Image Lazy Load Blocker] Disabled for this site');
       break;
   }
+
+  console.log('[Image Lazy Load Blocker] Initialization complete');
 }
 
-// 立即初始化
+// 立即初始化 - 在 document_start 时就开始
+console.log('[Image Lazy Load Blocker] Scheduling initialization...');
+
+// 在 DOM 构建开始时立即执行
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
+  // document_start 阶段 - 立即开始异步初始化
+  init();
 } else {
+  // 已经在 DOMContentLoaded 之后
   init();
 }
