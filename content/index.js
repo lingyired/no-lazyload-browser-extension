@@ -262,30 +262,52 @@ function initCSSInjector() {
 // ============================================
 // JS 拦截模块 (来自 jsInterceptor.js)
 // ============================================
+// 策略标志，初始为 null（未确定）
+let currentStrategy = null;
+let strategyResolved = false;
+
 function interceptIntersectionObserver() {
   const OriginalObserver = window.IntersectionObserver;
 
   window.IntersectionObserver = function(callback, options) {
-    const observer = new OriginalObserver(callback, options);
-
-    const originalObserve = observer.observe.bind(observer);
-    observer.observe = function(target) {
-      setTimeout(() => {
-        callback([{
-          target,
+    // 如果策略未确定或已确定为 TECH_BLOCK，立即触发回调
+    if (!strategyResolved || currentStrategy === STRATEGIES.TECH_BLOCK) {
+      // 包装回调以立即触发
+      const wrappedCallback = (entries, observer) => {
+        // 立即触发一次模拟的 intersecting 回调
+        const simulatedEntries = entries.map(entry => ({
+          ...entry,
           isIntersecting: true,
-          intersectionRatio: 1,
-          boundingClientRect: target.getBoundingClientRect(),
-          intersectionRect: target.getBoundingClientRect(),
-          rootBounds: null,
-          time: Date.now()
-        }], observer);
-      }, 0);
+          intersectionRatio: 1
+        }));
+        callback(simulatedEntries, observer);
+      };
 
-      return originalObserve(target);
-    };
+      const observer = new OriginalObserver(callback, options);
 
-    return observer;
+      const originalObserve = observer.observe.bind(observer);
+      observer.observe = function(target) {
+        // 立即触发回调
+        setTimeout(() => {
+          callback([{
+            target,
+            isIntersecting: true,
+            intersectionRatio: 1,
+            boundingClientRect: target.getBoundingClientRect ? target.getBoundingClientRect() : { top: 0, left: 0, bottom: 0, right: 0, width: 0, height: 0 },
+            intersectionRect: target.getBoundingClientRect ? target.getBoundingClientRect() : { top: 0, left: 0, bottom: 0, right: 0, width: 0, height: 0 },
+            rootBounds: null,
+            time: Date.now()
+          }], observer);
+        }, 0);
+
+        return originalObserve(target);
+      };
+
+      return observer;
+    }
+
+    // 策略不是 TECH_BLOCK，返回原始 observer
+    return new OriginalObserver(callback, options);
   };
 
   window.IntersectionObserver.prototype = OriginalObserver.prototype;
@@ -543,6 +565,12 @@ function initAutoScroller(config) {
 // ============================================
 console.log('[Image Lazy Load Blocker] Content script loaded at document_start');
 
+// 立即执行关键的 JS 拦截（必须在页面 JS 运行前完成）
+console.log('[Image Lazy Load Blocker] Pre-initializing JS interceptors...');
+interceptIntersectionObserver();
+interceptImageLoading();
+console.log('[Image Lazy Load Blocker] JS interceptors pre-initialized');
+
 async function sendMessage(type, data = {}) {
   const runtime = typeof browser !== 'undefined'
     ? browser.runtime
@@ -582,13 +610,15 @@ async function init() {
   console.log('[Image Lazy Load Blocker] Document readyState:', document.readyState);
 
   const strategy = await getCurrentSiteStrategy();
+  currentStrategy = strategy;
+  strategyResolved = true;
   console.log('[Image Lazy Load Blocker] Final strategy:', strategy);
 
   switch (strategy) {
     case STRATEGIES.TECH_BLOCK:
       console.log('[Image Lazy Load Blocker] Applying TECH_BLOCK strategy');
       initCSSInjector();
-      initJSInterceptor();
+      hijackLazyLoadLibraries();
       break;
 
     case STRATEGIES.SCROLL_FALLBACK:
