@@ -25,12 +25,26 @@ const LAZY_LOAD_SELECTORS = [
   'img[data-srcset]',
   'img[data-lazy-srcset]',
   'img[loading="lazy"]',
+  // 各种自定义懒加载实现
+  'img[data-custom-src]',
+  'img[data-lazy]',
+  'img[data-defer-src]',
+  'img[data-async]',
+  'img[data-img-url]',
+  'img[data-url]',
+  'img[data-image]',
+  'img[data-image-src]',
+  'img[data-href]',
   '.lazy',
   '.lazyload',
   '.lazyloading',
   '.lozad',
   '[data-lazy]',
-  '[data-lazy-src]'
+  '[data-lazy-src]',
+  '.custom-lazy',
+  '.my-lazy',
+  '.deferred',
+  '.async-load'
 ];
 
 const MESSAGE_TYPES = {
@@ -121,6 +135,7 @@ function forceLoadImages() {
   console.log('[LazyLoad Blocker] Processing', images.length, 'total images');
 
   images.forEach((img, index) => {
+    // 处理标准懒加载属性
     const srcAttr = img.getAttribute('data-src') ||
                    img.getAttribute('data-original') ||
                    img.getAttribute('data-lazy-src');
@@ -130,6 +145,7 @@ function forceLoadImages() {
       img.src = srcAttr;
     }
 
+    // 处理 srcset
     const srcsetAttr = img.getAttribute('data-srcset') ||
                       img.getAttribute('data-lazy-srcset');
 
@@ -138,12 +154,36 @@ function forceLoadImages() {
       img.srcset = srcsetAttr;
     }
 
+    // 处理自定义懒加载属性
+    const customSrcAttrs = [
+      'data-custom-src',
+      'data-lazy',
+      'data-defer-src',
+      'data-async',
+      'data-img-url',
+      'data-url',
+      'data-image',
+      'data-image-src',
+      'data-href'
+    ];
+
+    for (const attr of customSrcAttrs) {
+      const customSrc = img.getAttribute(attr);
+      if (customSrc && !img.src) {
+        console.log(`[LazyLoad Blocker] Image ${index + 1}: setting src from ${attr}`, customSrc);
+        img.src = customSrc;
+        break; // 只使用第一个找到的
+      }
+    }
+
+    // 移除原生懒加载属性
     if (img.getAttribute('loading') === 'lazy') {
       console.log(`[LazyLoad Blocker] Image ${index + 1}: removing loading="lazy"`);
       img.setAttribute('loading', 'eager');
     }
 
-    img.classList.remove('lazy', 'lazyload', 'lazyloading', 'lozad');
+    // 移除懒加载相关类名
+    img.classList.remove('lazy', 'lazyload', 'lazyloading', 'lozad', 'custom-lazy', 'my-lazy', 'deferred', 'async-load');
   });
 
   const bgElements = document.querySelectorAll('[data-bg], [data-background]');
