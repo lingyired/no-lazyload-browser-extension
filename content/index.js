@@ -54,11 +54,6 @@ function injectInlineStyles() {
       content-visibility: visible !important;
       filter: none !important;
     }
-
-    /* 处理 background-image 懒加载 */
-    [data-bg], [data-background] {
-      background-image: attr(data-bg) !important;
-    }
   `;
 
   (document.head || document.documentElement).appendChild(style);
@@ -79,17 +74,44 @@ function handleNativeLazyLoading() {
     });
   };
 
+  const processBackgrounds = () => {
+    const bgElements = document.querySelectorAll('[data-bg], [data-background]');
+    console.log('[LazyLoad Blocker] Found', bgElements.length, 'background elements to process early');
+
+    bgElements.forEach((el, index) => {
+      const bgUrl = el.getAttribute('data-bg') || el.getAttribute('data-background');
+      if (bgUrl) {
+        const currentBg = el.style.backgroundImage;
+        if (!currentBg || currentBg === 'none') {
+          console.log(`[LazyLoad Blocker] Early background ${index + 1}: setting to "${bgUrl}"`);
+          el.style.backgroundImage = `url("${bgUrl}")`;
+          el.classList.add('loaded');
+        }
+      }
+    });
+  };
+
+  // 立即处理
   if (document.readyState !== 'loading') {
     processLazyImages();
+    processBackgrounds();
   }
 
+  // DOMContentLoaded 时处理
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', processLazyImages);
+    document.addEventListener('DOMContentLoaded', () => {
+      processLazyImages();
+      processBackgrounds();
+    });
   }
 
+  // 延迟处理
   setTimeout(processLazyImages, 100);
+  setTimeout(processBackgrounds, 100);
   setTimeout(processLazyImages, 500);
+  setTimeout(processBackgrounds, 500);
   setTimeout(processLazyImages, 1000);
+  setTimeout(processBackgrounds, 1000);
 }
 
 function forceLoadImages() {
@@ -130,8 +152,15 @@ function forceLoadImages() {
   bgElements.forEach((el, index) => {
     const bgUrl = el.getAttribute('data-bg') || el.getAttribute('data-background');
     if (bgUrl) {
-      console.log(`[LazyLoad Blocker] Background ${index + 1}:`, bgUrl);
-      el.style.backgroundImage = `url(${bgUrl})`;
+      // 检查是否已经设置了背景图片
+      const currentBg = el.style.backgroundImage;
+      if (!currentBg || currentBg === 'none') {
+        console.log(`[LazyLoad Blocker] Background ${index + 1}: setting to "${bgUrl}"`);
+        el.style.backgroundImage = `url("${bgUrl}")`;
+        el.classList.add('loaded');
+      } else {
+        console.log(`[LazyLoad Blocker] Background ${index + 1}: already set to "${currentBg}"`);
+      }
     }
   });
 }
@@ -146,17 +175,32 @@ function initCSSInjector() {
   const observer = new MutationObserver((mutations) => {
     let shouldProcess = false;
     mutations.forEach(mutation => {
-      mutation.addedNodes.forEach(node => {
-        if (node.nodeType === Node.ELEMENT_NODE) {
-          if (node.matches && node.matches('img, [data-src], [data-bg]')) {
-            shouldProcess = true;
+      // 处理新增节点
+      if (mutation.type === 'childList') {
+        mutation.addedNodes.forEach(node => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            if (node.matches && node.matches('img, [data-src], [data-bg], [data-background]')) {
+              shouldProcess = true;
+            }
+            if (node.querySelectorAll) {
+              const imgs = node.querySelectorAll('img, [data-src], [data-bg], [data-background]');
+              if (imgs.length > 0) shouldProcess = true;
+            }
           }
-          if (node.querySelectorAll) {
-            const imgs = node.querySelectorAll('img, [data-src], [data-bg]');
-            if (imgs.length > 0) shouldProcess = true;
+        });
+      }
+      // 处理属性变化
+      if (mutation.type === 'attributes') {
+        if (mutation.attributeName === 'data-bg' || mutation.attributeName === 'data-background') {
+          const target = mutation.target;
+          const bgUrl = target.getAttribute(mutation.attributeName);
+          if (bgUrl) {
+            console.log('[LazyLoad Blocker] Attribute mutation detected:', mutation.attributeName, bgUrl);
+            target.style.backgroundImage = `url("${bgUrl}")`;
+            target.classList.add('loaded');
           }
         }
-      });
+      }
     });
 
     if (shouldProcess) {
@@ -167,7 +211,9 @@ function initCSSInjector() {
 
   observer.observe(document.body || document.documentElement, {
     childList: true,
-    subtree: true
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['data-bg', 'data-background']
   });
 
   console.log('[LazyLoad Blocker] CSS injector initialized');
