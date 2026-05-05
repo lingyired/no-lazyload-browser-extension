@@ -607,7 +607,9 @@ function escapeHtml(text) {
  */
 async function loadSiteList() {
   try {
+    console.log('[Settings] Loading site list...');
     const response = await sendMessage(MESSAGE_TYPES.GET_ALL_CONFIGS);
+    console.log('[Settings] Got response:', response);
 
     // 检查响应是否成功
     if (!response || !response.success) {
@@ -621,82 +623,92 @@ async function loadSiteList() {
     }
 
     const configs = response.data || {};
+    console.log('[Settings] Configs:', configs, 'Count:', Object.keys(configs).length);
 
-  const siteList = document.getElementById('siteList');
-  const emptyState = document.getElementById('emptyState');
-  const siteCount = document.getElementById('siteCount');
+    const siteList = document.getElementById('siteList');
+    const emptyState = document.getElementById('emptyState');
+    const siteCount = document.getElementById('siteCount');
 
-  // 清空列表
-  siteList.innerHTML = '';
+    console.log('[Settings] Elements:', { siteList: !!siteList, emptyState: !!emptyState, siteCount: !!siteCount });
 
-  // 更新计数
-  const count = Object.keys(configs).length;
-  if (siteCount) {
-    siteCount.textContent = count;
-  }
+    if (!siteList || !emptyState) {
+      console.error('[Settings] Required elements not found');
+      return;
+    }
 
-  if (count === 0) {
-    siteList.classList.add('hidden');
-    emptyState.classList.remove('hidden');
-    return;
-  }
+    // 清空列表
+    siteList.innerHTML = '';
 
-  siteList.classList.remove('hidden');
-  emptyState.classList.add('hidden');
+    // 更新计数
+    const count = Object.keys(configs).length;
+    if (siteCount) {
+      siteCount.textContent = count;
+    }
 
-  // 排序
-  const entries = Object.entries(configs)
-    .sort((a, b) => b[1].addedAt - a[1].addedAt);
+    if (count === 0) {
+      console.log('[Settings] No sites configured, showing empty state');
+      siteList.classList.add('hidden');
+      emptyState.classList.remove('hidden');
+      return;
+    }
 
-  // 渲染列表
-  entries.forEach(([domain, config]) => {
-    const item = document.createElement('div');
-    item.className = 'site-item';
+    console.log('[Settings] Found', count, 'sites, rendering list');
+    siteList.classList.remove('hidden');
+    emptyState.classList.add('hidden');
 
-    const isScrollEnabled = config.scrollFallback === true;
+    // 排序
+    const entries = Object.entries(configs)
+      .sort((a, b) => b[1].addedAt - a[1].addedAt);
 
-    item.innerHTML = `
-      <span class="domain" title="${escapeHtml(domain)}">${escapeHtml(domain)}</span>
-      <label class="scroll-toggle" title="${t('useAutoScroll')}">
-        <input type="checkbox" data-domain="${escapeHtml(domain)}" ${isScrollEnabled ? 'checked' : ''}>
-        <span>${t('autoScroll')}</span>
-      </label>
-      <button class="delete-btn" data-domain="${escapeHtml(domain)}" title="${t('delete')}">×</button>
-    `;
+    // 渲染列表
+    entries.forEach(([domain, config]) => {
+      const item = document.createElement('div');
+      item.className = 'site-item';
 
-    siteList.appendChild(item);
-  });
+      const isScrollEnabled = config.scrollFallback === true;
 
-  // 绑定自动滚动复选框事件
-  siteList.querySelectorAll('.scroll-toggle input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', async (e) => {
-      const domain = e.target.dataset.domain;
-      const scrollFallback = e.target.checked;
+      item.innerHTML = `
+        <span class="domain" title="${escapeHtml(domain)}">${escapeHtml(domain)}</span>
+        <label class="scroll-toggle" title="${t('useAutoScroll')}">
+          <input type="checkbox" data-domain="${escapeHtml(domain)}" ${isScrollEnabled ? 'checked' : ''}>
+          <span>${t('autoScroll')}</span>
+        </label>
+        <button class="delete-btn" data-domain="${escapeHtml(domain)}" title="${t('delete')}">×</button>
+      `;
 
-      // 获取当前配置
-      const config = configs[domain];
-      if (config) {
-        await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
-          domain,
-          strategy: config.strategy || STRATEGIES.TECH_BLOCK,
-          scrollFallback
-        });
-        showToast(scrollFallback ? t('scrollEnabled') : t('scrollDisabled'));
-      }
+      siteList.appendChild(item);
     });
-  });
 
-  // 绑定删除事件
-  siteList.querySelectorAll('.delete-btn').forEach(btn => {
-    btn.addEventListener('click', async (e) => {
-      const domain = e.target.dataset.domain;
-      if (confirm(t('deleteConfirm', { domain }))) {
-        await sendMessage(MESSAGE_TYPES.REMOVE_SITE_CONFIG, { domain });
-        loadSiteList();
-        showToast(t('deleted'));
-      }
+    // 绑定自动滚动复选框事件
+    siteList.querySelectorAll('.scroll-toggle input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', async (e) => {
+        const domain = e.target.dataset.domain;
+        const scrollFallback = e.target.checked;
+
+        // 获取当前配置
+        const config = configs[domain];
+        if (config) {
+          await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+            domain,
+            strategy: config.strategy || STRATEGIES.TECH_BLOCK,
+            scrollFallback
+          });
+          showToast(scrollFallback ? t('scrollEnabled') : t('scrollDisabled'));
+        }
+      });
     });
-  });
+
+    // 绑定删除事件
+    siteList.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const domain = e.target.dataset.domain;
+        if (confirm(t('deleteConfirm', { domain }))) {
+          await sendMessage(MESSAGE_TYPES.REMOVE_SITE_CONFIG, { domain });
+          loadSiteList();
+          showToast(t('deleted'));
+        }
+      });
+    });
   } catch (error) {
     console.error('[Settings] Error loading site list:', error);
     const siteList = document.getElementById('siteList');
