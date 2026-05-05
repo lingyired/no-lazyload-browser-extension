@@ -2,7 +2,7 @@
 
 /**
  * Build script for Image Lazy Load Blocker
- * Supports Chrome (MV3) and Firefox (MV2)
+ * Supports Chrome (MV3), Firefox (MV2), and Safari (MV3)
  * Generates versioned zip packages
  */
 
@@ -39,6 +39,12 @@ function saveVersion(version) {
     const firefoxManifest = JSON.parse(fs.readFileSync('manifest-firefox.json', 'utf8'));
     firefoxManifest.version = version;
     fs.writeFileSync('manifest-firefox.json', JSON.stringify(firefoxManifest, null, 2));
+  }
+  // 更新 Safari manifest
+  if (fs.existsSync('manifest-safari.json')) {
+    const safariManifest = JSON.parse(fs.readFileSync('manifest-safari.json', 'utf8'));
+    safariManifest.version = version;
+    fs.writeFileSync('manifest-safari.json', JSON.stringify(safariManifest, null, 2));
   }
 }
 
@@ -113,7 +119,7 @@ function ensureVersionPlaceholder(filePath) {
   fs.writeFileSync(filePath, content);
 }
 
-// Files to copy for both browsers
+// Files to copy for all browsers
 const COMMON_FILES = [
   'popup.html',
   'popup.js',
@@ -147,6 +153,15 @@ const CHROME_FILES = {
 const FIREFOX_FILES = {
   'manifest-firefox.json': 'manifest.json',
   'background-firefox.js': 'background-firefox.js',
+};
+
+// Safari specific files
+const SAFARI_FILES = {
+  'manifest-safari.json': 'manifest.json',
+  'background/index.js': 'background/index.js',
+  'background/messageHandler.js': 'background/messageHandler.js',
+  'background/siteConfigManager.js': 'background/siteConfigManager.js',
+  'shared/constants.js': 'shared/constants.js',
 };
 
 // 确保目录存在（不删除内容）
@@ -337,6 +352,66 @@ function buildFirefox(version) {
   console.log('✅ Firefox build complete:', zipPath);
 }
 
+function buildSafari(version) {
+  console.log('\n📦 Building for Safari...');
+  const safariDir = path.join(BUILD_DIR, 'safari-temp');
+  const zipFileName = `safari-${version}.zip`;
+  const zipPath = path.join(BUILD_DIR, zipFileName);
+
+  // 清空临时目录
+  cleanTempDir(safariDir);
+
+  // Copy common files
+  COMMON_FILES.forEach(file => {
+    copyFile(path.join(SRC_DIR, file), path.join(safariDir, file));
+  });
+
+  // Copy common directories
+  COMMON_DIRS.forEach(dir => {
+    copyDir(path.join(SRC_DIR, dir), path.join(safariDir, dir));
+  });
+
+  // Copy Safari specific files
+  Object.entries(SAFARI_FILES).forEach(([src, dest]) => {
+    copyFile(path.join(SRC_DIR, src), path.join(safariDir, dest));
+  });
+
+  // 更新版本号到 HTML
+  // Update settings/index.html
+  const settingsPath = path.join(safariDir, 'settings/index.html');
+  if (fs.existsSync(settingsPath)) {
+    let content = fs.readFileSync(settingsPath, 'utf8');
+    content = content.replace(/<span id="extensionVersion">[^<]*<\/span>/, `<span id="extensionVersion">${version}</span>`);
+    fs.writeFileSync(settingsPath, content);
+  }
+
+  // Update popup.html
+  const popupPath = path.join(safariDir, 'popup.html');
+  if (fs.existsSync(popupPath)) {
+    let content = fs.readFileSync(popupPath, 'utf8');
+    content = content.replace(/<span id="extensionVersion">[^<]*<\/span>/, `<span id="extensionVersion">${version}</span>`);
+    fs.writeFileSync(popupPath, content);
+  }
+
+  // 创建 zip 包
+  console.log(`  📦 Creating ${zipFileName}...`);
+  createZip(safariDir, zipPath);
+
+  // 删除临时目录
+  fs.rmSync(safariDir, { recursive: true });
+
+  // 删除旧版本 zip
+  removeOldZipFiles('safari', version);
+
+  console.log('✅ Safari build complete:', zipPath);
+  console.log('');
+  console.log('📱 Note: Safari extension requires additional steps:');
+  console.log('   1. Extract the zip file');
+  console.log('   2. Open the extracted folder in Safari Extension Converter');
+  console.log('   3. Build and run the generated Xcode project');
+  console.log('   See SAFARI.md for detailed instructions.');
+}
+
 function buildAll(version) {
   console.log('🔨 Building Image Lazy Load Blocker...');
   console.log(`📌 Version: v${version}`);
@@ -346,6 +421,7 @@ function buildAll(version) {
 
   buildChrome(version);
   buildFirefox(version);
+  buildSafari(version);
 
   console.log('\n🎉 Build complete!');
   console.log(`   Version: v${version}`);
@@ -378,6 +454,9 @@ if (target === 'bump') {
 } else if (target === 'firefox') {
   const version = getVersion();
   buildFirefox(version);
+} else if (target === 'safari') {
+  const version = getVersion();
+  buildSafari(version);
 } else if (['patch', 'minor', 'major'].includes(target)) {
   // 递增版本并构建全部
   const newVersion = bumpVersion(target);
@@ -390,6 +469,7 @@ if (target === 'bump') {
   console.log('  all             Build all (no version change)');
   console.log('  chrome          Build Chrome only (no version change)');
   console.log('  firefox         Build Firefox only (no version change)');
+  console.log('  safari          Build Safari only (no version change)');
   console.log('  patch           Build all with patch version bump (1.0.0 → 1.0.1)');
   console.log('  minor           Build all with minor version bump (1.0.0 → 1.1.0)');
   console.log('  major           Build all with major version bump (1.0.0 → 2.0.0)');
