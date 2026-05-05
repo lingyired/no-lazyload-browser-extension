@@ -120,7 +120,7 @@
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "全般設定",
+    "message": "ウェブサイト設定リスト",
     "description": "Global settings section"
   },
   "scrollSpeed": {

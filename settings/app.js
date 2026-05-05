@@ -44,7 +44,7 @@ const TRANSLATIONS = {
   'zh': {
     'siteListTitle': '已配置的网站',
     'emptyState': '暂无配置的网站',
-    'globalSettings': '全局设置',
+    'globalSettings': '网站配置列表',
     'showInterceptionToast': '显示拦截成功提示（右上角 2 秒）',
     'useAutoScroll': '使用自动滚动代替技术拦截（适合拦截失败的网站）',
     'autoScrollHelp': '开启后禁用技术拦截，通过自动滚动到底部触发图片加载',
@@ -83,7 +83,7 @@ const TRANSLATIONS = {
   'en': {
     'siteListTitle': 'Configured Sites',
     'emptyState': 'No configured sites',
-    'globalSettings': 'Global Settings',
+    'globalSettings': 'Site Configuration List',
     'showInterceptionToast': 'Show interception success toast (top-right, 2s)',
     'useAutoScroll': 'Use auto-scroll instead of tech blocking (for sites where blocking fails)',
     'autoScrollHelp': 'When enabled, disables tech blocking and triggers image loading by auto-scrolling to bottom',
@@ -122,7 +122,7 @@ const TRANSLATIONS = {
   'es': {
     'siteListTitle': 'Sitios Configurados',
     'emptyState': 'No hay sitios configurados',
-    'globalSettings': 'Configuración Global',
+    'globalSettings': 'Lista de Configuración de Sitios',
     'showInterceptionToast': 'Mostrar notificación de éxito (arriba derecha, 2s)',
     'useAutoScroll': 'Usar desplazamiento automático en lugar de bloqueo técnico',
     'autoScrollHelp': 'Deshabilita el bloqueo técnico y activa la carga desplazándose al final',
@@ -153,7 +153,7 @@ const TRANSLATIONS = {
   'ar': {
     'siteListTitle': 'المواقع المُعدّة',
     'emptyState': 'لا توجد مواقع مُعدّة',
-    'globalSettings': 'الإعدادات العامة',
+    'globalSettings': 'قائمة تكوين الموقع',
     'showInterceptionToast': 'عرض إشعار النجاح (أعلى اليمين، 2 ثانية)',
     'useAutoScroll': 'استخدام التمرير التلقائي بدلاً من الحظر التقني',
     'autoScrollHelp': 'يعطل الحظر التقني ويُفعّل التحميل بالتمرير للأسفل',
@@ -184,7 +184,7 @@ const TRANSLATIONS = {
   'hi': {
     'siteListTitle': 'कॉन्फ़िगर की गई साइटें',
     'emptyState': 'कोई कॉन्फ़िगर की गई साइट नहीं',
-    'globalSettings': 'वैश्विक सेटिंग्स',
+    'globalSettings': 'वेबसाइट कॉन्फ़िगरेशन सूची',
     'showInterceptionToast': 'सफलता का संदेश दिखाएं (ऊपर दाएं, 2 सेकंड)',
     'useAutoScroll': 'तकनीकी ब्लॉकिंग के बजाय ऑटो-स्क्रॉल का उपयोग करें',
     'autoScrollHelp': 'तकनीकी ब्लॉकिंग को अक्षम करता है और नीचे स्क्रॉल करके लोड करता है',
@@ -215,7 +215,7 @@ const TRANSLATIONS = {
   'fr': {
     'siteListTitle': 'Sites Configurés',
     'emptyState': 'Aucun site configuré',
-    'globalSettings': 'Paramètres Généraux',
+    'globalSettings': 'Liste de Configuration des Sites',
     'showInterceptionToast': 'Afficher notification de succès (haut droite, 2s)',
     'useAutoScroll': 'Utiliser défilement auto au lieu du blocage technique',
     'autoScrollHelp': 'Désactive le blocage technique et déclenche le chargement en défilant',
@@ -246,7 +246,7 @@ const TRANSLATIONS = {
   'pt': {
     'siteListTitle': 'Sites Configurados',
     'emptyState': 'Nenhum site configurado',
-    'globalSettings': 'Configurações Globais',
+    'globalSettings': 'Lista de Configuração de Sites',
     'showInterceptionToast': 'Mostrar notificação de sucesso (canto superior, 2s)',
     'useAutoScroll': 'Usar rolagem automática em vez de bloqueio técnico',
     'autoScrollHelp': 'Desativa o bloqueio técnico e ativa o carregamento rolando até o final',
@@ -277,7 +277,7 @@ const TRANSLATIONS = {
   'de': {
     'siteListTitle': 'Konfigurierte Seiten',
     'emptyState': 'Keine konfigurierten Seiten',
-    'globalSettings': 'Globale Einstellungen',
+    'globalSettings': 'Website-Konfigurationsliste',
     'showInterceptionToast': 'Erfolgsbenachrichtigung anzeigen (oben rechts, 2s)',
     'useAutoScroll': 'Automatisches Scrollen statt technischer Blockierung',
     'autoScrollHelp': 'Deaktiviert technische Blockierung und lädt durch Scrollen',
@@ -308,7 +308,7 @@ const TRANSLATIONS = {
   'ja': {
     'siteListTitle': '設定済みサイト',
     'emptyState': '設定済みサイトはありません',
-    'globalSettings': '全般設定',
+    'globalSettings': 'ウェブサイト設定リスト',
     'showInterceptionToast': '成功通知を表示（右上、2秒）',
     'useAutoScroll': '技術ブロックの代わりに自動スクロールを使用',
     'autoScrollHelp': '技術ブロックを無効化し、スクロールで読み込みをトリガー',
@@ -339,7 +339,7 @@ const TRANSLATIONS = {
   'ru': {
     'siteListTitle': 'Настроенные Сайты',
     'emptyState': 'Нет настроенных сайтов',
-    'globalSettings': 'Глобальные Настройки',
+    'globalSettings': 'Список Конфигурации Сайтов',
     'showInterceptionToast': 'Показывать уведомление об успехе (справа сверху, 2с)',
     'useAutoScroll': 'Использовать автопрокрутку вместо технической блокировки',
     'autoScrollHelp': 'Отключает техническую блокировку и загружает прокруткой',
@@ -503,9 +503,9 @@ function applyTranslations() {
   const allCardH2s = document.querySelectorAll('.card h2');
   const sectionTitles = {
     'siteListTitle': document.querySelector('.site-list-header h2'),
-    'globalSettings': allCardH2s[0],
-    'importExport': allCardH2s[1],
-    'languageSettings': allCardH2s[2]
+    'globalSettings': allCardH2s[1],  // 第二个 card 的 h2 是全局设置
+    'importExport': allCardH2s[2],
+    'languageSettings': allCardH2s[3]
   };
 
   Object.entries(sectionTitles).forEach(([key, el]) => {
@@ -567,10 +567,15 @@ async function sendMessage(type, data = {}) {
     const rt = getRuntime();
     if (!rt) {
       console.error('[Settings] Runtime not available');
-      resolve(null);
+      resolve({ success: false, error: 'Runtime not available' });
       return;
     }
     rt.sendMessage({ type, ...data }, (response) => {
+      if (chrome.runtime.lastError) {
+        console.error('[Settings] Message error:', chrome.runtime.lastError);
+        resolve({ success: false, error: chrome.runtime.lastError.message });
+        return;
+      }
       resolve(response);
     });
   });
@@ -603,8 +608,21 @@ function escapeHtml(text) {
  * 加载并显示网站列表
  */
 async function loadSiteList() {
-  const response = await sendMessage(MESSAGE_TYPES.GET_ALL_CONFIGS);
-  const configs = response?.data || {};
+  try {
+    const response = await sendMessage(MESSAGE_TYPES.GET_ALL_CONFIGS);
+
+    // 检查响应是否成功
+    if (!response || !response.success) {
+      console.error('[Settings] Failed to load site configs:', response?.error || 'Unknown error');
+      // 显示空状态
+      const siteList = document.getElementById('siteList');
+      const emptyState = document.getElementById('emptyState');
+      if (siteList) siteList.classList.add('hidden');
+      if (emptyState) emptyState.classList.remove('hidden');
+      return;
+    }
+
+    const configs = response.data || {};
 
   const siteList = document.getElementById('siteList');
   const emptyState = document.getElementById('emptyState');

@@ -120,7 +120,7 @@
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "वैश्विक सेटिंग्स",
+    "message": "वेबसाइट कॉन्फ़िगरेशन सूची",
     "description": "Global settings section"
   },
   "scrollSpeed": {

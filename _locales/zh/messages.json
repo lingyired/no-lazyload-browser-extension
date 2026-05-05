@@ -120,7 +120,7 @@
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "全局设置",
+    "message": "网站配置列表",
     "description": "Global settings section"
   },
   "scrollSpeed": {

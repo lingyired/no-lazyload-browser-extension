@@ -120,7 +120,7 @@
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "الإعدادات العامة",
+    "message": "قائمة تكوين الموقع",
     "description": "Global settings section"
   },
   "scrollSpeed": {

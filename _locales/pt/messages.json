@@ -120,7 +120,7 @@
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "Configurações Globais",
+    "message": "Lista de Configuração de Sites",
     "description": "Global settings section"
   },
   "scrollSpeed": {
