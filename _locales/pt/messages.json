@@ -120,8 +120,8 @@
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "Configurações Globais",
-    "description": "Global settings section"
+    "message": "Lista de Configuração de Sites",
+    "description": "Site configuration list section"
   },
   "scrollSpeed": {
     "message": "Velocidade de Rolagem (ms)",

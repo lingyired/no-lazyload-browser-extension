@@ -120,8 +120,8 @@
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "全局设置",
-    "description": "Global settings section"
+    "message": "网站配置列表",
+    "description": "Site configuration list section"
   },
   "scrollSpeed": {
     "message": "滚动速度（毫秒）",

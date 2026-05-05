@@ -120,8 +120,8 @@
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "Global Settings",
-    "description": "Global settings section"
+    "message": "Site Configuration List",
+    "description": "Site configuration list section"
   },
   "scrollSpeed": {
     "message": "Scroll Speed (ms)",
