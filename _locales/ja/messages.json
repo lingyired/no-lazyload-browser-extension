@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - 画像の遅延読み込みを無効化",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "ウェブサイトでの画像の遅延読み込みを無効化し、すべての画像を一度に読み込む",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "現在のサイト",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "有効",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "無効",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "利用不可",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "非ウェブページ",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "追加不可",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "現在のサイトを追加",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "現在のサイトを削除",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "自動スクロールを使用",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "読み込みをトリガーするために下部までスクロールします。技術的なブロッキングが失敗するサイトに適しています",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "設定済みサイト",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "設定済みサイトはありません",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "詳細設定",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "ページを更新",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "$domain$ を追加しました",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "$domain$ を追加しました（自動スクロール）",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "$domain$ を削除しました",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "$domain$ を削除しました",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "自動スクロールを有効にしました",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "自動スクロールを無効にしました",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "ページを更新しました",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "自動スクロール",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "設定 - 画像遅延読み込みブロッカー",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "全般設定",
+    "description": "Global settings section"
+  },
+  "scrollSpeed": {
+    "message": "スクロール速度（ミリ秒）",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "停止時間（ミリ秒）",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "完了後にトップに戻る",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "技術的なブロッキングが失敗した場合、自動スクロールを使用",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "インターセプション成功の通知を表示",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "保存",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "保存しました",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "サイト管理",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "一括インポート",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "一括エクスポート",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "すべて削除",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "ドメインを入力してください（1行に1つ）...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "インポートを確認",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "キャンセル",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "作成者",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "ツール",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "言語設定",
+    "description": "Language settings section title"
+  }
+}

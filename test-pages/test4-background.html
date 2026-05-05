@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>测试 4: 背景图片懒加载</title>
+    <title>测试 4: 背景图片懒加载 (40个)</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -19,7 +19,7 @@
             margin-bottom: 20px;
         }
         .bg-container {
-            margin: 50px 0;
+            margin: 30px 0;
             padding: 20px;
             background: #fafafa;
             border-radius: 8px;
@@ -42,24 +42,29 @@
             color: transparent;
         }
         .status {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
+            display: none;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #4CAF50;
+            text-decoration: none;
             font-size: 14px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>测试页面 4: 背景图片懒加载</h1>
+    <a href="index.html" class="back-link">← 返回测试索引</a>
+    <h1>测试页面 4: 背景图片懒加载 (40个)</h1>
 
     <div class="description">
         <strong>懒加载类型：</strong>背景图片 data-bg / data-background 模式<br>
         <strong>实现方式：</strong>背景 URL 存储在 data 属性中，滚动到视口时通过 JS 设置 background-image<br>
-        <strong>扩展应禁用：</strong>data-bg 应立即应用到 background-image
+        <strong>扩展应禁用：</strong>data-bg 应立即应用到 background-image<br>
+        <strong>背景数量：</strong>40 个
     </div>
 
     <div id="status" class="status">检测中...</div>
@@ -68,88 +73,25 @@
         <p>向下滚动查看背景图片 ↓</p>
     </div>
 
-    <!-- 背景图片懒加载 -->
-    <div class="bg-container">
-        <h3>背景 1 (data-bg)</h3>
-        <div class="lazy-bg"
-             data-bg="https://picsum.photos/800/300?random=30">
-            背景图片未加载
-        </div>
-    </div>
-
-    <div class="bg-container">
-        <h3>背景 2 (data-background)</h3>
-        <div class="lazy-bg"
-             data-background="https://picsum.photos/800/300?random=31">
-            背景图片未加载
-        </div>
-    </div>
-
-    <div class="bg-container">
-        <h3>背景 3 (data-bg)</h3>
-        <div class="lazy-bg"
-             data-bg="https://picsum.photos/800/300?random=32">
-            背景图片未加载
-        </div>
-    </div>
-
-    <div class="bg-container">
-        <h3>背景 4 (data-bg)</h3>
-        <div class="lazy-bg"
-             data-bg="https://picsum.photos/800/300?random=33">
-            背景图片未加载
-        </div>
-    </div>
-
-    <div class="bg-container">
-        <h3>背景 5 (data-background)</h3>
-        <div class="lazy-bg"
-             data-background="https://picsum.photos/800/300?random=34">
-            背景图片未加载
-        </div>
-    </div>
-
-    <div class="bg-container">
-        <h3>背景 6 (data-bg)</h3>
-        <div class="lazy-bg"
-             data-bg="https://picsum.photos/800/300?random=35">
-            背景图片未加载
-        </div>
-    </div>
-
-    <div class="bg-container">
-        <h3>背景 7 (data-background)</h3>
-        <div class="lazy-bg"
-             data-background="https://picsum.photos/800/300?random=36">
-            背景图片未加载
-        </div>
-    </div>
-
-    <div class="bg-container">
-        <h3>背景 8 (data-bg)</h3>
-        <div class="lazy-bg"
-             data-bg="https://picsum.photos/800/300?random=37">
-            背景图片未加载
-        </div>
-    </div>
-
-    <div class="bg-container">
-        <h3>背景 9 (data-bg)</h3>
-        <div class="lazy-bg"
-             data-bg="https://picsum.photos/800/300?random=38">
-            背景图片未加载
-        </div>
-    </div>
-
-    <div class="bg-container">
-        <h3>背景 10 (data-background)</h3>
-        <div class="lazy-bg"
-             data-background="https://picsum.photos/800/300?random=39">
-            背景图片未加载
-        </div>
-    </div>
+    <!-- 40 个背景图片懒加载 - 动态生成 -->
+    <div id="bg-container"></div>
 
     <script>
+        // 动态生成 40 个背景
+        const container = document.getElementById('bg-container');
+        for (let i = 1; i <= 40; i++) {
+            const attr = i % 2 === 0 ? 'data-background' : 'data-bg';
+            container.innerHTML += `
+                <div class="bg-container">
+                    <h3>背景 ${i} (${attr})</h3>
+                    <div class="lazy-bg"
+                         ${attr}="https://picsum.photos/800/300?random=${i + 30}">
+                        背景图片未加载
+                    </div>
+                </div>
+            `;
+        }
+
         // 背景图片懒加载实现
         function initBackgroundLazyLoad() {
             const lazyBgs = document.querySelectorAll('[data-bg], [data-background]');

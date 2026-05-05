@@ -1,0 +1,25 @@
+{
+  "name": "image-lazy-load-blocker",
+  "version": "1.0.0",
+  "description": "禁用网站图片懒加载，支持技术拦截和自动滚动兜底",
+  "scripts": {
+    "build": "node build.js all",
+    "build:chrome": "node build.js chrome",
+    "build:firefox": "node build.js firefox",
+    "icons": "node convert-icon.js",
+    "rebuild": "node build.js bump && node convert-icon.js && node build.js all",
+    "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
+    "dev:test": "python -m http.server 8080"
+  },
+  "keywords": [
+    "browser-extension",
+    "lazy-loading",
+    "image",
+    "chrome",
+    "firefox"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}

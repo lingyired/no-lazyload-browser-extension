@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Disable Image Lazy Loading",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Disable image lazy loading on websites, load all images at once",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Current Site",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Enabled",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Disabled",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Not Available",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Non-web Page",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Cannot Add",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Add Current Site",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Remove Current Site",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Use Auto-scroll",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Auto-scroll to bottom to trigger loading, suitable for sites where tech blocking fails",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Configured Sites",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "No configured sites",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Full Settings",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Refresh Page",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Added $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Added $domain$ (Auto-scroll)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Removed $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Deleted $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Auto-scroll enabled",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Auto-scroll disabled",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Page refreshed",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Auto-scroll",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Settings - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Global Settings",
+    "description": "Global settings section"
+  },
+  "scrollSpeed": {
+    "message": "Scroll Speed (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Stay Duration (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Return to Top After Completion",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Auto-use Scroll Fallback When Tech Block Fails",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Show Interception Success Toast",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Save",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Saved",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Site Management",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Batch Import",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Batch Export",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Delete All",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Enter domains, one per line...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Confirm Import",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Cancel",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "by",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Tools",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Language Settings",
+    "description": "Language settings section title"
+  }
+}

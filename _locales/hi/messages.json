@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - इमेज लेजी लोड अक्षम करें",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "वेबसाइटों पर इमेज लेजी लोडिंग अक्षम करें, सभी इमेज एक बार में लोड करें",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "वर्तमान साइट",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "सक्षम",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "अक्षम",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "अनुपलब्ध",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "नॉन-वेब पेज",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "जोड़ नहीं सकते",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "वर्तमान साइट जोड़ें",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "वर्तमान साइट हटाएं",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "ऑटो-स्क्रॉल का उपयोग करें",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "लोड ट्रिगर करने के लिए नीचे स्क्रॉल करें, तकनीकी ब्लॉकिंग विफल होने पर उपयुक्त",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "कॉन्फ़िगर की गई साइटें",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "कोई कॉन्फ़िगर की गई साइट नहीं",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "पूर्ण सेटिंग्स",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "पेज रिफ्रेश करें",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "$domain$ जोड़ा गया",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "$domain$ जोड़ा गया (ऑटो-स्क्रॉल)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "$domain$ हटाया गया",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "$domain$ हटाया गया",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "ऑटो-स्क्रॉल सक्षम",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "ऑटो-स्क्रॉल अक्षम",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "पेज रिफ्रेश किया गया",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "ऑटो-स्क्रॉल",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "सेटिंग्स - इमेज लेजी लोड ब्लॉकर",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "वैश्विक सेटिंग्स",
+    "description": "Global settings section"
+  },
+  "scrollSpeed": {
+    "message": "स्क्रॉल गति (मि.से.)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "रुकने की अवधि (मि.से.)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "पूर्ण होने पर शीर्ष पर वापस जाएं",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "तकनीकी ब्लॉकिंग विफल होने पर ऑटो-स्क्रॉल का उपयोग करें",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "इंटरसेप्शन सफलता टोस्ट दिखाएं",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "सहेजें",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "सहेजा गया",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "साइट प्रबंधन",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "बैच आयात",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "बैच निर्यात",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "सभी हटाएं",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "डोमेन दर्ज करें, प्रति पंक्ति एक...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "आयात की पुष्टि करें",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "रद्द करें",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "द्वारा",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "टूल्स",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "भाषा सेटिंग्स",
+    "description": "Language settings section title"
+  }
+}

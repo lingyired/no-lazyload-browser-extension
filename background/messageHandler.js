@@ -6,7 +6,10 @@ import {
   removeSiteConfig,
   getAllSiteConfigs,
   getGlobalConfig,
-  setGlobalConfig
+  setGlobalConfig,
+  getCustomAttributes,
+  setCustomAttributes,
+  resetCustomAttributes
 } from './siteConfigManager.js';
 
 const MESSAGE_TYPES = {
@@ -15,7 +18,10 @@ const MESSAGE_TYPES = {
   REMOVE_SITE_CONFIG: 'REMOVE_SITE_CONFIG',
   GET_ALL_CONFIGS: 'GET_ALL_CONFIGS',
   GET_GLOBAL_CONFIG: 'GET_GLOBAL_CONFIG',
-  SET_GLOBAL_CONFIG: 'SET_GLOBAL_CONFIG'
+  SET_GLOBAL_CONFIG: 'SET_GLOBAL_CONFIG',
+  GET_CUSTOM_ATTRIBUTES: 'GET_CUSTOM_ATTRIBUTES',
+  SET_CUSTOM_ATTRIBUTES: 'SET_CUSTOM_ATTRIBUTES',
+  RESET_CUSTOM_ATTRIBUTES: 'RESET_CUSTOM_ATTRIBUTES'
 };
 
 /**
@@ -36,7 +42,7 @@ function setupMessageHandler() {
             break;
 
           case MESSAGE_TYPES.SET_SITE_CONFIG:
-            await setSiteConfig(request.domain, request.strategy);
+            await setSiteConfig(request.domain, request.strategy, request.scrollFallback);
             sendResponse({ success: true });
             break;
 
@@ -58,6 +64,21 @@ function setupMessageHandler() {
           case MESSAGE_TYPES.SET_GLOBAL_CONFIG:
             await setGlobalConfig(request.config);
             sendResponse({ success: true });
+            break;
+
+          case MESSAGE_TYPES.GET_CUSTOM_ATTRIBUTES:
+            const customAttrs = await getCustomAttributes();
+            sendResponse({ success: true, data: customAttrs });
+            break;
+
+          case MESSAGE_TYPES.SET_CUSTOM_ATTRIBUTES:
+            await setCustomAttributes(request.lazyAttributes, request.placeholderPatterns);
+            sendResponse({ success: true });
+            break;
+
+          case MESSAGE_TYPES.RESET_CUSTOM_ATTRIBUTES:
+            const resetAttrs = await resetCustomAttributes();
+            sendResponse({ success: true, data: resetAttrs });
             break;
 
           default:

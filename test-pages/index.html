@@ -69,8 +69,7 @@
         .tag-data { background: #FFF3E0; color: #F57C00; }
         .tag-lib { background: #F3E5F5; color: #7B1FA2; }
         .tag-bg { background: #E8F5E9; color: #388E3C; }
-        .tag-mixed { background: #FCE4EC; color: #C2185B; }
-        .tag-custom { background: #E8EAF6; color: #3F51B5; }
+        .tag-count { background: #FFEB3B; color: #F57F17; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -81,6 +80,7 @@
             <span class="test-number">1</span>
             <span class="test-title">原生懒加载 loading="lazy"</span>
             <span class="tag tag-native">Native</span>
+            <span class="tag tag-count">40张</span>
             <div class="test-desc">HTML5 原生 loading="lazy" 属性，现代浏览器支持的标准懒加载方式</div>
         </a>
 
@@ -88,6 +88,7 @@
             <span class="test-number">2</span>
             <span class="test-title">data-src 模式</span>
             <span class="tag tag-data">Data Attr</span>
+            <span class="tag tag-count">40张</span>
             <div class="test-desc">最常见的懒加载实现：data-src、data-original、data-lazy-src 等属性</div>
         </a>
 
@@ -95,6 +96,7 @@
             <span class="test-number">3</span>
             <span class="test-title">lazysizes 风格</span>
             <span class="tag tag-lib">Library</span>
+            <span class="tag tag-count">40张</span>
             <div class="test-desc">模拟 lazysizes 库：lazyload → lazyloading → lazyloaded 类名切换</div>
         </a>
 
@@ -102,21 +104,8 @@
             <span class="test-number">4</span>
             <span class="test-title">背景图片懒加载</span>
             <span class="tag tag-bg">Background</span>
+            <span class="tag tag-count">40个</span>
             <div class="test-desc">背景图片懒加载：data-bg、data-background 属性</div>
-        </a>
-
-        <a href="test5-dynamic-mixed.html" class="test-item">
-            <span class="test-number">5</span>
-            <span class="test-title">动态添加 + 混合模式</span>
-            <span class="tag tag-mixed">Complex</span>
-            <div class="test-desc">混合所有懒加载类型 + 动态添加图片（测试 MutationObserver）</div>
-        </a>
-
-        <a href="test6-custom-io.html" class="test-item">
-            <span class="test-number">6</span>
-            <span class="test-title">各种自定义 IO 实现</span>
-            <span class="tag tag-custom">Custom IO</span>
-            <div class="test-desc">多种自定义 IntersectionObserver 实现：data-custom-src、data-lazy、data-defer-src、data-async、data-img-url 等</div>
         </a>
     </div>
 

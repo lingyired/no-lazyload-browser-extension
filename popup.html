@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No lazyload</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      width: 360px;
+      min-height: 200px;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    /* Header */
+    .header {
+      display: none;
+    }
+
+    .current-site {
+      background: white;
+      margin: 12px;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .current-site h2 {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .site-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .site-domain {
+      font-size: 15px;
+      font-weight: 500;
+      color: #333;
+      word-break: break-all;
+    }
+
+    .site-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .site-status.enabled {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+
+    .site-status.disabled {
+      background: #F5F5F5;
+      color: #757575;
+    }
+
+    .site-status .dot {
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    /* 自动滚动选项 */
+    .scroll-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 12px 0;
+      padding: 10px 12px;
+      background: #fafafa;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+
+    .scroll-option input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin-top: 1px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .scroll-option label {
+      flex: 1;
+      cursor: pointer;
+      font-size: 13px;
+      color: #333;
+    }
+
+    .scroll-option .scroll-desc {
+      display: block;
+      font-size: 11px;
+      color: #999;
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    .scroll-option.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .toggle-btn {
+      width: 100%;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .toggle-btn.add {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .toggle-btn.add:hover {
+      background: #45a049;
+    }
+
+    .toggle-btn.remove {
+      background: #f5f5f5;
+      color: #f44336;
+      border: 1px solid #ddd;
+    }
+
+    .toggle-btn.remove:hover {
+      background: #ffebee;
+    }
+
+    /* Site List Section */
+    .site-list-section {
+      background: white;
+      margin: 12px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .site-list-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: #fafafa;
+      border-bottom: 1px solid #eee;
+    }
+
+    .site-list-header h2 {
+      font-size: 13px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .site-list-header .count {
+      font-size: 12px;
+      color: #999;
+      background: #eee;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .site-list {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .site-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      border-bottom: 1px solid #f5f5f5;
+      transition: background 0.2s;
+    }
+
+    .site-item:hover {
+      background: #fafafa;
+    }
+
+    .site-item:last-child {
+      border-bottom: none;
+    }
+
+    .site-item .domain {
+      flex: 1;
+      font-size: 14px;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .site-item .scroll-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-right: 12px;
+      font-size: 11px;
+      color: #666;
+      cursor: pointer;
+    }
+
+    .site-item .scroll-toggle input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
+
+    .site-item .delete-btn {
+      width: 24px;
+      height: 24px;
+      border: none;
+      background: transparent;
+      color: #999;
+      cursor: pointer;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .site-item .delete-btn:hover {
+      background: #ffebee;
+      color: #f44336;
+    }
+
+    .empty-state {
+      padding: 24px 16px;
+      text-align: center;
+      color: #999;
+      font-size: 13px;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      background: white;
+      border-top: 1px solid #eee;
+    }
+
+    .footer-btn {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      background: white;
+      border-radius: 6px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .footer-btn:hover {
+      background: #f5f5f5;
+      border-color: #ccc;
+    }
+
+    .footer-btn.primary {
+      background: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+    }
+
+    .footer-btn.primary:hover {
+      background: #45a049;
+    }
+
+    /* Author */
+    .author {
+      text-align: center;
+      padding: 8px 12px;
+      font-size: 11px;
+      color: #999;
+      background: #fafafa;
+      border-top: 1px solid #eee;
+    }
+
+    .author .version {
+      color: #4CAF50;
+      font-weight: 500;
+    }
+
+    .author a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .author a:hover {
+      text-decoration: underline;
+    }
+
+    .author .tools {
+      color: #bbb;
+    }
+
+    /* Scrollbar */
+    .site-list::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .site-list::-webkit-scrollbar-track {
+      background: #f5f5f5;
+    }
+
+    .site-list::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 3px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 13px;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Current Site -->
+  <div class="current-site">
+    <h2 data-i18n="currentSite">当前网站</h2>
+    <div class="site-info">
+      <span class="site-domain" id="currentDomain" data-i18n="loading">加载中...</span>
+      <span class="site-status disabled" id="currentStatus">
+        <span class="dot">○</span>
+        <span id="statusText" data-i18n="disabled">未启用</span>
+      </span>
+    </div>
+
+    <!-- 自动滚动选项 -->
+    <div class="scroll-option disabled" id="scrollOption">
+      <input type="checkbox" id="currentScrollToggle" disabled>
+      <label for="currentScrollToggle">
+        <span data-i18n="useAutoScroll">使用自动滚动代替技术拦截</span>
+        <span class="scroll-desc" data-i18n="autoScrollDesc">自动滚动到底部触发加载，适合技术拦截失效的网站</span>
+      </label>
+    </div>
+
+    <button class="toggle-btn add" id="toggleBtn" data-i18n="addCurrentSite">添加当前网站</button>
+  </div>
+
+  <!-- Site List -->
+  <div class="site-list-section">
+    <div class="site-list-header">
+      <h2 data-i18n="configuredSites">已配置的网站</h2>
+      <span class="count" id="siteCount">0</span>
+    </div>
+    <div class="site-list" id="siteList">
+      <div class="empty-state" data-i18n="noSites">暂无配置的网站</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <button class="footer-btn" id="openSettings" data-i18n="fullSettings">完整设置</button>
+    <button class="footer-btn primary" id="refreshPage" data-i18n="refreshPage">刷新页面</button>
+  </div>
+
+  <!-- Author -->
+  <div class="author">
+    <span class="version">v<span id="extensionVersion">1.0.0</span></span> |
+    by <a href="https://space.bilibili.com/103021226" target="_blank">灵亦rEd</a> |
+    Built with <span class="tools">Kimi 2.5</span> + <span class="tools">ClaudeCode</span> + <span class="tools">Superpowers</span>
+  </div>
+
+  <script src="i18n-manager.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

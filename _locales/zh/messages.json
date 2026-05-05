@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload 禁用图片懒加载",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "禁用网站图片懒加载，一次性加载完整所有图片",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "当前网站",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "已启用",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "未启用",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "不可用",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "非网页页面",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "无法添加",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "添加当前网站",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "移除当前网站",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "使用自动滚动代替技术拦截",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "自动滚动到底部触发加载，适合技术拦截失效的网站",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "已配置的网站",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "暂无配置的网站",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "完整设置",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "刷新页面",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "已添加 $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "已添加 $domain$（自动滚动）",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "已移除 $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "已删除 $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "已开启自动滚动",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "已关闭自动滚动",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "页面已刷新",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "自动滚动",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "设置 - 图片懒加载拦截器",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "全局设置",
+    "description": "Global settings section"
+  },
+  "scrollSpeed": {
+    "message": "滚动速度（毫秒）",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "停留时长（毫秒）",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "完成后返回页面顶部",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "技术拦截不生效时自动使用滚动兜底",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "显示拦截成功提示",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "保存",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "已保存",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "网站管理",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "批量导入",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "批量导出",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "删除全部",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "输入域名，每行一个...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "确认导入",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "取消",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "作者",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "开发工具",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "语言设置",
+    "description": "Language settings section title"
+  }
+}

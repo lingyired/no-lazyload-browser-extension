@@ -1,6 +1,6 @@
 // background/siteConfigManager.js
 
-import { STORAGE_KEYS, DEFAULT_STRATEGY } from '../shared/constants.js';
+import { STORAGE_KEYS, DEFAULT_STRATEGY, DEFAULT_LAZY_ATTRIBUTES, DEFAULT_PLACEHOLDER_PATTERNS } from '../shared/constants.js';
 
 /**
  * 获取网站的根域名（用于配置匹配）
@@ -46,8 +46,9 @@ async function getSiteConfig(url) {
  * 设置网站配置
  * @param {string} domain
  * @param {string} strategy
+ * @param {boolean} scrollFallback
  */
-async function setSiteConfig(domain, strategy) {
+async function setSiteConfig(domain, strategy, scrollFallback = false) {
   const storage = typeof browser !== 'undefined'
     ? browser.storage.local
     : chrome.storage.local;
@@ -55,6 +56,7 @@ async function setSiteConfig(domain, strategy) {
   const configs = await getAllSiteConfigs();
   configs[domain] = {
     strategy,
+    scrollFallback,
     addedAt: Date.now()
   };
 
@@ -101,6 +103,63 @@ async function setGlobalConfig(config) {
   await storage.set({ [STORAGE_KEYS.GLOBAL_CONFIG]: config });
 }
 
+/**
+ * 获取自定义属性配置
+ * @returns {Promise<{lazyAttributes: string[], placeholderPatterns: string[]}>}
+ */
+async function getCustomAttributes() {
+  const storage = typeof browser !== 'undefined'
+    ? browser.storage.local
+    : chrome.storage.local;
+
+  const result = await storage.get(STORAGE_KEYS.CUSTOM_ATTRIBUTES);
+  const stored = result[STORAGE_KEYS.CUSTOM_ATTRIBUTES];
+
+  return {
+    lazyAttributes: stored?.lazyAttributes || DEFAULT_LAZY_ATTRIBUTES,
+    placeholderPatterns: stored?.placeholderPatterns || DEFAULT_PLACEHOLDER_PATTERNS
+  };
+}
+
+/**
+ * 设置自定义属性配置
+ * @param {string[]} lazyAttributes
+ * @param {string[]} placeholderPatterns
+ */
+async function setCustomAttributes(lazyAttributes, placeholderPatterns) {
+  const storage = typeof browser !== 'undefined'
+    ? browser.storage.local
+    : chrome.storage.local;
+
+  await storage.set({
+    [STORAGE_KEYS.CUSTOM_ATTRIBUTES]: {
+      lazyAttributes,
+      placeholderPatterns
+    }
+  });
+}
+
+/**
+ * 重置自定义属性配置为默认值
+ */
+async function resetCustomAttributes() {
+  const storage = typeof browser !== 'undefined'
+    ? browser.storage.local
+    : chrome.storage.local;
+
+  await storage.set({
+    [STORAGE_KEYS.CUSTOM_ATTRIBUTES]: {
+      lazyAttributes: DEFAULT_LAZY_ATTRIBUTES,
+      placeholderPatterns: DEFAULT_PLACEHOLDER_PATTERNS
+    }
+  });
+
+  return {
+    lazyAttributes: DEFAULT_LAZY_ATTRIBUTES,
+    placeholderPatterns: DEFAULT_PLACEHOLDER_PATTERNS
+  };
+}
+
 export {
   extractDomain,
   getAllSiteConfigs,
@@ -108,5 +167,8 @@ export {
   setSiteConfig,
   removeSiteConfig,
   getGlobalConfig,
-  setGlobalConfig
+  setGlobalConfig,
+  getCustomAttributes,
+  setCustomAttributes,
+  resetCustomAttributes
 };

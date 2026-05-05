@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Desactivar Carga Perezosa de Imágenes",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Desactiva la carga perezosa de imágenes en sitios web, carga todas las imágenes de una vez",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Sitio Actual",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Activado",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Desactivado",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "No Disponible",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Página No Web",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "No Se Puede Agregar",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Agregar Sitio Actual",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Eliminar Sitio Actual",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Usar Desplazamiento Automático",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Desplazarse hasta el final para activar la carga, adecuado para sitios donde falla el bloqueo técnico",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Sitios Configurados",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "No hay sitios configurados",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Configuración Completa",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Actualizar Página",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Agregado $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Agregado $domain$ (Desplazamiento Automático)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Eliminado $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Eliminado $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Desplazamiento automático activado",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Desplazamiento automático desactivado",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Página actualizada",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Desplaz. Auto.",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Configuración - Bloqueador de Carga Perezosa",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Configuración Global",
+    "description": "Global settings section"
+  },
+  "scrollSpeed": {
+    "message": "Velocidad de Desplazamiento (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Duración de Estancia (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Volver Arriba al Completar",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Usar Desplazamiento Automático cuando Falla el Bloqueo Técnico",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Mostrar Notificación de Intercepción Exitosa",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Guardar",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Guardado",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Gestión de Sitios",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Importación Masiva",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Exportación Masiva",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Eliminar Todo",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Ingrese dominios, uno por línea...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Confirmar Importación",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Cancelar",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "por",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Herramientas",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Configuración de Idioma",
+    "description": "Language settings section title"
+  }
+}

@@ -31,24 +31,29 @@
             margin: 10px 0;
         }
         .status {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
+            display: none;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #4CAF50;
+            text-decoration: none;
             font-size: 14px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-link">← 返回测试索引</a>
     <h1>测试页面 1: 原生懒加载 loading="lazy"</h1>
 
     <div class="description">
         <strong>懒加载类型：</strong>HTML5 原生 loading="lazy"<br>
         <strong>预期行为：</strong>页面滚动时图片才会加载<br>
-        <strong>扩展应禁用：</strong>所有图片应立即加载
+        <strong>扩展应禁用：</strong>所有图片应立即加载<br>
+        <strong>图片数量：</strong>40 张
     </div>
 
     <div id="status" class="status">检测中...</div>
@@ -58,88 +63,23 @@
         <p>向下滚动查看图片 ↓</p>
     </div>
 
-    <!-- 原生懒加载图片 -->
-    <div class="image-container">
-        <h3>图片 1 (原生懒加载)</h3>
-        <img src="https://picsum.photos/800/400?random=1"
-             loading="lazy"
-             alt="Test image 1"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 2 (原生懒加载)</h3>
-        <img src="https://picsum.photos/800/400?random=2"
-             loading="lazy"
-             alt="Test image 2"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 3 (原生懒加载)</h3>
-        <img src="https://picsum.photos/800/400?random=3"
-             loading="lazy"
-             alt="Test image 3"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 4 (原生懒加载)</h3>
-        <img src="https://picsum.photos/800/400?random=4"
-             loading="lazy"
-             alt="Test image 4"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 5 (原生懒加载)</h3>
-        <img src="https://picsum.photos/800/400?random=5"
-             loading="lazy"
-             alt="Test image 5"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 6 (原生懒加载)</h3>
-        <img src="https://picsum.photos/800/400?random=6"
-             loading="lazy"
-             alt="Test image 6"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 7 (原生懒加载)</h3>
-        <img src="https://picsum.photos/800/400?random=7"
-             loading="lazy"
-             alt="Test image 7"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 8 (原生懒加载)</h3>
-        <img src="https://picsum.photos/800/400?random=8"
-             loading="lazy"
-             alt="Test image 8"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 9 (原生懒加载)</h3>
-        <img src="https://picsum.photos/800/400?random=9"
-             loading="lazy"
-             alt="Test image 9"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 10 (原生懒加载)</h3>
-        <img src="https://picsum.photos/800/400?random=10"
-             loading="lazy"
-             alt="Test image 10"
-             width="800" height="400">
-    </div>
+    <!-- 40 张原生懒加载图片 - 动态生成 -->
+    <div id="image-container"></div>
 
     <script>
+        // 动态生成 40 张图片
+        const container = document.getElementById('image-container');
+        for (let i = 1; i <= 40; i++) {
+            container.innerHTML += `
+                <div class="image-container">
+                    <h3>图片 ${i} (原生懒加载)</h3>
+                    <img src="https://picsum.photos/800/400?random=${i}"
+                         loading="lazy"
+                         alt="Test image ${i}"
+                         width="800" height="400">
+                </div>
+            `;
+        }
         // 检测图片加载状态
         function checkImages() {
             // 检测所有带 src 的图片（原生懒加载图片都有 src）

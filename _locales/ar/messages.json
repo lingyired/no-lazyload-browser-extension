@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - تعطيل التحميل الكسول للصور",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "تعطيل التحميل الكسول للصور على المواقع، تحميل جميع الصور دفعة واحدة",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "الموقع الحالي",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "مفعّل",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "معطّل",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "غير متاح",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "صفحة غير ويب",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "لا يمكن الإضافة",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "إضافة الموقع الحالي",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "إزالة الموقع الحالي",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "استخدام التمرير التلقائي",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "التمرير للأسفل لتفعيل التحميل، مناسب للمواقع التي يفشل فيها الحظر التقني",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "المواقع المُعدّة",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "لا توجد مواقع مُعدّة",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "الإعدادات الكاملة",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "تحديث الصفحة",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "تمت إضافة $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "تمت إضافة $domain$ (تمرير تلقائي)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "تمت إزالة $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "تم حذف $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "التمرير التلقائي مفعّل",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "التمرير التلقائي معطّل",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "تم تحديث الصفحة",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "تمرير تلقائي",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "الإعدادات - حظر التحميل الكسول",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "الإعدادات العامة",
+    "description": "Global settings section"
+  },
+  "scrollSpeed": {
+    "message": "سرعة التمرير (مللي ثانية)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "مدة البقاء (مللي ثانية)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "العودة للأعلى بعد الانتهاء",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "استخدام التمرير التلقائي عند فشل الحظر التقني",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "عرض إشعار نجاح الاعتراض",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "حفظ",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "تم الحفظ",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "إدارة المواقع",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "استيراد جماعي",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "تصدير جماعي",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "حذف الكل",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "أدخل النطاقات، واحد في كل سطر...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "تأكيد الاستيراد",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "إلغاء",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "بواسطة",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "الأدوات",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "إعدادات اللغة",
+    "description": "Language settings section title"
+  }
+}

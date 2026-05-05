@@ -3,6 +3,7 @@
 
 # Dependencies
 node_modules/
+package-lock.json
 
 # IDE
 .vscode/
@@ -11,3 +12,17 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# Build outputs
+dist/
+*.zip
+*.crx
+*.pem
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+

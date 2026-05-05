@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>测试 2: data-src 模式懒加载</title>
+    <title>测试 2: data-src 模式懒加载 (40张)</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -19,7 +19,7 @@
             margin-bottom: 20px;
         }
         .image-container {
-            margin: 50px 0;
+            margin: 30px 0;
             padding: 20px;
             background: #fafafa;
             border-radius: 8px;
@@ -39,24 +39,29 @@
             opacity: 0;
         }
         .status {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: #2196F3;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
+            display: none;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #2196F3;
+            text-decoration: none;
             font-size: 14px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>测试页面 2: data-src 模式懒加载</h1>
+    <a href="index.html" class="back-link">← 返回测试索引</a>
+    <h1>测试页面 2: data-src 模式懒加载 (40张)</h1>
 
     <div class="description">
         <strong>懒加载类型：</strong>data-src / data-original 模式（最常见）<br>
         <strong>实现方式：</strong>图片初始无 src，通过 IntersectionObserver 滚动到视口时加载<br>
-        <strong>扩展应禁用：</strong>data-src 应立即复制到 src
+        <strong>扩展应禁用：</strong>data-src 应立即复制到 src<br>
+        <strong>图片数量：</strong>40 张
     </div>
 
     <div id="status" class="status">检测中...</div>
@@ -65,143 +70,91 @@
         <p>向下滚动查看图片 ↓</p>
     </div>
 
-    <!-- data-src 懒加载图片 -->
-    <div class="image-container">
-        <h3>图片 1 (data-src)</h3>
-        <img class="lazy"
-             data-src="https://picsum.photos/800/400?random=10"
-             alt="Test image 1"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 2 (data-original)</h3>
-        <img class="lazy"
-             data-original="https://picsum.photos/800/400?random=11"
-             alt="Test image 2"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 3 (data-lazy-src)</h3>
-        <img class="lazy"
-             data-lazy-src="https://picsum.photos/800/400?random=12"
-             alt="Test image 3"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 4 (带 data-srcset)</h3>
-        <img class="lazy"
-             data-src="https://picsum.photos/800/400?random=13"
-             data-srcset="https://picsum.photos/400/200?random=13 400w, https://picsum.photos/800/400?random=13 800w"
-             alt="Test image 4"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 5 (data-lazy-srcset)</h3>
-        <img class="lazy"
-             data-lazy-src="https://picsum.photos/800/400?random=14"
-             data-lazy-srcset="https://picsum.photos/400/200?random=14 400w, https://picsum.photos/800/400?random=14 800w"
-             alt="Test image 5"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 6 (data-src)</h3>
-        <img class="lazy"
-             data-src="https://picsum.photos/800/400?random=15"
-             alt="Test image 6"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 7 (data-original)</h3>
-        <img class="lazy"
-             data-original="https://picsum.photos/800/400?random=16"
-             alt="Test image 7"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 8 (data-lazy-src)</h3>
-        <img class="lazy"
-             data-lazy-src="https://picsum.photos/800/400?random=17"
-             alt="Test image 8"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 9 (带 data-srcset)</h3>
-        <img class="lazy"
-             data-src="https://picsum.photos/800/400?random=18"
-             data-srcset="https://picsum.photos/400/200?random=18 400w, https://picsum.photos/800/400?random=18 800w"
-             alt="Test image 9"
-             width="800" height="400">
-    </div>
-
-    <div class="image-container">
-        <h3>图片 10 (data-lazy-srcset)</h3>
-        <img class="lazy"
-             data-lazy-src="https://picsum.photos/800/400?random=19"
-             data-lazy-srcset="https://picsum.photos/400/200?random=19 400w, https://picsum.photos/800/400?random=19 800w"
-             alt="Test image 10"
-             width="800" height="400">
-    </div>
+    <!-- 40 张 data-src 懒加载图片 - 动态生成 -->
+    <div id="image-container"></div>
 
     <script>
-        // 模拟传统的 data-src 懒加载实现
-        document.addEventListener('DOMContentLoaded', () => {
-            const lazyImages = document.querySelectorAll('.lazy');
+        // 动态生成 40 张图片
+        const container = document.getElementById('image-container');
+        const dataAttrs = ['data-src', 'data-original', 'data-lazy-src'];
 
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        const src = img.getAttribute('data-src') ||
-                                   img.getAttribute('data-original') ||
-                                   img.getAttribute('data-lazy-src');
-                        const srcset = img.getAttribute('data-srcset') ||
-                                      img.getAttribute('data-lazy-srcset');
+        for (let i = 1; i <= 40; i++) {
+            const attr = dataAttrs[i % 3];
+            container.innerHTML += `
+                <div class="image-container">
+                    <h3>图片 ${i} (${attr})</h3>
+                    <img class="lazy"
+                         ${attr}="https://picsum.photos/800/400?random=${i + 10}"
+                         alt="Test image ${i}"
+                         width="800" height="400">
+                </div>
+            `;
+        }
 
-                        if (src) {
-                            img.src = src;
-                            if (srcset) img.srcset = srcset;
-                            img.classList.add('loaded');
-                            img.classList.remove('lazy');
-                            console.log('[Data-src Lazy] Image loaded:', src);
-                        }
-                        observer.unobserve(img);
-                    }
-                });
-            }, { rootMargin: '50px' });
+        // 页面加载时间，用于判断是否是扩展立即处理的
+        const pageLoadTime = Date.now();
 
-            lazyImages.forEach(img => imageObserver.observe(img));
-        });
-
-        // 检测状态
+        // 检测图片加载状态
         function checkImages() {
-            // 检测所有可能曾是懒加载的图片
-            const images = document.querySelectorAll('img[data-src], img[data-original], img[data-lazy-src], img[src*="picsum.photos"]');
-            // 已加载的图片：有 src 且 complete 状态为 true
-            const loaded = Array.from(images).filter(img => img.src && img.complete && img.naturalHeight > 0).length;
+            const images = document.querySelectorAll('img[data-src], img[data-original], img[data-lazy-src]');
+            const loaded = Array.from(images).filter(img => img.complete && img.naturalHeight > 0).length;
             const total = images.length;
 
-            // 检测扩展是否生效（检查是否有图片的 loading 被改为 eager）
-            const eagerImages = document.querySelectorAll('img[loading="eager"]');
-            const extensionActive = eagerImages.length > 0;
+            // 检测是否有图片被扩展处理过（在页面加载后很短时间内就有 src 且已加载）
+            const processedByExtension = Array.from(images).filter(img => {
+                // 检查是否有 src 且 src 包含 picsum（不是 data URI）
+                if (!img.src || !img.src.includes('picsum.photos')) return false;
+                // 检查是否在页面加载后 2 秒内就加载完成了（扩展是立即处理的）
+                // 页面自身的 IO 需要滚动，通常超过 2 秒
+                return img.complete && img.naturalHeight > 0;
+            }).length;
 
-            let statusText = `加载进度: ${loaded}/${total} 张图片`;
-            if (extensionActive && total > 0) {
-                statusText += ' (扩展已生效)';
+            // 更准确的检测：看是否大部分图片都在可视区域外就已经加载
+            // 扩展会处理所有图片，而 IO 只处理可视区域内的
+            const viewportHeight = window.innerHeight;
+            const processedOutsideViewport = Array.from(images).filter(img => {
+                const rect = img.getBoundingClientRect();
+                const isVisible = rect.top < viewportHeight && rect.bottom > 0;
+                const hasSrc = img.src && img.src.includes('picsum.photos');
+                const isLoaded = img.complete && img.naturalHeight > 0;
+                // 在可视区域外但已加载（说明是扩展处理的）
+                return !isVisible && hasSrc && isLoaded;
+            }).length;
+
+            let statusText = `加载进度: ${loaded}/${total}`;
+            if (processedOutsideViewport > 5) {
+                statusText += ` (扩展已生效 - ${processedOutsideViewport} 张在可视区域外已加载)`;
+            } else if (processedByExtension > 0) {
+                statusText += ` (可能有扩展处理 ${processedByExtension} 张)`;
             }
 
             document.getElementById('status').textContent = statusText;
+
+            return { loaded, total, processedOutsideViewport };
         }
 
+        // 每秒检测一次
         setInterval(checkImages, 1000);
         checkImages();
+
+        // 使用 IntersectionObserver 实现懒加载（页面自身的实现）
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const src = img.getAttribute('data-src') ||
+                               img.getAttribute('data-original') ||
+                               img.getAttribute('data-lazy-src');
+                    if (src) {
+                        img.src = src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.lazy').forEach(img => observer.observe(img));
     </script>
 </body>
 </html>

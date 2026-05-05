@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Lazy Loading für Bilder deaktivieren",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Deaktiviert das Lazy Loading von Bildern auf Websites, lädt alle Bilder auf einmal",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Aktuelle Seite",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Aktiviert",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Deaktiviert",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Nicht Verfügbar",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Keine Webseite",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Kann Nicht Hinzufügen",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Aktuelle Seite Hinzufügen",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Aktuelle Seite Entfernen",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Automatisches Scrollen Verwenden",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Nach unten scrollen zum Laden auslösen, geeignet für Seiten bei denen das technische Blockieren fehlschlägt",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Konfigurierte Seiten",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Keine konfigurierten Seiten",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Vollständige Einstellungen",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Seite Aktualisieren",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "$domain$ Hinzugefügt",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "$domain$ Hinzugefügt (Auto-Scroll)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "$domain$ Entfernt",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "$domain$ Gelöscht",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Automatisches Scrollen aktiviert",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Automatisches Scrollen deaktiviert",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Seite aktualisiert",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Auto-Scroll",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Einstellungen - Lazy-Load Bildblocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Globale Einstellungen",
+    "description": "Global settings section"
+  },
+  "scrollSpeed": {
+    "message": "Scrollgeschwindigkeit (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Verweildauer (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Nach Abschluss Nach Oben Zurückkehren",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Automatisches Scrollen verwenden wenn technisches Blockieren fehlschlägt",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Erfolgsbenachrichtigung für Abfangen anzeigen",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Speichern",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Gespeichert",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Seitenverwaltung",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Massenimport",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Massenexport",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Alle Löschen",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Domains eingeben, eine pro Zeile...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Import Bestätigen",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Abbrechen",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "von",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Tools",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Spracheinstellungen",
+    "description": "Language settings section title"
+  }
+}

@@ -2,6 +2,8 @@
 
 一个跨浏览器扩展（Chrome/Firefox），用于禁用网站上的图片懒加载功能。
 
+Built with Kimi 2.5 + ClaudeCode + Superpowers
+
 ## 功能特点
 
 - **技术拦截**：使用 CSS + JavaScript 拦截常见的懒加载机制

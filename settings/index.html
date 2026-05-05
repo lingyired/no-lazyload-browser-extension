@@ -3,28 +3,366 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Lazy Load Blocker 设置</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>No lazyload</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+      min-width: 600px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      color: white;
+      padding: 24px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .header .subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* Card */
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin: 16px 0 8px;
+      color: #666;
+    }
+
+    /* Site List */
+    .site-list-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .site-list-header .count {
+      font-size: 12px;
+      color: #999;
+      background: #eee;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .site-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .site-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      background: #fafafa;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+
+    .site-item .domain {
+      flex: 1;
+      font-size: 14px;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .site-item .scroll-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-right: 16px;
+      font-size: 12px;
+      color: #666;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .site-item .scroll-toggle input[type="checkbox"] {
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+    }
+
+    .site-item .delete-btn {
+      width: 28px;
+      height: 28px;
+      border: none;
+      background: transparent;
+      color: #999;
+      cursor: pointer;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
+      transition: all 0.2s;
+    }
+
+    .site-item .delete-btn:hover {
+      background: #ffebee;
+      color: #f44336;
+    }
+
+    .empty-state {
+      padding: 40px;
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* Form elements */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .form-group input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group input[type="number"] {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    .form-group label span {
+      display: block;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #45a049;
+    }
+
+    .btn-secondary {
+      background: #f5f5f5;
+      color: #666;
+      border: 1px solid #ddd;
+    }
+
+    .btn-secondary:hover {
+      background: #eee;
+      border-color: #ccc;
+    }
+
+    /* Language Selector */
+    .language-select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .language-select:hover {
+      border-color: #4CAF50;
+    }
+
+    .language-select:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    }
+
+    .language-select option {
+      padding: 8px;
+    }
+
+    /* Textarea */
+    .textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: monospace;
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .textarea:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    }
+
+    /* Button Group */
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    /* Import/Export */
+    .import-export {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Scrollbar */
+    .site-list::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .site-list::-webkit-scrollbar-track {
+      background: #f5f5f5;
+    }
+
+    .site-list::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 3px;
+    }
+
+    /* Author */
+    .author {
+      text-align: center;
+      padding: 16px;
+      font-size: 13px;
+      color: #999;
+    }
+
+    .author .version {
+      color: #4CAF50;
+      font-weight: 500;
+    }
+
+    .author a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .author a:hover {
+      text-decoration: underline;
+    }
+
+    .author .tools {
+      color: #bbb;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <header>
+    <!-- Header -->
+    <div class="header">
       <h1>Image Lazy Load Blocker</h1>
-      <p class="subtitle">禁用图片图片懒加载，强制立即加载所有图片</p>
-    </header>
-
-    <!-- 添加网站 -->
-    <section class="card">
-      <h2>添加网站</h2>
-      <div class="add-site-form simple">
-        <button id="addCurrentBtn" class="btn btn-primary">添加当前网站</button>
-      </div>
-    </section>
+      <div class="subtitle">禁用图片懒加载 - 完整设置</div>
+    </div>
 
     <!-- 网站列表 -->
     <section class="card">
-      <div class="section-header simple">
+      <div class="site-list-header">
         <h2>已配置的网站</h2>
+        <span class="count" id="siteCount">0</span>
       </div>
       <div id="siteList" class="site-list">
         <!-- 动态填充 -->
@@ -37,21 +375,24 @@
     <!-- 全局设置 -->
     <section class="card">
       <h2>全局设置</h2>
-      <div class="form-group checkbox">
+      <div class="form-group">
         <label>
-          <input type="checkbox" id="fallbackToScroll" checked>
-          技术拦截不生效时自动使用滚动兜底
+          <input type="checkbox" id="showInterceptionToast">
+          <span>显示拦截成功提示（右上角 2 秒）</span>
         </label>
       </div>
 
-      <div class="form-group checkbox">
+      <div class="form-group">
         <label>
-          <input type="checkbox" id="showNotification" checked>
-          完成后显示通知
+          <input type="checkbox" id="fallbackToScroll">
+          <span>使用自动滚动代替技术拦截（适合拦截失败的网站）</span>
         </label>
+        <p class="help-text" style="margin-left: 24px; margin-top: 4px; color: #999; font-size: 12px;">
+          开启后禁用技术拦截，通过自动滚动到底部触发图片加载
+        </p>
       </div>
 
-      <h3>自动滚动参数</h3>
+      <h3 data-i18n="scrollParams">自动滚动参数</h3>
       <div class="form-row">
         <div class="form-group">
           <label for="scrollSpeed">滚动速度（毫秒）</label>
@@ -62,10 +403,10 @@
           <input type="number" id="stayDuration" min="0" max="10000" value="2000">
         </div>
       </div>
-      <div class="form-group checkbox">
+      <div class="form-group">
         <label>
           <input type="checkbox" id="returnToTop" checked>
-          完成后返回页面顶部
+          <span>完成后返回页面顶部</span>
         </label>
       </div>
       <button id="saveGlobalBtn" class="btn btn-primary">保存全局设置</button>
@@ -82,8 +423,58 @@
         </div>
       </div>
     </section>
+
+    <!-- 语言设置 -->
+    <section class="card">
+      <h2 data-i18n="languageSettings">语言设置</h2>
+      <div class="form-group">
+        <select id="languageSelect" class="language-select">
+          <option value="en">🇺🇸 English</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="hi">🇮🇳 हिन्दी</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="pt">🇧🇷 Português</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="ja">🇯🇵 日本語</option>
+          <option value="ru">🇷🇺 Русский</option>
+        </select>
+      </div>
+      <button id="saveLangBtn" class="btn btn-primary">保存语言设置</button>
+    </section>
+
+    <!-- 高级设置 -->
+    <section class="card">
+      <h2 data-i18n="advancedSettings">高级设置</h2>
+
+      <h3 data-i18n="lazyAttributes">懒加载属性</h3>
+      <p class="help-text" data-i18n="lazyAttributesHelp">检测这些属性来加载图片，用逗号分隔</p>
+      <div class="form-group">
+        <textarea id="lazyAttributesInput" class="textarea" rows="3">data-src, data-original, data-lazy-src, data-srcset, data-lazy-srcset, data-custom-src, data-lazy, data-defer-src, data-async, data-img-url, data-url, data-image, data-image-src, data-href</textarea>
+      </div>
+
+      <h3 data-i18n="placeholderPatterns">占位符检测</h3>
+      <p class="help-text" data-i18n="placeholderPatternsHelp">如果图片 src 包含这些关键词，将被视为占位符并替换，用逗号分隔</p>
+      <div class="form-group">
+        <textarea id="placeholderPatternsInput" class="textarea" rows="2">thumb, placeholder, loading, spinner, blank, empty, lazy, preview, temp, default</textarea>
+      </div>
+
+      <div class="btn-group">
+        <button id="saveAttrsBtn" class="btn btn-primary" data-i18n="save">保存</button>
+        <button id="resetAttrsBtn" class="btn btn-secondary" data-i18n="resetToDefault">重置为默认</button>
+      </div>
+    </section>
+
+    <!-- 作者信息 -->
+    <div class="author">
+      <span class="version">v<span id="extensionVersion">1.0.0</span></span> |
+      by <a href="https://space.bilibili.com/103021226" target="_blank">灵亦rEd</a> |
+      Built with <span class="tools">Kimi 2.5</span> + <span class="tools">ClaudeCode</span> + <span class="tools">Superpowers</span>
+    </div>
   </div>
 
+  <script src="../i18n-manager.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
