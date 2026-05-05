@@ -7,7 +7,7 @@
     "build:chrome": "node build.js chrome",
     "build:firefox": "node build.js firefox",
     "icons": "node convert-icon.js",
-    "rebuild": "node build.js bump && node convert-icon.js && node build.js all",
+    "rebuild": "node build.js all",
     "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
     "dev:test": "python -m http.server 8080"
   },

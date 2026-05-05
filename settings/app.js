@@ -697,6 +697,16 @@ async function loadSiteList() {
       }
     });
   });
+  } catch (error) {
+    console.error('[Settings] Error loading site list:', error);
+    const siteList = document.getElementById('siteList');
+    const emptyState = document.getElementById('emptyState');
+    if (siteList) siteList.classList.add('hidden');
+    if (emptyState) {
+      emptyState.classList.remove('hidden');
+      emptyState.textContent = t('emptyState');
+    }
+  }
 }
 
 /**

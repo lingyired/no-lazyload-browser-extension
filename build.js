@@ -277,9 +277,6 @@ function buildChrome(version) {
   // 删除临时目录
   fs.rmSync(chromeDir, { recursive: true });
 
-  // 删除旧版本 zip
-  removeOldZipFiles('chrome', version);
-
   console.log('✅ Chrome build complete:', zipPath);
 }
 
@@ -330,9 +327,6 @@ function buildFirefox(version) {
 
   // 删除临时目录
   fs.rmSync(firefoxDir, { recursive: true });
-
-  // 删除旧版本 zip
-  removeOldZipFiles('firefox', version);
 
   console.log('✅ Firefox build complete:', zipPath);
 }
