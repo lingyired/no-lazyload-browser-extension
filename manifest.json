@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "default_locale": "zh",
+  "default_locale": "en",
   "browser_specific_settings": {
     "gecko": {
       "id": "image-lazy-load-blocker@example.com",
