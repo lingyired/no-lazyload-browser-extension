@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐私权政策 - No lazyload 禁用图片懒加载</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f5f5;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #4CAF50;
+      margin-bottom: 24px;
+      font-size: 28px;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      font-size: 20px;
+      border-bottom: 2px solid #4CAF50;
+      padding-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #555;
+    }
+
+    ul {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .highlight {
+      background: #e8f5e9;
+      border-left: 4px solid #4CAF50;
+      padding: 16px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .highlight p {
+      margin: 0;
+      color: #2e7d32;
+    }
+
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>隐私权政策</h1>
+
+    <p><strong>最后更新日期：2026年5月6日</strong></p>
+
+    <div class="highlight">
+      <p><strong>核心承诺：我们不收集任何用户数据。</strong></p>
+    </div>
+
+    <h2>数据收集说明</h2>
+    <p>"No lazyload 禁用图片懒加载" 浏览器扩展（以下简称"本扩展"）<strong>不会收集、存储或传输任何用户个人数据</strong>。</p>
+
+    <h2>本地存储的数据</h2>
+    <p>本扩展的所有设置和配置均使用浏览器的本地存储 API（chrome.storage.local / browser.storage.local）保存在您的设备上，包括：</p>
+    <ul>
+      <li>您添加的网站域名列表</li>
+      <li>每个网站的拦截策略设置</li>
+      <li>自动滚动相关参数（速度、停留时间等）</li>
+      <li>自定义的懒加载属性配置</li>
+      <li>语言偏好设置</li>
+    </ul>
+
+    <h2>数据使用方式</h2>
+    <p>上述数据<strong>完全存储在您的本地设备上</strong>，用于：</p>
+    <ul>
+      <li>记住您对特定网站的配置偏好</li>
+      <li>在访问已配置网站时应用相应的拦截策略</li>
+      <li>提供个性化的扩展设置体验</li>
+    </ul>
+
+    <h2>数据传输</h2>
+    <div class="highlight">
+      <p><strong>重要：本扩展不会将任何数据上传到远程服务器或第三方服务。</strong>所有数据均保留在您的本地浏览器存储中。</p>
+    </div>
+
+    <h2>权限说明</h2>
+    <p>本扩展申请的浏览器权限仅用于实现核心功能：</p>
+    <ul>
+      <li><strong>storage</strong>：用于在本地保存您的设置</li>
+      <li><strong>activeTab</strong>：用于获取当前网站域名以便添加配置</li>
+      <li><strong>scripting</strong>：用于在网页中注入脚本拦截懒加载</li>
+      <li><strong>&lt;all_urls&gt;</strong>：用于在您配置的所有网站上运行拦截功能</li>
+    </ul>
+
+    <h2>第三方服务</h2>
+    <p>本扩展不包含任何第三方追踪代码、分析工具或广告 SDK。</p>
+
+    <h2>数据安全</h2>
+    <p>由于所有数据均存储在本地，数据安全性由您的浏览器和操作系统保障。卸载扩展时，所有相关数据将被自动清除。</p>
+
+    <h2>导出/导入功能</h2>
+    <p>本扩展提供配置导出/导入功能。导出的配置文件仅包含您主动选择导出的设置数据，由您自行保管或分享。本扩展不会自动导出或上传任何数据。</p>
+
+    <h2>联系我们</h2>
+    <p>如果您对本隐私权政策有任何疑问，请通过以下方式联系我们：</p>
+    <ul>
+      <li>GitHub: <a href="https://github.com/lingyired/no-lazyload-browser-extension" target="_blank">https://github.com/lingyired/no-lazyload-browser-extension</a></li>
+      <li>Bilibili: <a href="https://space.bilibili.com/103021226" target="_blank">灵亦rEd</a></li>
+    </ul>
+
+    <h2>政策更新</h2>
+    <p>如果本隐私权政策发生变更，我们将通过扩展更新和 GitHub 仓库进行通知。</p>
+
+    <div class="footer">
+      <p>&copy; 2026 No lazyload. 保留所有权利。</p>
+      <p>Built with ❤️ using Kimi 2.5 + Claude Code + Superpowers</p>
+    </div>
+  </div>
+</body>
+</html>
