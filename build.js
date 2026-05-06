@@ -253,6 +253,15 @@ function buildChrome(version) {
     copyFile(path.join(SRC_DIR, src), path.join(chromeDir, dest));
   });
 
+  // 移除 Chrome 不支持的 browser_specific_settings 字段
+  const manifestPath = path.join(chromeDir, 'manifest.json');
+  if (fs.existsSync(manifestPath)) {
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    delete manifest.browser_specific_settings;
+    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+    console.log('  📝 Removed browser_specific_settings from Chrome manifest');
+  }
+
   // 更新版本号到 HTML
   // Update settings/index.html
   const settingsPath = path.join(chromeDir, 'settings/index.html');
