@@ -26,7 +26,13 @@ Built with Kimi 2.5 + ClaudeCode + Superpowers
 
 ## 安装方法
 
-### Chrome
+### Chrome Web Store（推荐）
+
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-green?style=for-the-badge&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/no-lazyload-disable-image/gdaoomgmekonglmdeaoengblkjeopall)
+
+直接点击上方按钮或访问 [Chrome Web Store](https://chromewebstore.google.com/detail/no-lazyload-disable-image/gdaoomgmekonglmdeaoengblkjeopall) 安装。
+
+### 手动安装（Chrome）
 1. 打开 `chrome://extensions/`
 2. 开启"开发者模式"
 3. 点击"加载已解压的扩展程序"
