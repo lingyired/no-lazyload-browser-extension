@@ -371,6 +371,31 @@ const TRANSLATIONS = {
 
 let currentLanguage = 'zh';
 
+/**
+ * 检测浏览器语言并返回最匹配的支持语言
+ */
+function detectBrowserLanguage() {
+  const supportedLangs = Object.keys(TRANSLATIONS);
+  const runtime = getRuntime();
+
+  // 优先使用 chrome.i18n API 获取浏览器 UI 语言
+  if (runtime && runtime.i18n) {
+    const uiLang = runtime.i18n.getUILanguage();
+    const langCode = uiLang.split('-')[0];
+    if (supportedLangs.includes(langCode)) {
+      return langCode;
+    }
+  }
+
+  // 回退：使用 navigator.language
+  const navLang = navigator.language.split('-')[0];
+  if (supportedLangs.includes(navLang)) {
+    return navLang;
+  }
+
+  return 'zh';
+}
+
 // 获取运行时 API - 必须在任何函数之前定义
 function getRuntime() {
   if (typeof browser !== 'undefined' && browser.runtime) {
@@ -428,11 +453,12 @@ async function loadLanguageSetting() {
     const storage = getStorage();
     if (!storage) {
       console.warn('[Settings] Storage not available');
-      resolve('zh');
+      currentLanguage = detectBrowserLanguage();
+      resolve(currentLanguage);
       return;
     }
     storage.local.get([LANGUAGE_STORAGE_KEY], (result) => {
-      currentLanguage = result[LANGUAGE_STORAGE_KEY] || 'zh';
+      currentLanguage = result[LANGUAGE_STORAGE_KEY] || detectBrowserLanguage();
 
       // 设置下拉框
       const langSelect = document.getElementById('languageSelect');
