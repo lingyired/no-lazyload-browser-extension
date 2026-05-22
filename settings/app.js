@@ -595,9 +595,9 @@ async function sendMessage(type, data = {}) {
       return;
     }
     rt.sendMessage({ type, ...data }, (response) => {
-      if (chrome.runtime.lastError) {
-        console.error('[Settings] Message error:', chrome.runtime.lastError);
-        resolve({ success: false, error: chrome.runtime.lastError.message });
+      if (rt.lastError) {
+        console.error('[Settings] Message error:', rt.lastError);
+        resolve({ success: false, error: rt.lastError.message });
         return;
       }
       resolve(response);
