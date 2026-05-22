@@ -346,6 +346,9 @@ function buildAll(version) {
   console.log('🔨 Building Image Lazy Load Blocker...');
   console.log(`📌 Version: v${version}`);
 
+  // 同步版本号到 manifest 文件
+  saveVersion(version);
+
   // 确保 dist 目录存在（不清空）
   ensureDir(BUILD_DIR);
 
