@@ -13,7 +13,7 @@ const LANGUAGES = {
   'ru': { name: 'Русский', flag: '🇷🇺' }
 };
 
-const DEFAULT_LANGUAGE = 'zh';
+const DEFAULT_LANGUAGE = 'en';
 const STORAGE_KEY = 'preferredLanguage';
 
 class I18nManager {

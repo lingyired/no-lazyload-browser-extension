@@ -393,7 +393,7 @@ function detectBrowserLanguage() {
     return navLang;
   }
 
-  return 'zh';
+  return 'en';
 }
 
 // 获取运行时 API - 必须在任何函数之前定义

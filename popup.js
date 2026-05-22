@@ -55,7 +55,7 @@ function detectBrowserLanguage() {
     return navLang;
   }
 
-  return 'zh';
+  return 'en';
 }
 
 // 翻译内容（内联，避免依赖 _locales 文件结构）
