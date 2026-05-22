@@ -188,7 +188,9 @@ function createZip(sourceDir, zipPath) {
     execSync(command, { stdio: 'ignore' });
   } else {
     // Unix/Mac: 使用 zip 命令
-    const command = `cd "${path.dirname(sourceDir)}" && zip -r "${zipPath}" "${path.basename(sourceDir)}" -q`;
+    // cd 到 sourceDir 的父目录后，使用相对路径
+    const relativeZipPath = path.relative(path.dirname(sourceDir), zipPath);
+    const command = `cd "${path.dirname(sourceDir)}" && zip -r "${relativeZipPath}" "${path.basename(sourceDir)}" -q`;
     execSync(command, { stdio: 'ignore' });
   }
 }
