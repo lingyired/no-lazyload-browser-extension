@@ -10,7 +10,8 @@ const LANGUAGES = {
   'pt': { name: 'Português', flag: '🇧🇷' },
   'de': { name: 'Deutsch', flag: '🇩🇪' },
   'ja': { name: '日本語', flag: '🇯🇵' },
-  'ru': { name: 'Русский', flag: '🇷🇺' }
+  'ru': { name: 'Русский', flag: '🇷🇺' },
+  'ko': { name: '한국어', flag: '🇰🇷' }
 };
 
 const DEFAULT_LANGUAGE = 'en';

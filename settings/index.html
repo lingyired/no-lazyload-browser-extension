@@ -346,6 +346,68 @@
       to { opacity: 1; transform: translateX(-50%) translateY(0); }
     }
 
+    /* Extension List */
+    .extension-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .extension-item {
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+      background: #fafafa;
+      border-radius: 6px;
+      border: 1px solid #eee;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+
+    .extension-item:hover {
+      background: #f0f7f0;
+      border-color: #4CAF50;
+    }
+
+    .extension-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: contain;
+      flex-shrink: 0;
+      margin-right: 14px;
+    }
+
+    .extension-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .extension-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .extension-desc {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    .extension-arrow {
+      color: #ccc;
+      font-size: 18px;
+      margin-left: 12px;
+      flex-shrink: 0;
+    }
+
+    .extension-item:hover .extension-arrow {
+      color: #4CAF50;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
       .form-row {
@@ -443,6 +505,7 @@
           <option value="de">🇩🇪 Deutsch</option>
           <option value="ja">🇯🇵 日本語</option>
           <option value="ru">🇷🇺 Русский</option>
+          <option value="ko">🇰🇷 한국어</option>
         </select>
       </div>
       <button id="saveLangBtn" class="btn btn-primary">保存语言设置</button>
@@ -467,6 +530,21 @@
       <div class="btn-group">
         <button id="saveAttrsBtn" class="btn btn-primary" data-i18n="save">保存</button>
         <button id="resetAttrsBtn" class="btn btn-secondary" data-i18n="resetToDefault">重置为默认</button>
+      </div>
+    </section>
+
+    <!-- 作者的其他扩展 -->
+    <section class="card">
+      <h2 data-i18n="otherExtensions">作者的其他扩展</h2>
+      <div class="extension-list">
+        <a class="extension-item" href="https://chromewebstore.google.com/detail/newtab01/nlecfkdndodablijmfcjbnannkgmpegj" target="_blank">
+          <img class="extension-icon" src="../lingyired/newtab01.png" alt="newtab01">
+          <div class="extension-info">
+            <div class="extension-name">newtab01</div>
+            <div class="extension-desc" data-i18n="newtab01Desc">Bookmark-driven new tab. Open folders as tab groups or in split view. 12 built-in themes + unlimited custom themes.</div>
+          </div>
+          <div class="extension-arrow">→</div>
+        </a>
       </div>
     </section>
 

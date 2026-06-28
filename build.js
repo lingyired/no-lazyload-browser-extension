@@ -131,7 +131,8 @@ const COMMON_FILES = [
 
 // Directories to copy
 const COMMON_DIRS = [
-  '_locales'
+  '_locales',
+  'lingyired'
 ];
 
 // Chrome specific files

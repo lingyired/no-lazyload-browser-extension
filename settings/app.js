@@ -78,7 +78,9 @@ const TRANSLATIONS = {
     'resetToDefault': '重置为默认',
     'attributesSaved': '属性配置已保存',
     'attributesReset': '已恢复为默认配置',
-    'save': '保存'
+    'save': '保存',
+    'otherExtensions': '作者的其他扩展',
+    'newtab01Desc': '书签驱动的新标签页。将文件夹作为标签组或分屏打开。12 个内置主题 + 无限自定义主题。'
   },
   'en': {
     'siteListTitle': 'Configured Sites',
@@ -117,7 +119,9 @@ const TRANSLATIONS = {
     'resetToDefault': 'Reset to Default',
     'attributesSaved': 'Attributes saved',
     'attributesReset': 'Reset to default configuration',
-    'save': 'Save'
+    'save': 'Save',
+    'otherExtensions': 'More Extensions by the Author',
+    'newtab01Desc': 'Bookmark-driven new tab. Open folders as tab groups or in split view. 12 built-in themes + unlimited custom themes.'
   },
   'es': {
     'siteListTitle': 'Sitios Configurados',
@@ -148,7 +152,9 @@ const TRANSLATIONS = {
     'resetToDefault': 'Restablecer por Defecto',
     'attributesSaved': 'Atributos guardados',
     'attributesReset': 'Restablecido a configuración predeterminada',
-    'save': 'Guardar'
+    'save': 'Guardar',
+    'otherExtensions': 'Más Extensiones del Autor',
+    'newtab01Desc': 'Nueva pestaña basada en marcadores. Abre carpetas como grupos de pestañas o en vista dividida. 12 temas integrados + temas personalizados ilimitados.'
   },
   'ar': {
     'siteListTitle': 'المواقع المُعدّة',
@@ -179,7 +185,9 @@ const TRANSLATIONS = {
     'resetToDefault': 'إعادة تعيين للافتراضي',
     'attributesSaved': 'تم حفظ السمات',
     'attributesReset': 'تمت إعادة التعيين إلى الإعدادات الافتراضية',
-    'save': 'حفظ'
+    'save': 'حفظ',
+    'otherExtensions': 'المزيد من الإضافات من المؤلف',
+    'newtab01Desc': 'علامة تبويب جديدة مدفوعة بالإشارات المرجعية. افتح المجلدات كمجموعات علامات تبويب أو في عرض مقسم. 12 سمًا مدمجًا + سمات مخصصة غير محدودة.'
   },
   'hi': {
     'siteListTitle': 'कॉन्फ़िगर की गई साइटें',
@@ -210,7 +218,9 @@ const TRANSLATIONS = {
     'resetToDefault': 'डिफ़ॉल्ट पर रीसेट करें',
     'attributesSaved': 'गुण सहेजे गए',
     'attributesReset': 'डिफ़ॉल्ट कॉन्फ़िगरेशन पर रीसेट',
-    'save': 'सहेजें'
+    'save': 'सहेजें',
+    'otherExtensions': 'लेखक के और एक्सटेंशन',
+    'newtab01Desc': 'बुकमार्क-संचालित नया टैब। फ़ोल्डर को टैब समूहों या स्प्लिट व्यू में खोलें। 12 बिल्ट-इन थीम + असीमित कस्टम थीम।'
   },
   'fr': {
     'siteListTitle': 'Sites Configurés',
@@ -241,7 +251,9 @@ const TRANSLATIONS = {
     'resetToDefault': 'Réinitialiser par Défaut',
     'attributesSaved': 'Attributs enregistrés',
     'attributesReset': 'Réinitialisé à la configuration par défaut',
-    'save': 'Enregistrer'
+    'save': 'Enregistrer',
+    'otherExtensions': 'Plus d\'Extensions de l\'Auteur',
+    'newtab01Desc': 'Nouvel onglet basé sur les favoris. Ouvrez les dossiers en groupes d\'onglets ou en vue fractionnée. 12 thèmes intégrés + thèmes personnalisés illimités.'
   },
   'pt': {
     'siteListTitle': 'Sites Configurados',
@@ -272,7 +284,9 @@ const TRANSLATIONS = {
     'resetToDefault': 'Restaurar Padrão',
     'attributesSaved': 'Atributos salvos',
     'attributesReset': 'Restaurado para configuração padrão',
-    'save': 'Salvar'
+    'save': 'Salvar',
+    'otherExtensions': 'Mais Extensões do Autor',
+    'newtab01Desc': 'Nova aba baseada em favoritos. Abra pastas como grupos de abas ou em tela dividida. 12 temas integrados + temas personalizados ilimitados.'
   },
   'de': {
     'siteListTitle': 'Konfigurierte Seiten',
@@ -303,7 +317,9 @@ const TRANSLATIONS = {
     'resetToDefault': 'Auf Standard Zurücksetzen',
     'attributesSaved': 'Attribute gespeichert',
     'attributesReset': 'Auf Standardkonfiguration zurückgesetzt',
-    'save': 'Speichern'
+    'save': 'Speichern',
+    'otherExtensions': 'Weitere Erweiterungen des Autors',
+    'newtab01Desc': 'Lesezeichen-gesteuerter neuer Tab. Ordner als Tab-Gruppen oder in geteilter Ansicht öffnen. 12 integrierte Themes + unbegrenzte benutzerdefinierte Themes.'
   },
   'ja': {
     'siteListTitle': '設定済みサイト',
@@ -334,7 +350,9 @@ const TRANSLATIONS = {
     'resetToDefault': 'デフォルトに戻す',
     'attributesSaved': '属性を保存しました',
     'attributesReset': 'デフォルト設定にリセットしました',
-    'save': '保存'
+    'save': '保存',
+    'otherExtensions': '作者のその他の拡張機能',
+    'newtab01Desc': 'ブックマーク駆動の新しいタブ。フォルダをタブグループまたは分割ビューで開きます。12の内蔵テーマ + 無制限のカスタムテーマ。'
   },
   'ru': {
     'siteListTitle': 'Настроенные Сайты',
@@ -365,7 +383,50 @@ const TRANSLATIONS = {
     'resetToDefault': 'Сбросить по Умолчанию',
     'attributesSaved': 'Атрибуты сохранены',
     'attributesReset': 'Сброшено к конфигурации по умолчанию',
-    'save': 'Сохранить'
+    'save': 'Сохранить',
+    'otherExtensions': 'Другие Расширения Автора',
+    'newtab01Desc': 'Новая вкладка на основе закладок. Открывайте папки как группы вкладок или в разделённом виде. 12 встроенных тем + неограниченные пользовательские темы.'
+  },
+  'ko': {
+    'siteListTitle': '설정된 사이트',
+    'emptyState': '설정된 사이트가 없습니다',
+    'globalSettings': '사이트 설정 목록',
+    'showInterceptionToast': '차단 성공 알림 표시 (우측 상단, 2초)',
+    'useAutoScroll': '기술 차단 대신 자동 스크롤 사용 (차단이 실패하는 사이트에 적합)',
+    'autoScrollHelp': '활성화 시 기술 차단을 비활성화하고 하단까지 자동 스크롤하여 이미지 로딩을 트리거합니다',
+    'scrollParams': '자동 스크롤 매개변수',
+    'scrollSpeed': '스크롤 속도 (밀리초)',
+    'stayDuration': '하단 체류 시간 (밀리초)',
+    'returnToTop': '완료 후 상단으로 돌아가기',
+    'saveGlobal': '전체 설정 저장',
+    'saved': '저장됨',
+    'importExport': '가져오기/내보내기',
+    'exportConfig': '설정 내보내기',
+    'importConfig': '설정 가져오기',
+    'autoScroll': '자동 스크롤',
+    'delete': '삭제',
+    'deleteConfirm': '{domain}의 설정을 삭제하시겠습니까?',
+    'deleted': '삭제됨',
+    'scrollEnabled': '자동 스크롤 활성화됨',
+    'scrollDisabled': '자동 스크롤 비활성화됨',
+    'configImported': '설정을 가져왔습니다',
+    'configExported': '설정을 내보냈습니다',
+    'importFailed': '가져오기 실패: ',
+    'invalidConfig': '잘못된 설정 파일 형식',
+    'languageSettings': '언어 설정',
+    'saveLanguage': '언어 저장',
+    'languageSaved': '언어가 저장되었습니다. 페이지를 새로고침합니다...',
+    'advancedSettings': '고급 설정',
+    'lazyAttributes': '지연 로딩 속성',
+    'lazyAttributesHelp': '이미지를 로드하기 위한 속성을 감지합니다. 쉼표로 구분',
+    'placeholderPatterns': '플레이스홀더 감지',
+    'placeholderPatternsHelp': 'src에 이러한 키워드가 포함된 이미지는 플레이스홀더로 처리됩니다. 쉼표로 구분',
+    'resetToDefault': '기본값으로 재설정',
+    'attributesSaved': '속성이 저장되었습니다',
+    'attributesReset': '기본 설정으로 재설정되었습니다',
+    'save': '저장',
+    'otherExtensions': '저자의 다른 확장 프로그램',
+    'newtab01Desc': '북마크 기반 새 탭. 폴더를 탭 그룹이나 분할 보기로 엽니다. 12개 내장 테마 + 무제한 커스텀 테마.'
   }
 };
 

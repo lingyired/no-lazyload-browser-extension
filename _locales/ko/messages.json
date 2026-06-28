@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - 이미지 지연 로딩 비활성화",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "웹사이트에서 이미지 지연 로딩을 비활성화하고 모든 이미지를 한 번에 로드합니다",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "현재 사이트",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "활성화됨",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "비활성화됨",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "사용 불가",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "웹 페이지가 아님",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "추가할 수 없음",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "현재 사이트 추가",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "현재 사이트 제거",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "자동 스크롤 사용",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "하단까지 자동 스크롤하여 로딩을 트리거합니다. 기술적 차단이 실패하는 사이트에 적합합니다",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "설정된 사이트",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "설정된 사이트가 없습니다",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "전체 설정",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "페이지 새로고침",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "$domain$ 추가됨",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "$domain$ 추가됨 (자동 스크롤)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "$domain$ 제거됨",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "$domain$ 삭제됨",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "자동 스크롤 활성화됨",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "자동 스크롤 비활성화됨",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "페이지가 새로고침되었습니다",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "자동 스크롤",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "설정 - 이미지 지연 로딩 차단기",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "사이트 설정 목록",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "스크롤 속도 (밀리초)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "체류 시간 (밀리초)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "완료 후 상단으로 돌아가기",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "기술적 차단 실패 시 자동 스크롤 사용",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "차단 성공 알림 표시",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "저장",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "저장됨",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "사이트 관리",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "일괄 가져오기",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "일괄 내보내기",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "모두 삭제",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "도메인을 입력하세요 (한 줄에 하나씩)...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "가져오기 확인",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "취소",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "작성자",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "도구",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "언어 설정",
+    "description": "Language settings section title"
+  }
+}

@@ -339,6 +339,34 @@ const TRANSLATIONS = {
     'delete': 'Удалить',
     'author': 'от',
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+  },
+  'ko': {
+    'currentSite': '현재 사이트',
+    'loading': '로딩 중...',
+    'enabled': '활성화됨',
+    'disabled': '비활성화됨',
+    'notAvailable': '사용 불가',
+    'nonWebPage': '웹 페이지가 아님',
+    'cannotAdd': '추가할 수 없음',
+    'addCurrentSite': '현재 사이트 추가',
+    'removeCurrentSite': '현재 사이트 제거',
+    'useAutoScroll': '기술 차단 대신 자동 스크롤 사용',
+    'autoScrollDesc': '하단까지 자동 스크롤하여 로딩을 트리거합니다. 기술적 차단이 실패하는 사이트에 적합합니다',
+    'configuredSites': '설정된 사이트',
+    'noSites': '설정된 사이트가 없습니다',
+    'fullSettings': '전체 설정',
+    'refreshPage': '페이지 새로고침',
+    'siteAdded': '{domain} 추가됨',
+    'siteAddedWithScroll': '{domain} 추가됨 (자동 스크롤)',
+    'siteRemoved': '{domain} 제거됨',
+    'siteDeleted': '{domain} 삭제됨',
+    'autoScrollEnabled': '자동 스크롤 활성화됨',
+    'autoScrollDisabled': '자동 스크롤 비활성화됨',
+    'pageRefreshed': '페이지가 새로고침되었습니다',
+    'autoScroll': '자동 스크롤',
+    'delete': '삭제',
+    'author': '작성자',
+    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   }
 };
 
