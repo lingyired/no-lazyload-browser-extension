@@ -680,14 +680,6 @@ function showToast(message, duration = 2000) {
   }, duration);
 }
 
-/**
- * HTML 转义
- */
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-}
 
 /**
  * 加载并显示网站列表
@@ -754,14 +746,29 @@ async function loadSiteList() {
 
       const isScrollEnabled = config.scrollFallback === true;
 
-      item.innerHTML = `
-        <span class="domain" title="${escapeHtml(domain)}">${escapeHtml(domain)}</span>
-        <label class="scroll-toggle" title="${t('useAutoScroll')}">
-          <input type="checkbox" data-domain="${escapeHtml(domain)}" ${isScrollEnabled ? 'checked' : ''}>
-          <span>${t('autoScroll')}</span>
-        </label>
-        <button class="delete-btn" data-domain="${escapeHtml(domain)}" title="${t('delete')}">×</button>
-      `;
+      const domainSpan = document.createElement('span');
+      domainSpan.className = 'domain';
+      domainSpan.title = domain;
+      domainSpan.textContent = domain;
+
+      const scrollLabel = document.createElement('label');
+      scrollLabel.className = 'scroll-toggle';
+      scrollLabel.title = t('useAutoScroll');
+      const scrollCheckbox = document.createElement('input');
+      scrollCheckbox.type = 'checkbox';
+      scrollCheckbox.dataset.domain = domain;
+      if (isScrollEnabled) scrollCheckbox.checked = true;
+      const scrollText = document.createElement('span');
+      scrollText.textContent = t('autoScroll');
+      scrollLabel.append(scrollCheckbox, scrollText);
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.className = 'delete-btn';
+      deleteBtn.dataset.domain = domain;
+      deleteBtn.title = t('delete');
+      deleteBtn.textContent = '×';
+
+      item.append(domainSpan, scrollLabel, deleteBtn);
 
       siteList.appendChild(item);
     });
@@ -973,6 +980,20 @@ async function importConfig(file) {
 
 // 初始化
 document.addEventListener('DOMContentLoaded', async () => {
+  // Firefox 检测：隐藏仅限 Chrome 的扩展项
+  const isFirefox = typeof browser !== 'undefined' && typeof chrome === 'undefined';
+  if (isFirefox) {
+    document.querySelectorAll('.chrome-only').forEach(el => el.style.display = 'none');
+    // 如果扩展列表中没有可见项，隐藏整个区域
+    const extensionList = document.querySelector('.extension-list');
+    if (extensionList) {
+      const visibleItems = extensionList.querySelectorAll('.extension-item:not([style*="display: none"])');
+      if (visibleItems.length === 0) {
+        extensionList.closest('.card').style.display = 'none';
+      }
+    }
+  }
+
   // 先加载语言设置
   await loadLanguageSetting();
 

@@ -575,7 +575,10 @@ async function loadSiteList() {
   siteList.innerHTML = '';
 
   if (count === 0) {
-    siteList.innerHTML = `<div class="empty-state">${t('noSites')}</div>`;
+    const emptyDiv = document.createElement('div');
+    emptyDiv.className = 'empty-state';
+    emptyDiv.textContent = t('noSites');
+    siteList.appendChild(emptyDiv);
     return;
   }
 
@@ -589,14 +592,29 @@ async function loadSiteList() {
 
     const isScrollEnabled = config.scrollFallback === true;
 
-    item.innerHTML = `
-      <span class="domain" title="${escapeHtml(domain)}">${escapeHtml(domain)}</span>
-      <label class="scroll-toggle" title="${t('useAutoScroll')}">
-        <input type="checkbox" data-domain="${escapeHtml(domain)}" ${isScrollEnabled ? 'checked' : ''}>
-        <span>${t('autoScroll')}</span>
-      </label>
-      <button class="delete-btn" data-domain="${escapeHtml(domain)}" title="${t('delete')}">×</button>
-    `;
+    const domainSpan = document.createElement('span');
+    domainSpan.className = 'domain';
+    domainSpan.title = domain;
+    domainSpan.textContent = domain;
+
+    const scrollLabel = document.createElement('label');
+    scrollLabel.className = 'scroll-toggle';
+    scrollLabel.title = t('useAutoScroll');
+    const scrollCheckbox = document.createElement('input');
+    scrollCheckbox.type = 'checkbox';
+    scrollCheckbox.dataset.domain = domain;
+    if (isScrollEnabled) scrollCheckbox.checked = true;
+    const scrollText = document.createElement('span');
+    scrollText.textContent = t('autoScroll');
+    scrollLabel.append(scrollCheckbox, scrollText);
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'delete-btn';
+    deleteBtn.dataset.domain = domain;
+    deleteBtn.title = t('delete');
+    deleteBtn.textContent = '×';
+
+    item.append(domainSpan, scrollLabel, deleteBtn);
 
     siteList.appendChild(item);
   });
@@ -632,14 +650,6 @@ async function loadSiteList() {
   });
 }
 
-/**
- * HTML 转义
- */
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-}
 
 /**
  * 打开设置页面
