@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Вимкнути ліниве завантаження зображень",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Вимкніть ліниве завантаження зображень на сайтах, завантажте всі зображення одразу",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Поточний сайт",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Увімкнено",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Вимкнено",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Недоступно",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Не вебсторінка",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Не вдалося додати",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Додати поточний сайт",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Видалити поточний сайт",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Використовувати автопрокрутку",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Автоматично прокручуйте вниз, щоб запустити завантаження; підходить для сайтів, де технічне блокування не спрацьовує",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Налаштовані сайти",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Немає налаштованих сайтів",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Повні налаштування",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Оновити сторінку",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Додано $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Додано $domain$ (Автопрокрутка)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Видалено $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Видалено $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Автопрокрутку увімкнено",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Автопрокрутку вимкнено",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Сторінку оновлено",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Автопрокрутка",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Налаштування - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Список конфігурацій сайтів",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Швидкість прокрутки (мс)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Тривалість перебування (мс)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Повернутися догори після завершення",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Автоматично використовувати прокрутку як запасний варіант, коли технічне блокування не спрацьовує",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Показувати сповіщення про успішне перехоплення",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Зберегти",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Збережено",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Керування сайтами",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Пакетний імпорт",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Пакетний експорт",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Видалити все",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Введіть домени, по одному в рядку...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Підтвердити імпорт",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Скасувати",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "автор",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Інструменти",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Налаштування мови",
+    "description": "Language settings section title"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Inaktivera lat inladdning av bilder",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Inaktivera lat inladdning av bilder på webbplatser, ladda alla bilder på en gång",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Aktuell webbplats",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Aktiverad",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Inaktiverad",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Inte tillgänglig",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Icke-webbplats",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Kan inte lägga till",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Lägg till aktuell webbplats",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Ta bort aktuell webbplats",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Använd automatisk rullning",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Rulla automatiskt till botten för att utlösa inladdning; lämpligt för webbplatser där teknisk blockering misslyckas",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Konfigurerade webbplatser",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Inga konfigurerade webbplatser",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Fullständiga inställningar",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Uppdatera sida",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Tillagd $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Tillagd $domain$ (Automatisk rullning)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Borttagen $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Raderad $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Automatisk rullning aktiverad",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Automatisk rullning inaktiverad",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Sidan uppdaterad",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Automatisk rullning",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Inställningar - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Lista över webbplatskonfigurationer",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Rullningshastighet (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Vistelsetid (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Återgå till toppen efter slutförande",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Använd automatiskt rullning som reserv när teknisk blockering misslyckas",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Visa avisering vid lyckad avlyssning",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Spara",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Sparad",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Webbplatshantering",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Gruppimport",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Gruppexport",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Ta bort alla",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Ange domäner, en per rad...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Bekräfta import",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Avbryt",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "av",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Verktyg",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Språkinställningar",
+    "description": "Language settings section title"
+  }
+}

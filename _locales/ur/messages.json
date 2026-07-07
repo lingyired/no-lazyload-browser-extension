@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - تصاویر کی سست لوڈنگ کو غیر فعال کریں",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "ویب سائٹس پر تصاویر کی سست لوڈنگ کو غیر فعال کریں، تمام تصاویر ایک بار میں لوڈ کریں",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "موجودہ سائٹ",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "فعال",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "غیر فعال",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "دستیاب نہیں",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "غیر ویب صفحہ",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "شامل نہیں کر سکتے",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "موجودہ سائٹ شامل کریں",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "موجودہ سائٹ ہٹائیں",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "خودکار سکرول استعمال کریں",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "لوڈنگ کو متحرک کرنے کے لیے خودکار نیچے اسکرول کریں؛ ان سائٹس کے لیے موزوں جنہیں تکنیکی روک غیر مؤثر ہے",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "ترتیب دی گئی سائٹس",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "کوئی ترتیب دی گئی سائٹ نہیں",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "مکمل ترتیبات",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "صفحہ ریفریش کریں",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "$domain$ شامل کیا گیا",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "$domain$ شامل کیا گیا (خودکار سکرول)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "$domain$ ہٹایا گیا",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "$domain$ حذف کیا گیا",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "خودکار سکرول فعال",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "خودکار سکرول غیر فعال",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "صفحہ ریفریش ہو گیا",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "خودکار سکرول",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "ترتیبات - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "سائٹ کنفیگریشن فہرست",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "سکرول اسپیڈ (ملی سیکنڈ)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "قیام کی مدت (ملی سیکنڈ)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "مکمل ہونے کے بعد اوپر واپس جائیں",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "جب تکنیکی روک ناکام ہو تو خودکار سکرول کو بطور بیک اپ استعمال کریں",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "روکنے کی کامیابی کا اطلاع دکھائیں",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "محفوظ کریں",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "محفوظ ہو گیا",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "سائٹ کا انتظام",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "برآمدات کا اندراج",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "برآمدات کا اخراج",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "سب حذف کریں",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "ڈومین درج کریں، ہر لائن میں ایک...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "درآمد کی تصدیق کریں",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "منسوخ کریں",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "از",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "اوزار",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "زبان کی ترتیبات",
+    "description": "Language settings section title"
+  }
+}

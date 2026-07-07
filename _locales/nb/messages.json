@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Deaktiver lat lasting av bilder",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Deaktiver lat lasting av bilder på nettsteder, last alle bilder samtidig",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Gjeldende nettsted",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Aktivert",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Deaktivert",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Ikke tilgjengelig",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Ikke-nettleserside",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Kan ikke legge til",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Legg til gjeldende nettsted",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Fjern gjeldende nettsted",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Bruk automatisk rulling",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Rull automatisk til bunnen for å utløse lasting; egnet for nettsteder der teknisk blokkering feiler",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Konfigurerte nettsteder",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Ingen konfigurerte nettsteder",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Fullstendige innstillinger",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Oppdater side",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Lagt til $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Lagt til $domain$ (Automatisk rulling)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Fjernet $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Slettet $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Automatisk rulling aktivert",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Automatisk rulling deaktivert",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Siden oppdatert",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Automatisk rulling",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Innstillinger - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Liste over nettstedskonfigurasjoner",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Rullehastighet (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Oppholdstid (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Tilbake til toppen etter fullføring",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Bruk automatisk rulling som reserve når teknisk blokkering feiler",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Vis varsel om vellykket avlytting",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Lagre",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Lagret",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Nettstedsadministrasjon",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Gruppeimport",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Gruppeeksport",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Slett alle",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Skriv inn domener, ett per linje...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Bekreft import",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Avbryt",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "av",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Verktøy",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Språkinnstillinger",
+    "description": "Language settings section title"
+  }
+}

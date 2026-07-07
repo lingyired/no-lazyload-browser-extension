@@ -180,6 +180,11 @@ function removeOldZipFiles(browser, newVersion) {
 
 // 创建 zip 包
 function createZip(sourceDir, zipPath) {
+  // 删除已有的 zip 文件，防止追加模式导致旧文件残留
+  if (fs.existsSync(zipPath)) {
+    fs.unlinkSync(zipPath);
+  }
+
   // 使用系统命令创建 zip（支持 Windows 和 Unix）
   const isWindows = process.platform === 'win32';
 
@@ -189,9 +194,9 @@ function createZip(sourceDir, zipPath) {
     execSync(command, { stdio: 'ignore' });
   } else {
     // Unix/Mac: 使用 zip 命令
-    // cd 到 sourceDir 的父目录后，使用相对路径
-    const relativeZipPath = path.relative(path.dirname(sourceDir), zipPath);
-    const command = `cd "${path.dirname(sourceDir)}" && zip -r "${relativeZipPath}" "${path.basename(sourceDir)}" -q`;
+    // cd 到 sourceDir 内部，打包当前目录内容（不带外层文件夹）
+    const absoluteZipPath = path.resolve(zipPath);
+    const command = `cd "${sourceDir}" && zip -r "${absoluteZipPath}" . -x "*.DS_Store" -q`;
     execSync(command, { stdio: 'ignore' });
   }
 }
@@ -214,6 +219,7 @@ function copyDir(src, dest) {
   }
   const entries = fs.readdirSync(src, { withFileTypes: true });
   for (const entry of entries) {
+    if (entry.name === '.DS_Store') continue;
     const srcPath = path.join(src, entry.name);
     const destPath = path.join(dest, entry.name);
     if (entry.isDirectory()) {

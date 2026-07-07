@@ -4,11 +4,16 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "image-lazy-load-blocker@example.com",
-      "strict_min_version": "109.0"
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
     }
   },
   "name": "__MSG_appName__",
-  "version": "1.11.0",
+  "version": "1.11.2",
   "description": "__MSG_appDescription__",
   "permissions": [
     "storage",
