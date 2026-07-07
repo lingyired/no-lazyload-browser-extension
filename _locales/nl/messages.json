@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Schakel lui laden van afbeeldingen uit",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Schakel lui laden van afbeeldingen op websites uit, laad alle afbeeldingen in één keer",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Huidige site",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Ingeschakeld",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Uitgeschakeld",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Niet beschikbaar",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Geen webpagina",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Kan niet toevoegen",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Huidige site toevoegen",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Huidige site verwijderen",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Gebruik automatisch scrollen",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Scroll automatisch naar beneden om laden te activeren; geschikt voor sites waar technische blokkering faalt",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Geconfigureerde sites",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Geen geconfigureerde sites",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Volledige instellingen",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Pagina vernieuwen",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "$domain$ toegevoegd",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "$domain$ toegevoegd (Automatisch scrollen)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "$domain$ verwijderd",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "$domain$ verwijderd",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Automatisch scrollen ingeschakeld",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Automatisch scrollen uitgeschakeld",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Pagina vernieuwd",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Automatisch scrollen",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Instellingen - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Lijst met siteconfiguraties",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Scrollsnelheid (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Verblijfsduur (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Keer na voltooiing naar boven",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Gebruik automatisch scrollen als terugval wanneer technische blokkering faalt",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Toon melding bij geslaagde onderschepping",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Opslaan",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Opgeslagen",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Sitebeheer",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Batchimporteren",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Batchexporteren",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Alles verwijderen",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Voer domeinen in, één per regel...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Import bevestigen",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Annuleren",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "door",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Hulpmiddelen",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Taalinstellingen",
+    "description": "Language settings section title"
+  }
+}

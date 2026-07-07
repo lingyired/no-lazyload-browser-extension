@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Деактивиране на мързеливото зареждане на изображения",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Деактивирайте мързеливото зареждане на изображения в сайтовете, заредете всички изображения наведнъж",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Текущ сайт",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Активирано",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Деактивирано",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Не е налично",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Не е уеб страница",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Не може да се добави",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Добавяне на текущия сайт",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Премахване на текущия сайт",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Използвай автоматично превъртане",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Превъртете автоматично надолу, за да задействате зареждането; подходящо за сайтове, където техническата блокировка не сработва",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Конфигурирани сайтове",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Няма конфигурирани сайтове",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Пълни настройки",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Опресняване на страницата",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Добавен $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Добавен $domain$ (Автоматично превъртане)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Премахнат $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Изтрит $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Автоматичното превъртане е активирано",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Автоматичното превъртане е деактивирано",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Страницата е опреснена",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Автоматично превъртане",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Настройки - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Списък с конфигурации на сайтове",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Скорост на превъртане (мс)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Продължителност на престоя (мс)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Връщане нагоре след завършване",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Автоматично използвайте превъртане като резерв, когато техническата блокировка не сработва",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Показване на известие за успешно прихващане",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Запази",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Запазено",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Управление на сайтове",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Групов внос",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Групов износ",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Изтриване на всички",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Въведете домейни, по един на ред...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Потвърди вноса",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Отказ",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "от",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Инструменти",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Езикови настройки",
+    "description": "Language settings section title"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Deaktivér doven indlæsning af billeder",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Deaktivér doven indlæsning af billeder på hjemmesider, indlæs alle billeder på én gang",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Aktuel hjemmeside",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Aktiveret",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Deaktiveret",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Ikke tilgængelig",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Ikke-web-side",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Kan ikke tilføje",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Tilføj aktuel hjemmeside",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Fjern aktuel hjemmeside",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Brug automatisk rulning",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Rul automatisk til bunden for at udløse indlæsning; egnet til sider hvor teknisk blokering fejler",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Konfigurerede hjemmesider",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Ingen konfigurerede hjemmesider",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Fulde indstillinger",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Opdater side",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Tilføjet $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Tilføjet $domain$ (Automatisk rulning)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Fjernet $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Slettet $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Automatisk rulning aktiveret",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Automatisk rulning deaktiveret",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Side opdateret",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Automatisk rulning",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Indstillinger - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Liste over hjemmesidekonfigurationer",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Rullehastighed (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Opholdstid (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Vend tilbage til toppen efter fuldførelse",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Brug automatisk rulning som reserve når teknisk blokering fejler",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Vis besked om vellykket aflytning",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Gem",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Gemt",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Hjemmesidestyring",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Gruppeimport",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Grupperksport",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Slet alle",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Indtast domæner, ét pr. linje...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Bekræft import",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Annullér",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "af",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Værktøjer",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Sprogindstillinger",
+    "description": "Language settings section title"
+  }
+}

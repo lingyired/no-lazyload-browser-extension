@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Görsel Tembel Yüklemeyi Devre Dışı Bırak",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Web sitelerinde görsel tembel yüklemeyi devre dışı bırak, tüm görselleri bir kerede yükle",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Geçerli Site",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Etkin",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Devre Dışı",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Mevcut Değil",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Web Olmayan Sayfa",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Eklenemiyor",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Geçerli Siteyi Ekle",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Geçerli Siteyi Kaldır",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Otomatik Kaydırmayı Kullan",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Yüklemeyi tetiklemek için otomatik olarak en alta kaydır; teknik engellemenin başarısız olduğu siteler için uygundur",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Yapılandırılmış Siteler",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Yapılandırılmış site yok",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Tüm Ayarlar",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Sayfayı Yenile",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "$domain$ eklendi",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "$domain$ eklendi (Otomatik Kaydırma)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "$domain$ kaldırıldı",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "$domain$ silindi",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Otomatik kaydırma etkin",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Otomatik kaydırma devre dışı",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Sayfa yenilendi",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Otomatik kaydırma",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Ayarlar - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Site Yapılandırma Listesi",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Kaydırma Hızı (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Bekleme Süresi (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Tamamlandığında Başa Dön",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Teknik engelleme başarısız olduğunda otomatik olarak kaydırma yedeğini kullan",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Engelleme Başarılı Bildirimini Göster",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Kaydet",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Kaydedildi",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Site Yönetimi",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Toplu İçe Aktar",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Toplu Dışa Aktar",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Tümünü Sil",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Alan adlarını girin, her satıra bir tane...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "İçe Aktarmayı Onayla",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "İptal",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "tarafından",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Araçlar",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Dil Ayarları",
+    "description": "Language settings section title"
+  }
+}

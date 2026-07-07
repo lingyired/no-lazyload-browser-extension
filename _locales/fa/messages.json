@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - غیرفعال‌سازی بارگذاری تنبل تصاویر",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "بارگذاری تنبل تصاویر در وب‌سایت‌ها را غیرفعال کنید، همه تصاویر را یکجا بارگذاری کنید",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "سایت فعلی",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "فعال",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "غیرفعال",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "در دسترس نیست",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "صفحه غیروب",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "افزودن ممکن نیست",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "افزودن سایت فعلی",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "حذف سایت فعلی",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "استفاده از پیمایش خودکار",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "برای شروع بارگذاری به‌صورت خودکار به پایین بپیمایید؛ مناسب برای سایت‌هایی که مسدودسازی فنی در آن‌ها شکست می‌خورد",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "سایت‌های پیکربندی‌شده",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "هیچ سایتی پیکربندی نشده است",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "تنظیمات کامل",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "بازخوانی صفحه",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "$domain$ افزوده شد",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "$domain$ افزوده شد (پیمایش خودکار)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "$domain$ حذف شد",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "$domain$ حذف شد",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "پیمایش خودکار فعال شد",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "پیمایش خودکار غیرفعال شد",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "صفحه بازخوانی شد",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "پیمایش خودکار",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "تنظیمات - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "فهرست پیکربندی سایت‌ها",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "سرعت پیمایش (میلی‌ثانیه)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "مدت اقامت (میلی‌ثانیه)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "بازگشت به بالا پس از اتمام",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "هنگام شکست مسدودسازی فنی، به‌طور خودکار از پیمایش به‌عنوان جایگزین استفاده کن",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "نمایش اعلان رهگیری موفق",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "ذخیره",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "ذخیره شد",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "مدیریت سایت‌ها",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "واردات انبوه",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "صادرات انبوه",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "حذف همه",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "دامنه‌ها را وارد کنید، یکی در هر خط...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "تأیید واردات",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "لغو",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "توسط",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "ابزارها",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "تنظیمات زبان",
+    "description": "Language settings section title"
+  }
+}
