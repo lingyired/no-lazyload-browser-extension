@@ -1,81 +1,96 @@
-# Image Lazy Load Blocker
+# No LazyLoad - Disable Image Lazy Loading
 
-一个跨浏览器扩展（Chrome/Firefox），用于禁用网站上的图片懒加载功能。
+**Languages:** [English](README.md) · [中文](README.zh.md)
+
+A cross-browser extension (Chrome / Firefox) that disables image lazy loading on websites. Load all images at once — no more endless scrolling to see complete content.
+
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-green?style=for-the-badge&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/no-lazyload-disable-image/gdaoomgmekonglmdeaoengblkjeopall)
+[![Firefox Add-ons](https://img.shields.io/badge/Firefox%20Add--ons-Install-orange?style=for-the-badge&logo=firefox-browser&logoColor=white)](https://addons.mozilla.org/firefox/addon/no-lazyload/)
+[![GitHub release](https://img.shields.io/github/v/release/lingyired/no-lazyload-browser-extension?style=for-the-badge&logo=github)](https://github.com/lingyired/no-lazyload-browser-extension/releases/latest)
+[![License](https://img.shields.io/github/license/lingyired/no-lazyload-browser-extension?style=for-the-badge)](LICENSE)
 
 Built with Kimi 2.5 + ClaudeCode + Superpowers
 
-## 功能特点
+## Features
 
-- **技术拦截**：使用 CSS + JavaScript 拦截常见的懒加载机制
-  - 覆盖 `IntersectionObserver` API
-  - 拦截原生 `loading="lazy"` 属性
-  - 支持主流懒加载库（lazysizes、lozad.js 等）
-  - 监控动态添加的图片（MutationObserver）
+- **Tech Interception** — CSS + JavaScript overrides for common lazy-load mechanisms
+  - Hijacks the `IntersectionObserver` API
+  - Intercepts the native `loading="lazy"` attribute
+  - Supports popular lazy-load libraries (lazysizes, lozad.js, vanilla-lazyload, …)
+  - Watches dynamically inserted images via `MutationObserver`
 
-- **自动滚动兜底**：对无法技术拦截的网站，通过自动滚动触发懒加载
-  - 可配置滚动速度、停留时间
-  - 完成后可选返回顶部
-  - 完成通知提示
+- **Auto-Scroll Fallback** — for sites where tech blocking does not work
+  - Configurable scroll speed and stay duration
+  - Optional return-to-top after completion
+  - Completion notification
 
-- **按网站配置**：每个网站可独立选择策略
-  - 技术拦截
-  - 自动滚动
-  - 禁用扩展
+- **Per-Site Configuration** — independent strategy for each site
+  - Tech interception
+  - Auto-scroll
+  - Disable the extension
 
-- **导入/导出**：配置数据可导出备份或导入恢复
+- **Import / Export** — back up or restore configuration data in one click
 
-## 安装方法
+- **37 Languages** — Bulgarian, Catalan, Czech, Danish, Greek, Persian, Finnish, Hebrew, Croatian, Hungarian, Indonesian, Italian, Norwegian Bokmål, Dutch, Polish, Pashto, Romanian, Slovak, Swedish, Thai, Turkish, Ukrainian, Urdu, Vietnamese, Chinese (HK/TW), English, Chinese (Simplified), Spanish, Arabic, Hindi, French, Portuguese, German, Japanese, Russian, Korean
 
-### Chrome Web Store（推荐）
+## Installation
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Install-green?style=for-the-badge&logo=google-chrome&logoColor=white)](https://chromewebstore.google.com/detail/no-lazyload-disable-image/gdaoomgmekonglmdeaoengblkjeopall)
+### Chrome Web Store (recommended)
 
-直接点击上方按钮或访问 [Chrome Web Store](https://chromewebstore.google.com/detail/no-lazyload-disable-image/gdaoomgmekonglmdeaoengblkjeopall) 安装。
+Click the **Chrome Web Store** badge above, or visit:
+https://chromewebstore.google.com/detail/no-lazyload-disable-image/gdaoomgmekonglmdeaoengblkjeopall
 
-### 手动安装（Chrome）
-1. 打开 `chrome://extensions/`
-2. 开启"开发者模式"
-3. 点击"加载已解压的扩展程序"
-4. 选择项目文件夹
+### Firefox Add-ons (recommended)
 
-### Firefox
-1. 打开 `about:debugging`
-2. 点击"此 Firefox"
-3. 点击"临时载入附加组件"
-4. 选择 `manifest.json` 文件
+Click the **Firefox Add-ons** badge above, or visit:
+https://addons.mozilla.org/firefox/addon/no-lazyload/
 
-## 使用方法
+### Manual Install (Chrome / Edge / other Chromium browsers)
+1. Open `chrome://extensions/`
+2. Enable **Developer mode**
+3. Click **Load unpacked**
+4. Select the project folder
 
-1. 点击扩展图标打开设置页面
-2. 添加需要处理的网站域名
-3. 选择策略（技术拦截或自动滚动）
-4. 访问网站，扩展自动生效
+### Manual Install (Firefox)
+1. Open `about:debugging`
+2. Click **This Firefox**
+3. Click **Load Temporary Add-on…**
+4. Select the `manifest.json` file
 
-## 技术实现
+> For a permanent Firefox install, please use the [official Firefox Add-ons page](https://addons.mozilla.org/firefox/addon/no-lazyload/).
 
-- Manifest V3
+## Usage
+
+1. Click the extension icon to open the settings page
+2. Add the domains you want to handle
+3. Choose a strategy (Tech Interception or Auto-Scroll)
+4. Visit the site — the extension takes effect automatically
+
+## Technical Implementation
+
+- Manifest V3 (Chrome) / Manifest V2 (Firefox, for AMO compatibility)
 - Vanilla JavaScript (ES2020+)
 - WebExtension API
-- CSS 注入覆盖
-- IntersectionObserver 拦截
-- MutationObserver 监控
+- CSS injection override
+- `IntersectionObserver` interception
+- `MutationObserver` monitoring
 
-## 支持的懒加载方式
+## Supported Lazy-Load Methods
 
-- 原生 HTML `loading="lazy"`
-- `data-src` / `data-original` 模式
-- `data-srcset` / `data-lazy-srcset` 模式
-- lazysizes 库
-- lozad.js 库
-- vanilla-lazyload 库
-- 自定义 IntersectionObserver 实现
+- Native HTML `loading="lazy"`
+- `data-src` / `data-original` patterns
+- `data-srcset` / `data-lazy-srcset` patterns
+- lazysizes
+- lozad.js
+- vanilla-lazyload
+- Custom `IntersectionObserver` implementations
 
-## 隐私说明
+## Privacy
 
-- 所有数据存储在本地浏览器
-- 不向任何服务器发送数据
-- 仅访问用户明确配置的网站
+- All data is stored locally in your browser
+- No data is sent to any server
+- Only accesses sites you explicitly configure
 
 ## License
 
-MIT
+[MIT](LICENSE)
