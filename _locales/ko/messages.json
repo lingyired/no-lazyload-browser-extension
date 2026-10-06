@@ -73,7 +73,7 @@
     "message": "자동 스크롤"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "설정 - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -169,7 +169,7 @@
     "message": "구매를 완료하기 위해 호스트 앱을 여는 중…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "앱을 열 수 없습니다. 구매를 완료하려면 No Lazyload를 직접 실행하세요"
   },
   "licenseFree": {
     "message": "무료 · 사이트 3개까지"
@@ -379,6 +379,6 @@
     "message": "개인정보 보호"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload는 사용자가 활성화한 사이트에만 적용됩니다. 다른 사이트는 변경되지 않습니다."
   }
 }

@@ -73,7 +73,7 @@
     "message": "Desplaçament automàtic"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Configuració - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -380,6 +380,6 @@
     "message": "Privacitat"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload només actua als llocs web que activeu. La resta de llocs web no es modifiquen."
   }
 }

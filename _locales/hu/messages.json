@@ -73,7 +73,7 @@
     "message": "Automatikus görgetés"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Beállítások - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -380,6 +380,6 @@
     "message": "Adatvédelem"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "A No Lazyload csak az Ön által engedélyezett webhelyeken működik. Más webhelyeket nem érint."
   }
 }

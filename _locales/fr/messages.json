@@ -73,7 +73,7 @@
     "message": "Défil. Auto."
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Paramètres - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -169,7 +169,7 @@
     "message": "Ouverture de l'app hôte pour finaliser l'achat…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Impossible d'ouvrir l'app. Lancez No Lazyload manuellement pour finaliser l'achat"
   },
   "licenseFree": {
     "message": "Gratuit · jusqu'à 3 sites web"
@@ -379,6 +379,6 @@
     "message": "Confidentialité"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload n'agit que sur les sites web que vous activez. Les autres sites web ne sont pas modifiés."
   }
 }

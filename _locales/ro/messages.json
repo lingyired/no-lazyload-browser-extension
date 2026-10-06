@@ -73,7 +73,7 @@
     "message": "Derulare automată"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Setări - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -380,6 +380,6 @@
     "message": "Confidențialitate"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload acționează doar asupra site-urilor pe care le activați. Celelalte site-uri rămân neatinse."
   }
 }

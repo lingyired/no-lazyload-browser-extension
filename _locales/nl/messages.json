@@ -73,7 +73,7 @@
     "message": "Automatisch scrollen"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Instellingen - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -169,7 +169,7 @@
     "message": "Host-app wordt geopend om de aankoop te voltooien…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "De app kon niet worden geopend. Start No Lazyload handmatig om de aankoop te voltooien"
   },
   "licenseFree": {
     "message": "Gratis · tot 3 websites"
@@ -379,6 +379,6 @@
     "message": "Privacybeleid"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload werkt alleen op de websites die u inschakelt. Andere websites blijven onaangetast."
   }
 }

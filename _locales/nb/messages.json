@@ -73,7 +73,7 @@
     "message": "Automatisk rulling"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Innstillinger - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -380,6 +380,6 @@
     "message": "Personvern"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload virker bare på nettstedene du aktiverer. Andre nettsteder berøres ikke."
   }
 }

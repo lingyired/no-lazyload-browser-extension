@@ -21,9 +21,7 @@ const ALLOWED_IDENTICAL = new Set(['proBadge', 'github', 'appName', 'appDescript
  * 不在列表里的语言会被下面的断言强制要求翻译完整。
  */
 const PENDING_TRANSLATION = new Set([
-  'bg', 'ca', 'cs', 'da', 'el', 'es', 'fa', 'fi', 'fr', 'he', 'hi', 'hr', 'hu',
-  'id', 'it', 'ko', 'nb', 'nl', 'pl', 'ps', 'pt', 'ro', 'ru', 'sk', 'sv', 'th',
-  'tr', 'uk', 'ur', 'vi',
+  'hi', 'id', 'pl', 'ru', 'sv', 'th', 'tr', 'uk', 'vi',
 ]);
 
 export function run() {

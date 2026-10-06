@@ -73,7 +73,7 @@
     "message": "خودکار سکرول"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "ترتیبات - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -380,6 +380,6 @@
     "message": "رازداری"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload صرف ان سائٹس پر عمل کرتا ہے جو آپ فعال کرتے ہیں۔ باقی سائٹس میں کوئی تبدیلی نہیں کی جاتی۔"
   }
 }

@@ -73,7 +73,7 @@
     "message": "Automaattinen vieritys"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Asetukset - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -380,6 +380,6 @@
     "message": "Tietosuoja"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload vaikuttaa vain sivustoihin, jotka otat käyttöön. Muut sivustot jäävät ennalleen."
   }
 }

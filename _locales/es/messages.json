@@ -73,7 +73,7 @@
     "message": "Desplaz. Auto."
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Configuración - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -169,7 +169,7 @@
     "message": "Abriendo la app anfitriona para completar la compra…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "No se pudo abrir la app. Inicia No Lazyload manualmente para completar la compra"
   },
   "licenseFree": {
     "message": "Gratis · hasta 3 sitios web"
@@ -379,6 +379,6 @@
     "message": "Privacidad"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload solo actúa en los sitios web que actives. Los demás sitios web no se modifican."
   }
 }

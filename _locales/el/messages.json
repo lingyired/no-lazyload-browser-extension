@@ -73,7 +73,7 @@
     "message": "Αυτόματη κύλιση"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Ρυθμίσεις - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -380,6 +380,6 @@
     "message": "Απόρρητο"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "Το No Lazyload ενεργεί μόνο στους ιστότοπους που ενεργοποιείτε. Οι υπόλοιποι ιστότοποι δεν επηρεάζονται."
   }
 }

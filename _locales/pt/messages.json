@@ -73,7 +73,7 @@
     "message": "Rolagem Auto"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Configurações - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -169,7 +169,7 @@
     "message": "Abrindo o app host para concluir a compra…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Não foi possível abrir o app. Inicie o No Lazyload manualmente para concluir a compra"
   },
   "licenseFree": {
     "message": "Grátis · até 3 sites"
@@ -379,6 +379,6 @@
     "message": "Privacidade"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "O No Lazyload atua apenas nos sites que você ativar. Os outros sites não são alterados."
   }
 }

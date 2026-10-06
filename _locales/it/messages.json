@@ -73,7 +73,7 @@
     "message": "Scorrimento automatico"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Impostazioni - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -169,7 +169,7 @@
     "message": "Apertura dell'app host per completare l'acquisto…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Impossibile aprire l'app. Avvia No Lazyload manualmente per completare l'acquisto"
   },
   "licenseFree": {
     "message": "Gratuito · fino a 3 siti web"
@@ -379,6 +379,6 @@
     "message": "Informativa sulla privacy"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload agisce solo sui siti web che attivi. Gli altri siti web non vengono modificati."
   }
 }

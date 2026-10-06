@@ -73,7 +73,7 @@
     "message": "גלילה אוטומטית"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "הגדרות - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -380,6 +380,6 @@
     "message": "פרטיות"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload פועל רק באתרים שאתם מפעילים. שאר האתרים נשארים ללא שינוי."
   }
 }

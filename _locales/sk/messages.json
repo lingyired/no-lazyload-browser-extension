@@ -73,7 +73,7 @@
     "message": "Automatické posúvanie"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Nastavenia - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -380,6 +380,6 @@
     "message": "Súkromie"
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload pôsobí iba na stránky, ktoré povolíte. Ostatné stránky zostávajú nedotknuté."
   }
 }

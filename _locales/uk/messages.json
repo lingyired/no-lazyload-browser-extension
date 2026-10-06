@@ -73,7 +73,7 @@
     "message": "Автопрокрутка"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Налаштування - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -139,106 +139,106 @@
     "message": "Налаштування мови"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Завантаження..."
   },
   "delete": {
     "message": "Видалити"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Розблокувати Pro"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "Безкоштовна версія підтримує до 3 сайтів. Оновіться, щоб отримати необмежену кількість сайтів і майбутні преміум-функції."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "Оновитися"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "Скасувати"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "Досягнуто ліміту сайтів"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "Імпортовано {added} з {total} сайтів. Безкоштовний ліміт — 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "Відкриваємо застосунок для завершення покупки…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Не вдалося відкрити застосунок. Запустіть No Lazyload вручну, щоб завершити покупку."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Безкоштовно · до 3 сайтів"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · необмежена кількість сайтів"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Оновитися до Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Керування / Відновити"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro розблоковано · {domain} увімкнено"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Покупки тимчасово недоступні. Спробуйте пізніше."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Поточний сайт"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Завантажувати всі зображення на цьому сайті без лінивого завантаження."
   },
   "mode": {
-    "message": "Mode"
+    "message": "Режим"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "Стандартний"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Сумісність"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Одразу завантажує зображення звичайним рушієм No Lazyload."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Автоматично прокручує сторінку, щоб запустити завантаження зображень. Використовуйте лише якщо стандартний режим не працює."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Увімкнені сайти"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Видалити"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Скасувати"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Необмежена кількість сайтів · Одноразова покупка, без підписки"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Одноразова покупка"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Одноразова покупка"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Без підписки"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Оновитися до Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Не зараз"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "Ви використовуєте всі 3 безкоштовні сайти. Оновіться один раз, щоб увімкнути No Lazyload на необмеженій кількості сайтів."
   },
   "siteListTitle": {
     "message": "Налаштовані сайти"
@@ -325,60 +325,60 @@
     "message": "Нова вкладка на основі закладок. Відкривайте папки як групи вкладок або у розділеному вигляді. 12 вбудованих тем + необмежена кількість власних тем."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Ліцензія"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Автоматично прокручує сторінку, щоб запустити завантаження зображень. Використовуйте лише якщо стандартний режим не працює."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Загальні"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Вимкнення лінивого завантаження зображень · Повні налаштування"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Тривалість прокрутки (секунди)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Пауза внизу (секунди)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Типово використовувати режим сумісності для всіх увімкнених сайтів"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Правила виявлення"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Зміна цих значень може порушити завантаження зображень."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Зберегти зміни"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "Файл містить режим для кожного сайту та всі глобальні налаштування."
   },
   "plan": {
-    "message": "Plan"
+    "message": "Тариф"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Безкоштовно · увімкнено {count} з {limit} сайтів"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · Необмежену кількість сайтів розблоковано"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Керування покупками"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Конфіденційність"
   },
   "proActivated": {
-    "message": "Pro activated! Unlimited websites unlocked."
+    "message": "Pro активовано. Необмежену кількість сайтів розблоковано."
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload діє лише на сайтах, які ви увімкнули. Інші сайти не змінюються."
   }
 }
