@@ -80,6 +80,8 @@ const LICENSE_MODES = {
 let _entitlementState = {
   entitlements: [],
   isLimitEnforced: false,
+  // 原生权限存储（App Group）是否可用：false 时权限状态不可信，必须显式提示
+  storageAvailable: null,
   // 购买前被限额拦住、等待后台补做的动作（background 持久化）
   pendingAction: null,
   // 一次性提示：待办被补做 / 购买完成
@@ -164,7 +166,8 @@ const TRANSLATIONS = {
     'licenseUpgrade': '升级到 Pro',
     'licenseManage': '管理 / 恢复购买',
     'proBadge': 'PRO',
-    'noticeSiteEnabled': '已解锁 Pro · 已启用 {domain}'
+    'noticeSiteEnabled': '已解锁 Pro · 已启用 {domain}',
+    'purchaseUnavailable': '购买服务暂时不可用，请稍后再试'
   },
   'en': {
     'currentSite': 'Current Site',
@@ -206,7 +209,8 @@ const TRANSLATIONS = {
     'licenseUpgrade': 'Upgrade to Pro',
     'licenseManage': 'Manage / Restore',
     'proBadge': 'PRO',
-    'noticeSiteEnabled': 'Pro unlocked · {domain} was enabled'
+    'noticeSiteEnabled': 'Pro unlocked · {domain} was enabled',
+    'purchaseUnavailable': 'Purchases are temporarily unavailable. Please try again later.'
   },
   'es': {
     'currentSite': 'Sitio Actual',
@@ -1282,6 +1286,7 @@ async function loadCachedEntitlements() {
       _entitlementState = {
         entitlements: resp.entitlements || [],
         isLimitEnforced: !!resp.isLimitEnforced,
+        storageAvailable: typeof resp.storageAvailable === 'boolean' ? resp.storageAvailable : null,
         pendingAction: resp.pendingAction || null,
         notice: resp.notice || null,
       };
@@ -1305,6 +1310,7 @@ async function refreshEntitlements() {
       _entitlementState = {
         entitlements: resp.entitlements || [],
         isLimitEnforced: !!resp.isLimitEnforced,
+        storageAvailable: typeof resp.storageAvailable === 'boolean' ? resp.storageAvailable : null,
         pendingAction: resp.pendingAction || null,
         notice: resp.notice || null,
       };
@@ -1379,6 +1385,21 @@ function updateLicenseRow() {
     badge.textContent = t('proBadge');
   }
 
+  // App Group 不可用：明确告知，而不是假装免费版 / 假装 Pro
+  const storageBroken = _entitlementState.isLimitEnforced && _entitlementState.storageAvailable === false;
+  if (storageBroken) {
+    if (row) row.hidden = false;
+    if (status) {
+      status.textContent = t('purchaseUnavailable');
+      status.classList.remove('pro');
+    }
+    if (btn) {
+      btn.hidden = true;
+    }
+    return;
+  }
+
+  if (btn) btn.hidden = false;
   if (row) row.hidden = mode !== LICENSE_MODES.FREE;
   if (!status || !btn) return;
 

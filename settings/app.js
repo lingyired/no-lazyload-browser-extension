@@ -158,7 +158,8 @@ const TRANSLATIONS = {
     'licenseUpgrade': '升级到 Pro',
     'licenseManage': '管理 / 恢复购买',
     'proBadge': 'PRO',
-    'noticeSiteEnabled': '已解锁 Pro · 已启用 {domain}'
+    'noticeSiteEnabled': '已解锁 Pro · 已启用 {domain}',
+    'purchaseUnavailable': '购买服务暂时不可用，请稍后再试'
   },
   'en': {
     'siteListTitle': 'Configured Sites',
@@ -214,7 +215,8 @@ const TRANSLATIONS = {
     'licenseUpgrade': 'Upgrade to Pro',
     'licenseManage': 'Manage / Restore',
     'proBadge': 'PRO',
-    'noticeSiteEnabled': 'Pro unlocked · {domain} was enabled'
+    'noticeSiteEnabled': 'Pro unlocked · {domain} was enabled',
+    'purchaseUnavailable': 'Purchases are temporarily unavailable. Please try again later.'
   },
   'es': {
     'siteListTitle': 'Sitios Configurados',
@@ -1843,6 +1845,7 @@ async function loadCachedEntitlements() {
       _entitlementState = {
         entitlements: resp.entitlements || [],
         isLimitEnforced: !!resp.isLimitEnforced,
+        storageAvailable: typeof resp.storageAvailable === 'boolean' ? resp.storageAvailable : null,
         pendingAction: resp.pendingAction || null,
         notice: resp.notice || null,
       };
@@ -1865,6 +1868,7 @@ async function refreshEntitlements() {
       _entitlementState = {
         entitlements: resp.entitlements || [],
         isLimitEnforced: !!resp.isLimitEnforced,
+        storageAvailable: typeof resp.storageAvailable === 'boolean' ? resp.storageAvailable : null,
         pendingAction: resp.pendingAction || null,
         notice: resp.notice || null,
       };
@@ -1898,6 +1902,19 @@ function updateLicenseStatus() {
     badge.textContent = t('proBadge');
   }
 
+  // App Group 不可用：明确告知，而不是假装免费版 / 假装 Pro
+  const storageBroken = _entitlementState.isLimitEnforced && _entitlementState.storageAvailable === false;
+  if (storageBroken) {
+    if (card) card.hidden = false;
+    if (status) {
+      status.textContent = t('purchaseUnavailable');
+      status.classList.remove('pro');
+    }
+    if (btn) btn.hidden = true;
+    return;
+  }
+
+  if (btn) btn.hidden = false;
   if (card) card.hidden = mode !== LICENSE_MODES.FREE;
   if (!status || !btn) return;
 

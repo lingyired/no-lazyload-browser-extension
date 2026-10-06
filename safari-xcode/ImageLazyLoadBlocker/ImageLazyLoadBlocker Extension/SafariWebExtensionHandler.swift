@@ -59,8 +59,26 @@ class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling, SFSafariE
             // App Group 是 Host App 与 Extension 之间唯一的共享通道。
             EntitlementManager.shared.reload()
             let entitlements = EntitlementManager.shared.entitlements.map { $0.rawValue }
-            os_log(.default, "🦊 getEntitlements -> %{public}@", entitlements.joined(separator: ","))
-            respond(context: context, payload: ["entitlements": entitlements])
+            let storageAvailable = EntitlementManager.shared.storageState == .available
+
+            os_log(.default, "🦊 getEntitlements -> %{public}@ (storage=%{public}@)",
+                   entitlements.joined(separator: ","),
+                   storageAvailable ? "available" : "unavailable")
+
+            // Fail closed：App Group 不可用时明确返回错误码，
+            // 绝不静默返回"空权限"让 UI 误以为用户没买过。
+            if storageAvailable {
+                respond(context: context, payload: [
+                    "entitlements": entitlements,
+                    "storageAvailable": true,
+                ])
+            } else {
+                respond(context: context, payload: [
+                    "entitlements": [],
+                    "storageAvailable": false,
+                    "error": "entitlement_storage_unavailable",
+                ])
+            }
 
         case "openHostApp":
             os_log(.default, "🦊 openHostApp -> %{public}@", Self.hostAppBundleID)

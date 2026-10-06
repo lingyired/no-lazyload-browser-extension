@@ -212,6 +212,11 @@ class JSEntitlementManager {
     this.entitlements = new Set();
     this.enforceLimit = options.enforceLimit ?? false;
     this.nativeBundleId = options.nativeBundleId ?? null;
+    /**
+     * 原生权限存储（App Group）是否可用。
+     * null = 尚未查询过；false = 明确不可用（UI 必须显式提示，不能拿它当免费版）。
+     */
+    this.storageAvailable = null;
     this._cacheLoaded = false;
   }
 
@@ -257,6 +262,12 @@ class JSEntitlementManager {
         NATIVE_TIMEOUT_MS,
         'getEntitlements'
       );
+      if (resp && typeof resp.storageAvailable === 'boolean') {
+        this.storageAvailable = resp.storageAvailable;
+        if (!resp.storageAvailable) {
+          console.error('[Entitlement] 原生权限存储不可用（App Group 配置问题）');
+        }
+      }
       if (resp && Array.isArray(resp.entitlements)) {
         this.entitlements = new Set(resp.entitlements);
         this._cacheLoaded = true;
@@ -279,6 +290,9 @@ class JSEntitlementManager {
       isLimitEnforced: this.enforceLimit,
       freeSiteLimit: APP_LIMITS.FREE_SITE_LIMIT,
       licenseMode: this.licenseMode(),
+      // false 表示原生 App Group 不可用：权限状态不可信，
+      // UI 必须明确提示，而不是当成"用户没买过"。
+      storageAvailable: this.storageAvailable,
     };
   }
 

@@ -132,21 +132,31 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
         webView.evaluateJavaScript("if (typeof setBusy === 'function') { setBusy(true, 'purchase'); }")
 
         Task {
-            var errorMessage: String?
+            // 三种结果分开处理：完成 / 取消（静默）/ 等待批准（明确告知）
+            var notice: String?
+            var isError = false
             do {
-                let ok = try await provider().purchase()
-                if !ok { errorMessage = nil } // 用户取消，静默
+                switch try await provider().purchase() {
+                case .purchased:
+                    notice = HostCopy.purchaseUnlocked
+                case .cancelled:
+                    notice = nil // 用户主动取消，不报错
+                case .pending:
+                    notice = HostCopy.purchasePending
+                }
             } catch {
                 os_log(.error, "StoreKit purchase failed: %{public}@", String(describing: error))
-                errorMessage = error.localizedDescription
+                notice = HostCopy.purchaseFailed
+                isError = true
             }
 
             await MainActor.run {
                 self.isPurchasing = false
                 self.injectProState()
                 self.webView.evaluateJavaScript("if (typeof setBusy === 'function') { setBusy(false, 'purchase'); }")
-                if let msg = errorMessage {
-                    self.webView.evaluateJavaScript("if (typeof showError === 'function') { showError(\(Self.jsString(msg))); }")
+                if let msg = notice {
+                    let fn = isError ? "showError" : "showNotice"
+                    self.webView.evaluateJavaScript("if (typeof \(fn) === 'function') { \(fn)(\(Self.jsString(msg))); }")
                 }
             }
         }
@@ -158,20 +168,29 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
         webView.evaluateJavaScript("if (typeof setBusy === 'function') { setBusy(true, 'restore'); }")
 
         Task {
-            var errorMessage: String?
+            var notice: String?
+            var isError = false
             do {
-                _ = try await provider().restore()
+                switch try await provider().restore() {
+                case .restored:
+                    notice = HostCopy.purchaseRestored
+                case .nothingToRestore:
+                    // 中性提示，不是错误
+                    notice = HostCopy.nothingToRestore
+                }
             } catch {
                 os_log(.error, "StoreKit restore failed: %{public}@", String(describing: error))
-                errorMessage = error.localizedDescription
+                notice = HostCopy.purchaseFailed
+                isError = true
             }
 
             await MainActor.run {
                 self.isPurchasing = false
                 self.injectProState()
                 self.webView.evaluateJavaScript("if (typeof setBusy === 'function') { setBusy(false, 'restore'); }")
-                if let msg = errorMessage {
-                    self.webView.evaluateJavaScript("if (typeof showError === 'function') { showError(\(Self.jsString(msg))); }")
+                if let msg = notice {
+                    let fn = isError ? "showError" : "showNotice"
+                    self.webView.evaluateJavaScript("if (typeof \(fn) === 'function') { \(fn)(\(Self.jsString(msg))); }")
                 }
             }
         }
@@ -182,10 +201,12 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
     }
 
     /// 把当前权限状态注入 webview。
+    /// App Group 不可用时必须显式告知，不能让 UI 把"读不到"当成"免费版"。
     private func injectProState() {
         EntitlementManager.shared.reload()
         let hasUnlimitedSites = EntitlementManager.shared.has(.unlimitedSites)
-        webView.evaluateJavaScript("if (typeof setUnlimitedSitesStatus === 'function') { setUnlimitedSitesStatus(\(hasUnlimitedSites)); }")
+        let storageAvailable = EntitlementManager.shared.storageState == .available
+        webView.evaluateJavaScript("if (typeof setUnlimitedSitesStatus === 'function') { setUnlimitedSitesStatus(\(hasUnlimitedSites), \(storageAvailable)); }")
     }
 
     // MARK: - Helpers

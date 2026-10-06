@@ -17,6 +17,11 @@ class JSEntitlementManager {
     this.enforceLimit = options.enforceLimit ?? false;
     /** 原生消息接收方 bundle id（Safari=包含 App bundle id, 其它=null） */
     this.nativeBundleId = options.nativeBundleId ?? null;
+    /**
+     * 原生权限存储（App Group）是否可用。
+     * null = 尚未查询过；false = 明确不可用（UI 必须显式提示，不能拿它当免费版）。
+     */
+    this.storageAvailable = null;
     this._initialized = false;
   }
 
@@ -36,6 +41,9 @@ class JSEntitlementManager {
       const resp = await browser.runtime.sendNativeMessage(this.nativeBundleId, {
         action: 'getEntitlements',
       });
+      if (resp && typeof resp.storageAvailable === 'boolean') {
+        this.storageAvailable = resp.storageAvailable;
+      }
       if (resp && Array.isArray(resp.entitlements)) {
         this.entitlements = new Set(resp.entitlements);
       }
@@ -75,6 +83,9 @@ class JSEntitlementManager {
       isLimitEnforced: this.enforceLimit,
       freeSiteLimit: APP_LIMITS.FREE_SITE_LIMIT,
       licenseMode: this.licenseMode(),
+      // false 表示原生 App Group 不可用：权限状态不可信，UI 必须给出明确提示，
+      // 而不是把它当成"用户没买过"。
+      storageAvailable: this.storageAvailable,
     };
   }
 

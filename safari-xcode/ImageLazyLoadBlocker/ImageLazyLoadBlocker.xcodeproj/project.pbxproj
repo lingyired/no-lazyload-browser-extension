@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E200000F000000000000000A /* HostCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E100000F000000000000000A /* HostCopy.swift */; };
 		3C7BD5D23009E02000F4D44D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D13009E02000F4D44D /* AppDelegate.swift */; };
 		3C7BD5D63009E02000F4D44D /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D43009E02000F4D44D /* Main.html */; };
 		3C7BD5D83009E02000F4D44D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D73009E02000F4D44D /* Icon.png */; };
@@ -99,6 +100,7 @@
 		E1000005000000000000000A /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
 		E1000006000000000000000A /* PurchaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProvider.swift; sourceTree = "<group>"; };
 		E1000008000000000000000A /* StoreKitPurchaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitPurchaseProvider.swift; sourceTree = "<group>"; };
+		E100000F000000000000000A /* HostCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostCopy.swift; sourceTree = "<group>"; };
 		E4000001000000000000000A /* ImageLazyLoadBlocker.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = ImageLazyLoadBlocker.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 			children = (
 				3C7BD5D13009E02000F4D44D /* AppDelegate.swift */,
 				3C7BD5DD3009E02000F4D44D /* ViewController.swift */,
+				E100000F000000000000000A /* HostCopy.swift */,
 				3C7BD5DF3009E02000F4D44D /* Main.storyboard */,
 				3C7BD5E23009E02100F4D44D /* Assets.xcassets */,
 				3C7BD5E43009E02100F4D44D /* Info.plist */,
@@ -329,6 +332,7 @@
 			files = (
 				3C7BD5DE3009E02000F4D44D /* ViewController.swift in Sources */,
 				3C7BD5D23009E02000F4D44D /* AppDelegate.swift in Sources */,
+				E200000F000000000000000A /* HostCopy.swift in Sources */,
 				E2000001000000000000000A /* Entitlement.swift in Sources */,
 				E2000002000000000000000A /* AppLimits.swift in Sources */,
 				E2000003000000000000000A /* EntitlementsConfig.swift in Sources */,
