@@ -506,7 +506,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "ImageLazyLoadBlocker Extension/ImageLazyLoadBlocker Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.12.29;
+				CURRENT_PROJECT_VERSION = 1.12.30;
 				DEVELOPMENT_TEAM = HCB7JKMQ2F;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -521,7 +521,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 26.5;
-				MARKETING_VERSION = 1.12.29;
+				MARKETING_VERSION = 1.12.30;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -543,7 +543,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "ImageLazyLoadBlocker Extension/ImageLazyLoadBlocker Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.12.29;
+				CURRENT_PROJECT_VERSION = 1.12.30;
 				DEVELOPMENT_TEAM = HCB7JKMQ2F;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -558,7 +558,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 26.5;
-				MARKETING_VERSION = 1.12.29;
+				MARKETING_VERSION = 1.12.30;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -583,7 +583,7 @@
 				CODE_SIGN_ENTITLEMENTS = ImageLazyLoadBlocker/ImageLazyLoadBlocker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.12.29;
+				CURRENT_PROJECT_VERSION = 1.12.30;
 				DEVELOPMENT_TEAM = HCB7JKMQ2F;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -599,7 +599,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.12.29;
+				MARKETING_VERSION = 1.12.30;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
@@ -626,7 +626,7 @@
 				CODE_SIGN_ENTITLEMENTS = ImageLazyLoadBlocker/ImageLazyLoadBlocker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.12.29;
+				CURRENT_PROJECT_VERSION = 1.12.30;
 				DEVELOPMENT_TEAM = HCB7JKMQ2F;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -642,7 +642,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.12.29;
+				MARKETING_VERSION = 1.12.30;
 				OTHER_LDFLAGS = (
 					"-framework",
 					SafariServices,
