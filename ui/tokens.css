@@ -11,11 +11,15 @@
   color-scheme: light dark;
 
   /* 品牌 / 状态色 */
-  --nl-accent: #007aff;
-  --nl-accent-hover: #0071e3;
-  --nl-success: #34c759;
-  --nl-danger: #ff3b30;
-  --nl-warning: #ff9500;
+  /* 强调色刻意比 Apple 默认的 #007aff 更深：
+     白字放在 #007aff 上只有 4.02:1，达不到 WCAG AA 的 4.5:1。
+     #0066cc 是同一个色相加深后的结果（白字 5.57:1）。 */
+  --nl-accent: #0066cc;
+  --nl-accent-hover: #0059b3;
+  /* 状态色同理：系统色用于文字/细描边达不到 4.5:1，这里取加深版本 */
+  --nl-success: #1d7a35;
+  --nl-danger: #c62828;
+  --nl-warning: #a35a00;
 
   /* 表面 */
   --nl-bg: rgba(246, 246, 246, 0.92);
@@ -54,11 +58,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --nl-accent: #0a84ff;
-    --nl-accent-hover: #409cff;
+    /* 深色下白字放在 #0a84ff 上只有 3.65:1，这里用更深的蓝 */
+    --nl-accent: #0a5fd0;
+    --nl-accent-hover: #0a6ce8;
     --nl-success: #30d158;
-    --nl-danger: #ff453a;
-    --nl-warning: #ff9f0a;
+    --nl-danger: #ff6961;
+    --nl-warning: #ffb340;
 
     --nl-bg: rgba(28, 28, 30, 0.94);
     --nl-surface: rgba(44, 44, 46, 0.72);

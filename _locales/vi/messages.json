@@ -73,7 +73,7 @@
     "message": "Tự động cuộn"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Cài đặt - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -139,106 +139,106 @@
     "message": "Cài đặt ngôn ngữ"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Đang tải..."
   },
   "delete": {
     "message": "Xóa"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Mở khóa Pro"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "Bản miễn phí hỗ trợ tối đa 3 trang web. Nâng cấp để mở khóa không giới hạn trang web và các tính năng cao cấp trong tương lai."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "Nâng cấp"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "Hủy"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "Đã đạt giới hạn trang web"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "Đã nhập {added} trong {total} trang. Giới hạn bản miễn phí là 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "Đang mở ứng dụng chính để hoàn tất giao dịch…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Không thể mở ứng dụng. Vui lòng mở No Lazyload thủ công để hoàn tất giao dịch."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Miễn phí · tối đa 3 trang web"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · không giới hạn trang web"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Nâng cấp lên Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Quản lý / Khôi phục"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Đã mở khóa Pro · đã bật {domain}"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Tạm thời không thể mua. Vui lòng thử lại sau."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Trang web hiện tại"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Tải tất cả hình ảnh trên trang web này mà không dùng tải lười."
   },
   "mode": {
-    "message": "Mode"
+    "message": "Chế độ"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "Tiêu chuẩn"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Tương thích"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Tải hình ảnh ngay bằng công cụ thông thường của No Lazyload."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Tự động cuộn trang để kích hoạt tải hình ảnh. Chỉ dùng khi chế độ Tiêu chuẩn không hoạt động."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Trang web đã bật"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Gỡ bỏ"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Hoàn tác"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Không giới hạn trang web · Mua một lần, không đăng ký định kỳ"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Mua một lần"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Mua một lần"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Không đăng ký định kỳ"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Nâng cấp lên Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Để sau"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "Bạn đã dùng hết 3 trang web miễn phí. Nâng cấp một lần để bật No Lazyload trên không giới hạn trang web."
   },
   "siteListTitle": {
     "message": "Các trang đã cấu hình"
@@ -325,60 +325,60 @@
     "message": "Tab mới dựa trên bookmark. Mở thư mục dưới dạng nhóm tab hoặc chế độ xem chia đôi. 12 chủ đề tích hợp + chủ đề tùy chỉnh không giới hạn."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Giấy phép"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Tự động cuộn trang để kích hoạt tải hình ảnh. Chỉ dùng khi chế độ Tiêu chuẩn không hoạt động."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Chung"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Tắt tải lười hình ảnh · Cài đặt đầy đủ"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Thời gian cuộn (giây)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Dừng ở cuối trang (giây)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Dùng chế độ Tương thích cho tất cả trang web đã bật theo mặc định"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Quy tắc phát hiện"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Thay đổi các giá trị này có thể khiến hình ảnh không tải đúng."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Lưu thay đổi"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "Tệp bao gồm chế độ của từng trang web và toàn bộ cài đặt chung."
   },
   "plan": {
-    "message": "Plan"
+    "message": "Gói"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Miễn phí · đã bật {count} trong {limit} trang web"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · Đã mở khóa không giới hạn trang web"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Quản lý giao dịch"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Quyền riêng tư"
   },
   "proActivated": {
-    "message": "Pro activated! Unlimited websites unlocked."
+    "message": "Đã kích hoạt Pro. Đã mở khóa không giới hạn trang web."
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload chỉ tác động đến những trang web bạn bật. Các trang web khác không bị ảnh hưởng."
   }
 }

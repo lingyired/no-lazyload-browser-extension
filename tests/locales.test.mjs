@@ -15,14 +15,11 @@ const ALLOWED_IDENTICAL = new Set(['proBadge', 'github', 'appName', 'appDescript
 /**
  * 尚未完成翻译的语言（英文兜底）。
  *
- * 这是**已知且被跟踪**的发布前遗留项，不是"可以忽略"：
- * plan Phase G 要求"fill all currently supported locale files before App Store release"。
- * 每完成一种语言就把它从这里删掉 —— 这个列表只允许变短。
- * 不在列表里的语言会被下面的断言强制要求翻译完整。
+ * 发布前必须为空：plan Phase G 要求"fill all currently supported locale files
+ * before App Store release"。新增语言时可以临时把语言代码放进来，
+ * 但必须同时在这里留下原因；这个集合是**只允许变短**的清单。
  */
-const PENDING_TRANSLATION = new Set([
-  'hi', 'id', 'pl', 'ru', 'sv', 'th', 'tr', 'uk', 'vi',
-]);
+const PENDING_TRANSLATION = new Set([]);
 
 export function run() {
   const en = JSON.parse(readFileSync('_locales/en/messages.json', 'utf8'));

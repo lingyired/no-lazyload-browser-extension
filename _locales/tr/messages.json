@@ -73,7 +73,7 @@
     "message": "Otomatik kaydırma"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "Ayarlar - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -139,106 +139,106 @@
     "message": "Dil Ayarları"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Yükleniyor..."
   },
   "delete": {
     "message": "Sil"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Pro'nun kilidini aç"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "Ücretsiz sürüm en fazla 3 web sitesini destekler. Sınırsız web sitesinin ve gelecekteki premium özelliklerin kilidini açmak için yükseltin."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "Yükselt"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "İptal"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "Site sınırına ulaşıldı"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "{total} siteden {added} tanesi içe aktarıldı. Ücretsiz sınır 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "Satın almayı tamamlamak için Ana Uygulama açılıyor…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Uygulama açılamadı. Satın almayı tamamlamak için lütfen No Lazyload'ı elle başlatın."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Ücretsiz · en fazla 3 web sitesi"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · sınırsız web sitesi"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Pro'ya yükselt"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Yönet / Geri Yükle"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro açıldı · {domain} etkinleştirildi"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Satın alma işlemleri geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Geçerli Web Sitesi"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Bu web sitesindeki tüm görselleri tembel yükleme olmadan yükleyin."
   },
   "mode": {
-    "message": "Mode"
+    "message": "Mod"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "Standart"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Uyumluluk"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Görselleri No Lazyload'ın normal motorunu kullanarak hemen yükler."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Görselleri tetiklemek için sayfayı otomatik olarak kaydırır. Bunu yalnızca Standart mod çalışmadığında kullanın."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Etkin Web Siteleri"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Kaldır"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Geri Al"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Sınırsız web sitesi · Tek seferlik satın alma, abonelik yok"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Tek seferlik satın alma"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Tek seferlik satın alma"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Abonelik yok"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Pro'ya yükselt"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Şimdi Değil"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "3 ücretsiz web sitesinin tamamını kullanıyorsunuz. No Lazyload'ı sınırsız web sitesinde etkinleştirmek için bir kez yükseltin."
   },
   "siteListTitle": {
     "message": "Yapılandırılmış Siteler"
@@ -325,60 +325,60 @@
     "message": "Yer imleri odaklı yeni sekme. Klasörleri sekme grupları veya bölünmüş görünüm olarak açın. 12 yerleşik tema + sınırsız özel tema."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Lisans"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Görselleri tetiklemek için sayfayı otomatik olarak kaydırır. Bunu yalnızca Standart mod çalışmadığında kullanın."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Genel"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Görsel tembel yüklemeyi devre dışı bırak · Tüm ayarlar"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Kaydırma süresi (saniye)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Altta bekleme süresi (saniye)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Tüm etkin web siteleri için varsayılan olarak Uyumluluk modunu kullan"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Algılama Kuralları"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Bu değerleri değiştirmek görsellerin doğru yüklenmesini engelleyebilir."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Değişiklikleri Kaydet"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "Dosya, her web sitesinin modunu ve tüm genel ayarları içerir."
   },
   "plan": {
-    "message": "Plan"
+    "message": "Paket"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Ücretsiz · {limit} web sitesinden {count} tanesi etkin"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · Sınırsız web sitesinin kilidi açıldı"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Satın Almaları Yönet"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Gizlilik"
   },
   "proActivated": {
-    "message": "Pro activated! Unlimited websites unlocked."
+    "message": "Pro etkinleştirildi. Sınırsız web sitesinin kilidi açıldı."
   },
   "privacyNote": {
-    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+    "message": "No Lazyload yalnızca etkinleştirdiğiniz web sitelerinde çalışır. Diğer web sitelerine dokunulmaz."
   }
 }
