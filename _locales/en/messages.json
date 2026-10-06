@@ -190,5 +190,37 @@
   "languageSettings": {
     "message": "Language Settings",
     "description": "Language settings section title"
+  },
+  "upgradeTitle": {
+    "message": "Unlock Pro",
+    "description": "Upgrade dialog title"
+  },
+  "upgradeBody": {
+    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features.",
+    "description": "Upgrade dialog body"
+  },
+  "upgradeButton": {
+    "message": "Upgrade",
+    "description": "Upgrade dialog confirm button"
+  },
+  "proActivated": {
+    "message": "Pro activated! Unlimited websites unlocked.",
+    "description": "Toast shown after successful Mock purchase"
+  },
+  "cancelUpgrade": {
+    "message": "Cancel",
+    "description": "Upgrade dialog cancel button"
+  },
+  "siteLimitReached": {
+    "message": "Site limit reached",
+    "description": "Toast shown when free limit is hit"
+  },
+  "importPartial": {
+    "message": "Imported $added$ of $total$ sites. Free limit is 3.",
+    "description": "Toast shown when import is truncated by free limit",
+    "placeholders": {
+      "added": { "content": "$1", "example": "3" },
+      "total": { "content": "$2", "example": "10" }
+    }
   }
 }

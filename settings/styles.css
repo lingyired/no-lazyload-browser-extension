@@ -297,3 +297,17 @@ h1 {
     width: 100%;
   }
 }
+/* 授权状态文案。
+   注意：刻意不复用 .help-text —— app.js 里用 querySelector('.help-text')
+   取第一个元素来更新「自动滚动」的帮助文案，复用会被顶掉。 */
+.license-status-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.license-status-text.pro {
+  color: #34c759;
+  font-weight: 600;
+}

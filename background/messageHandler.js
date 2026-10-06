@@ -11,6 +11,7 @@ import {
   setCustomAttributes,
   resetCustomAttributes
 } from './siteConfigManager.js';
+import { APP_LIMITS } from '../shared/constants.js';
 
 const MESSAGE_TYPES = {
   GET_SITE_CONFIG: 'GET_SITE_CONFIG',
@@ -21,13 +22,20 @@ const MESSAGE_TYPES = {
   SET_GLOBAL_CONFIG: 'SET_GLOBAL_CONFIG',
   GET_CUSTOM_ATTRIBUTES: 'GET_CUSTOM_ATTRIBUTES',
   SET_CUSTOM_ATTRIBUTES: 'SET_CUSTOM_ATTRIBUTES',
-  RESET_CUSTOM_ATTRIBUTES: 'RESET_CUSTOM_ATTRIBUTES'
+  RESET_CUSTOM_ATTRIBUTES: 'RESET_CUSTOM_ATTRIBUTES',
+  // Entitlement / Purchase（Chrome/Firefox 不执行限额，但复用同一消息协议）
+  GET_ENTITLEMENTS: 'getEntitlements',
+  REFRESH_ENTITLEMENTS: 'refreshEntitlements',
+  REQUEST_PURCHASE: 'requestPurchase',
+  RESTORE_PURCHASES: 'restorePurchases',
+  OPEN_HOST_APP: 'openHostApp'
 };
 
 /**
  * 处理来自 content script 或 settings 页面的消息
+ * @param {import('../shared/entitlements.js').JSEntitlementManager} jsEntitlementManager
  */
-function setupMessageHandler() {
+function setupMessageHandler(jsEntitlementManager) {
   const runtime = typeof browser !== 'undefined'
     ? browser.runtime
     : chrome.runtime;
@@ -42,6 +50,7 @@ function setupMessageHandler() {
             break;
 
           case MESSAGE_TYPES.SET_SITE_CONFIG:
+            // Chrome/Firefox 不执行网站数量限额（enforceLimit=false）
             await setSiteConfig(request.domain, request.strategy, request.scrollFallback);
             sendResponse({ success: true });
             break;
@@ -79,6 +88,27 @@ function setupMessageHandler() {
           case MESSAGE_TYPES.RESET_CUSTOM_ATTRIBUTES:
             const resetAttrs = await resetCustomAttributes();
             sendResponse({ success: true, data: resetAttrs });
+            break;
+
+          // ===== Entitlement / Purchase 处理（Chrome/Firefox: 无限额，全部视为已授权）=====
+          // 无原生桥接，GET 与 REFRESH 返回同一份内存状态。
+          case MESSAGE_TYPES.GET_ENTITLEMENTS:
+          case MESSAGE_TYPES.REFRESH_ENTITLEMENTS:
+            sendResponse({
+              success: true,
+              entitlements: Array.from(jsEntitlementManager.entitlements),
+              isLimitEnforced: jsEntitlementManager.isLimitEnforced(),
+              freeSiteLimit: APP_LIMITS.FREE_SITE_LIMIT,
+            });
+            break;
+
+          // Chrome/Firefox 商店侧免费无限制，无内购也无 Host App，
+          // 这几个购买相关消息永远不会被 UI 触发。保留 case 只为协议一致，
+          // 统一返回"不支持"，不静默假装成功。
+          case MESSAGE_TYPES.REQUEST_PURCHASE:
+          case MESSAGE_TYPES.RESTORE_PURCHASES:
+          case MESSAGE_TYPES.OPEN_HOST_APP:
+            sendResponse({ success: false, error: 'NOT_SUPPORTED' });
             break;
 
           default:

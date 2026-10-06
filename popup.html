@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>No lazyload</title>
   <style>
     * {
@@ -363,6 +364,162 @@
       from { opacity: 0; transform: translateX(-50%) translateY(10px); }
       to { opacity: 1; transform: translateX(-50%) translateY(0); }
     }
+
+    /* Dark mode - 与设置页保持一致的风格 */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #1a1a1a;
+        color: #e0e0e0;
+      }
+      .current-site,
+      .site-list-section,
+      .footer {
+        background: #2a2a2a;
+      }
+      .current-site h2,
+      .site-list-header h2 {
+        color: #aaa;
+      }
+      .site-domain {
+        color: #e0e0e0;
+      }
+      .site-status.enabled {
+        background: #1e3a1e;
+        color: #6abf6a;
+      }
+      .site-status.disabled {
+        background: #333;
+        color: #888;
+      }
+      .scroll-option {
+        background: #1e1e1e;
+        border-color: #3a3a3a;
+      }
+      .scroll-option label {
+        color: #e0e0e0;
+      }
+      .scroll-option .scroll-desc {
+        color: #888;
+      }
+      .toggle-btn.remove {
+        background: #333;
+        color: #f44336;
+        border-color: #444;
+      }
+      .toggle-btn.remove:hover {
+        background: #4a2326;
+      }
+      .site-list-header {
+        background: #1e1e1e;
+        border-bottom-color: #3a3a3a;
+      }
+      .site-list-header .count {
+        color: #aaa;
+        background: #333;
+      }
+      .site-item {
+        border-bottom-color: #2f2f2f;
+      }
+      .site-item:hover {
+        background: #1e1e1e;
+      }
+      .site-item .domain {
+        color: #e0e0e0;
+      }
+      .site-item .scroll-toggle {
+        color: #aaa;
+      }
+      .site-item .delete-btn {
+        color: #777;
+      }
+      .site-item .delete-btn:hover {
+        background: #4a2326;
+        color: #f44336;
+      }
+      .empty-state {
+        color: #888;
+      }
+      .footer-btn {
+        background: #333;
+        border-color: #444;
+        color: #ccc;
+      }
+      .footer-btn:hover {
+        background: #3a3a3a;
+        border-color: #555;
+      }
+      .author {
+        background: #1e1e1e;
+        border-top-color: #3a3a3a;
+        color: #777;
+      }
+      .site-list::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+      .site-list::-webkit-scrollbar-thumb {
+        background: #555;
+      }
+    }
+    /* 授权入口 —— Pro 用户重新打开购买/恢复界面的唯一常驻入口 */
+    .license-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: #fafafa;
+      border-top: 1px solid #eee;
+      font-size: 12px;
+    }
+    .license-row .license-status {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #777;
+    }
+    .license-row .license-status.pro {
+      color: #34c759;
+      font-weight: 600;
+    }
+    .license-row .license-manage {
+      flex: none;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-family: inherit;
+      border: 1px solid #d2d2d7;
+      border-radius: 6px;
+      background: #fff;
+      color: #007aff;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .license-row .license-manage:hover {
+      background: #f0f0f5;
+    }
+    .license-row .license-manage:active {
+      opacity: 0.7;
+    }
+    @media (prefers-color-scheme: dark) {
+      .license-row {
+        background: #1e1e1e;
+        border-top-color: #3a3a3a;
+      }
+      .license-row .license-status {
+        color: #888;
+      }
+      .license-row .license-status.pro {
+        color: #6abf6a;
+      }
+      .license-row .license-manage {
+        background: #333;
+        border-color: #444;
+        color: #6ab0ff;
+      }
+      .license-row .license-manage:hover {
+        background: #3a3a3a;
+      }
+    }
   </style>
 </head>
 <body>
@@ -416,6 +573,12 @@
       </svg>
       <span data-i18n="refreshPage">刷新页面</span>
     </button>
+  </div>
+
+  <!-- 授权入口：免费限额路径在升级后不会再触发，所以这里必须有常驻入口 -->
+  <div class="license-row">
+    <span class="license-status" id="licenseStatus">…</span>
+    <button class="license-manage" id="manageLicense">…</button>
   </div>
 
   <!-- Author -->

@@ -190,5 +190,25 @@
   "languageSettings": {
     "message": "语言设置",
     "description": "Language settings section title"
+  },
+  "upgradeTitle": {
+    "message": "解锁 Pro",
+    "description": "Upgrade dialog title"
+  },
+  "upgradeBody": {
+    "message": "免费版最多支持 3 个网站。升级以解锁无限网站和未来高级功能。",
+    "description": "Upgrade dialog body"
+  },
+  "upgradeButton": {
+    "message": "升级",
+    "description": "Upgrade dialog confirm button"
+  },
+  "proActivated": {
+    "message": "Pro 已激活！已解锁无限网站。",
+    "description": "Toast shown after successful Mock purchase"
+  },
+  "cancelUpgrade": {
+    "message": "取消",
+    "description": "Upgrade dialog cancel button"
   }
 }

@@ -236,7 +236,7 @@
       border: 1px solid #ddd;
       border-radius: 6px;
       font-size: 14px;
-      background: white;
+      /* 不设置 background，让系统接管暗色模式下的背景色 */
       cursor: pointer;
       transition: border-color 0.2s;
     }
@@ -414,6 +414,82 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Dark mode - 让设置页在暗色模式下协调显示 */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #1a1a1a;
+        color: #e0e0e0;
+      }
+      .card {
+        background: #2a2a2a;
+      }
+      .card h2 {
+        color: #aaa;
+      }
+      /* 表单元素：显式设置深色背景 + 亮色文字，避免系统默认白字配白底 */
+      .form-group input[type="number"],
+      .language-select,
+      .textarea {
+        background: #1e1e1e;
+        color: #e0e0e0;
+        border-color: #444;
+      }
+      .btn-secondary {
+        background: #333;
+        color: #ccc;
+        border-color: #444;
+      }
+      .btn-secondary:hover {
+        background: #3a3a3a;
+      }
+      .site-list-header .count {
+        color: #aaa;
+        background: #333;
+      }
+      .site-list::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+      .site-list::-webkit-scrollbar-thumb {
+        background: #555;
+      }
+      .site-item {
+        background: #2a2a2a;
+        border-color: #3a3a3a;
+      }
+      .site-item .domain {
+        color: #e0e0e0;
+      }
+      .site-item .scroll-toggle {
+        color: #aaa;
+      }
+      .site-item .delete-btn {
+        color: #777;
+      }
+      .site-item .delete-btn:hover {
+        background: #4a2326;
+        color: #f44336;
+      }
+      .extension-item {
+        background: #2a2a2a;
+        border-color: #3a3a3a;
+      }
+      .extension-item:hover {
+        background: #2e3a2e;
+      }
+      .extension-name {
+        color: #e0e0e0;
+      }
+      .extension-desc {
+        color: #888;
+      }
+      .extension-arrow {
+        color: #666;
+      }
+      .author {
+        color: #777;
+      }
+    }
   </style>
 </head>
 <body>
@@ -423,6 +499,15 @@
       <h1>Image Lazy Load Blocker</h1>
       <div class="subtitle">禁用图片懒加载 - 完整设置</div>
     </div>
+
+    <!-- 授权入口：免费限额路径在升级后不会再触发，所以这里必须有常驻入口 -->
+    <section class="card">
+      <h2 data-i18n="licenseTitle">授权</h2>
+      <p class="license-status-text" id="licenseStatus">…</p>
+      <div class="btn-group">
+        <button id="manageLicenseBtn" class="btn btn-primary">…</button>
+      </div>
+    </section>
 
     <!-- 网站列表 -->
     <section class="card">
@@ -480,7 +565,7 @@
 
     <!-- 导入/导出 -->
     <section class="card">
-      <h2>导入/导出配置</h2>
+      <h2 data-i18n="importExport">导入/导出配置</h2>
       <div class="import-export">
         <button id="exportBtn" class="btn btn-secondary">导出配置</button>
         <div class="import-wrapper">

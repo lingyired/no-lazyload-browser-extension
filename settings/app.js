@@ -23,7 +23,30 @@ const MESSAGE_TYPES = {
   SET_GLOBAL_CONFIG: 'SET_GLOBAL_CONFIG',
   GET_CUSTOM_ATTRIBUTES: 'GET_CUSTOM_ATTRIBUTES',
   SET_CUSTOM_ATTRIBUTES: 'SET_CUSTOM_ATTRIBUTES',
-  RESET_CUSTOM_ATTRIBUTES: 'RESET_CUSTOM_ATTRIBUTES'
+  RESET_CUSTOM_ATTRIBUTES: 'RESET_CUSTOM_ATTRIBUTES',
+  // Entitlement / Purchase（值与 background 一致）
+  //   GET_ENTITLEMENTS     —— 读 background 的本地快照，毫秒级返回
+  //   REFRESH_ENTITLEMENTS —— 让 background 走原生 App Group 拉最新值（慢）
+  GET_ENTITLEMENTS: 'getEntitlements',
+  REFRESH_ENTITLEMENTS: 'refreshEntitlements',
+  REQUEST_PURCHASE: 'requestPurchase',
+  RESTORE_PURCHASES: 'restorePurchases',
+  OPEN_HOST_APP: 'openHostApp'
+};
+
+// ===== Entitlement System 常量（内联自 shared/constants.js）=====
+const APP_LIMITS = {
+  FREE_SITE_LIMIT: 3,
+};
+
+const ENTITLEMENTS = {
+  UNLIMITED_SITES: 'unlimitedSites',
+};
+
+// 当前用户权限状态缓存（由 background GET_ENTITLEMENTS 填充）
+let _entitlementState = {
+  entitlements: [],
+  isLimitEnforced: false,
 };
 
 const LANGUAGE_STORAGE_KEY = 'preferredLanguage';
@@ -80,7 +103,20 @@ const TRANSLATIONS = {
     'attributesReset': '已恢复为默认配置',
     'save': '保存',
     'otherExtensions': '作者的其他扩展',
-    'newtab01Desc': '书签驱动的新标签页。将文件夹作为标签组或分屏打开。12 个内置主题 + 无限自定义主题。'
+    'newtab01Desc': '书签驱动的新标签页。将文件夹作为标签组或分屏打开。12 个内置主题 + 无限自定义主题。',
+    'upgradeTitle': '解锁 Pro',
+    'upgradeBody': '免费版最多支持 3 个网站。升级以解锁无限网站及未来的高级功能。',
+    'upgradeButton': '升级',
+    'cancelUpgrade': '取消',
+    'siteLimitReached': '已达网站数量上限',
+    'importPartial': '已导入 {added}/{total} 个网站，免费版上限为 3 个。',
+    'openingHostApp': '正在打开宿主 App，请完成购买后返回扩展',
+    'upgradeOpenFailed': '无法自动打开 App，请手动启动 No Lazy Load 完成购买',
+    'licenseTitle': '授权',
+    'licenseFree': '免费版 · 最多 3 个网站',
+    'licensePro': 'Pro · 无限网站',
+    'licenseUpgrade': '升级到 Pro',
+    'licenseManage': '管理 / 恢复购买'
   },
   'en': {
     'siteListTitle': 'Configured Sites',
@@ -121,7 +157,20 @@ const TRANSLATIONS = {
     'attributesReset': 'Reset to default configuration',
     'save': 'Save',
     'otherExtensions': 'More Extensions by the Author',
-    'newtab01Desc': 'Bookmark-driven new tab. Open folders as tab groups or in split view. 12 built-in themes + unlimited custom themes.'
+    'newtab01Desc': 'Bookmark-driven new tab. Open folders as tab groups or in split view. 12 built-in themes + unlimited custom themes.',
+    'upgradeTitle': 'Unlock Pro',
+    'upgradeBody': 'Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features.',
+    'upgradeButton': 'Upgrade',
+    'cancelUpgrade': 'Cancel',
+    'siteLimitReached': 'Site limit reached',
+    'importPartial': 'Imported {added} of {total} sites. Free limit is 3.',
+    'openingHostApp': 'Opening Host App to complete purchase…',
+    'upgradeOpenFailed': 'Could not open the app. Please launch No Lazy Load manually to complete the purchase.',
+    'licenseTitle': 'License',
+    'licenseFree': 'Free · up to 3 websites',
+    'licensePro': 'Pro · unlimited websites',
+    'licenseUpgrade': 'Upgrade to Pro',
+    'licenseManage': 'Manage / Restore'
   },
   'es': {
     'siteListTitle': 'Sitios Configurados',
@@ -1562,8 +1611,8 @@ function getStorage() {
  * 获取翻译文本
  */
 function t(key, replacements = {}) {
-  const lang = TRANSLATIONS[currentLanguage] || TRANSLATIONS['zh'];
-  let text = lang[key] || TRANSLATIONS['zh'][key] || key;
+  const lang = TRANSLATIONS[currentLanguage] || TRANSLATIONS['en'] || TRANSLATIONS['zh'];
+  let text = lang[key] || TRANSLATIONS['en']?.[key] || TRANSLATIONS['zh']?.[key] || key;
 
   // 替换占位符
   Object.keys(replacements).forEach(placeholder => {
@@ -1624,6 +1673,8 @@ async function saveLanguageSetting() {
 
   currentLanguage = newLang;
   applyTranslations();
+  // 授权卡片的文案由 updateLicenseStatus() 动态设置，不走 data-i18n，需单独刷新
+  updateLicenseStatus();
   showToast(t('saved'));
 }
 
@@ -1648,16 +1699,7 @@ function applyTranslations() {
     }
   });
 
-  // 更新 section 标题（按实际 DOM 顺序）
-  const allCardH2s = document.querySelectorAll('.card h2');
-  const sectionTitles = {
-    'importExport': allCardH2s[2],
-    'languageSettings': allCardH2s[3]
-  };
-
-  Object.entries(sectionTitles).forEach(([key, el]) => {
-    if (el) el.textContent = t(key);
-  });
+  // 卡片标题统一走 data-i18n（不要再按下标定位 —— 插一张卡片就会整体串位）
 
   // 更新复选框标签
   const showToastLabel = document.querySelector('#showInterceptionToast').parentElement;
@@ -1717,15 +1759,231 @@ async function sendMessage(type, data = {}) {
       resolve({ success: false, error: 'Runtime not available' });
       return;
     }
-    rt.sendMessage({ type, ...data }, (response) => {
-      if (rt.lastError) {
-        console.error('[Settings] Message error:', rt.lastError);
-        resolve({ success: false, error: rt.lastError.message });
-        return;
-      }
-      resolve(response);
-    });
+    // 超时保护：5 秒内未响应则 resolve(null)，避免 background 卡死时整个 settings 瘫痪
+    const timer = setTimeout(() => {
+      console.warn('[Settings] sendMessage timeout:', type);
+      resolve(null);
+    }, 5000);
+    try {
+      rt.sendMessage({ type, ...data }, (response) => {
+        clearTimeout(timer);
+        if (rt.lastError) {
+          console.error('[Settings] Message error:', rt.lastError);
+          resolve({ success: false, error: rt.lastError.message });
+          return;
+        }
+        resolve(response);
+      });
+    } catch (e) {
+      clearTimeout(timer);
+      console.warn('[Settings] sendMessage threw:', type, e);
+      resolve(null);
+    }
   });
+}
+
+// ===== Entitlement 辅助函数 =====
+//
+// 与 popup 同样的快慢双路径设计：
+//   · loadCachedEntitlements() —— 读 background 的 storage.local 快照，毫秒级
+//   · refreshEntitlements()    —— 走原生 App Group 拉最新值，慢但精确
+// 页面渲染一律用快照，绝不因为原生慢而让列表空着。
+
+/**
+ * 快路径：从 background 读取权限快照。不触发任何原生调用。
+ */
+async function loadCachedEntitlements() {
+  try {
+    const resp = await sendMessage(MESSAGE_TYPES.GET_ENTITLEMENTS);
+    if (resp && resp.success) {
+      _entitlementState = {
+        entitlements: resp.entitlements || [],
+        isLimitEnforced: !!resp.isLimitEnforced,
+      };
+    }
+  } catch (e) {
+    console.warn('[Settings] loadCachedEntitlements failed', e);
+  }
+  return _entitlementState;
+}
+
+/**
+ * 慢路径：让 background 走原生 App Group 拉最新权限。
+ * @returns {Promise<boolean>} 权限状态是否发生了变化
+ */
+async function refreshEntitlements() {
+  try {
+    const before = JSON.stringify(_entitlementState.entitlements);
+    const resp = await sendMessage(MESSAGE_TYPES.REFRESH_ENTITLEMENTS);
+    if (resp && resp.success) {
+      _entitlementState = {
+        entitlements: resp.entitlements || [],
+        isLimitEnforced: !!resp.isLimitEnforced,
+      };
+      const after = JSON.stringify(_entitlementState.entitlements);
+      console.log('[Settings] 权限刷新:', before, '->', after);
+      return before !== after;
+    }
+    console.warn('[Settings] 权限刷新失败（原生无响应），继续用快照:', before);
+  } catch (e) {
+    console.warn('[Settings] refreshEntitlements failed', e);
+  }
+  return false;
+}
+
+/**
+ * 更新授权卡片。
+ *
+ * 这是 Pro 用户重新打开购买/恢复界面的唯一常驻入口：
+ * 免费限额那条路径（导入超限）在升级之后就永远不会再触发了。
+ */
+function updateLicenseStatus() {
+  const status = document.getElementById('licenseStatus');
+  const btn = document.getElementById('manageLicenseBtn');
+  if (!status || !btn) return;
+
+  if (hasUnlimitedSites()) {
+    status.textContent = t('licensePro');
+    status.classList.add('pro');
+    btn.textContent = t('licenseManage');
+  } else {
+    status.textContent = t('licenseFree');
+    status.classList.remove('pro');
+    btn.textContent = t('licenseUpgrade');
+  }
+}
+
+/**
+ * 当前是否已解锁无限网站
+ */
+function hasUnlimitedSites() {
+  // 非限额平台（Chrome/Firefox）永远返回 true
+  if (!_entitlementState.isLimitEnforced) return true;
+  return _entitlementState.entitlements.includes(ENTITLEMENTS.UNLIMITED_SITES);
+}
+
+/**
+ * 格式化网站计数 badge：Pro 显示 ∞，Free 显示 count/3
+ */
+function formatSiteCount(count) {
+  if (hasUnlimitedSites()) return '∞';
+  return `${count}/${APP_LIMITS.FREE_SITE_LIMIT}`;
+}
+
+/**
+ * 显示升级弹窗（内联自 shared/upgrade-dialog.js）
+ * @returns {Promise<boolean>} true=用户点击 Upgrade
+ */
+function showUpgradeDialog() {
+  const tr = (key) => t(key);
+  return new Promise((resolve) => {
+    const existing = document.getElementById('upgradeDialogOverlay');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.id = 'upgradeDialogOverlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.style.cssText = [
+      'position:fixed', 'inset:0', 'background:rgba(0,0,0,0.5)',
+      'display:flex', 'align-items:center', 'justify-content:center',
+      'z-index:2147483647',
+      'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif',
+    ].join(';');
+
+    const dialog = document.createElement('div');
+    dialog.style.cssText = [
+      'background:#fff', 'color:#1d1d1f', 'border-radius:12px', 'padding:24px',
+      'max-width:360px', 'width:calc(100% - 48px)',
+      'box-shadow:0 8px 32px rgba(0,0,0,0.2)', 'text-align:center',
+    ].join(';');
+
+    const title = document.createElement('h2');
+    title.textContent = tr('upgradeTitle');
+    title.style.cssText = 'margin:0 0 12px;font-size:20px;font-weight:600';
+
+    const body = document.createElement('p');
+    body.textContent = tr('upgradeBody');
+    body.style.cssText = 'margin:0 0 20px;font-size:14px;line-height:1.5;color:#424245';
+
+    const buttonRow = document.createElement('div');
+    buttonRow.style.cssText = 'display:flex;gap:10px;justify-content:center';
+
+    const cancelBtn = document.createElement('button');
+    cancelBtn.textContent = tr('cancelUpgrade');
+    cancelBtn.style.cssText = [
+      'flex:1', 'padding:10px 16px', 'border:1px solid #d2d2d7', 'background:#fff',
+      'color:#1d1d1f', 'border-radius:8px', 'font-size:14px', 'font-weight:500', 'cursor:pointer',
+    ].join(';');
+
+    const upgradeBtn = document.createElement('button');
+    upgradeBtn.textContent = tr('upgradeButton');
+    upgradeBtn.style.cssText = [
+      'flex:1', 'padding:10px 16px', 'border:none', 'background:#007aff', 'color:#fff',
+      'border-radius:8px', 'font-size:14px', 'font-weight:600', 'cursor:pointer',
+    ].join(';');
+
+    buttonRow.appendChild(cancelBtn);
+    buttonRow.appendChild(upgradeBtn);
+    dialog.appendChild(title);
+    dialog.appendChild(body);
+    dialog.appendChild(buttonRow);
+    overlay.appendChild(dialog);
+    document.body.appendChild(overlay);
+
+    const close = (result) => {
+      overlay.remove();
+      cancelBtn.onclick = null;
+      upgradeBtn.onclick = null;
+      overlay.onclick = null;
+      document.removeEventListener('keydown', onKey);
+      resolve(result);
+    };
+
+    cancelBtn.onclick = () => close(false);
+    upgradeBtn.onclick = () => close(true);
+    overlay.onclick = (e) => { if (e.target === overlay) close(false); };
+    const onKey = (e) => { if (e.key === 'Escape') close(false); };
+    document.addEventListener('keydown', onKey);
+    upgradeBtn.focus();
+  });
+}
+
+/**
+ * 唤起 Host App，由用户在那边完成 StoreKit 付款。
+ *
+ * 扩展进程无法弹出系统付款面板，所以这里拿不到"购买成功"的结果。
+ * 购买完成后回到设置页刷新，loadSiteList() 会从 App Group 读到新权限。
+ *
+ * @returns {Promise<boolean>} Host App 是否成功被唤起
+ */
+async function requestUpgrade() {
+  console.log('[Settings] requestUpgrade: 唤起 Host App 完成 StoreKit 购买');
+
+  const resp = await sendMessage(MESSAGE_TYPES.REQUEST_PURCHASE);
+  console.log('[Settings] REQUEST_PURCHASE response:', JSON.stringify(resp));
+  if (resp && resp.success) {
+    showToast(t('openingHostApp'));
+    return true;
+  }
+
+  // 兜底：原生唤起没成功，试 URL scheme
+  console.warn('[Settings] 原生唤起失败，尝试 URL scheme 兜底');
+  try {
+    const a = document.createElement('a');
+    a.href = 'imagelazyloadblocker://upgrade';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    showToast(t('openingHostApp'));
+    return true;
+  } catch (e) {
+    console.warn('[Settings] URL scheme 兜底也失败', e);
+  }
+
+  showToast(t('upgradeOpenFailed'));
+  return false;
 }
 
 /**
@@ -1780,11 +2038,13 @@ async function loadSiteList() {
     // 清空列表
     siteList.innerHTML = '';
 
-    // 更新计数
+    // 更新计数（含权限状态：Pro 显示 ∞，Free 显示 count/3）
+    // 用内存快照，渲染前不做原生调用。
     const count = Object.keys(configs).length;
     if (siteCount) {
-      siteCount.textContent = count;
+      siteCount.textContent = formatSiteCount(count);
     }
+    updateLicenseStatus();
 
     if (count === 0) {
       console.log('[Settings] No sites configured, showing empty state');
@@ -2019,22 +2279,32 @@ async function importConfig(file) {
       return;
     }
 
-    // 导入网站配置
+    // 导入网站配置（逐条检查限额，Safari Free 用户达上限时停止）
+    const totalSites = Object.keys(data.siteConfigs).length;
+    let added = 0;
+    let limitReached = false;
     for (const [domain, config] of Object.entries(data.siteConfigs)) {
-      await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+      const resp = await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
         domain,
         strategy: config.strategy || STRATEGIES.TECH_BLOCK
       });
+      if (resp && resp.success === false && resp.error === 'LIMIT_REACHED') {
+        limitReached = true;
+        break;
+      }
+      added++;
     }
 
-    // 导入全局配置
+    // 导入全局配置（即使网站导入被截断，全局配置仍可导入）
     await sendMessage(MESSAGE_TYPES.SET_GLOBAL_CONFIG, {
       config: data.globalConfig
     });
 
     loadSiteList();
     loadGlobalSettings();
-    showToast(t('configImported'));
+    showToast(limitReached
+      ? t('importPartial', { added, total: totalSites })
+      : t('configImported'));
   } catch (error) {
     showToast(t('importFailed') + error.message);
   }
@@ -2042,9 +2312,12 @@ async function importConfig(file) {
 
 // 初始化
 document.addEventListener('DOMContentLoaded', async () => {
-  // Firefox 检测：隐藏仅限 Chrome 的扩展项
-  const isFirefox = typeof browser !== 'undefined' && typeof chrome === 'undefined';
-  if (isFirefox) {
+  // 浏览器检测：只有 Chrome 显示 chrome-only 扩展项
+  // Safari 同时暴露 browser.* 和 chrome.*，旧逻辑（仅判断 browser 且无 chrome）会漏判 Safari
+  // 这里用 UA 判断，只有明确是 Chrome 才显示
+  const ua = navigator.userAgent;
+  const isChrome = /Chrome/.test(ua) && !/Edg|OPR/.test(ua);
+  if (!isChrome) {
     document.querySelectorAll('.chrome-only').forEach(el => el.style.display = 'none');
     // 如果扩展列表中没有可见项，隐藏整个区域
     const extensionList = document.querySelector('.extension-list');
@@ -2062,12 +2335,27 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 应用翻译
   applyTranslations();
 
+  // 权限分两步：
+  //   1) await 本地快照 —— 只读 storage，毫秒级
+  //   2) 异步走原生刷新 —— 慢，绝不 await，失败也不影响页面可用性
+  await loadCachedEntitlements();
+  updateLicenseStatus();
+  refreshEntitlements()
+    .then((changed) => { if (changed) loadSiteList(); })
+    .catch(e => console.warn('[Settings] entitlement refresh error', e));
+
   // 加载数据
   await loadSiteList();
   await loadGlobalSettings();
   await loadCustomAttributes();
 
   // 绑定事件
+  // 授权入口：唤起 Host App（购买 / 恢复购买都在那边）
+  const manageLicenseBtn = document.getElementById('manageLicenseBtn');
+  if (manageLicenseBtn) {
+    manageLicenseBtn.addEventListener('click', () => { requestUpgrade(); });
+  }
+
   document.getElementById('saveGlobalBtn').addEventListener('click', saveGlobalSettings);
   document.getElementById('saveLangBtn').addEventListener('click', saveLanguageSetting);
   document.getElementById('exportBtn').addEventListener('click', exportConfig);

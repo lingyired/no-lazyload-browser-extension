@@ -19,7 +19,30 @@ const MESSAGE_TYPES = {
   GET_SITE_CONFIG: 'GET_SITE_CONFIG',
   SET_SITE_CONFIG: 'SET_SITE_CONFIG',
   REMOVE_SITE_CONFIG: 'REMOVE_SITE_CONFIG',
-  GET_ALL_CONFIGS: 'GET_ALL_CONFIGS'
+  GET_ALL_CONFIGS: 'GET_ALL_CONFIGS',
+  // Entitlement / Purchase（值与 background 一致）
+  //   GET_ENTITLEMENTS     —— 读 background 的本地快照，毫秒级返回
+  //   REFRESH_ENTITLEMENTS —— 让 background 走原生 App Group 拉最新值（慢）
+  GET_ENTITLEMENTS: 'getEntitlements',
+  REFRESH_ENTITLEMENTS: 'refreshEntitlements',
+  REQUEST_PURCHASE: 'requestPurchase',
+  RESTORE_PURCHASES: 'restorePurchases',
+  OPEN_HOST_APP: 'openHostApp'
+};
+
+// ===== Entitlement System 常量（内联自 shared/constants.js）=====
+const APP_LIMITS = {
+  FREE_SITE_LIMIT: 3,
+};
+
+const ENTITLEMENTS = {
+  UNLIMITED_SITES: 'unlimitedSites',
+};
+
+// 当前用户权限状态缓存（由 background GET_ENTITLEMENTS 填充）
+let _entitlementState = {
+  entitlements: [],
+  isLimitEnforced: false,
 };
 
 // 策略常量
@@ -86,7 +109,19 @@ const TRANSLATIONS = {
     'autoScroll': '自动滚动',
     'delete': '删除',
     'author': '作者',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'tools': 'Kimi 2.5 + ClaudeCode + superpowers',
+    'upgradeTitle': '解锁 Pro',
+    'upgradeBody': '免费版最多支持 3 个网站。升级以解锁无限网站及未来的高级功能。',
+    'upgradeButton': '升级',
+    'cancelUpgrade': '取消',
+    'siteLimitReached': '已达网站数量上限',
+    'importPartial': '已导入 {added}/{total} 个网站，免费版上限为 3 个。',
+    'openingHostApp': '正在打开宿主 App，请完成购买后返回扩展',
+    'upgradeOpenFailed': '无法自动打开 App，请手动启动 No Lazy Load 完成购买',
+    'licenseFree': '免费版 · 最多 3 个网站',
+    'licensePro': 'Pro · 无限网站',
+    'licenseUpgrade': '升级到 Pro',
+    'licenseManage': '管理 / 恢复购买'
   },
   'en': {
     'currentSite': 'Current Site',
@@ -114,7 +149,19 @@ const TRANSLATIONS = {
     'autoScroll': 'Auto-scroll',
     'delete': 'Delete',
     'author': 'by',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'tools': 'Kimi 2.5 + ClaudeCode + superpowers',
+    'upgradeTitle': 'Unlock Pro',
+    'upgradeBody': 'Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features.',
+    'upgradeButton': 'Upgrade',
+    'cancelUpgrade': 'Cancel',
+    'siteLimitReached': 'Site limit reached',
+    'importPartial': 'Imported {added} of {total} sites. Free limit is 3.',
+    'openingHostApp': 'Opening Host App to complete purchase…',
+    'upgradeOpenFailed': 'Could not open the app. Please launch No Lazy Load manually to complete the purchase.',
+    'licenseFree': 'Free · up to 3 websites',
+    'licensePro': 'Pro · unlimited websites',
+    'licenseUpgrade': 'Upgrade to Pro',
+    'licenseManage': 'Manage / Restore'
   },
   'es': {
     'currentSite': 'Sitio Actual',
@@ -1107,8 +1154,9 @@ let currentDomain = '';
  * 获取翻译文本
  */
 function t(key, replacements = {}) {
-  const lang = TRANSLATIONS[currentLanguage] || TRANSLATIONS['zh'];
-  let text = lang[key] || TRANSLATIONS['zh'][key] || key;
+  const lang = TRANSLATIONS[currentLanguage] || TRANSLATIONS['en'] || TRANSLATIONS['zh'];
+  // 回退顺序：当前语言 → en → zh → key 本身
+  let text = lang[key] || TRANSLATIONS['en']?.[key] || TRANSLATIONS['zh']?.[key] || key;
 
   // 替换占位符
   Object.keys(replacements).forEach(placeholder => {
@@ -1152,10 +1200,255 @@ function applyTranslations() {
  */
 async function sendMessage(type, data = {}) {
   return new Promise((resolve) => {
-    runtime.sendMessage({ type, ...data }, (response) => {
-      resolve(response);
-    });
+    // 超时保护：5 秒内未响应则 resolve(null)，避免 background 卡死时整个 popup 瘫痪
+    const timer = setTimeout(() => {
+      console.warn('[Popup] sendMessage timeout:', type);
+      resolve(null);
+    }, 5000);
+    try {
+      runtime.sendMessage({ type, ...data }, (response) => {
+        clearTimeout(timer);
+        resolve(response);
+      });
+    } catch (e) {
+      clearTimeout(timer);
+      console.warn('[Popup] sendMessage threw:', type, e);
+      resolve(null);
+    }
   });
+}
+
+// ===== Entitlement 辅助函数 =====
+//
+// 权限读取刻意拆成快慢两条路径，避免原生调用拖慢 UI：
+//   · loadCachedEntitlements() —— 读 background 的 storage.local 快照，毫秒级
+//   · refreshEntitlements()    —— 走原生 App Group 拉最新值，慢但精确
+//
+// popup 打开时先用快照瞬间渲染，再异步刷新；刷新回来若状态有变只更新 badge，
+// 绝不因为原生慢/失败而让列表空着。
+
+/**
+ * 快路径：从 background 读取权限快照。不触发任何原生调用。
+ */
+async function loadCachedEntitlements() {
+  try {
+    const resp = await sendMessage(MESSAGE_TYPES.GET_ENTITLEMENTS);
+    if (resp && resp.success) {
+      _entitlementState = {
+        entitlements: resp.entitlements || [],
+        isLimitEnforced: !!resp.isLimitEnforced,
+      };
+    }
+  } catch (e) {
+    console.warn('[Popup] loadCachedEntitlements failed', e);
+  }
+  return _entitlementState;
+}
+
+/**
+ * 慢路径：让 background 走原生 App Group 拉一次最新权限。
+ * StoreKit 购买结果就是通过这条路径进入扩展的。
+ * @returns {Promise<boolean>} 权限状态是否发生了变化
+ */
+async function refreshEntitlements() {
+  try {
+    const before = JSON.stringify(_entitlementState.entitlements);
+    const resp = await sendMessage(MESSAGE_TYPES.REFRESH_ENTITLEMENTS);
+    if (resp && resp.success) {
+      _entitlementState = {
+        entitlements: resp.entitlements || [],
+        isLimitEnforced: !!resp.isLimitEnforced,
+      };
+      const after = JSON.stringify(_entitlementState.entitlements);
+      console.log('[Popup] 权限刷新:', before, '->', after);
+      return before !== after;
+    }
+    console.warn('[Popup] 权限刷新失败（原生无响应），继续用快照:', before);
+  } catch (e) {
+    console.warn('[Popup] refreshEntitlements failed', e);
+  }
+  return false;
+}
+
+/**
+ * 等待 Pro 权限生效（用户正在 Host App 里付款）。
+ * 每 2 秒走一次原生刷新，最多等 90 秒；等到返回 true。
+ */
+async function waitForUnlimitedSites(timeoutMs = 90000, intervalMs = 2000) {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    await refreshEntitlements();
+    if (hasUnlimitedSites()) return true;
+    await new Promise(resolve => setTimeout(resolve, intervalMs));
+  }
+  return false;
+}
+
+/**
+ * 把权限状态反映到网站计数 badge 上（Pro 显示 ∞，Free 显示 count/3）。
+ */
+function updateSiteCountBadge(count) {
+  const siteCount = document.getElementById('siteCount');
+  if (siteCount) siteCount.textContent = formatSiteCount(count);
+  updateLicenseRow();
+}
+
+/**
+ * 更新授权入口那一行。
+ *
+ * 这是 Pro 用户重新打开购买/恢复界面的唯一常驻入口：
+ * 免费限额那条路径在升级之后就永远不会再触发了。
+ */
+function updateLicenseRow() {
+  const status = document.getElementById('licenseStatus');
+  const btn = document.getElementById('manageLicense');
+  if (!status || !btn) return;
+
+  if (hasUnlimitedSites()) {
+    status.textContent = t('licensePro');
+    status.classList.add('pro');
+    btn.textContent = t('licenseManage');
+  } else {
+    status.textContent = t('licenseFree');
+    status.classList.remove('pro');
+    btn.textContent = t('licenseUpgrade');
+  }
+}
+
+/**
+ * 当前是否已解锁无限网站
+ */
+function hasUnlimitedSites() {
+  // 非限额平台（Chrome/Firefox）永远返回 true
+  if (!_entitlementState.isLimitEnforced) return true;
+  return _entitlementState.entitlements.includes(ENTITLEMENTS.UNLIMITED_SITES);
+}
+
+/**
+ * 格式化网站计数 badge：Pro 显示 ∞，Free 显示 count/3
+ */
+function formatSiteCount(count) {
+  if (hasUnlimitedSites()) return '∞';
+  return `${count}/${APP_LIMITS.FREE_SITE_LIMIT}`;
+}
+
+/**
+ * 显示升级弹窗（内联自 shared/upgrade-dialog.js）
+ * @returns {Promise<boolean>} true=用户点击 Upgrade
+ */
+function showUpgradeDialog() {
+  const tr = (key) => t(key);
+  return new Promise((resolve) => {
+    const existing = document.getElementById('upgradeDialogOverlay');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.id = 'upgradeDialogOverlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.style.cssText = [
+      'position:fixed', 'inset:0', 'background:rgba(0,0,0,0.5)',
+      'display:flex', 'align-items:center', 'justify-content:center',
+      'z-index:2147483647',
+      'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif',
+    ].join(';');
+
+    const dialog = document.createElement('div');
+    dialog.style.cssText = [
+      'background:#fff', 'color:#1d1d1f', 'border-radius:12px', 'padding:24px',
+      'max-width:360px', 'width:calc(100% - 48px)',
+      'box-shadow:0 8px 32px rgba(0,0,0,0.2)', 'text-align:center',
+    ].join(';');
+
+    const title = document.createElement('h2');
+    title.textContent = tr('upgradeTitle');
+    title.style.cssText = 'margin:0 0 12px;font-size:20px;font-weight:600';
+
+    const body = document.createElement('p');
+    body.textContent = tr('upgradeBody');
+    body.style.cssText = 'margin:0 0 20px;font-size:14px;line-height:1.5;color:#424245';
+
+    const buttonRow = document.createElement('div');
+    buttonRow.style.cssText = 'display:flex;gap:10px;justify-content:center';
+
+    const cancelBtn = document.createElement('button');
+    cancelBtn.textContent = tr('cancelUpgrade');
+    cancelBtn.style.cssText = [
+      'flex:1', 'padding:10px 16px', 'border:1px solid #d2d2d7', 'background:#fff',
+      'color:#1d1d1f', 'border-radius:8px', 'font-size:14px', 'font-weight:500', 'cursor:pointer',
+    ].join(';');
+
+    const upgradeBtn = document.createElement('button');
+    upgradeBtn.textContent = tr('upgradeButton');
+    upgradeBtn.style.cssText = [
+      'flex:1', 'padding:10px 16px', 'border:none', 'background:#007aff', 'color:#fff',
+      'border-radius:8px', 'font-size:14px', 'font-weight:600', 'cursor:pointer',
+    ].join(';');
+
+    buttonRow.appendChild(cancelBtn);
+    buttonRow.appendChild(upgradeBtn);
+    dialog.appendChild(title);
+    dialog.appendChild(body);
+    dialog.appendChild(buttonRow);
+    overlay.appendChild(dialog);
+    document.body.appendChild(overlay);
+
+    const close = (result) => {
+      overlay.remove();
+      cancelBtn.onclick = null;
+      upgradeBtn.onclick = null;
+      overlay.onclick = null;
+      document.removeEventListener('keydown', onKey);
+      resolve(result);
+    };
+
+    cancelBtn.onclick = () => close(false);
+    upgradeBtn.onclick = () => close(true);
+    overlay.onclick = (e) => { if (e.target === overlay) close(false); };
+    const onKey = (e) => { if (e.key === 'Escape') close(false); };
+    document.addEventListener('keydown', onKey);
+    upgradeBtn.focus();
+  });
+}
+
+/**
+ * 唤起 Host App 完成 StoreKit 付款。
+ *
+ * 扩展进程无法弹出系统付款面板，所以这里只能"打开 App"，
+ * 拿不到"购买成功"的结果 —— 购买结果要等用户回 Safari、
+ * 重新打开 popup 时由 refreshEntitlements() 从 App Group 读到。
+ *
+ * 原生唤起失败时兜底走 URL scheme（Host App 注册了 imagelazyloadblocker://）。
+ *
+ * @returns {Promise<boolean>} 是否成功把用户送去付款
+ */
+async function requestUpgrade() {
+  console.log('[Popup] requestUpgrade: 唤起 Host App 完成 StoreKit 购买');
+
+  const resp = await sendMessage(MESSAGE_TYPES.REQUEST_PURCHASE);
+  console.log('[Popup] REQUEST_PURCHASE response:', JSON.stringify(resp));
+  if (resp && resp.success) {
+    showToast(t('openingHostApp'));
+    return true;
+  }
+
+  // 兜底：原生唤起没成功，试 URL scheme
+  console.warn('[Popup] 原生唤起失败，尝试 URL scheme 兜底');
+  try {
+    const a = document.createElement('a');
+    a.href = 'imagelazyloadblocker://upgrade';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    showToast(t('openingHostApp'));
+    return true;
+  } catch (e) {
+    console.warn('[Popup] URL scheme 兜底也失败', e);
+  }
+
+  showToast(t('upgradeOpenFailed'));
+  return false;
 }
 
 /**
@@ -1273,12 +1566,32 @@ async function toggleCurrentSite() {
   } else {
     // 添加网站，根据复选框决定是否使用自动滚动
     const scrollFallback = document.getElementById('currentScrollToggle').checked;
-    await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+    const addResp = await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
       domain: currentDomain,
       strategy: STRATEGIES.TECH_BLOCK,
       scrollFallback
     });
-    showToast(scrollFallback ? t('siteAddedWithScroll', { domain: currentDomain }) : t('siteAdded', { domain: currentDomain }));
+
+    // 限额拦截：弹出升级对话框
+    if (addResp && addResp.success === false && addResp.error === 'LIMIT_REACHED') {
+      const wantUpgrade = await showUpgradeDialog();
+      if (wantUpgrade) {
+        const sent = await requestUpgrade();
+        // Host App 打开后用户去付款；这里轮询等权限生效，等到就把这次添加补上。
+        // 若 popup 中途被关掉，background 在下次 SET_SITE_CONFIG 时会自己走原生确认。
+        if (sent && await waitForUnlimitedSites()) {
+          await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+            domain: currentDomain,
+            strategy: STRATEGIES.TECH_BLOCK,
+            scrollFallback
+          });
+          showToast(t('siteAdded', { domain: currentDomain }));
+        }
+      }
+      // 用户取消则什么都不做（不显示 siteAdded toast）
+    } else {
+      showToast(scrollFallback ? t('siteAddedWithScroll', { domain: currentDomain }) : t('siteAdded', { domain: currentDomain }));
+    }
   }
 
   // 刷新显示
@@ -1294,11 +1607,11 @@ async function loadSiteList() {
   const configs = response?.data || {};
 
   const siteList = document.getElementById('siteList');
-  const siteCount = document.getElementById('siteCount');
 
-  // 更新计数
+  // 计数 badge 直接用内存里的权限快照（popup 打开时已预热）。
+  // 这里刻意不做任何原生调用 —— 那是列表空着好几秒的原因。
   const count = Object.keys(configs).length;
-  siteCount.textContent = count;
+  updateSiteCountBadge(count);
 
   // 清空列表
   siteList.innerHTML = '';
@@ -1404,6 +1717,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   // 应用翻译
   applyTranslations();
 
+  // 权限分两步，顺序很重要：
+  //   1) await 本地快照 —— 只是读 storage，毫秒级，拿到后列表立刻能渲染
+  //   2) 异步走原生刷新 —— 慢，且失败也不该影响 popup 可用性，所以绝不 await
+  await loadCachedEntitlements();
+  updateLicenseRow();
+  refreshEntitlements()
+    .then((changed) => {
+      // StoreKit 购买完成后回到 popup：权限变了就重渲染列表、badge 与授权入口
+      if (changed) loadSiteList();
+    })
+    .catch(e => console.warn('[Popup] entitlement refresh error', e));
+
   // 加载当前网站状态和列表
   checkCurrentSite();
   loadSiteList();
@@ -1412,6 +1737,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('toggleBtn').addEventListener('click', toggleCurrentSite);
   document.getElementById('openSettings').addEventListener('click', openSettings);
   document.getElementById('refreshPage').addEventListener('click', refreshPage);
+
+  // 授权入口：唤起 Host App（购买 / 恢复购买都在那边）
+  const manageLicenseBtn = document.getElementById('manageLicense');
+  if (manageLicenseBtn) {
+    manageLicenseBtn.addEventListener('click', () => { requestUpgrade(); });
+  }
 
   // 绑定当前网站滚动选项事件
   const scrollToggle = document.getElementById('currentScrollToggle');
