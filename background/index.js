@@ -3,7 +3,6 @@
 import { setupMessageHandler } from './messageHandler.js';
 import { getSiteConfig } from './siteConfigManager.js';
 import { JSEntitlementManager } from '../shared/entitlements.js';
-import { APP_LIMITS } from '../shared/constants.js';
 
 // Chrome/Firefox: 不执行网站数量限额（enforceLimit=false，所有权限视为已授予）
 const jsEntitlementManager = new JSEntitlementManager({ enforceLimit: false });

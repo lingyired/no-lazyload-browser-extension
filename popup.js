@@ -39,6 +39,16 @@ const ENTITLEMENTS = {
   UNLIMITED_SITES: 'unlimitedSites',
 };
 
+// 授权模式常量（内联自 shared/constants.js）
+//   unrestricted = Chrome/Firefox：免费且不限额，不是 Pro，绝不显示付费 UI
+//   free         = Safari 免费版
+//   pro          = Safari 已解锁 Pro
+const LICENSE_MODES = {
+  UNRESTRICTED: 'unrestricted',
+  FREE: 'free',
+  PRO: 'pro',
+};
+
 // 当前用户权限状态缓存（由 background GET_ENTITLEMENTS 填充）
 let _entitlementState = {
   entitlements: [],
@@ -121,7 +131,8 @@ const TRANSLATIONS = {
     'licenseFree': '免费版 · 最多 3 个网站',
     'licensePro': 'Pro · 无限网站',
     'licenseUpgrade': '升级到 Pro',
-    'licenseManage': '管理 / 恢复购买'
+    'licenseManage': '管理 / 恢复购买',
+    'proBadge': 'PRO'
   },
   'en': {
     'currentSite': 'Current Site',
@@ -161,7 +172,8 @@ const TRANSLATIONS = {
     'licenseFree': 'Free · up to 3 websites',
     'licensePro': 'Pro · unlimited websites',
     'licenseUpgrade': 'Upgrade to Pro',
-    'licenseManage': 'Manage / Restore'
+    'licenseManage': 'Manage / Restore',
+    'proBadge': 'PRO'
   },
   'es': {
     'currentSite': 'Sitio Actual',
@@ -1285,7 +1297,8 @@ async function waitForUnlimitedSites(timeoutMs = 90000, intervalMs = 2000) {
 }
 
 /**
- * 把权限状态反映到网站计数 badge 上（Pro 显示 ∞，Free 显示 count/3）。
+ * 把权限状态反映到网站计数 badge 上。
+ * Free 显示 count/3；Pro 与 Chrome/Firefox 只显示数量，不显示 ∞。
  */
 function updateSiteCountBadge(count) {
   const siteCount = document.getElementById('siteCount');
@@ -1296,19 +1309,28 @@ function updateSiteCountBadge(count) {
 /**
  * 更新授权入口那一行。
  *
- * 这是 Pro 用户重新打开购买/恢复界面的唯一常驻入口：
- * 免费限额那条路径在升级之后就永远不会再触发了。
+ * Chrome/Firefox 无付费概念 → 整行隐藏。
+ * Safari Free            → 显示免费额度 + "升级到 Pro"。
+ * Safari Pro             → 隐藏购买入口（Pro 用户不该再看到 Buy CTA），
+ *                          只在列表标题旁显示 PRO 徽章。
  */
 function updateLicenseRow() {
+  const mode = getLicenseMode();
+  const row = document.querySelector('.license-row');
   const status = document.getElementById('licenseStatus');
   const btn = document.getElementById('manageLicense');
+
+  // PRO 徽章（列表标题旁）
+  const badge = document.getElementById('planBadge');
+  if (badge) {
+    badge.hidden = mode !== LICENSE_MODES.PRO;
+    badge.textContent = t('proBadge');
+  }
+
+  if (row) row.hidden = mode !== LICENSE_MODES.FREE;
   if (!status || !btn) return;
 
-  if (hasUnlimitedSites()) {
-    status.textContent = t('licensePro');
-    status.classList.add('pro');
-    btn.textContent = t('licenseManage');
-  } else {
+  if (mode === LICENSE_MODES.FREE) {
     status.textContent = t('licenseFree');
     status.classList.remove('pro');
     btn.textContent = t('licenseUpgrade');
@@ -1316,20 +1338,29 @@ function updateLicenseRow() {
 }
 
 /**
- * 当前是否已解锁无限网站
+ * 当前授权模式（UI 只认这一个判断）
+ * @returns {'unrestricted'|'free'|'pro'}
  */
-function hasUnlimitedSites() {
-  // 非限额平台（Chrome/Firefox）永远返回 true
-  if (!_entitlementState.isLimitEnforced) return true;
-  return _entitlementState.entitlements.includes(ENTITLEMENTS.UNLIMITED_SITES);
+function getLicenseMode() {
+  if (!_entitlementState.isLimitEnforced) return LICENSE_MODES.UNRESTRICTED;
+  return _entitlementState.entitlements.includes(ENTITLEMENTS.UNLIMITED_SITES)
+    ? LICENSE_MODES.PRO
+    : LICENSE_MODES.FREE;
 }
 
 /**
- * 格式化网站计数 badge：Pro 显示 ∞，Free 显示 count/3
+ * 当前是否不受网站数量限制（Chrome/Firefox 恒为 true，Safari 仅 Pro 为 true）
+ */
+function hasUnlimitedSites() {
+  return getLicenseMode() !== LICENSE_MODES.FREE;
+}
+
+/**
+ * 格式化网站计数：Free 显示 count/3，其余只显示数量（不显示 ∞）
  */
 function formatSiteCount(count) {
-  if (hasUnlimitedSites()) return '∞';
-  return `${count}/${APP_LIMITS.FREE_SITE_LIMIT}`;
+  if (getLicenseMode() === LICENSE_MODES.FREE) return `${count}/${APP_LIMITS.FREE_SITE_LIMIT}`;
+  return String(count);
 }
 
 /**

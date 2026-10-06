@@ -7,7 +7,7 @@
 // Chrome/Firefox: enforceLimit=false → 所有权限视为已授予（无限制）
 // Safari: enforceLimit=true → 通过 sendNativeMessage 向原生 EntitlementStore 查询
 
-import { ENTITLEMENTS, APP_LIMITS } from './constants.js';
+import { ENTITLEMENTS, APP_LIMITS, LICENSE_MODES, getLicenseMode } from './constants.js';
 
 class JSEntitlementManager {
   constructor(options = {}) {
@@ -58,6 +58,27 @@ class JSEntitlementManager {
   }
 
   /**
+   * UI 用的授权模式：unrestricted（Chrome/Firefox）/ free（Safari 免费）/ pro。
+   * 不要用 has(UNLIMITED_SITES) 反推套餐名 —— 那会把 Chrome 也显示成 Pro。
+   */
+  licenseMode() {
+    return getLicenseMode({
+      isLimitEnforced: this.enforceLimit,
+      entitlements: Array.from(this.entitlements),
+    });
+  }
+
+  /** 权限快照（供 background 返回给 UI 的纯数据） */
+  snapshot() {
+    return {
+      entitlements: Array.from(this.entitlements),
+      isLimitEnforced: this.enforceLimit,
+      freeSiteLimit: APP_LIMITS.FREE_SITE_LIMIT,
+      licenseMode: this.licenseMode(),
+    };
+  }
+
+  /**
    * 是否还能新增网站。
    * @param {number} currentCount 当前已配置网站数
    */
@@ -87,4 +108,4 @@ class JSEntitlementManager {
   }
 }
 
-export { JSEntitlementManager, ENTITLEMENTS, APP_LIMITS };
+export { JSEntitlementManager, ENTITLEMENTS, APP_LIMITS, LICENSE_MODES };

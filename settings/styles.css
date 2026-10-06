@@ -208,7 +208,8 @@ h1 {
   color: var(--text-secondary);
 }
 
-.hidden {
+.hidden,
+[hidden] {
   display: none !important;
 }
 

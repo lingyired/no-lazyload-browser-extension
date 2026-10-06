@@ -86,6 +86,22 @@ const ENTITLEMENTS = {
   AI_RULES: 'aiRules',
 };
 
+// ===== License / Plan state（内联自 shared/constants.js）=====
+// Chrome/Firefox 是"免费且不限额"的平台，不是 Pro。UI 必须靠 licenseMode 区分。
+const LICENSE_MODES = {
+  UNRESTRICTED: 'unrestricted',
+  FREE: 'free',
+  PRO: 'pro',
+};
+
+function getLicenseMode(snapshot) {
+  if (!snapshot || !snapshot.isLimitEnforced) return LICENSE_MODES.UNRESTRICTED;
+  const entitlements = Array.isArray(snapshot.entitlements) ? snapshot.entitlements : [];
+  return entitlements.includes(ENTITLEMENTS.UNLIMITED_SITES)
+    ? LICENSE_MODES.PRO
+    : LICENSE_MODES.FREE;
+}
+
 /**
  * 给 Promise 加超时，避免 sendNativeMessage 无响应时永久挂起。
  */
@@ -185,6 +201,7 @@ class JSEntitlementManager {
       entitlements: Array.from(this.entitlements),
       isLimitEnforced: this.enforceLimit,
       freeSiteLimit: APP_LIMITS.FREE_SITE_LIMIT,
+      licenseMode: this.licenseMode(),
     };
   }
 
@@ -195,6 +212,17 @@ class JSEntitlementManager {
 
   isLimitEnforced() {
     return this.enforceLimit;
+  }
+
+  /**
+   * UI 用的授权模式：unrestricted（Chrome/Firefox）/ free（Safari 免费）/ pro。
+   * 不要用 has(UNLIMITED_SITES) 反推套餐名 —— 那会把 Chrome 也显示成 Pro。
+   */
+  licenseMode() {
+    return getLicenseMode({
+      isLimitEnforced: this.enforceLimit,
+      entitlements: Array.from(this.entitlements),
+    });
   }
 
   canAddSite(currentCount) {

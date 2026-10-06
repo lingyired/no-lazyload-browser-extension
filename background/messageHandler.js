@@ -11,7 +11,6 @@ import {
   setCustomAttributes,
   resetCustomAttributes
 } from './siteConfigManager.js';
-import { APP_LIMITS } from '../shared/constants.js';
 
 const MESSAGE_TYPES = {
   GET_SITE_CONFIG: 'GET_SITE_CONFIG',
@@ -96,9 +95,8 @@ function setupMessageHandler(jsEntitlementManager) {
           case MESSAGE_TYPES.REFRESH_ENTITLEMENTS:
             sendResponse({
               success: true,
-              entitlements: Array.from(jsEntitlementManager.entitlements),
-              isLimitEnforced: jsEntitlementManager.isLimitEnforced(),
-              freeSiteLimit: APP_LIMITS.FREE_SITE_LIMIT,
+              // snapshot() 已包含 entitlements / isLimitEnforced / freeSiteLimit / licenseMode
+              ...jsEntitlementManager.snapshot(),
             });
             break;
 

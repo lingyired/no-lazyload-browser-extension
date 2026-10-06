@@ -85,6 +85,17 @@
       border-radius: 10px;
     }
 
+    .site-list-header .plan-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      color: #fff;
+      background: #007aff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+
     .site-list {
       display: flex;
       flex-direction: column;
@@ -500,8 +511,8 @@
       <div class="subtitle">禁用图片懒加载 - 完整设置</div>
     </div>
 
-    <!-- 授权入口：免费限额路径在升级后不会再触发，所以这里必须有常驻入口 -->
-    <section class="card">
+    <!-- 授权入口：仅 Safari 免费版显示（Chrome/Firefox 无付费概念，Pro 不再显示 Buy CTA） -->
+    <section class="card" id="licenseCard" hidden>
       <h2 data-i18n="licenseTitle">授权</h2>
       <p class="license-status-text" id="licenseStatus">…</p>
       <div class="btn-group">
@@ -514,6 +525,7 @@
       <div class="site-list-header">
         <h2 data-i18n="globalSettings">已配置的网站</h2>
         <span class="count" id="siteCount">0</span>
+        <span class="plan-badge" id="planBadge" hidden>PRO</span>
       </div>
       <div id="siteList" class="site-list">
         <!-- 动态填充 -->

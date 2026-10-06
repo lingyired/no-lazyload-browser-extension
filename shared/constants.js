@@ -97,3 +97,27 @@ export const ENTITLEMENT_MESSAGE_TYPES = {
   RESTORE_PURCHASES: 'restorePurchases',
   OPEN_HOST_APP: 'openHostApp',
 };
+
+// ===== License / Plan state =====
+// "商业平台" 与 "Pro 权益" 是两件事：
+//   Chrome/Firefox 是免费且无限制的平台，它们不是 Pro，也不该显示任何付费 UI。
+//   Safari 才区分 免费版 / Pro。
+// UI 一律通过 getLicenseMode() 决定展示什么，绝不要用 hasUnlimitedSites() 反推套餐名。
+export const LICENSE_MODES = {
+  UNRESTRICTED: 'unrestricted', // Chrome / Firefox：免费且不限额
+  FREE: 'free',                 // Safari 免费版
+  PRO: 'pro',                   // Safari 已解锁 Pro
+};
+
+/**
+ * 由权限快照推导 UI 用的授权模式。
+ * @param {{isLimitEnforced?: boolean, entitlements?: string[]}|null|undefined} snapshot
+ * @returns {'unrestricted'|'free'|'pro'}
+ */
+export function getLicenseMode(snapshot) {
+  if (!snapshot || !snapshot.isLimitEnforced) return LICENSE_MODES.UNRESTRICTED;
+  const entitlements = Array.isArray(snapshot.entitlements) ? snapshot.entitlements : [];
+  return entitlements.includes(ENTITLEMENTS.UNLIMITED_SITES)
+    ? LICENSE_MODES.PRO
+    : LICENSE_MODES.FREE;
+}
