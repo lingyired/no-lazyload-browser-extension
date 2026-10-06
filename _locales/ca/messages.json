@@ -139,106 +139,110 @@
     "message": "Configuració d'idioma"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "S'està carregant..."
   },
   "delete": {
     "message": "Suprimeix"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Desbloqueja Pro"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "La versió gratuïta admet fins a 3 llocs web. Actualitza per desbloquejar llocs web il·limitats i futures funcions premium."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "Actualitza"
+  },
+  "proActivated": {
+    "message": "Pro activat. S'han desbloquejat llocs web il·limitats.",
+    "description": "Toast shown after successful Mock purchase"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "Cancel·la"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "S'ha assolit el límit de llocs"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "S'han importat {added} de {total} llocs. El límit gratuït és de 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "S'està obrint l'aplicació amfitriona per completar la compra…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "No s'ha pogut obrir l'aplicació. Inicieu No Lazy Load manualment per completar la compra."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Gratuït · fins a 3 llocs web"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · llocs web il·limitats"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Actualitza a Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Gestiona / Restaura"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro desbloquejat · {domain} s'ha activat"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Les compres no estan disponibles temporalment. Torneu-ho a provar més tard."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Lloc web actual"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Carrega totes les imatges d'aquest lloc web sense càrrega diferida."
   },
   "mode": {
     "message": "Mode"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "Estàndard"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Compatibilitat"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Carrega les imatges immediatament amb el motor normal de No Lazyload."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Desplaça la pàgina automàticament per activar les imatges. Utilitzeu-ho només quan el mode Estàndard no funcioni."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Llocs web activats"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Elimina"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Desfés"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Llocs web il·limitats · compra única, sense subscripció"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Compra única"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Compra única"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Sense subscripció"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Actualitza a Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Ara no"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "Esteu utilitzant els 3 llocs web gratuïts. Actualitzeu una vegada per activar No Lazyload en llocs web il·limitats."
   },
   "siteListTitle": {
     "message": "Llocs configurats"
@@ -325,54 +329,57 @@
     "message": "Nova pestanya basada en marcadors. Obre carpetes com a grups de pestanyes o en vista dividida. 12 temes integrats + temes personalitzats il·limitats."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Llicència"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Desplaça la pàgina automàticament per activar la càrrega d'imatges. Utilitzeu-ho només quan el mode Estàndard no funcioni."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Paràmetres generals"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Desactiva la càrrega diferida d'imatges · Configuració completa"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Durada del desplaçament (segons)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Pausa a baix (segons)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Fes servir el mode de compatibilitat per defecte a tots els llocs web activats"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Regles de detecció"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Canviar aquests valors pot impedir que les imatges es carreguin correctament."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Desa els canvis"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "El fitxer inclou el mode de cada lloc web i tota la configuració global."
   },
   "plan": {
-    "message": "Plan"
+    "message": "Pla"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Gratuït · {count} de {limit} llocs web activats"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · llocs web il·limitats desbloquejats"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Gestiona les compres"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Privacitat"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

@@ -139,106 +139,110 @@
     "message": "Nyelvi beállítások"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Betöltés..."
   },
   "delete": {
     "message": "Törlés"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Pro feloldása"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "Az ingyenes verzió legfeljebb 3 webhelyet támogat. Frissítsen a korlátlan webhelyek és a jövőbeli prémium funkciók feloldásához."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "Frissítés"
+  },
+  "proActivated": {
+    "message": "A Pro aktiválva. Korlátlan webhely feloldva.",
+    "description": "Toast shown after successful Mock purchase"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "Mégse"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "Elérte a webhelykorlátot"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "Importálva {added}/{total} webhely. Az ingyenes korlát 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "A gazdaalkalmazás megnyitása a vásárlás befejezéséhez…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Az alkalmazást nem sikerült megnyitni. A vásárlás befejezéséhez indítsa el kézzel a No Lazy Load alkalmazást."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Ingyenes · legfeljebb 3 webhely"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · korlátlan webhely"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Frissítés Pro-ra"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Kezelés / visszaállítás"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro feloldva · a(z) {domain} engedélyezve"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "A vásárlás átmenetileg nem elérhető. Próbálja újra később."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Jelenlegi webhely"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Betölti a webhely összes képét lusta betöltés nélkül."
   },
   "mode": {
-    "message": "Mode"
+    "message": "Mód"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "Normál"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Kompatibilitás"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "A No Lazyload szokásos motorjával azonnal betölti a képeket."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Automatikusan görgeti az oldalt a képek betöltéséhez. Csak akkor használja, ha a normál mód nem működik."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Engedélyezett webhelyek"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Eltávolítás"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Visszavonás"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Korlátlan webhely · egyszeri vásárlás, előfizetés nélkül"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Egyszeri vásárlás"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Egyszeri vásárlás"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Előfizetés nélkül"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Frissítés Pro-ra"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Most nem"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "Mind a 3 ingyenes webhelyet használja. Egyszeri frissítéssel korlátlan webhelyen engedélyezheti a No Lazyloadot."
   },
   "siteListTitle": {
     "message": "Beállított oldalak"
@@ -325,54 +329,57 @@
     "message": "Könyvjelző-vezérelt új lap. Nyisson meg mappákat lapcsoportokként vagy osztott nézetben. 12 beépített téma + korlátlan egyéni téma."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Licenc"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Automatikusan görgeti az oldalt a képek betöltéséhez. Csak akkor használja, ha a normál mód nem működik."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Általános"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Képek lusta betöltésének letiltása · Teljes beállítások"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Görgetés időtartama (másodperc)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Szünet az alján (másodperc)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "A kompatibilitási mód használata alapértelmezés szerint minden engedélyezett webhelyen"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Észlelési szabályok"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Ezen értékek módosítása megakadályozhatja a képek megfelelő betöltését."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Változások mentése"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "A fájl tartalmazza az egyes webhelyek módját és az összes globális beállítást."
   },
   "plan": {
-    "message": "Plan"
+    "message": "Csomag"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Ingyenes · {count}/{limit} webhely engedélyezve"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · korlátlan webhely feloldva"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Vásárlások kezelése"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Adatvédelem"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

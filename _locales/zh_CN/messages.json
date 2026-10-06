@@ -51,40 +51,20 @@
     "message": "刷新页面"
   },
   "siteAdded": {
-    "message": "已添加 $domain$",
-    "description": "Site added toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "已添加 {domain}",
+    "description": "Site added toast"
   },
   "siteAddedWithScroll": {
-    "message": "已添加 $domain$（自动滚动）",
-    "description": "Site added with auto-scroll toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "已添加 {domain}（自动滚动）",
+    "description": "Site added with auto-scroll toast"
   },
   "siteRemoved": {
-    "message": "已移除 $domain$",
-    "description": "Site removed toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "已移除 {domain}",
+    "description": "Site removed toast"
   },
   "siteDeleted": {
-    "message": "已删除 $domain$",
-    "description": "Site deleted toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "已删除 {domain}",
+    "description": "Site deleted toast"
   },
   "autoScrollEnabled": {
     "message": "已开启自动滚动"

@@ -73,7 +73,7 @@
     "message": "تمرير تلقائي"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "الإعدادات - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -133,7 +133,7 @@
     "message": "بواسطة"
   },
   "tools": {
-    "message": "Kimi 2.5 + ClaudeCode + superpowers"
+    "message": "أدوات المطورين"
   },
   "languageSettings": {
     "message": "إعدادات اللغة"
@@ -145,100 +145,100 @@
     "message": "حذف"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "فتح No Lazyload Pro"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "تدعم النسخة المجانية حتى 3 مواقع. بعد الترقية يعمل No Lazyload على عدد غير محدود من المواقع."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "ترقية"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "إلغاء"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "تم بلوغ حد المواقع"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "تم استيراد {added} من {total} موقعًا. الحد المجاني هو 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "جارٍ فتح تطبيق المضيف. أكمل الشراء ثم عُد"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "تعذّر فتح التطبيق تلقائيًا. شغّل No Lazyload يدويًا لإكمال الشراء"
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "مجاني · حتى 3 مواقع"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · مواقع غير محدودة"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "الترقية إلى Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "إدارة / استعادة الشراء"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "تم فتح Pro · تم تفعيل {domain}"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "الشراء غير متاح مؤقتًا. حاول مرة أخرى لاحقًا"
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "الموقع الحالي"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "تعطيل التحميل الكسول على هذا الموقع وتحميل كل الصور مباشرة."
   },
   "mode": {
-    "message": "Mode"
+    "message": "الوضع"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "قياسي"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "التوافق"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "يحمّل الصور فورًا باستخدام محرك No Lazyload القياسي."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "يمرّر الصفحة تلقائيًا لتحميل الصور. استخدمه فقط إذا لم يعمل الوضع القياسي."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "المواقع المفعّلة"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "إزالة"
   },
   "undo": {
-    "message": "Undo"
+    "message": "تراجع"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "مواقع غير محدودة · شراء لمرة واحدة، بدون اشتراك"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "شراء لمرة واحدة"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "شراء لمرة واحدة"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "بدون اشتراك"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "الترقية إلى Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "ليس الآن"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "لقد استخدمت المواقع المجانية الثلاثة. ترقية واحدة تكفي لتفعيل No Lazyload على عدد غير محدود من المواقع."
   },
   "siteListTitle": {
     "message": "المواقع المُعدّة"
@@ -265,28 +265,28 @@
     "message": "استيراد"
   },
   "deleteConfirm": {
-    "message": "Are you sure you want to delete config for {domain}?"
+    "message": "هل تريد حذف إعدادات {domain}؟"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "تم الحذف"
   },
   "scrollEnabled": {
-    "message": "Auto-scroll enabled"
+    "message": "تم تفعيل التمرير التلقائي"
   },
   "scrollDisabled": {
-    "message": "Auto-scroll disabled"
+    "message": "تم تعطيل التمرير التلقائي"
   },
   "configImported": {
-    "message": "Config imported"
+    "message": "تم استيراد الإعدادات"
   },
   "configExported": {
-    "message": "Config exported"
+    "message": "تم تصدير الإعدادات"
   },
   "importFailed": {
-    "message": "Import failed: "
+    "message": "فشل الاستيراد: "
   },
   "invalidConfig": {
-    "message": "Invalid config file format"
+    "message": "صيغة ملف الإعدادات غير صحيحة"
   },
   "saveLanguage": {
     "message": "حفظ اللغة"
@@ -325,54 +325,60 @@
     "message": "علامة تبويب جديدة مدفوعة بالإشارات المرجعية. افتح المجلدات كمجموعات علامات تبويب أو في عرض مقسم. 12 سمًا مدمجًا + سمات مخصصة غير محدودة."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "الترخيص"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "يمرّر الصفحة تلقائيًا لتحميل الصور. استخدمه فقط إذا لم يعمل الوضع القياسي."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "عام"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "تعطيل التحميل الكسول للصور · كل الإعدادات"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "مدة التمرير (ثوانٍ)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "التوقف في الأسفل (ثوانٍ)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "استخدام وضع التوافق افتراضيًا لكل المواقع المفعّلة"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "قواعد الكشف"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "تغيير هذه القيم قد يمنع تحميل الصور بشكل صحيح."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "حفظ التغييرات"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "يتضمن الملف وضع كل موقع وكل الإعدادات العامة."
   },
   "plan": {
-    "message": "Plan"
+    "message": "الخطة"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "مجاني · {count} من {limit} مواقع مفعّلة"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · مواقع غير محدودة"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "إدارة عمليات الشراء"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "الخصوصية"
+  },
+  "proActivated": {
+    "message": "تم تفعيل Pro! عدد المواقع غير محدود."
+  },
+  "privacyNote": {
+    "message": "يعمل No Lazyload فقط على المواقع التي تفعّلها، ولا يمس أي موقع آخر."
   }
 }

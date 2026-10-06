@@ -374,5 +374,11 @@
   },
   "privacy": {
     "message": "Privacy"
+  },
+  "proActivated": {
+    "message": "Pro activated! Unlimited websites unlocked."
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

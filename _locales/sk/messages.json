@@ -139,106 +139,110 @@
     "message": "Jazykové nastavenia"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Načítava sa..."
   },
   "delete": {
     "message": "Vymazať"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Odomknúť Pro"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "Bezplatná verzia podporuje až 3 stránky. Upgradujte a odomknite neobmedzený počet stránok a budúce prémiové funkcie."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "Upgradovať"
+  },
+  "proActivated": {
+    "message": "Pro aktivované. Odomknutý neobmedzený počet stránok.",
+    "description": "Toast shown after successful Mock purchase"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "Zrušiť"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "Dosiahnutý limit stránok"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "Importovaných {added} z {total} stránok. Bezplatný limit je 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "Otvára sa hostiteľská aplikácia na dokončenie nákupu…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Aplikáciu sa nepodarilo otvoriť. Nákup dokončite manuálnym spustením aplikácie No Lazy Load."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Zdarma · až 3 stránky"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · neobmedzený počet stránok"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Upgradovať na Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Spravovať / obnoviť"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro odomknuté · {domain} bol povolený"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Nákupy sú dočasne nedostupné. Skúste to znova neskôr."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Aktuálna stránka"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Načíta všetky obrázky na tejto stránke bez lazy loadingu."
   },
   "mode": {
-    "message": "Mode"
+    "message": "Režim"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "Štandardný"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Kompatibilita"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Načíta obrázky okamžite pomocou bežného mechanizmu No Lazyload."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Automaticky posúva stránku a spúšťa načítanie obrázkov. Použite len vtedy, keď štandardný režim nefunguje."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Povolené stránky"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Odstrániť"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Späť"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Neobmedzený počet stránok · jednorazový nákup, bez predplatného"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Jednorazový nákup"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Jednorazový nákup"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Bez predplatného"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Upgradovať na Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Teraz nie"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "Využívate všetky 3 bezplatné stránky. Jednorazovým upgradom povolíte No Lazyload na neobmedzenom počte stránok."
   },
   "siteListTitle": {
     "message": "Nakonfigurované stránky"
@@ -325,54 +329,57 @@
     "message": "Nová karta riadená záložkami. Otvárajte priečinky ako skupiny kariet alebo v rozdelenom zobrazení. 12 vstavaných motívov + neobmedzené vlastné motívy."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Licencia"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Automaticky posúva stránku a spúšťa načítavanie obrázkov. Použite len vtedy, keď štandardný režim nefunguje."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Všeobecné"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Zakázať lazy loading obrázkov · Úplné nastavenia"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Trvanie posúvania (sekundy)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Pauza v spodnej časti (sekundy)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Predvolene používať režim kompatibility pre všetky povolené stránky"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Pravidlá detekcie"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Zmena týchto hodnôt môže zabrániť správnemu načítaniu obrázkov."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Uložiť zmeny"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "Súbor obsahuje režim každej stránky a všetky globálne nastavenia."
   },
   "plan": {
-    "message": "Plan"
+    "message": "Plán"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Zdarma · povolených {count} z {limit} stránok"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · odomknutý neobmedzený počet stránok"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Spravovať nákupy"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Súkromie"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

@@ -139,106 +139,110 @@
     "message": "Езикови настройки"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Зареждане..."
   },
   "delete": {
     "message": "Изтриване"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Отключване на Pro"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "Безплатната версия поддържа до 3 сайта. Надградете, за да отключите неограничен брой сайтове и бъдещи премиум функции."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "Надграждане"
+  },
+  "proActivated": {
+    "message": "Pro е активиран. Отключени са неограничен брой сайтове.",
+    "description": "Toast shown after successful Mock purchase"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "Отказ"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "Достигнат е лимитът за сайтове"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "Импортирани са {added} от {total} сайта. Безплатният лимит е 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "Отваряне на приложението домакин за завършване на покупката…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Приложението не можа да се отвори. Стартирайте No Lazy Load ръчно, за да завършите покупката."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Безплатна · до 3 сайта"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · неограничен брой сайтове"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Надграждане до Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Управление / възстановяване"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro е отключен · {domain} е активиран"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Покупките временно не са налични. Опитайте отново по-късно."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Текущ сайт"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Зарежда всички изображения на този сайт без мързеливо зареждане."
   },
   "mode": {
-    "message": "Mode"
+    "message": "Режим"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "Стандартен"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Съвместимост"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Зарежда изображенията веднага чрез стандартния механизъм на No Lazyload."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Автоматично превърта страницата, за да задейства изображенията. Използвайте само когато стандартният режим не работи."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Активирани сайтове"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Премахване"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Отмяна"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Неограничен брой сайтове · еднократна покупка, без абонамент"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Еднократна покупка"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Еднократна покупка"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Без абонамент"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Надграждане до Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Не сега"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "Използвате всичките 3 безплатни сайта. Надградете еднократно, за да активирате No Lazyload на неограничен брой сайтове."
   },
   "siteListTitle": {
     "message": "Конфигурирани сайтове"
@@ -325,54 +329,57 @@
     "message": "Нов раздел, задвижван от отметки. Отваряйте папки като групи от раздели или в разделен изглед. 12 вградени теми + неограничени персонализирани теми."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Лиценз"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Автоматично превърта страницата, за да задейства зареждането на изображения. Използвайте само когато стандартният режим не работи."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Общи"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Деактивиране на мързеливото зареждане на изображения · Пълни настройки"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Продължителност на превъртането (секунди)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Пауза в долната част (секунди)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Използвай режим на съвместимост по подразбиране за всички активирани сайтове"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Правила за засичане"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Промяната на тези стойности може да попречи на правилното зареждане на изображенията."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Запази промените"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "Файлът включва режима на всеки сайт и всички глобални настройки."
   },
   "plan": {
-    "message": "Plan"
+    "message": "План"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Безплатен · активирани {count} от {limit} сайта"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · отключени неограничен брой сайтове"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Управление на покупки"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Поверителност"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

@@ -139,106 +139,110 @@
     "message": "הגדרות שפה"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "טוען..."
   },
   "delete": {
     "message": "מחק"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "פתיחת Pro"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "הגרסה החינמית תומכת בעד 3 אתרים. שדרגו כדי לפתוח אתרים ללא הגבלה ותכונות פרימיום עתידיות."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "שדרוג"
+  },
+  "proActivated": {
+    "message": "Pro הופעל. נפתחו אתרים ללא הגבלה.",
+    "description": "Toast shown after successful Mock purchase"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "ביטול"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "הגעתם למגבלת האתרים"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "יובאו {added} מתוך {total} אתרים. המגבלה בחינם היא 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "פותח את אפליקציית המארח להשלמת הרכישה…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "לא ניתן היה לפתוח את האפליקציה. יש להפעיל את No Lazy Load ידנית כדי להשלים את הרכישה."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "חינם · עד 3 אתרים"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · אתרים ללא הגבלה"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "שדרוג ל-Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "ניהול / שחזור"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro נפתח · {domain} הופעל"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "רכישות אינן זמינות באופן זמני. נסו שוב מאוחר יותר."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "האתר הנוכחי"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "טוען את כל התמונות באתר זה ללא טעינה עצלה."
   },
   "mode": {
-    "message": "Mode"
+    "message": "מצב"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "רגיל"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "תאימות"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "טוען תמונות מיד באמצעות המנוע הרגיל של No Lazyload."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "גולל את הדף אוטומטית כדי להפעיל את התמונות. יש להשתמש רק כשהמצב הרגיל אינו עובד."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "אתרים מופעלים"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "הסרה"
   },
   "undo": {
-    "message": "Undo"
+    "message": "ביטול פעולה"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "אתרים ללא הגבלה · רכישה חד-פעמית, ללא מנוי"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "רכישה חד-פעמית"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "רכישה חד-פעמית"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "ללא מנוי"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "שדרוג ל-Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "לא עכשיו"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "אתם משתמשים בכל 3 האתרים החינמיים. שדרגו פעם אחת כדי להפעיל את No Lazyload באתרים ללא הגבלה."
   },
   "siteListTitle": {
     "message": "אתרים מוגדרים"
@@ -325,54 +329,57 @@
     "message": "כרטיסייה חדשה מונעת סימניות. פתח תיקיות כקבוצות כרטיסיות או בתצוגה מפוצלת. 12 ערכות נושא מובנות + ערכות נושא מותאמות אישית ללא הגבלה."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "רישיון"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "גולל את הדף אוטומטית כדי להפעיל טעינת תמונות. יש להשתמש רק כשהמצב הרגיל אינו עובד."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "כללי"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "השבתת טעינה עצלה של תמונות · הגדרות מלאות"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "משך גלילה (שניות)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "השהיה בתחתית (שניות)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "שימוש במצב תאימות כברירת מחדל בכל האתרים המופעלים"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "כללי זיהוי"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "שינוי ערכים אלה עלול למנוע טעינה תקינה של תמונות."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "שמירת שינויים"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "הקובץ כולל את המצב של כל אתר ואת כל ההגדרות הגלובליות."
   },
   "plan": {
-    "message": "Plan"
+    "message": "תוכנית"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "חינם · {count} מתוך {limit} אתרים מופעלים"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · נפתחו אתרים ללא הגבלה"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "ניהול רכישות"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "פרטיות"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

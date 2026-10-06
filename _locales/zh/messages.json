@@ -377,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload 只作用于你启用的网站，其它网站不做任何改动。"
+  },
+  "proActivated": {
+    "message": "Pro activated! Unlimited websites unlocked."
   }
 }

@@ -133,10 +133,31 @@
     "message": "작성자"
   },
   "tools": {
-    "message": "Kimi 2.5 + ClaudeCode + superpowers"
+    "message": "개발 도구"
   },
   "languageSettings": {
     "message": "언어 설정"
+  },
+  "upgradeTitle": {
+    "message": "Pro 잠금 해제"
+  },
+  "upgradeBody": {
+    "message": "무료 버전은 사이트를 최대 3개까지 지원합니다. 업그레이드하면 사이트 수 제한 없이 사용할 수 있고 향후 프리미엄 기능도 이용할 수 있습니다."
+  },
+  "upgradeButton": {
+    "message": "업그레이드"
+  },
+  "proActivated": {
+    "message": "Pro가 활성화되었습니다. 사이트 수 제한이 해제되었습니다."
+  },
+  "cancelUpgrade": {
+    "message": "취소"
+  },
+  "siteLimitReached": {
+    "message": "사이트 한도에 도달했습니다"
+  },
+  "importPartial": {
+    "message": "사이트 {total}개 중 {added}개를 가져왔습니다. 무료 한도는 3개입니다."
   },
   "loading": {
     "message": "로딩 중..."
@@ -144,101 +165,83 @@
   "delete": {
     "message": "삭제"
   },
-  "upgradeTitle": {
-    "message": "Unlock Pro"
-  },
-  "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
-  },
-  "upgradeButton": {
-    "message": "Upgrade"
-  },
-  "cancelUpgrade": {
-    "message": "Cancel"
-  },
-  "siteLimitReached": {
-    "message": "Site limit reached"
-  },
-  "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
-  },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "구매를 완료하기 위해 호스트 앱을 여는 중…"
   },
   "upgradeOpenFailed": {
     "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "무료 · 사이트 3개까지"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · 사이트 무제한"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Pro로 업그레이드"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "관리 / 구매 복원"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro 잠금 해제 · {domain}을 사용하도록 설정했습니다"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "현재 구매를 이용할 수 없습니다. 나중에 다시 시도하세요."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "현재 사이트"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "이 사이트의 모든 이미지를 지연 로딩 없이 불러옵니다."
   },
   "mode": {
-    "message": "Mode"
+    "message": "모드"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "표준"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "호환 모드"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "No Lazyload의 일반 엔진으로 이미지를 즉시 불러옵니다."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "페이지를 자동으로 스크롤하여 이미지 로딩을 유발합니다. 표준 모드가 작동하지 않을 때만 사용하세요."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "사용하도록 설정된 사이트"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "제거"
   },
   "undo": {
-    "message": "Undo"
+    "message": "실행 취소"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "사이트 무제한 · 1회 구매, 구독 없음"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "1회 구매"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "1회 구매"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "구독 없음"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Pro로 업그레이드"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "나중에"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "무료 사이트 3개를 모두 사용 중입니다. 한 번 업그레이드하면 사이트 수 제한 없이 No Lazyload를 사용할 수 있습니다."
   },
   "siteListTitle": {
     "message": "설정된 사이트"
@@ -325,54 +328,57 @@
     "message": "북마크 기반 새 탭. 폴더를 탭 그룹이나 분할 보기로 엽니다. 12개 내장 테마 + 무제한 커스텀 테마."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "라이선스"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "페이지를 자동으로 스크롤하여 이미지 로딩을 유발합니다. 표준 모드가 작동하지 않을 때만 사용하세요."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "일반"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "이미지 지연 로딩 끄기 · 전체 설정"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "스크롤 시간(초)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "하단 정지 시간(초)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "사용하도록 설정된 모든 사이트에서 기본적으로 호환 모드 사용"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "감지 규칙"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "이 값을 변경하면 이미지가 올바르게 로드되지 않을 수 있습니다."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "변경사항 저장"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "파일에는 각 사이트의 모드와 모든 전역 설정이 포함됩니다."
   },
   "plan": {
-    "message": "Plan"
+    "message": "요금제"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "무료 · 사이트 {limit}개 중 {count}개 사용"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · 사이트 무제한 잠금 해제됨"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "구매 관리"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "개인정보 보호"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

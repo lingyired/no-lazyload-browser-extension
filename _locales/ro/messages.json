@@ -139,106 +139,110 @@
     "message": "Setări limbă"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Se încarcă..."
   },
   "delete": {
     "message": "Șterge"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Deblochează Pro"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "Versiunea gratuită acceptă până la 3 site-uri. Actualizați pentru a debloca site-uri nelimitate și funcții premium viitoare."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "Actualizează"
+  },
+  "proActivated": {
+    "message": "Pro activat. Site-uri nelimitate deblocate.",
+    "description": "Toast shown after successful Mock purchase"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "Anulează"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "Limita de site-uri a fost atinsă"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "S-au importat {added} din {total} site-uri. Limita gratuită este 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "Se deschide aplicația gazdă pentru finalizarea achiziției…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Aplicația nu a putut fi deschisă. Lansați No Lazy Load manual pentru a finaliza achiziția."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Gratuit · până la 3 site-uri"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · site-uri nelimitate"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Actualizează la Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Gestionează / Restaurează"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro deblocat · {domain} a fost activat"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Achizițiile sunt temporar indisponibile. Încercați din nou mai târziu."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Site actual"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Încarcă toate imaginile de pe acest site fără încărcare lentă."
   },
   "mode": {
-    "message": "Mode"
+    "message": "Mod"
   },
   "standardMode": {
     "message": "Standard"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Compatibilitate"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Încarcă imaginile imediat folosind motorul obișnuit al No Lazyload."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Derulează automat pagina pentru a declanșa imaginile. Folosiți numai când modul Standard nu funcționează."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Site-uri activate"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Elimină"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Anulare"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Site-uri nelimitate · achiziție unică, fără abonament"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Achiziție unică"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Achiziție unică"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Fără abonament"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Actualizează la Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Nu acum"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "Folosiți toate cele 3 site-uri gratuite. Actualizați o singură dată pentru a activa No Lazyload pe site-uri nelimitate."
   },
   "siteListTitle": {
     "message": "Site-uri configurate"
@@ -325,54 +329,57 @@
     "message": "Filă nouă bazată pe marcaje. Deschide folderele ca grupuri de file sau în vizualizare divizată. 12 teme încorporate + teme personalizate nelimitate."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Licență"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Derulează automat pagina pentru a declanșa încărcarea imaginilor. Folosiți numai când modul Standard nu funcționează."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Setări generale"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Dezactivează încărcarea lentă a imaginilor · Setări complete"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Durata derulării (secunde)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Pauză la final (secunde)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Folosește modul Compatibilitate implicit pentru toate site-urile activate"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Reguli de detectare"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Modificarea acestor valori poate împiedica încărcarea corectă a imaginilor."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Salvează modificările"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "Fișierul include modul fiecărui site și toate setările globale."
   },
   "plan": {
     "message": "Plan"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Gratuit · {count} din {limit} site-uri activate"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · site-uri nelimitate deblocate"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Gestionează achizițiile"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Confidențialitate"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

@@ -138,107 +138,110 @@
   "languageSettings": {
     "message": "Taalinstellingen"
   },
+  "upgradeTitle": {
+    "message": "Pro ontgrendelen"
+  },
+  "upgradeBody": {
+    "message": "De gratis versie ondersteunt maximaal 3 websites. Upgraden om onbeperkt websites en toekomstige premiumfuncties te ontgrendelen."
+  },
+  "upgradeButton": {
+    "message": "Upgraden"
+  },
+  "proActivated": {
+    "message": "Pro geactiveerd. Onbeperkt websites ontgrendeld."
+  },
+  "cancelUpgrade": {
+    "message": "Annuleren"
+  },
+  "siteLimitReached": {
+    "message": "Limiet voor websites bereikt"
+  },
+  "importPartial": {
+    "message": "{added} van {total} websites geïmporteerd. De gratis limiet is 3."
+  },
   "loading": {
-    "message": "Loading..."
+    "message": "Laden..."
   },
   "delete": {
     "message": "Verwijderen"
   },
-  "upgradeTitle": {
-    "message": "Unlock Pro"
-  },
-  "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
-  },
-  "upgradeButton": {
-    "message": "Upgrade"
-  },
-  "cancelUpgrade": {
-    "message": "Cancel"
-  },
-  "siteLimitReached": {
-    "message": "Site limit reached"
-  },
-  "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
-  },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "Host-app wordt geopend om de aankoop te voltooien…"
   },
   "upgradeOpenFailed": {
     "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Gratis · tot 3 websites"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · onbeperkt websites"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Upgraden naar Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Beheren / Herstellen"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro ontgrendeld · {domain} is ingeschakeld"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Aankopen zijn tijdelijk niet beschikbaar. Probeer het later opnieuw."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Huidige website"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Alle afbeeldingen op deze website laden zonder lazy loading."
   },
   "mode": {
-    "message": "Mode"
+    "message": "Modus"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "Standaard"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Compatibiliteit"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Laadt afbeeldingen onmiddellijk met de normale engine van No Lazyload."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Scrolt de pagina automatisch om het laden van afbeeldingen te activeren. Gebruik dit alleen als de modus Standaard niet werkt."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Ingeschakelde websites"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Verwijderen"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Ongedaan maken"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Onbeperkt websites · Eenmalige aankoop, geen abonnement"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Eenmalige aankoop"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Eenmalige aankoop"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Geen abonnement"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Upgraden naar Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Niet nu"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "U gebruikt alle 3 gratis websites. Upgrade eenmalig om No Lazyload op onbeperkt websites in te schakelen."
   },
   "siteListTitle": {
     "message": "Geconfigureerde sites"
@@ -325,54 +328,57 @@
     "message": "Bladwijzer-gestuurde nieuw tabblad. Open mappen als tabgroepen of in gesplitste weergave. 12 ingebouwde thema's + onbeperkt aangepaste thema's."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Licentie"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Scrolt de pagina automatisch om het laden van afbeeldingen te activeren. Gebruik dit alleen als de modus Standaard niet werkt."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Algemeen"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Lazy loading van afbeeldingen uitschakelen · Volledige instellingen"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Scrollduur (seconden)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Pauze onderaan (seconden)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Compatibiliteitsmodus standaard gebruiken voor alle ingeschakelde websites"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Detectieregels"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Het wijzigen van deze waarden kan verhinderen dat afbeeldingen correct worden geladen."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Wijzigingen opslaan"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "Het bestand bevat de modus van elke website en alle algemene instellingen."
   },
   "plan": {
-    "message": "Plan"
+    "message": "Pakket"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Gratis · {count} van {limit} websites ingeschakeld"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · Onbeperkt websites ontgrendeld"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Aankopen beheren"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Privacybeleid"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

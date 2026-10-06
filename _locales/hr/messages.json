@@ -139,106 +139,110 @@
     "message": "Jezične postavke"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Učitavanje..."
   },
   "delete": {
     "message": "Izbriši"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Otključaj Pro"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "Besplatna verzija podržava do 3 stranice. Nadogradite za neograničen broj stranica i buduće premium značajke."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "Nadogradi"
+  },
+  "proActivated": {
+    "message": "Pro je aktiviran. Otključan je neograničen broj stranica.",
+    "description": "Toast shown after successful Mock purchase"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "Odustani"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "Dosegnuto je ograničenje stranica"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "Uvezeno je {added} od {total} stranica. Besplatno ograničenje je 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "Otvaranje matične aplikacije za dovršetak kupnje…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Aplikaciju nije bilo moguće otvoriti. Pokrenite No Lazy Load ručno da dovršite kupnju."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Besplatno · do 3 stranice"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · neograničen broj stranica"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Nadogradi na Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Upravljanje / vraćanje"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro otključan · {domain} je omogućen"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Kupnja trenutačno nije dostupna. Pokušajte ponovno kasnije."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Trenutna stranica"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Učitava sve slike na ovoj stranici bez lijenog učitavanja."
   },
   "mode": {
-    "message": "Mode"
+    "message": "Način rada"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "Standardno"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Kompatibilnost"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Učitava slike odmah pomoću uobičajenog mehanizma programa No Lazyload."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Automatski pomiče stranicu radi učitavanja slika. Koristite samo kada standardni način rada ne funkcionira."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Omogućene stranice"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Ukloni"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Poništi"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Neograničen broj stranica · jednokratna kupnja, bez pretplate"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Jednokratna kupnja"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Jednokratna kupnja"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Bez pretplate"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Nadogradi na Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Ne sada"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "Koristite sve 3 besplatne stranice. Nadogradite jednom za No Lazyload na neograničenom broju stranica."
   },
   "siteListTitle": {
     "message": "Konfigurirane stranice"
@@ -325,54 +329,57 @@
     "message": "Nova kartica vođena oznakama. Otvorite mape kao grupe kartica ili u podijeljenom prikazu. 12 ugrađenih tema + neograničene prilagođene teme."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Licenca"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Automatski pomiče stranicu radi učitavanja slika. Koristite samo kada standardni način rada ne funkcionira."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Općenito"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Onemogući lijeno učitavanje slika · Potpune postavke"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Trajanje pomicanja (sekunde)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Pauza na dnu (sekunde)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Prema zadanim postavkama koristi način kompatibilnosti za sve omogućene stranice"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Pravila otkrivanja"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Promjena ovih vrijednosti može spriječiti ispravno učitavanje slika."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Spremi promjene"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "Datoteka sadrži način rada svake stranice i sve globalne postavke."
   },
   "plan": {
-    "message": "Plan"
+    "message": "Paket"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Besplatno · omogućeno {count} od {limit} stranica"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · otključan neograničen broj stranica"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Upravljanje kupnjama"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Privatnost"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

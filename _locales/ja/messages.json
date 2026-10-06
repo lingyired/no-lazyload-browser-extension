@@ -73,7 +73,7 @@
     "message": "自動スクロール"
   },
   "settingsTitle": {
-    "message": "Settings - No Lazyload",
+    "message": "設定 - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -133,10 +133,31 @@
     "message": "作成者"
   },
   "tools": {
-    "message": "Kimi 2.5 + ClaudeCode + superpowers"
+    "message": "開発ツール"
   },
   "languageSettings": {
     "message": "言語設定"
+  },
+  "upgradeTitle": {
+    "message": "No Lazyload Pro を解除"
+  },
+  "upgradeBody": {
+    "message": "無料版は 3 サイトまでです。アップグレードすると無制限のサイトで使えます。"
+  },
+  "upgradeButton": {
+    "message": "アップグレード"
+  },
+  "proActivated": {
+    "message": "Pro が有効になりました。サイト数は無制限です。"
+  },
+  "cancelUpgrade": {
+    "message": "キャンセル"
+  },
+  "siteLimitReached": {
+    "message": "サイト数の上限に達しました"
+  },
+  "importPartial": {
+    "message": "{added}/{total} 件のサイトを読み込みました。無料版の上限は 3 件です。"
   },
   "loading": {
     "message": "読み込み中..."
@@ -144,101 +165,83 @@
   "delete": {
     "message": "削除"
   },
-  "upgradeTitle": {
-    "message": "Unlock Pro"
-  },
-  "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
-  },
-  "upgradeButton": {
-    "message": "Upgrade"
-  },
-  "cancelUpgrade": {
-    "message": "Cancel"
-  },
-  "siteLimitReached": {
-    "message": "Site limit reached"
-  },
-  "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
-  },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "ホスト App を開いています。購入を完了してから戻ってください"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "App を自動で開けませんでした。No Lazyload を手動で起動して購入を完了してください"
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "無料版 · 最大 3 サイト"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · サイト数無制限"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Pro にアップグレード"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "購入の管理 / 復元"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro を解除しました · {domain} を有効にしました"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "購入を一時的に利用できません。しばらくしてからお試しください"
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "現在の Web サイト"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "この Web サイトでは遅延読み込みを無効にし、すべての画像を読み込みます。"
   },
   "mode": {
-    "message": "Mode"
+    "message": "モード"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "標準"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "互換モード"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "No Lazyload の標準エンジンで画像をすぐに読み込みます。"
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "ページを自動スクロールして画像を読み込みます。標準モードで効果がない場合のみ使用してください。"
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "有効な Web サイト"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "削除"
   },
   "undo": {
-    "message": "Undo"
+    "message": "取り消す"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "サイト数無制限 · 買い切り、サブスクリプションなし"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "買い切り"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "買い切り"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "サブスクリプションなし"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Pro にアップグレード"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "後で"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "無料の 3 サイトを使い切りました。一度アップグレードすると無制限のサイトで No Lazyload を有効にできます。"
   },
   "siteListTitle": {
     "message": "設定済みサイト"
@@ -265,28 +268,28 @@
     "message": "インポート"
   },
   "deleteConfirm": {
-    "message": "Are you sure you want to delete config for {domain}?"
+    "message": "{domain} の設定を削除しますか？"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "削除しました"
   },
   "scrollEnabled": {
-    "message": "Auto-scroll enabled"
+    "message": "自動スクロールを有効にしました"
   },
   "scrollDisabled": {
-    "message": "Auto-scroll disabled"
+    "message": "自動スクロールを無効にしました"
   },
   "configImported": {
-    "message": "Config imported"
+    "message": "設定を読み込みました"
   },
   "configExported": {
-    "message": "Config exported"
+    "message": "設定を書き出しました"
   },
   "importFailed": {
-    "message": "Import failed: "
+    "message": "読み込みに失敗しました: "
   },
   "invalidConfig": {
-    "message": "Invalid config file format"
+    "message": "設定ファイルの形式が正しくありません"
   },
   "saveLanguage": {
     "message": "言語を保存"
@@ -325,54 +328,57 @@
     "message": "ブックマーク駆動の新しいタブ。フォルダをタブグループまたは分割ビューで開きます。12の内蔵テーマ + 無制限のカスタムテーマ。"
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "ライセンス"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "ページを自動スクロールして画像を読み込みます。標準モードで効果がない場合のみ使用してください。"
   },
   "generalSettings": {
-    "message": "General"
+    "message": "一般"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "画像の遅延読み込みを無効化 · 詳細設定"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "スクロール時間（秒）"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "最下部での停止（秒）"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "有効なすべての Web サイトで互換モードを既定にする"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "検出ルール"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "これらの値を変更すると、画像が正しく読み込まれなくなる可能性があります。"
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "変更を保存"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "ファイルには各 Web サイトのモードとすべての全体設定が含まれます。"
   },
   "plan": {
-    "message": "Plan"
+    "message": "プラン"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "無料版 · {limit} サイト中 {count} サイトが有効"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · サイト数無制限"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "購入を管理"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "プライバシー"
+  },
+  "privacyNote": {
+    "message": "No Lazyload は有効にした Web サイトでのみ動作します。その他の Web サイトには何も影響しません。"
   }
 }

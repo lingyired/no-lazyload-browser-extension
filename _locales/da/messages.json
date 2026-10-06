@@ -139,106 +139,110 @@
     "message": "Sprogindstillinger"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Indlæser..."
   },
   "delete": {
     "message": "Slet"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Lås Pro op"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "Gratisversionen understøtter op til 3 hjemmesider. Opgrader for at låse ubegrænsede hjemmesider og kommende premiumfunktioner op."
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "Opgrader"
+  },
+  "proActivated": {
+    "message": "Pro aktiveret. Ubegrænsede hjemmesider er låst op.",
+    "description": "Toast shown after successful Mock purchase"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "Annullér"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "Grænsen for hjemmesider er nået"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "Importerede {added} af {total} hjemmesider. Gratisgrænsen er 3."
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "Åbner værtsappen for at gennemføre købet…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "Appen kunne ikke åbnes. Start No Lazy Load manuelt for at gennemføre købet."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Gratis · op til 3 hjemmesider"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · ubegrænsede hjemmesider"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Opgrader til Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Administrér / gendan"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro låst op · {domain} blev aktiveret"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Køb er midlertidigt utilgængelige. Prøv igen senere."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Aktuel hjemmeside"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Indlæs alle billeder på denne hjemmeside uden lazy loading."
   },
   "mode": {
-    "message": "Mode"
+    "message": "Tilstand"
   },
   "standardMode": {
     "message": "Standard"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Kompatibilitet"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Indlæser billeder med det samme via No Lazyloads normale motor."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Ruller automatisk på siden for at udløse billeder. Brug kun dette, når standardtilstanden ikke virker."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Aktiverede hjemmesider"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Fjern"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Fortryd"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Ubegrænsede hjemmesider · engangskøb, intet abonnement"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Engangskøb"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Engangskøb"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Intet abonnement"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Opgrader til Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Ikke nu"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "Du bruger alle 3 gratis hjemmesider. Opgrader én gang for at aktivere No Lazyload på ubegrænsede hjemmesider."
   },
   "siteListTitle": {
     "message": "Konfigurerede hjemmesider"
@@ -325,54 +329,57 @@
     "message": "Bogmærke-drevet nyt faneblad. Åbn mapper som fanegrupper eller i opdelt visning. 12 indbyggede temaer + ubegrænsede brugerdefinerede temaer."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Licens"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Ruller automatisk på siden for at udløse indlæsning af billeder. Brug kun dette, når standardtilstanden ikke virker."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Generelt"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Deaktivér lazy loading af billeder · Fulde indstillinger"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Rullevarighed (sekunder)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Pause i bunden (sekunder)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Brug kompatibilitetstilstand som standard for alle aktiverede hjemmesider"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Regler for registrering"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "Ændring af disse værdier kan forhindre billeder i at indlæses korrekt."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Gem ændringer"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "Filen indeholder hver hjemmesides tilstand og alle globale indstillinger."
   },
   "plan": {
     "message": "Plan"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Gratis · {count} af {limit} hjemmesider aktiveret"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · ubegrænsede hjemmesider låst op"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Administrér køb"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Privatliv"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

@@ -139,106 +139,110 @@
     "message": "زبان کی ترتیبات"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "لوڈ ہو رہا ہے..."
   },
   "delete": {
     "message": "حذف"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro"
+    "message": "Pro کھولیں"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+    "message": "مفت ورژن زیادہ سے زیادہ ۳ سائٹس کی معاونت کرتا ہے۔ لامحدود سائٹس اور مستقبل کی پریمیم خصوصیات کھولنے کے لیے اپ گریڈ کریں۔"
   },
   "upgradeButton": {
-    "message": "Upgrade"
+    "message": "اپ گریڈ"
+  },
+  "proActivated": {
+    "message": "Pro فعال ہو گیا۔ لامحدود سائٹس کھول دی گئیں۔",
+    "description": "Toast shown after successful Mock purchase"
   },
   "cancelUpgrade": {
-    "message": "Cancel"
+    "message": "منسوخ کریں"
   },
   "siteLimitReached": {
-    "message": "Site limit reached"
+    "message": "سائٹ کی حد پوری ہو گئی"
   },
   "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
+    "message": "{total} میں سے {added} سائٹس درآمد ہوئیں۔ مفت حد ۳ ہے۔"
   },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "خریداری مکمل کرنے کے لیے میزبان ایپ کھولی جا رہی ہے…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
+    "message": "ایپ نہیں کھل سکی۔ خریداری مکمل کرنے کے لیے No Lazy Load کو دستی طور پر شروع کریں۔"
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "مفت · زیادہ سے زیادہ ۳ سائٹس"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · لامحدود سائٹس"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Pro پر اپ گریڈ کریں"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "انتظام / بحالی"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro کھل گیا · {domain} فعال کر دیا گیا"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "خریداری عارضی طور پر دستیاب نہیں ہے۔ براہ کرم بعد میں دوبارہ کوشش کریں۔"
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "موجودہ سائٹ"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "اس سائٹ کی تمام تصاویر بغیر سست لوڈنگ کے لوڈ کریں۔"
   },
   "mode": {
-    "message": "Mode"
+    "message": "موڈ"
   },
   "standardMode": {
-    "message": "Standard"
+    "message": "معیاری"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "مطابقت"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "تصاویر کو No Lazyload کے عام انجن سے فوراً لوڈ کرتا ہے۔"
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "تصاویر کو متحرک کرنے کے لیے صفحہ خود بخود سکرول کرتا ہے۔ یہ صرف اس وقت استعمال کریں جب معیاری موڈ کام نہ کرے۔"
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "فعال شدہ سائٹس"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "ہٹائیں"
   },
   "undo": {
-    "message": "Undo"
+    "message": "واپس لیں"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "لامحدود سائٹس · ایک بار کی خریداری، کوئی سبسکرپشن نہیں"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "ایک بار کی خریداری"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "ایک بار کی خریداری"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "کوئی سبسکرپشن نہیں"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Pro پر اپ گریڈ کریں"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "ابھی نہیں"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "آپ تمام ۳ مفت سائٹس استعمال کر رہے ہیں۔ ایک بار اپ گریڈ کریں تاکہ No Lazyload لامحدود سائٹس پر فعال ہو جائے۔"
   },
   "siteListTitle": {
     "message": "ترتیب دی گئی سائٹس"
@@ -325,54 +329,57 @@
     "message": "بک مارک پر مبنی نئی ٹیب۔ فولڈرز کو ٹیب گروپس یا تقسیم شدہ ویو کے طور پر کھولیں۔ 12 بلٹ ان تھیمز + لامحدود کسٹم تھیمز۔"
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "لائسنس"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "تصاویر کی لوڈنگ کو متحرک کرنے کے لیے صفحہ خود بخود سکرول کرتا ہے۔ یہ صرف اس وقت استعمال کریں جب معیاری موڈ کام نہ کرے۔"
   },
   "generalSettings": {
-    "message": "General"
+    "message": "عمومی"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "تصاویر کی سست لوڈنگ غیر فعال کریں · مکمل ترتیبات"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "سکرول کی مدت (سیکنڈ)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "نیچے وقفہ (سیکنڈ)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "تمام فعال سائٹس کے لیے بطور ڈیفالٹ مطابقت موڈ استعمال کریں"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "شناخت کے قواعد"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "ان اقدار کو تبدیل کرنے سے تصاویر صحیح طور پر لوڈ نہیں ہو سکتیں۔"
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "تبدیلیاں محفوظ کریں"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "فائل میں ہر سائٹ کا موڈ اور تمام عالمی ترتیبات شامل ہیں۔"
   },
   "plan": {
-    "message": "Plan"
+    "message": "پلان"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "مفت · {limit} میں سے {count} سائٹس فعال"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · لامحدود سائٹس کھول دی گئیں"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "خریداریوں کا انتظام"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "رازداری"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }

@@ -133,10 +133,31 @@
     "message": "par"
   },
   "tools": {
-    "message": "Kimi 2.5 + ClaudeCode + superpowers"
+    "message": "Outils de développement"
   },
   "languageSettings": {
     "message": "Paramètres de Langue"
+  },
+  "upgradeTitle": {
+    "message": "Débloquer Pro"
+  },
+  "upgradeBody": {
+    "message": "La version gratuite prend en charge jusqu'à 3 sites web. Passez à la version supérieure pour débloquer un nombre illimité de sites web et les futures fonctions premium."
+  },
+  "upgradeButton": {
+    "message": "Mettre à niveau"
+  },
+  "proActivated": {
+    "message": "Pro activé. Nombre de sites web illimité débloqué."
+  },
+  "cancelUpgrade": {
+    "message": "Annuler"
+  },
+  "siteLimitReached": {
+    "message": "Limite de sites web atteinte"
+  },
+  "importPartial": {
+    "message": "{added} sites web sur {total} importés. La limite gratuite est de 3."
   },
   "loading": {
     "message": "Chargement..."
@@ -144,56 +165,38 @@
   "delete": {
     "message": "Supprimer"
   },
-  "upgradeTitle": {
-    "message": "Unlock Pro"
-  },
-  "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
-  },
-  "upgradeButton": {
-    "message": "Upgrade"
-  },
-  "cancelUpgrade": {
-    "message": "Cancel"
-  },
-  "siteLimitReached": {
-    "message": "Site limit reached"
-  },
-  "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
-  },
   "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
+    "message": "Ouverture de l'app hôte pour finaliser l'achat…"
   },
   "upgradeOpenFailed": {
     "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
   },
   "licenseFree": {
-    "message": "Free · up to 3 websites"
+    "message": "Gratuit · jusqu'à 3 sites web"
   },
   "licensePro": {
-    "message": "Pro · unlimited websites"
+    "message": "Pro · sites web illimités"
   },
   "licenseUpgrade": {
-    "message": "Upgrade to Pro"
+    "message": "Passer à Pro"
   },
   "licenseManage": {
-    "message": "Manage / Restore"
+    "message": "Gérer / Restaurer"
   },
   "proBadge": {
     "message": "PRO"
   },
   "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
+    "message": "Pro débloqué · {domain} a été activé"
   },
   "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
+    "message": "Les achats sont temporairement indisponibles. Veuillez réessayer plus tard."
   },
   "currentWebsite": {
-    "message": "Current Website"
+    "message": "Site web actuel"
   },
   "siteSwitchHelp": {
-    "message": "Load all images on this website without lazy loading."
+    "message": "Charger toutes les images de ce site web sans chargement différé."
   },
   "mode": {
     "message": "Mode"
@@ -202,43 +205,43 @@
     "message": "Standard"
   },
   "compatibilityMode": {
-    "message": "Compatibility"
+    "message": "Compatibilité"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Charge les images immédiatement avec le moteur normal de No Lazyload."
   },
   "compatibilityModeHelp": {
-    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+    "message": "Fait défiler la page automatiquement pour déclencher le chargement des images. À utiliser uniquement si le mode Standard ne fonctionne pas."
   },
   "enabledWebsites": {
-    "message": "Enabled Websites"
+    "message": "Sites web activés"
   },
   "removeSite": {
-    "message": "Remove"
+    "message": "Supprimer"
   },
   "undo": {
-    "message": "Undo"
+    "message": "Annuler"
   },
   "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
+    "message": "Sites web illimités · Achat unique, sans abonnement"
   },
   "upgradePrice": {
-    "message": "One-time purchase"
+    "message": "Achat unique"
   },
   "oneTimePurchase": {
-    "message": "One-time purchase"
+    "message": "Achat unique"
   },
   "noSubscription": {
-    "message": "No subscription"
+    "message": "Sans abonnement"
   },
   "upgradeToPro": {
-    "message": "Upgrade to Pro"
+    "message": "Passer à Pro"
   },
   "notNow": {
-    "message": "Not Now"
+    "message": "Plus tard"
   },
   "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+    "message": "Vous utilisez vos 3 sites web gratuits. Un seul achat suffit pour activer No Lazyload sur un nombre illimité de sites web."
   },
   "siteListTitle": {
     "message": "Sites Configurés"
@@ -265,28 +268,28 @@
     "message": "Importer"
   },
   "deleteConfirm": {
-    "message": "Are you sure you want to delete config for {domain}?"
+    "message": "Voulez-vous vraiment supprimer la configuration de {domain} ?"
   },
   "deleted": {
-    "message": "Deleted"
+    "message": "Supprimé"
   },
   "scrollEnabled": {
-    "message": "Auto-scroll enabled"
+    "message": "Défilement automatique activé"
   },
   "scrollDisabled": {
-    "message": "Auto-scroll disabled"
+    "message": "Défilement automatique désactivé"
   },
   "configImported": {
-    "message": "Config imported"
+    "message": "Configuration importée"
   },
   "configExported": {
-    "message": "Config exported"
+    "message": "Configuration exportée"
   },
   "importFailed": {
-    "message": "Import failed: "
+    "message": "Échec de l'importation : "
   },
   "invalidConfig": {
-    "message": "Invalid config file format"
+    "message": "Format de fichier de configuration non valide"
   },
   "saveLanguage": {
     "message": "Enregistrer Langue"
@@ -325,54 +328,57 @@
     "message": "Nouvel onglet basé sur les favoris. Ouvrez les dossiers en groupes d'onglets ou en vue fractionnée. 12 thèmes intégrés + thèmes personnalisés illimités."
   },
   "licenseTitle": {
-    "message": "License"
+    "message": "Licence"
   },
   "compatibilityModeHelpSection": {
-    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+    "message": "Fait défiler la page automatiquement pour déclencher le chargement des images. À utiliser uniquement si le mode Standard ne fonctionne pas."
   },
   "generalSettings": {
-    "message": "General"
+    "message": "Général"
   },
   "settingsSubtitle": {
-    "message": "Disable image lazy loading · Full settings"
+    "message": "Désactiver le chargement différé des images · Paramètres complets"
   },
   "scrollDuration": {
-    "message": "Scroll duration (seconds)"
+    "message": "Durée du défilement (secondes)"
   },
   "stayAtBottom": {
-    "message": "Pause at bottom (seconds)"
+    "message": "Pause en bas (secondes)"
   },
   "useAutoScrollGlobal": {
-    "message": "Use Compatibility Mode for all enabled websites by default"
+    "message": "Utiliser le mode Compatibilité par défaut pour tous les sites web activés"
   },
   "detectionRules": {
-    "message": "Detection Rules"
+    "message": "Règles de détection"
   },
   "advancedWarning": {
-    "message": "Changing these values can prevent images from loading correctly."
+    "message": "La modification de ces valeurs peut empêcher le chargement correct des images."
   },
   "saveChanges": {
-    "message": "Save Changes"
+    "message": "Enregistrer les modifications"
   },
   "importExportHelp": {
-    "message": "The file includes each website mode and all global settings."
+    "message": "Le fichier contient le mode de chaque site web et tous les paramètres globaux."
   },
   "plan": {
-    "message": "Plan"
+    "message": "Formule"
   },
   "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
+    "message": "Gratuit · {count} sites web sur {limit} activés"
   },
   "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
+    "message": "No Lazyload Pro · Sites web illimités débloqués"
   },
   "managePurchases": {
-    "message": "Manage Purchases"
+    "message": "Gérer les achats"
   },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
-    "message": "Privacy"
+    "message": "Confidentialité"
+  },
+  "privacyNote": {
+    "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
   }
 }
