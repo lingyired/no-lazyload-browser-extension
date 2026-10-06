@@ -73,7 +73,7 @@
     "message": "自动滚动"
   },
   "settingsTitle": {
-    "message": "设置 - 图片懒加载拦截器",
+    "message": "设置 - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -166,7 +166,7 @@
     "message": "正在打开宿主 App，请完成购买后返回扩展"
   },
   "upgradeOpenFailed": {
-    "message": "无法自动打开 App，请手动启动 No Lazy Load 完成购买"
+    "message": "无法自动打开 App，请手动启动 No Lazyload 完成购买"
   },
   "licenseFree": {
     "message": "免费版 · 最多 3 个网站"
@@ -374,5 +374,8 @@
   },
   "privacy": {
     "message": "隐私政策"
+  },
+  "privacyNote": {
+    "message": "No Lazyload 只作用于你启用的网站，其它网站不做任何改动。"
   }
 }

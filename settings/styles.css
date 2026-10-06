@@ -241,3 +241,11 @@ body {
     gap: 0;
   }
 }
+
+/* 权限说明：安静的一行，不抢主要操作 */
+.nl-privacy-note {
+  margin-top: var(--nl-space-2);
+  margin-bottom: 0;
+  font-size: 11px;
+  color: var(--nl-text-tertiary);
+}

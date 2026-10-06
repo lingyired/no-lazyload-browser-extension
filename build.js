@@ -182,6 +182,8 @@ const COMMON_FILES = [
   // 注意：shared-ui.js 是生成的，不在这里复制（见 writeSharedUiBundle）
   'i18n.js',
   'i18n-manager.js',
+  // 设置页页脚的隐私政策入口指向它，必须一起打包
+  'privacy-policy.html',
   'content/index.js',
   'content/styles.css',
   'settings/index.html',

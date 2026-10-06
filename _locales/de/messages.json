@@ -73,7 +73,7 @@
     "message": "Auto-Scroll"
   },
   "settingsTitle": {
-    "message": "Einstellungen - Lazy-Load Bildblocker",
+    "message": "Settings - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -166,7 +166,7 @@
     "message": "Opening Host App to complete purchase…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
   },
   "licenseFree": {
     "message": "Free · up to 3 websites"

@@ -73,7 +73,7 @@
     "message": "自動捲動"
   },
   "settingsTitle": {
-    "message": "設定 - 圖片懶加載攔截器",
+    "message": "设置 - No Lazyload",
     "description": "Settings page title"
   },
   "globalSettings": {
@@ -166,7 +166,7 @@
     "message": "Opening Host App to complete purchase…"
   },
   "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
   },
   "licenseFree": {
     "message": "Free · up to 3 websites"
@@ -374,5 +374,8 @@
   },
   "privacy": {
     "message": "Privacy"
+  },
+  "privacyNote": {
+    "message": "No Lazyload 只作用於你啟用的網站，其它網站不做任何改動。"
   }
 }
