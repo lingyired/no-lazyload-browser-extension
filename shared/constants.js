@@ -18,8 +18,16 @@ export const DEFAULT_SCROLL_CONFIG = {
 export const STORAGE_KEYS = {
   SITE_CONFIGS: 'siteConfigs',
   GLOBAL_CONFIG: 'globalConfig',
-  CUSTOM_ATTRIBUTES: 'customAttributes'
+  CUSTOM_ATTRIBUTES: 'customAttributes',
+  // 免费额度撞上限时，把"用户想启用的网站"持久化下来，
+  // 购买流程结束后由 background 补做 —— Safari 的 popup 在 Host App 置前后会被关掉。
+  PENDING_ENTITLEMENT_ACTION: 'pendingEntitlementAction',
+  // 待办被补做 / 购买完成后的提示，供 UI 一次性展示后清除。
+  ENTITLEMENT_NOTICE: 'entitlementNotice',
 };
+
+/** 待办动作的过期时间：超过 24 小时视为用户已经放弃。 */
+export const PENDING_ACTION_TTL_MS = 24 * 60 * 60 * 1000;
 
 // 默认的懒加载属性列表（用户可在设置中修改）
 export const DEFAULT_LAZY_ATTRIBUTES = [
@@ -96,6 +104,8 @@ export const ENTITLEMENT_MESSAGE_TYPES = {
   REQUEST_PURCHASE: 'requestPurchase',
   RESTORE_PURCHASES: 'restorePurchases',
   OPEN_HOST_APP: 'openHostApp',
+  // UI 展示完 notice 后调用，清除这条一次性提示。
+  ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice',
 };
 
 // ===== License / Plan state =====

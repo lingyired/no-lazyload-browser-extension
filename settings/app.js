@@ -56,7 +56,8 @@ const MESSAGE_TYPES = {
   REFRESH_ENTITLEMENTS: 'refreshEntitlements',
   REQUEST_PURCHASE: 'requestPurchase',
   RESTORE_PURCHASES: 'restorePurchases',
-  OPEN_HOST_APP: 'openHostApp'
+  OPEN_HOST_APP: 'openHostApp',
+  ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice'
 };
 
 // ===== Entitlement System 常量（内联自 shared/constants.js）=====
@@ -82,6 +83,10 @@ const LICENSE_MODES = {
 let _entitlementState = {
   entitlements: [],
   isLimitEnforced: false,
+  // 购买前被限额拦住、等待后台补做的动作（background 持久化）
+  pendingAction: null,
+  // 一次性提示：待办被补做
+  notice: null,
 };
 
 const LANGUAGE_STORAGE_KEY = 'preferredLanguage';
@@ -152,7 +157,8 @@ const TRANSLATIONS = {
     'licensePro': 'Pro · 无限网站',
     'licenseUpgrade': '升级到 Pro',
     'licenseManage': '管理 / 恢复购买',
-    'proBadge': 'PRO'
+    'proBadge': 'PRO',
+    'noticeSiteEnabled': '已解锁 Pro · 已启用 {domain}'
   },
   'en': {
     'siteListTitle': 'Configured Sites',
@@ -207,7 +213,8 @@ const TRANSLATIONS = {
     'licensePro': 'Pro · unlimited websites',
     'licenseUpgrade': 'Upgrade to Pro',
     'licenseManage': 'Manage / Restore',
-    'proBadge': 'PRO'
+    'proBadge': 'PRO',
+    'noticeSiteEnabled': 'Pro unlocked · {domain} was enabled'
   },
   'es': {
     'siteListTitle': 'Sitios Configurados',
@@ -1836,6 +1843,8 @@ async function loadCachedEntitlements() {
       _entitlementState = {
         entitlements: resp.entitlements || [],
         isLimitEnforced: !!resp.isLimitEnforced,
+        pendingAction: resp.pendingAction || null,
+        notice: resp.notice || null,
       };
     }
   } catch (e) {
@@ -1856,6 +1865,8 @@ async function refreshEntitlements() {
       _entitlementState = {
         entitlements: resp.entitlements || [],
         isLimitEnforced: !!resp.isLimitEnforced,
+        pendingAction: resp.pendingAction || null,
+        notice: resp.notice || null,
       };
       const after = JSON.stringify(_entitlementState.entitlements);
       console.log('[Settings] 权限刷新:', before, '->', after);
@@ -1895,6 +1906,20 @@ function updateLicenseStatus() {
     status.classList.remove('pro');
     btn.textContent = t('licenseUpgrade');
   }
+}
+
+/**
+ * 展示 Background 留下的一次性提示（购买完成后补做了待办），然后确认清除。
+ * 不依赖页面存活：下次打开设置页仍会看到。
+ */
+async function showEntitlementNotice() {
+  const notice = _entitlementState.notice;
+  if (!notice || notice.type !== 'pendingSiteAdded') return;
+
+  showToast(t('noticeSiteEnabled', { domain: notice.domain }));
+  _entitlementState.notice = null;
+  await sendMessage(MESSAGE_TYPES.ACK_ENTITLEMENT_NOTICE);
+  await loadSiteList();
 }
 
 /**
@@ -2394,7 +2419,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadCachedEntitlements();
   updateLicenseStatus();
   refreshEntitlements()
-    .then((changed) => { if (changed) loadSiteList(); })
+    .then(async (changed) => {
+      if (changed) await loadSiteList();
+      // 后台可能刚补做完购买前的待办（例如免费额度撞上限后完成购买）
+      await showEntitlementNotice();
+    })
     .catch(e => console.warn('[Settings] entitlement refresh error', e));
 
   // 加载数据

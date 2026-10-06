@@ -16,7 +16,9 @@ const DEFAULT_STRATEGY = STRATEGIES.DISABLED;
 const STORAGE_KEYS = {
   SITE_CONFIGS: 'siteConfigs',
   GLOBAL_CONFIG: 'globalConfig',
-  CUSTOM_ATTRIBUTES: 'customAttributes'
+  CUSTOM_ATTRIBUTES: 'customAttributes',
+  PENDING_ENTITLEMENT_ACTION: 'pendingEntitlementAction',
+  ENTITLEMENT_NOTICE: 'entitlementNotice',
 };
 
 // 默认的懒加载属性列表（用户可在设置中修改）
@@ -68,8 +70,83 @@ const MESSAGE_TYPES = {
   REFRESH_ENTITLEMENTS: 'refreshEntitlements',
   REQUEST_PURCHASE: 'requestPurchase',
   RESTORE_PURCHASES: 'restorePurchases',
-  OPEN_HOST_APP: 'openHostApp'
+  OPEN_HOST_APP: 'openHostApp',
+  ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice'
 };
+
+// ===== 待办动作（内联自 background/pendingAction.js + shared/constants.js）=====
+// 免费额度撞上限时把"用户想启用的网站"持久化，购买结束后由后台补做。
+const PENDING_ACTION_TTL_MS = 24 * 60 * 60 * 1000;
+
+function buildPendingAction(input, now = Date.now()) {
+  const domain = normalizeHostname(input && input.domain);
+  if (!domain) return null;
+
+  return {
+    version: 1,
+    action: 'addSite',
+    domain,
+    strategy: (input && input.strategy) || STRATEGIES.TECH_BLOCK,
+    scrollFallback: input && input.scrollFallback === true,
+    createdAt: now,
+  };
+}
+
+function validatePendingAction(raw, now = Date.now()) {
+  if (!raw || typeof raw !== 'object') return null;
+  if (raw.version !== 1 || raw.action !== 'addSite') return null;
+
+  const domain = normalizeHostname(raw.domain);
+  if (!domain) return null;
+
+  const createdAt = Number(raw.createdAt) || 0;
+  if (!createdAt || now - createdAt > PENDING_ACTION_TTL_MS) return null;
+
+  return {
+    version: 1,
+    action: 'addSite',
+    domain,
+    strategy: raw.strategy || STRATEGIES.TECH_BLOCK,
+    scrollFallback: raw.scrollFallback === true,
+    createdAt,
+  };
+}
+
+async function savePendingAction(action) {
+  if (!action) return false;
+  await storage.set({ [STORAGE_KEYS.PENDING_ENTITLEMENT_ACTION]: action });
+  return true;
+}
+
+async function loadPendingAction(now = Date.now()) {
+  const result = await storage.get(STORAGE_KEYS.PENDING_ENTITLEMENT_ACTION);
+  const raw = result ? result[STORAGE_KEYS.PENDING_ENTITLEMENT_ACTION] : null;
+  if (!raw) return null;
+
+  const action = validatePendingAction(raw, now);
+  if (!action) {
+    await clearPendingAction();
+    return null;
+  }
+  return action;
+}
+
+async function clearPendingAction() {
+  await storage.remove(STORAGE_KEYS.PENDING_ENTITLEMENT_ACTION);
+}
+
+async function setEntitlementNotice(notice) {
+  await storage.set({ [STORAGE_KEYS.ENTITLEMENT_NOTICE]: notice });
+}
+
+async function getEntitlementNotice() {
+  const result = await storage.get(STORAGE_KEYS.ENTITLEMENT_NOTICE);
+  return (result && result[STORAGE_KEYS.ENTITLEMENT_NOTICE]) || null;
+}
+
+async function clearEntitlementNotice() {
+  await storage.remove(STORAGE_KEYS.ENTITLEMENT_NOTICE);
+}
 
 // ===== Entitlement System 常量（内联自 shared/constants.js + shared/entitlements.js）=====
 // Safari 的 background 是单文件经典脚本，无法 import ES module，故内联
@@ -480,6 +557,34 @@ async function resetCustomAttributes() {
   };
 }
 
+/**
+ * 权限到位后补做"购买前被限额拦住的那次添加"。
+ * 幂等：待办一次性消费；执行完写一条 notice 供 UI 提示。
+ * @returns {Promise<object|null>} 补做成功的待办
+ */
+async function completePendingEntitlementAction() {
+  const pending = await loadPendingAction();
+  if (!pending) return null;
+
+  const configs = await getAllSiteConfigs();
+  const count = Object.keys(configs).length;
+  if (!jsEntitlementManager.canAddSite(count)) return null;
+
+  if (!configs[pending.domain]) {
+    await setSiteConfig(pending.domain, pending.strategy, pending.scrollFallback);
+  }
+  await clearPendingAction();
+
+  const notice = {
+    type: 'pendingSiteAdded',
+    domain: pending.domain,
+    at: Date.now(),
+  };
+  await setEntitlementNotice(notice);
+  console.log('[BG] 已补做购买前的待办:', pending.domain);
+  return notice;
+}
+
 // ============================================
 // 消息处理 (来自 messageHandler.js)
 // ============================================
@@ -515,6 +620,16 @@ function setupMessageHandler() {
                 // 真正拒绝之前先走一次原生 App Group 确认。
                 await jsEntitlementManager.refresh();
                 if (!jsEntitlementManager.canAddSite(currentCount)) {
+                  // 持久化用户意图：popup 会在 Host App 置前后被关掉，
+                  // 购买完成后由 completePendingEntitlementAction() 补做。
+                  // 批量导入被截断不算"想启用这一个网站"，不写待办。
+                  if (request.source !== 'import') {
+                    await savePendingAction(buildPendingAction({
+                      domain: request.domain,
+                      strategy: request.strategy,
+                      scrollFallback: request.scrollFallback,
+                    }));
+                  }
                   sendResponse({ success: false, error: 'LIMIT_REACHED' });
                   break;
                 }
@@ -568,19 +683,31 @@ function setupMessageHandler() {
               success: true,
               ...jsEntitlementManager.snapshot(),
               source: 'cache',
+              pendingAction: await loadPendingAction(),
+              notice: await getEntitlementNotice(),
             });
             break;
 
           case MESSAGE_TYPES.REFRESH_ENTITLEMENTS: {
             // 慢路径：走原生 App Group 拉最新值（StoreKit 购买结果由此进入扩展）。
             const ok = await jsEntitlementManager.refresh();
+            // 权限到位后补做购买前的待办（关掉 popup 也不会丢）
+            await completePendingEntitlementAction();
             sendResponse({
               success: ok,
               ...jsEntitlementManager.snapshot(),
               source: 'native',
+              pendingAction: await loadPendingAction(),
+              notice: await getEntitlementNotice(),
             });
             break;
           }
+
+          // UI 展示完一次性提示后确认清除
+          case MESSAGE_TYPES.ACK_ENTITLEMENT_NOTICE:
+            await clearEntitlementNotice();
+            sendResponse({ success: true });
+            break;
 
           // 购买与恢复都只做一件事：唤起 Host App。
           // StoreKit 的付款面板只能由 Host App 弹出，扩展侧拿不到同步结果。

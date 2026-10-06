@@ -27,7 +27,8 @@ const MESSAGE_TYPES = {
   REFRESH_ENTITLEMENTS: 'refreshEntitlements',
   REQUEST_PURCHASE: 'requestPurchase',
   RESTORE_PURCHASES: 'restorePurchases',
-  OPEN_HOST_APP: 'openHostApp'
+  OPEN_HOST_APP: 'openHostApp',
+  ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice'
 };
 
 // ===== 域名规范化（内联自 shared/domain.js）=====
@@ -79,6 +80,10 @@ const LICENSE_MODES = {
 let _entitlementState = {
   entitlements: [],
   isLimitEnforced: false,
+  // 购买前被限额拦住、等待后台补做的动作（background 持久化）
+  pendingAction: null,
+  // 一次性提示：待办被补做 / 购买完成
+  notice: null,
 };
 
 // 策略常量
@@ -158,7 +163,8 @@ const TRANSLATIONS = {
     'licensePro': 'Pro · 无限网站',
     'licenseUpgrade': '升级到 Pro',
     'licenseManage': '管理 / 恢复购买',
-    'proBadge': 'PRO'
+    'proBadge': 'PRO',
+    'noticeSiteEnabled': '已解锁 Pro · 已启用 {domain}'
   },
   'en': {
     'currentSite': 'Current Site',
@@ -199,7 +205,8 @@ const TRANSLATIONS = {
     'licensePro': 'Pro · unlimited websites',
     'licenseUpgrade': 'Upgrade to Pro',
     'licenseManage': 'Manage / Restore',
-    'proBadge': 'PRO'
+    'proBadge': 'PRO',
+    'noticeSiteEnabled': 'Pro unlocked · {domain} was enabled'
   },
   'es': {
     'currentSite': 'Sitio Actual',
@@ -1275,6 +1282,8 @@ async function loadCachedEntitlements() {
       _entitlementState = {
         entitlements: resp.entitlements || [],
         isLimitEnforced: !!resp.isLimitEnforced,
+        pendingAction: resp.pendingAction || null,
+        notice: resp.notice || null,
       };
     }
   } catch (e) {
@@ -1296,6 +1305,8 @@ async function refreshEntitlements() {
       _entitlementState = {
         entitlements: resp.entitlements || [],
         isLimitEnforced: !!resp.isLimitEnforced,
+        pendingAction: resp.pendingAction || null,
+        notice: resp.notice || null,
       };
       const after = JSON.stringify(_entitlementState.entitlements);
       console.log('[Popup] 权限刷新:', before, '->', after);
@@ -1306,6 +1317,21 @@ async function refreshEntitlements() {
     console.warn('[Popup] refreshEntitlements failed', e);
   }
   return false;
+}
+
+/**
+ * 展示 Background 留下的一次性提示（购买完成 / 待办已补做），然后确认清除。
+ *
+ * 关键点：提示不依赖 popup 存活 —— popup 在 Host App 置前后被系统关掉也没关系，
+ * 下次打开时这条提示还在 storage 里。
+ */
+async function showEntitlementNotice() {
+  const notice = _entitlementState.notice;
+  if (!notice || notice.type !== 'pendingSiteAdded') return;
+
+  showToast(t('noticeSiteEnabled', { domain: notice.domain }));
+  _entitlementState.notice = null;
+  await sendMessage(MESSAGE_TYPES.ACK_ENTITLEMENT_NOTICE);
 }
 
 /**
@@ -1632,18 +1658,15 @@ async function toggleCurrentSite() {
 
     // 限额拦截：弹出升级对话框
     if (addResp && addResp.success === false && addResp.error === 'LIMIT_REACHED') {
+      // 后台已经把这次"想启用的网站"存成待办（pendingEntitlementAction），
+      // 购买成功后由 background 补做 —— popup 被关掉也不影响结果。
       const wantUpgrade = await showUpgradeDialog();
       if (wantUpgrade) {
         const sent = await requestUpgrade();
-        // Host App 打开后用户去付款；这里轮询等权限生效，等到就把这次添加补上。
-        // 若 popup 中途被关掉，background 在下次 SET_SITE_CONFIG 时会自己走原生确认。
-        if (sent && await waitForUnlimitedSites()) {
-          await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
-            domain: currentDomain,
-            strategy: STRATEGIES.TECH_BLOCK,
-            scrollFallback
-          });
-          showToast(t('siteAdded', { domain: currentDomain }));
+        // popup 还活着时顺手刷新一下界面；死了也无所谓。
+        if (sent) {
+          await waitForUnlimitedSites();
+          await showEntitlementNotice();
         }
       }
       // 用户取消则什么都不做（不显示 siteAdded toast）
@@ -1781,9 +1804,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadCachedEntitlements();
   updateLicenseRow();
   refreshEntitlements()
-    .then((changed) => {
+    .then(async (changed) => {
       // StoreKit 购买完成后回到 popup：权限变了就重渲染列表、badge 与授权入口
       if (changed) loadSiteList();
+      // 后台可能刚补做完购买前的待办，给用户一个明确反馈
+      await showEntitlementNotice();
+      await loadSiteList();
     })
     .catch(e => console.warn('[Popup] entitlement refresh error', e));
 
