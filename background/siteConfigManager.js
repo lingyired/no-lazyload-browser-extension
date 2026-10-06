@@ -1,19 +1,16 @@
 // background/siteConfigManager.js
 
 import { STORAGE_KEYS, DEFAULT_STRATEGY, DEFAULT_LAZY_ATTRIBUTES, DEFAULT_PLACEHOLDER_PATTERNS } from '../shared/constants.js';
+import { domainFromUrl, findSiteConfig, normalizeHostname, migrateSiteConfigs } from '../shared/domain.js';
 
 /**
- * 获取网站的根域名（用于配置匹配）
+ * 获取网站的规范化根域名（用于配置匹配）。
+ * 唯一的规范化实现见 shared/domain.js —— 不要在别处再写一遍。
  * @param {string} url
  * @returns {string}
  */
 function extractDomain(url) {
-  try {
-    const urlObj = new URL(url);
-    return urlObj.hostname;
-  } catch {
-    return '';
-  }
+  return domainFromUrl(url);
 }
 
 /**
@@ -39,7 +36,8 @@ async function getSiteConfig(url) {
   if (!domain) return null;
 
   const configs = await getAllSiteConfigs();
-  return configs[domain] || null;
+  // findSiteConfig 同时接受遗留的 www. 键，迁移跑完前后行为一致
+  return findSiteConfig(configs, domain);
 }
 
 /**
@@ -53,8 +51,11 @@ async function setSiteConfig(domain, strategy, scrollFallback = false) {
     ? browser.storage.local
     : chrome.storage.local;
 
+  // 入口就规范化，保证 www.example.com 与 example.com 永远只对应一个键
+  const key = normalizeHostname(domain) || domain;
+
   const configs = await getAllSiteConfigs();
-  configs[domain] = {
+  configs[key] = {
     strategy,
     scrollFallback,
     addedAt: Date.now()
@@ -72,10 +73,33 @@ async function removeSiteConfig(domain) {
     ? browser.storage.local
     : chrome.storage.local;
 
+  const key = normalizeHostname(domain) || domain;
+
   const configs = await getAllSiteConfigs();
-  delete configs[domain];
+  delete configs[key];
+  // 迁移尚未跑完时，也清掉遗留的 www. 键，避免删除后"复活"
+  delete configs['www.' + key];
 
   await storage.set({ [STORAGE_KEYS.SITE_CONFIGS]: configs });
+}
+
+/**
+ * 一次性迁移：规范化所有已存站点键，合并 www./非 www. 重复项。
+ * 幂等，可在每次后台启动时安全调用。
+ * @returns {Promise<boolean>} 是否发生了写入
+ */
+async function migrateStoredSiteConfigs() {
+  const storage = typeof browser !== 'undefined'
+    ? browser.storage.local
+    : chrome.storage.local;
+
+  const configs = await getAllSiteConfigs();
+  const { configs: migrated, changed } = migrateSiteConfigs(configs);
+  if (!changed) return false;
+
+  await storage.set({ [STORAGE_KEYS.SITE_CONFIGS]: migrated });
+  console.log('[SiteConfig] 已迁移域名规范化键:', Object.keys(configs).length, '→', Object.keys(migrated).length);
+  return true;
 }
 
 /**
@@ -162,6 +186,8 @@ async function resetCustomAttributes() {
 
 export {
   extractDomain,
+  normalizeHostname,
+  migrateStoredSiteConfigs,
   getAllSiteConfigs,
   getSiteConfig,
   setSiteConfig,

@@ -27,13 +27,38 @@ const storage = typeof browser !== 'undefined' ? browser.storage.local : chrome.
 const tabs = typeof browser !== 'undefined' ? browser.tabs : chrome.tabs;
 const browserAction = typeof browser !== 'undefined' ? (browser.browserAction || browser.action) : chrome.browserAction;
 
+// ===== 域名规范化（内联自 shared/domain.js）=====
+// ⚠️ 唯一实现是 shared/domain.js；这里是经典脚本的内联副本。
+function normalizeHostname(hostname) {
+  if (typeof hostname !== 'string') return '';
+
+  let host = hostname.trim().toLowerCase();
+  if (!host) return '';
+
+  if (host.startsWith('[')) {
+    const end = host.indexOf(']');
+    if (end !== -1) host = host.slice(0, end + 1);
+  } else {
+    const colon = host.lastIndexOf(':');
+    if (colon !== -1 && /^\d+$/.test(host.slice(colon + 1))) {
+      host = host.slice(0, colon);
+    }
+  }
+
+  while (host.endsWith('.')) host = host.slice(0, -1);
+  if (!host) return '';
+
+  return host.replace(/^www\./, '');
+}
+
 /**
- * 获取网站的根域名
+ * 获取网站的规范化根域名
  */
 function extractDomain(url) {
   try {
     const urlObj = new URL(url);
-    return urlObj.hostname;
+    if (urlObj.protocol !== 'http:' && urlObj.protocol !== 'https:') return '';
+    return normalizeHostname(urlObj.hostname);
   } catch {
     return '';
   }
@@ -54,15 +79,17 @@ async function getSiteConfig(url) {
   const domain = extractDomain(url);
   if (!domain) return null;
   const configs = await getAllSiteConfigs();
-  return configs[domain] || null;
+  // 迁移完成前也接受遗留的 www. 键
+  return configs[domain] || configs['www.' + domain] || null;
 }
 
 /**
  * 设置网站配置
  */
 async function setSiteConfig(domain, strategy, scrollFallback = false) {
+  const key = normalizeHostname(domain) || domain;
   const configs = await getAllSiteConfigs();
-  configs[domain] = {
+  configs[key] = {
     strategy,
     scrollFallback,
     addedAt: Date.now()
@@ -71,11 +98,39 @@ async function setSiteConfig(domain, strategy, scrollFallback = false) {
 }
 
 /**
+ * 一次性规范化历史站点键（幂等）。
+ * Firefox 也用同一套 shared/domain.js 规则，避免三端行为不一致。
+ */
+async function migrateStoredSiteConfigs() {
+  const configs = await getAllSiteConfigs();
+  const out = {};
+  let changed = false;
+
+  for (const [rawDomain, config] of Object.entries(configs)) {
+    const domain = normalizeHostname(rawDomain);
+    if (!domain) { changed = true; continue; }
+    if (domain !== rawDomain) changed = true;
+
+    if (out[domain]) {
+      changed = true;
+      out[domain] = Object.assign({}, out[domain], config);
+    } else {
+      out[domain] = config;
+    }
+  }
+
+  if (changed) await storage.set({ [STORAGE_KEYS.SITE_CONFIGS]: out });
+  return changed;
+}
+
+/**
  * 删除网站配置
  */
 async function removeSiteConfig(domain) {
+  const key = normalizeHostname(domain) || domain;
   const configs = await getAllSiteConfigs();
-  delete configs[domain];
+  delete configs[key];
+  delete configs['www.' + key];
   await storage.set({ [STORAGE_KEYS.SITE_CONFIGS]: configs });
 }
 
@@ -147,6 +202,9 @@ function setupMessageHandler() {
 // 初始化
 setupMessageHandler();
 console.log('[Image Lazy Load Blocker] Background script started (Firefox MV2)');
+
+// 一次性规范化历史站点键（幂等）
+migrateStoredSiteConfigs().catch(e => console.warn('[Firefox BG] 站点键迁移失败', e));
 
 /**
  * 更新扩展图标 badge

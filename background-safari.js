@@ -274,15 +274,51 @@ const windowsAPI = typeof browser !== 'undefined' ? browser.windows : chrome.win
 // ============================================
 // 站点配置管理 (来自 siteConfigManager.js)
 // ============================================
+// ===== 域名规范化（内联自 shared/domain.js）=====
+// ⚠️ 唯一实现是 shared/domain.js；这里是经典脚本的内联副本（Phase H 会由构建生成）。
+// 规则：小写 → 去空白 → 去端口 → 去结尾根点 → 去一个 www. 前缀。
+function normalizeHostname(hostname) {
+  if (typeof hostname !== 'string') return '';
+
+  let host = hostname.trim().toLowerCase();
+  if (!host) return '';
+
+  if (host.startsWith('[')) {
+    const end = host.indexOf(']');
+    if (end !== -1) host = host.slice(0, end + 1);
+  } else {
+    const colon = host.lastIndexOf(':');
+    if (colon !== -1 && /^\d+$/.test(host.slice(colon + 1))) {
+      host = host.slice(0, colon);
+    }
+  }
+
+  while (host.endsWith('.')) host = host.slice(0, -1);
+  if (!host) return '';
+
+  return host.replace(/^www\./, '');
+}
+
 /**
- * 获取网站的根域名（用于配置匹配）
+ * 在站点配置表里查找域名（兼容尚未迁移的遗留 www. 键）
+ */
+function findSiteConfig(configs, host) {
+  if (!configs) return null;
+  const domain = normalizeHostname(host);
+  if (!domain) return null;
+  return configs[domain] || configs['www.' + domain] || null;
+}
+
+/**
+ * 获取网站的规范化根域名（用于配置匹配）
  * @param {string} url
  * @returns {string}
  */
 function extractDomain(url) {
   try {
     const urlObj = new URL(url);
-    return urlObj.hostname;
+    if (urlObj.protocol !== 'http:' && urlObj.protocol !== 'https:') return '';
+    return normalizeHostname(urlObj.hostname);
   } catch {
     return '';
   }
@@ -307,7 +343,7 @@ async function getSiteConfig(url) {
   if (!domain) return null;
 
   const configs = await getAllSiteConfigs();
-  return configs[domain] || null;
+  return findSiteConfig(configs, domain);
 }
 
 /**
@@ -317,8 +353,11 @@ async function getSiteConfig(url) {
  * @param {boolean} scrollFallback
  */
 async function setSiteConfig(domain, strategy, scrollFallback = false) {
+  // 入口就规范化，保证 www.example.com 与 example.com 永远只对应一个键
+  const key = normalizeHostname(domain) || domain;
+
   const configs = await getAllSiteConfigs();
-  configs[domain] = {
+  configs[key] = {
     strategy,
     scrollFallback,
     addedAt: Date.now()
@@ -332,10 +371,51 @@ async function setSiteConfig(domain, strategy, scrollFallback = false) {
  * @param {string} domain
  */
 async function removeSiteConfig(domain) {
+  const key = normalizeHostname(domain) || domain;
+
   const configs = await getAllSiteConfigs();
-  delete configs[domain];
+  delete configs[key];
+  // 迁移尚未跑完时，也清掉遗留的 www. 键，避免删除后"复活"
+  delete configs['www.' + key];
 
   await storage.set({ [STORAGE_KEYS.SITE_CONFIGS]: configs });
+}
+
+/**
+ * 一次性迁移：规范化所有已存站点键，合并 www./非 www. 重复项。幂等。
+ * @returns {Promise<boolean>} 是否发生了写入
+ */
+async function migrateStoredSiteConfigs() {
+  const configs = await getAllSiteConfigs();
+  const out = {};
+  let changed = false;
+
+  for (const [rawDomain, config] of Object.entries(configs)) {
+    const domain = normalizeHostname(rawDomain);
+    if (!domain) { changed = true; continue; }
+    if (domain !== rawDomain) changed = true;
+
+    if (out[domain]) {
+      changed = true;
+      // 保留较新的 strategy / scrollFallback
+      const prev = out[domain];
+      const newer = (config.addedAt || 0) >= (prev.addedAt || 0) ? config : prev;
+      const older = newer === config ? prev : config;
+      out[domain] = {
+        strategy: newer.strategy || older.strategy,
+        scrollFallback: newer.scrollFallback === true,
+        addedAt: Math.min(config.addedAt || Infinity, prev.addedAt || Infinity) || newer.addedAt,
+      };
+    } else {
+      out[domain] = config;
+    }
+  }
+
+  if (changed) {
+    await storage.set({ [STORAGE_KEYS.SITE_CONFIGS]: out });
+    console.log('[SiteConfig] 已迁移域名规范化键:', Object.keys(configs).length, '→', Object.keys(out).length);
+  }
+  return changed;
 }
 
 /**
@@ -614,6 +694,9 @@ function setupTabListeners() {
 // ============================================
 setupMessageHandler();
 setupTabListeners();
+
+// 一次性把历史站点键规范化（www.example.com → example.com），幂等。
+migrateStoredSiteConfigs().catch(e => console.warn('[BG] 站点键迁移失败', e));
 
 jsEntitlementManager
   .loadCache()

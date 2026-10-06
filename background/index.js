@@ -1,7 +1,7 @@
 // background/index.js
 
 import { setupMessageHandler } from './messageHandler.js';
-import { getSiteConfig } from './siteConfigManager.js';
+import { getSiteConfig, migrateStoredSiteConfigs } from './siteConfigManager.js';
 import { JSEntitlementManager } from '../shared/entitlements.js';
 
 // Chrome/Firefox: 不执行网站数量限额（enforceLimit=false，所有权限视为已授予）
@@ -96,5 +96,8 @@ function setupTabListeners() {
 // 初始化
 setupMessageHandler(jsEntitlementManager);
 setupTabListeners();
+
+// 一次性把历史站点键规范化（www.example.com → example.com），幂等。
+migrateStoredSiteConfigs().catch(e => console.warn('[Background] 站点键迁移失败', e));
 
 console.log('[Image Lazy Load Blocker] Background service worker started');

@@ -1,5 +1,30 @@
 // settings/app.js
 
+// ===== 域名规范化（内联自 shared/domain.js）=====
+// ⚠️ 唯一实现是 shared/domain.js；这里是经典脚本的内联副本。
+// 规则：小写 → 去空白 → 去端口 → 去结尾根点 → 去一个 www. 前缀。
+function normalizeHostname(hostname) {
+  if (typeof hostname !== 'string') return '';
+
+  let host = hostname.trim().toLowerCase();
+  if (!host) return '';
+
+  if (host.startsWith('[')) {
+    const end = host.indexOf(']');
+    if (end !== -1) host = host.slice(0, end + 1);
+  } else {
+    const colon = host.lastIndexOf(':');
+    if (colon !== -1 && /^\d+$/.test(host.slice(colon + 1))) {
+      host = host.slice(0, colon);
+    }
+  }
+
+  while (host.endsWith('.')) host = host.slice(0, -1);
+  if (!host) return '';
+
+  return host.replace(/^www\./, '');
+}
+
 // 内联常量定义
 const STRATEGIES = {
   TECH_BLOCK: 'tech-block',

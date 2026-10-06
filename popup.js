@@ -30,6 +30,32 @@ const MESSAGE_TYPES = {
   OPEN_HOST_APP: 'openHostApp'
 };
 
+// ===== 域名规范化（内联自 shared/domain.js）=====
+// ⚠️ 唯一实现是 shared/domain.js；这里是经典脚本的内联副本。
+// 规则：小写 → 去空白 → 去端口 → 去结尾根点 → 去一个 www. 前缀。
+// 千万不要在别处再写一遍（历史上 popup 去 www.、background 不去，导致启用后不生效）。
+function normalizeHostname(hostname) {
+  if (typeof hostname !== 'string') return '';
+
+  let host = hostname.trim().toLowerCase();
+  if (!host) return '';
+
+  if (host.startsWith('[')) {
+    const end = host.indexOf(']');
+    if (end !== -1) host = host.slice(0, end + 1);
+  } else {
+    const colon = host.lastIndexOf(':');
+    if (colon !== -1 && /^\d+$/.test(host.slice(colon + 1))) {
+      host = host.slice(0, colon);
+    }
+  }
+
+  while (host.endsWith('.')) host = host.slice(0, -1);
+  if (!host) return '';
+
+  return host.replace(/^www\./, '');
+}
+
 // ===== Entitlement System 常量（内联自 shared/constants.js）=====
 const APP_LIMITS = {
   FREE_SITE_LIMIT: 3,
@@ -1517,7 +1543,8 @@ async function getCurrentDomain() {
     if (url.protocol !== 'http:' && url.protocol !== 'https:') {
       return null;
     }
-    return url.hostname.replace(/^www\./, '');
+    // 唯一规范化入口：与 background 的匹配规则完全一致
+    return normalizeHostname(url.hostname);
   } catch {
     return null;
   }
