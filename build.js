@@ -17,6 +17,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { bundleClassic } = require('./scripts/bundle-classic.js');
 
 const BUILD_DIR = 'dist';
 const SRC_DIR = '.';
@@ -178,6 +179,7 @@ function ensureVersionPlaceholder(filePath) {
 const COMMON_FILES = [
   'popup.html',
   'popup.js',
+  // 注意：shared-ui.js 是生成的，不在这里复制（见 writeSharedUiBundle）
   'i18n.js',
   'i18n-manager.js',
   'content/index.js',
@@ -211,19 +213,86 @@ const CHROME_FILES = {
 };
 
 // Firefox specific files
+// Firefox 的 background 也是生成的经典脚本（MV2），见 writeFirefoxBackgroundBundle。
 const FIREFOX_FILES = {
   'manifest-firefox.json': 'manifest.json',
-  'background-firefox.js': 'background-firefox.js',
 };
 
 // Safari specific files
 // Safari 使用 MV3，结构与 Chrome 接近，但：
 // - background 改用单文件经典脚本（避免 ES module 在 Safari 16.4 前的不稳定）
 // - manifest 中 browser_specific_settings 指向 safari
+// Safari 的 background 是生成的经典脚本（见 writeSafariBackgroundBundle），
+// 不从这里复制。
 const SAFARI_FILES = {
   'manifest-safari.json': 'manifest.json',
-  'background-safari.js': 'background-safari.js',
 };
+
+/**
+ * 生成 Firefox 的 MV2 经典脚本 background。
+ * 同样从 background/firefox.js 打包 —— 域名规范化等逻辑与其它端共用一份。
+ */
+function writeFirefoxBackgroundBundle(targetDir) {
+  const out = bundleClassic(['background/firefox.js'], {
+    banner: [
+      '// ⚠️ 本文件由 build.js / scripts/bundle-classic.js 生成，请勿手工修改。',
+      '// 源文件：background/firefox.js（及其依赖 shared/*.js）',
+      '// 修改后重新运行: npm run build:firefox',
+    ].join('\n'),
+  });
+
+  fs.writeFileSync(path.join(targetDir, 'background-firefox.js'), out);
+  console.log('  🧩 Generated background-firefox.js (' + out.split('\n').length + ' lines)');
+}
+
+/**
+ * 生成 Safari 的经典脚本 background。
+ *
+ * 源文件是 background/safari.js（ES module，和 Chrome 共用 messageHandler /
+ * siteConfigManager / shared/*），构建时打包成单个经典脚本 ——
+ * Safari 16.4 之前 "type": "module" 的 service worker 不稳定。
+ *
+ * 这样权限逻辑只写一次：改 shared/entitlements.js 或 messageHandler.js，
+ * Safari 与 Chrome 同时生效，不再需要"记得同步那边"。
+ */
+function writeSafariBackgroundBundle(targetDir) {
+  const out = bundleClassic(['background/safari.js'], {
+    banner: [
+      '// ⚠️ 本文件由 build.js / scripts/bundle-classic.js 生成，请勿手工修改。',
+      '// 源文件：background/safari.js（及其依赖 background/*.js、shared/*.js）',
+      '// 修改后重新运行: npm run build:safari',
+    ].join('\n'),
+  });
+
+  fs.writeFileSync(path.join(targetDir, 'background-safari.js'), out);
+  console.log('  🧩 Generated background-safari.js (' + out.split('\n').length + ' lines)');
+}
+
+/**
+ * 生成 popup / settings 共用的经典脚本包。
+ *
+ * shared/*.js 是 ES module（background 用 import 消费），
+ * 但 popup.html / settings/index.html 是经典脚本页面，无法 import，
+ * 所以构建时打包成一份 shared-ui.js。
+ *
+ * 好处：常量与升级弹窗只有一份实现，改一次到处生效。
+ */
+function writeSharedUiBundle(targetDir) {
+  const out = bundleClassic([
+    'shared/upgrade-dialog.js',
+    'shared/domain.js',
+    'shared/constants.js',
+  ], {
+    banner: [
+      '// ⚠️ 本文件由 build.js / scripts/bundle-classic.js 生成，请勿手工修改。',
+      '// 源文件：shared/{upgrade-dialog,domain,constants}.js',
+      '// 修改后重新运行: npm run build:safari（或 build:chrome / build:firefox）',
+    ].join('\n'),
+  });
+
+  fs.writeFileSync(path.join(targetDir, 'shared-ui.js'), out);
+  console.log('  🧩 Generated shared-ui.js (' + out.split('\n').length + ' lines)');
+}
 
 // 确保目录存在（不删除内容）
 function ensureDir(dir) {
@@ -346,6 +415,8 @@ function buildChrome(version) {
     console.log('  📝 Removed browser_specific_settings from Chrome manifest');
   }
 
+  writeSharedUiBundle(chromeDir);
+
   // 更新版本号到 HTML
   // Update settings/index.html
   const settingsPath = path.join(chromeDir, 'settings/index.html');
@@ -396,6 +467,9 @@ function buildFirefox(version) {
   Object.entries(FIREFOX_FILES).forEach(([src, dest]) => {
     copyFile(path.join(SRC_DIR, src), path.join(firefoxDir, dest));
   });
+
+  writeFirefoxBackgroundBundle(firefoxDir);
+  writeSharedUiBundle(firefoxDir);
 
   // 更新版本号到 HTML
   // Update settings/index.html
@@ -449,6 +523,9 @@ function buildSafari(version, buildNumber = getBuildNumber()) {
   Object.entries(SAFARI_FILES).forEach(([src, dest]) => {
     copyFile(path.join(SRC_DIR, src), path.join(safariDir, dest));
   });
+
+  writeSafariBackgroundBundle(safariDir);
+  writeSharedUiBundle(safariDir);
 
   // 更新版本号到 HTML
   // Update settings/index.html

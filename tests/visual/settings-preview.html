@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>settings preview harness</title>
+</head>
+<body>
+<!--
+  只用于视觉/交互自查的预览壳，不参与打包。
+
+  用法（headless Chrome）：
+    chrome --headless --screenshot=out.png --window-size=760,1100 \
+      "file://.../tests/visual/settings-preview.html?state=free&scheme=light"
+
+  state:  free(默认) | pro | unrestricted | empty | unavailable
+  measure=1 会在页面顶部打印样式表与关键元素的计算样式，便于排查
+-->
+<script src="chrome-stub.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+window.__PREVIEW_STATE__ = params.get('state') || 'free';
+
+function resolveHref(href) {
+  // shared-ui.js 是构建产物，预览时直接读 tests/visual/ 下的副本
+  if (href === 'shared-ui.js') return '../../dist/safari/shared-ui.js';
+  // settings/index.html 里的相对路径是相对扩展根目录的
+  return '../../settings/' + href;
+}
+
+fetch('../../settings/index.html')
+  .then(function (r) { return r.text(); })
+  .then(function (html) {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+
+    doc.head.querySelectorAll('link[rel=stylesheet], meta[charset], meta[name=color-scheme]').forEach(function (node) {
+      const clone = node.cloneNode(true);
+      if (clone.tagName === 'LINK' && clone.getAttribute('href')) {
+        clone.setAttribute('href', resolveHref(clone.getAttribute('href')));
+      }
+      document.head.appendChild(clone);
+    });
+
+    document.body.innerHTML = doc.body.innerHTML;
+
+    // 头部脚本（i18n-manager.js 等）按顺序加载，再加载页面主脚本
+    // 页面脚本要按文档顺序全部加载（settings 页把 i18n-manager.js 放在 body 末尾）
+    // 构建产物 shared-ui.js 放在最前面
+    const headScripts = [{ getAttribute: function () { return 'shared-ui.js'; } }]
+      .concat(Array.prototype.slice.call(doc.querySelectorAll('script[src]')));
+
+    const loadNext = function () {
+      const node = headScripts.shift();
+      if (!node) {
+        document.dispatchEvent(new Event('DOMContentLoaded'));
+        if (params.get('measure') === '1') setTimeout(measure, 300);
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = resolveHref(node.getAttribute('src'));
+      script.onload = loadNext;
+      script.onerror = loadNext;
+      document.body.appendChild(script);
+    };
+    loadNext();
+  });
+
+function measure() {
+  const rows = [];
+  rows.push('sheets: ' + Array.prototype.map.call(document.styleSheets, function (s) {
+    return (s.href || 'inline').split('/').slice(-2).join('/');
+  }).join(', '));
+  const btn = document.getElementById('saveGlobalBtn');
+  if (btn) {
+    const cs = getComputedStyle(btn);
+    rows.push('saveBtn: bg=' + cs.backgroundColor + ' color=' + cs.color + ' padding=' + cs.padding + ' radius=' + cs.borderRadius);
+  }
+  rows.push('count=' + (document.getElementById('siteCount') || {}).textContent
+    + ' items=' + document.querySelectorAll('#siteList .nl-list-item').length
+    + ' langOptions=' + (document.getElementById('languageSelect') || { options: [] }).options.length);
+  const pre = document.createElement('pre');
+  pre.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#ff0;color:#000;font-size:11px;padding:4px;white-space:pre-wrap;margin:0';
+  pre.textContent = rows.join('\n');
+  document.body.appendChild(pre);
+}
+</script>
+</body>
+</html>

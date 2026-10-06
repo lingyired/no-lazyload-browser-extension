@@ -1,4 +1,7 @@
-// popup.js with i18n support
+// popup.js
+// 依赖 shared-ui.js（由 scripts/bundle-classic.js 从 shared/*.js 生成）：
+//   STRATEGIES / MESSAGE_TYPES / APP_LIMITS / ENTITLEMENTS / LICENSE_MODES /
+//   getLicenseModeFor / showUpgradeDialog / normalizeHostname
 
 // 获取运行时 API
 const runtime = typeof browser !== 'undefined'
@@ -14,68 +17,6 @@ const storage = typeof browser !== 'undefined' && browser.storage
   ? browser.storage
   : chrome.storage;
 
-// 消息类型
-const MESSAGE_TYPES = {
-  GET_SITE_CONFIG: 'GET_SITE_CONFIG',
-  SET_SITE_CONFIG: 'SET_SITE_CONFIG',
-  REMOVE_SITE_CONFIG: 'REMOVE_SITE_CONFIG',
-  GET_ALL_CONFIGS: 'GET_ALL_CONFIGS',
-  // Entitlement / Purchase（值与 background 一致）
-  //   GET_ENTITLEMENTS     —— 读 background 的本地快照，毫秒级返回
-  //   REFRESH_ENTITLEMENTS —— 让 background 走原生 App Group 拉最新值（慢）
-  GET_ENTITLEMENTS: 'getEntitlements',
-  REFRESH_ENTITLEMENTS: 'refreshEntitlements',
-  REQUEST_PURCHASE: 'requestPurchase',
-  RESTORE_PURCHASES: 'restorePurchases',
-  OPEN_HOST_APP: 'openHostApp',
-  ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice'
-};
-
-// ===== 域名规范化（内联自 shared/domain.js）=====
-// ⚠️ 唯一实现是 shared/domain.js；这里是经典脚本的内联副本。
-// 规则：小写 → 去空白 → 去端口 → 去结尾根点 → 去一个 www. 前缀。
-// 千万不要在别处再写一遍（历史上 popup 去 www.、background 不去，导致启用后不生效）。
-function normalizeHostname(hostname) {
-  if (typeof hostname !== 'string') return '';
-
-  let host = hostname.trim().toLowerCase();
-  if (!host) return '';
-
-  if (host.startsWith('[')) {
-    const end = host.indexOf(']');
-    if (end !== -1) host = host.slice(0, end + 1);
-  } else {
-    const colon = host.lastIndexOf(':');
-    if (colon !== -1 && /^\d+$/.test(host.slice(colon + 1))) {
-      host = host.slice(0, colon);
-    }
-  }
-
-  while (host.endsWith('.')) host = host.slice(0, -1);
-  if (!host) return '';
-
-  return host.replace(/^www\./, '');
-}
-
-// ===== Entitlement System 常量（内联自 shared/constants.js）=====
-const APP_LIMITS = {
-  FREE_SITE_LIMIT: 3,
-};
-
-const ENTITLEMENTS = {
-  UNLIMITED_SITES: 'unlimitedSites',
-};
-
-// 授权模式常量（内联自 shared/constants.js）
-//   unrestricted = Chrome/Firefox：免费且不限额，不是 Pro，绝不显示付费 UI
-//   free         = Safari 免费版
-//   pro          = Safari 已解锁 Pro
-const LICENSE_MODES = {
-  UNRESTRICTED: 'unrestricted',
-  FREE: 'free',
-  PRO: 'pro',
-};
-
 // 当前用户权限状态缓存（由 background GET_ENTITLEMENTS 填充）
 let _entitlementState = {
   entitlements: [],
@@ -86,13 +27,6 @@ let _entitlementState = {
   pendingAction: null,
   // 一次性提示：待办被补做 / 购买完成
   notice: null,
-};
-
-// 策略常量
-const STRATEGIES = {
-  TECH_BLOCK: 'tech-block',
-  SCROLL_FALLBACK: 'scroll-fallback',
-  DISABLED: 'disabled'
 };
 
 // 当前语言
@@ -1381,14 +1315,12 @@ async function waitForUnlimitedSites(timeoutMs = 90000, intervalMs = 2000) {
 // ===== 授权模式 =====
 
 /**
- * 当前授权模式（UI 只认这一个判断）
+ * 当前授权模式（UI 只认这一个判断）。
+ * 实现来自 shared/constants.js 的 getLicenseMode()，这里只是绑定当前状态。
  * @returns {'unrestricted'|'free'|'pro'}
  */
 function getLicenseMode() {
-  if (!_entitlementState.isLimitEnforced) return LICENSE_MODES.UNRESTRICTED;
-  return _entitlementState.entitlements.includes(ENTITLEMENTS.UNLIMITED_SITES)
-    ? LICENSE_MODES.PRO
-    : LICENSE_MODES.FREE;
+  return getLicenseModeFor(_entitlementState);
 }
 
 /** 是否不受网站数量限制（Chrome/Firefox 恒真，Safari 仅 Pro 为真） */
@@ -1444,98 +1376,13 @@ function updateLicenseUI(siteCount) {
   }
 }
 
-// ===== 升级弹窗（plan Phase E）=====
+// ===== 升级弹窗 =====
+//
+// 结构由 shared-ui.js（shared/upgrade-dialog.js）提供，只有一份实现。
+// 这里只负责把 t() 与真实价格传进去。
 
-/**
- * 显示升级弹窗。
- * @param {{price?: string|null}} [options]
- * @returns {Promise<boolean>} true=用户点击 Upgrade
- */
-function showUpgradeDialog({ price } = {}) {
-  return new Promise(function (resolve) {
-    const existing = document.getElementById('upgradeDialogOverlay');
-    if (existing) existing.remove();
-
-    const previouslyFocused = document.activeElement;
-
-    const overlay = document.createElement('div');
-    overlay.id = 'upgradeDialogOverlay';
-    overlay.className = 'nl-overlay';
-    overlay.setAttribute('role', 'dialog');
-    overlay.setAttribute('aria-modal', 'true');
-    overlay.setAttribute('aria-labelledby', 'upgradeDialogTitle');
-
-    const dialog = document.createElement('div');
-    dialog.className = 'nl-dialog';
-
-    const title = document.createElement('h2');
-    title.id = 'upgradeDialogTitle';
-    title.className = 'nl-dialog-title';
-    title.textContent = t('upgradeTitle');
-
-    const body = document.createElement('p');
-    body.className = 'nl-dialog-body';
-    body.textContent = t('upgradeBodyLimit');
-
-    const priceLine = document.createElement('p');
-    priceLine.className = 'nl-dialog-body';
-    // 没取到真实价格时只说"一次性购买"，绝不显示硬编码价格
-    priceLine.textContent = price ? price + ' · ' + t('oneTimePurchase') : t('upgradePrice');
-
-    const subline = document.createElement('p');
-    subline.className = 'nl-dialog-body';
-    subline.textContent = t('noSubscription');
-
-    const actions = document.createElement('div');
-    actions.className = 'nl-dialog-actions';
-
-    const cancelBtn = document.createElement('button');
-    cancelBtn.type = 'button';
-    cancelBtn.className = 'nl-btn';
-    cancelBtn.textContent = t('notNow');
-
-    const upgradeBtn = document.createElement('button');
-    upgradeBtn.type = 'button';
-    upgradeBtn.className = 'nl-btn nl-btn-primary';
-    upgradeBtn.textContent = t('upgradeToPro');
-
-    actions.append(cancelBtn, upgradeBtn);
-    dialog.append(title, body, priceLine, subline, actions);
-    overlay.appendChild(dialog);
-    document.body.appendChild(overlay);
-
-    const close = function (result) {
-      overlay.remove();
-      document.removeEventListener('keydown', onKey);
-      // 焦点回到触发控件（plan Task F1）
-      if (previouslyFocused && typeof previouslyFocused.focus === 'function') previouslyFocused.focus();
-      resolve(result);
-    };
-
-    const onKey = function (e) {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        close(false);
-        return;
-      }
-      // 焦点困在弹窗内
-      if (e.key === 'Tab') {
-        const focusables = [cancelBtn, upgradeBtn];
-        const index = focusables.indexOf(document.activeElement);
-        const next = e.shiftKey
-          ? focusables[(index - 1 + focusables.length) % focusables.length]
-          : focusables[(index + 1) % focusables.length];
-        e.preventDefault();
-        next.focus();
-      }
-    };
-
-    cancelBtn.addEventListener('click', function () { close(false); });
-    upgradeBtn.addEventListener('click', function () { close(true); });
-    overlay.addEventListener('click', function (e) { if (e.target === overlay) close(false); });
-    document.addEventListener('keydown', onKey);
-    cancelBtn.focus();
-  });
+function openUpgradeDialog() {
+  return showUpgradeDialog({ t, price: _entitlementState.price || null });
 }
 
 /**
@@ -1739,7 +1586,7 @@ async function onSwitchClick() {
  * 待办已由 background 持久化，popup 被关掉也不会丢。
  */
 async function handleLimitReached() {
-  const wantUpgrade = await showUpgradeDialog({ price: _entitlementState.price || null });
+  const wantUpgrade = await openUpgradeDialog();
   if (!wantUpgrade) return;
 
   const sent = await requestUpgrade();

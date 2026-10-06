@@ -1,5 +1,6 @@
 // background/messageHandler.js
 
+import { MESSAGE_TYPES } from '../shared/constants.js';
 import {
   getSiteConfig,
   setSiteConfig,
@@ -20,25 +21,6 @@ import {
   getEntitlementNotice,
   clearEntitlementNotice,
 } from './pendingAction.js';
-
-const MESSAGE_TYPES = {
-  GET_SITE_CONFIG: 'GET_SITE_CONFIG',
-  SET_SITE_CONFIG: 'SET_SITE_CONFIG',
-  REMOVE_SITE_CONFIG: 'REMOVE_SITE_CONFIG',
-  GET_ALL_CONFIGS: 'GET_ALL_CONFIGS',
-  GET_GLOBAL_CONFIG: 'GET_GLOBAL_CONFIG',
-  SET_GLOBAL_CONFIG: 'SET_GLOBAL_CONFIG',
-  GET_CUSTOM_ATTRIBUTES: 'GET_CUSTOM_ATTRIBUTES',
-  SET_CUSTOM_ATTRIBUTES: 'SET_CUSTOM_ATTRIBUTES',
-  RESET_CUSTOM_ATTRIBUTES: 'RESET_CUSTOM_ATTRIBUTES',
-  // Entitlement / Purchase（Chrome/Firefox 不执行限额，但复用同一消息协议）
-  GET_ENTITLEMENTS: 'getEntitlements',
-  REFRESH_ENTITLEMENTS: 'refreshEntitlements',
-  REQUEST_PURCHASE: 'requestPurchase',
-  RESTORE_PURCHASES: 'restorePurchases',
-  OPEN_HOST_APP: 'openHostApp',
-  ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice'
-};
 
 /**
  * 权限到位后补做"购买前被限额拦住的那次添加"。
@@ -186,14 +168,19 @@ function setupMessageHandler(jsEntitlementManager) {
             sendResponse({ success: true });
             break;
 
-          // Chrome/Firefox 商店侧免费无限制，无内购也无 Host App，
-          // 这几个购买相关消息永远不会被 UI 触发。保留 case 只为协议一致，
-          // 统一返回"不支持"，不静默假装成功。
+          // 购买与恢复都只做一件事：唤起 Host App（StoreKit 付款面板只能由它弹出）。
+          // Chrome/Firefox 没有原生桥接，明确返回"不支持"，不静默假装成功。
           case MESSAGE_TYPES.REQUEST_PURCHASE:
           case MESSAGE_TYPES.RESTORE_PURCHASES:
-          case MESSAGE_TYPES.OPEN_HOST_APP:
-            sendResponse({ success: false, error: 'NOT_SUPPORTED' });
+          case MESSAGE_TYPES.OPEN_HOST_APP: {
+            const opened = await jsEntitlementManager.openHostApp();
+            if (!opened && !jsEntitlementManager.nativeBundleId) {
+              sendResponse({ success: false, error: 'NOT_SUPPORTED' });
+            } else {
+              sendResponse({ success: opened, openedHostApp: opened });
+            }
             break;
+          }
 
           default:
             sendResponse({ success: false, error: 'Unknown message type' });

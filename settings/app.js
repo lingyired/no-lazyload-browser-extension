@@ -1,36 +1,8 @@
 // settings/app.js
+// 依赖 shared-ui.js（由 scripts/bundle-classic.js 从 shared/*.js 生成）：
+//   STRATEGIES / MESSAGE_TYPES / APP_LIMITS / ENTITLEMENTS / LICENSE_MODES /
+//   getLicenseModeFor / showUpgradeDialog / normalizeHostname
 
-// ===== 域名规范化（内联自 shared/domain.js）=====
-// ⚠️ 唯一实现是 shared/domain.js；这里是经典脚本的内联副本。
-// 规则：小写 → 去空白 → 去端口 → 去结尾根点 → 去一个 www. 前缀。
-function normalizeHostname(hostname) {
-  if (typeof hostname !== 'string') return '';
-
-  let host = hostname.trim().toLowerCase();
-  if (!host) return '';
-
-  if (host.startsWith('[')) {
-    const end = host.indexOf(']');
-    if (end !== -1) host = host.slice(0, end + 1);
-  } else {
-    const colon = host.lastIndexOf(':');
-    if (colon !== -1 && /^\d+$/.test(host.slice(colon + 1))) {
-      host = host.slice(0, colon);
-    }
-  }
-
-  while (host.endsWith('.')) host = host.slice(0, -1);
-  if (!host) return '';
-
-  return host.replace(/^www\./, '');
-}
-
-// 内联常量定义
-const STRATEGIES = {
-  TECH_BLOCK: 'tech-block',
-  SCROLL_FALLBACK: 'scroll-fallback',
-  DISABLED: 'disabled'
-};
 
 const DEFAULT_CONFIG = {
   scrollSpeed: 800,
@@ -38,45 +10,6 @@ const DEFAULT_CONFIG = {
   returnToTop: true,
   fallbackToScroll: false,
   showInterceptionToast: false
-};
-
-const MESSAGE_TYPES = {
-  GET_ALL_CONFIGS: 'GET_ALL_CONFIGS',
-  SET_SITE_CONFIG: 'SET_SITE_CONFIG',
-  REMOVE_SITE_CONFIG: 'REMOVE_SITE_CONFIG',
-  GET_GLOBAL_CONFIG: 'GET_GLOBAL_CONFIG',
-  SET_GLOBAL_CONFIG: 'SET_GLOBAL_CONFIG',
-  GET_CUSTOM_ATTRIBUTES: 'GET_CUSTOM_ATTRIBUTES',
-  SET_CUSTOM_ATTRIBUTES: 'SET_CUSTOM_ATTRIBUTES',
-  RESET_CUSTOM_ATTRIBUTES: 'RESET_CUSTOM_ATTRIBUTES',
-  // Entitlement / Purchase（值与 background 一致）
-  //   GET_ENTITLEMENTS     —— 读 background 的本地快照，毫秒级返回
-  //   REFRESH_ENTITLEMENTS —— 让 background 走原生 App Group 拉最新值（慢）
-  GET_ENTITLEMENTS: 'getEntitlements',
-  REFRESH_ENTITLEMENTS: 'refreshEntitlements',
-  REQUEST_PURCHASE: 'requestPurchase',
-  RESTORE_PURCHASES: 'restorePurchases',
-  OPEN_HOST_APP: 'openHostApp',
-  ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice'
-};
-
-// ===== Entitlement System 常量（内联自 shared/constants.js）=====
-const APP_LIMITS = {
-  FREE_SITE_LIMIT: 3,
-};
-
-const ENTITLEMENTS = {
-  UNLIMITED_SITES: 'unlimitedSites',
-};
-
-// 授权模式常量（内联自 shared/constants.js）
-//   unrestricted = Chrome/Firefox：免费且不限额，不是 Pro，绝不显示付费 UI
-//   free         = Safari 免费版
-//   pro          = Safari 已解锁 Pro
-const LICENSE_MODES = {
-  UNRESTRICTED: 'unrestricted',
-  FREE: 'free',
-  PRO: 'pro',
 };
 
 // 当前用户权限状态缓存（由 background GET_ENTITLEMENTS 填充）
@@ -91,16 +24,8 @@ let _entitlementState = {
 
 const LANGUAGE_STORAGE_KEY = 'preferredLanguage';
 
-// 默认的懒加载属性和占位符模式
-const DEFAULT_LAZY_ATTRIBUTES = [
-  'data-src', 'data-original', 'data-lazy-src', 'data-srcset', 'data-lazy-srcset',
-  'data-custom-src', 'data-lazy', 'data-defer-src', 'data-async', 'data-img-url',
-  'data-url', 'data-image', 'data-image-src', 'data-href'
-];
-
-const DEFAULT_PLACEHOLDER_PATTERNS = [
-  'thumb', 'placeholder', 'loading', 'spinner', 'blank', 'empty', 'lazy', 'preview', 'temp', 'default'
-];
+// 默认的懒加载属性与占位符关键词来自 shared/constants.js（shared-ui.js 提供），
+// 不要再在页面脚本里复制一份。
 
 // 翻译内容
 const TRANSLATIONS = {
@@ -159,7 +84,31 @@ const TRANSLATIONS = {
     'licenseManage': '管理 / 恢复购买',
     'proBadge': 'PRO',
     'noticeSiteEnabled': '已解锁 Pro · 已启用 {domain}',
-    'purchaseUnavailable': '购买服务暂时不可用，请稍后再试'
+    'purchaseUnavailable': '购买服务暂时不可用，请稍后再试',
+    'currentWebsite': '当前网站',
+    'mode': '模式',
+    'standardMode': '标准',
+    'compatibilityMode': '兼容模式',
+    'compatibilityModeHelpSection': '自动滚动页面来触发图片加载。仅在标准模式无效时使用。',
+    'enabledWebsites': '已启用的网站',
+    'removeSite': '移除',
+    'undo': '撤销',
+    'generalSettings': '一般',
+    'settingsSubtitle': '禁用图片懒加载 · 完整设置',
+    'scrollDuration': '滚动时长（秒）',
+    'stayAtBottom': '在底部停留（秒）',
+    'useAutoScrollGlobal': '所有已启用网站默认使用兼容模式',
+    'detectionRules': '检测规则',
+    'advancedWarning': '修改这些值可能导致图片无法正常加载。',
+    'saveChanges': '保存更改',
+    'importExportHelp': '配置包含每个网站的模式与全部全局设置。',
+    'plan': '套餐',
+    'planFreeDetail': '免费版 · 已启用 {count} / {limit} 个网站',
+    'planProDetail': 'No Lazyload Pro · 无限网站已解锁',
+    'managePurchases': '管理购买',
+    'upgradeNote': '无限网站 · 一次性购买，无订阅',
+    'github': 'GitHub',
+    'privacy': '隐私政策'
   },
   'en': {
     'siteListTitle': 'Configured Sites',
@@ -216,7 +165,32 @@ const TRANSLATIONS = {
     'licenseManage': 'Manage / Restore',
     'proBadge': 'PRO',
     'noticeSiteEnabled': 'Pro unlocked · {domain} was enabled',
-    'purchaseUnavailable': 'Purchases are temporarily unavailable. Please try again later.'
+    'purchaseUnavailable': 'Purchases are temporarily unavailable. Please try again later.',
+    'currentWebsite': 'Current Website',
+    'mode': 'Mode',
+    'standardMode': 'Standard',
+    'compatibilityMode': 'Compatibility',
+    'compatibilityModeHelpSection': 'Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work.',
+    'enabledWebsites': 'Enabled Websites',
+    'removeSite': 'Remove',
+    'undo': 'Undo',
+    'generalSettings': 'General',
+    'settingsSubtitle': 'Disable image lazy loading · Full settings',
+    'scrollDuration': 'Scroll duration (seconds)',
+    'stayAtBottom': 'Pause at bottom (seconds)',
+    'useAutoScrollGlobal': 'Use Compatibility Mode for all enabled websites by default',
+    'detectionRules': 'Detection Rules',
+    'advancedWarning': 'Changing these values can prevent images from loading correctly.',
+    'saveChanges': 'Save Changes',
+    'importExportHelp': 'The file includes each website mode and all global settings.',
+    'plan': 'Plan',
+    'planFreeDetail': 'Free · {count} of {limit} websites enabled',
+    'planProDetail': 'No Lazyload Pro · Unlimited websites unlocked',
+    'managePurchases': 'Manage Purchases',
+    'upgradeNote': 'Unlimited websites · One-time purchase, no subscription',
+    'github': 'GitHub',
+    'privacy': 'Privacy',
+    'appName': 'No Lazyload'
   },
   'es': {
     'siteListTitle': 'Sitios Configurados',
@@ -1660,18 +1634,39 @@ function t(key, replacements = {}) {
   const lang = TRANSLATIONS[currentLanguage] || TRANSLATIONS['en'] || TRANSLATIONS['zh'];
   let text = lang[key] || TRANSLATIONS['en']?.[key] || TRANSLATIONS['zh']?.[key] || key;
 
-  // 替换占位符
+  // 替换占位符（全部替换，避免域名里出现重复占位符时只替换第一次）
   Object.keys(replacements).forEach(placeholder => {
-    text = text.replace(`{${placeholder}}`, replacements[placeholder]);
+    text = text.split(`{${placeholder}}`).join(String(replacements[placeholder]));
   });
 
   return text;
 }
 
 /**
+ * 用 i18n-manager 的语言表填充语言下拉框。
+ * 之前语言列表写死在 HTML 里，加一种语言就要改两处。
+ */
+function populateLanguageSelect() {
+  const select = document.getElementById('languageSelect');
+  if (!select || select.options.length > 0) return;
+
+  const languages = (window.i18nManager && typeof window.i18nManager.getSupportedLanguages === 'function')
+    ? window.i18nManager.getSupportedLanguages()
+    : Object.entries(window.I18nLanguages || {}).map(([code, info]) => ({ code, ...info }));
+
+  languages.forEach(({ code, name }) => {
+    const option = document.createElement('option');
+    option.value = code;
+    option.textContent = name;
+    select.appendChild(option);
+  });
+}
+
+/**
  * 加载语言设置
  */
 async function loadLanguageSetting() {
+  populateLanguageSelect();
   return new Promise((resolve) => {
     const storage = getStorage();
     if (!storage) {
@@ -1728,72 +1723,26 @@ async function saveLanguageSetting() {
  * 应用翻译到页面
  */
 function applyTranslations() {
-  // 更新页面标题
-  document.title = `Image Lazy Load Blocker - ${t('globalSettings')}`;
-
-  // 更新副标题
-  const subtitle = document.querySelector('.header .subtitle');
-  if (subtitle) {
-    subtitle.textContent = t('globalSettings');
-  }
-
-  // 更新所有带有 data-i18n 属性的元素
-  document.querySelectorAll('[data-i18n]').forEach(el => {
+  // 所有文案统一走 data-i18n，不再按下标 / 父元素猜测定位
+  // （旧实现插一张卡片就会整体串位）
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
-    if (key) {
-      el.textContent = t(key);
-    }
+    if (key) el.textContent = t(key);
   });
 
-  // 卡片标题统一走 data-i18n（不要再按下标定位 —— 插一张卡片就会整体串位）
+  document.querySelectorAll('[data-i18n-title]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-title');
+    if (key) el.title = t(key);
+  });
 
-  // 更新复选框标签
-  const showToastLabel = document.querySelector('#showInterceptionToast').parentElement;
-  if (showToastLabel) {
-    showToastLabel.querySelector('span').textContent = t('showInterceptionToast');
-  }
+  // 页面标题与副标题
+  document.title = t('settingsTitle');
+  const subtitle = document.querySelector('.page .subtitle') || document.querySelector('.subtitle');
+  if (subtitle) subtitle.textContent = t('settingsSubtitle');
 
-  const autoScrollLabel = document.querySelector('#fallbackToScroll').parentElement;
-  if (autoScrollLabel) {
-    autoScrollLabel.querySelector('span').textContent = t('useAutoScroll');
-  }
-
-  const returnTopLabel = document.querySelector('#returnToTop').parentElement;
-  if (returnTopLabel) {
-    returnTopLabel.querySelector('span').textContent = t('returnToTop');
-  }
-
-  // 更新帮助文本
-  const helpText = document.querySelector('.help-text');
-  if (helpText) {
-    helpText.textContent = t('autoScrollHelp');
-  }
-
-  // 更新输入框标签
-  const scrollSpeedLabel = document.querySelector('label[for="scrollSpeed"]');
-  if (scrollSpeedLabel) scrollSpeedLabel.textContent = t('scrollSpeed');
-
-  const stayDurationLabel = document.querySelector('label[for="stayDuration"]');
-  if (stayDurationLabel) stayDurationLabel.textContent = t('stayDuration');
-
-  // 更新按钮文本
-  const saveGlobalBtn = document.getElementById('saveGlobalBtn');
-  if (saveGlobalBtn) saveGlobalBtn.textContent = t('saveGlobal');
-
-  const saveLangBtn = document.getElementById('saveLangBtn');
-  if (saveLangBtn) saveLangBtn.textContent = t('saveLanguage');
-
-  const exportBtn = document.getElementById('exportBtn');
-  if (exportBtn) exportBtn.textContent = t('exportConfig');
-
-  const importBtn = document.getElementById('importBtn');
-  if (importBtn) importBtn.textContent = t('importConfig');
-
-  // 更新空状态
-  const emptyState = document.getElementById('emptyState');
-  if (emptyState) emptyState.textContent = t('emptyState');
+  // 动态文案：套餐卡、计数、模式列
+  updateLicenseStatus();
 }
-
 /**
  * 发送消息到 background
  */
@@ -1890,11 +1839,16 @@ async function refreshEntitlements() {
  * Safari Free            → 显示免费额度 + 升级入口。
  * Safari Pro             → 隐藏购买入口（不再显示 Buy CTA），只显示 PRO 徽章。
  */
-function updateLicenseStatus() {
+function updateLicenseStatus(siteCount) {
   const mode = getLicenseMode();
   const card = document.getElementById('licenseCard');
   const status = document.getElementById('licenseStatus');
   const btn = document.getElementById('manageLicenseBtn');
+  const planNote = document.getElementById('planNote');
+
+  const count = typeof siteCount === 'number'
+    ? siteCount
+    : document.querySelectorAll('#siteList .nl-list-item').length;
 
   const badge = document.getElementById('planBadge');
   if (badge) {
@@ -1902,26 +1856,43 @@ function updateLicenseStatus() {
     badge.textContent = t('proBadge');
   }
 
+  const countEl = document.getElementById('siteCount');
+  if (countEl) countEl.textContent = formatSiteCount(count);
+
   // App Group 不可用：明确告知，而不是假装免费版 / 假装 Pro
   const storageBroken = _entitlementState.isLimitEnforced && _entitlementState.storageAvailable === false;
   if (storageBroken) {
     if (card) card.hidden = false;
-    if (status) {
-      status.textContent = t('purchaseUnavailable');
-      status.classList.remove('pro');
-    }
+    if (status) status.textContent = t('purchaseUnavailable');
     if (btn) btn.hidden = true;
     return;
   }
 
-  if (btn) btn.hidden = false;
-  if (card) card.hidden = mode !== LICENSE_MODES.FREE;
+  // Chrome/Firefox：整卡隐藏（plan Task D6）
+  if (mode === LICENSE_MODES.UNRESTRICTED) {
+    if (card) card.hidden = true;
+    return;
+  }
+
+  if (card) card.hidden = false;
   if (!status || !btn) return;
+  if (btn) btn.hidden = false;
 
   if (mode === LICENSE_MODES.FREE) {
-    status.textContent = t('licenseFree');
-    status.classList.remove('pro');
+    status.textContent = t('planFreeDetail', {
+      count,
+      limit: APP_LIMITS.FREE_SITE_LIMIT,
+    });
     btn.textContent = t('licenseUpgrade');
+    // 升级按钮是付费版的主 CTA；Pro 用户则降级为次要按钮
+    btn.className = 'nl-btn nl-btn-primary';
+    if (planNote) planNote.hidden = false;
+  } else {
+    // Pro：只说明已解锁 + 管理购买，绝不再出现 Buy CTA
+    status.textContent = t('planProDetail');
+    btn.textContent = t('managePurchases');
+    btn.className = 'nl-btn';
+    if (planNote) planNote.hidden = true;
   }
 }
 
@@ -1944,10 +1915,7 @@ async function showEntitlementNotice() {
  * @returns {'unrestricted'|'free'|'pro'}
  */
 function getLicenseMode() {
-  if (!_entitlementState.isLimitEnforced) return LICENSE_MODES.UNRESTRICTED;
-  return _entitlementState.entitlements.includes(ENTITLEMENTS.UNLIMITED_SITES)
-    ? LICENSE_MODES.PRO
-    : LICENSE_MODES.FREE;
+  return getLicenseModeFor(_entitlementState);
 }
 
 /**
@@ -1966,82 +1934,12 @@ function formatSiteCount(count) {
 }
 
 /**
- * 显示升级弹窗（内联自 shared/upgrade-dialog.js）
+ * 显示升级弹窗。
+ * 结构与交互由 shared-ui.js（shared/upgrade-dialog.js）提供 —— 只有一份实现。
  * @returns {Promise<boolean>} true=用户点击 Upgrade
  */
-function showUpgradeDialog() {
-  const tr = (key) => t(key);
-  return new Promise((resolve) => {
-    const existing = document.getElementById('upgradeDialogOverlay');
-    if (existing) existing.remove();
-
-    const overlay = document.createElement('div');
-    overlay.id = 'upgradeDialogOverlay';
-    overlay.setAttribute('role', 'dialog');
-    overlay.setAttribute('aria-modal', 'true');
-    overlay.style.cssText = [
-      'position:fixed', 'inset:0', 'background:rgba(0,0,0,0.5)',
-      'display:flex', 'align-items:center', 'justify-content:center',
-      'z-index:2147483647',
-      'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif',
-    ].join(';');
-
-    const dialog = document.createElement('div');
-    dialog.style.cssText = [
-      'background:#fff', 'color:#1d1d1f', 'border-radius:12px', 'padding:24px',
-      'max-width:360px', 'width:calc(100% - 48px)',
-      'box-shadow:0 8px 32px rgba(0,0,0,0.2)', 'text-align:center',
-    ].join(';');
-
-    const title = document.createElement('h2');
-    title.textContent = tr('upgradeTitle');
-    title.style.cssText = 'margin:0 0 12px;font-size:20px;font-weight:600';
-
-    const body = document.createElement('p');
-    body.textContent = tr('upgradeBody');
-    body.style.cssText = 'margin:0 0 20px;font-size:14px;line-height:1.5;color:#424245';
-
-    const buttonRow = document.createElement('div');
-    buttonRow.style.cssText = 'display:flex;gap:10px;justify-content:center';
-
-    const cancelBtn = document.createElement('button');
-    cancelBtn.textContent = tr('cancelUpgrade');
-    cancelBtn.style.cssText = [
-      'flex:1', 'padding:10px 16px', 'border:1px solid #d2d2d7', 'background:#fff',
-      'color:#1d1d1f', 'border-radius:8px', 'font-size:14px', 'font-weight:500', 'cursor:pointer',
-    ].join(';');
-
-    const upgradeBtn = document.createElement('button');
-    upgradeBtn.textContent = tr('upgradeButton');
-    upgradeBtn.style.cssText = [
-      'flex:1', 'padding:10px 16px', 'border:none', 'background:#007aff', 'color:#fff',
-      'border-radius:8px', 'font-size:14px', 'font-weight:600', 'cursor:pointer',
-    ].join(';');
-
-    buttonRow.appendChild(cancelBtn);
-    buttonRow.appendChild(upgradeBtn);
-    dialog.appendChild(title);
-    dialog.appendChild(body);
-    dialog.appendChild(buttonRow);
-    overlay.appendChild(dialog);
-    document.body.appendChild(overlay);
-
-    const close = (result) => {
-      overlay.remove();
-      cancelBtn.onclick = null;
-      upgradeBtn.onclick = null;
-      overlay.onclick = null;
-      document.removeEventListener('keydown', onKey);
-      resolve(result);
-    };
-
-    cancelBtn.onclick = () => close(false);
-    upgradeBtn.onclick = () => close(true);
-    overlay.onclick = (e) => { if (e.target === overlay) close(false); };
-    const onKey = (e) => { if (e.key === 'Escape') close(false); };
-    document.addEventListener('keydown', onKey);
-    upgradeBtn.focus();
-  });
+function openUpgradeDialog() {
+  return showUpgradeDialog({ t, price: _entitlementState.price || null });
 }
 
 /**
@@ -2084,154 +1982,128 @@ async function requestUpgrade() {
 /**
  * 显示 Toast 提示
  */
-function showToast(message, duration = 2000) {
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.textContent = message;
-  document.body.appendChild(toast);
+function showToast(message, options = {}) {
+  const existing = document.querySelector('.nl-toast');
+  if (existing) existing.remove();
 
-  setTimeout(() => {
-    toast.remove();
-  }, duration);
+  const toast = document.createElement('div');
+  toast.className = 'nl-toast';
+  toast.setAttribute('role', 'status');
+  toast.textContent = message;
+
+  // 删除网站用"撤销"而不是模态确认（plan Task D2）
+  if (options.action) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'nl-link-btn';
+    btn.style.color = 'inherit';
+    btn.textContent = options.action.label;
+    btn.addEventListener('click', () => {
+      options.action.onClick();
+      toast.remove();
+    });
+    toast.append(' ', btn);
+  }
+
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), options.action ? 5000 : (options.duration || 2000));
 }
 
 
 /**
  * 加载并显示网站列表
+ *
+ * 每行：域名 + 当前模式 + 移除按钮。
+ * 删除是即时 + Undo（plan Task D2），不再弹模态确认。
  */
 async function loadSiteList() {
-  try {
-    console.log('[Settings] Loading site list...');
-    const response = await sendMessage(MESSAGE_TYPES.GET_ALL_CONFIGS);
-    console.log('[Settings] Got response:', response);
+  const response = await sendMessage(MESSAGE_TYPES.GET_ALL_CONFIGS);
+  const configs = (response && response.success && response.data) || {};
 
-    // 检查响应是否成功
-    if (!response || !response.success) {
-      console.error('[Settings] Failed to load site configs:', response?.error || 'Unknown error');
-      // 显示空状态
-      const siteList = document.getElementById('siteList');
-      const emptyState = document.getElementById('emptyState');
-      if (siteList) siteList.classList.add('hidden');
-      if (emptyState) emptyState.classList.remove('hidden');
-      return;
-    }
+  const siteList = document.getElementById('siteList');
+  const emptyState = document.getElementById('emptyState');
+  const count = Object.keys(configs).length;
 
-    const configs = response.data || {};
-    console.log('[Settings] Configs:', configs, 'Count:', Object.keys(configs).length);
+  if (!siteList || !emptyState) {
+    updateLicenseStatus(count);
+    return;
+  }
 
-    const siteList = document.getElementById('siteList');
-    const emptyState = document.getElementById('emptyState');
-    const siteCount = document.getElementById('siteCount');
+  siteList.innerHTML = '';
 
-    console.log('[Settings] Elements:', { siteList: !!siteList, emptyState: !!emptyState, siteCount: !!siteCount });
+  if (count === 0) {
+    emptyState.hidden = false;
+  } else {
+    emptyState.hidden = true;
 
-    if (!siteList || !emptyState) {
-      console.error('[Settings] Required elements not found');
-      return;
-    }
-
-    // 清空列表
-    siteList.innerHTML = '';
-
-    // 更新计数（含权限状态：Pro 显示 ∞，Free 显示 count/3）
-    // 用内存快照，渲染前不做原生调用。
-    const count = Object.keys(configs).length;
-    if (siteCount) {
-      siteCount.textContent = formatSiteCount(count);
-    }
-    updateLicenseStatus();
-
-    if (count === 0) {
-      console.log('[Settings] No sites configured, showing empty state');
-      siteList.classList.add('hidden');
-      emptyState.classList.remove('hidden');
-      return;
-    }
-
-    console.log('[Settings] Found', count, 'sites, rendering list');
-    siteList.classList.remove('hidden');
-    emptyState.classList.add('hidden');
-
-    // 排序
     const entries = Object.entries(configs)
-      .sort((a, b) => b[1].addedAt - a[1].addedAt);
+      .sort((a, b) => (b[1].addedAt || 0) - (a[1].addedAt || 0));
 
-    // 渲染列表
+    const modeOf = (config) => (config.scrollFallback === true
+      ? t('compatibilityMode')
+      : t('standardMode'));
+
     entries.forEach(([domain, config]) => {
       const item = document.createElement('div');
-      item.className = 'site-item';
-
-      const isScrollEnabled = config.scrollFallback === true;
+      item.className = 'nl-list-item';
 
       const domainSpan = document.createElement('span');
-      domainSpan.className = 'domain';
+      domainSpan.className = 'nl-domain';
       domainSpan.title = domain;
       domainSpan.textContent = domain;
 
-      const scrollLabel = document.createElement('label');
-      scrollLabel.className = 'scroll-toggle';
-      scrollLabel.title = t('useAutoScroll');
-      const scrollCheckbox = document.createElement('input');
-      scrollCheckbox.type = 'checkbox';
-      scrollCheckbox.dataset.domain = domain;
-      if (isScrollEnabled) scrollCheckbox.checked = true;
-      const scrollText = document.createElement('span');
-      scrollText.textContent = t('autoScroll');
-      scrollLabel.append(scrollCheckbox, scrollText);
+      const modeSpan = document.createElement('span');
+      modeSpan.className = 'nl-mode';
+      modeSpan.textContent = modeOf(config);
 
-      const deleteBtn = document.createElement('button');
-      deleteBtn.className = 'delete-btn';
-      deleteBtn.dataset.domain = domain;
-      deleteBtn.title = t('delete');
-      deleteBtn.textContent = '×';
+      const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.className = 'nl-icon-btn';
+      removeBtn.dataset.domain = domain;
+      removeBtn.title = t('removeSite');
+      removeBtn.setAttribute('aria-label', t('removeSite') + ' ' + domain);
+      removeBtn.textContent = '−';
 
-      item.append(domainSpan, scrollLabel, deleteBtn);
-
+      item.append(domainSpan, modeSpan, removeBtn);
       siteList.appendChild(item);
     });
 
-    // 绑定自动滚动复选框事件
-    siteList.querySelectorAll('.scroll-toggle input[type="checkbox"]').forEach(checkbox => {
-      checkbox.addEventListener('change', async (e) => {
-        const domain = e.target.dataset.domain;
-        const scrollFallback = e.target.checked;
-
-        // 获取当前配置
-        const config = configs[domain];
-        if (config) {
-          await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
-            domain,
-            strategy: config.strategy || STRATEGIES.TECH_BLOCK,
-            scrollFallback
-          });
-          showToast(scrollFallback ? t('scrollEnabled') : t('scrollDisabled'));
-        }
-      });
-    });
-
-    // 绑定删除事件
-    siteList.querySelectorAll('.delete-btn').forEach(btn => {
+    siteList.querySelectorAll('.nl-icon-btn').forEach((btn) => {
       btn.addEventListener('click', async (e) => {
-        const domain = e.target.dataset.domain;
-        if (confirm(t('deleteConfirm', { domain }))) {
-          await sendMessage(MESSAGE_TYPES.REMOVE_SITE_CONFIG, { domain });
-          loadSiteList();
-          showToast(t('deleted'));
-        }
+        const domain = e.currentTarget.dataset.domain;
+        const removedConfig = configs[domain];
+
+        await sendMessage(MESSAGE_TYPES.REMOVE_SITE_CONFIG, { domain });
+        showToast(t('deleted'), {
+          action: {
+            label: t('undo'),
+            onClick: async () => {
+              await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+                domain,
+                strategy: (removedConfig && removedConfig.strategy) || STRATEGIES.TECH_BLOCK,
+                scrollFallback: !!(removedConfig && removedConfig.scrollFallback === true),
+              });
+              loadSiteList();
+            },
+          },
+        });
+        loadSiteList();
       });
     });
-  } catch (error) {
-    console.error('[Settings] Error loading site list:', error);
-    const siteList = document.getElementById('siteList');
-    const emptyState = document.getElementById('emptyState');
-    if (siteList) siteList.classList.add('hidden');
-    if (emptyState) {
-      emptyState.classList.remove('hidden');
-      emptyState.textContent = t('emptyState');
-    }
+  }
+
+  // 渲染完再刷新计数与套餐文案（顺序反了会显示上一次的数量）
+  updateLicenseStatus(count);
+
+  // 免费版额度用满时，列表卡内直接给升级入口
+  const upgradeBox = document.getElementById('siteListUpgrade');
+  const upgradeBtn = document.getElementById('siteListUpgradeBtn');
+  if (upgradeBox && upgradeBtn) {
+    const full = getLicenseMode() === LICENSE_MODES.FREE && count >= APP_LIMITS.FREE_SITE_LIMIT;
+    upgradeBox.hidden = !full;
+    upgradeBtn.textContent = t('licenseUpgrade');
   }
 }
-
 /**
  * 加载全局设置
  */
@@ -2243,9 +2115,17 @@ async function loadGlobalSettings() {
 
   document.getElementById('showInterceptionToast').checked = globalConfig.showInterceptionToast === true;
   document.getElementById('fallbackToScroll').checked = globalConfig.fallbackToScroll;
-  document.getElementById('scrollSpeed').value = globalConfig.scrollSpeed;
-  document.getElementById('stayDuration').value = globalConfig.stayDuration;
+  // 内部存储用毫秒，界面用秒（plan Task D4）
+  document.getElementById('scrollSpeed').value = (globalConfig.scrollSpeed / 1000).toFixed(1);
+  document.getElementById('stayDuration').value = (globalConfig.stayDuration / 1000).toFixed(1);
   document.getElementById('returnToTop').checked = globalConfig.returnToTop;
+}
+
+/** 秒 → 毫秒（带范围保护），界面用秒、存储仍是毫秒 */
+function secondsToMs(value, fallbackMs) {
+  const seconds = parseFloat(value);
+  if (!Number.isFinite(seconds) || seconds < 0) return fallbackMs;
+  return Math.round(seconds * 1000);
 }
 
 /**
@@ -2255,8 +2135,9 @@ async function saveGlobalSettings() {
   const config = {
     showInterceptionToast: document.getElementById('showInterceptionToast').checked,
     fallbackToScroll: document.getElementById('fallbackToScroll').checked,
-    scrollSpeed: parseInt(document.getElementById('scrollSpeed').value, 10) || 800,
-    stayDuration: parseInt(document.getElementById('stayDuration').value, 10) || 2000,
+    // 界面是秒，存储仍是毫秒（其它端按毫秒读取）
+    scrollSpeed: secondsToMs(document.getElementById('scrollSpeed').value, 800),
+    stayDuration: secondsToMs(document.getElementById('stayDuration').value, 2000),
     returnToTop: document.getElementById('returnToTop').checked
   };
 
@@ -2420,22 +2301,9 @@ async function importConfig(file) {
 
 // 初始化
 document.addEventListener('DOMContentLoaded', async () => {
-  // 浏览器检测：只有 Chrome 显示 chrome-only 扩展项
-  // Safari 同时暴露 browser.* 和 chrome.*，旧逻辑（仅判断 browser 且无 chrome）会漏判 Safari
-  // 这里用 UA 判断，只有明确是 Chrome 才显示
-  const ua = navigator.userAgent;
-  const isChrome = /Chrome/.test(ua) && !/Edg|OPR/.test(ua);
-  if (!isChrome) {
-    document.querySelectorAll('.chrome-only').forEach(el => el.style.display = 'none');
-    // 如果扩展列表中没有可见项，隐藏整个区域
-    const extensionList = document.querySelector('.extension-list');
-    if (extensionList) {
-      const visibleItems = extensionList.querySelectorAll('.extension-item:not([style*="display: none"])');
-      if (visibleItems.length === 0) {
-        extensionList.closest('.card').style.display = 'none';
-      }
-    }
-  }
+  // 「作者的其他扩展」营销卡已从主界面移除（plan Task D7）：
+  // 商店工具里不该让开发者工具宣传与产品操作抢注意力。
+  // UA 嗅探（chrome-only）也随之删除。
 
   // 先加载语言设置
   await loadLanguageSetting();
@@ -2462,10 +2330,25 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadCustomAttributes();
 
   // 绑定事件
-  // 授权入口：唤起 Host App（购买 / 恢复购买都在那边）
+  // 授权入口：先看清升级内容，再唤起 Host App（与 popup 行为一致）
   const manageLicenseBtn = document.getElementById('manageLicenseBtn');
   if (manageLicenseBtn) {
-    manageLicenseBtn.addEventListener('click', () => { requestUpgrade(); });
+    manageLicenseBtn.addEventListener('click', async () => {
+      if (getLicenseMode() === LICENSE_MODES.PRO) {
+        // Pro 用户：「管理购买」直接去 Host App，不做推销弹窗
+        requestUpgrade();
+        return;
+      }
+      if (await openUpgradeDialog()) requestUpgrade();
+    });
+  }
+
+  // 列表卡内的升级入口（免费额度用满时出现）
+  const siteListUpgradeBtn = document.getElementById('siteListUpgradeBtn');
+  if (siteListUpgradeBtn) {
+    siteListUpgradeBtn.addEventListener('click', async () => {
+      if (await openUpgradeDialog()) requestUpgrade();
+    });
   }
 
   document.getElementById('saveGlobalBtn').addEventListener('click', saveGlobalSettings);

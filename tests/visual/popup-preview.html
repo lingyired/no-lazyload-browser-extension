@@ -35,6 +35,10 @@ fetch('../../popup.html')
     });
     document.body.innerHTML = doc.body.innerHTML;
 
+    // 先加载构建产物 shared-ui.js（经典脚本包），再加载 popup.js
+    const shared = document.createElement('script');
+    shared.src = '../../dist/safari/shared-ui.js';
+    shared.onload = function () {
     const script = document.createElement('script');
     script.src = '../../popup.js';
     script.onload = function () {
@@ -62,6 +66,8 @@ fetch('../../popup.html')
       }
     };
     document.body.appendChild(script);
+    };
+    document.body.appendChild(shared);
   });
 </script>
 </body>

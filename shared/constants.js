@@ -108,11 +108,27 @@ export const ENTITLEMENT_MESSAGE_TYPES = {
   ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice',
 };
 
+// UI（popup / settings）与 background 之间的完整消息协议。
+// 两端必须使用同一份定义 —— 手工复制迟早会漂移。
+export const MESSAGE_TYPES = {
+  GET_SITE_CONFIG: 'GET_SITE_CONFIG',
+  SET_SITE_CONFIG: 'SET_SITE_CONFIG',
+  REMOVE_SITE_CONFIG: 'REMOVE_SITE_CONFIG',
+  GET_ALL_CONFIGS: 'GET_ALL_CONFIGS',
+  GET_GLOBAL_CONFIG: 'GET_GLOBAL_CONFIG',
+  SET_GLOBAL_CONFIG: 'SET_GLOBAL_CONFIG',
+  GET_CUSTOM_ATTRIBUTES: 'GET_CUSTOM_ATTRIBUTES',
+  SET_CUSTOM_ATTRIBUTES: 'SET_CUSTOM_ATTRIBUTES',
+  RESET_CUSTOM_ATTRIBUTES: 'RESET_CUSTOM_ATTRIBUTES',
+  ...ENTITLEMENT_MESSAGE_TYPES,
+};
+
 // ===== License / Plan state =====
 // "商业平台" 与 "Pro 权益" 是两件事：
 //   Chrome/Firefox 是免费且无限制的平台，它们不是 Pro，也不该显示任何付费 UI。
 //   Safari 才区分 免费版 / Pro。
-// UI 一律通过 getLicenseMode() 决定展示什么，绝不要用 hasUnlimitedSites() 反推套餐名。
+// UI 一律通过 getLicenseModeFor()/licenseMode() 决定展示什么，
+// 绝不要用 hasUnlimitedSites() 反推套餐名。
 export const LICENSE_MODES = {
   UNRESTRICTED: 'unrestricted', // Chrome / Firefox：免费且不限额
   FREE: 'free',                 // Safari 免费版
@@ -124,7 +140,7 @@ export const LICENSE_MODES = {
  * @param {{isLimitEnforced?: boolean, entitlements?: string[]}|null|undefined} snapshot
  * @returns {'unrestricted'|'free'|'pro'}
  */
-export function getLicenseMode(snapshot) {
+export function getLicenseModeFor(snapshot) {
   if (!snapshot || !snapshot.isLimitEnforced) return LICENSE_MODES.UNRESTRICTED;
   const entitlements = Array.isArray(snapshot.entitlements) ? snapshot.entitlements : [];
   return entitlements.includes(ENTITLEMENTS.UNLIMITED_SITES)
