@@ -15,6 +15,9 @@ enum EntitlementsConfig {
     /// UserDefaults 中存储权限 JSON 的键。
     static let storeKey = "entitlements"
 
+    /// 探测 App Group 是否真的可写所用的临时键（写入后立即删除）。
+    static let probeKey = "__entitlement_store_probe__"
+
     /// StoreKit 2 商品 ID。全工程唯一来源（.storekit 配置、App Store Connect 必须一致）。
     ///
     /// ⚠️ 决策记录（plan Task A8）：

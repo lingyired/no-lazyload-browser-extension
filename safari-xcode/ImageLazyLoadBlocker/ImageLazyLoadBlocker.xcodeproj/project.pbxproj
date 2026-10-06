@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2000010000000000000000A /* HostRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000010000000000000000A /* HostRootView.swift */; };
+		E2000011000000000000000A /* HostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000011000000000000000A /* HostViewModel.swift */; };
+		E2000012000000000000000A /* ExtensionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000012000000000000000A /* ExtensionStatusView.swift */; };
+		E2000013000000000000000A /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000013000000000000000A /* PlanView.swift */; };
+		E2000014000000000000000A /* HostDesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000014000000000000000A /* HostDesignTokens.swift */; };
+		E2000015000000000000000A /* ExtensionStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000015000000000000000A /* ExtensionStateService.swift */; };
 		E200000F000000000000000A /* HostCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E100000F000000000000000A /* HostCopy.swift */; };
 		3C7BD5D23009E02000F4D44D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D13009E02000F4D44D /* AppDelegate.swift */; };
-		3C7BD5D63009E02000F4D44D /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D43009E02000F4D44D /* Main.html */; };
 		3C7BD5D83009E02000F4D44D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D73009E02000F4D44D /* Icon.png */; };
-		3C7BD5DA3009E02000F4D44D /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D93009E02000F4D44D /* Style.css */; };
-		3C7BD5DC3009E02000F4D44D /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5DB3009E02000F4D44D /* Script.js */; };
 		3C7BD5DE3009E02000F4D44D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BD5DD3009E02000F4D44D /* ViewController.swift */; };
 		3C7BD5E13009E02000F4D44D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5DF3009E02000F4D44D /* Main.storyboard */; };
 		3C7BD5E33009E02100F4D44D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5E23009E02100F4D44D /* Assets.xcassets */; };
@@ -71,10 +74,7 @@
 /* Begin PBXFileReference section */
 		3C7BD5CE3009E02000F4D44D /* ImageLazyLoadBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLazyLoadBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C7BD5D13009E02000F4D44D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3C7BD5D53009E02000F4D44D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
 		3C7BD5D73009E02000F4D44D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		3C7BD5D93009E02000F4D44D /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
-		3C7BD5DB3009E02000F4D44D /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
 		3C7BD5DD3009E02000F4D44D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3C7BD5E03009E02000F4D44D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C7BD5E23009E02100F4D44D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +101,12 @@
 		E1000006000000000000000A /* PurchaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProvider.swift; sourceTree = "<group>"; };
 		E1000008000000000000000A /* StoreKitPurchaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitPurchaseProvider.swift; sourceTree = "<group>"; };
 		E100000F000000000000000A /* HostCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostCopy.swift; sourceTree = "<group>"; };
+		E1000010000000000000000A /* HostRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostRootView.swift; sourceTree = "<group>"; };
+		E1000011000000000000000A /* HostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewModel.swift; sourceTree = "<group>"; };
+		E1000012000000000000000A /* ExtensionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionStatusView.swift; sourceTree = "<group>"; };
+		E1000013000000000000000A /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		E1000014000000000000000A /* HostDesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostDesignTokens.swift; sourceTree = "<group>"; };
+		E1000015000000000000000A /* ExtensionStateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionStateService.swift; sourceTree = "<group>"; };
 		E4000001000000000000000A /* ImageLazyLoadBlocker.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = ImageLazyLoadBlocker.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +154,8 @@
 				3C7BD5D13009E02000F4D44D /* AppDelegate.swift */,
 				3C7BD5DD3009E02000F4D44D /* ViewController.swift */,
 				E100000F000000000000000A /* HostCopy.swift */,
+				E3000010000000000000000A /* Host */,
+				E3000011000000000000000A /* Services */,
 				3C7BD5DF3009E02000F4D44D /* Main.storyboard */,
 				3C7BD5E23009E02100F4D44D /* Assets.xcassets */,
 				3C7BD5E43009E02100F4D44D /* Info.plist */,
@@ -159,10 +167,7 @@
 		3C7BD5D33009E02000F4D44D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3C7BD5D43009E02000F4D44D /* Main.html */,
 				3C7BD5D73009E02000F4D44D /* Icon.png */,
-				3C7BD5D93009E02000F4D44D /* Style.css */,
-				3C7BD5DB3009E02000F4D44D /* Script.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -208,6 +213,26 @@
 				E1000008000000000000000A /* StoreKitPurchaseProvider.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		E3000010000000000000000A /* Host */ = {
+			isa = PBXGroup;
+			children = (
+				E1000010000000000000000A /* HostRootView.swift */,
+				E1000011000000000000000A /* HostViewModel.swift */,
+				E1000012000000000000000A /* ExtensionStatusView.swift */,
+				E1000013000000000000000A /* PlanView.swift */,
+				E1000014000000000000000A /* HostDesignTokens.swift */,
+			);
+			path = Host;
+			sourceTree = "<group>";
+		};
+		E3000011000000000000000A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E1000015000000000000000A /* ExtensionStateService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,10 +323,7 @@
 			files = (
 				3C7BD5D83009E02000F4D44D /* Icon.png in Resources */,
 				3C7BD5E13009E02000F4D44D /* Main.storyboard in Resources */,
-				3C7BD5DC3009E02000F4D44D /* Script.js in Resources */,
-				3C7BD5D63009E02000F4D44D /* Main.html in Resources */,
 				3C7BD5E33009E02100F4D44D /* Assets.xcassets in Resources */,
-				3C7BD5DA3009E02000F4D44D /* Style.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +355,12 @@
 				3C7BD5DE3009E02000F4D44D /* ViewController.swift in Sources */,
 				3C7BD5D23009E02000F4D44D /* AppDelegate.swift in Sources */,
 				E200000F000000000000000A /* HostCopy.swift in Sources */,
+				E2000010000000000000000A /* HostRootView.swift in Sources */,
+				E2000011000000000000000A /* HostViewModel.swift in Sources */,
+				E2000012000000000000000A /* ExtensionStatusView.swift in Sources */,
+				E2000013000000000000000A /* PlanView.swift in Sources */,
+				E2000014000000000000000A /* HostDesignTokens.swift in Sources */,
+				E2000015000000000000000A /* ExtensionStateService.swift in Sources */,
 				E2000001000000000000000A /* Entitlement.swift in Sources */,
 				E2000002000000000000000A /* AppLimits.swift in Sources */,
 				E2000003000000000000000A /* EntitlementsConfig.swift in Sources */,
@@ -368,14 +396,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3C7BD5D43009E02000F4D44D /* Main.html */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C7BD5D53009E02000F4D44D /* Base */,
-			);
-			name = Main.html;
-			sourceTree = "<group>";
-		};
 		3C7BD5DF3009E02000F4D44D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

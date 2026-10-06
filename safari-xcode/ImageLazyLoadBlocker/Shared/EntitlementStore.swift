@@ -28,8 +28,37 @@ enum EntitlementStoreState {
 enum EntitlementStore {
 
     /// 当前存储状态。UI / 原生消息都应据此给出明确、可恢复的错误状态。
+    /// 结果在每个进程内只探测一次（App Group 的可用性不会在运行期变化）。
     static var state: EntitlementStoreState {
-        containerURL != nil ? .available : .unavailable
+        if let cached = cachedState { return cached }
+        let probed = probe()
+        cachedState = probed
+        return probed
+    }
+
+    private static var cachedState: EntitlementStoreState?
+
+    /// 两个条件同时成立才算可用：
+    ///  1. App Group 容器确实存在（FileManager 是唯一可靠判据）
+    ///  2. UserDefaults(suiteName:) 的写入能被读回 —— 缺 entitlement 时
+    ///     suite 仍返回非 nil 但写入静默丢弃，只有真正写一次才知道。
+    private static func probe() -> EntitlementStoreState {
+        guard containerURL != nil, let defaults = UserDefaults(suiteName: EntitlementsConfig.appGroup) else {
+            logUnavailableOnce()
+            return .unavailable
+        }
+
+        let key = EntitlementsConfig.probeKey
+        let token = UUID().uuidString
+        defaults.set(token, forKey: key)
+        let roundTripped = defaults.string(forKey: key) == token
+        defaults.removeObject(forKey: key)
+
+        guard roundTripped else {
+            logUnavailableOnce()
+            return .unavailable
+        }
+        return .available
     }
 
     /// 读取当前权限集合。
@@ -77,7 +106,10 @@ enum EntitlementStore {
 
     /// 只在 App Group 可用时返回 UserDefaults；不可用返回 nil。
     private static func suite() -> UserDefaults? {
-        guard state == .available else { return nil }
+        guard state == .available else {
+            logUnavailableOnce()
+            return nil
+        }
         return UserDefaults(suiteName: EntitlementsConfig.appGroup)
     }
 
