@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - השבת טעינה עצלה של תמונות",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "השבת טעינה עצלה של תמונות באתרים, טען את כל התמונות בבת אחת",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "האתר הנוכחי",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "מופעל",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "מושבת",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "לא זמין",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "לא דף אינטרנט",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "לא ניתן להוסיף",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "הוסף את האתר הנוכחי",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "הסר את האתר הנוכחי",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "השתמש בגלילה אוטומטית",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "גלול אוטומטית למטה כדי להפעיל את הטעינה; מתאים לאתרים שבהם החסימה הטכנית נכשלת",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "אתרים מוגדרים",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "אין אתרים מוגדרים",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "הגדרות מלאות",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "רענן דף",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "נוסף $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "נוסף $domain$ (גלילה אוטומטית)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "הוסר $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "נמחק $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "גלילה אוטומטית מופעלת",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "גלילה אוטומטית מושבתת",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "הדף רוענן",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "גלילה אוטומטית",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "הגדרות - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "רשימת תצורות אתרים",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "מהירות גלילה (מ״ש)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "משך שהייה (מ״ש)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "חזור לראש לאחר השלמה",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "השתמש אוטומטית בגלילה כגיבוי כאשר החסימה הטכנית נכשלת",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "הצג התראה על חסימה מוצלחת",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "שמור",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "נשמר",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "ניהול אתרים",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "ייבוא מרובה",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "ייצוא מרובה",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "מחק הכל",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "הזן דומיינים, אחד בשורה...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "אשר ייבוא",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "בטל",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "מאת",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "כלים",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "הגדרות שפה",
+    "description": "Language settings section title"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Onemogući lijeno učitavanje slika",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Onemogući lijeno učitavanje slika na web-stranicama, učitaj sve slike odjednom",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Trenutna stranica",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Omogućeno",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Onemogućeno",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Nedostupno",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Nije web-stranica",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Ne mogu dodati",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Dodaj trenutnu stranicu",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Ukloni trenutnu stranicu",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Koristi automatsko pomicanje",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Automatski se pomaknite prema dolje da biste pokrenuli učitavanje; pogodno za stranice gdje tehničko blokiranje ne uspijeva",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Konfigurirane stranice",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Nema konfiguriranih stranica",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Potpune postavke",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Osvježi stranicu",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Dodana $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Dodana $domain$ (Automatsko pomicanje)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Uklonjena $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Izbrisana $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Automatsko pomicanje omogućeno",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Automatsko pomicanje onemogućeno",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Stranica osvježena",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Automatsko pomicanje",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Postavke - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Popis konfiguracija stranica",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Brzina pomicanja (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Trajanje zadržavanja (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Vrati se na vrh nakon završetka",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Automatski koristi pomicanje kao zamjenu kad tehničko blokiranje ne uspije",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Prikaži obavijest o uspješnom presretanju",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Spremi",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Spremljeno",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Upravljanje stranicama",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Grupni uvoz",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Grupni izvoz",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Izbriši sve",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Unesite domene, po jednu u retku...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Potvrdi uvoz",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Odustani",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "od",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Alati",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Jezične postavke",
+    "description": "Language settings section title"
+  }
+}

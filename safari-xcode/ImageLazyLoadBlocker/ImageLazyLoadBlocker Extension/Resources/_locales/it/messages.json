@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Disattiva il caricamento lazy delle immagini",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Disattiva il caricamento lazy delle immagini nei siti web, carica tutte le immagini in una volta",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Sito corrente",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Attivo",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Disattivo",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Non disponibile",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Pagina non web",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Impossibile aggiungere",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Aggiungi sito corrente",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Rimuovi sito corrente",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Usa scorrimento automatico",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Scorri automaticamente fino in fondo per attivare il caricamento; adatto ai siti in cui il blocco tecnico fallisce",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Siti configurati",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Nessun sito configurato",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Impostazioni complete",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Aggiorna pagina",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Aggiunto $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Aggiunto $domain$ (Scorrimento automatico)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Rimosso $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Eliminato $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Scorrimento automatico attivo",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Scorrimento automatico disattivo",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Pagina aggiornata",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Scorrimento automatico",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Impostazioni - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Elenco configurazione siti",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Velocità di scorrimento (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Durata permanenza (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Torna in cima al completamento",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Usa automaticamente lo scorrimento come fallback quando il blocco tecnico fallisce",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Mostra notifica di intercettazione riuscita",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Salva",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Salvato",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Gestione siti",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Importazione in blocco",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Esportazione in blocco",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Elimina tutto",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Inserisci i domini, uno per riga...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Conferma importazione",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Annulla",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "di",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Strumenti",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Impostazioni lingua",
+    "description": "Language settings section title"
+  }
+}

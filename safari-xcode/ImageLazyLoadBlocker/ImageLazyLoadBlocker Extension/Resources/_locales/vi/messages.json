@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Tắt tải lười hình ảnh",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Tắt tính năng tải lười hình ảnh trên trang web, tải tất cả hình ảnh cùng một lúc",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Trang hiện tại",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Đã bật",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Đã tắt",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Không khả dụng",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Trang không phải web",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Không thể thêm",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Thêm trang hiện tại",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Xóa trang hiện tại",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Dùng tự động cuộn",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Tự động cuộn xuống dưới để kích hoạt tải; phù hợp với các trang mà chặn kỹ thuật thất bại",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Các trang đã cấu hình",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Chưa có trang nào được cấu hình",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Cài đặt đầy đủ",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Làm mới trang",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Đã thêm $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Đã thêm $domain$ (Tự động cuộn)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Đã xóa $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Đã xóa $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Đã bật tự động cuộn",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Đã tắt tự động cuộn",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Trang đã làm mới",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Tự động cuộn",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Cài đặt - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Danh sách cấu hình trang",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Tốc độ cuộn (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Thời gian lưu lại (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Quay lại đầu trang sau khi hoàn tất",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Tự động dùng cuộn dự phòng khi chặn kỹ thuật thất bại",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Hiện thông báo chặn thành công",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Lưu",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Đã lưu",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Quản lý trang",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Nhập hàng loạt",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Xuất hàng loạt",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Xóa tất cả",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Nhập tên miền, mỗi dòng một tên...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Xác nhận nhập",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Hủy",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "bởi",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Công cụ",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Cài đặt ngôn ngữ",
+    "description": "Language settings section title"
+  }
+}

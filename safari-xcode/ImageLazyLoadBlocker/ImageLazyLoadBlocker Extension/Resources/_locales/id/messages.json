@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Nonaktifkan Pemuatan Malas Gambar",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Nonaktifkan pemuatan malas gambar di situs web, muat semua gambar sekaligus",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Situs Saat Ini",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Aktif",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Nonaktif",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Tidak Tersedia",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Bukan Halaman Web",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Tidak Dapat Menambahkan",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Tambah Situs Saat Ini",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Hapus Situs Saat Ini",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Gunakan Gulir Otomatis",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Gulir otomatis ke bawah untuk memicu pemuatan; cocok untuk situs di mana pemblokiran teknis gagal",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Situs yang Dikonfigurasi",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Tidak ada situs yang dikonfigurasi",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Pengaturan Lengkap",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Muat Ulang Halaman",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Ditambahkan $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Ditambahkan $domain$ (Gulir Otomatis)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Dihapus $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Dihapus $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Gulir otomatis aktif",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Gulir otomatis nonaktif",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Halaman dimuat ulang",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Gulir otomatis",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Pengaturan - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Daftar Konfigurasi Situs",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Kecepatan Gulir (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Durasi Tinggal (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Kembali ke Atas Setelah Selesai",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Gunakan gulir cadangan secara otomatis saat pemblokiran teknis gagal",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Tampilkan Notifikasi Intersepsi Berhasil",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Simpan",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Tersimpan",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Manajemen Situs",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Impor Massal",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Ekspor Massal",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Hapus Semua",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Masukkan domain, satu per baris...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Konfirmasi Impor",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Batal",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "oleh",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Alat",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Pengaturan Bahasa",
+    "description": "Language settings section title"
+  }
+}

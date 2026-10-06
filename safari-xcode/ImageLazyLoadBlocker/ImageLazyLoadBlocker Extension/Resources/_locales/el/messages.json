@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Απενεργοποίηση φόρτωσης εικόνων με καθυστέρηση",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Απενεργοποιήστε τη φόρτωση εικόνων με καθυστέρηση στους ιστότοπους, φορτώστε όλες τις εικόνες ταυτόχρονα",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Τρέχων ιστότοπος",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Ενεργοποιημένο",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Απενεργοποιημένο",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Μη διαθέσιμο",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Μη ιστοσελίδα",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Δεν είναι δυνατή η προσθήκη",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Προσθήκη τρέχοντος ιστότοπου",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Κατάργηση τρέχοντος ιστότοπου",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Χρήση αυτόματης κύλισης",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Κυλήστε αυτόματα προς τα κάτω για να ενεργοποιήσετε τη φόρτωση· κατάλληλο για ιστότοπους όπου η τεχνική αποκλεισμού αποτυγχάνει",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Ρυθμισμένοι ιστότοποι",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Δεν υπάρχουν ρυθμισμένοι ιστότοποι",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Πλήρεις ρυθμίσεις",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Ανανέωση σελίδας",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Προστέθηκε $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Προστέθηκε $domain$ (Αυτόματη κύλιση)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Καταργήθηκε $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Διαγράφηκε $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Η αυτόματη κύλιση είναι ενεργοποιημένη",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Η αυτόματη κύλιση είναι απενεργοποιημένη",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Η σελίδα ανανεώθηκε",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Αυτόματη κύλιση",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Ρυθμίσεις - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Λίστα ρυθμίσεων ιστότοπων",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Ταχύτητα κύλισης (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Διάρκεια παραμονής (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Επιστροφή στην κορυφή μετά την ολοκλήρωση",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Χρήση αυτόματης κύλισης ως εφεδρείας όταν αποτυγχάνει ο τεχνικός αποκλεισμός",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Εμφάνιση ειδοποίησης επιτυχούς υποκλοπής",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Αποθήκευση",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Αποθηκεύτηκε",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Διαχείριση ιστότοπων",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Μαζική εισαγωγή",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Μαζική εξαγωγή",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Διαγραφή όλων",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Εισαγάγετε τομείς, έναν ανά γραμμή...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Επιβεβαίωση εισαγωγής",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Ακύρωση",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "από",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Εργαλεία",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Ρυθμίσεις γλώσσας",
+    "description": "Language settings section title"
+  }
+}

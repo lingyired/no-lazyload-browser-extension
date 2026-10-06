@@ -19,6 +19,12 @@ dist/
 *.crx
 *.pem
 
+# Xcode user state (frozen Safari project lives in safari-xcode/, tracked)
+safari-xcode/**/*.xcuserstate
+safari-xcode/**/xcuserdata/
+safari-xcode/**/*.xccheckout
+safari-xcode/**/*.moved-aside
+
 # Logs
 *.log
 npm-debug.log*

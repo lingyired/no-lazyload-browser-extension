@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Kép lusta betöltésének letiltása",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Tiltsa le a képek lusta betöltését a webhelyeken, töltse be az összes képet egyszerre",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Jelenlegi oldal",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Engedélyezve",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Letiltva",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Nem elérhető",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Nem weboldal",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Nem adható hozzá",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Jelenlegi oldal hozzáadása",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Jelenlegi oldal eltávolítása",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Automatikus görgetés használata",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Görgessen automatikusan az aljára a betöltés indításához; olyan oldalakhoz megfelelő, ahol a technikai blokkolás nem működik",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Beállított oldalak",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Nincsenek beállított oldalak",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Teljes beállítások",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Oldal frissítése",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Hozzáadva: $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Hozzáadva: $domain$ (Automatikus görgetés)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Eltávolítva: $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Törölve: $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Automatikus görgetés engedélyezve",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Automatikus görgetés letiltva",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Oldal frissítve",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Automatikus görgetés",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Beállítások - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Webhelykonfigurációs lista",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Görgetési sebesség (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Várakozási idő (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Visszatérés a tetejére a befejezés után",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Automatikus görgetés használata tartalékként, ha a technikai blokkolás nem működik",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Sikerült elfogás értesítésének megjelenítése",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Mentés",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Mentve",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Webhelyek kezelése",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Csoportos importálás",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Csoportos exportálás",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Összes törlése",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Adja meg a doméneket, soronként egyet...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Importálás megerősítése",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Mégse",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "készítette:",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Eszközök",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Nyelvi beállítások",
+    "description": "Language settings section title"
+  }
+}

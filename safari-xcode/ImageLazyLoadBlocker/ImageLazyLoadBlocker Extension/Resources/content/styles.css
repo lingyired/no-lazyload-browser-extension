@@ -1,0 +1,45 @@
+/* content/styles.css */
+/* 强制显示被懒加载隐藏的图片 */
+
+/* 原生懒加载 */
+img[loading="lazy"] {
+  loading: eager !important;
+}
+
+/* 常见 data-attr 模式 */
+img[data-src],
+img[data-original],
+img[data-lazy-src],
+img[data-srcset],
+img[data-lazy-srcset] {
+  content-visibility: visible !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 常见懒加载类名 */
+.lazy,
+.lazyload,
+.lazyloading,
+.lozad,
+[data-lazy],
+[data-lazy-src],
+[data-lazy-srcset] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  content-visibility: visible !important;
+}
+
+/* 某些网站使用的特定样式 */
+.lazy-loaded,
+.lazy-image,
+.b-lazy,
+.owl-lazy {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 处理 picture 元素内的 source */
+picture source[data-srcset] {
+  content-visibility: visible !important;
+}

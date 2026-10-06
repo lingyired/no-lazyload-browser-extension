@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - ปิดการโหลดรูปภาพแบบขี้เกียจ",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "ปิดการโหลดรูปภาพแบบขี้เกียจบนเว็บไซต์ โหลดรูปภาพทั้งหมดในครั้งเดียว",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "เว็บไซต์ปัจจุบัน",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "เปิดใช้งาน",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "ปิดใช้งาน",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "ไม่พร้อมใช้งาน",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "ไม่ใช่หน้าเว็บ",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "ไม่สามารถเพิ่มได้",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "เพิ่มเว็บไซต์ปัจจุบัน",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "ลบเว็บไซต์ปัจจุบัน",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "ใช้การเลื่อนอัตโนมัติ",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "เลื่อนอัตโนมัติลงด้านล่างเพื่อกระตุ้นการโหลด เหมาะสำหรับเว็บไซต์ที่การบล็อกแบบเทคนิคล้มเหลว",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "เว็บไซต์ที่กำหนดค่าแล้ว",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "ยังไม่มีเว็บไซต์ที่กำหนดค่า",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "การตั้งค่าแบบเต็ม",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "รีเฟรชหน้า",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "เพิ่ม $domain$ แล้ว",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "เพิ่ม $domain$ แล้ว (เลื่อนอัตโนมัติ)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "ลบ $domain$ แล้ว",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "ลบ $domain$ แล้ว",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "เปิดใช้งานการเลื่อนอัตโนมัติ",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "ปิดใช้งานการเลื่อนอัตโนมัติ",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "รีเฟรชหน้าแล้ว",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "เลื่อนอัตโนมัติ",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "การตั้งค่า - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "รายการกำหนดค่าเว็บไซต์",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "ความเร็วในการเลื่อน (มิลลิวินาที)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "ระยะเวลาคงที่ (มิลลิวินาที)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "กลับไปด้านบนหลังเสร็จสิ้น",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "ใช้การเลื่อนเป็นทางสำรองโดยอัตโนมัติเมื่อการบล็อกแบบเทคนิคล้มเหลว",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "แสดงการแจ้งเตือนการสกัดกั้นสำเร็จ",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "บันทึก",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "บันทึกแล้ว",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "การจัดการเว็บไซต์",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "นำเข้าเป็นชุด",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "ส่งออกเป็นชุด",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "ลบทั้งหมด",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "ป้อนโดเมน หนึ่งรายการต่อบรรทัด...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "ยืนยันการนำเข้า",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "ยกเลิก",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "โดย",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "เครื่องมือ",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "การตั้งค่าภาษา",
+    "description": "Language settings section title"
+  }
+}

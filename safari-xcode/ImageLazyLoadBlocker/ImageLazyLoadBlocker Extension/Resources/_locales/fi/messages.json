@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Poista kuvien laiska lataus käytöstä",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Poista kuvien laiska lataus käytöstä verkkosivustoilla, lataa kaikki kuvat kerralla",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Nykyinen sivusto",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Käytössä",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Pois käytöstä",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Ei saatavilla",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Muu kuin verkkosivu",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Ei voi lisätä",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Lisää nykyinen sivusto",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Poista nykyinen sivusto",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Käytä automaattista vieritystä",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Vieritä automaattisesti alas käynnistääksesi lataamisen; sopii sivustoille, joissa tekninen esto epäonnistuu",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Määritetyt sivustot",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Ei määritettyjä sivustoja",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Täydet asetukset",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Päivitä sivu",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Lisätty $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Lisätty $domain$ (Automaattinen vieritys)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Poistettu $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Poistettu $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Automaattinen vieritys käytössä",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Automaattinen vieritys pois käytöstä",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Sivu päivitetty",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Automaattinen vieritys",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Asetukset - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Sivuston määritysluettelo",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Vieritysnopeus (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Viipymisaika (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Palaa ylös valmistumisen jälkeen",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Käytä automaattisesti vieritystä varana, kun tekninen esto epäonnistuu",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Näytä ilmoitus onnistuneesta sieppauksesta",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Tallenna",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Tallennettu",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Sivuston hallinta",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Erätuonti",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Erävienti",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Poista kaikki",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Syötä verkkotunnukset, yksi per rivi...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Vahvista tuonti",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Peruuta",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "tekijä",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Työkalut",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Kieliasetukset",
+    "description": "Language settings section title"
+  }
+}

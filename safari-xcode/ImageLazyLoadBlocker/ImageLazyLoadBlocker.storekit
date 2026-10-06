@@ -1,0 +1,46 @@
+{
+  "identifier" : "8A3F2C41",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "7D1E9B52",
+      "localizations" : [
+        {
+          "description" : "Unlock unlimited websites in No Lazy Load.",
+          "displayName" : "Unlimited Websites",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "解锁无限网站数量。",
+          "displayName" : "无限网站",
+          "locale" : "zh_CN"
+        }
+      ],
+      "productID" : "com.lingyi01.imagelazyloadblocker.unlimitedsites",
+      "referenceName" : "Unlimited Websites",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "",
+    "_developerTeamID" : "HCB7JKMQ2F",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 0,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

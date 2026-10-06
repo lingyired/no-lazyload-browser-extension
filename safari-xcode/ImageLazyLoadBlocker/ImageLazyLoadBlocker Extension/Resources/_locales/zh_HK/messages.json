@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload 停用圖片懶加載",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "停用網站圖片懶加載，一次性完整載入所有圖片",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "目前網站",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "已啟用",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "未啟用",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "不可用",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "非網頁頁面",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "無法加入",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "加入目前網站",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "移除目前網站",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "使用自動捲動代替技術攔截",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "自動捲動到底部觸發載入，適合技術攔截失效的網站",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "已設定的網站",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "暫無設定的網站",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "完整設定",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "重新整理頁面",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "已加入 $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "已加入 $domain$（自動捲動）",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "已移除 $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "已刪除 $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "已開啟自動捲動",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "已關閉自動捲動",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "頁面已重新整理",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "自動捲動",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "設定 - 圖片懶加載攔截器",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "網站設定清單",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "捲動速度（毫秒）",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "停留時長（毫秒）",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "完成後返回頁面頂部",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "技術攔截不生效時自動使用捲動兜底",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "顯示攔截成功提示",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "儲存",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "已儲存",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "網站管理",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "批次匯入",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "批次匯出",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "刪除全部",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "輸入網域，每行一個...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "確認匯入",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "取消",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "作者",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "開發工具",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "語言設定",
+    "description": "Language settings section title"
+  }
+}

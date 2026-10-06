@@ -6,6 +6,7 @@
     "build": "node build.js all",
     "build:chrome": "node build.js chrome",
     "build:firefox": "node build.js firefox",
+    "build:safari": "node build.js safari",
     "icons": "node convert-icon.js",
     "rebuild": "node build.js all",
     "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
@@ -16,7 +17,8 @@
     "lazy-loading",
     "image",
     "chrome",
-    "firefox"
+    "firefox",
+    "safari"
   ],
   "license": "MIT",
   "devDependencies": {

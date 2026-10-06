@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C7BD5D23009E02000F4D44D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D13009E02000F4D44D /* AppDelegate.swift */; };
+		3C7BD5D63009E02000F4D44D /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D43009E02000F4D44D /* Main.html */; };
+		3C7BD5D83009E02000F4D44D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D73009E02000F4D44D /* Icon.png */; };
+		3C7BD5DA3009E02000F4D44D /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D93009E02000F4D44D /* Style.css */; };
+		3C7BD5DC3009E02000F4D44D /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5DB3009E02000F4D44D /* Script.js */; };
+		3C7BD5DE3009E02000F4D44D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BD5DD3009E02000F4D44D /* ViewController.swift */; };
+		3C7BD5E13009E02000F4D44D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5DF3009E02000F4D44D /* Main.storyboard */; };
+		3C7BD5E33009E02100F4D44D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5E23009E02100F4D44D /* Assets.xcassets */; };
+		3C7BD5EA3009E02100F4D44D /* ImageLazyLoadBlocker Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3C7BD5E93009E02100F4D44D /* ImageLazyLoadBlocker Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3C7BD5EF3009E02100F4D44D /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BD5EE3009E02100F4D44D /* SafariWebExtensionHandler.swift */; };
+		3C7BD6063009E02100F4D44D /* settings in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5FB3009E02100F4D44D /* settings */; };
+		3C7BD6073009E02100F4D44D /* background-safari.js in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5FC3009E02100F4D44D /* background-safari.js */; };
+		3C7BD6083009E02100F4D44D /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5FD3009E02100F4D44D /* popup.js */; };
+		3C7BD6093009E02100F4D44D /* i18n-manager.js in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5FE3009E02100F4D44D /* i18n-manager.js */; };
+		3C7BD60A3009E02100F4D44D /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5FF3009E02100F4D44D /* popup.html */; };
+		3C7BD60B3009E02100F4D44D /* lingyired in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD6003009E02100F4D44D /* lingyired */; };
+		3C7BD60C3009E02100F4D44D /* content in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD6013009E02100F4D44D /* content */; };
+		3C7BD60D3009E02100F4D44D /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD6023009E02100F4D44D /* icons */; };
+		3C7BD60E3009E02100F4D44D /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD6033009E02100F4D44D /* manifest.json */; };
+		3C7BD60F3009E02100F4D44D /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD6043009E02100F4D44D /* _locales */; };
+		3C7BD6103009E02100F4D44D /* i18n.js in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD6053009E02100F4D44D /* i18n.js */; };
+		E2000001000000000000000A /* Entitlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000001000000000000000A /* Entitlement.swift */; };
+		E2000002000000000000000A /* AppLimits.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000002000000000000000A /* AppLimits.swift */; };
+		E2000003000000000000000A /* EntitlementsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000003000000000000000A /* EntitlementsConfig.swift */; };
+		E2000004000000000000000A /* EntitlementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000004000000000000000A /* EntitlementStore.swift */; };
+		E2000005000000000000000A /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000005000000000000000A /* EntitlementManager.swift */; };
+		E2000006000000000000000A /* PurchaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000006000000000000000A /* PurchaseProvider.swift */; };
+		E2000008000000000000000A /* StoreKitPurchaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000008000000000000000A /* StoreKitPurchaseProvider.swift */; };
+		E2000009000000000000000A /* Entitlement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000001000000000000000A /* Entitlement.swift */; };
+		E200000A0000000000000000A /* AppLimits.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000002000000000000000A /* AppLimits.swift */; };
+		E200000B0000000000000000A /* EntitlementsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000003000000000000000A /* EntitlementsConfig.swift */; };
+		E200000C0000000000000000A /* EntitlementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000004000000000000000A /* EntitlementStore.swift */; };
+		E200000D0000000000000000A /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000005000000000000000A /* EntitlementManager.swift */; };
+		E200000E0000000000000000A /* PurchaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000006000000000000000A /* PurchaseProvider.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3C7BD5EB3009E02100F4D44D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C7BD5C63009E02000F4D44D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C7BD5E83009E02100F4D44D;
+			remoteInfo = "ImageLazyLoadBlocker Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C7BD5F63009E02100F4D44D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3C7BD5EA3009E02100F4D44D /* ImageLazyLoadBlocker Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3C7BD5CE3009E02000F4D44D /* ImageLazyLoadBlocker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLazyLoadBlocker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C7BD5D13009E02000F4D44D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3C7BD5D53009E02000F4D44D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		3C7BD5D73009E02000F4D44D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3C7BD5D93009E02000F4D44D /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		3C7BD5DB3009E02000F4D44D /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		3C7BD5DD3009E02000F4D44D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3C7BD5E03009E02000F4D44D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3C7BD5E23009E02100F4D44D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C7BD5E43009E02100F4D44D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C7BD5E93009E02100F4D44D /* ImageLazyLoadBlocker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ImageLazyLoadBlocker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C7BD5EE3009E02100F4D44D /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		3C7BD5F03009E02100F4D44D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C7BD5FB3009E02100F4D44D /* settings */ = {isa = PBXFileReference; lastKnownFileType = folder; name = settings; path = Resources/settings; sourceTree = "<group>"; };
+		3C7BD5FC3009E02100F4D44D /* background-safari.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "background-safari.js"; path = "Resources/background-safari.js"; sourceTree = "<group>"; };
+		3C7BD5FD3009E02100F4D44D /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = Resources/popup.js; sourceTree = "<group>"; };
+		3C7BD5FE3009E02100F4D44D /* i18n-manager.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "i18n-manager.js"; path = "Resources/i18n-manager.js"; sourceTree = "<group>"; };
+		3C7BD5FF3009E02100F4D44D /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = Resources/popup.html; sourceTree = "<group>"; };
+		3C7BD6003009E02100F4D44D /* lingyired */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lingyired; path = Resources/lingyired; sourceTree = "<group>"; };
+		3C7BD6013009E02100F4D44D /* content */ = {isa = PBXFileReference; lastKnownFileType = folder; name = content; path = Resources/content; sourceTree = "<group>"; };
+		3C7BD6023009E02100F4D44D /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = Resources/icons; sourceTree = "<group>"; };
+		3C7BD6033009E02100F4D44D /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
+		3C7BD6043009E02100F4D44D /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = Resources/_locales; sourceTree = "<group>"; };
+		3C7BD6053009E02100F4D44D /* i18n.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = i18n.js; path = Resources/i18n.js; sourceTree = "<group>"; };
+		E1000001000000000000000A /* Entitlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitlement.swift; sourceTree = "<group>"; };
+		E1000002000000000000000A /* AppLimits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLimits.swift; sourceTree = "<group>"; };
+		E1000003000000000000000A /* EntitlementsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementsConfig.swift; sourceTree = "<group>"; };
+		E1000004000000000000000A /* EntitlementStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementStore.swift; sourceTree = "<group>"; };
+		E1000005000000000000000A /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
+		E1000006000000000000000A /* PurchaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProvider.swift; sourceTree = "<group>"; };
+		E1000008000000000000000A /* StoreKitPurchaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitPurchaseProvider.swift; sourceTree = "<group>"; };
+		E4000001000000000000000A /* ImageLazyLoadBlocker.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = ImageLazyLoadBlocker.storekit; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C7BD5CB3009E02000F4D44D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C7BD5E63009E02100F4D44D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C7BD5C53009E02000F4D44D = {
+			isa = PBXGroup;
+			children = (
+				E3000001000000000000000A /* Shared */,
+				E4000001000000000000000A /* ImageLazyLoadBlocker.storekit */,
+				3C7BD5D03009E02000F4D44D /* ImageLazyLoadBlocker */,
+				3C7BD5ED3009E02100F4D44D /* ImageLazyLoadBlocker Extension */,
+				3C7BD5CF3009E02000F4D44D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C7BD5CF3009E02000F4D44D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C7BD5CE3009E02000F4D44D /* ImageLazyLoadBlocker.app */,
+				3C7BD5E93009E02100F4D44D /* ImageLazyLoadBlocker Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C7BD5D03009E02000F4D44D /* ImageLazyLoadBlocker */ = {
+			isa = PBXGroup;
+			children = (
+				3C7BD5D13009E02000F4D44D /* AppDelegate.swift */,
+				3C7BD5DD3009E02000F4D44D /* ViewController.swift */,
+				3C7BD5DF3009E02000F4D44D /* Main.storyboard */,
+				3C7BD5E23009E02100F4D44D /* Assets.xcassets */,
+				3C7BD5E43009E02100F4D44D /* Info.plist */,
+				3C7BD5D33009E02000F4D44D /* Resources */,
+			);
+			path = ImageLazyLoadBlocker;
+			sourceTree = "<group>";
+		};
+		3C7BD5D33009E02000F4D44D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3C7BD5D43009E02000F4D44D /* Main.html */,
+				3C7BD5D73009E02000F4D44D /* Icon.png */,
+				3C7BD5D93009E02000F4D44D /* Style.css */,
+				3C7BD5DB3009E02000F4D44D /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3C7BD5ED3009E02100F4D44D /* ImageLazyLoadBlocker Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3C7BD5FA3009E02100F4D44D /* Resources */,
+				3C7BD5EE3009E02100F4D44D /* SafariWebExtensionHandler.swift */,
+				3C7BD5F03009E02100F4D44D /* Info.plist */,
+			);
+			path = "ImageLazyLoadBlocker Extension";
+			sourceTree = "<group>";
+		};
+		3C7BD5FA3009E02100F4D44D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3C7BD5FB3009E02100F4D44D /* settings */,
+				3C7BD5FC3009E02100F4D44D /* background-safari.js */,
+				3C7BD5FD3009E02100F4D44D /* popup.js */,
+				3C7BD5FE3009E02100F4D44D /* i18n-manager.js */,
+				3C7BD5FF3009E02100F4D44D /* popup.html */,
+				3C7BD6003009E02100F4D44D /* lingyired */,
+				3C7BD6013009E02100F4D44D /* content */,
+				3C7BD6023009E02100F4D44D /* icons */,
+				3C7BD6033009E02100F4D44D /* manifest.json */,
+				3C7BD6043009E02100F4D44D /* _locales */,
+				3C7BD6053009E02100F4D44D /* i18n.js */,
+			);
+			name = Resources;
+			path = "ImageLazyLoadBlocker Extension";
+			sourceTree = SOURCE_ROOT;
+		};
+		E3000001000000000000000A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E1000001000000000000000A /* Entitlement.swift */,
+				E1000002000000000000000A /* AppLimits.swift */,
+				E1000003000000000000000A /* EntitlementsConfig.swift */,
+				E1000004000000000000000A /* EntitlementStore.swift */,
+				E1000005000000000000000A /* EntitlementManager.swift */,
+				E1000006000000000000000A /* PurchaseProvider.swift */,
+				E1000008000000000000000A /* StoreKitPurchaseProvider.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C7BD5CD3009E02000F4D44D /* ImageLazyLoadBlocker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C7BD5F73009E02100F4D44D /* Build configuration list for PBXNativeTarget "ImageLazyLoadBlocker" */;
+			buildPhases = (
+				3C7BD5CA3009E02000F4D44D /* Sources */,
+				3C7BD5CB3009E02000F4D44D /* Frameworks */,
+				3C7BD5CC3009E02000F4D44D /* Resources */,
+				3C7BD5F63009E02100F4D44D /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C7BD5EC3009E02100F4D44D /* PBXTargetDependency */,
+			);
+			name = ImageLazyLoadBlocker;
+			packageProductDependencies = (
+			);
+			productName = ImageLazyLoadBlocker;
+			productReference = 3C7BD5CE3009E02000F4D44D /* ImageLazyLoadBlocker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3C7BD5E83009E02100F4D44D /* ImageLazyLoadBlocker Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C7BD5F33009E02100F4D44D /* Build configuration list for PBXNativeTarget "ImageLazyLoadBlocker Extension" */;
+			buildPhases = (
+				3C7BD5E53009E02100F4D44D /* Sources */,
+				3C7BD5E63009E02100F4D44D /* Frameworks */,
+				3C7BD5E73009E02100F4D44D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ImageLazyLoadBlocker Extension";
+			packageProductDependencies = (
+			);
+			productName = "ImageLazyLoadBlocker Extension";
+			productReference = 3C7BD5E93009E02100F4D44D /* ImageLazyLoadBlocker Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C7BD5C63009E02000F4D44D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					3C7BD5CD3009E02000F4D44D = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					3C7BD5E83009E02100F4D44D = {
+						CreatedOnToolsVersion = 26.6;
+					};
+				};
+			};
+			buildConfigurationList = 3C7BD5C93009E02000F4D44D /* Build configuration list for PBXProject "ImageLazyLoadBlocker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3C7BD5C53009E02000F4D44D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3C7BD5CF3009E02000F4D44D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C7BD5CD3009E02000F4D44D /* ImageLazyLoadBlocker */,
+				3C7BD5E83009E02100F4D44D /* ImageLazyLoadBlocker Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C7BD5CC3009E02000F4D44D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C7BD5D83009E02000F4D44D /* Icon.png in Resources */,
+				3C7BD5E13009E02000F4D44D /* Main.storyboard in Resources */,
+				3C7BD5DC3009E02000F4D44D /* Script.js in Resources */,
+				3C7BD5D63009E02000F4D44D /* Main.html in Resources */,
+				3C7BD5E33009E02100F4D44D /* Assets.xcassets in Resources */,
+				3C7BD5DA3009E02000F4D44D /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C7BD5E73009E02100F4D44D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C7BD6073009E02100F4D44D /* background-safari.js in Resources */,
+				3C7BD60D3009E02100F4D44D /* icons in Resources */,
+				3C7BD60A3009E02100F4D44D /* popup.html in Resources */,
+				3C7BD60C3009E02100F4D44D /* content in Resources */,
+				3C7BD60E3009E02100F4D44D /* manifest.json in Resources */,
+				3C7BD60B3009E02100F4D44D /* lingyired in Resources */,
+				3C7BD6083009E02100F4D44D /* popup.js in Resources */,
+				3C7BD6093009E02100F4D44D /* i18n-manager.js in Resources */,
+				3C7BD6103009E02100F4D44D /* i18n.js in Resources */,
+				3C7BD60F3009E02100F4D44D /* _locales in Resources */,
+				3C7BD6063009E02100F4D44D /* settings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C7BD5CA3009E02000F4D44D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C7BD5DE3009E02000F4D44D /* ViewController.swift in Sources */,
+				3C7BD5D23009E02000F4D44D /* AppDelegate.swift in Sources */,
+				E2000001000000000000000A /* Entitlement.swift in Sources */,
+				E2000002000000000000000A /* AppLimits.swift in Sources */,
+				E2000003000000000000000A /* EntitlementsConfig.swift in Sources */,
+				E2000004000000000000000A /* EntitlementStore.swift in Sources */,
+				E2000005000000000000000A /* EntitlementManager.swift in Sources */,
+				E2000006000000000000000A /* PurchaseProvider.swift in Sources */,
+				E2000008000000000000000A /* StoreKitPurchaseProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C7BD5E53009E02100F4D44D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C7BD5EF3009E02100F4D44D /* SafariWebExtensionHandler.swift in Sources */,
+				E2000009000000000000000A /* Entitlement.swift in Sources */,
+				E200000A0000000000000000A /* AppLimits.swift in Sources */,
+				E200000B0000000000000000A /* EntitlementsConfig.swift in Sources */,
+				E200000C0000000000000000A /* EntitlementStore.swift in Sources */,
+				E200000D0000000000000000A /* EntitlementManager.swift in Sources */,
+				E200000E0000000000000000A /* PurchaseProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C7BD5EC3009E02100F4D44D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C7BD5E83009E02100F4D44D /* ImageLazyLoadBlocker Extension */;
+			targetProxy = 3C7BD5EB3009E02100F4D44D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3C7BD5D43009E02000F4D44D /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C7BD5D53009E02000F4D44D /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		3C7BD5DF3009E02000F4D44D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C7BD5E03009E02000F4D44D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3C7BD5F13009E02100F4D44D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3C7BD5F23009E02100F4D44D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		3C7BD5F43009E02100F4D44D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "ImageLazyLoadBlocker Extension/ImageLazyLoadBlocker Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.12.29;
+				DEVELOPMENT_TEAM = HCB7JKMQ2F;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ImageLazyLoadBlocker Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ImageLazyLoadBlocker Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.12.29;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingyi01.imagelazyloadblocker.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3C7BD5F53009E02100F4D44D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "ImageLazyLoadBlocker Extension/ImageLazyLoadBlocker Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.12.29;
+				DEVELOPMENT_TEAM = HCB7JKMQ2F;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ImageLazyLoadBlocker Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ImageLazyLoadBlocker Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.12.29;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingyi01.imagelazyloadblocker.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3C7BD5F83009E02100F4D44D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ImageLazyLoadBlocker/ImageLazyLoadBlocker.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.12.29;
+				DEVELOPMENT_TEAM = HCB7JKMQ2F;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImageLazyLoadBlocker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ImageLazyLoadBlocker;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.12.29;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingyi01.imagelazyloadblocker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3C7BD5F93009E02100F4D44D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ImageLazyLoadBlocker/ImageLazyLoadBlocker.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.12.29;
+				DEVELOPMENT_TEAM = HCB7JKMQ2F;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ImageLazyLoadBlocker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ImageLazyLoadBlocker;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.12.29;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lingyi01.imagelazyloadblocker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C7BD5C93009E02000F4D44D /* Build configuration list for PBXProject "ImageLazyLoadBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C7BD5F13009E02100F4D44D /* Debug */,
+				3C7BD5F23009E02100F4D44D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C7BD5F33009E02100F4D44D /* Build configuration list for PBXNativeTarget "ImageLazyLoadBlocker Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C7BD5F43009E02100F4D44D /* Debug */,
+				3C7BD5F53009E02100F4D44D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C7BD5F73009E02100F4D44D /* Build configuration list for PBXNativeTarget "ImageLazyLoadBlocker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C7BD5F83009E02100F4D44D /* Debug */,
+				3C7BD5F93009E02100F4D44D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C7BD5C63009E02000F4D44D /* Project object */;
+}

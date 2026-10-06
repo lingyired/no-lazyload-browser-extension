@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - د انځورو ستړي بار کول نافعال کړئ",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "د ویب پاڼو په انځورونو باندې ستړي بار کول نافعال کړئ، ټول انځورونه یو ځل بار کړئ",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "اوسنی سایټ",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "فعال",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "غیر فعال",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "شتون نلري",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "غیر ویب پاڼه",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "نشي زیاتولی",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "اوسنی سایټ زیات کړئ",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "اوسنی سایټ لرې کړئ",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "اتوماتیک سکرول کارول",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "د بار کولو د فعالولو لپاره اتوماتیک ښکته سکرول کړئ؛ د هغو سایټونو لپاره مناسب چیرې چې تخنیکي بندیز ناکامیږي",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "ترتیب شوي سایټونه",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "هیڅ ترتیب شوی سایټ نشته",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "مکمل تنظیمات",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "پاڼه تازه کړئ",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "$domain$ زیات شو",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "$domain$ زیات شو (اتوماتیک سکرول)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "$domain$ لرې شو",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "$domain$ ګذارل شو",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "اتوماتیک سکرول فعال دی",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "اتوماتیک سکرول غیر فعال دی",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "پاڼه تازه شوه",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "اتوماتیک سکرول",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "تنظیمات - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "د سایټ د تنظیماتو لیست",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "د سکرول سرعت (ملی ثانیه)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "د ځایډیروالی موده (ملی ثانیه)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "د بشپړیدو وروسته پورته ته راستون شئ",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "کله چې تخنیکي بندیز ناکام شي، اتوماتیک سکرول د ژغور په توګه وکاروئ",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "د بریالۍ بندیز خبرتیا وښایئ",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "خوندي کړئ",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "خوندي شو",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "د سایټ مدیریت",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "ډله ایز درآمد",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "ډله ایز صادرول",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "ټول ګذارل",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "ډومینونه دننه کړئ، په هر کرښه کې یو...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "درآمد تایید کړئ",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "لغوه کړئ",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "له خوا",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "اوزارونه",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "د ژبې تنظیمات",
+    "description": "Language settings section title"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "appName": {
+    "message": "No lazyload - Zakázať lintvé načítavanie obrázkov",
+    "description": "Extension name"
+  },
+  "appDescription": {
+    "message": "Zakážte lintvé načítavanie obrázkov na webových stránkach, načítajte všetky obrázky naraz",
+    "description": "Extension description"
+  },
+  "currentSite": {
+    "message": "Aktuálna stránka",
+    "description": "Current site section title"
+  },
+  "enabled": {
+    "message": "Povolené",
+    "description": "Status: enabled"
+  },
+  "disabled": {
+    "message": "Zakázané",
+    "description": "Status: disabled"
+  },
+  "notAvailable": {
+    "message": "Nedostupné",
+    "description": "Status: not available"
+  },
+  "nonWebPage": {
+    "message": "Nie je webová stránka",
+    "description": "Non-web page message"
+  },
+  "cannotAdd": {
+    "message": "Nedá sa pridať",
+    "description": "Cannot add button"
+  },
+  "addCurrentSite": {
+    "message": "Pridať aktuálnu stránku",
+    "description": "Add button"
+  },
+  "removeCurrentSite": {
+    "message": "Odstrániť aktuálnu stránku",
+    "description": "Remove button"
+  },
+  "useAutoScroll": {
+    "message": "Použiť automatické posúvanie",
+    "description": "Auto-scroll option"
+  },
+  "autoScrollDesc": {
+    "message": "Automaticky posuňte nadol na spustenie načítavania; vhodné pre stránky, kde technické blokovanie zlyhá",
+    "description": "Auto-scroll description"
+  },
+  "configuredSites": {
+    "message": "Nakonfigurované stránky",
+    "description": "Configured sites section title"
+  },
+  "noSites": {
+    "message": "Žiadne nakonfigurované stránky",
+    "description": "Empty state message"
+  },
+  "fullSettings": {
+    "message": "Úplné nastavenia",
+    "description": "Settings button"
+  },
+  "refreshPage": {
+    "message": "Obnoviť stránku",
+    "description": "Refresh button"
+  },
+  "siteAdded": {
+    "message": "Pridané $domain$",
+    "description": "Site added toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteAddedWithScroll": {
+    "message": "Pridané $domain$ (Automatické posúvanie)",
+    "description": "Site added with auto-scroll toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteRemoved": {
+    "message": "Odstránené $domain$",
+    "description": "Site removed toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteDeleted": {
+    "message": "Vymazané $domain$",
+    "description": "Site deleted toast",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "autoScrollEnabled": {
+    "message": "Automatické posúvanie povolené",
+    "description": "Auto-scroll enabled toast"
+  },
+  "autoScrollDisabled": {
+    "message": "Automatické posúvanie zakázané",
+    "description": "Auto-scroll disabled toast"
+  },
+  "pageRefreshed": {
+    "message": "Stránka obnovená",
+    "description": "Page refreshed toast"
+  },
+  "autoScroll": {
+    "message": "Automatické posúvanie",
+    "description": "Auto-scroll label"
+  },
+  "settingsTitle": {
+    "message": "Nastavenia - Image Lazy Load Blocker",
+    "description": "Settings page title"
+  },
+  "globalSettings": {
+    "message": "Zoznam konfigurácií stránok",
+    "description": "Site configuration list section"
+  },
+  "scrollSpeed": {
+    "message": "Rýchlosť posúvania (ms)",
+    "description": "Scroll speed label"
+  },
+  "stayDuration": {
+    "message": "Doba trvania (ms)",
+    "description": "Stay duration label"
+  },
+  "returnToTop": {
+    "message": "Návrat hore po dokončení",
+    "description": "Return to top option"
+  },
+  "fallbackToScroll": {
+    "message": "Pri zlyhaní technického blokovania automaticky použiť posúvanie ako zálohu",
+    "description": "Fallback option"
+  },
+  "showInterceptionToast": {
+    "message": "Zobraziť oznámenie o úspešnom zachytení",
+    "description": "Show toast option"
+  },
+  "save": {
+    "message": "Uložiť",
+    "description": "Save button"
+  },
+  "saved": {
+    "message": "Uložené",
+    "description": "Saved toast"
+  },
+  "siteManagement": {
+    "message": "Správa stránok",
+    "description": "Site management section"
+  },
+  "batchImport": {
+    "message": "Hromadný import",
+    "description": "Batch import button"
+  },
+  "batchExport": {
+    "message": "Hromadný export",
+    "description": "Batch export button"
+  },
+  "deleteAll": {
+    "message": "Vymazať všetko",
+    "description": "Delete all button"
+  },
+  "importPlaceholder": {
+    "message": "Zadajte domény, jednu na riadok...",
+    "description": "Import placeholder"
+  },
+  "confirmImport": {
+    "message": "Potvrdiť import",
+    "description": "Confirm import button"
+  },
+  "cancel": {
+    "message": "Zrušiť",
+    "description": "Cancel button"
+  },
+  "author": {
+    "message": "od",
+    "description": "Author prefix"
+  },
+  "tools": {
+    "message": "Nástroje",
+    "description": "Tools label"
+  },
+  "languageSettings": {
+    "message": "Jazykové nastavenia",
+    "description": "Language settings section title"
+  }
+}
