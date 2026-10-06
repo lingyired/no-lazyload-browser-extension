@@ -185,6 +185,10 @@ const COMMON_FILES = [
   'settings/index.html',
   'settings/app.js',
   'settings/styles.css',
+  // 共用 UI 主题（popup 与 settings 都消费同一套语义令牌）
+  'ui/tokens.css',
+  'ui/components.css',
+  'ui/safari.css',
   'icons/icon16.png',
   'icons/icon48.png',
   'icons/icon128.png',

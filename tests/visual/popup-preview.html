@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>popup preview harness</title>
+</head>
+<body>
+<!--
+  只用于视觉/交互自查的预览壳，不参与打包。
+
+  用法（headless Chrome）：
+    chrome --headless --screenshot=out.png --window-size=380,700 \
+      "file://.../tests/visual/popup-preview.html?state=free"
+
+  state: free(默认, 2/3 站点) | pro | unrestricted | empty | limit | unavailable
+-->
+<script src="chrome-stub.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+window.__PREVIEW_STATE__ = params.get('state') || 'free';
+
+fetch('../../popup.html')
+  .then(function (r) { return r.text(); })
+  .then(function (html) {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    document.title = doc.title;
+    // popup.html 里的相对路径是相对扩展根目录的；预览页在 tests/visual/ 下，
+    // 所以统一补上 ../../ 前缀。
+    doc.head.querySelectorAll('link[rel=stylesheet], meta[charset], meta[name=color-scheme]').forEach(function (node) {
+      const clone = node.cloneNode(true);
+      if (clone.tagName === 'LINK' && clone.getAttribute('href')) {
+        clone.setAttribute('href', '../../' + clone.getAttribute('href'));
+      }
+      document.head.appendChild(clone);
+    });
+    document.body.innerHTML = doc.body.innerHTML;
+
+    const script = document.createElement('script');
+    script.src = '../../popup.js';
+    script.onload = function () {
+      // popup.js 在 DOMContentLoaded 时启动；这里手动触发一次
+      document.dispatchEvent(new Event('DOMContentLoaded'));
+      if (params.get('dialog') === '1') {
+        setTimeout(function () { window.showUpgradeDialog({ price: '$2.99' }); }, 50);
+      }
+      if (params.get('measure') === '1') {
+        setTimeout(function () {
+          const rgb = function (c) { return c; };
+          const info = [];
+          ['body', '.nl-popup', '.nl-switch', '.nl-list-group', '.nl-overlay', '.nl-dialog'].forEach(function (sel) {
+            const el = document.querySelector(sel);
+            if (!el) return;
+            const r = el.getBoundingClientRect();
+            info.push(sel + ' x=' + Math.round(r.left) + ' w=' + Math.round(r.width) + ' h=' + Math.round(r.height));
+          });
+          const pre = document.createElement('pre');
+          pre.id = 'measure';
+          pre.style.cssText = 'position:fixed;top:0;left:0;z-index:9999;background:#ff0;color:#000;font-size:10px;padding:4px;max-width:100%';
+          pre.textContent = info.join(' | ');
+          document.body.appendChild(pre);
+        }, 200);
+      }
+    };
+    document.body.appendChild(script);
+  });
+</script>
+</body>
+</html>

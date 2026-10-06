@@ -1,0 +1,101 @@
+/* ui/safari.css — Safari / macOS 主题覆盖
+ *
+ * Safari 打开 popup 时已经提供 popover 外框与阴影，
+ * 内容区不需要再画一层"卡片套卡片"（plan Task C1/C4）。
+ *
+ * 这一层刻意保持很薄：只放 Safari/macOS 特有的尺寸与表面处理。
+ * Chrome / Firefox 也加载本文件，字体栈与语义色会自然退化为各平台系统外观。
+ */
+
+body {
+  width: var(--nl-popup-width);
+  min-height: 160px;
+  /* Safari popover 自带背景，内容区用极浅的分组面即可 */
+  background: var(--nl-surface);
+}
+
+.nl-popup {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 当前网站区块：分组行，不做独立白卡 + 阴影 */
+.nl-current-site {
+  padding: var(--nl-space-3) var(--nl-space-4);
+  border-bottom: 1px solid var(--nl-separator);
+}
+
+.nl-current-site .nl-site-head {
+  display: flex;
+  align-items: center;
+  gap: var(--nl-space-3);
+}
+
+.nl-current-site .nl-site-identity {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.nl-current-site .nl-site-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--nl-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.nl-mode-row {
+  display: flex;
+  align-items: center;
+  gap: var(--nl-space-3);
+  margin-top: var(--nl-space-3);
+}
+
+.nl-mode-row .nl-mode-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--nl-text-secondary);
+}
+
+/* 列表区 */
+.nl-list-group {
+  padding: var(--nl-space-3) var(--nl-space-4) var(--nl-space-2);
+  border-bottom: 1px solid var(--nl-separator);
+}
+
+.nl-list-group .nl-group-header {
+  margin-bottom: var(--nl-space-1);
+}
+
+/* 免费版升级入口：整行次要强调，不做大卡片 */
+.nl-upgrade-group {
+  padding: var(--nl-space-3) var(--nl-space-4);
+  border-bottom: 1px solid var(--nl-separator);
+}
+
+.nl-upgrade-note {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 11px;
+  color: var(--nl-text-secondary);
+}
+
+/* 购买不可用 / 权限存储不可用：明确但不吓人的提示 */
+.nl-notice {
+  padding: var(--nl-space-3) var(--nl-space-4);
+  font-size: 12px;
+  color: var(--nl-text-secondary);
+  border-bottom: 1px solid var(--nl-separator);
+}
+
+/* 页脚 */
+.nl-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nl-space-2);
+  padding: var(--nl-space-2) var(--nl-space-3);
+}

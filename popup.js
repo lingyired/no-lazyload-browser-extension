@@ -167,7 +167,24 @@ const TRANSLATIONS = {
     'licenseManage': '管理 / 恢复购买',
     'proBadge': 'PRO',
     'noticeSiteEnabled': '已解锁 Pro · 已启用 {domain}',
-    'purchaseUnavailable': '购买服务暂时不可用，请稍后再试'
+    'purchaseUnavailable': '购买服务暂时不可用，请稍后再试',
+    'currentWebsite': '当前网站',
+    'siteSwitchHelp': '在此网站禁用懒加载，直接加载全部图片。',
+    'mode': '模式',
+    'standardMode': '标准',
+    'compatibilityMode': '兼容模式',
+    'standardModeHelp': '用 No Lazyload 的常规引擎立即加载图片。',
+    'compatibilityModeHelp': '自动滚动页面来触发图片加载。仅在标准模式无效时使用。',
+    'enabledWebsites': '已启用的网站',
+    'removeSite': '移除',
+    'undo': '撤销',
+    'upgradeNote': '无限网站 · 一次性购买，无订阅',
+    'upgradePrice': '一次性购买',
+    'oneTimePurchase': '一次性购买',
+    'noSubscription': '无订阅',
+    'upgradeToPro': '升级到 Pro',
+    'notNow': '暂不升级',
+    'upgradeBodyLimit': '你已用完 3 个免费网站。升级一次即可在无限网站上启用 No Lazyload。'
   },
   'en': {
     'currentSite': 'Current Site',
@@ -210,7 +227,24 @@ const TRANSLATIONS = {
     'licenseManage': 'Manage / Restore',
     'proBadge': 'PRO',
     'noticeSiteEnabled': 'Pro unlocked · {domain} was enabled',
-    'purchaseUnavailable': 'Purchases are temporarily unavailable. Please try again later.'
+    'purchaseUnavailable': 'Purchases are temporarily unavailable. Please try again later.',
+    'currentWebsite': 'Current Website',
+    'siteSwitchHelp': 'Load all images on this website without lazy loading.',
+    'mode': 'Mode',
+    'standardMode': 'Standard',
+    'compatibilityMode': 'Compatibility',
+    'standardModeHelp': "Loads images immediately using No Lazyload's normal engine.",
+    'compatibilityModeHelp': 'Automatically scrolls the page to trigger images. Use this only when Standard mode does not work.',
+    'enabledWebsites': 'Enabled Websites',
+    'removeSite': 'Remove',
+    'undo': 'Undo',
+    'upgradeNote': 'Unlimited websites · One-time purchase, no subscription',
+    'upgradePrice': 'One-time purchase',
+    'oneTimePurchase': 'One-time purchase',
+    'noSubscription': 'No subscription',
+    'upgradeToPro': 'Upgrade to Pro',
+    'notNow': 'Not Now',
+    'upgradeBodyLimit': "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
   },
   'es': {
     'currentSite': 'Sitio Actual',
@@ -1195,67 +1229,71 @@ const TRANSLATIONS = {
 
 };
 
-// 当前标签页信息
+// ============================================================================
+// 运行时逻辑
+//
+// 结构（plan Phase C）：
+//   当前网站  →  一个开关 + 一个模式选择
+//   已启用网站 →  计数 / PRO 徽章 / 列表
+//   升级入口  →  仅 Safari 免费版可见
+//   页脚      →  设置 / 刷新
+// ============================================================================
+
 let currentTab = null;
 let currentDomain = '';
+/** 当前网站在 storage 里的最新配置（null = 未启用） */
+let currentSiteConfig = null;
+/** 最近一次移除，用于 Undo */
+let lastRemoved = null;
 
 /**
- * 获取翻译文本
+ * 获取翻译文本（占位符 {name}）
  */
 function t(key, replacements = {}) {
   const lang = TRANSLATIONS[currentLanguage] || TRANSLATIONS['en'] || TRANSLATIONS['zh'];
   // 回退顺序：当前语言 → en → zh → key 本身
-  let text = lang[key] || TRANSLATIONS['en']?.[key] || TRANSLATIONS['zh']?.[key] || key;
+  let text = lang[key] || (TRANSLATIONS['en'] && TRANSLATIONS['en'][key]) || (TRANSLATIONS['zh'] && TRANSLATIONS['zh'][key]) || key;
 
-  // 替换占位符
-  Object.keys(replacements).forEach(placeholder => {
-    text = text.replace(`{${placeholder}}`, replacements[placeholder]);
+  Object.keys(replacements).forEach(function (placeholder) {
+    text = text.split('{' + placeholder + '}').join(String(replacements[placeholder]));
   });
 
   return text;
 }
 
-/**
- * 加载语言设置
- */
+/** 加载语言设置 */
 async function loadLanguageSetting() {
-  return new Promise((resolve) => {
+  return new Promise(function (resolve) {
     if (!storage) {
       currentLanguage = detectBrowserLanguage();
       resolve(currentLanguage);
       return;
     }
-    storage.local.get([LANGUAGE_STORAGE_KEY], (result) => {
+    storage.local.get([LANGUAGE_STORAGE_KEY], function (result) {
       currentLanguage = result[LANGUAGE_STORAGE_KEY] || detectBrowserLanguage();
       resolve(currentLanguage);
     });
   });
 }
 
-/**
- * 应用翻译到页面
- */
+/** 应用静态翻译（data-i18n） */
 function applyTranslations() {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
     const key = el.getAttribute('data-i18n');
-    if (key) {
-      el.textContent = t(key);
-    }
+    if (key) el.textContent = t(key);
   });
 }
 
-/**
- * 发送消息到 background
- */
+/** 发送消息到 background */
 async function sendMessage(type, data = {}) {
-  return new Promise((resolve) => {
+  return new Promise(function (resolve) {
     // 超时保护：5 秒内未响应则 resolve(null)，避免 background 卡死时整个 popup 瘫痪
-    const timer = setTimeout(() => {
+    const timer = setTimeout(function () {
       console.warn('[Popup] sendMessage timeout:', type);
       resolve(null);
     }, 5000);
     try {
-      runtime.sendMessage({ type, ...data }, (response) => {
+      runtime.sendMessage(Object.assign({ type: type }, data), function (response) {
         clearTimeout(timer);
         resolve(response);
       });
@@ -1272,25 +1310,22 @@ async function sendMessage(type, data = {}) {
 // 权限读取刻意拆成快慢两条路径，避免原生调用拖慢 UI：
 //   · loadCachedEntitlements() —— 读 background 的 storage.local 快照，毫秒级
 //   · refreshEntitlements()    —— 走原生 App Group 拉最新值，慢但精确
-//
-// popup 打开时先用快照瞬间渲染，再异步刷新；刷新回来若状态有变只更新 badge，
-// 绝不因为原生慢/失败而让列表空着。
 
-/**
- * 快路径：从 background 读取权限快照。不触发任何原生调用。
- */
+function applyEntitlementResponse(resp) {
+  _entitlementState = {
+    entitlements: resp.entitlements || [],
+    isLimitEnforced: !!resp.isLimitEnforced,
+    storageAvailable: typeof resp.storageAvailable === 'boolean' ? resp.storageAvailable : null,
+    pendingAction: resp.pendingAction || null,
+    notice: resp.notice || null,
+  };
+}
+
+/** 快路径：从 background 读取权限快照。不触发任何原生调用。 */
 async function loadCachedEntitlements() {
   try {
     const resp = await sendMessage(MESSAGE_TYPES.GET_ENTITLEMENTS);
-    if (resp && resp.success) {
-      _entitlementState = {
-        entitlements: resp.entitlements || [],
-        isLimitEnforced: !!resp.isLimitEnforced,
-        storageAvailable: typeof resp.storageAvailable === 'boolean' ? resp.storageAvailable : null,
-        pendingAction: resp.pendingAction || null,
-        notice: resp.notice || null,
-      };
-    }
+    if (resp && resp.success) applyEntitlementResponse(resp);
   } catch (e) {
     console.warn('[Popup] loadCachedEntitlements failed', e);
   }
@@ -1299,7 +1334,6 @@ async function loadCachedEntitlements() {
 
 /**
  * 慢路径：让 background 走原生 App Group 拉一次最新权限。
- * StoreKit 购买结果就是通过这条路径进入扩展的。
  * @returns {Promise<boolean>} 权限状态是否发生了变化
  */
 async function refreshEntitlements() {
@@ -1307,16 +1341,8 @@ async function refreshEntitlements() {
     const before = JSON.stringify(_entitlementState.entitlements);
     const resp = await sendMessage(MESSAGE_TYPES.REFRESH_ENTITLEMENTS);
     if (resp && resp.success) {
-      _entitlementState = {
-        entitlements: resp.entitlements || [],
-        isLimitEnforced: !!resp.isLimitEnforced,
-        storageAvailable: typeof resp.storageAvailable === 'boolean' ? resp.storageAvailable : null,
-        pendingAction: resp.pendingAction || null,
-        notice: resp.notice || null,
-      };
-      const after = JSON.stringify(_entitlementState.entitlements);
-      console.log('[Popup] 权限刷新:', before, '->', after);
-      return before !== after;
+      applyEntitlementResponse(resp);
+      return before !== JSON.stringify(_entitlementState.entitlements);
     }
     console.warn('[Popup] 权限刷新失败（原生无响应），继续用快照:', before);
   } catch (e) {
@@ -1327,9 +1353,7 @@ async function refreshEntitlements() {
 
 /**
  * 展示 Background 留下的一次性提示（购买完成 / 待办已补做），然后确认清除。
- *
- * 关键点：提示不依赖 popup 存活 —— popup 在 Host App 置前后被系统关掉也没关系，
- * 下次打开时这条提示还在 storage 里。
+ * 提示不依赖 popup 存活 —— popup 被系统关掉也没关系，下次打开仍在 storage 里。
  */
 async function showEntitlementNotice() {
   const notice = _entitlementState.notice;
@@ -1342,73 +1366,19 @@ async function showEntitlementNotice() {
 
 /**
  * 等待 Pro 权限生效（用户正在 Host App 里付款）。
- * 每 2 秒走一次原生刷新，最多等 90 秒；等到返回 true。
+ * 每 2 秒走一次原生刷新，最多等 90 秒。
  */
 async function waitForUnlimitedSites(timeoutMs = 90000, intervalMs = 2000) {
   const deadline = Date.now() + timeoutMs;
   while (Date.now() < deadline) {
     await refreshEntitlements();
     if (hasUnlimitedSites()) return true;
-    await new Promise(resolve => setTimeout(resolve, intervalMs));
+    await new Promise(function (resolve) { setTimeout(resolve, intervalMs); });
   }
   return false;
 }
 
-/**
- * 把权限状态反映到网站计数 badge 上。
- * Free 显示 count/3；Pro 与 Chrome/Firefox 只显示数量，不显示 ∞。
- */
-function updateSiteCountBadge(count) {
-  const siteCount = document.getElementById('siteCount');
-  if (siteCount) siteCount.textContent = formatSiteCount(count);
-  updateLicenseRow();
-}
-
-/**
- * 更新授权入口那一行。
- *
- * Chrome/Firefox 无付费概念 → 整行隐藏。
- * Safari Free            → 显示免费额度 + "升级到 Pro"。
- * Safari Pro             → 隐藏购买入口（Pro 用户不该再看到 Buy CTA），
- *                          只在列表标题旁显示 PRO 徽章。
- */
-function updateLicenseRow() {
-  const mode = getLicenseMode();
-  const row = document.querySelector('.license-row');
-  const status = document.getElementById('licenseStatus');
-  const btn = document.getElementById('manageLicense');
-
-  // PRO 徽章（列表标题旁）
-  const badge = document.getElementById('planBadge');
-  if (badge) {
-    badge.hidden = mode !== LICENSE_MODES.PRO;
-    badge.textContent = t('proBadge');
-  }
-
-  // App Group 不可用：明确告知，而不是假装免费版 / 假装 Pro
-  const storageBroken = _entitlementState.isLimitEnforced && _entitlementState.storageAvailable === false;
-  if (storageBroken) {
-    if (row) row.hidden = false;
-    if (status) {
-      status.textContent = t('purchaseUnavailable');
-      status.classList.remove('pro');
-    }
-    if (btn) {
-      btn.hidden = true;
-    }
-    return;
-  }
-
-  if (btn) btn.hidden = false;
-  if (row) row.hidden = mode !== LICENSE_MODES.FREE;
-  if (!status || !btn) return;
-
-  if (mode === LICENSE_MODES.FREE) {
-    status.textContent = t('licenseFree');
-    status.classList.remove('pro');
-    btn.textContent = t('licenseUpgrade');
-  }
-}
+// ===== 授权模式 =====
 
 /**
  * 当前授权模式（UI 只认这一个判断）
@@ -1421,123 +1391,167 @@ function getLicenseMode() {
     : LICENSE_MODES.FREE;
 }
 
-/**
- * 当前是否不受网站数量限制（Chrome/Firefox 恒为 true，Safari 仅 Pro 为 true）
- */
+/** 是否不受网站数量限制（Chrome/Firefox 恒真，Safari 仅 Pro 为真） */
 function hasUnlimitedSites() {
   return getLicenseMode() !== LICENSE_MODES.FREE;
 }
 
-/**
- * 格式化网站计数：Free 显示 count/3，其余只显示数量（不显示 ∞）
- */
+/** Free 显示 count/3，其余只显示数量（不显示 ∞） */
 function formatSiteCount(count) {
-  if (getLicenseMode() === LICENSE_MODES.FREE) return `${count}/${APP_LIMITS.FREE_SITE_LIMIT}`;
+  if (getLicenseMode() === LICENSE_MODES.FREE) return count + '/' + APP_LIMITS.FREE_SITE_LIMIT;
   return String(count);
 }
 
 /**
- * 显示升级弹窗（内联自 shared/upgrade-dialog.js）
+ * 渲染授权相关区域。
+ *
+ * Chrome/Firefox   → 完全没有付费 UI
+ * Safari Free      → 计数 count/3 + 升级入口
+ * Safari Pro       → 只显示 PRO 徽章，不出现任何购买 CTA
+ * 权限存储不可用   → 明确提示，不假装免费版
+ */
+function updateLicenseUI(siteCount) {
+  const mode = getLicenseMode();
+  const storageBroken = _entitlementState.isLimitEnforced && _entitlementState.storageAvailable === false;
+
+  const badge = document.getElementById('planBadge');
+  const countEl = document.getElementById('siteCount');
+  const upgradeGroup = document.getElementById('upgradeGroup');
+  const manageBtn = document.getElementById('manageLicense');
+  const upgradeNote = document.getElementById('upgradeNote');
+  const notice = document.getElementById('licenseNotice');
+
+  if (badge) badge.hidden = mode !== LICENSE_MODES.PRO;
+  if (countEl) countEl.textContent = formatSiteCount(siteCount);
+
+  if (storageBroken) {
+    if (upgradeGroup) upgradeGroup.hidden = true;
+    if (notice) {
+      notice.hidden = false;
+      notice.textContent = t('purchaseUnavailable');
+    }
+    return;
+  }
+
+  if (notice) notice.hidden = true;
+
+  if (mode === LICENSE_MODES.FREE) {
+    if (upgradeGroup) upgradeGroup.hidden = false;
+    if (manageBtn) manageBtn.textContent = t('licenseUpgrade');
+    if (upgradeNote) upgradeNote.textContent = t('upgradeNote');
+  } else if (upgradeGroup) {
+    upgradeGroup.hidden = true;
+  }
+}
+
+// ===== 升级弹窗（plan Phase E）=====
+
+/**
+ * 显示升级弹窗。
+ * @param {{price?: string|null}} [options]
  * @returns {Promise<boolean>} true=用户点击 Upgrade
  */
-function showUpgradeDialog() {
-  const tr = (key) => t(key);
-  return new Promise((resolve) => {
+function showUpgradeDialog({ price } = {}) {
+  return new Promise(function (resolve) {
     const existing = document.getElementById('upgradeDialogOverlay');
     if (existing) existing.remove();
 
+    const previouslyFocused = document.activeElement;
+
     const overlay = document.createElement('div');
     overlay.id = 'upgradeDialogOverlay';
+    overlay.className = 'nl-overlay';
     overlay.setAttribute('role', 'dialog');
     overlay.setAttribute('aria-modal', 'true');
-    overlay.style.cssText = [
-      'position:fixed', 'inset:0', 'background:rgba(0,0,0,0.5)',
-      'display:flex', 'align-items:center', 'justify-content:center',
-      'z-index:2147483647',
-      'font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif',
-    ].join(';');
+    overlay.setAttribute('aria-labelledby', 'upgradeDialogTitle');
 
     const dialog = document.createElement('div');
-    dialog.style.cssText = [
-      'background:#fff', 'color:#1d1d1f', 'border-radius:12px', 'padding:24px',
-      'max-width:360px', 'width:calc(100% - 48px)',
-      'box-shadow:0 8px 32px rgba(0,0,0,0.2)', 'text-align:center',
-    ].join(';');
+    dialog.className = 'nl-dialog';
 
     const title = document.createElement('h2');
-    title.textContent = tr('upgradeTitle');
-    title.style.cssText = 'margin:0 0 12px;font-size:20px;font-weight:600';
+    title.id = 'upgradeDialogTitle';
+    title.className = 'nl-dialog-title';
+    title.textContent = t('upgradeTitle');
 
     const body = document.createElement('p');
-    body.textContent = tr('upgradeBody');
-    body.style.cssText = 'margin:0 0 20px;font-size:14px;line-height:1.5;color:#424245';
+    body.className = 'nl-dialog-body';
+    body.textContent = t('upgradeBodyLimit');
 
-    const buttonRow = document.createElement('div');
-    buttonRow.style.cssText = 'display:flex;gap:10px;justify-content:center';
+    const priceLine = document.createElement('p');
+    priceLine.className = 'nl-dialog-body';
+    // 没取到真实价格时只说"一次性购买"，绝不显示硬编码价格
+    priceLine.textContent = price ? price + ' · ' + t('oneTimePurchase') : t('upgradePrice');
+
+    const subline = document.createElement('p');
+    subline.className = 'nl-dialog-body';
+    subline.textContent = t('noSubscription');
+
+    const actions = document.createElement('div');
+    actions.className = 'nl-dialog-actions';
 
     const cancelBtn = document.createElement('button');
-    cancelBtn.textContent = tr('cancelUpgrade');
-    cancelBtn.style.cssText = [
-      'flex:1', 'padding:10px 16px', 'border:1px solid #d2d2d7', 'background:#fff',
-      'color:#1d1d1f', 'border-radius:8px', 'font-size:14px', 'font-weight:500', 'cursor:pointer',
-    ].join(';');
+    cancelBtn.type = 'button';
+    cancelBtn.className = 'nl-btn';
+    cancelBtn.textContent = t('notNow');
 
     const upgradeBtn = document.createElement('button');
-    upgradeBtn.textContent = tr('upgradeButton');
-    upgradeBtn.style.cssText = [
-      'flex:1', 'padding:10px 16px', 'border:none', 'background:#007aff', 'color:#fff',
-      'border-radius:8px', 'font-size:14px', 'font-weight:600', 'cursor:pointer',
-    ].join(';');
+    upgradeBtn.type = 'button';
+    upgradeBtn.className = 'nl-btn nl-btn-primary';
+    upgradeBtn.textContent = t('upgradeToPro');
 
-    buttonRow.appendChild(cancelBtn);
-    buttonRow.appendChild(upgradeBtn);
-    dialog.appendChild(title);
-    dialog.appendChild(body);
-    dialog.appendChild(buttonRow);
+    actions.append(cancelBtn, upgradeBtn);
+    dialog.append(title, body, priceLine, subline, actions);
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 
-    const close = (result) => {
+    const close = function (result) {
       overlay.remove();
-      cancelBtn.onclick = null;
-      upgradeBtn.onclick = null;
-      overlay.onclick = null;
       document.removeEventListener('keydown', onKey);
+      // 焦点回到触发控件（plan Task F1）
+      if (previouslyFocused && typeof previouslyFocused.focus === 'function') previouslyFocused.focus();
       resolve(result);
     };
 
-    cancelBtn.onclick = () => close(false);
-    upgradeBtn.onclick = () => close(true);
-    overlay.onclick = (e) => { if (e.target === overlay) close(false); };
-    const onKey = (e) => { if (e.key === 'Escape') close(false); };
+    const onKey = function (e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        close(false);
+        return;
+      }
+      // 焦点困在弹窗内
+      if (e.key === 'Tab') {
+        const focusables = [cancelBtn, upgradeBtn];
+        const index = focusables.indexOf(document.activeElement);
+        const next = e.shiftKey
+          ? focusables[(index - 1 + focusables.length) % focusables.length]
+          : focusables[(index + 1) % focusables.length];
+        e.preventDefault();
+        next.focus();
+      }
+    };
+
+    cancelBtn.addEventListener('click', function () { close(false); });
+    upgradeBtn.addEventListener('click', function () { close(true); });
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) close(false); });
     document.addEventListener('keydown', onKey);
-    upgradeBtn.focus();
+    cancelBtn.focus();
   });
 }
 
 /**
  * 唤起 Host App 完成 StoreKit 付款。
  *
- * 扩展进程无法弹出系统付款面板，所以这里只能"打开 App"，
- * 拿不到"购买成功"的结果 —— 购买结果要等用户回 Safari、
- * 重新打开 popup 时由 refreshEntitlements() 从 App Group 读到。
- *
- * 原生唤起失败时兜底走 URL scheme（Host App 注册了 imagelazyloadblocker://）。
- *
- * @returns {Promise<boolean>} 是否成功把用户送去付款
+ * 扩展进程无法弹出系统付款面板，所以这里只能"打开 App"。
+ * 购买结果由 background 通过 App Group 读取，并在下次刷新时补做待办。
  */
 async function requestUpgrade() {
-  console.log('[Popup] requestUpgrade: 唤起 Host App 完成 StoreKit 购买');
-
   const resp = await sendMessage(MESSAGE_TYPES.REQUEST_PURCHASE);
-  console.log('[Popup] REQUEST_PURCHASE response:', JSON.stringify(resp));
   if (resp && resp.success) {
     showToast(t('openingHostApp'));
     return true;
   }
 
   // 兜底：原生唤起没成功，试 URL scheme
-  console.warn('[Popup] 原生唤起失败，尝试 URL scheme 兜底');
   try {
     const a = document.createElement('a');
     a.href = 'imagelazyloadblocker://upgrade';
@@ -1555,325 +1569,330 @@ async function requestUpgrade() {
   return false;
 }
 
-/**
- * 显示 Toast 提示
- */
-function showToast(message) {
-  const existingToast = document.querySelector('.toast');
-  if (existingToast) {
-    existingToast.remove();
-  }
+// ===== Toast =====
+
+function showToast(message, action) {
+  const existing = document.querySelector('.nl-toast');
+  if (existing) existing.remove();
 
   const toast = document.createElement('div');
-  toast.className = 'toast';
+  toast.className = 'nl-toast';
+  toast.setAttribute('role', 'status');
   toast.textContent = message;
-  document.body.appendChild(toast);
 
-  setTimeout(() => {
-    toast.remove();
-  }, 2000);
+  if (action) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'nl-link-btn';
+    btn.style.color = 'inherit';
+    btn.textContent = action.label;
+    btn.addEventListener('click', function () {
+      action.onClick();
+      toast.remove();
+    });
+    toast.append(' ', btn);
+  }
+
+  document.body.appendChild(toast);
+  setTimeout(function () { toast.remove(); }, action ? 5000 : 2200);
 }
 
-/**
- * 获取当前标签页的域名
- */
+// ===== 当前网站 =====
+
+/** 取当前标签页的规范化域名（与 background 的匹配规则完全一致） */
 async function getCurrentDomain() {
   const [tab] = await tabs.query({ active: true, currentWindow: true });
   currentTab = tab;
 
-  if (!tab?.url) {
-    return null;
-  }
+  if (!tab || !tab.url) return null;
 
   try {
     const url = new URL(tab.url);
-    if (url.protocol !== 'http:' && url.protocol !== 'https:') {
-      return null;
-    }
-    // 唯一规范化入口：与 background 的匹配规则完全一致
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return null;
     return normalizeHostname(url.hostname);
-  } catch {
+  } catch (e) {
     return null;
   }
 }
 
-/**
- * 检查当前网站是否已配置
- */
+function setSwitchState({ checked, disabled, busy }) {
+  const el = document.getElementById('siteSwitch');
+  if (!el) return;
+  el.setAttribute('aria-checked', checked ? 'true' : 'false');
+  el.disabled = !!disabled;
+  el.dataset.busy = busy ? 'true' : 'false';
+  el.setAttribute('aria-label', checked ? t('removeSite') : t('addCurrentSite'));
+}
+
+function updateModeHelp(mode) {
+  const help = document.getElementById('modeHelp');
+  if (!help) return;
+  if (!currentDomain) {
+    help.textContent = '';
+    return;
+  }
+  help.textContent = mode === STRATEGIES.SCROLL_FALLBACK
+    ? t('compatibilityModeHelp')
+    : t('standardModeHelp');
+}
+
+/** 读取当前网站状态并渲染 */
 async function checkCurrentSite() {
+  const domainEl = document.getElementById('currentDomain');
+  const switchEl = document.getElementById('siteSwitch');
+  const modeSelect = document.getElementById('modeSelect');
+  const siteHelp = document.getElementById('siteHelp');
+
   currentDomain = await getCurrentDomain();
 
-  const domainEl = document.getElementById('currentDomain');
-  const statusEl = document.getElementById('currentStatus');
-  const statusTextEl = document.getElementById('statusText');
-  const toggleBtn = document.getElementById('toggleBtn');
-
   if (!currentDomain) {
-    domainEl.textContent = t('nonWebPage');
-    statusEl.className = 'site-status disabled';
-    statusTextEl.textContent = t('notAvailable');
-    toggleBtn.disabled = true;
-    toggleBtn.textContent = t('cannotAdd');
-    toggleBtn.className = 'toggle-btn';
+    if (domainEl) domainEl.textContent = t('nonWebPage');
+    if (siteHelp) siteHelp.textContent = t('notAvailable');
+    setSwitchState({ checked: false, disabled: true, busy: false });
+    if (modeSelect) modeSelect.disabled = true;
+    updateModeHelp(STRATEGIES.TECH_BLOCK);
+    currentSiteConfig = null;
     return;
   }
 
-  domainEl.textContent = currentDomain;
-
-  // 检查是否已配置
   const configs = await sendMessage(MESSAGE_TYPES.GET_ALL_CONFIGS);
-  const siteConfigs = configs?.data || {};
-  const siteConfig = siteConfigs[currentDomain];
-  const isEnabled = !!siteConfig;
+  const siteConfigs = (configs && configs.data) || {};
+  // 兼容 background 迁移尚未跑完时的遗留 www. 键
+  currentSiteConfig = siteConfigs[currentDomain] || siteConfigs['www.' + currentDomain] || null;
 
-  // 更新滚动选项区域
-  const scrollOption = document.getElementById('scrollOption');
-  const scrollToggle = document.getElementById('currentScrollToggle');
+  const isEnabled = !!currentSiteConfig;
+  const mode = (currentSiteConfig && currentSiteConfig.scrollFallback === true)
+    ? STRATEGIES.SCROLL_FALLBACK
+    : ((currentSiteConfig && currentSiteConfig.strategy) || STRATEGIES.TECH_BLOCK);
 
-  if (isEnabled) {
-    const isScrollFallback = siteConfig.scrollFallback === true;
-    statusEl.className = 'site-status enabled';
-    statusEl.querySelector('.dot').textContent = isScrollFallback ? '↓' : '✓';
-    statusTextEl.textContent = t('enabled');
-    toggleBtn.textContent = t('removeCurrentSite');
-    toggleBtn.className = 'toggle-btn remove';
-    // 启用滚动选项
-    scrollOption.classList.remove('disabled');
-    scrollToggle.disabled = false;
-    scrollToggle.checked = isScrollFallback;
-  } else {
-    statusEl.className = 'site-status disabled';
-    statusEl.querySelector('.dot').textContent = '○';
-    statusTextEl.textContent = t('disabled');
-    toggleBtn.textContent = t('addCurrentSite');
-    toggleBtn.className = 'toggle-btn add';
-    // 禁用滚动选项
-    scrollOption.classList.add('disabled');
-    scrollToggle.disabled = true;
-    scrollToggle.checked = false;
+  if (domainEl) domainEl.textContent = currentDomain;
+  if (siteHelp) siteHelp.textContent = t('siteSwitchHelp');
+  setSwitchState({ checked: isEnabled, disabled: false, busy: false });
+
+  if (modeSelect) {
+    modeSelect.disabled = !isEnabled;
+    modeSelect.value = mode;
+  }
+  updateModeHelp(isEnabled ? mode : STRATEGIES.TECH_BLOCK);
+
+  if (switchEl && !switchEl.dataset.bound) {
+    switchEl.dataset.bound = '1';
+    switchEl.addEventListener('click', onSwitchClick);
   }
 }
 
 /**
- * 切换当前网站的启用状态
+ * 开关点击：只有在权限确认之后才真正切到 ON（plan Task C1）。
  */
-async function toggleCurrentSite() {
-  if (!currentDomain) return;
+async function onSwitchClick() {
+  const switchEl = document.getElementById('siteSwitch');
+  if (!switchEl || !currentDomain || switchEl.disabled) return;
 
-  const configs = await sendMessage(MESSAGE_TYPES.GET_ALL_CONFIGS);
-  const siteConfigs = configs?.data || {};
-  const isEnabled = siteConfigs[currentDomain];
+  const wantOn = switchEl.getAttribute('aria-checked') !== 'true';
+  setSwitchState({ checked: false, disabled: true, busy: true });
 
-  if (isEnabled) {
-    // 移除网站
-    await sendMessage(MESSAGE_TYPES.REMOVE_SITE_CONFIG, { domain: currentDomain });
-    showToast(t('siteRemoved', { domain: currentDomain }));
-  } else {
-    // 添加网站，根据复选框决定是否使用自动滚动
-    const scrollFallback = document.getElementById('currentScrollToggle').checked;
-    const addResp = await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+  if (wantOn) {
+    const modeSelect = document.getElementById('modeSelect');
+    const scrollFallback = !!modeSelect && modeSelect.value === STRATEGIES.SCROLL_FALLBACK;
+    const resp = await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
       domain: currentDomain,
-      strategy: STRATEGIES.TECH_BLOCK,
-      scrollFallback
+      strategy: scrollFallback ? STRATEGIES.SCROLL_FALLBACK : STRATEGIES.TECH_BLOCK,
+      scrollFallback: scrollFallback,
     });
 
-    // 限额拦截：弹出升级对话框
-    if (addResp && addResp.success === false && addResp.error === 'LIMIT_REACHED') {
-      // 后台已经把这次"想启用的网站"存成待办（pendingEntitlementAction），
-      // 购买成功后由 background 补做 —— popup 被关掉也不影响结果。
-      const wantUpgrade = await showUpgradeDialog();
-      if (wantUpgrade) {
-        const sent = await requestUpgrade();
-        // popup 还活着时顺手刷新一下界面；死了也无所谓。
-        if (sent) {
-          await waitForUnlimitedSites();
-          await showEntitlementNotice();
-        }
-      }
-      // 用户取消则什么都不做（不显示 siteAdded toast）
-    } else {
-      showToast(scrollFallback ? t('siteAddedWithScroll', { domain: currentDomain }) : t('siteAdded', { domain: currentDomain }));
+    if (resp && resp.success === false && resp.error === 'LIMIT_REACHED') {
+      // 免费额度用完：先问用户要不要升级，绝不先切到 ON 再回滚
+      setSwitchState({ checked: false, disabled: false, busy: false });
+      await handleLimitReached();
+      return;
     }
+
+    if (resp && resp.success) {
+      showToast(scrollFallback
+        ? t('siteAddedWithScroll', { domain: currentDomain })
+        : t('siteAdded', { domain: currentDomain }));
+    }
+  } else {
+    const removedDomain = currentDomain;
+    const removedConfig = currentSiteConfig;
+    await sendMessage(MESSAGE_TYPES.REMOVE_SITE_CONFIG, { domain: removedDomain });
+    showToast(t('siteRemoved', { domain: removedDomain }), {
+      label: t('undo'),
+      onClick: async function () {
+        await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+          domain: removedDomain,
+          strategy: (removedConfig && removedConfig.strategy) || STRATEGIES.TECH_BLOCK,
+          scrollFallback: !!(removedConfig && removedConfig.scrollFallback === true),
+        });
+        await checkCurrentSite();
+        await loadSiteList();
+      },
+    });
   }
 
-  // 刷新显示
   await checkCurrentSite();
   await loadSiteList();
 }
 
 /**
- * 加载网站列表
+ * 免费额度用完的流程。
+ * 待办已由 background 持久化，popup 被关掉也不会丢。
  */
+async function handleLimitReached() {
+  const wantUpgrade = await showUpgradeDialog({ price: _entitlementState.price || null });
+  if (!wantUpgrade) return;
+
+  const sent = await requestUpgrade();
+  if (!sent) return;
+
+  await waitForUnlimitedSites();
+  await showEntitlementNotice();
+  await checkCurrentSite();
+  await loadSiteList();
+}
+
+// ===== 网站列表 =====
+
 async function loadSiteList() {
   const response = await sendMessage(MESSAGE_TYPES.GET_ALL_CONFIGS);
-  const configs = response?.data || {};
+  const configs = (response && response.data) || {};
 
   const siteList = document.getElementById('siteList');
-
-  // 计数 badge 直接用内存里的权限快照（popup 打开时已预热）。
-  // 这里刻意不做任何原生调用 —— 那是列表空着好几秒的原因。
+  const emptyState = document.getElementById('emptyState');
   const count = Object.keys(configs).length;
-  updateSiteCountBadge(count);
 
-  // 清空列表
+  updateLicenseUI(count);
+
+  if (!siteList || !emptyState) return;
   siteList.innerHTML = '';
 
   if (count === 0) {
-    const emptyDiv = document.createElement('div');
-    emptyDiv.className = 'empty-state';
-    emptyDiv.textContent = t('noSites');
-    siteList.appendChild(emptyDiv);
+    emptyState.hidden = false;
     return;
   }
+  emptyState.hidden = true;
 
-  // 按添加时间排序（最新的在前）
   const entries = Object.entries(configs)
-    .sort((a, b) => (b[1].addedAt || 0) - (a[1].addedAt || 0));
+    .sort(function (a, b) { return (b[1].addedAt || 0) - (a[1].addedAt || 0); });
 
-  entries.forEach(([domain, config]) => {
+  entries.forEach(function (entry) {
+    const domain = entry[0];
+    const config = entry[1];
+
     const item = document.createElement('div');
-    item.className = 'site-item';
-
-    const isScrollEnabled = config.scrollFallback === true;
+    item.className = 'nl-list-item';
 
     const domainSpan = document.createElement('span');
-    domainSpan.className = 'domain';
+    domainSpan.className = 'nl-domain';
     domainSpan.title = domain;
     domainSpan.textContent = domain;
 
-    const scrollLabel = document.createElement('label');
-    scrollLabel.className = 'scroll-toggle';
-    scrollLabel.title = t('useAutoScroll');
-    const scrollCheckbox = document.createElement('input');
-    scrollCheckbox.type = 'checkbox';
-    scrollCheckbox.dataset.domain = domain;
-    if (isScrollEnabled) scrollCheckbox.checked = true;
-    const scrollText = document.createElement('span');
-    scrollText.textContent = t('autoScroll');
-    scrollLabel.append(scrollCheckbox, scrollText);
+    // 只显示"标准 / 兼容"，不暴露 IntersectionObserver、data-src 这类实现细节
+    const modeSpan = document.createElement('span');
+    modeSpan.className = 'nl-mode';
+    modeSpan.textContent = config.scrollFallback === true
+      ? t('compatibilityMode')
+      : t('standardMode');
 
-    const deleteBtn = document.createElement('button');
-    deleteBtn.className = 'delete-btn';
-    deleteBtn.dataset.domain = domain;
-    deleteBtn.title = t('delete');
-    deleteBtn.textContent = '×';
+    const removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.className = 'nl-icon-btn';
+    removeBtn.dataset.domain = domain;
+    removeBtn.title = t('removeSite');
+    removeBtn.setAttribute('aria-label', t('removeSite') + ' ' + domain);
+    removeBtn.textContent = '−';
 
-    item.append(domainSpan, scrollLabel, deleteBtn);
-
+    item.append(domainSpan, modeSpan, removeBtn);
     siteList.appendChild(item);
   });
 
-  // 绑定滚动兜底复选框事件
-  siteList.querySelectorAll('.scroll-toggle input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', async (e) => {
-      const domain = e.target.dataset.domain;
-      const scrollFallback = e.target.checked;
-
-      // 获取当前配置
-      const config = configs[domain];
-      if (config) {
-        await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
-          domain,
-          strategy: config.strategy || STRATEGIES.TECH_BLOCK,
-          scrollFallback
-        });
-        showToast(scrollFallback ? t('autoScrollEnabled') : t('autoScrollDisabled'));
-      }
-    });
-  });
-
-  // 绑定删除按钮事件
-  siteList.querySelectorAll('.delete-btn').forEach(btn => {
-    btn.addEventListener('click', async (e) => {
-      const domain = e.target.dataset.domain;
-      await sendMessage(MESSAGE_TYPES.REMOVE_SITE_CONFIG, { domain });
-      showToast(t('siteDeleted', { domain }));
+  siteList.querySelectorAll('.nl-icon-btn').forEach(function (btn) {
+    btn.addEventListener('click', async function (e) {
+      const domain = e.currentTarget.dataset.domain;
+      const removedConfig = configs[domain];
+      await sendMessage(MESSAGE_TYPES.REMOVE_SITE_CONFIG, { domain: domain });
+      // 轻一点：即时删除 + Undo，不用模态确认（plan Task D2）
+      showToast(t('siteDeleted', { domain: domain }), {
+        label: t('undo'),
+        onClick: async function () {
+          await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+            domain: domain,
+            strategy: (removedConfig && removedConfig.strategy) || STRATEGIES.TECH_BLOCK,
+            scrollFallback: !!(removedConfig && removedConfig.scrollFallback === true),
+          });
+          await loadSiteList();
+          await checkCurrentSite();
+        },
+      });
       await loadSiteList();
       await checkCurrentSite();
     });
   });
 }
 
+// ===== 页脚动作 =====
 
-/**
- * 打开设置页面
- */
 function openSettings() {
   runtime.openOptionsPage();
 }
 
-/**
- * 刷新当前页面
- */
 async function refreshPage() {
-  if (currentTab?.id) {
+  if (currentTab && currentTab.id) {
     await tabs.reload(currentTab.id);
     showToast(t('pageRefreshed'));
   }
 }
 
-// 初始化
-document.addEventListener('DOMContentLoaded', async () => {
-  // 先加载语言设置
+// ===== 模式选择 =====
+
+async function onModeChange(e) {
+  if (!currentDomain || !currentSiteConfig) return;
+
+  const mode = e.target.value;
+  const scrollFallback = mode === STRATEGIES.SCROLL_FALLBACK;
+
+  await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+    domain: currentDomain,
+    strategy: scrollFallback ? STRATEGIES.SCROLL_FALLBACK : STRATEGIES.TECH_BLOCK,
+    scrollFallback: scrollFallback,
+  });
+
+  updateModeHelp(mode);
+  showToast(scrollFallback ? t('autoScrollEnabled') : t('autoScrollDisabled'));
+  await checkCurrentSite();
+  await loadSiteList();
+}
+
+// ===== 初始化 =====
+
+document.addEventListener('DOMContentLoaded', async function () {
   await loadLanguageSetting();
-  // 应用翻译
   applyTranslations();
 
-  // 权限分两步，顺序很重要：
-  //   1) await 本地快照 —— 只是读 storage，毫秒级，拿到后列表立刻能渲染
-  //   2) 异步走原生刷新 —— 慢，且失败也不该影响 popup 可用性，所以绝不 await
+  // 权限分两步：先读快照（毫秒级）渲染，再异步走原生刷新
   await loadCachedEntitlements();
-  updateLicenseRow();
-  refreshEntitlements()
-    .then(async (changed) => {
-      // StoreKit 购买完成后回到 popup：权限变了就重渲染列表、badge 与授权入口
-      if (changed) loadSiteList();
-      // 后台可能刚补做完购买前的待办，给用户一个明确反馈
-      await showEntitlementNotice();
-      await loadSiteList();
-    })
-    .catch(e => console.warn('[Popup] entitlement refresh error', e));
 
-  // 加载当前网站状态和列表
-  checkCurrentSite();
-  loadSiteList();
+  const modeSelect = document.getElementById('modeSelect');
+  if (modeSelect) modeSelect.addEventListener('change', onModeChange);
 
-  // 绑定事件
-  document.getElementById('toggleBtn').addEventListener('click', toggleCurrentSite);
   document.getElementById('openSettings').addEventListener('click', openSettings);
   document.getElementById('refreshPage').addEventListener('click', refreshPage);
 
-  // 授权入口：唤起 Host App（购买 / 恢复购买都在那边）
   const manageLicenseBtn = document.getElementById('manageLicense');
   if (manageLicenseBtn) {
-    manageLicenseBtn.addEventListener('click', () => { requestUpgrade(); });
+    manageLicenseBtn.addEventListener('click', function () { handleLimitReached(); });
   }
 
-  // 绑定当前网站滚动选项事件
-  const scrollToggle = document.getElementById('currentScrollToggle');
-  if (scrollToggle) {
-    scrollToggle.addEventListener('change', async (e) => {
-      if (!currentDomain) return;
+  await checkCurrentSite();
+  await loadSiteList();
 
-      const configs = await sendMessage(MESSAGE_TYPES.GET_ALL_CONFIGS);
-      const siteConfigs = configs?.data || {};
-      const config = siteConfigs[currentDomain];
-
-      if (config) {
-        // 更新配置
-        await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
-          domain: currentDomain,
-          strategy: config.strategy || STRATEGIES.TECH_BLOCK,
-          scrollFallback: e.target.checked
-        });
-        showToast(e.target.checked ? t('autoScrollEnabled') : t('autoScrollDisabled'));
-        // 实时更新状态符号
-        const dot = document.querySelector('#currentStatus .dot');
-        if (dot) {
-          dot.textContent = e.target.checked ? '↓' : '✓';
-        }
-        await loadSiteList();
-      }
-    });
-  }
+  refreshEntitlements()
+    .then(async function (changed) {
+      if (changed) await loadSiteList();
+      // 后台可能刚补做完购买前的待办，给用户一个明确反馈
+      await showEntitlementNotice();
+      await checkCurrentSite();
+      await loadSiteList();
+    })
+    .catch(function (e) { console.warn('[Popup] entitlement refresh error', e); });
 });

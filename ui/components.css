@@ -1,0 +1,406 @@
+/* ui/components.css — 共用组件
+ *
+ * 规则（plan Task C4 / F）：
+ *  · 一个 popover 背景 + 分组行 + 细分隔线；不做"卡片套卡片"
+ *  · 组件只消费 ui/tokens.css 的语义变量
+ *  · 焦点永远可见；动效尊重 prefers-reduced-motion
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--nl-text);
+  background: var(--nl-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* [hidden] 必须压过组件自身的 display */
+[hidden] {
+  display: none !important;
+}
+
+/* 焦点可见（plan Task F2）：绝不 remove outline 而不给替代 */
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--nl-accent) 55%, transparent);
+  outline-offset: 2px;
+  border-radius: var(--nl-radius-sm);
+}
+
+/* ===== 分组 ===== */
+.nl-group {
+  padding: var(--nl-space-3) var(--nl-space-4);
+  border-bottom: 1px solid var(--nl-separator);
+}
+
+.nl-group:last-child {
+  border-bottom: none;
+}
+
+.nl-group-header {
+  display: flex;
+  align-items: center;
+  gap: var(--nl-space-2);
+  margin-bottom: var(--nl-space-2);
+}
+
+.nl-group-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--nl-text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.nl-row {
+  display: flex;
+  align-items: center;
+  gap: var(--nl-space-3);
+  min-height: 28px;
+}
+
+.nl-row-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.nl-text-secondary {
+  color: var(--nl-text-secondary);
+  font-size: 12px;
+}
+
+.nl-help {
+  margin-top: var(--nl-space-2);
+  font-size: 12px;
+  color: var(--nl-text-secondary);
+  overflow-wrap: anywhere;
+}
+
+.nl-domain {
+  font-size: 13px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===== 开关（plan Task C6）
+ * 真开关：role="switch" + aria-checked，可键盘操作，异步期间禁用但不跳布局。
+ */
+.nl-switch {
+  --nl-switch-w: 34px;
+  --nl-switch-h: 20px;
+  flex: none;
+  position: relative;
+  width: var(--nl-switch-w);
+  height: var(--nl-switch-h);
+  padding: 0;
+  border: none;
+  border-radius: calc(var(--nl-switch-h) / 2);
+  background: var(--nl-track);
+  cursor: pointer;
+  transition: background-color var(--nl-duration) var(--nl-ease);
+}
+
+.nl-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(var(--nl-switch-h) - 4px);
+  height: calc(var(--nl-switch-h) - 4px);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: transform var(--nl-duration) var(--nl-ease);
+}
+
+.nl-switch[aria-checked="true"] {
+  background: var(--nl-accent);
+}
+
+.nl-switch[aria-checked="true"]::after {
+  transform: translateX(calc(var(--nl-switch-w) - var(--nl-switch-h)));
+}
+
+.nl-switch[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* 异步中：只变透明度，不改变尺寸，避免布局跳动 */
+.nl-switch[data-busy="true"] {
+  opacity: 0.6;
+}
+
+/* ===== 下拉选择 ===== */
+.nl-select {
+  flex: none;
+  min-width: 132px;
+  padding: 4px 8px;
+  font: inherit;
+  font-size: 12px;
+  color: var(--nl-text);
+  background: var(--nl-surface);
+  border: 1px solid var(--nl-separator);
+  border-radius: var(--nl-radius-sm);
+  cursor: pointer;
+}
+
+.nl-select:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ===== 按钮 ===== */
+.nl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--nl-text);
+  background: var(--nl-surface);
+  border: 1px solid var(--nl-separator);
+  border-radius: var(--nl-radius-sm);
+  cursor: pointer;
+  transition: background-color var(--nl-duration) var(--nl-ease);
+}
+
+.nl-btn:hover:not(:disabled) {
+  background: var(--nl-surface-hover);
+}
+
+.nl-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.nl-btn-primary {
+  color: var(--nl-on-accent);
+  background: var(--nl-accent);
+  border-color: transparent;
+}
+
+.nl-btn-primary:hover:not(:disabled) {
+  background: var(--nl-accent-hover);
+}
+
+.nl-btn-block {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 图标按钮 / 轻量按钮 */
+.nl-icon-btn {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--nl-text-tertiary);
+  background: transparent;
+  border: none;
+  border-radius: var(--nl-radius-sm);
+  cursor: pointer;
+  transition: background-color var(--nl-duration) var(--nl-ease),
+    color var(--nl-duration) var(--nl-ease);
+}
+
+.nl-icon-btn:hover {
+  color: var(--nl-danger);
+  background: color-mix(in srgb, var(--nl-danger) 14%, transparent);
+}
+
+.nl-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  font: inherit;
+  font-size: 12px;
+  color: var(--nl-text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--nl-radius-sm);
+  cursor: pointer;
+  transition: background-color var(--nl-duration) var(--nl-ease),
+    color var(--nl-duration) var(--nl-ease);
+}
+
+.nl-link-btn:hover {
+  color: var(--nl-text);
+  background: var(--nl-surface-hover);
+}
+
+/* ===== 徽章 / 计数 ===== */
+.nl-badge {
+  flex: none;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--nl-on-accent);
+  background: var(--nl-accent);
+  border-radius: 4px;
+}
+
+.nl-count {
+  flex: none;
+  font-size: 12px;
+  color: var(--nl-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== 列表 ===== */
+.nl-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 208px;
+  overflow-y: auto;
+}
+
+.nl-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--nl-space-2);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--nl-separator);
+}
+
+.nl-list-item:last-child {
+  border-bottom: none;
+}
+
+.nl-list-item .nl-domain {
+  flex: 1;
+  min-width: 0;
+  font-weight: 400;
+}
+
+.nl-list-item .nl-mode {
+  flex: none;
+  font-size: 11px;
+  color: var(--nl-text-secondary);
+}
+
+.nl-empty {
+  padding: var(--nl-space-4) 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--nl-text-secondary);
+}
+
+/* ===== Toast ===== */
+.nl-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  max-width: calc(100% - 32px);
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--nl-on-accent);
+  background: rgba(0, 0, 0, 0.82);
+  border-radius: var(--nl-radius-sm);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  animation: nl-toast-in var(--nl-duration) var(--nl-ease);
+}
+
+@keyframes nl-toast-in {
+  from { opacity: 0; transform: translate(-50%, 6px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ===== 弹窗（升级提示） ===== */
+.nl-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--nl-space-4);
+  background: rgba(0, 0, 0, 0.42);
+  z-index: 2000;
+}
+
+.nl-dialog {
+  width: 100%;
+  max-width: 300px;
+  padding: var(--nl-space-5);
+  text-align: center;
+  background: var(--nl-surface);
+  border: 1px solid var(--nl-separator);
+  border-radius: var(--nl-radius-md);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+.nl-dialog-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.nl-dialog-body {
+  margin-top: var(--nl-space-2);
+  font-size: 12px;
+  color: var(--nl-text-secondary);
+  overflow-wrap: anywhere;
+}
+
+.nl-dialog-actions {
+  display: flex;
+  gap: var(--nl-space-2);
+  margin-top: var(--nl-space-5);
+}
+
+.nl-dialog-actions .nl-btn {
+  flex: 1;
+}
+
+/* ===== 滚动条 ===== */
+.nl-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.nl-list::-webkit-scrollbar-thumb {
+  background: var(--nl-track);
+  border-radius: 3px;
+}
+
+/* ===== 动效偏好（plan Task F4） ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* RTL：逻辑属性已经保证顺序，这里只处理需要镜像的图标 */
+[dir="rtl"] .nl-switch::after {
+  left: auto;
+  right: 2px;
+}
+
+[dir="rtl"] .nl-switch[aria-checked="true"]::after {
+  transform: translateX(calc(-1 * (var(--nl-switch-w) - var(--nl-switch-h))));
+}
