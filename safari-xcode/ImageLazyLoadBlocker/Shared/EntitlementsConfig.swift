@@ -15,6 +15,17 @@ enum EntitlementsConfig {
     /// UserDefaults 中存储权限 JSON 的键。
     static let storeKey = "entitlements"
 
-    /// StoreKit 2 商品 ID（v2 接入真实内购时使用）。v1 Mock 不使用。
+    /// StoreKit 2 商品 ID。全工程唯一来源（.storekit 配置、App Store Connect 必须一致）。
+    ///
+    /// ⚠️ 决策记录（plan Task A8）：
+    ///   如果该商品**尚未**在 App Store Connect 创建，建议改成产品级 ID
+    ///   "com.lingyi01.imagelazyloadblocker.pro.lifetime"，这样以后加新能力
+    ///   （例如 Global Mode）不需要再新建商品。
+    ///   如果已经在 App Store Connect 建立，必须保持原样 —— 改名会让已购用户失去权益。
+    ///   本地 .storekit 配置显示尚未与 App Store Connect 同步过，请以 App Store Connect
+    ///   后台实际状态为准再决定是否改名；改名时同步修改：
+    ///     1. 这一行
+    ///     2. ImageLazyLoadBlocker.storekit 里的 productID
+    ///     3. App Store Connect 的商品 ID
     static let unlimitedSitesProductID = "com.lingyi01.imagelazyloadblocker.unlimitedsites"
 }

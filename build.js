@@ -37,20 +37,49 @@ const SAFARI_CONFIG = {
   XCODE_PROJECT_DIR: 'safari-xcode',
 };
 
-// 获取或初始化版本号
-function getVersion() {
+// 读取 version.json（marketing version + build number）
+function readVersionFile() {
   if (fs.existsSync(VERSION_FILE)) {
-    const data = JSON.parse(fs.readFileSync(VERSION_FILE, 'utf8'));
-    return data.version;
+    try {
+      return JSON.parse(fs.readFileSync(VERSION_FILE, 'utf8'));
+    } catch {
+      // 损坏时按下面重建
+    }
   }
+  return {};
+}
+
+// 获取 marketing version（CFBundleShortVersionString / MARKETING_VERSION）
+function getVersion() {
+  const data = readVersionFile();
+  if (data.version) return data.version;
   // 从 manifest.json 读取初始版本
   const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
   return manifest.version || '1.0.0';
 }
 
-// 保存版本号
-function saveVersion(version) {
-  fs.writeFileSync(VERSION_FILE, JSON.stringify({ version, updatedAt: new Date().toISOString() }, null, 2));
+// 获取 build number（CFBundleVersion / CURRENT_PROJECT_VERSION）
+// 独立于 marketing version 单调递增；App Store 只要求它比上次大。
+function getBuildNumber() {
+  const data = readVersionFile();
+  const n = Number(data.buildNumber);
+  return Number.isFinite(n) && n > 0 ? Math.floor(n) : 1;
+}
+
+// 递增 build number，不碰 marketing version
+function bumpBuildNumber() {
+  const n = getBuildNumber() + 1;
+  saveVersion(getVersion(), n);
+  console.log(`🔢 Build number: ${n - 1} → ${n}`);
+  return n;
+}
+
+// 保存版本号（保留 build number）
+function saveVersion(version, buildNumber = getBuildNumber()) {
+  fs.writeFileSync(
+    VERSION_FILE,
+    JSON.stringify({ version, buildNumber, updatedAt: new Date().toISOString() }, null, 2) + '\n'
+  );
   // 同时更新 manifest.json
   const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
   manifest.version = version;
@@ -93,6 +122,11 @@ function bumpVersion(type = 'patch') {
 
   saveVersion(newVersion);
   return newVersion;
+}
+
+// 显示当前版本
+function printVersion() {
+  console.log(`Current version: v${getVersion()} (build ${getBuildNumber()})`);
 }
 
 // 在 HTML 文件中注入版本号
@@ -386,7 +420,7 @@ function buildFirefox(version) {
   console.log('✅ Firefox build complete:', zipPath);
 }
 
-function buildSafari(version) {
+function buildSafari(version, buildNumber = getBuildNumber()) {
   console.log('\n📦 Building for Safari...');
   const safariDir = path.join(BUILD_DIR, 'safari-temp');
   // Safari 产物是一个目录（供 xcrun safari-web-extension-converter 消费），
@@ -444,14 +478,14 @@ function buildSafari(version) {
   console.log(`   Extension source dir: ${finalDir}`);
 
   // 同步扩展源进冻结的 Xcode 工程（覆盖 Resources，不删除工程/Swift 代码）
-  syncSafariResources(finalDir);
+  syncSafariResources(finalDir, buildNumber);
 }
 
 /**
  * 将构建好的扩展源目录同步进冻结的 Xcode 工程的 Extension Resources 目录。
  * 仅覆盖 JS/HTML/CSS/locales 等资源文件，绝不删除工程或 Swift 文件。
  */
-function syncSafariResources(extensionSourceDir) {
+function syncSafariResources(extensionSourceDir, buildNumber = getBuildNumber()) {
   const projectName = SAFARI_CONFIG.APP_NAME;
   const resourcesDir = path.join(
     SAFARI_CONFIG.XCODE_PROJECT_DIR,
@@ -472,17 +506,21 @@ function syncSafariResources(extensionSourceDir) {
   console.log(`  ✅ Synced → ${resourcesDir}`);
 
   // 同步扩展版本号到 Xcode 工程的 MARKETING_VERSION / CURRENT_PROJECT_VERSION
-  // 这样 Host App 的 CFBundleShortVersionString 会跟随 manifest 版本号
-  syncXcodeVersion(extensionSourceDir);
+  syncXcodeVersion(extensionSourceDir, buildNumber);
   console.log('   在 Xcode 里 Cmd+Shift+K (Clean) 后 Cmd+R 重新运行');
 }
 
 /**
- * 把扩展版本号同步到 Xcode pbxproj 的 MARKETING_VERSION (CFBundleShortVersionString)
- * 和 CURRENT_PROJECT_VERSION (CFBundleVersion)。
+ * 把版本号同步到 Xcode pbxproj。
+ *
+ * MARKETING_VERSION        = CFBundleShortVersionString（用户可见的 1.13.0）
+ * CURRENT_PROJECT_VERSION  = CFBundleVersion（独立递增的整数 build 号）
+ *
+ * 两者语义不同，绝不共用同一个值 —— 以前把完整版本号塞进 build 号，
+ * 结果是"每次本地 Safari 构建都改一次营销版本"。
  * 两个 target（App + Extension）× 两个 config（Debug + Release）= 8 处替换。
  */
-function syncXcodeVersion(extensionSourceDir) {
+function syncXcodeVersion(extensionSourceDir, buildNumber = getBuildNumber()) {
   const projectName = SAFARI_CONFIG.APP_NAME;
   const pbxprojPath = path.join(
     SAFARI_CONFIG.XCODE_PROJECT_DIR,
@@ -517,18 +555,17 @@ function syncXcodeVersion(extensionSourceDir) {
     /MARKETING_VERSION = [^;]+;/g,
     `MARKETING_VERSION = ${version};`
   );
-  // CURRENT_PROJECT_VERSION = N;  (build 号，单调递增)
-  // 用完整版本号作为 build 号，保证每次 patch bump 都递增
+  // CURRENT_PROJECT_VERSION = N;  (build 号，单调递增，与 marketing version 无关)
   content = content.replace(
     /CURRENT_PROJECT_VERSION = [^;]+;/g,
-    `CURRENT_PROJECT_VERSION = ${version};`
+    `CURRENT_PROJECT_VERSION = ${buildNumber};`
   );
 
   if (content !== before) {
     fs.writeFileSync(pbxprojPath, content);
-    console.log(`  🔧 Synced Xcode version → MARKETING_VERSION=${version}, CURRENT_PROJECT_VERSION=${version}`);
+    console.log(`  🔧 Synced Xcode version → MARKETING_VERSION=${version}, CURRENT_PROJECT_VERSION=${buildNumber}`);
   } else {
-    console.log(`  ℹ️  Xcode 版本号已为 ${version}，无需更新`);
+    console.log(`  ℹ️  Xcode 版本号已为 ${version} (build ${buildNumber})，无需更新`);
   }
 }
 
@@ -621,22 +658,22 @@ function injectBundleId(pbxprojPath) {
   }
 }
 
-function buildAll(version) {
+function buildAll(version, buildNumber = getBuildNumber()) {
   console.log('🔨 Building Image Lazy Load Blocker...');
-  console.log(`📌 Version: v${version}`);
+  console.log(`📌 Version: v${version} (build ${buildNumber})`);
 
-  // 同步版本号到 manifest 文件
-  saveVersion(version);
+  // 同步版本号到 manifest 文件（不改 build number）
+  saveVersion(version, buildNumber);
 
   // 确保 dist 目录存在（不清空）
   ensureDir(BUILD_DIR);
 
   buildChrome(version);
   buildFirefox(version);
-  buildSafari(version);
+  buildSafari(version, buildNumber);
 
   console.log('\n🎉 Build complete!');
-  console.log(`   Version: v${version}`);
+  console.log(`   Version: v${version} (build ${buildNumber})`);
   console.log(`   Output: ${BUILD_DIR}/`);
 }
 
@@ -655,11 +692,13 @@ if (target === 'bump') {
   bumpVersion(bumpType);
 } else if (target === 'version') {
   // 显示当前版本号
-  console.log(`Current version: v${getVersion()}`);
+  printVersion();
 } else if (!target || target === 'all') {
   // 构建全部（不递增版本）
-  const version = getVersion();
-  buildAll(version);
+  buildAll(getVersion());
+} else if (target === 'build-number') {
+  // 只递增 CFBundleVersion，不碰 marketing version，也不构建
+  bumpBuildNumber();
 } else if (target === 'chrome') {
   const version = getVersion();
   buildChrome(version);
@@ -667,14 +706,13 @@ if (target === 'bump') {
   const version = getVersion();
   buildFirefox(version);
 } else if (target === 'safari') {
-  // Safari 构建自动递增 patch 版本，方便区分每次修改的构建
-  const newVersion = bumpVersion('patch');
-  buildSafari(newVersion);
+  // 只构建，绝不改 marketing version —— 发版是显式动作（release:patch/minor）。
+  buildSafari(getVersion());
 } else if (target === 'safari-init') {
   // 首次生成（或重建）冻结的 Xcode 工程。日常迭代不要用，会覆盖工程。
   initSafariXcodeProject();
 } else if (['patch', 'minor', 'major'].includes(target)) {
-  // 递增版本并构建全部
+  // 递增 marketing version 并构建全部（发布动作）
   const newVersion = bumpVersion(target);
   buildAll(newVersion);
 } else {
@@ -685,13 +723,14 @@ if (target === 'bump') {
   console.log('  all             Build all (no version change)');
   console.log('  chrome          Build Chrome only (no version change)');
   console.log('  firefox         Build Firefox only (no version change)');
-  console.log('  safari          Build Safari (auto patch bump, syncs into frozen safari-xcode/ project)');
+  console.log('  safari          Build Safari only (NO marketing version change)');
   console.log('  safari-init     Generate the frozen Xcode project ONCE (do NOT use for daily builds)');
+  console.log('  build-number    Increment CFBundleVersion (build number) only');
   console.log('  patch           Build all with patch version bump (1.0.0 → 1.0.1)');
   console.log('  minor           Build all with minor version bump (1.0.0 → 1.1.0)');
   console.log('  major           Build all with major version bump (1.0.0 → 2.0.0)');
-  console.log('  bump [type]     Only bump version without build');
-  console.log('  version         Show current version');
+  console.log('  bump [type]     Only bump marketing version without build');
+  console.log('  version         Show current version + build number');
   console.log('');
   console.log('Examples:');
   console.log('  node build.js              # Build all');

@@ -10,18 +10,18 @@
       "internalID" : "7D1E9B52",
       "localizations" : [
         {
-          "description" : "Unlock unlimited websites in No Lazy Load.",
-          "displayName" : "Unlimited Websites",
+          "description" : "Unlock unlimited enabled websites with a one-time purchase.",
+          "displayName" : "No Lazyload Pro",
           "locale" : "en_US"
         },
         {
-          "description" : "解锁无限网站数量。",
-          "displayName" : "无限网站",
+          "description" : "一次性购买，解锁无限启用网站数量。",
+          "displayName" : "No Lazyload Pro",
           "locale" : "zh_CN"
         }
       ],
       "productID" : "com.lingyi01.imagelazyloadblocker.unlimitedsites",
-      "referenceName" : "Unlimited Websites",
+      "referenceName" : "No Lazyload Pro",
       "type" : "NonConsumable"
     }
   ],
