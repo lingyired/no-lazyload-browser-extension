@@ -1,155 +1,105 @@
 {
   "appName": {
-    "message": "No lazyload - Dezactivează încărcarea leneșă a imaginilor",
-    "description": "Extension name"
+    "message": "No Lazyload"
   },
   "appDescription": {
     "message": "Dezactivează încărcarea leneșă a imaginilor pe site-uri, încarcă toate imaginile odată",
     "description": "Extension description"
   },
   "currentSite": {
-    "message": "Site curent",
-    "description": "Current site section title"
+    "message": "Site curent"
   },
   "enabled": {
-    "message": "Activat",
-    "description": "Status: enabled"
+    "message": "Activat"
   },
   "disabled": {
-    "message": "Dezactivat",
-    "description": "Status: disabled"
+    "message": "Dezactivat"
   },
   "notAvailable": {
-    "message": "Indisponibil",
-    "description": "Status: not available"
+    "message": "Indisponibil"
   },
   "nonWebPage": {
-    "message": "Pagină non-web",
-    "description": "Non-web page message"
+    "message": "Pagină non-web"
   },
   "cannotAdd": {
-    "message": "Nu se poate adăuga",
-    "description": "Cannot add button"
+    "message": "Nu se poate adăuga"
   },
   "addCurrentSite": {
-    "message": "Adaugă site-ul curent",
-    "description": "Add button"
+    "message": "Adaugă site-ul curent"
   },
   "removeCurrentSite": {
-    "message": "Elimină site-ul curent",
-    "description": "Remove button"
+    "message": "Elimină site-ul curent"
   },
   "useAutoScroll": {
-    "message": "Folosește derularea automată",
-    "description": "Auto-scroll option"
+    "message": "Folosește derularea automată în locul blocării tehnice"
   },
   "autoScrollDesc": {
-    "message": "Derulează automat în jos pentru a declanșa încărcarea; potrivit pentru site-urile unde blocarea tehnică eșuează",
-    "description": "Auto-scroll description"
+    "message": "Derulează automat în jos pentru a declanșa încărcarea; potrivit pentru site-urile unde blocarea tehnică eșuează"
   },
   "configuredSites": {
-    "message": "Site-uri configurate",
-    "description": "Configured sites section title"
+    "message": "Site-uri configurate"
   },
   "noSites": {
-    "message": "Niciun site configurat",
-    "description": "Empty state message"
+    "message": "Niciun site configurat"
   },
   "fullSettings": {
-    "message": "Setări complete",
-    "description": "Settings button"
+    "message": "Setări complete"
   },
   "refreshPage": {
-    "message": "Reîmprospătează pagina",
-    "description": "Refresh button"
+    "message": "Reîmprospătează pagina"
   },
   "siteAdded": {
-    "message": "Adăugat $domain$",
-    "description": "Site added toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Adăugat {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Adăugat $domain$ (Derulare automată)",
-    "description": "Site added with auto-scroll toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Adăugat {domain} (Derulare automată)"
   },
   "siteRemoved": {
-    "message": "Eliminat $domain$",
-    "description": "Site removed toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Eliminat {domain}"
   },
   "siteDeleted": {
-    "message": "Șters $domain$",
-    "description": "Site deleted toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Șters {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Derulare automată activată",
-    "description": "Auto-scroll enabled toast"
+    "message": "Derulare automată activată"
   },
   "autoScrollDisabled": {
-    "message": "Derulare automată dezactivată",
-    "description": "Auto-scroll disabled toast"
+    "message": "Derulare automată dezactivată"
   },
   "pageRefreshed": {
-    "message": "Pagina reîmprospătată",
-    "description": "Page refreshed toast"
+    "message": "Pagina reîmprospătată"
   },
   "autoScroll": {
-    "message": "Derulare automată",
-    "description": "Auto-scroll label"
+    "message": "Derulare automată"
   },
   "settingsTitle": {
     "message": "Setări - Image Lazy Load Blocker",
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "Lista de configurări a site-urilor",
-    "description": "Site configuration list section"
+    "message": "Lista de configurări a site-urilor"
   },
   "scrollSpeed": {
-    "message": "Viteza de derulare (ms)",
-    "description": "Scroll speed label"
+    "message": "Viteza de derulare (ms)"
   },
   "stayDuration": {
-    "message": "Durata de staționare (ms)",
-    "description": "Stay duration label"
+    "message": "Durata de staționare (ms)"
   },
   "returnToTop": {
-    "message": "Întoarce-te sus după finalizare",
-    "description": "Return to top option"
+    "message": "Întoarce-te sus după finalizare"
   },
   "fallbackToScroll": {
     "message": "Folosește automat derularea ca rezervă când blocarea tehnică eșuează",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
-    "message": "Arată notificarea de interceptare reușită",
-    "description": "Show toast option"
+    "message": "Arată notificarea de interceptare reușită"
   },
   "save": {
-    "message": "Salvează",
-    "description": "Save button"
+    "message": "Salvează"
   },
   "saved": {
-    "message": "Salvat",
-    "description": "Saved toast"
+    "message": "Salvat"
   },
   "siteManagement": {
     "message": "Gestionare site-uri",
@@ -180,15 +130,249 @@
     "description": "Cancel button"
   },
   "author": {
-    "message": "de",
-    "description": "Author prefix"
+    "message": "de"
   },
   "tools": {
-    "message": "Instrumente",
-    "description": "Tools label"
+    "message": "Instrumente"
   },
   "languageSettings": {
-    "message": "Setări limbă",
-    "description": "Language settings section title"
+    "message": "Setări limbă"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "delete": {
+    "message": "Șterge"
+  },
+  "upgradeTitle": {
+    "message": "Unlock Pro"
+  },
+  "upgradeBody": {
+    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+  },
+  "upgradeButton": {
+    "message": "Upgrade"
+  },
+  "cancelUpgrade": {
+    "message": "Cancel"
+  },
+  "siteLimitReached": {
+    "message": "Site limit reached"
+  },
+  "importPartial": {
+    "message": "Imported {added} of {total} sites. Free limit is 3."
+  },
+  "openingHostApp": {
+    "message": "Opening Host App to complete purchase…"
+  },
+  "upgradeOpenFailed": {
+    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+  },
+  "licenseFree": {
+    "message": "Free · up to 3 websites"
+  },
+  "licensePro": {
+    "message": "Pro · unlimited websites"
+  },
+  "licenseUpgrade": {
+    "message": "Upgrade to Pro"
+  },
+  "licenseManage": {
+    "message": "Manage / Restore"
+  },
+  "proBadge": {
+    "message": "PRO"
+  },
+  "noticeSiteEnabled": {
+    "message": "Pro unlocked · {domain} was enabled"
+  },
+  "purchaseUnavailable": {
+    "message": "Purchases are temporarily unavailable. Please try again later."
+  },
+  "currentWebsite": {
+    "message": "Current Website"
+  },
+  "siteSwitchHelp": {
+    "message": "Load all images on this website without lazy loading."
+  },
+  "mode": {
+    "message": "Mode"
+  },
+  "standardMode": {
+    "message": "Standard"
+  },
+  "compatibilityMode": {
+    "message": "Compatibility"
+  },
+  "standardModeHelp": {
+    "message": "Loads images immediately using No Lazyload's normal engine."
+  },
+  "compatibilityModeHelp": {
+    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+  },
+  "enabledWebsites": {
+    "message": "Enabled Websites"
+  },
+  "removeSite": {
+    "message": "Remove"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "upgradeNote": {
+    "message": "Unlimited websites · One-time purchase, no subscription"
+  },
+  "upgradePrice": {
+    "message": "One-time purchase"
+  },
+  "oneTimePurchase": {
+    "message": "One-time purchase"
+  },
+  "noSubscription": {
+    "message": "No subscription"
+  },
+  "upgradeToPro": {
+    "message": "Upgrade to Pro"
+  },
+  "notNow": {
+    "message": "Not Now"
+  },
+  "upgradeBodyLimit": {
+    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+  },
+  "siteListTitle": {
+    "message": "Site-uri configurate"
+  },
+  "emptyState": {
+    "message": "Niciun site configurat"
+  },
+  "autoScrollHelp": {
+    "message": "Când este activat, dezactivează blocarea tehnică și declanșează încărcarea prin derulare automată în jos"
+  },
+  "scrollParams": {
+    "message": "Parametri de derulare automată"
+  },
+  "saveGlobal": {
+    "message": "Salvează setările globale"
+  },
+  "importExport": {
+    "message": "Import/Export"
+  },
+  "exportConfig": {
+    "message": "Exportă configurația"
+  },
+  "importConfig": {
+    "message": "Importă configurația"
+  },
+  "deleteConfirm": {
+    "message": "Sigur doriți să ștergeți configurația pentru {domain}?"
+  },
+  "deleted": {
+    "message": "Șters"
+  },
+  "scrollEnabled": {
+    "message": "Derulare automată activată"
+  },
+  "scrollDisabled": {
+    "message": "Derulare automată dezactivată"
+  },
+  "configImported": {
+    "message": "Configurație importată"
+  },
+  "configExported": {
+    "message": "Configurație exportată"
+  },
+  "importFailed": {
+    "message": "Import eșuat: "
+  },
+  "invalidConfig": {
+    "message": "Format de fișier de configurare nevalid"
+  },
+  "saveLanguage": {
+    "message": "Salvează limba"
+  },
+  "languageSaved": {
+    "message": "Limba salvată"
+  },
+  "advancedSettings": {
+    "message": "Setări avansate"
+  },
+  "lazyAttributes": {
+    "message": "Atribute de încărcare leneșă"
+  },
+  "lazyAttributesHelp": {
+    "message": "Detectează aceste atribute pentru a încărca imagini, separate prin virgulă"
+  },
+  "placeholderPatterns": {
+    "message": "Detectare substituenți"
+  },
+  "placeholderPatternsHelp": {
+    "message": "Imaginile cu src care conțin aceste cuvinte cheie vor fi tratate ca substituenți, separate prin virgulă"
+  },
+  "resetToDefault": {
+    "message": "Resetează la implicit"
+  },
+  "attributesSaved": {
+    "message": "Atribute salvate"
+  },
+  "attributesReset": {
+    "message": "Resetat la configurația implicită"
+  },
+  "otherExtensions": {
+    "message": "Mai multe extensii de la autor"
+  },
+  "newtab01Desc": {
+    "message": "Filă nouă bazată pe marcaje. Deschide folderele ca grupuri de file sau în vizualizare divizată. 12 teme încorporate + teme personalizate nelimitate."
+  },
+  "licenseTitle": {
+    "message": "License"
+  },
+  "compatibilityModeHelpSection": {
+    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+  },
+  "generalSettings": {
+    "message": "General"
+  },
+  "settingsSubtitle": {
+    "message": "Disable image lazy loading · Full settings"
+  },
+  "scrollDuration": {
+    "message": "Scroll duration (seconds)"
+  },
+  "stayAtBottom": {
+    "message": "Pause at bottom (seconds)"
+  },
+  "useAutoScrollGlobal": {
+    "message": "Use Compatibility Mode for all enabled websites by default"
+  },
+  "detectionRules": {
+    "message": "Detection Rules"
+  },
+  "advancedWarning": {
+    "message": "Changing these values can prevent images from loading correctly."
+  },
+  "saveChanges": {
+    "message": "Save Changes"
+  },
+  "importExportHelp": {
+    "message": "The file includes each website mode and all global settings."
+  },
+  "plan": {
+    "message": "Plan"
+  },
+  "planFreeDetail": {
+    "message": "Free · {count} of {limit} websites enabled"
+  },
+  "planProDetail": {
+    "message": "No Lazyload Pro · Unlimited websites unlocked"
+  },
+  "managePurchases": {
+    "message": "Manage Purchases"
+  },
+  "github": {
+    "message": "GitHub"
+  },
+  "privacy": {
+    "message": "Privacy"
   }
 }

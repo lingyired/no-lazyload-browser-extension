@@ -36,6 +36,7 @@ const LANGUAGES = {
   'uk': { name: 'Українська', flag: '🇺🇦' },
   'ur': { name: 'اردو', flag: '🇵🇰' },
   'vi': { name: 'Tiếng Việt', flag: '🇻🇳' },
+  'zh_CN': { name: '简体中文', flag: '🇨🇳' },
   'zh_HK': { name: '繁體中文 (香港)', flag: '🇭🇰' },
   'zh_TW': { name: '繁體中文 (台灣)', flag: '🇹🇼' }
 };
@@ -143,10 +144,10 @@ class I18nManager {
       return text;
     }
 
-    // Fallback to browser i18n API
+    // Fallback to browser i18n API（Safari 等环境可能没有 getMessage）
     const runtime = typeof browser !== 'undefined' ? browser : chrome;
-    if (runtime.i18n) {
-      return runtime.i18n.getMessage(key, substitutions);
+    if (runtime && runtime.i18n && typeof runtime.i18n.getMessage === 'function') {
+      return runtime.i18n.getMessage(key, substitutions) || key;
     }
 
     return key;

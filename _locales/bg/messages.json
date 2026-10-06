@@ -1,155 +1,105 @@
 {
   "appName": {
-    "message": "No lazyload - Деактивиране на мързеливото зареждане на изображения",
-    "description": "Extension name"
+    "message": "No Lazyload"
   },
   "appDescription": {
     "message": "Деактивирайте мързеливото зареждане на изображения в сайтовете, заредете всички изображения наведнъж",
     "description": "Extension description"
   },
   "currentSite": {
-    "message": "Текущ сайт",
-    "description": "Current site section title"
+    "message": "Текущ сайт"
   },
   "enabled": {
-    "message": "Активирано",
-    "description": "Status: enabled"
+    "message": "Активирано"
   },
   "disabled": {
-    "message": "Деактивирано",
-    "description": "Status: disabled"
+    "message": "Деактивирано"
   },
   "notAvailable": {
-    "message": "Не е налично",
-    "description": "Status: not available"
+    "message": "Не е налично"
   },
   "nonWebPage": {
-    "message": "Не е уеб страница",
-    "description": "Non-web page message"
+    "message": "Не е уеб страница"
   },
   "cannotAdd": {
-    "message": "Не може да се добави",
-    "description": "Cannot add button"
+    "message": "Не може да се добави"
   },
   "addCurrentSite": {
-    "message": "Добавяне на текущия сайт",
-    "description": "Add button"
+    "message": "Добавяне на текущия сайт"
   },
   "removeCurrentSite": {
-    "message": "Премахване на текущия сайт",
-    "description": "Remove button"
+    "message": "Премахване на текущия сайт"
   },
   "useAutoScroll": {
-    "message": "Използвай автоматично превъртане",
-    "description": "Auto-scroll option"
+    "message": "Използвай автоматично превъртане вместо техническо блокиране"
   },
   "autoScrollDesc": {
-    "message": "Превъртете автоматично надолу, за да задействате зареждането; подходящо за сайтове, където техническата блокировка не сработва",
-    "description": "Auto-scroll description"
+    "message": "Превъртете автоматично надолу, за да задействате зареждането; подходящо за сайтове, където техническата блокировка не сработва"
   },
   "configuredSites": {
-    "message": "Конфигурирани сайтове",
-    "description": "Configured sites section title"
+    "message": "Конфигурирани сайтове"
   },
   "noSites": {
-    "message": "Няма конфигурирани сайтове",
-    "description": "Empty state message"
+    "message": "Няма конфигурирани сайтове"
   },
   "fullSettings": {
-    "message": "Пълни настройки",
-    "description": "Settings button"
+    "message": "Пълни настройки"
   },
   "refreshPage": {
-    "message": "Опресняване на страницата",
-    "description": "Refresh button"
+    "message": "Опресняване на страницата"
   },
   "siteAdded": {
-    "message": "Добавен $domain$",
-    "description": "Site added toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Добавен {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Добавен $domain$ (Автоматично превъртане)",
-    "description": "Site added with auto-scroll toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Добавен {domain} (Автоматично превъртане)"
   },
   "siteRemoved": {
-    "message": "Премахнат $domain$",
-    "description": "Site removed toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Премахнат {domain}"
   },
   "siteDeleted": {
-    "message": "Изтрит $domain$",
-    "description": "Site deleted toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Изтрит {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Автоматичното превъртане е активирано",
-    "description": "Auto-scroll enabled toast"
+    "message": "Автоматичното превъртане е активирано"
   },
   "autoScrollDisabled": {
-    "message": "Автоматичното превъртане е деактивирано",
-    "description": "Auto-scroll disabled toast"
+    "message": "Автоматичното превъртане е деактивирано"
   },
   "pageRefreshed": {
-    "message": "Страницата е опреснена",
-    "description": "Page refreshed toast"
+    "message": "Страницата е опреснена"
   },
   "autoScroll": {
-    "message": "Автоматично превъртане",
-    "description": "Auto-scroll label"
+    "message": "Автоматично превъртане"
   },
   "settingsTitle": {
     "message": "Настройки - Image Lazy Load Blocker",
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "Списък с конфигурации на сайтове",
-    "description": "Site configuration list section"
+    "message": "Списък с конфигурации на сайтове"
   },
   "scrollSpeed": {
-    "message": "Скорост на превъртане (мс)",
-    "description": "Scroll speed label"
+    "message": "Скорост на превъртане (мс)"
   },
   "stayDuration": {
-    "message": "Продължителност на престоя (мс)",
-    "description": "Stay duration label"
+    "message": "Продължителност на престоя (мс)"
   },
   "returnToTop": {
-    "message": "Връщане нагоре след завършване",
-    "description": "Return to top option"
+    "message": "Връщане нагоре след завършване"
   },
   "fallbackToScroll": {
     "message": "Автоматично използвайте превъртане като резерв, когато техническата блокировка не сработва",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
-    "message": "Показване на известие за успешно прихващане",
-    "description": "Show toast option"
+    "message": "Показване на известие за успешно прихващане"
   },
   "save": {
-    "message": "Запази",
-    "description": "Save button"
+    "message": "Запази"
   },
   "saved": {
-    "message": "Запазено",
-    "description": "Saved toast"
+    "message": "Запазено"
   },
   "siteManagement": {
     "message": "Управление на сайтове",
@@ -180,15 +130,249 @@
     "description": "Cancel button"
   },
   "author": {
-    "message": "от",
-    "description": "Author prefix"
+    "message": "от"
   },
   "tools": {
-    "message": "Инструменти",
-    "description": "Tools label"
+    "message": "Инструменти"
   },
   "languageSettings": {
-    "message": "Езикови настройки",
-    "description": "Language settings section title"
+    "message": "Езикови настройки"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "delete": {
+    "message": "Изтриване"
+  },
+  "upgradeTitle": {
+    "message": "Unlock Pro"
+  },
+  "upgradeBody": {
+    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+  },
+  "upgradeButton": {
+    "message": "Upgrade"
+  },
+  "cancelUpgrade": {
+    "message": "Cancel"
+  },
+  "siteLimitReached": {
+    "message": "Site limit reached"
+  },
+  "importPartial": {
+    "message": "Imported {added} of {total} sites. Free limit is 3."
+  },
+  "openingHostApp": {
+    "message": "Opening Host App to complete purchase…"
+  },
+  "upgradeOpenFailed": {
+    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+  },
+  "licenseFree": {
+    "message": "Free · up to 3 websites"
+  },
+  "licensePro": {
+    "message": "Pro · unlimited websites"
+  },
+  "licenseUpgrade": {
+    "message": "Upgrade to Pro"
+  },
+  "licenseManage": {
+    "message": "Manage / Restore"
+  },
+  "proBadge": {
+    "message": "PRO"
+  },
+  "noticeSiteEnabled": {
+    "message": "Pro unlocked · {domain} was enabled"
+  },
+  "purchaseUnavailable": {
+    "message": "Purchases are temporarily unavailable. Please try again later."
+  },
+  "currentWebsite": {
+    "message": "Current Website"
+  },
+  "siteSwitchHelp": {
+    "message": "Load all images on this website without lazy loading."
+  },
+  "mode": {
+    "message": "Mode"
+  },
+  "standardMode": {
+    "message": "Standard"
+  },
+  "compatibilityMode": {
+    "message": "Compatibility"
+  },
+  "standardModeHelp": {
+    "message": "Loads images immediately using No Lazyload's normal engine."
+  },
+  "compatibilityModeHelp": {
+    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+  },
+  "enabledWebsites": {
+    "message": "Enabled Websites"
+  },
+  "removeSite": {
+    "message": "Remove"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "upgradeNote": {
+    "message": "Unlimited websites · One-time purchase, no subscription"
+  },
+  "upgradePrice": {
+    "message": "One-time purchase"
+  },
+  "oneTimePurchase": {
+    "message": "One-time purchase"
+  },
+  "noSubscription": {
+    "message": "No subscription"
+  },
+  "upgradeToPro": {
+    "message": "Upgrade to Pro"
+  },
+  "notNow": {
+    "message": "Not Now"
+  },
+  "upgradeBodyLimit": {
+    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+  },
+  "siteListTitle": {
+    "message": "Конфигурирани сайтове"
+  },
+  "emptyState": {
+    "message": "Няма конфигурирани сайтове"
+  },
+  "autoScrollHelp": {
+    "message": "Когато е активирано, деактивира техническото блокиране и задейства зареждането чрез автоматично превъртане до долу"
+  },
+  "scrollParams": {
+    "message": "Параметри за автоматично превъртане"
+  },
+  "saveGlobal": {
+    "message": "Запази глобалните настройки"
+  },
+  "importExport": {
+    "message": "Импортиране/Експортиране"
+  },
+  "exportConfig": {
+    "message": "Експортиране на конфигурацията"
+  },
+  "importConfig": {
+    "message": "Импортиране на конфигурация"
+  },
+  "deleteConfirm": {
+    "message": "Сигурни ли сте, че искате да изтриете конфигурацията за {domain}?"
+  },
+  "deleted": {
+    "message": "Изтрито"
+  },
+  "scrollEnabled": {
+    "message": "Автоматичното превъртане е активирано"
+  },
+  "scrollDisabled": {
+    "message": "Автоматичното превъртане е деактивирано"
+  },
+  "configImported": {
+    "message": "Конфигурацията е импортирана"
+  },
+  "configExported": {
+    "message": "Конфигурацията е експортирана"
+  },
+  "importFailed": {
+    "message": "Импортирането е неуспешно: "
+  },
+  "invalidConfig": {
+    "message": "Невалиден формат на конфигурационния файл"
+  },
+  "saveLanguage": {
+    "message": "Запази езика"
+  },
+  "languageSaved": {
+    "message": "Езикът е запазен"
+  },
+  "advancedSettings": {
+    "message": "Разширени настройки"
+  },
+  "lazyAttributes": {
+    "message": "Атрибути за мързеливо зареждане"
+  },
+  "lazyAttributesHelp": {
+    "message": "Засичай тези атрибути за зареждане на изображения, разделени със запетая"
+  },
+  "placeholderPatterns": {
+    "message": "Откриване на контейнери"
+  },
+  "placeholderPatternsHelp": {
+    "message": "Изображенията с src, съдържащи тези ключови думи, ще бъдат третирани като контейнери, разделени със запетая"
+  },
+  "resetToDefault": {
+    "message": "Върни към по подразбиране"
+  },
+  "attributesSaved": {
+    "message": "Атрибутите са запазени"
+  },
+  "attributesReset": {
+    "message": "Възстановено е конфигурацията по подразбиране"
+  },
+  "otherExtensions": {
+    "message": "Други разширения от автора"
+  },
+  "newtab01Desc": {
+    "message": "Нов раздел, задвижван от отметки. Отваряйте папки като групи от раздели или в разделен изглед. 12 вградени теми + неограничени персонализирани теми."
+  },
+  "licenseTitle": {
+    "message": "License"
+  },
+  "compatibilityModeHelpSection": {
+    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+  },
+  "generalSettings": {
+    "message": "General"
+  },
+  "settingsSubtitle": {
+    "message": "Disable image lazy loading · Full settings"
+  },
+  "scrollDuration": {
+    "message": "Scroll duration (seconds)"
+  },
+  "stayAtBottom": {
+    "message": "Pause at bottom (seconds)"
+  },
+  "useAutoScrollGlobal": {
+    "message": "Use Compatibility Mode for all enabled websites by default"
+  },
+  "detectionRules": {
+    "message": "Detection Rules"
+  },
+  "advancedWarning": {
+    "message": "Changing these values can prevent images from loading correctly."
+  },
+  "saveChanges": {
+    "message": "Save Changes"
+  },
+  "importExportHelp": {
+    "message": "The file includes each website mode and all global settings."
+  },
+  "plan": {
+    "message": "Plan"
+  },
+  "planFreeDetail": {
+    "message": "Free · {count} of {limit} websites enabled"
+  },
+  "planProDetail": {
+    "message": "No Lazyload Pro · Unlimited websites unlocked"
+  },
+  "managePurchases": {
+    "message": "Manage Purchases"
+  },
+  "github": {
+    "message": "GitHub"
+  },
+  "privacy": {
+    "message": "Privacy"
   }
 }

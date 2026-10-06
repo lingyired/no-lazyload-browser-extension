@@ -21,7 +21,8 @@ const params = new URLSearchParams(location.search);
 window.__PREVIEW_STATE__ = params.get('state') || 'free';
 
 function resolveHref(href) {
-  // shared-ui.js 是构建产物，预览时直接读 tests/visual/ 下的副本
+  // locales.js / shared-ui.js 是构建产物，预览直接读 dist
+  if (href === 'locales.js') return '../../dist/safari/locales.js';
   if (href === 'shared-ui.js') return '../../dist/safari/shared-ui.js';
   // settings/index.html 里的相对路径是相对扩展根目录的
   return '../../settings/' + href;
@@ -45,7 +46,8 @@ fetch('../../settings/index.html')
     // 头部脚本（i18n-manager.js 等）按顺序加载，再加载页面主脚本
     // 页面脚本要按文档顺序全部加载（settings 页把 i18n-manager.js 放在 body 末尾）
     // 构建产物 shared-ui.js 放在最前面
-    const headScripts = [{ getAttribute: function () { return 'shared-ui.js'; } }]
+    const headScripts = [{ getAttribute: function () { return 'locales.js'; } },
+                        { getAttribute: function () { return 'shared-ui.js'; } }]
       .concat(Array.prototype.slice.call(doc.querySelectorAll('script[src]')));
 
     const loadNext = function () {

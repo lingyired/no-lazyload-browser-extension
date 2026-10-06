@@ -1,155 +1,105 @@
 {
   "appName": {
-    "message": "No lazyload - 画像の遅延読み込みを無効化",
-    "description": "Extension name"
+    "message": "No Lazyload"
   },
   "appDescription": {
     "message": "ウェブサイトでの画像の遅延読み込みを無効化し、すべての画像を一度に読み込む",
     "description": "Extension description"
   },
   "currentSite": {
-    "message": "現在のサイト",
-    "description": "Current site section title"
+    "message": "現在のサイト"
   },
   "enabled": {
-    "message": "有効",
-    "description": "Status: enabled"
+    "message": "有効"
   },
   "disabled": {
-    "message": "無効",
-    "description": "Status: disabled"
+    "message": "無効"
   },
   "notAvailable": {
-    "message": "利用不可",
-    "description": "Status: not available"
+    "message": "利用不可"
   },
   "nonWebPage": {
-    "message": "非ウェブページ",
-    "description": "Non-web page message"
+    "message": "非ウェブページ"
   },
   "cannotAdd": {
-    "message": "追加不可",
-    "description": "Cannot add button"
+    "message": "追加不可"
   },
   "addCurrentSite": {
-    "message": "現在のサイトを追加",
-    "description": "Add button"
+    "message": "現在のサイトを追加"
   },
   "removeCurrentSite": {
-    "message": "現在のサイトを削除",
-    "description": "Remove button"
+    "message": "現在のサイトを削除"
   },
   "useAutoScroll": {
-    "message": "自動スクロールを使用",
-    "description": "Auto-scroll option"
+    "message": "技術ブロックの代わりに自動スクロールを使用"
   },
   "autoScrollDesc": {
-    "message": "読み込みをトリガーするために下部までスクロールします。技術的なブロッキングが失敗するサイトに適しています",
-    "description": "Auto-scroll description"
+    "message": "読み込みをトリガーするために下部までスクロールします。技術的なブロッキングが失敗するサイトに適しています"
   },
   "configuredSites": {
-    "message": "設定済みサイト",
-    "description": "Configured sites section title"
+    "message": "設定済みサイト"
   },
   "noSites": {
-    "message": "設定済みサイトはありません",
-    "description": "Empty state message"
+    "message": "設定済みサイトはありません"
   },
   "fullSettings": {
-    "message": "詳細設定",
-    "description": "Settings button"
+    "message": "詳細設定"
   },
   "refreshPage": {
-    "message": "ページを更新",
-    "description": "Refresh button"
+    "message": "ページを更新"
   },
   "siteAdded": {
-    "message": "$domain$ を追加しました",
-    "description": "Site added toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} を追加しました"
   },
   "siteAddedWithScroll": {
-    "message": "$domain$ を追加しました（自動スクロール）",
-    "description": "Site added with auto-scroll toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} を追加しました（自動スクロール）"
   },
   "siteRemoved": {
-    "message": "$domain$ を削除しました",
-    "description": "Site removed toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} を削除しました"
   },
   "siteDeleted": {
-    "message": "$domain$ を削除しました",
-    "description": "Site deleted toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} を削除しました"
   },
   "autoScrollEnabled": {
-    "message": "自動スクロールを有効にしました",
-    "description": "Auto-scroll enabled toast"
+    "message": "自動スクロールを有効にしました"
   },
   "autoScrollDisabled": {
-    "message": "自動スクロールを無効にしました",
-    "description": "Auto-scroll disabled toast"
+    "message": "自動スクロールを無効にしました"
   },
   "pageRefreshed": {
-    "message": "ページを更新しました",
-    "description": "Page refreshed toast"
+    "message": "ページを更新しました"
   },
   "autoScroll": {
-    "message": "自動スクロール",
-    "description": "Auto-scroll label"
+    "message": "自動スクロール"
   },
   "settingsTitle": {
     "message": "設定 - 画像遅延読み込みブロッカー",
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "サイト設定リスト",
-    "description": "Site configuration list section"
+    "message": "ウェブサイト設定リスト"
   },
   "scrollSpeed": {
-    "message": "スクロール速度（ミリ秒）",
-    "description": "Scroll speed label"
+    "message": "速度（ミリ秒）"
   },
   "stayDuration": {
-    "message": "停止時間（ミリ秒）",
-    "description": "Stay duration label"
+    "message": "停止時間（ミリ秒）"
   },
   "returnToTop": {
-    "message": "完了後にトップに戻る",
-    "description": "Return to top option"
+    "message": "完了後にトップに戻る"
   },
   "fallbackToScroll": {
     "message": "技術的なブロッキングが失敗した場合、自動スクロールを使用",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
-    "message": "インターセプション成功の通知を表示",
-    "description": "Show toast option"
+    "message": "成功通知を表示（右上、2秒）"
   },
   "save": {
-    "message": "保存",
-    "description": "Save button"
+    "message": "保存"
   },
   "saved": {
-    "message": "保存しました",
-    "description": "Saved toast"
+    "message": "保存しました"
   },
   "siteManagement": {
     "message": "サイト管理",
@@ -180,15 +130,249 @@
     "description": "Cancel button"
   },
   "author": {
-    "message": "作成者",
-    "description": "Author prefix"
+    "message": "作成者"
   },
   "tools": {
-    "message": "ツール",
-    "description": "Tools label"
+    "message": "Kimi 2.5 + ClaudeCode + superpowers"
   },
   "languageSettings": {
-    "message": "言語設定",
-    "description": "Language settings section title"
+    "message": "言語設定"
+  },
+  "loading": {
+    "message": "読み込み中..."
+  },
+  "delete": {
+    "message": "削除"
+  },
+  "upgradeTitle": {
+    "message": "Unlock Pro"
+  },
+  "upgradeBody": {
+    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+  },
+  "upgradeButton": {
+    "message": "Upgrade"
+  },
+  "cancelUpgrade": {
+    "message": "Cancel"
+  },
+  "siteLimitReached": {
+    "message": "Site limit reached"
+  },
+  "importPartial": {
+    "message": "Imported {added} of {total} sites. Free limit is 3."
+  },
+  "openingHostApp": {
+    "message": "Opening Host App to complete purchase…"
+  },
+  "upgradeOpenFailed": {
+    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+  },
+  "licenseFree": {
+    "message": "Free · up to 3 websites"
+  },
+  "licensePro": {
+    "message": "Pro · unlimited websites"
+  },
+  "licenseUpgrade": {
+    "message": "Upgrade to Pro"
+  },
+  "licenseManage": {
+    "message": "Manage / Restore"
+  },
+  "proBadge": {
+    "message": "PRO"
+  },
+  "noticeSiteEnabled": {
+    "message": "Pro unlocked · {domain} was enabled"
+  },
+  "purchaseUnavailable": {
+    "message": "Purchases are temporarily unavailable. Please try again later."
+  },
+  "currentWebsite": {
+    "message": "Current Website"
+  },
+  "siteSwitchHelp": {
+    "message": "Load all images on this website without lazy loading."
+  },
+  "mode": {
+    "message": "Mode"
+  },
+  "standardMode": {
+    "message": "Standard"
+  },
+  "compatibilityMode": {
+    "message": "Compatibility"
+  },
+  "standardModeHelp": {
+    "message": "Loads images immediately using No Lazyload's normal engine."
+  },
+  "compatibilityModeHelp": {
+    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+  },
+  "enabledWebsites": {
+    "message": "Enabled Websites"
+  },
+  "removeSite": {
+    "message": "Remove"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "upgradeNote": {
+    "message": "Unlimited websites · One-time purchase, no subscription"
+  },
+  "upgradePrice": {
+    "message": "One-time purchase"
+  },
+  "oneTimePurchase": {
+    "message": "One-time purchase"
+  },
+  "noSubscription": {
+    "message": "No subscription"
+  },
+  "upgradeToPro": {
+    "message": "Upgrade to Pro"
+  },
+  "notNow": {
+    "message": "Not Now"
+  },
+  "upgradeBodyLimit": {
+    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+  },
+  "siteListTitle": {
+    "message": "設定済みサイト"
+  },
+  "emptyState": {
+    "message": "設定済みサイトはありません"
+  },
+  "autoScrollHelp": {
+    "message": "技術ブロックを無効化し、スクロールで読み込みをトリガー"
+  },
+  "scrollParams": {
+    "message": "自動スクロール設定"
+  },
+  "saveGlobal": {
+    "message": "設定を保存"
+  },
+  "importExport": {
+    "message": "インポート/エクスポート"
+  },
+  "exportConfig": {
+    "message": "エクスポート"
+  },
+  "importConfig": {
+    "message": "インポート"
+  },
+  "deleteConfirm": {
+    "message": "Are you sure you want to delete config for {domain}?"
+  },
+  "deleted": {
+    "message": "Deleted"
+  },
+  "scrollEnabled": {
+    "message": "Auto-scroll enabled"
+  },
+  "scrollDisabled": {
+    "message": "Auto-scroll disabled"
+  },
+  "configImported": {
+    "message": "Config imported"
+  },
+  "configExported": {
+    "message": "Config exported"
+  },
+  "importFailed": {
+    "message": "Import failed: "
+  },
+  "invalidConfig": {
+    "message": "Invalid config file format"
+  },
+  "saveLanguage": {
+    "message": "言語を保存"
+  },
+  "languageSaved": {
+    "message": "言語を保存しました"
+  },
+  "advancedSettings": {
+    "message": "詳細設定"
+  },
+  "lazyAttributes": {
+    "message": "遅延読み込み属性"
+  },
+  "lazyAttributesHelp": {
+    "message": "画像を読み込むためのこれらの属性を検出、カンマ区切り"
+  },
+  "placeholderPatterns": {
+    "message": "プレースホルダー検出"
+  },
+  "placeholderPatternsHelp": {
+    "message": "srcにこれらのキーワードを含む画像はプレースホルダーとして扱われます、カンマ区切り"
+  },
+  "resetToDefault": {
+    "message": "デフォルトに戻す"
+  },
+  "attributesSaved": {
+    "message": "属性を保存しました"
+  },
+  "attributesReset": {
+    "message": "デフォルト設定にリセットしました"
+  },
+  "otherExtensions": {
+    "message": "作者のその他の拡張機能"
+  },
+  "newtab01Desc": {
+    "message": "ブックマーク駆動の新しいタブ。フォルダをタブグループまたは分割ビューで開きます。12の内蔵テーマ + 無制限のカスタムテーマ。"
+  },
+  "licenseTitle": {
+    "message": "License"
+  },
+  "compatibilityModeHelpSection": {
+    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+  },
+  "generalSettings": {
+    "message": "General"
+  },
+  "settingsSubtitle": {
+    "message": "Disable image lazy loading · Full settings"
+  },
+  "scrollDuration": {
+    "message": "Scroll duration (seconds)"
+  },
+  "stayAtBottom": {
+    "message": "Pause at bottom (seconds)"
+  },
+  "useAutoScrollGlobal": {
+    "message": "Use Compatibility Mode for all enabled websites by default"
+  },
+  "detectionRules": {
+    "message": "Detection Rules"
+  },
+  "advancedWarning": {
+    "message": "Changing these values can prevent images from loading correctly."
+  },
+  "saveChanges": {
+    "message": "Save Changes"
+  },
+  "importExportHelp": {
+    "message": "The file includes each website mode and all global settings."
+  },
+  "plan": {
+    "message": "Plan"
+  },
+  "planFreeDetail": {
+    "message": "Free · {count} of {limit} websites enabled"
+  },
+  "planProDetail": {
+    "message": "No Lazyload Pro · Unlimited websites unlocked"
+  },
+  "managePurchases": {
+    "message": "Manage Purchases"
+  },
+  "github": {
+    "message": "GitHub"
+  },
+  "privacy": {
+    "message": "Privacy"
   }
 }

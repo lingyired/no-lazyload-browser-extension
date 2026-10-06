@@ -1,155 +1,105 @@
 {
   "appName": {
-    "message": "No lazyload - Disattiva il caricamento lazy delle immagini",
-    "description": "Extension name"
+    "message": "No Lazyload"
   },
   "appDescription": {
     "message": "Disattiva il caricamento lazy delle immagini nei siti web, carica tutte le immagini in una volta",
     "description": "Extension description"
   },
   "currentSite": {
-    "message": "Sito corrente",
-    "description": "Current site section title"
+    "message": "Sito corrente"
   },
   "enabled": {
-    "message": "Attivo",
-    "description": "Status: enabled"
+    "message": "Attivo"
   },
   "disabled": {
-    "message": "Disattivo",
-    "description": "Status: disabled"
+    "message": "Disattivo"
   },
   "notAvailable": {
-    "message": "Non disponibile",
-    "description": "Status: not available"
+    "message": "Non disponibile"
   },
   "nonWebPage": {
-    "message": "Pagina non web",
-    "description": "Non-web page message"
+    "message": "Pagina non web"
   },
   "cannotAdd": {
-    "message": "Impossibile aggiungere",
-    "description": "Cannot add button"
+    "message": "Impossibile aggiungere"
   },
   "addCurrentSite": {
-    "message": "Aggiungi sito corrente",
-    "description": "Add button"
+    "message": "Aggiungi sito corrente"
   },
   "removeCurrentSite": {
-    "message": "Rimuovi sito corrente",
-    "description": "Remove button"
+    "message": "Rimuovi sito corrente"
   },
   "useAutoScroll": {
-    "message": "Usa scorrimento automatico",
-    "description": "Auto-scroll option"
+    "message": "Usa scorrimento automatico invece del blocco tecnico"
   },
   "autoScrollDesc": {
-    "message": "Scorri automaticamente fino in fondo per attivare il caricamento; adatto ai siti in cui il blocco tecnico fallisce",
-    "description": "Auto-scroll description"
+    "message": "Scorri automaticamente fino in fondo per attivare il caricamento; adatto ai siti in cui il blocco tecnico fallisce"
   },
   "configuredSites": {
-    "message": "Siti configurati",
-    "description": "Configured sites section title"
+    "message": "Siti configurati"
   },
   "noSites": {
-    "message": "Nessun sito configurato",
-    "description": "Empty state message"
+    "message": "Nessun sito configurato"
   },
   "fullSettings": {
-    "message": "Impostazioni complete",
-    "description": "Settings button"
+    "message": "Impostazioni complete"
   },
   "refreshPage": {
-    "message": "Aggiorna pagina",
-    "description": "Refresh button"
+    "message": "Aggiorna pagina"
   },
   "siteAdded": {
-    "message": "Aggiunto $domain$",
-    "description": "Site added toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Aggiunto {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Aggiunto $domain$ (Scorrimento automatico)",
-    "description": "Site added with auto-scroll toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Aggiunto {domain} (Scorrimento automatico)"
   },
   "siteRemoved": {
-    "message": "Rimosso $domain$",
-    "description": "Site removed toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Rimosso {domain}"
   },
   "siteDeleted": {
-    "message": "Eliminato $domain$",
-    "description": "Site deleted toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Eliminato {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Scorrimento automatico attivo",
-    "description": "Auto-scroll enabled toast"
+    "message": "Scorrimento automatico attivo"
   },
   "autoScrollDisabled": {
-    "message": "Scorrimento automatico disattivo",
-    "description": "Auto-scroll disabled toast"
+    "message": "Scorrimento automatico disattivo"
   },
   "pageRefreshed": {
-    "message": "Pagina aggiornata",
-    "description": "Page refreshed toast"
+    "message": "Pagina aggiornata"
   },
   "autoScroll": {
-    "message": "Scorrimento automatico",
-    "description": "Auto-scroll label"
+    "message": "Scorrimento automatico"
   },
   "settingsTitle": {
     "message": "Impostazioni - Image Lazy Load Blocker",
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "Elenco configurazione siti",
-    "description": "Site configuration list section"
+    "message": "Elenco configurazione siti"
   },
   "scrollSpeed": {
-    "message": "Velocità di scorrimento (ms)",
-    "description": "Scroll speed label"
+    "message": "Velocità di scorrimento (ms)"
   },
   "stayDuration": {
-    "message": "Durata permanenza (ms)",
-    "description": "Stay duration label"
+    "message": "Durata permanenza (ms)"
   },
   "returnToTop": {
-    "message": "Torna in cima al completamento",
-    "description": "Return to top option"
+    "message": "Torna in cima al completamento"
   },
   "fallbackToScroll": {
     "message": "Usa automaticamente lo scorrimento come fallback quando il blocco tecnico fallisce",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
-    "message": "Mostra notifica di intercettazione riuscita",
-    "description": "Show toast option"
+    "message": "Mostra notifica di intercettazione riuscita"
   },
   "save": {
-    "message": "Salva",
-    "description": "Save button"
+    "message": "Salva"
   },
   "saved": {
-    "message": "Salvato",
-    "description": "Saved toast"
+    "message": "Salvato"
   },
   "siteManagement": {
     "message": "Gestione siti",
@@ -180,15 +130,249 @@
     "description": "Cancel button"
   },
   "author": {
-    "message": "di",
-    "description": "Author prefix"
+    "message": "di"
   },
   "tools": {
-    "message": "Strumenti",
-    "description": "Tools label"
+    "message": "Strumenti"
   },
   "languageSettings": {
-    "message": "Impostazioni lingua",
-    "description": "Language settings section title"
+    "message": "Impostazioni lingua"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "delete": {
+    "message": "Elimina"
+  },
+  "upgradeTitle": {
+    "message": "Unlock Pro"
+  },
+  "upgradeBody": {
+    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+  },
+  "upgradeButton": {
+    "message": "Upgrade"
+  },
+  "cancelUpgrade": {
+    "message": "Cancel"
+  },
+  "siteLimitReached": {
+    "message": "Site limit reached"
+  },
+  "importPartial": {
+    "message": "Imported {added} of {total} sites. Free limit is 3."
+  },
+  "openingHostApp": {
+    "message": "Opening Host App to complete purchase…"
+  },
+  "upgradeOpenFailed": {
+    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+  },
+  "licenseFree": {
+    "message": "Free · up to 3 websites"
+  },
+  "licensePro": {
+    "message": "Pro · unlimited websites"
+  },
+  "licenseUpgrade": {
+    "message": "Upgrade to Pro"
+  },
+  "licenseManage": {
+    "message": "Manage / Restore"
+  },
+  "proBadge": {
+    "message": "PRO"
+  },
+  "noticeSiteEnabled": {
+    "message": "Pro unlocked · {domain} was enabled"
+  },
+  "purchaseUnavailable": {
+    "message": "Purchases are temporarily unavailable. Please try again later."
+  },
+  "currentWebsite": {
+    "message": "Current Website"
+  },
+  "siteSwitchHelp": {
+    "message": "Load all images on this website without lazy loading."
+  },
+  "mode": {
+    "message": "Mode"
+  },
+  "standardMode": {
+    "message": "Standard"
+  },
+  "compatibilityMode": {
+    "message": "Compatibility"
+  },
+  "standardModeHelp": {
+    "message": "Loads images immediately using No Lazyload's normal engine."
+  },
+  "compatibilityModeHelp": {
+    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+  },
+  "enabledWebsites": {
+    "message": "Enabled Websites"
+  },
+  "removeSite": {
+    "message": "Remove"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "upgradeNote": {
+    "message": "Unlimited websites · One-time purchase, no subscription"
+  },
+  "upgradePrice": {
+    "message": "One-time purchase"
+  },
+  "oneTimePurchase": {
+    "message": "One-time purchase"
+  },
+  "noSubscription": {
+    "message": "No subscription"
+  },
+  "upgradeToPro": {
+    "message": "Upgrade to Pro"
+  },
+  "notNow": {
+    "message": "Not Now"
+  },
+  "upgradeBodyLimit": {
+    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+  },
+  "siteListTitle": {
+    "message": "Siti configurati"
+  },
+  "emptyState": {
+    "message": "Nessun sito configurato"
+  },
+  "autoScrollHelp": {
+    "message": "Quando attivo, disattiva il blocco tecnico e attiva il caricamento tramite scorrimento automatico in fondo"
+  },
+  "scrollParams": {
+    "message": "Parametri di scorrimento automatico"
+  },
+  "saveGlobal": {
+    "message": "Salva impostazioni globali"
+  },
+  "importExport": {
+    "message": "Importa/Esporta"
+  },
+  "exportConfig": {
+    "message": "Esporta configurazione"
+  },
+  "importConfig": {
+    "message": "Importa configurazione"
+  },
+  "deleteConfirm": {
+    "message": "Sei sicuro di voler eliminare la configurazione per {domain}?"
+  },
+  "deleted": {
+    "message": "Eliminato"
+  },
+  "scrollEnabled": {
+    "message": "Scorrimento automatico attivato"
+  },
+  "scrollDisabled": {
+    "message": "Scorrimento automatico disattivato"
+  },
+  "configImported": {
+    "message": "Configurazione importata"
+  },
+  "configExported": {
+    "message": "Configurazione esportata"
+  },
+  "importFailed": {
+    "message": "Importazione fallita: "
+  },
+  "invalidConfig": {
+    "message": "Formato file di configurazione non valido"
+  },
+  "saveLanguage": {
+    "message": "Salva lingua"
+  },
+  "languageSaved": {
+    "message": "Lingua salvata"
+  },
+  "advancedSettings": {
+    "message": "Impostazioni avanzate"
+  },
+  "lazyAttributes": {
+    "message": "Attributi di caricamento lazy"
+  },
+  "lazyAttributesHelp": {
+    "message": "Rileva questi attributi per caricare le immagini, separati da virgola"
+  },
+  "placeholderPatterns": {
+    "message": "Rilevamento segnaposto"
+  },
+  "placeholderPatternsHelp": {
+    "message": "Le immagini con src contenente queste parole chiave saranno trattate come segnaposto, separate da virgola"
+  },
+  "resetToDefault": {
+    "message": "Ripristina predefiniti"
+  },
+  "attributesSaved": {
+    "message": "Attributi salvati"
+  },
+  "attributesReset": {
+    "message": "Ripristinato alla configurazione predefinita"
+  },
+  "otherExtensions": {
+    "message": "Altre estensioni dell'autore"
+  },
+  "newtab01Desc": {
+    "message": "Nuova scheda basata sui segnalibri. Apri le cartelle come gruppi di schede o in vista divisa. 12 temi integrati + temi personalizzati illimitati."
+  },
+  "licenseTitle": {
+    "message": "License"
+  },
+  "compatibilityModeHelpSection": {
+    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+  },
+  "generalSettings": {
+    "message": "General"
+  },
+  "settingsSubtitle": {
+    "message": "Disable image lazy loading · Full settings"
+  },
+  "scrollDuration": {
+    "message": "Scroll duration (seconds)"
+  },
+  "stayAtBottom": {
+    "message": "Pause at bottom (seconds)"
+  },
+  "useAutoScrollGlobal": {
+    "message": "Use Compatibility Mode for all enabled websites by default"
+  },
+  "detectionRules": {
+    "message": "Detection Rules"
+  },
+  "advancedWarning": {
+    "message": "Changing these values can prevent images from loading correctly."
+  },
+  "saveChanges": {
+    "message": "Save Changes"
+  },
+  "importExportHelp": {
+    "message": "The file includes each website mode and all global settings."
+  },
+  "plan": {
+    "message": "Plan"
+  },
+  "planFreeDetail": {
+    "message": "Free · {count} of {limit} websites enabled"
+  },
+  "planProDetail": {
+    "message": "No Lazyload Pro · Unlimited websites unlocked"
+  },
+  "managePurchases": {
+    "message": "Manage Purchases"
+  },
+  "github": {
+    "message": "GitHub"
+  },
+  "privacy": {
+    "message": "Privacy"
   }
 }

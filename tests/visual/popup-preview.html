@@ -9,23 +9,27 @@
   只用于视觉/交互自查的预览壳，不参与打包。
 
   用法（headless Chrome）：
-    chrome --headless --screenshot=out.png --window-size=380,700 \
+    chrome --headless --screenshot=out.png --window-size=380,520 \
+      --blink-settings=preferredColorScheme=2 \
       "file://.../tests/visual/popup-preview.html?state=free"
 
-  state: free(默认, 2/3 站点) | pro | unrestricted | empty | limit | unavailable
+  state:  free(默认) | pro | unrestricted | empty | limit | unavailable
+  dialog=1  打开升级弹窗
+  measure=1 在页面顶部打印关键元素尺寸
 -->
 <script src="chrome-stub.js"></script>
 <script>
 const params = new URLSearchParams(location.search);
-window.__PREVIEW_STATE__ = params.get('state') || 'free';
+window.__ERRORS__ = [];
+window.addEventListener('error', function (e) { window.__ERRORS__.push(String(e.message)); });
+window.addEventListener('unhandledrejection', function (e) { window.__ERRORS__.push('rejection: ' + String(e.reason)); });
 
 fetch('../../popup.html')
   .then(function (r) { return r.text(); })
   .then(function (html) {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     document.title = doc.title;
-    // popup.html 里的相对路径是相对扩展根目录的；预览页在 tests/visual/ 下，
-    // 所以统一补上 ../../ 前缀。
+
     doc.head.querySelectorAll('link[rel=stylesheet], meta[charset], meta[name=color-scheme]').forEach(function (node) {
       const clone = node.cloneNode(true);
       if (clone.tagName === 'LINK' && clone.getAttribute('href')) {
@@ -35,40 +39,52 @@ fetch('../../popup.html')
     });
     document.body.innerHTML = doc.body.innerHTML;
 
-    // 先加载构建产物 shared-ui.js（经典脚本包），再加载 popup.js
-    const shared = document.createElement('script');
-    shared.src = '../../dist/safari/shared-ui.js';
-    shared.onload = function () {
-    const script = document.createElement('script');
-    script.src = '../../popup.js';
-    script.onload = function () {
-      // popup.js 在 DOMContentLoaded 时启动；这里手动触发一次
-      document.dispatchEvent(new Event('DOMContentLoaded'));
-      if (params.get('dialog') === '1') {
-        setTimeout(function () { window.showUpgradeDialog({ price: '$2.99' }); }, 50);
+    // 按真实页面的顺序加载：shared-ui.js → i18n-manager.js → popup.js
+    const scripts = [
+      '../../dist/safari/locales.js',
+      '../../dist/safari/shared-ui.js',
+      '../../i18n-manager.js',
+      '../../popup.js',
+    ];
+
+    const loadNext = function () {
+      const src = scripts.shift();
+      if (!src) {
+        document.dispatchEvent(new Event('DOMContentLoaded'));
+        if (params.get('dialog') === '1') {
+          setTimeout(function () { window.openUpgradeDialog(); }, 100);
+        }
+        if (params.get('measure') === '1') setTimeout(measure, 300);
+        return;
       }
-      if (params.get('measure') === '1') {
-        setTimeout(function () {
-          const rgb = function (c) { return c; };
-          const info = [];
-          ['body', '.nl-popup', '.nl-switch', '.nl-list-group', '.nl-overlay', '.nl-dialog'].forEach(function (sel) {
-            const el = document.querySelector(sel);
-            if (!el) return;
-            const r = el.getBoundingClientRect();
-            info.push(sel + ' x=' + Math.round(r.left) + ' w=' + Math.round(r.width) + ' h=' + Math.round(r.height));
-          });
-          const pre = document.createElement('pre');
-          pre.id = 'measure';
-          pre.style.cssText = 'position:fixed;top:0;left:0;z-index:9999;background:#ff0;color:#000;font-size:10px;padding:4px;max-width:100%';
-          pre.textContent = info.join(' | ');
-          document.body.appendChild(pre);
-        }, 200);
-      }
+      const el = document.createElement('script');
+      el.src = src;
+      el.onload = loadNext;
+      el.onerror = loadNext;
+      document.body.appendChild(el);
     };
-    document.body.appendChild(script);
-    };
-    document.body.appendChild(shared);
+    loadNext();
   });
+
+function measure() {
+  const rows = [];
+  ['.nl-popup', '.nl-switch', '.nl-list-item', '.nl-overlay', '.nl-dialog'].forEach(function (sel) {
+    const el = document.querySelector(sel);
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    rows.push(sel + ' x=' + Math.round(r.left) + ' w=' + Math.round(r.width) + ' h=' + Math.round(r.height));
+  });
+  rows.push('count=' + (document.getElementById('siteCount') || {}).textContent
+    + ' items=' + document.querySelectorAll('#siteList .nl-list-item').length);
+  rows.push('i18n=' + (typeof window.i18nManager)
+    + ' msgs=' + (window.i18nManager ? Object.keys(window.i18nManager.messages || {}).length : -1)
+    + ' lang=' + (window.i18nManager ? window.i18nManager.currentLang : '?'));
+  rows.push('errors=' + JSON.stringify(window.__ERRORS__));
+  const pre = document.createElement('pre');
+  pre.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#ff0;color:#000;font-size:10px;padding:4px;white-space:pre-wrap;margin:0';
+  pre.textContent = rows.join(' | ');
+  document.body.appendChild(pre);
+}
 </script>
 </body>
 </html>

@@ -1,155 +1,105 @@
 {
   "appName": {
-    "message": "No lazyload - Deaktiver lat lasting av bilder",
-    "description": "Extension name"
+    "message": "No Lazyload"
   },
   "appDescription": {
     "message": "Deaktiver lat lasting av bilder på nettsteder, last alle bilder samtidig",
     "description": "Extension description"
   },
   "currentSite": {
-    "message": "Gjeldende nettsted",
-    "description": "Current site section title"
+    "message": "Gjeldende nettsted"
   },
   "enabled": {
-    "message": "Aktivert",
-    "description": "Status: enabled"
+    "message": "Aktivert"
   },
   "disabled": {
-    "message": "Deaktivert",
-    "description": "Status: disabled"
+    "message": "Deaktivert"
   },
   "notAvailable": {
-    "message": "Ikke tilgjengelig",
-    "description": "Status: not available"
+    "message": "Ikke tilgjengelig"
   },
   "nonWebPage": {
-    "message": "Ikke-nettleserside",
-    "description": "Non-web page message"
+    "message": "Ikke-nettleserside"
   },
   "cannotAdd": {
-    "message": "Kan ikke legge til",
-    "description": "Cannot add button"
+    "message": "Kan ikke legge til"
   },
   "addCurrentSite": {
-    "message": "Legg til gjeldende nettsted",
-    "description": "Add button"
+    "message": "Legg til gjeldende nettsted"
   },
   "removeCurrentSite": {
-    "message": "Fjern gjeldende nettsted",
-    "description": "Remove button"
+    "message": "Fjern gjeldende nettsted"
   },
   "useAutoScroll": {
-    "message": "Bruk automatisk rulling",
-    "description": "Auto-scroll option"
+    "message": "Bruk automatisk rulling i stedet for teknisk blokkering"
   },
   "autoScrollDesc": {
-    "message": "Rull automatisk til bunnen for å utløse lasting; egnet for nettsteder der teknisk blokkering feiler",
-    "description": "Auto-scroll description"
+    "message": "Rull automatisk til bunnen for å utløse lasting; egnet for nettsteder der teknisk blokkering feiler"
   },
   "configuredSites": {
-    "message": "Konfigurerte nettsteder",
-    "description": "Configured sites section title"
+    "message": "Konfigurerte nettsteder"
   },
   "noSites": {
-    "message": "Ingen konfigurerte nettsteder",
-    "description": "Empty state message"
+    "message": "Ingen konfigurerte nettsteder"
   },
   "fullSettings": {
-    "message": "Fullstendige innstillinger",
-    "description": "Settings button"
+    "message": "Fullstendige innstillinger"
   },
   "refreshPage": {
-    "message": "Oppdater side",
-    "description": "Refresh button"
+    "message": "Oppdater side"
   },
   "siteAdded": {
-    "message": "Lagt til $domain$",
-    "description": "Site added toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Lagt til {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Lagt til $domain$ (Automatisk rulling)",
-    "description": "Site added with auto-scroll toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Lagt til {domain} (Automatisk rulling)"
   },
   "siteRemoved": {
-    "message": "Fjernet $domain$",
-    "description": "Site removed toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Fjernet {domain}"
   },
   "siteDeleted": {
-    "message": "Slettet $domain$",
-    "description": "Site deleted toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Slettet {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Automatisk rulling aktivert",
-    "description": "Auto-scroll enabled toast"
+    "message": "Automatisk rulling aktivert"
   },
   "autoScrollDisabled": {
-    "message": "Automatisk rulling deaktivert",
-    "description": "Auto-scroll disabled toast"
+    "message": "Automatisk rulling deaktivert"
   },
   "pageRefreshed": {
-    "message": "Siden oppdatert",
-    "description": "Page refreshed toast"
+    "message": "Siden oppdatert"
   },
   "autoScroll": {
-    "message": "Automatisk rulling",
-    "description": "Auto-scroll label"
+    "message": "Automatisk rulling"
   },
   "settingsTitle": {
     "message": "Innstillinger - Image Lazy Load Blocker",
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "Liste over nettstedskonfigurasjoner",
-    "description": "Site configuration list section"
+    "message": "Liste over nettstedskonfigurasjoner"
   },
   "scrollSpeed": {
-    "message": "Rullehastighet (ms)",
-    "description": "Scroll speed label"
+    "message": "Rullehastighet (ms)"
   },
   "stayDuration": {
-    "message": "Oppholdstid (ms)",
-    "description": "Stay duration label"
+    "message": "Oppholdstid (ms)"
   },
   "returnToTop": {
-    "message": "Tilbake til toppen etter fullføring",
-    "description": "Return to top option"
+    "message": "Tilbake til toppen etter fullføring"
   },
   "fallbackToScroll": {
     "message": "Bruk automatisk rulling som reserve når teknisk blokkering feiler",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
-    "message": "Vis varsel om vellykket avlytting",
-    "description": "Show toast option"
+    "message": "Vis varsel om vellykket avlytting"
   },
   "save": {
-    "message": "Lagre",
-    "description": "Save button"
+    "message": "Lagre"
   },
   "saved": {
-    "message": "Lagret",
-    "description": "Saved toast"
+    "message": "Lagret"
   },
   "siteManagement": {
     "message": "Nettstedsadministrasjon",
@@ -180,15 +130,249 @@
     "description": "Cancel button"
   },
   "author": {
-    "message": "av",
-    "description": "Author prefix"
+    "message": "av"
   },
   "tools": {
-    "message": "Verktøy",
-    "description": "Tools label"
+    "message": "Verktøy"
   },
   "languageSettings": {
-    "message": "Språkinnstillinger",
-    "description": "Language settings section title"
+    "message": "Språkinnstillinger"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "delete": {
+    "message": "Slett"
+  },
+  "upgradeTitle": {
+    "message": "Unlock Pro"
+  },
+  "upgradeBody": {
+    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+  },
+  "upgradeButton": {
+    "message": "Upgrade"
+  },
+  "cancelUpgrade": {
+    "message": "Cancel"
+  },
+  "siteLimitReached": {
+    "message": "Site limit reached"
+  },
+  "importPartial": {
+    "message": "Imported {added} of {total} sites. Free limit is 3."
+  },
+  "openingHostApp": {
+    "message": "Opening Host App to complete purchase…"
+  },
+  "upgradeOpenFailed": {
+    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+  },
+  "licenseFree": {
+    "message": "Free · up to 3 websites"
+  },
+  "licensePro": {
+    "message": "Pro · unlimited websites"
+  },
+  "licenseUpgrade": {
+    "message": "Upgrade to Pro"
+  },
+  "licenseManage": {
+    "message": "Manage / Restore"
+  },
+  "proBadge": {
+    "message": "PRO"
+  },
+  "noticeSiteEnabled": {
+    "message": "Pro unlocked · {domain} was enabled"
+  },
+  "purchaseUnavailable": {
+    "message": "Purchases are temporarily unavailable. Please try again later."
+  },
+  "currentWebsite": {
+    "message": "Current Website"
+  },
+  "siteSwitchHelp": {
+    "message": "Load all images on this website without lazy loading."
+  },
+  "mode": {
+    "message": "Mode"
+  },
+  "standardMode": {
+    "message": "Standard"
+  },
+  "compatibilityMode": {
+    "message": "Compatibility"
+  },
+  "standardModeHelp": {
+    "message": "Loads images immediately using No Lazyload's normal engine."
+  },
+  "compatibilityModeHelp": {
+    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+  },
+  "enabledWebsites": {
+    "message": "Enabled Websites"
+  },
+  "removeSite": {
+    "message": "Remove"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "upgradeNote": {
+    "message": "Unlimited websites · One-time purchase, no subscription"
+  },
+  "upgradePrice": {
+    "message": "One-time purchase"
+  },
+  "oneTimePurchase": {
+    "message": "One-time purchase"
+  },
+  "noSubscription": {
+    "message": "No subscription"
+  },
+  "upgradeToPro": {
+    "message": "Upgrade to Pro"
+  },
+  "notNow": {
+    "message": "Not Now"
+  },
+  "upgradeBodyLimit": {
+    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+  },
+  "siteListTitle": {
+    "message": "Konfigurerte nettsteder"
+  },
+  "emptyState": {
+    "message": "Ingen konfigurerte nettsteder"
+  },
+  "autoScrollHelp": {
+    "message": "Når aktivert, deaktiverer teknisk blokkering og utløser lasting ved automatisk å rulle til bunnen"
+  },
+  "scrollParams": {
+    "message": "Parametere for automatisk rulling"
+  },
+  "saveGlobal": {
+    "message": "Lagre globale innstillinger"
+  },
+  "importExport": {
+    "message": "Import/Eksport"
+  },
+  "exportConfig": {
+    "message": "Eksporter konfigurasjon"
+  },
+  "importConfig": {
+    "message": "Importer konfigurasjon"
+  },
+  "deleteConfirm": {
+    "message": "Er du sikker på at du vil slette konfigurasjonen for {domain}?"
+  },
+  "deleted": {
+    "message": "Slettet"
+  },
+  "scrollEnabled": {
+    "message": "Automatisk rulling aktivert"
+  },
+  "scrollDisabled": {
+    "message": "Automatisk rulling deaktivert"
+  },
+  "configImported": {
+    "message": "Konfigurasjon importert"
+  },
+  "configExported": {
+    "message": "Konfigurasjon eksportert"
+  },
+  "importFailed": {
+    "message": "Import mislyktes: "
+  },
+  "invalidConfig": {
+    "message": "Ugyldig konfigurasjonsfilformat"
+  },
+  "saveLanguage": {
+    "message": "Lagre språk"
+  },
+  "languageSaved": {
+    "message": "Språk lagret"
+  },
+  "advancedSettings": {
+    "message": "Avanserte innstillinger"
+  },
+  "lazyAttributes": {
+    "message": "Late lastingsattributter"
+  },
+  "lazyAttributesHelp": {
+    "message": "Oppdag disse attributtene for å laste bilder, kommaseparert"
+  },
+  "placeholderPatterns": {
+    "message": "Plassholder-deteksjon"
+  },
+  "placeholderPatternsHelp": {
+    "message": "Bilder med src som inneholder disse nøkkelordene vil bli behandlet som plassholdere, kommaseparert"
+  },
+  "resetToDefault": {
+    "message": "Tilbakestill til standard"
+  },
+  "attributesSaved": {
+    "message": "Attributter lagret"
+  },
+  "attributesReset": {
+    "message": "Tilbakestilt til standardkonfigurasjon"
+  },
+  "otherExtensions": {
+    "message": "Flere utvidelser fra forfatteren"
+  },
+  "newtab01Desc": {
+    "message": "Bokmerkestyrt ny fane. Åpne mapper som fanegrupper eller i delt visning. 12 innebygde temaer + ubegrensede egendefinerte temaer."
+  },
+  "licenseTitle": {
+    "message": "License"
+  },
+  "compatibilityModeHelpSection": {
+    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+  },
+  "generalSettings": {
+    "message": "General"
+  },
+  "settingsSubtitle": {
+    "message": "Disable image lazy loading · Full settings"
+  },
+  "scrollDuration": {
+    "message": "Scroll duration (seconds)"
+  },
+  "stayAtBottom": {
+    "message": "Pause at bottom (seconds)"
+  },
+  "useAutoScrollGlobal": {
+    "message": "Use Compatibility Mode for all enabled websites by default"
+  },
+  "detectionRules": {
+    "message": "Detection Rules"
+  },
+  "advancedWarning": {
+    "message": "Changing these values can prevent images from loading correctly."
+  },
+  "saveChanges": {
+    "message": "Save Changes"
+  },
+  "importExportHelp": {
+    "message": "The file includes each website mode and all global settings."
+  },
+  "plan": {
+    "message": "Plan"
+  },
+  "planFreeDetail": {
+    "message": "Free · {count} of {limit} websites enabled"
+  },
+  "planProDetail": {
+    "message": "No Lazyload Pro · Unlimited websites unlocked"
+  },
+  "managePurchases": {
+    "message": "Manage Purchases"
+  },
+  "github": {
+    "message": "GitHub"
+  },
+  "privacy": {
+    "message": "Privacy"
   }
 }

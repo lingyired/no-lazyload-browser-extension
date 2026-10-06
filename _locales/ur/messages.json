@@ -1,155 +1,105 @@
 {
   "appName": {
-    "message": "No lazyload - تصاویر کی سست لوڈنگ کو غیر فعال کریں",
-    "description": "Extension name"
+    "message": "No Lazyload"
   },
   "appDescription": {
     "message": "ویب سائٹس پر تصاویر کی سست لوڈنگ کو غیر فعال کریں، تمام تصاویر ایک بار میں لوڈ کریں",
     "description": "Extension description"
   },
   "currentSite": {
-    "message": "موجودہ سائٹ",
-    "description": "Current site section title"
+    "message": "موجودہ سائٹ"
   },
   "enabled": {
-    "message": "فعال",
-    "description": "Status: enabled"
+    "message": "فعال"
   },
   "disabled": {
-    "message": "غیر فعال",
-    "description": "Status: disabled"
+    "message": "غیر فعال"
   },
   "notAvailable": {
-    "message": "دستیاب نہیں",
-    "description": "Status: not available"
+    "message": "دستیاب نہیں"
   },
   "nonWebPage": {
-    "message": "غیر ویب صفحہ",
-    "description": "Non-web page message"
+    "message": "غیر ویب صفحہ"
   },
   "cannotAdd": {
-    "message": "شامل نہیں کر سکتے",
-    "description": "Cannot add button"
+    "message": "شامل نہیں کر سکتے"
   },
   "addCurrentSite": {
-    "message": "موجودہ سائٹ شامل کریں",
-    "description": "Add button"
+    "message": "موجودہ سائٹ شامل کریں"
   },
   "removeCurrentSite": {
-    "message": "موجودہ سائٹ ہٹائیں",
-    "description": "Remove button"
+    "message": "موجودہ سائٹ ہٹائیں"
   },
   "useAutoScroll": {
-    "message": "خودکار سکرول استعمال کریں",
-    "description": "Auto-scroll option"
+    "message": "تکنیکی بلاک کی بجائے خودکار سکرول استعمال کریں"
   },
   "autoScrollDesc": {
-    "message": "لوڈنگ کو متحرک کرنے کے لیے خودکار نیچے اسکرول کریں؛ ان سائٹس کے لیے موزوں جنہیں تکنیکی روک غیر مؤثر ہے",
-    "description": "Auto-scroll description"
+    "message": "لوڈنگ کو متحرک کرنے کے لیے خودکار نیچے اسکرول کریں؛ ان سائٹس کے لیے موزوں جنہیں تکنیکی روک غیر مؤثر ہے"
   },
   "configuredSites": {
-    "message": "ترتیب دی گئی سائٹس",
-    "description": "Configured sites section title"
+    "message": "ترتیب دی گئی سائٹس"
   },
   "noSites": {
-    "message": "کوئی ترتیب دی گئی سائٹ نہیں",
-    "description": "Empty state message"
+    "message": "کوئی ترتیب دی گئی سائٹ نہیں"
   },
   "fullSettings": {
-    "message": "مکمل ترتیبات",
-    "description": "Settings button"
+    "message": "مکمل ترتیبات"
   },
   "refreshPage": {
-    "message": "صفحہ ریفریش کریں",
-    "description": "Refresh button"
+    "message": "صفحہ ریفریش کریں"
   },
   "siteAdded": {
-    "message": "$domain$ شامل کیا گیا",
-    "description": "Site added toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} شامل کیا گیا"
   },
   "siteAddedWithScroll": {
-    "message": "$domain$ شامل کیا گیا (خودکار سکرول)",
-    "description": "Site added with auto-scroll toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} شامل کیا گیا (خودکار سکرول)"
   },
   "siteRemoved": {
-    "message": "$domain$ ہٹایا گیا",
-    "description": "Site removed toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} ہٹایا گیا"
   },
   "siteDeleted": {
-    "message": "$domain$ حذف کیا گیا",
-    "description": "Site deleted toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} حذف کیا گیا"
   },
   "autoScrollEnabled": {
-    "message": "خودکار سکرول فعال",
-    "description": "Auto-scroll enabled toast"
+    "message": "خودکار سکرول فعال"
   },
   "autoScrollDisabled": {
-    "message": "خودکار سکرول غیر فعال",
-    "description": "Auto-scroll disabled toast"
+    "message": "خودکار سکرول غیر فعال"
   },
   "pageRefreshed": {
-    "message": "صفحہ ریفریش ہو گیا",
-    "description": "Page refreshed toast"
+    "message": "صفحہ ریفریش ہو گیا"
   },
   "autoScroll": {
-    "message": "خودکار سکرول",
-    "description": "Auto-scroll label"
+    "message": "خودکار سکرول"
   },
   "settingsTitle": {
     "message": "ترتیبات - Image Lazy Load Blocker",
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "سائٹ کنفیگریشن فہرست",
-    "description": "Site configuration list section"
+    "message": "سائٹ کنفیگریشن فہرست"
   },
   "scrollSpeed": {
-    "message": "سکرول اسپیڈ (ملی سیکنڈ)",
-    "description": "Scroll speed label"
+    "message": "سکرول اسپیڈ (ملی سیکنڈ)"
   },
   "stayDuration": {
-    "message": "قیام کی مدت (ملی سیکنڈ)",
-    "description": "Stay duration label"
+    "message": "قیام کی مدت (ملی سیکنڈ)"
   },
   "returnToTop": {
-    "message": "مکمل ہونے کے بعد اوپر واپس جائیں",
-    "description": "Return to top option"
+    "message": "مکمل ہونے کے بعد اوپر واپس جائیں"
   },
   "fallbackToScroll": {
     "message": "جب تکنیکی روک ناکام ہو تو خودکار سکرول کو بطور بیک اپ استعمال کریں",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
-    "message": "روکنے کی کامیابی کا اطلاع دکھائیں",
-    "description": "Show toast option"
+    "message": "روکنے کی کامیابی کا اطلاع دکھائیں"
   },
   "save": {
-    "message": "محفوظ کریں",
-    "description": "Save button"
+    "message": "محفوظ کریں"
   },
   "saved": {
-    "message": "محفوظ ہو گیا",
-    "description": "Saved toast"
+    "message": "محفوظ ہو گیا"
   },
   "siteManagement": {
     "message": "سائٹ کا انتظام",
@@ -180,15 +130,249 @@
     "description": "Cancel button"
   },
   "author": {
-    "message": "از",
-    "description": "Author prefix"
+    "message": "از"
   },
   "tools": {
-    "message": "اوزار",
-    "description": "Tools label"
+    "message": "اوزار"
   },
   "languageSettings": {
-    "message": "زبان کی ترتیبات",
-    "description": "Language settings section title"
+    "message": "زبان کی ترتیبات"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "delete": {
+    "message": "حذف"
+  },
+  "upgradeTitle": {
+    "message": "Unlock Pro"
+  },
+  "upgradeBody": {
+    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+  },
+  "upgradeButton": {
+    "message": "Upgrade"
+  },
+  "cancelUpgrade": {
+    "message": "Cancel"
+  },
+  "siteLimitReached": {
+    "message": "Site limit reached"
+  },
+  "importPartial": {
+    "message": "Imported {added} of {total} sites. Free limit is 3."
+  },
+  "openingHostApp": {
+    "message": "Opening Host App to complete purchase…"
+  },
+  "upgradeOpenFailed": {
+    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+  },
+  "licenseFree": {
+    "message": "Free · up to 3 websites"
+  },
+  "licensePro": {
+    "message": "Pro · unlimited websites"
+  },
+  "licenseUpgrade": {
+    "message": "Upgrade to Pro"
+  },
+  "licenseManage": {
+    "message": "Manage / Restore"
+  },
+  "proBadge": {
+    "message": "PRO"
+  },
+  "noticeSiteEnabled": {
+    "message": "Pro unlocked · {domain} was enabled"
+  },
+  "purchaseUnavailable": {
+    "message": "Purchases are temporarily unavailable. Please try again later."
+  },
+  "currentWebsite": {
+    "message": "Current Website"
+  },
+  "siteSwitchHelp": {
+    "message": "Load all images on this website without lazy loading."
+  },
+  "mode": {
+    "message": "Mode"
+  },
+  "standardMode": {
+    "message": "Standard"
+  },
+  "compatibilityMode": {
+    "message": "Compatibility"
+  },
+  "standardModeHelp": {
+    "message": "Loads images immediately using No Lazyload's normal engine."
+  },
+  "compatibilityModeHelp": {
+    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+  },
+  "enabledWebsites": {
+    "message": "Enabled Websites"
+  },
+  "removeSite": {
+    "message": "Remove"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "upgradeNote": {
+    "message": "Unlimited websites · One-time purchase, no subscription"
+  },
+  "upgradePrice": {
+    "message": "One-time purchase"
+  },
+  "oneTimePurchase": {
+    "message": "One-time purchase"
+  },
+  "noSubscription": {
+    "message": "No subscription"
+  },
+  "upgradeToPro": {
+    "message": "Upgrade to Pro"
+  },
+  "notNow": {
+    "message": "Not Now"
+  },
+  "upgradeBodyLimit": {
+    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+  },
+  "siteListTitle": {
+    "message": "ترتیب دی گئی سائٹس"
+  },
+  "emptyState": {
+    "message": "کوئی ترتیب دی گئی سائٹ نہیں"
+  },
+  "autoScrollHelp": {
+    "message": "فعال ہونے پر، تکنیکی بلاک کو غیر فعال کرتا ہے اور خودکار نیچے سکرول کرکے لوڈنگ کو متحرک کرتا ہے"
+  },
+  "scrollParams": {
+    "message": "خودکار سکرول کے پیرامیٹرز"
+  },
+  "saveGlobal": {
+    "message": "عالمی ترتیبات محفوظ کریں"
+  },
+  "importExport": {
+    "message": "درآمد/برآمد"
+  },
+  "exportConfig": {
+    "message": "کنفیگریشن برآمد کریں"
+  },
+  "importConfig": {
+    "message": "کنفیگریشن درآمد کریں"
+  },
+  "deleteConfirm": {
+    "message": "کیا آپ واقعی {domain} کے لیے کنفیگریشن حذف کرنا چاہتے ہیں؟"
+  },
+  "deleted": {
+    "message": "حذف ہو گیا"
+  },
+  "scrollEnabled": {
+    "message": "خودکار سکرول فعال"
+  },
+  "scrollDisabled": {
+    "message": "خودکار سکرول غیر فعال"
+  },
+  "configImported": {
+    "message": "کنفیگریشن درآمد ہوئی"
+  },
+  "configExported": {
+    "message": "کنفیگریشن برآمد ہوئی"
+  },
+  "importFailed": {
+    "message": "درآمد ناکام ہوئی: "
+  },
+  "invalidConfig": {
+    "message": "کنفیگریشن فائل کی شکل غلط ہے"
+  },
+  "saveLanguage": {
+    "message": "زبان محفوظ کریں"
+  },
+  "languageSaved": {
+    "message": "زبان محفوظ ہو گئی"
+  },
+  "advancedSettings": {
+    "message": "اعلیٰ ترتیبات"
+  },
+  "lazyAttributes": {
+    "message": "سست لوڈنگ کی خصوصیات"
+  },
+  "lazyAttributesHelp": {
+    "message": "تصاویر لوڈ کرنے کے لیے ان خصوصیات کا پتہ لگائیں، کاما سے الگ"
+  },
+  "placeholderPatterns": {
+    "message": "پلیس ہولڈر کا پتہ لگانا"
+  },
+  "placeholderPatternsHelp": {
+    "message": "جن تصاویر کے src میں یہ کلیدی الفاظ ہوں گے انہیں پلیس ہولڈر کے طور پر treat کیا جائے گا، کاما سے الگ"
+  },
+  "resetToDefault": {
+    "message": "ڈیفالٹ پر ری سیٹ کریں"
+  },
+  "attributesSaved": {
+    "message": "خصوصیات محفوظ ہوئیں"
+  },
+  "attributesReset": {
+    "message": "ڈیفالٹ کنفیگریشن پر ری سیٹ"
+  },
+  "otherExtensions": {
+    "message": "مصنف کی دیگر ایکسٹینشنز"
+  },
+  "newtab01Desc": {
+    "message": "بک مارک پر مبنی نئی ٹیب۔ فولڈرز کو ٹیب گروپس یا تقسیم شدہ ویو کے طور پر کھولیں۔ 12 بلٹ ان تھیمز + لامحدود کسٹم تھیمز۔"
+  },
+  "licenseTitle": {
+    "message": "License"
+  },
+  "compatibilityModeHelpSection": {
+    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+  },
+  "generalSettings": {
+    "message": "General"
+  },
+  "settingsSubtitle": {
+    "message": "Disable image lazy loading · Full settings"
+  },
+  "scrollDuration": {
+    "message": "Scroll duration (seconds)"
+  },
+  "stayAtBottom": {
+    "message": "Pause at bottom (seconds)"
+  },
+  "useAutoScrollGlobal": {
+    "message": "Use Compatibility Mode for all enabled websites by default"
+  },
+  "detectionRules": {
+    "message": "Detection Rules"
+  },
+  "advancedWarning": {
+    "message": "Changing these values can prevent images from loading correctly."
+  },
+  "saveChanges": {
+    "message": "Save Changes"
+  },
+  "importExportHelp": {
+    "message": "The file includes each website mode and all global settings."
+  },
+  "plan": {
+    "message": "Plan"
+  },
+  "planFreeDetail": {
+    "message": "Free · {count} of {limit} websites enabled"
+  },
+  "planProDetail": {
+    "message": "No Lazyload Pro · Unlimited websites unlocked"
+  },
+  "managePurchases": {
+    "message": "Manage Purchases"
+  },
+  "github": {
+    "message": "GitHub"
+  },
+  "privacy": {
+    "message": "Privacy"
   }
 }

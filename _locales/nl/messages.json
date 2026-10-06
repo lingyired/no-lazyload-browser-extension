@@ -1,155 +1,105 @@
 {
   "appName": {
-    "message": "No lazyload - Schakel lui laden van afbeeldingen uit",
-    "description": "Extension name"
+    "message": "No Lazyload"
   },
   "appDescription": {
     "message": "Schakel lui laden van afbeeldingen op websites uit, laad alle afbeeldingen in één keer",
     "description": "Extension description"
   },
   "currentSite": {
-    "message": "Huidige site",
-    "description": "Current site section title"
+    "message": "Huidige site"
   },
   "enabled": {
-    "message": "Ingeschakeld",
-    "description": "Status: enabled"
+    "message": "Ingeschakeld"
   },
   "disabled": {
-    "message": "Uitgeschakeld",
-    "description": "Status: disabled"
+    "message": "Uitgeschakeld"
   },
   "notAvailable": {
-    "message": "Niet beschikbaar",
-    "description": "Status: not available"
+    "message": "Niet beschikbaar"
   },
   "nonWebPage": {
-    "message": "Geen webpagina",
-    "description": "Non-web page message"
+    "message": "Geen webpagina"
   },
   "cannotAdd": {
-    "message": "Kan niet toevoegen",
-    "description": "Cannot add button"
+    "message": "Kan niet toevoegen"
   },
   "addCurrentSite": {
-    "message": "Huidige site toevoegen",
-    "description": "Add button"
+    "message": "Huidige site toevoegen"
   },
   "removeCurrentSite": {
-    "message": "Huidige site verwijderen",
-    "description": "Remove button"
+    "message": "Huidige site verwijderen"
   },
   "useAutoScroll": {
-    "message": "Gebruik automatisch scrollen",
-    "description": "Auto-scroll option"
+    "message": "Gebruik automatisch scrollen in plaats van technische blokkering"
   },
   "autoScrollDesc": {
-    "message": "Scroll automatisch naar beneden om laden te activeren; geschikt voor sites waar technische blokkering faalt",
-    "description": "Auto-scroll description"
+    "message": "Scroll automatisch naar beneden om laden te activeren; geschikt voor sites waar technische blokkering faalt"
   },
   "configuredSites": {
-    "message": "Geconfigureerde sites",
-    "description": "Configured sites section title"
+    "message": "Geconfigureerde sites"
   },
   "noSites": {
-    "message": "Geen geconfigureerde sites",
-    "description": "Empty state message"
+    "message": "Geen geconfigureerde sites"
   },
   "fullSettings": {
-    "message": "Volledige instellingen",
-    "description": "Settings button"
+    "message": "Volledige instellingen"
   },
   "refreshPage": {
-    "message": "Pagina vernieuwen",
-    "description": "Refresh button"
+    "message": "Pagina vernieuwen"
   },
   "siteAdded": {
-    "message": "$domain$ toegevoegd",
-    "description": "Site added toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} toegevoegd"
   },
   "siteAddedWithScroll": {
-    "message": "$domain$ toegevoegd (Automatisch scrollen)",
-    "description": "Site added with auto-scroll toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} toegevoegd (Automatisch scrollen)"
   },
   "siteRemoved": {
-    "message": "$domain$ verwijderd",
-    "description": "Site removed toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} verwijderd"
   },
   "siteDeleted": {
-    "message": "$domain$ verwijderd",
-    "description": "Site deleted toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "{domain} verwijderd"
   },
   "autoScrollEnabled": {
-    "message": "Automatisch scrollen ingeschakeld",
-    "description": "Auto-scroll enabled toast"
+    "message": "Automatisch scrollen ingeschakeld"
   },
   "autoScrollDisabled": {
-    "message": "Automatisch scrollen uitgeschakeld",
-    "description": "Auto-scroll disabled toast"
+    "message": "Automatisch scrollen uitgeschakeld"
   },
   "pageRefreshed": {
-    "message": "Pagina vernieuwd",
-    "description": "Page refreshed toast"
+    "message": "Pagina vernieuwd"
   },
   "autoScroll": {
-    "message": "Automatisch scrollen",
-    "description": "Auto-scroll label"
+    "message": "Automatisch scrollen"
   },
   "settingsTitle": {
     "message": "Instellingen - Image Lazy Load Blocker",
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "Lijst met siteconfiguraties",
-    "description": "Site configuration list section"
+    "message": "Lijst met siteconfiguraties"
   },
   "scrollSpeed": {
-    "message": "Scrollsnelheid (ms)",
-    "description": "Scroll speed label"
+    "message": "Scrollsnelheid (ms)"
   },
   "stayDuration": {
-    "message": "Verblijfsduur (ms)",
-    "description": "Stay duration label"
+    "message": "Verblijfsduur (ms)"
   },
   "returnToTop": {
-    "message": "Keer na voltooiing naar boven",
-    "description": "Return to top option"
+    "message": "Keer na voltooiing naar boven"
   },
   "fallbackToScroll": {
     "message": "Gebruik automatisch scrollen als terugval wanneer technische blokkering faalt",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
-    "message": "Toon melding bij geslaagde onderschepping",
-    "description": "Show toast option"
+    "message": "Toon melding bij geslaagde onderschepping"
   },
   "save": {
-    "message": "Opslaan",
-    "description": "Save button"
+    "message": "Opslaan"
   },
   "saved": {
-    "message": "Opgeslagen",
-    "description": "Saved toast"
+    "message": "Opgeslagen"
   },
   "siteManagement": {
     "message": "Sitebeheer",
@@ -180,15 +130,249 @@
     "description": "Cancel button"
   },
   "author": {
-    "message": "door",
-    "description": "Author prefix"
+    "message": "door"
   },
   "tools": {
-    "message": "Hulpmiddelen",
-    "description": "Tools label"
+    "message": "Hulpmiddelen"
   },
   "languageSettings": {
-    "message": "Taalinstellingen",
-    "description": "Language settings section title"
+    "message": "Taalinstellingen"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "delete": {
+    "message": "Verwijderen"
+  },
+  "upgradeTitle": {
+    "message": "Unlock Pro"
+  },
+  "upgradeBody": {
+    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+  },
+  "upgradeButton": {
+    "message": "Upgrade"
+  },
+  "cancelUpgrade": {
+    "message": "Cancel"
+  },
+  "siteLimitReached": {
+    "message": "Site limit reached"
+  },
+  "importPartial": {
+    "message": "Imported {added} of {total} sites. Free limit is 3."
+  },
+  "openingHostApp": {
+    "message": "Opening Host App to complete purchase…"
+  },
+  "upgradeOpenFailed": {
+    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+  },
+  "licenseFree": {
+    "message": "Free · up to 3 websites"
+  },
+  "licensePro": {
+    "message": "Pro · unlimited websites"
+  },
+  "licenseUpgrade": {
+    "message": "Upgrade to Pro"
+  },
+  "licenseManage": {
+    "message": "Manage / Restore"
+  },
+  "proBadge": {
+    "message": "PRO"
+  },
+  "noticeSiteEnabled": {
+    "message": "Pro unlocked · {domain} was enabled"
+  },
+  "purchaseUnavailable": {
+    "message": "Purchases are temporarily unavailable. Please try again later."
+  },
+  "currentWebsite": {
+    "message": "Current Website"
+  },
+  "siteSwitchHelp": {
+    "message": "Load all images on this website without lazy loading."
+  },
+  "mode": {
+    "message": "Mode"
+  },
+  "standardMode": {
+    "message": "Standard"
+  },
+  "compatibilityMode": {
+    "message": "Compatibility"
+  },
+  "standardModeHelp": {
+    "message": "Loads images immediately using No Lazyload's normal engine."
+  },
+  "compatibilityModeHelp": {
+    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+  },
+  "enabledWebsites": {
+    "message": "Enabled Websites"
+  },
+  "removeSite": {
+    "message": "Remove"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "upgradeNote": {
+    "message": "Unlimited websites · One-time purchase, no subscription"
+  },
+  "upgradePrice": {
+    "message": "One-time purchase"
+  },
+  "oneTimePurchase": {
+    "message": "One-time purchase"
+  },
+  "noSubscription": {
+    "message": "No subscription"
+  },
+  "upgradeToPro": {
+    "message": "Upgrade to Pro"
+  },
+  "notNow": {
+    "message": "Not Now"
+  },
+  "upgradeBodyLimit": {
+    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+  },
+  "siteListTitle": {
+    "message": "Geconfigureerde sites"
+  },
+  "emptyState": {
+    "message": "Geen geconfigureerde sites"
+  },
+  "autoScrollHelp": {
+    "message": "Wanneer ingeschakeld, schakelt het technische blokkering uit en activeert het laden door automatisch naar beneden te scrollen"
+  },
+  "scrollParams": {
+    "message": "Parameters voor automatisch scrollen"
+  },
+  "saveGlobal": {
+    "message": "Sla globale instellingen op"
+  },
+  "importExport": {
+    "message": "Importeren/Exporteren"
+  },
+  "exportConfig": {
+    "message": "Configuratie exporteren"
+  },
+  "importConfig": {
+    "message": "Configuratie importeren"
+  },
+  "deleteConfirm": {
+    "message": "Weet u zeker dat u de configuratie voor {domain} wilt verwijderen?"
+  },
+  "deleted": {
+    "message": "Verwijderd"
+  },
+  "scrollEnabled": {
+    "message": "Automatisch scrollen ingeschakeld"
+  },
+  "scrollDisabled": {
+    "message": "Automatisch scrollen uitgeschakeld"
+  },
+  "configImported": {
+    "message": "Configuratie geïmporteerd"
+  },
+  "configExported": {
+    "message": "Configuratie geëxporteerd"
+  },
+  "importFailed": {
+    "message": "Importeren mislukt: "
+  },
+  "invalidConfig": {
+    "message": "Ongeldig configuratiebestandsformaat"
+  },
+  "saveLanguage": {
+    "message": "Taal opslaan"
+  },
+  "languageSaved": {
+    "message": "Taal opgeslagen"
+  },
+  "advancedSettings": {
+    "message": "Geavanceerde instellingen"
+  },
+  "lazyAttributes": {
+    "message": "Lazy-load attributen"
+  },
+  "lazyAttributesHelp": {
+    "message": "Detecteer deze attributen om afbeeldingen te laden, kommagescheiden"
+  },
+  "placeholderPatterns": {
+    "message": "Tijdelijke aanduiding detectie"
+  },
+  "placeholderPatternsHelp": {
+    "message": "Afbeeldingen met src die deze trefwoorden bevatten worden als tijdelijke aanduiding behandeld, kommagescheiden"
+  },
+  "resetToDefault": {
+    "message": "Standaardwaarden herstellen"
+  },
+  "attributesSaved": {
+    "message": "Attributen opgeslagen"
+  },
+  "attributesReset": {
+    "message": "Hersteld naar standaardconfiguratie"
+  },
+  "otherExtensions": {
+    "message": "Meer extensies van de auteur"
+  },
+  "newtab01Desc": {
+    "message": "Bladwijzer-gestuurde nieuw tabblad. Open mappen als tabgroepen of in gesplitste weergave. 12 ingebouwde thema's + onbeperkt aangepaste thema's."
+  },
+  "licenseTitle": {
+    "message": "License"
+  },
+  "compatibilityModeHelpSection": {
+    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+  },
+  "generalSettings": {
+    "message": "General"
+  },
+  "settingsSubtitle": {
+    "message": "Disable image lazy loading · Full settings"
+  },
+  "scrollDuration": {
+    "message": "Scroll duration (seconds)"
+  },
+  "stayAtBottom": {
+    "message": "Pause at bottom (seconds)"
+  },
+  "useAutoScrollGlobal": {
+    "message": "Use Compatibility Mode for all enabled websites by default"
+  },
+  "detectionRules": {
+    "message": "Detection Rules"
+  },
+  "advancedWarning": {
+    "message": "Changing these values can prevent images from loading correctly."
+  },
+  "saveChanges": {
+    "message": "Save Changes"
+  },
+  "importExportHelp": {
+    "message": "The file includes each website mode and all global settings."
+  },
+  "plan": {
+    "message": "Plan"
+  },
+  "planFreeDetail": {
+    "message": "Free · {count} of {limit} websites enabled"
+  },
+  "planProDetail": {
+    "message": "No Lazyload Pro · Unlimited websites unlocked"
+  },
+  "managePurchases": {
+    "message": "Manage Purchases"
+  },
+  "github": {
+    "message": "GitHub"
+  },
+  "privacy": {
+    "message": "Privacy"
   }
 }

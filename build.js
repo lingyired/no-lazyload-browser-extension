@@ -229,6 +229,39 @@ const SAFARI_FILES = {
 };
 
 /**
+ * 生成 locales.js：把 _locales/<lang>/messages.json 打包成一个经典脚本。
+ *
+ * 为什么不运行时 fetch _locales：扩展里 fetch 自己包内的 JSON 依赖
+ * web_accessible_resources / 页面来源等条件，一旦失败，整个 UI 会退化成显示 key 名。
+ * 构建期打包没有这些不确定性，且 _locales 仍是唯一文案来源。
+ */
+function writeLocalesBundle(targetDir) {
+  const localesDir = path.join(SRC_DIR, '_locales');
+  const bundle = {};
+
+  for (const lang of fs.readdirSync(localesDir)) {
+    const file = path.join(localesDir, lang, 'messages.json');
+    if (!fs.existsSync(file)) continue;
+    const messages = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const flat = {};
+    for (const [key, value] of Object.entries(messages)) {
+      if (value && typeof value.message === 'string') flat[key] = value.message;
+    }
+    bundle[lang] = flat;
+  }
+
+  const out = [
+    '// ⚠️ 本文件由 build.js 从 _locales 目录生成，请勿手工修改。',
+    '// 改文案请改 _locales，然后重新构建。',
+    'window.__LOCALES__ = ' + JSON.stringify(bundle, null, 2) + ';',
+    '',
+  ].join('\n');
+
+  fs.writeFileSync(path.join(targetDir, 'locales.js'), out);
+  console.log('  🌐 Generated locales.js (' + Object.keys(bundle).length + ' languages)');
+}
+
+/**
  * 生成 Firefox 的 MV2 经典脚本 background。
  * 同样从 background/firefox.js 打包 —— 域名规范化等逻辑与其它端共用一份。
  */
@@ -415,6 +448,7 @@ function buildChrome(version) {
     console.log('  📝 Removed browser_specific_settings from Chrome manifest');
   }
 
+  writeLocalesBundle(chromeDir);
   writeSharedUiBundle(chromeDir);
 
   // 更新版本号到 HTML
@@ -469,6 +503,7 @@ function buildFirefox(version) {
   });
 
   writeFirefoxBackgroundBundle(firefoxDir);
+  writeLocalesBundle(firefoxDir);
   writeSharedUiBundle(firefoxDir);
 
   // 更新版本号到 HTML
@@ -525,6 +560,7 @@ function buildSafari(version, buildNumber = getBuildNumber()) {
   });
 
   writeSafariBackgroundBundle(safariDir);
+  writeLocalesBundle(safariDir);
   writeSharedUiBundle(safariDir);
 
   // 更新版本号到 HTML

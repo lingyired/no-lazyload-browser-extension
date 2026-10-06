@@ -1,155 +1,105 @@
 {
   "appName": {
-    "message": "No lazyload - Disable Image Lazy Loading",
-    "description": "Extension name"
+    "message": "No Lazyload"
   },
   "appDescription": {
     "message": "Disable image lazy loading on websites, load all images at once",
     "description": "Extension description"
   },
   "currentSite": {
-    "message": "Current Site",
-    "description": "Current site section title"
+    "message": "Current Site"
   },
   "enabled": {
-    "message": "Enabled",
-    "description": "Status: enabled"
+    "message": "Enabled"
   },
   "disabled": {
-    "message": "Disabled",
-    "description": "Status: disabled"
+    "message": "Disabled"
   },
   "notAvailable": {
-    "message": "Not Available",
-    "description": "Status: not available"
+    "message": "Not Available"
   },
   "nonWebPage": {
-    "message": "Non-web Page",
-    "description": "Non-web page message"
+    "message": "Non-web Page"
   },
   "cannotAdd": {
-    "message": "Cannot Add",
-    "description": "Cannot add button"
+    "message": "Cannot Add"
   },
   "addCurrentSite": {
-    "message": "Add Current Site",
-    "description": "Add button"
+    "message": "Add Current Site"
   },
   "removeCurrentSite": {
-    "message": "Remove Current Site",
-    "description": "Remove button"
+    "message": "Remove Current Site"
   },
   "useAutoScroll": {
-    "message": "Use Auto-scroll",
-    "description": "Auto-scroll option"
+    "message": "Use auto-scroll instead of tech blocking (for sites where blocking fails)"
   },
   "autoScrollDesc": {
-    "message": "Auto-scroll to bottom to trigger loading, suitable for sites where tech blocking fails",
-    "description": "Auto-scroll description"
+    "message": "Auto-scroll to bottom to trigger loading, suitable for sites where tech blocking fails"
   },
   "configuredSites": {
-    "message": "Configured Sites",
-    "description": "Configured sites section title"
+    "message": "Configured Sites"
   },
   "noSites": {
-    "message": "No configured sites",
-    "description": "Empty state message"
+    "message": "No configured sites"
   },
   "fullSettings": {
-    "message": "Full Settings",
-    "description": "Settings button"
+    "message": "Full Settings"
   },
   "refreshPage": {
-    "message": "Refresh Page",
-    "description": "Refresh button"
+    "message": "Refresh Page"
   },
   "siteAdded": {
-    "message": "Added $domain$",
-    "description": "Site added toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Added {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Added $domain$ (Auto-scroll)",
-    "description": "Site added with auto-scroll toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Added {domain} (Auto-scroll)"
   },
   "siteRemoved": {
-    "message": "Removed $domain$",
-    "description": "Site removed toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Removed {domain}"
   },
   "siteDeleted": {
-    "message": "Deleted $domain$",
-    "description": "Site deleted toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Deleted {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Auto-scroll enabled",
-    "description": "Auto-scroll enabled toast"
+    "message": "Auto-scroll enabled"
   },
   "autoScrollDisabled": {
-    "message": "Auto-scroll disabled",
-    "description": "Auto-scroll disabled toast"
+    "message": "Auto-scroll disabled"
   },
   "pageRefreshed": {
-    "message": "Page refreshed",
-    "description": "Page refreshed toast"
+    "message": "Page refreshed"
   },
   "autoScroll": {
-    "message": "Auto-scroll",
-    "description": "Auto-scroll label"
+    "message": "Auto-scroll"
   },
   "settingsTitle": {
     "message": "Settings - Image Lazy Load Blocker",
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "Site Configuration List",
-    "description": "Site configuration list section"
+    "message": "Site Configuration List"
   },
   "scrollSpeed": {
-    "message": "Scroll Speed (ms)",
-    "description": "Scroll speed label"
+    "message": "Scroll Speed (ms)"
   },
   "stayDuration": {
-    "message": "Stay Duration (ms)",
-    "description": "Stay duration label"
+    "message": "Stay Duration at Bottom (ms)"
   },
   "returnToTop": {
-    "message": "Return to Top After Completion",
-    "description": "Return to top option"
+    "message": "Return to top when complete"
   },
   "fallbackToScroll": {
     "message": "Auto-use Scroll Fallback When Tech Block Fails",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
-    "message": "Show Interception Success Toast",
-    "description": "Show toast option"
+    "message": "Show interception success toast (top-right, 2s)"
   },
   "save": {
-    "message": "Save",
-    "description": "Save button"
+    "message": "Save"
   },
   "saved": {
-    "message": "Saved",
-    "description": "Saved toast"
+    "message": "Saved"
   },
   "siteManagement": {
     "message": "Site Management",
@@ -180,47 +130,253 @@
     "description": "Cancel button"
   },
   "author": {
-    "message": "by",
-    "description": "Author prefix"
+    "message": "by"
   },
   "tools": {
-    "message": "Tools",
-    "description": "Tools label"
+    "message": "Kimi 2.5 + ClaudeCode + superpowers"
   },
   "languageSettings": {
-    "message": "Language Settings",
-    "description": "Language settings section title"
+    "message": "Language Settings"
   },
   "upgradeTitle": {
-    "message": "Unlock Pro",
-    "description": "Upgrade dialog title"
+    "message": "Unlock Pro"
   },
   "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features.",
-    "description": "Upgrade dialog body"
+    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
   },
   "upgradeButton": {
-    "message": "Upgrade",
-    "description": "Upgrade dialog confirm button"
+    "message": "Upgrade"
   },
   "proActivated": {
     "message": "Pro activated! Unlimited websites unlocked.",
     "description": "Toast shown after successful Mock purchase"
   },
   "cancelUpgrade": {
-    "message": "Cancel",
-    "description": "Upgrade dialog cancel button"
+    "message": "Cancel"
   },
   "siteLimitReached": {
-    "message": "Site limit reached",
-    "description": "Toast shown when free limit is hit"
+    "message": "Site limit reached"
   },
   "importPartial": {
-    "message": "Imported $added$ of $total$ sites. Free limit is 3.",
-    "description": "Toast shown when import is truncated by free limit",
-    "placeholders": {
-      "added": { "content": "$1", "example": "3" },
-      "total": { "content": "$2", "example": "10" }
-    }
+    "message": "Imported {added} of {total} sites. Free limit is 3."
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "openingHostApp": {
+    "message": "Opening Host App to complete purchase…"
+  },
+  "upgradeOpenFailed": {
+    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+  },
+  "licenseFree": {
+    "message": "Free · up to 3 websites"
+  },
+  "licensePro": {
+    "message": "Pro · unlimited websites"
+  },
+  "licenseUpgrade": {
+    "message": "Upgrade to Pro"
+  },
+  "licenseManage": {
+    "message": "Manage / Restore"
+  },
+  "proBadge": {
+    "message": "PRO"
+  },
+  "noticeSiteEnabled": {
+    "message": "Pro unlocked · {domain} was enabled"
+  },
+  "purchaseUnavailable": {
+    "message": "Purchases are temporarily unavailable. Please try again later."
+  },
+  "currentWebsite": {
+    "message": "Current Website"
+  },
+  "siteSwitchHelp": {
+    "message": "Load all images on this website without lazy loading."
+  },
+  "mode": {
+    "message": "Mode"
+  },
+  "standardMode": {
+    "message": "Standard"
+  },
+  "compatibilityMode": {
+    "message": "Compatibility"
+  },
+  "standardModeHelp": {
+    "message": "Loads images immediately using No Lazyload's normal engine."
+  },
+  "compatibilityModeHelp": {
+    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+  },
+  "enabledWebsites": {
+    "message": "Enabled Websites"
+  },
+  "removeSite": {
+    "message": "Remove"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "upgradeNote": {
+    "message": "Unlimited websites · One-time purchase, no subscription"
+  },
+  "upgradePrice": {
+    "message": "One-time purchase"
+  },
+  "oneTimePurchase": {
+    "message": "One-time purchase"
+  },
+  "noSubscription": {
+    "message": "No subscription"
+  },
+  "upgradeToPro": {
+    "message": "Upgrade to Pro"
+  },
+  "notNow": {
+    "message": "Not Now"
+  },
+  "upgradeBodyLimit": {
+    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+  },
+  "siteListTitle": {
+    "message": "Configured Sites"
+  },
+  "emptyState": {
+    "message": "No configured sites"
+  },
+  "autoScrollHelp": {
+    "message": "When enabled, disables tech blocking and triggers image loading by auto-scrolling to bottom"
+  },
+  "scrollParams": {
+    "message": "Auto-scroll Parameters"
+  },
+  "saveGlobal": {
+    "message": "Save Global Settings"
+  },
+  "importExport": {
+    "message": "Import/Export Config"
+  },
+  "exportConfig": {
+    "message": "Export Config"
+  },
+  "importConfig": {
+    "message": "Import Config"
+  },
+  "deleteConfirm": {
+    "message": "Are you sure you want to delete config for {domain}?"
+  },
+  "deleted": {
+    "message": "Deleted"
+  },
+  "scrollEnabled": {
+    "message": "Auto-scroll enabled"
+  },
+  "scrollDisabled": {
+    "message": "Auto-scroll disabled"
+  },
+  "configImported": {
+    "message": "Config imported"
+  },
+  "configExported": {
+    "message": "Config exported"
+  },
+  "importFailed": {
+    "message": "Import failed: "
+  },
+  "invalidConfig": {
+    "message": "Invalid config file format"
+  },
+  "saveLanguage": {
+    "message": "Save Language"
+  },
+  "languageSaved": {
+    "message": "Language saved"
+  },
+  "advancedSettings": {
+    "message": "Advanced Settings"
+  },
+  "lazyAttributes": {
+    "message": "Lazy Load Attributes"
+  },
+  "lazyAttributesHelp": {
+    "message": "Detect these attributes to load images, comma-separated"
+  },
+  "placeholderPatterns": {
+    "message": "Placeholder Detection"
+  },
+  "placeholderPatternsHelp": {
+    "message": "Images with src containing these keywords will be treated as placeholders, comma-separated"
+  },
+  "resetToDefault": {
+    "message": "Reset to Default"
+  },
+  "attributesSaved": {
+    "message": "Attributes saved"
+  },
+  "attributesReset": {
+    "message": "Reset to default configuration"
+  },
+  "otherExtensions": {
+    "message": "More Extensions by the Author"
+  },
+  "newtab01Desc": {
+    "message": "Bookmark-driven new tab. Open folders as tab groups or in split view. 12 built-in themes + unlimited custom themes."
+  },
+  "licenseTitle": {
+    "message": "License"
+  },
+  "compatibilityModeHelpSection": {
+    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+  },
+  "generalSettings": {
+    "message": "General"
+  },
+  "settingsSubtitle": {
+    "message": "Disable image lazy loading · Full settings"
+  },
+  "scrollDuration": {
+    "message": "Scroll duration (seconds)"
+  },
+  "stayAtBottom": {
+    "message": "Pause at bottom (seconds)"
+  },
+  "useAutoScrollGlobal": {
+    "message": "Use Compatibility Mode for all enabled websites by default"
+  },
+  "detectionRules": {
+    "message": "Detection Rules"
+  },
+  "advancedWarning": {
+    "message": "Changing these values can prevent images from loading correctly."
+  },
+  "saveChanges": {
+    "message": "Save Changes"
+  },
+  "importExportHelp": {
+    "message": "The file includes each website mode and all global settings."
+  },
+  "plan": {
+    "message": "Plan"
+  },
+  "planFreeDetail": {
+    "message": "Free · {count} of {limit} websites enabled"
+  },
+  "planProDetail": {
+    "message": "No Lazyload Pro · Unlimited websites unlocked"
+  },
+  "managePurchases": {
+    "message": "Manage Purchases"
+  },
+  "github": {
+    "message": "GitHub"
+  },
+  "privacy": {
+    "message": "Privacy"
   }
 }

@@ -1,155 +1,105 @@
 {
   "appName": {
-    "message": "No lazyload - Poista kuvien laiska lataus käytöstä",
-    "description": "Extension name"
+    "message": "No Lazyload"
   },
   "appDescription": {
     "message": "Poista kuvien laiska lataus käytöstä verkkosivustoilla, lataa kaikki kuvat kerralla",
     "description": "Extension description"
   },
   "currentSite": {
-    "message": "Nykyinen sivusto",
-    "description": "Current site section title"
+    "message": "Nykyinen sivusto"
   },
   "enabled": {
-    "message": "Käytössä",
-    "description": "Status: enabled"
+    "message": "Käytössä"
   },
   "disabled": {
-    "message": "Pois käytöstä",
-    "description": "Status: disabled"
+    "message": "Pois käytöstä"
   },
   "notAvailable": {
-    "message": "Ei saatavilla",
-    "description": "Status: not available"
+    "message": "Ei saatavilla"
   },
   "nonWebPage": {
-    "message": "Muu kuin verkkosivu",
-    "description": "Non-web page message"
+    "message": "Muu kuin verkkosivu"
   },
   "cannotAdd": {
-    "message": "Ei voi lisätä",
-    "description": "Cannot add button"
+    "message": "Ei voi lisätä"
   },
   "addCurrentSite": {
-    "message": "Lisää nykyinen sivusto",
-    "description": "Add button"
+    "message": "Lisää nykyinen sivusto"
   },
   "removeCurrentSite": {
-    "message": "Poista nykyinen sivusto",
-    "description": "Remove button"
+    "message": "Poista nykyinen sivusto"
   },
   "useAutoScroll": {
-    "message": "Käytä automaattista vieritystä",
-    "description": "Auto-scroll option"
+    "message": "Käytä automaattista vieritystä teknisen eston sijaan"
   },
   "autoScrollDesc": {
-    "message": "Vieritä automaattisesti alas käynnistääksesi lataamisen; sopii sivustoille, joissa tekninen esto epäonnistuu",
-    "description": "Auto-scroll description"
+    "message": "Vieritä automaattisesti alas käynnistääksesi lataamisen; sopii sivustoille, joissa tekninen esto epäonnistuu"
   },
   "configuredSites": {
-    "message": "Määritetyt sivustot",
-    "description": "Configured sites section title"
+    "message": "Määritetyt sivustot"
   },
   "noSites": {
-    "message": "Ei määritettyjä sivustoja",
-    "description": "Empty state message"
+    "message": "Ei määritettyjä sivustoja"
   },
   "fullSettings": {
-    "message": "Täydet asetukset",
-    "description": "Settings button"
+    "message": "Täydet asetukset"
   },
   "refreshPage": {
-    "message": "Päivitä sivu",
-    "description": "Refresh button"
+    "message": "Päivitä sivu"
   },
   "siteAdded": {
-    "message": "Lisätty $domain$",
-    "description": "Site added toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Lisätty {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Lisätty $domain$ (Automaattinen vieritys)",
-    "description": "Site added with auto-scroll toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Lisätty {domain} (Automaattinen vieritys)"
   },
   "siteRemoved": {
-    "message": "Poistettu $domain$",
-    "description": "Site removed toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Poistettu {domain}"
   },
   "siteDeleted": {
-    "message": "Poistettu $domain$",
-    "description": "Site deleted toast",
-    "placeholders": {
-      "domain": {
-        "content": "$1"
-      }
-    }
+    "message": "Poistettu {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Automaattinen vieritys käytössä",
-    "description": "Auto-scroll enabled toast"
+    "message": "Automaattinen vieritys käytössä"
   },
   "autoScrollDisabled": {
-    "message": "Automaattinen vieritys pois käytöstä",
-    "description": "Auto-scroll disabled toast"
+    "message": "Automaattinen vieritys pois käytöstä"
   },
   "pageRefreshed": {
-    "message": "Sivu päivitetty",
-    "description": "Page refreshed toast"
+    "message": "Sivu päivitetty"
   },
   "autoScroll": {
-    "message": "Automaattinen vieritys",
-    "description": "Auto-scroll label"
+    "message": "Automaattinen vieritys"
   },
   "settingsTitle": {
     "message": "Asetukset - Image Lazy Load Blocker",
     "description": "Settings page title"
   },
   "globalSettings": {
-    "message": "Sivuston määritysluettelo",
-    "description": "Site configuration list section"
+    "message": "Sivuston määritysluettelo"
   },
   "scrollSpeed": {
-    "message": "Vieritysnopeus (ms)",
-    "description": "Scroll speed label"
+    "message": "Vieritysnopeus (ms)"
   },
   "stayDuration": {
-    "message": "Viipymisaika (ms)",
-    "description": "Stay duration label"
+    "message": "Viipymisaika (ms)"
   },
   "returnToTop": {
-    "message": "Palaa ylös valmistumisen jälkeen",
-    "description": "Return to top option"
+    "message": "Palaa ylös valmistumisen jälkeen"
   },
   "fallbackToScroll": {
     "message": "Käytä automaattisesti vieritystä varana, kun tekninen esto epäonnistuu",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
-    "message": "Näytä ilmoitus onnistuneesta sieppauksesta",
-    "description": "Show toast option"
+    "message": "Näytä ilmoitus onnistuneesta sieppauksesta"
   },
   "save": {
-    "message": "Tallenna",
-    "description": "Save button"
+    "message": "Tallenna"
   },
   "saved": {
-    "message": "Tallennettu",
-    "description": "Saved toast"
+    "message": "Tallennettu"
   },
   "siteManagement": {
     "message": "Sivuston hallinta",
@@ -180,15 +130,249 @@
     "description": "Cancel button"
   },
   "author": {
-    "message": "tekijä",
-    "description": "Author prefix"
+    "message": "tekijä"
   },
   "tools": {
-    "message": "Työkalut",
-    "description": "Tools label"
+    "message": "Työkalut"
   },
   "languageSettings": {
-    "message": "Kieliasetukset",
-    "description": "Language settings section title"
+    "message": "Kieliasetukset"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "delete": {
+    "message": "Poista"
+  },
+  "upgradeTitle": {
+    "message": "Unlock Pro"
+  },
+  "upgradeBody": {
+    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
+  },
+  "upgradeButton": {
+    "message": "Upgrade"
+  },
+  "cancelUpgrade": {
+    "message": "Cancel"
+  },
+  "siteLimitReached": {
+    "message": "Site limit reached"
+  },
+  "importPartial": {
+    "message": "Imported {added} of {total} sites. Free limit is 3."
+  },
+  "openingHostApp": {
+    "message": "Opening Host App to complete purchase…"
+  },
+  "upgradeOpenFailed": {
+    "message": "Could not open the app. Please launch No Lazy Load manually to complete the purchase."
+  },
+  "licenseFree": {
+    "message": "Free · up to 3 websites"
+  },
+  "licensePro": {
+    "message": "Pro · unlimited websites"
+  },
+  "licenseUpgrade": {
+    "message": "Upgrade to Pro"
+  },
+  "licenseManage": {
+    "message": "Manage / Restore"
+  },
+  "proBadge": {
+    "message": "PRO"
+  },
+  "noticeSiteEnabled": {
+    "message": "Pro unlocked · {domain} was enabled"
+  },
+  "purchaseUnavailable": {
+    "message": "Purchases are temporarily unavailable. Please try again later."
+  },
+  "currentWebsite": {
+    "message": "Current Website"
+  },
+  "siteSwitchHelp": {
+    "message": "Load all images on this website without lazy loading."
+  },
+  "mode": {
+    "message": "Mode"
+  },
+  "standardMode": {
+    "message": "Standard"
+  },
+  "compatibilityMode": {
+    "message": "Compatibility"
+  },
+  "standardModeHelp": {
+    "message": "Loads images immediately using No Lazyload's normal engine."
+  },
+  "compatibilityModeHelp": {
+    "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
+  },
+  "enabledWebsites": {
+    "message": "Enabled Websites"
+  },
+  "removeSite": {
+    "message": "Remove"
+  },
+  "undo": {
+    "message": "Undo"
+  },
+  "upgradeNote": {
+    "message": "Unlimited websites · One-time purchase, no subscription"
+  },
+  "upgradePrice": {
+    "message": "One-time purchase"
+  },
+  "oneTimePurchase": {
+    "message": "One-time purchase"
+  },
+  "noSubscription": {
+    "message": "No subscription"
+  },
+  "upgradeToPro": {
+    "message": "Upgrade to Pro"
+  },
+  "notNow": {
+    "message": "Not Now"
+  },
+  "upgradeBodyLimit": {
+    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
+  },
+  "siteListTitle": {
+    "message": "Määritetyt sivustot"
+  },
+  "emptyState": {
+    "message": "Ei määritettyjä sivustoja"
+  },
+  "autoScrollHelp": {
+    "message": "Kun käytössä, poistaa teknisen eston käytöstä ja käynnistää lataamisen vierittämällä alas"
+  },
+  "scrollParams": {
+    "message": "Automaattisen vierityksen parametrit"
+  },
+  "saveGlobal": {
+    "message": "Tallenna yleiset asetukset"
+  },
+  "importExport": {
+    "message": "Tuonti/Vienti"
+  },
+  "exportConfig": {
+    "message": "Vie kokoonpano"
+  },
+  "importConfig": {
+    "message": "Tuo kokoonpano"
+  },
+  "deleteConfirm": {
+    "message": "Haluatko varmasti poistaa kohteen {domain} kokoonpanon?"
+  },
+  "deleted": {
+    "message": "Poistettu"
+  },
+  "scrollEnabled": {
+    "message": "Automaattinen vieritys käytössä"
+  },
+  "scrollDisabled": {
+    "message": "Automaattinen vieritys pois käytöstä"
+  },
+  "configImported": {
+    "message": "Kokoonpano tuotu"
+  },
+  "configExported": {
+    "message": "Kokoonpano viety"
+  },
+  "importFailed": {
+    "message": "Tuonti epäonnistui: "
+  },
+  "invalidConfig": {
+    "message": "Virheellinen kokoonpanotiedostomuoto"
+  },
+  "saveLanguage": {
+    "message": "Tallenna kieli"
+  },
+  "languageSaved": {
+    "message": "Kieli tallennettu"
+  },
+  "advancedSettings": {
+    "message": "Lisäasetukset"
+  },
+  "lazyAttributes": {
+    "message": "Laiskan latauksen määritteet"
+  },
+  "lazyAttributesHelp": {
+    "message": "Tunnista nämä määritteet kuvien lataamiseksi, pilkulla erotettuna"
+  },
+  "placeholderPatterns": {
+    "message": "Paikkamerkkien tunnistus"
+  },
+  "placeholderPatternsHelp": {
+    "message": "Kuvat, joiden src sisältää nämä avainsanat, käsitellään paikkamerkkeinä, pilkulla erotettuna"
+  },
+  "resetToDefault": {
+    "message": "Palauta oletusarvoihin"
+  },
+  "attributesSaved": {
+    "message": "Määritteet tallennettu"
+  },
+  "attributesReset": {
+    "message": "Palautettu oletuskokoonpanoon"
+  },
+  "otherExtensions": {
+    "message": "Lisää tekijän laajennuksia"
+  },
+  "newtab01Desc": {
+    "message": "Kirjanmerkeillä toimiva uusi välilehti. Avaa kansioita välilehtiryhminä tai jaetussa näkymässä. 12 sisäänrakennettua teemaa + rajattomasti mukautettuja teemoja."
+  },
+  "licenseTitle": {
+    "message": "License"
+  },
+  "compatibilityModeHelpSection": {
+    "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
+  },
+  "generalSettings": {
+    "message": "General"
+  },
+  "settingsSubtitle": {
+    "message": "Disable image lazy loading · Full settings"
+  },
+  "scrollDuration": {
+    "message": "Scroll duration (seconds)"
+  },
+  "stayAtBottom": {
+    "message": "Pause at bottom (seconds)"
+  },
+  "useAutoScrollGlobal": {
+    "message": "Use Compatibility Mode for all enabled websites by default"
+  },
+  "detectionRules": {
+    "message": "Detection Rules"
+  },
+  "advancedWarning": {
+    "message": "Changing these values can prevent images from loading correctly."
+  },
+  "saveChanges": {
+    "message": "Save Changes"
+  },
+  "importExportHelp": {
+    "message": "The file includes each website mode and all global settings."
+  },
+  "plan": {
+    "message": "Plan"
+  },
+  "planFreeDetail": {
+    "message": "Free · {count} of {limit} websites enabled"
+  },
+  "planProDetail": {
+    "message": "No Lazyload Pro · Unlimited websites unlocked"
+  },
+  "managePurchases": {
+    "message": "Manage Purchases"
+  },
+  "github": {
+    "message": "GitHub"
+  },
+  "privacy": {
+    "message": "Privacy"
   }
 }

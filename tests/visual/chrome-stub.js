@@ -76,6 +76,20 @@
     };
   }
 
+  // i18n-manager.js 用 runtime.getURL('_locales/<lang>/messages.json') + fetch 读文案。
+  // 预览页在 tests/visual/ 下，把 URL 指回仓库根目录。
+  const localeUrl = function (p) {
+    return '../../' + p.replace(/^\.\.\//, '');
+  };
+  const originalFetch = window.fetch ? window.fetch.bind(window) : null;
+  window.fetch = function (input, init) {
+    const url = typeof input === 'string' ? input : (input && input.url) || '';
+    if (url.indexOf('_locales/') !== -1) {
+      return originalFetch(localeUrl(url), init);
+    }
+    return originalFetch(input, init);
+  };
+
   window.chrome = {
     runtime: {
       sendMessage: dual(function (message) { return respond(message); }),
@@ -92,6 +106,9 @@
       query: dual(function () { return [{ id: 1, url: 'https://www.example.com/some/page' }]; }),
       reload: dual(function () { return undefined; }),
     },
-    i18n: { getUILanguage: function () { return 'en'; } },
+    i18n: {
+      getUILanguage: function () { return 'en'; },
+      getMessage: function (key) { return ''; },
+    },
   };
 })();
