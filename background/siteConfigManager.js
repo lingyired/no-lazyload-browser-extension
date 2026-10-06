@@ -45,8 +45,9 @@ async function getSiteConfig(url) {
  * @param {string} domain
  * @param {string} strategy
  * @param {boolean} scrollFallback
+ * @param {{addedAt?: number}} [options]
  */
-async function setSiteConfig(domain, strategy, scrollFallback = false) {
+async function setSiteConfig(domain, strategy, scrollFallback = false, options = {}) {
   const storage = typeof browser !== 'undefined'
     ? browser.storage.local
     : chrome.storage.local;
@@ -58,7 +59,8 @@ async function setSiteConfig(domain, strategy, scrollFallback = false) {
   configs[key] = {
     strategy,
     scrollFallback,
-    addedAt: Date.now()
+    // 导入时保留原始 addedAt（列表排序需要），否则所有网站会挤在同一时间
+    addedAt: Number.isFinite(options.addedAt) ? options.addedAt : Date.now()
   };
 
   await storage.set({ [STORAGE_KEYS.SITE_CONFIGS]: configs });

@@ -2375,13 +2375,26 @@ async function importConfig(file) {
     }
 
     // 导入网站配置（逐条检查限额，Safari Free 用户达上限时停止）
-    const totalSites = Object.keys(data.siteConfigs).length;
+    // 每条都要完整保留 strategy 与 scrollFallback，否则导出→清空→导入会丢配置。
+    // source:'import' 告诉 background 这不算"用户想启用当前网站"，不写购买待办。
+    const entries = Object.entries(data.siteConfigs);
+    const totalSites = entries.length;
     let added = 0;
     let limitReached = false;
-    for (const [domain, config] of Object.entries(data.siteConfigs)) {
+    const seen = new Set();
+
+    for (const [rawDomain, config] of entries) {
+      // 与 background 完全一致的域名规范化（shared/domain.js 规则）
+      const domain = normalizeHostname(rawDomain);
+      if (!domain || seen.has(domain)) continue;
+      seen.add(domain);
+
       const resp = await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
         domain,
-        strategy: config.strategy || STRATEGIES.TECH_BLOCK
+        strategy: (config && config.strategy) || STRATEGIES.TECH_BLOCK,
+        scrollFallback: config && config.scrollFallback === true,
+        addedAt: config && config.addedAt,
+        source: 'import'
       });
       if (resp && resp.success === false && resp.error === 'LIMIT_REACHED') {
         limitReached = true;

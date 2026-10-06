@@ -113,7 +113,9 @@ function setupMessageHandler(jsEntitlementManager) {
                 break;
               }
             }
-            await setSiteConfig(request.domain, request.strategy, request.scrollFallback);
+            await setSiteConfig(request.domain, request.strategy, request.scrollFallback, {
+              addedAt: request.addedAt,
+            });
             sendResponse({ success: true });
             break;
           }

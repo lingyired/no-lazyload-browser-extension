@@ -443,7 +443,7 @@ async function getSiteConfig(url) {
  * @param {string} strategy
  * @param {boolean} scrollFallback
  */
-async function setSiteConfig(domain, strategy, scrollFallback = false) {
+async function setSiteConfig(domain, strategy, scrollFallback = false, options = {}) {
   // 入口就规范化，保证 www.example.com 与 example.com 永远只对应一个键
   const key = normalizeHostname(domain) || domain;
 
@@ -451,7 +451,8 @@ async function setSiteConfig(domain, strategy, scrollFallback = false) {
   configs[key] = {
     strategy,
     scrollFallback,
-    addedAt: Date.now()
+    // 导入时保留原始 addedAt（列表排序需要）
+    addedAt: Number.isFinite(options.addedAt) ? options.addedAt : Date.now()
   };
 
   await storage.set({ [STORAGE_KEYS.SITE_CONFIGS]: configs });
@@ -649,7 +650,9 @@ function setupMessageHandler() {
                 }
               }
             }
-            await setSiteConfig(request.domain, request.strategy, request.scrollFallback);
+            await setSiteConfig(request.domain, request.strategy, request.scrollFallback, {
+              addedAt: request.addedAt,
+            });
             sendResponse({ success: true });
             break;
           }
