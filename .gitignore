@@ -19,6 +19,10 @@ dist/
 *.crx
 *.pem
 
+# 扩展资源副本：由 `node build.js safari` 从仓库根同步生成，不入库
+# （首次 clone 后先跑 build:safari，再打开 safari-xcode 里的工程）
+safari-xcode/ImageLazyLoadBlocker/ImageLazyLoadBlocker Extension/Resources/
+
 # Xcode user state (frozen Safari project lives in safari-xcode/, tracked)
 safari-xcode/**/*.xcuserstate
 safari-xcode/**/xcuserdata/
