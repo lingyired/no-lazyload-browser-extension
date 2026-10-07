@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2000020000000000000000A /* locales.js in Resources */ = {isa = PBXBuildFile; fileRef = E1000020000000000000000A /* locales.js */; };
+		E2000021000000000000000A /* shared-ui.js in Resources */ = {isa = PBXBuildFile; fileRef = E1000021000000000000000A /* shared-ui.js */; };
+		E2000022000000000000000A /* ui in Resources */ = {isa = PBXBuildFile; fileRef = E1000022000000000000000A /* ui */; };
+		E2000023000000000000000A /* privacy-policy.html in Resources */ = {isa = PBXBuildFile; fileRef = E1000023000000000000000A /* privacy-policy.html */; };
 		E2000010000000000000000A /* HostRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000010000000000000000A /* HostRootView.swift */; };
 		E2000011000000000000000A /* HostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000011000000000000000A /* HostViewModel.swift */; };
 		E2000012000000000000000A /* ExtensionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000012000000000000000A /* ExtensionStatusView.swift */; };
@@ -93,6 +97,10 @@
 		3C7BD6033009E02100F4D44D /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
 		3C7BD6043009E02100F4D44D /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; name = _locales; path = Resources/_locales; sourceTree = "<group>"; };
 		3C7BD6053009E02100F4D44D /* i18n.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = i18n.js; path = Resources/i18n.js; sourceTree = "<group>"; };
+		E1000020000000000000000A /* locales.js */ = {isa = PBXFileReference; name = locales.js; path = Resources/locales.js; sourceTree = "<group>"; };
+		E1000021000000000000000A /* shared-ui.js */ = {isa = PBXFileReference; name = shared-ui.js; path = Resources/shared-ui.js; sourceTree = "<group>"; };
+		E1000022000000000000000A /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ui; path = Resources/ui; sourceTree = "<group>"; };
+		E1000023000000000000000A /* privacy-policy.html */ = {isa = PBXFileReference; name = privacy-policy.html; path = Resources/privacy-policy.html; sourceTree = "<group>"; };
 		E1000001000000000000000A /* Entitlement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitlement.swift; sourceTree = "<group>"; };
 		E1000002000000000000000A /* AppLimits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLimits.swift; sourceTree = "<group>"; };
 		E1000003000000000000000A /* EntitlementsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementsConfig.swift; sourceTree = "<group>"; };
@@ -196,6 +204,10 @@
 				3C7BD6033009E02100F4D44D /* manifest.json */,
 				3C7BD6043009E02100F4D44D /* _locales */,
 				3C7BD6053009E02100F4D44D /* i18n.js */,
+				E1000020000000000000000A /* locales.js */,
+				E1000021000000000000000A /* shared-ui.js */,
+				E1000022000000000000000A /* ui */,
+				E1000023000000000000000A /* privacy-policy.html */,
 			);
 			name = Resources;
 			path = "ImageLazyLoadBlocker Extension";
@@ -332,6 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C7BD6073009E02100F4D44D /* background-safari.js in Resources */,
+				E2000020000000000000000A /* locales.js in Resources */,
+				E2000021000000000000000A /* shared-ui.js in Resources */,
+				E2000022000000000000000A /* ui in Resources */,
+				E2000023000000000000000A /* privacy-policy.html in Resources */,
 				3C7BD60D3009E02100F4D44D /* icons in Resources */,
 				3C7BD60A3009E02100F4D44D /* popup.html in Resources */,
 				3C7BD60C3009E02100F4D44D /* content in Resources */,

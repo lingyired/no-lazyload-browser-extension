@@ -9,7 +9,7 @@
 
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { readFileSync, existsSync, mkdtempSync, rmSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname, resolve, relative } from 'node:path';
 
@@ -85,9 +85,31 @@ function assertPackageIntact(root, label) {
   assert.deepEqual(broken, [], broken.join('\n'));
 }
 
+/**
+ * Safari 的扩展资源不是靠 build.js 的文件清单打包的，而是靠 Xcode 工程里
+ * 逐个 PBXFileReference —— 两份清单同样会漂移。
+ * 真实案例：新增 locales.js / shared-ui.js / ui/ / privacy-policy.html 后
+ * 忘了加进 pbxproj，App 能编译通过，但扩展里 popup.html 引用的 JS 全是 404。
+ */
+function assertXcodeProjectCoversResources() {
+  const sourceDir = 'safari-xcode/ImageLazyLoadBlocker/ImageLazyLoadBlocker Extension/Resources';
+  const pbxproj = readFileSync(
+    'safari-xcode/ImageLazyLoadBlocker/ImageLazyLoadBlocker.xcodeproj/project.pbxproj', 'utf8');
+
+  const missing = [];
+  for (const name of readdirSync(sourceDir)) {
+    // pbxproj 里的引用写成 Resources/<name>
+    if (!pbxproj.includes('Resources/' + name)) missing.push(name);
+  }
+  assert.deepEqual(missing, [],
+    'Xcode 工程没有引用这些扩展资源，它们不会被打进 App：' + missing.join(', '));
+}
+
 export function run() {
   // 三个目标都要重新构建，确保测的是当前源码
   execFileSync('node', ['build.js', 'all'], { stdio: 'pipe' });
+
+  assertXcodeProjectCoversResources();
 
   const targets = [
     { label: 'Chrome', root: unzip(join('dist', latestZip('chrome'))) },
