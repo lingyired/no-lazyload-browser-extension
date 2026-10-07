@@ -205,12 +205,18 @@ const COMMON_DIRS = [
 ];
 
 // Chrome specific files
+// ⚠️ 这里必须与 background/index.js 的 import 图完全一致。
+// 漏一个文件，Chrome 的 service worker 会在顶层 import 处直接加载失败。
+// tests/package.test.mjs 会逐一解析 import 并校验文件确实在包里。
 const CHROME_FILES = {
   'manifest.json': 'manifest.json',
   'background/index.js': 'background/index.js',
+  'background/badge.js': 'background/badge.js',
   'background/messageHandler.js': 'background/messageHandler.js',
+  'background/pendingAction.js': 'background/pendingAction.js',
   'background/siteConfigManager.js': 'background/siteConfigManager.js',
   'shared/constants.js': 'shared/constants.js',
+  'shared/domain.js': 'shared/domain.js',
   'shared/entitlements.js': 'shared/entitlements.js',
 };
 
