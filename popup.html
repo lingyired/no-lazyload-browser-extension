@@ -121,34 +121,61 @@
       pointer-events: none;
     }
 
-    .toggle-btn {
-      width: 100%;
-      padding: 10px 16px;
+    /* 启用开关（替代原来的「添加/移除当前网站」按钮）
+       形状沿用 .site-status 的药丸圆角，绿色沿用原来的 #4CAF50 —— 不引入新色值。 */
+    .enable-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 12px;
+    }
+
+    .switch {
+      padding: 0;
       border: none;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 500;
+      background: none;
       cursor: pointer;
-      transition: all 0.2s;
+      line-height: 0;
+      flex-shrink: 0;
     }
 
-    .toggle-btn.add {
+    .switch-track {
+      display: block;
+      position: relative;
+      width: 44px;
+      height: 24px;
+      border-radius: 12px;
+      background: #ddd;
+      transition: background 0.2s;
+    }
+
+    .switch-thumb {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .switch[aria-checked="true"] .switch-track {
       background: #4CAF50;
-      color: white;
     }
 
-    .toggle-btn.add:hover {
-      background: #45a049;
+    .switch[aria-checked="true"] .switch-thumb {
+      transform: translateX(20px);
     }
 
-    .toggle-btn.remove {
-      background: #f5f5f5;
-      color: #f44336;
-      border: 1px solid #ddd;
+    .switch:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
-    .toggle-btn.remove:hover {
-      background: #ffebee;
+    .switch:focus-visible .switch-track {
+      outline: 2px solid #4CAF50;
+      outline-offset: 2px;
     }
 
     /* Site List Section */
@@ -401,13 +428,14 @@
       .scroll-option .scroll-desc {
         color: #888;
       }
-      .toggle-btn.remove {
-        background: #333;
-        color: #f44336;
-        border-color: #444;
+      .switch-track {
+        background: #444;
       }
-      .toggle-btn.remove:hover {
-        background: #4a2326;
+      .switch[aria-checked="true"] .switch-track {
+        background: #4CAF50;
+      }
+      .switch-thumb {
+        background: #e0e0e0;
       }
       .site-list-header {
         background: #1e1e1e;
@@ -543,7 +571,13 @@
       </label>
     </div>
 
-    <button class="toggle-btn add" id="toggleBtn" data-i18n="addCurrentSite">添加当前网站</button>
+    <!-- 开关。没有文字标签：上面的「已启用 / 未启用」药丸已经说明了状态。
+         aria-label 由 popup.js 按状态用既有文案设置。 -->
+    <div class="enable-row">
+      <button class="switch" id="toggleBtn" role="switch" aria-checked="false">
+        <span class="switch-track"><span class="switch-thumb"></span></span>
+      </button>
+    </div>
   </div>
 
   <!-- Site List -->

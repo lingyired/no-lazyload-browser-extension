@@ -1593,6 +1593,25 @@ async function getCurrentDomain() {
 }
 
 /**
+ * 设置启用开关的外观与可访问性。
+ *
+ * 只在"确实已经是那个状态"时才改 aria-checked —— 额度用完时绝不能先切 ON 再回滚，
+ * 用户会以为已经生效了。label 复用既有的 addCurrentSite / removeCurrentSite 文案，
+ * 开关本身没有可见文字。
+ *
+ * @param {HTMLElement} el
+ * @param {boolean} checked
+ * @param {{disabled?: boolean, label?: string}} [opts]
+ */
+function setSwitchState(el, checked, opts = {}) {
+  if (!el) return;
+  el.setAttribute('role', 'switch');
+  el.setAttribute('aria-checked', checked ? 'true' : 'false');
+  el.disabled = opts.disabled === true;
+  if (opts.label) el.setAttribute('aria-label', opts.label);
+}
+
+/**
  * 检查当前网站是否已配置
  */
 async function checkCurrentSite() {
@@ -1607,9 +1626,7 @@ async function checkCurrentSite() {
     domainEl.textContent = t('nonWebPage');
     statusEl.className = 'site-status disabled';
     statusTextEl.textContent = t('notAvailable');
-    toggleBtn.disabled = true;
-    toggleBtn.textContent = t('cannotAdd');
-    toggleBtn.className = 'toggle-btn';
+    setSwitchState(toggleBtn, false, { disabled: true, label: t('cannotAdd') });
     return;
   }
 
@@ -1630,8 +1647,7 @@ async function checkCurrentSite() {
     statusEl.className = 'site-status enabled';
     statusEl.querySelector('.dot').textContent = isScrollFallback ? '↓' : '✓';
     statusTextEl.textContent = t('enabled');
-    toggleBtn.textContent = t('removeCurrentSite');
-    toggleBtn.className = 'toggle-btn remove';
+    setSwitchState(toggleBtn, true, { label: t('removeCurrentSite') });
     // 启用滚动选项
     scrollOption.classList.remove('disabled');
     scrollToggle.disabled = false;
@@ -1640,8 +1656,7 @@ async function checkCurrentSite() {
     statusEl.className = 'site-status disabled';
     statusEl.querySelector('.dot').textContent = '○';
     statusTextEl.textContent = t('disabled');
-    toggleBtn.textContent = t('addCurrentSite');
-    toggleBtn.className = 'toggle-btn add';
+    setSwitchState(toggleBtn, false, { label: t('addCurrentSite') });
     // 禁用滚动选项
     scrollOption.classList.add('disabled');
     scrollToggle.disabled = true;
