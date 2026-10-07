@@ -39,6 +39,13 @@ const ENTITLEMENTS = {
   UNLIMITED_SITES: 'unlimitedSites',
 };
 
+// "商业平台" 与 "Pro 权益" 是两件事：Chrome/Firefox 免费且不限额，不该显示任何付费 UI。
+const LICENSE_MODES = {
+  UNRESTRICTED: 'unrestricted', // Chrome / Firefox
+  FREE: 'free',                 // Safari 免费版
+  PRO: 'pro',                   // Safari 已解锁 Pro
+};
+
 // 当前用户权限状态缓存（由 background GET_ENTITLEMENTS 填充）
 let _entitlementState = {
   entitlements: [],
@@ -1298,13 +1305,29 @@ function updateSiteCountBadge(count) {
  *
  * 这是 Pro 用户重新打开购买/恢复界面的唯一常驻入口：
  * 免费限额那条路径在升级之后就永远不会再触发了。
+ *
+ * 三态（不要用 hasUnlimitedSites() 反推套餐名）：
+ *   unrestricted = Chrome / Firefox，免费且不限额 —— 整行隐藏，不出现任何付费 UI
+ *   pro          = Safari 已解锁 —— 显示 Pro + 管理 / 恢复购买
+ *   free         = Safari 免费版 —— 显示免费版 + 升级到 Pro
  */
 function updateLicenseRow() {
+  const row = document.querySelector('.license-row');
   const status = document.getElementById('licenseStatus');
   const btn = document.getElementById('manageLicense');
+
+  const mode = getLicenseMode();
+
+  // Chrome / Firefox 不是 Pro，也没有额度这回事，整行不显示。
+  // 注意：.license-row 自带 display:flex，会盖过 [hidden] 的 UA 规则，所以必须内联 display。
+  if (row) {
+    const hide = (mode === LICENSE_MODES.UNRESTRICTED);
+    row.hidden = hide;
+    row.style.display = hide ? 'none' : '';
+  }
   if (!status || !btn) return;
 
-  if (hasUnlimitedSites()) {
+  if (mode === LICENSE_MODES.PRO) {
     status.textContent = t('licensePro');
     status.classList.add('pro');
     btn.textContent = t('licenseManage');
@@ -1313,6 +1336,17 @@ function updateLicenseRow() {
     status.classList.remove('pro');
     btn.textContent = t('licenseUpgrade');
   }
+}
+
+/**
+ * 从权限快照推导 UI 用的授权模式（内联自 shared/constants.js getLicenseModeFor）。
+ * @returns {'unrestricted'|'free'|'pro'}
+ */
+function getLicenseMode() {
+  if (!_entitlementState.isLimitEnforced) return LICENSE_MODES.UNRESTRICTED;
+  return _entitlementState.entitlements.includes(ENTITLEMENTS.UNLIMITED_SITES)
+    ? LICENSE_MODES.PRO
+    : LICENSE_MODES.FREE;
 }
 
 /**
@@ -1325,10 +1359,15 @@ function hasUnlimitedSites() {
 }
 
 /**
- * 格式化网站计数 badge：Pro 显示 ∞，Free 显示 count/3
+ * 格式化网站计数 badge。
+ *   unrestricted（Chrome/Firefox）→ 只显示数字，∞ 会让人误以为有付费墙
+ *   pro                          → ∞
+ *   free                         → count/3
  */
 function formatSiteCount(count) {
-  if (hasUnlimitedSites()) return '∞';
+  const mode = getLicenseMode();
+  if (mode === LICENSE_MODES.UNRESTRICTED) return `${count}`;
+  if (mode === LICENSE_MODES.PRO) return '∞';
   return `${count}/${APP_LIMITS.FREE_SITE_LIMIT}`;
 }
 

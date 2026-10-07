@@ -500,8 +500,9 @@
       <div class="subtitle">禁用图片懒加载 - 完整设置</div>
     </div>
 
-    <!-- 授权入口：免费限额路径在升级后不会再触发，所以这里必须有常驻入口 -->
-    <section class="card">
+    <!-- 授权入口：免费限额路径在升级后不会再触发，所以这里必须有常驻入口。
+         id 供 updateLicenseStatus() 按平台整卡隐藏（Chrome/Firefox 不显示授权卡）。 -->
+    <section class="card" id="licenseCard">
       <h2 data-i18n="licenseTitle">授权</h2>
       <p class="license-status-text" id="licenseStatus">…</p>
       <div class="btn-group">
