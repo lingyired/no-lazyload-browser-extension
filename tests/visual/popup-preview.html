@@ -30,7 +30,9 @@ fetch('../../popup.html')
     const doc = new DOMParser().parseFromString(html, 'text/html');
     document.title = doc.title;
 
-    doc.head.querySelectorAll('link[rel=stylesheet], meta[charset], meta[name=color-scheme]').forEach(function (node) {
+    // ⚠️ popup 的样式是内联在 popup.html 的 <style> 里的（没有外部 CSS），必须一起搬，
+    // 否则预览出的是"没样式"的页面，根本看不出视觉是否与原始一致。
+    doc.head.querySelectorAll('style, link[rel=stylesheet], meta[charset], meta[name=color-scheme]').forEach(function (node) {
       const clone = node.cloneNode(true);
       if (clone.tagName === 'LINK' && clone.getAttribute('href')) {
         clone.setAttribute('href', '../../' + clone.getAttribute('href'));
@@ -39,10 +41,11 @@ fetch('../../popup.html')
     });
     document.body.innerHTML = doc.body.innerHTML;
 
-    // 按真实页面的顺序加载：shared-ui.js → i18n-manager.js → popup.js
+    // 必须与真实 popup.html 的脚本清单一致：i18n-manager.js → popup.js。
+    // popup.js 自带 MESSAGE_TYPES/STRATEGIES 等常量，再加载 shared-ui.js 会
+    // "Identifier 'MESSAGE_TYPES' has already been declared" —— 整个 popup 初始化失败。
     const scripts = [
       '../../dist/safari/locales.js',
-      '../../dist/safari/shared-ui.js',
       '../../i18n-manager.js',
       '../../popup.js',
     ];
