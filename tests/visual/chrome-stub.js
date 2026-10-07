@@ -38,6 +38,14 @@
 
   const limitHit = state === 'limit';
 
+  let globalConfig = {
+    scrollSpeed: 800,
+    stayDuration: 2000,
+    returnToTop: true,
+    fallbackToScroll: false,
+    showInterceptionToast: false,
+  };
+
   function respond(message) {
     switch (message.type) {
       case 'GET_ALL_CONFIGS':
@@ -45,15 +53,25 @@
       case 'getEntitlements':
       case 'refreshEntitlements':
         return Object.assign({ success: true, pendingAction: null, notice: noticeData }, entitlement);
-      case 'SET_SITE_CONFIG':
-        if (limitHit && !sites[message.domain] && entitlement.entitlements.length === 0) {
+      case 'SET_SITE_CONFIG': {
+        // 对齐 background：键做规范化；addedAt 有限时保留（导入排序要用）
+        const key = normalizeHostname(message.domain) || message.domain;
+        if (limitHit && !sites[key] && entitlement.entitlements.length === 0) {
           return { success: false, error: 'LIMIT_REACHED' };
         }
-        sites[message.domain] = {
+        window.__SET_CALLS__ = window.__SET_CALLS__ || [];
+        window.__SET_CALLS__.push(JSON.parse(JSON.stringify(message)));
+        sites[key] = {
           strategy: message.strategy || 'tech-block',
           scrollFallback: message.scrollFallback === true,
-          addedAt: Date.now(),
+          addedAt: Number.isFinite(message.addedAt) ? message.addedAt : Date.now(),
         };
+        return { success: true };
+      }
+      case 'GET_GLOBAL_CONFIG':
+        return { success: true, data: Object.assign({}, globalConfig) };
+      case 'SET_GLOBAL_CONFIG':
+        globalConfig = Object.assign({}, message.config);
         return { success: true };
       case 'REMOVE_SITE_CONFIG':
         delete sites[message.domain];
@@ -68,6 +86,25 @@
         return { success: false, error: 'PREVIEW_UNKNOWN' };
     }
   }
+
+  // 与 shared/domain.js 同规则（测试替身，行为要对齐真实 background）
+  function normalizeHostname(hostname) {
+    if (typeof hostname !== 'string') return '';
+    let host = hostname.trim().toLowerCase();
+    if (!host) return '';
+    const colon = host.lastIndexOf(':');
+    if (colon !== -1 && /^\d+$/.test(host.slice(colon + 1))) host = host.slice(0, colon);
+    while (host.endsWith('.')) host = host.slice(0, -1);
+    if (!host) return '';
+    return host.replace(/^www\./, '');
+  }
+
+  // 让预览页能做"导出 → 清空 → 导入"的无损往返验证
+  window.__SITES__ = sites;
+  window.__CLEAR_SITES__ = function () {
+    Object.keys(sites).forEach(function (k) { delete sites[k]; });
+  };
+  window.__RESET_CALLS__ = function () { window.__SET_CALLS__ = []; };
 
   // 回调式 + Promise 式双支持
   function dual(fn) {

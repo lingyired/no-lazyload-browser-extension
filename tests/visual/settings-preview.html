@@ -56,7 +56,74 @@ function showErrors() {
     + ' acks=' + (window.__ACK_COUNT__ || 0);
   document.body.appendChild(pre);
 }
+// ?roundtrip=1 验证"导出 → 清空 → 导入 无损"（A7 的验收条件）。
+// 步骤照抄 exportConfig 的导出结构，再走页面自己的 importConfig。
+async function roundtrip() {
+  if (window.__ROUNDTRIP_RUNNING__) return;
+  window.__ROUNDTRIP_RUNNING__ = true;
+  const rt = window.chrome.runtime;
+  const before = (await rt.sendMessage({ type: 'GET_ALL_CONFIGS' })).data;
+  const globalConfig = (await rt.sendMessage({ type: 'GET_GLOBAL_CONFIG' })).data;
+  const exportJson = JSON.stringify({
+    siteConfigs: before,
+    globalConfig,
+    exportDate: new Date().toISOString(),
+  });
+
+  window.__CLEAR_SITES__();
+  const cleared = (await rt.sendMessage({ type: 'GET_ALL_CONFIGS' })).data;
+  window.__RESET_CALLS__();
+
+  const file = new File([exportJson], 'config.json', { type: 'application/json' });
+  await window.importConfig(file);
+
+  const after = (await rt.sendMessage({ type: 'GET_ALL_CONFIGS' })).data;
+  const restored = Object.keys(after).sort().join(',') === Object.keys(before).sort().join(',')
+    && Object.keys(before).every(function (k) {
+      return after[k] && after[k].strategy === before[k].strategy
+        && after[k].scrollFallback === before[k].scrollFallback
+        && after[k].addedAt === before[k].addedAt;
+    });
+  const payloads = (window.__SET_CALLS__ || []).map(function (c) {
+    return c.domain + ':' + c.scrollFallback + ':' + (c.addedAt === undefined ? 'none' : 'kept') + ':' + c.source;
+  });
+
+  // 第二轮：导出的键可能带 www. / 大写 / 结尾点，必须规范化成与 background 一致的键
+  window.__CLEAR_SITES__();
+  window.__RESET_CALLS__();
+  const messy = JSON.stringify({
+    globalConfig: globalConfig,
+    siteConfigs: {
+      'www.MixedCase.COM': { strategy: 'scroll-fallback', scrollFallback: true, addedAt: 7 },
+      'Example.COM.': { strategy: 'tech-block', scrollFallback: false, addedAt: 9 },
+    },
+  });
+  await window.importConfig(new File([messy], 'messy.json', { type: 'application/json' }));
+  const messyAfter = (await rt.sendMessage({ type: 'GET_ALL_CONFIGS' })).data;
+  const normalizedKeys = Object.keys(messyAfter).sort().join(',');
+  const messyPayloads = (window.__SET_CALLS__ || []).map(function (c) {
+    return c.domain + ':' + c.scrollFallback + ':' + (c.addedAt === undefined ? 'none' : 'kept') + ':' + c.source;
+  });
+
+  const pre = document.createElement('pre');
+  pre.id = 'roundtrip-report';
+  pre.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#ff0;color:#000;font-size:11px;padding:4px;margin:0;white-space:pre-wrap';
+  pre.textContent = 'roundtrip restored=' + restored
+    + ' clearedKeys=' + Object.keys(cleared).length
+    + ' before=' + JSON.stringify(before)
+    + ' after=' + JSON.stringify(after)
+    + ' payloads=' + JSON.stringify(payloads)
+    + ' | messyKeys=' + normalizedKeys
+    + ' messyPayloads=' + JSON.stringify(messyPayloads)
+    + ' messyConfigs=' + JSON.stringify(messyAfter)
+    + ' errors=' + JSON.stringify(window.__ERR__);
+  document.body.appendChild(pre);
+}
+
 if (params.get('measure') === '1') setTimeout(showErrors, 800);
+if (params.get('roundtrip') === '1') {
+  document.addEventListener('DOMContentLoaded', function () { setTimeout(roundtrip, 200); });
+}
 </script>
 </body>
 </html>
