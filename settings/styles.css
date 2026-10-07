@@ -1,13 +1,30 @@
-/* settings/styles.css — 设置页布局
- *
- * 完全沿用原始版本的视觉语言：#f5f5f5 底、白卡片 + 轻阴影、
- * 18px 卡片标题带下边框、绿色主按钮。
- * 只做了 plan 要求的结构调整（分区顺序、高级折叠等，见 index.html）。
- */
+/* settings/styles.css */
+
+:root {
+  --primary: #4CAF50;
+  --primary-dark: #45a049;
+  --danger: #f44336;
+  --danger-dark: #da190b;
+  --bg: #f5f5f5;
+  --card-bg: #fff;
+  --text: #333;
+  --text-secondary: #666;
+  --border: #ddd;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  min-width: 400px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
+  min-width: 400px;
 }
 
 .container {
@@ -16,274 +33,281 @@ body {
   padding: 20px;
 }
 
-/* ===== 页头（原始：居中标题 + 副标题）===== */
-.header {
+/* Header */
+header {
   text-align: center;
   margin-bottom: 24px;
 }
 
-.header h1 {
+h1 {
   font-size: 24px;
-  font-weight: 600;
   margin-bottom: 4px;
 }
 
 .subtitle {
-  color: var(--nl-text-secondary);
+  color: var(--text-secondary);
   font-size: 14px;
 }
 
-/* ===== 卡片 ===== */
+/* Card */
 .card {
-  background: var(--nl-surface);
-  border-radius: var(--nl-radius-md);
+  background: var(--card-bg);
+  border-radius: 8px;
   padding: 20px;
   margin-bottom: 16px;
-  box-shadow: var(--nl-shadow-md);
+  box-shadow: var(--shadow);
 }
 
 .card h2 {
   font-size: 18px;
-  font-weight: 600;
   margin-bottom: 16px;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--nl-border);
+  border-bottom: 1px solid var(--border);
 }
 
 .card h3 {
   font-size: 14px;
   margin: 16px 0 8px;
-  color: var(--nl-text-secondary);
+  color: var(--text-secondary);
 }
 
-/* 网站列表卡的头部：标题 + 徽章 + 计数 */
-.site-list-header {
+/* Form elements - simplified */
+.add-site-form {
   display: flex;
-  align-items: center;
   gap: 8px;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--nl-border);
+  flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 
-.site-list-header h2 {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.site-list-header .plan-badge {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  color: #ffffff;
-  background: var(--nl-primary);
-  padding: 2px 7px;
-  border-radius: 4px;
-}
-
-@media (prefers-color-scheme: dark) {
-  .site-list-header .plan-badge { color: #10240a; }
-}
-
-.site-list-header .count {
-  margin-left: auto;
-  font-size: 12px;
-  color: var(--nl-text-secondary);
-  background: var(--nl-bg);
-  padding: 2px 8px;
-  border-radius: 10px;
-}
-
-/* 网站行 */
-.site-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--nl-separator);
-}
-
-.site-item:last-child { border-bottom: none; }
-
-.site-item .domain {
-  flex: 1;
-  min-width: 0;
-  font-size: 14px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.site-item .mode-tag { flex: none; font-size: 12px; color: var(--nl-text-secondary); }
-
-.site-item .delete-btn {
-  flex: none;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
+.add-site-form.simple {
   justify-content: center;
-  font-size: 18px;
-  line-height: 1;
-  color: var(--nl-text-tertiary);
-  background: transparent;
-  border: none;
+}
+
+.add-site-form input,
+.add-site-form select {
+  flex: 1;
+  min-width: 150px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
   border-radius: 4px;
-  cursor: pointer;
-}
-
-.site-item .delete-btn:hover { background: var(--nl-danger-bg); color: var(--nl-danger); }
-
-.empty-state { padding: 40px; text-align: center; color: var(--nl-text-secondary); }
-
-.privacy-note {
-  margin-top: 12px;
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--nl-text-tertiary);
-}
-
-/* ===== 表单 ===== */
-.form-group { margin-bottom: 16px; }
-
-.form-group label {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
   font-size: 14px;
-  cursor: pointer;
 }
 
-.form-group input[type="checkbox"] {
-  flex: none;
-  width: 16px;
-  height: 16px;
-  margin-top: 3px;
-  accent-color: var(--nl-primary);
-  cursor: pointer;
-}
-
-.form-group input[type="number"],
-.form-group select,
-.form-group textarea { width: 100%; }
-
-.form-row { display: flex; gap: 16px; }
-.form-row .form-group { flex: 1; min-width: 0; }
-
-.field-label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 14px;
-  color: var(--nl-text-secondary);
+.add-site-form button {
+  min-width: 120px;
 }
 
 .help-text {
-  margin-top: 4px;
   font-size: 12px;
-  color: var(--nl-text-tertiary);
+  color: var(--text-secondary);
+  line-height: 1.8;
 }
 
-.textarea {
-  width: 100%;
-  padding: 8px 10px;
-  font: inherit;
-  font-family: var(--nl-font-mono);
-  font-size: 13px;
-  color: var(--nl-text);
-  background: var(--nl-surface);
-  border: 1px solid var(--nl-border);
-  border-radius: var(--nl-radius-sm);
-  resize: vertical;
-}
-
-/* ===== 按钮（原始：4px 圆角 + 绿色主按钮）===== */
+/* Buttons */
 .btn {
   padding: 8px 16px;
-  font: inherit;
-  font-size: 14px;
-  color: var(--nl-text);
-  background: var(--nl-surface);
-  border: 1px solid var(--nl-border);
+  border: none;
   border-radius: 4px;
+  font-size: 14px;
   cursor: pointer;
-  transition: background var(--nl-duration) var(--nl-ease);
+  transition: background 0.2s;
 }
-
-.btn:hover { background: var(--nl-surface-sunken); }
-.btn:disabled { opacity: 0.5; cursor: default; }
 
 .btn-primary {
-  color: var(--nl-on-primary);
-  background: var(--nl-primary);
-  border-color: var(--nl-primary);
-  font-weight: 600;
+  background: var(--primary);
+  color: white;
 }
 
-.btn-primary:hover { background: var(--nl-primary-hover); border-color: var(--nl-primary-hover); }
-.btn-primary:active { background: var(--nl-primary-active); }
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
 
-.btn-secondary { background: var(--nl-border); border-color: var(--nl-border); color: var(--nl-text); }
-.btn-secondary:hover { background: var(--nl-border-strong); }
+.btn-secondary {
+  background: var(--border);
+  color: var(--text);
+}
 
-.btn-group { display: flex; gap: 8px; margin-top: 16px; }
-.btn-block { width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.btn-secondary:hover {
+  background: #ccc;
+}
 
-/* ===== 高级：默认折叠 ===== */
-.details summary {
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: var(--danger-dark);
+}
+
+/* Site list */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.section-header.simple {
+  justify-content: flex-start;
+}
+
+.search-input {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.site-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: var(--bg);
+  border-radius: 4px;
+}
+
+.site-info {
+  flex: 1;
+}
+
+.site-domain {
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.site-strategy {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.site-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.site-actions select {
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group.checkbox label {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 15px;
-  font-weight: 500;
   cursor: pointer;
-  list-style: none;
 }
 
-.details summary::-webkit-details-marker { display: none; }
-
-.details summary::before {
-  content: "";
-  flex: none;
-  width: 7px;
-  height: 7px;
-  border-right: 2px solid var(--nl-text-secondary);
-  border-bottom: 2px solid var(--nl-text-secondary);
-  transform: rotate(-45deg);
-  transition: transform var(--nl-duration) var(--nl-ease);
+.form-group.checkbox input {
+  width: auto;
 }
 
-.details[open] summary::before { transform: rotate(45deg); }
-.details-body { padding-top: 16px; }
-
-.warning {
-  margin-bottom: 16px;
-  padding: 10px 12px;
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--nl-warning);
-  background: var(--nl-warning-bg);
-  border-radius: var(--nl-radius-sm);
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-/* ===== 套餐 ===== */
-.plan-status { font-size: 14px; color: var(--nl-text); margin-bottom: 4px; }
-.plan-note { font-size: 13px; color: var(--nl-text-secondary); }
-
-/* ===== 关于 ===== */
-.author {
-  text-align: center;
-  padding: 12px;
-  font-size: 12px;
-  color: var(--nl-text-tertiary);
+/* Import/Export */
+.import-export {
+  display: flex;
+  gap: 12px;
 }
 
-.author a { color: var(--nl-primary); text-decoration: none; }
-.author a:hover { text-decoration: underline; }
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  animation: fadeInUp 0.3s ease;
+  z-index: 1000;
+}
 
-/* ===== 响应式 ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-  .form-row { flex-direction: column; gap: 0; }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .add-site-form {
+    flex-direction: column;
+  }
+
+  .add-site-form input,
+  .add-site-form select,
+  .add-site-form button {
+    width: 100%;
+  }
+}
+/* 授权状态文案。
+   注意：刻意不复用 .help-text —— app.js 里用 querySelector('.help-text')
+   取第一个元素来更新「自动滚动」的帮助文案，复用会被顶掉。 */
+.license-status-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.license-status-text.pro {
+  color: #34c759;
+  font-weight: 600;
 }

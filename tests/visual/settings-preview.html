@@ -1,94 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>settings preview harness</title>
-</head>
+<head><meta charset="UTF-8"><title>设置页预览</title></head>
 <body>
 <!--
-  只用于视觉/交互自查的预览壳，不参与打包。
-
-  用法（headless Chrome）：
-    chrome --headless --screenshot=out.png --window-size=760,1100 \
-      "file://.../tests/visual/settings-preview.html?state=free&scheme=light"
-
-  state:  free(默认) | pro | unrestricted | empty | unavailable
-  measure=1 会在页面顶部打印样式表与关键元素的计算样式，便于排查
+  渲染当前 settings/index.html（原始视觉 + 最小功能改动）。
+  state: free(默认) | pro | unrestricted | empty | unavailable
 -->
 <script src="chrome-stub.js"></script>
 <script>
 const params = new URLSearchParams(location.search);
-window.__PREVIEW_STATE__ = params.get('state') || 'free';
-
-function resolveHref(href) {
-  // locales.js / shared-ui.js 是构建产物，预览直接读 dist
-  if (href === 'locales.js') return '../../dist/safari/locales.js';
-  if (href === 'shared-ui.js') return '../../dist/safari/shared-ui.js';
-  // settings/index.html 里的相对路径是相对扩展根目录的
-  return '../../settings/' + href;
-}
+window.__ERR__ = [];
+window.addEventListener('error', function (e) { window.__ERR__.push(String(e.message) + ' @' + (e.filename||'').split('/').pop() + ':' + e.lineno); });
+window.addEventListener('unhandledrejection', function (e) { window.__ERR__.push('rej: ' + String(e.reason)); });
 
 fetch('../../settings/index.html')
   .then(function (r) { return r.text(); })
   .then(function (html) {
     const doc = new DOMParser().parseFromString(html, 'text/html');
-
-    doc.head.querySelectorAll('link[rel=stylesheet], meta[charset], meta[name=color-scheme]').forEach(function (node) {
-      const clone = node.cloneNode(true);
-      if (clone.tagName === 'LINK' && clone.getAttribute('href')) {
-        clone.setAttribute('href', resolveHref(clone.getAttribute('href')));
-      }
-      document.head.appendChild(clone);
+    document.title = doc.title;
+    // 原始页面样式全部内联，直接搬
+    doc.head.querySelectorAll('style, link[rel=stylesheet], meta[charset], meta[name=color-scheme]').forEach(function (n) {
+      document.head.appendChild(n.cloneNode(true));
     });
+    document.body.innerHTML = doc.body.innerHTML;
 
-    document.body.innerHTML = doc.body.innerHTML; // nl-fix-img
-
-    // body 里的相对路径（../lingyired/...）同样要指回仓库根
-    document.querySelectorAll('img[src^="../"]').forEach(function (img) {
-      img.setAttribute('src', '../../' + img.getAttribute('src').replace(/^\.\.\//, ''));
-    });
-
-    // 头部脚本（i18n-manager.js 等）按顺序加载，再加载页面主脚本
-    // 页面脚本要按文档顺序全部加载（settings 页把 i18n-manager.js 放在 body 末尾）
-    // 构建产物 shared-ui.js 放在最前面
-    const headScripts = [{ getAttribute: function () { return 'locales.js'; } },
-                        { getAttribute: function () { return 'shared-ui.js'; } }]
-      .concat(Array.prototype.slice.call(doc.querySelectorAll('script[src]')));
-
+    // 页面脚本按文档顺序加载；相对路径指回仓库根
+    const scripts = Array.prototype.slice.call(doc.querySelectorAll('script[src]'));
     const loadNext = function () {
-      const node = headScripts.shift();
-      if (!node) {
-        document.dispatchEvent(new Event('DOMContentLoaded'));
-        if (params.get('measure') === '1') setTimeout(measure, 300);
-        return;
-      }
-      const script = document.createElement('script');
-      script.src = resolveHref(node.getAttribute('src'));
-      script.onload = loadNext;
-      script.onerror = loadNext;
-      document.body.appendChild(script);
+      const node = scripts.shift();
+      if (!node) { document.dispatchEvent(new Event('DOMContentLoaded')); return; }
+      let src = node.getAttribute('src');
+      // locales.js / shared-ui.js 是构建产物，预览时读 dist/safari 下的副本
+      if (src === '../locales.js') src = '../../dist/safari/locales.js';
+      else if (src === '../shared-ui.js') src = '../../dist/safari/shared-ui.js';
+      else if (src === '../i18n-manager.js') src = '../../i18n-manager.js';
+      else if (src === 'app.js') src = '../../settings/app.js';
+      else src = src.replace(/^\.\.\//, '../../');
+      const el = document.createElement('script');
+      el.src = src;
+      el.onload = loadNext;
+      el.onerror = loadNext;
+      document.body.appendChild(el);
     };
     loadNext();
   });
 
-function measure() {
-  const rows = [];
-  rows.push('sheets: ' + Array.prototype.map.call(document.styleSheets, function (s) {
-    return (s.href || 'inline').split('/').slice(-2).join('/');
-  }).join(', '));
-  const btn = document.getElementById('saveGlobalBtn');
-  if (btn) {
-    const cs = getComputedStyle(btn);
-    rows.push('saveBtn: bg=' + cs.backgroundColor + ' color=' + cs.color + ' padding=' + cs.padding + ' radius=' + cs.borderRadius);
-  }
-  rows.push('count=' + (document.getElementById('siteCount') || {}).textContent
-    + ' items=' + document.querySelectorAll('#siteList .nl-list-item').length
-    + ' langOptions=' + (document.getElementById('languageSelect') || { options: [] }).options.length);
+function showErrors() {
   const pre = document.createElement('pre');
-  pre.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#ff0;color:#000;font-size:11px;padding:4px;white-space:pre-wrap;margin:0';
-  pre.textContent = rows.join('\n');
+  pre.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#ff0;color:#000;font-size:11px;padding:4px;margin:0;white-space:pre-wrap';
+  pre.textContent = 'errors: ' + JSON.stringify(window.__ERR__, null, 1)
+    + '\nvalues: scrollSpeed=' + (document.getElementById('scrollSpeed')||{}).value
+    + ' stayDuration=' + (document.getElementById('stayDuration')||{}).value
+    + ' licenseStatus=' + (document.getElementById('licenseStatus')||{}).textContent;
   document.body.appendChild(pre);
 }
+if (params.get('measure') === '1') setTimeout(showErrors, 800);
 </script>
 </body>
 </html>

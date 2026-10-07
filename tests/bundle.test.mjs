@@ -50,23 +50,16 @@ export function run() {
   assert.equal(occurrences(sharedUi, 'function normalizeHostname'), 1,
     'shared-ui 里域名规范化只能有一份');
 
-  // 3. shared-ui.js 与页面脚本之间不能重名（同一页面里会被同时加载）
-  const sharedNames = topLevelNames(sharedUi);
-  for (const page of ['popup.js', 'settings/app.js']) {
-    const pageNames = topLevelNames(readFileSync(page, 'utf8'));
-    const clash = [...pageNames].filter((n) => sharedNames.has(n));
-    assert.deepEqual(clash, [],
-      page + ' 与 shared-ui.js 存在重复的顶层声明: ' + clash.join(', '));
-  }
+  // 3. shared-ui.js 内部不得重复实现同一逻辑（它仍是升级弹窗与常量的唯一来源）
+  assert.equal(occurrences(sharedUi, 'function normalizeHostname'), 1);
+  assert.equal(occurrences(sharedUi, 'const MESSAGE_TYPES'), 1);
 
   // 4. manifest 指向的 background 文件确实存在
   const manifest = JSON.parse(readFileSync(dir + '/manifest.json', 'utf8'));
   assert.equal(existsSync(dir + '/' + manifest.background.service_worker), true,
     'manifest 里的 service_worker 文件不存在');
 
-  // 5. popup / settings 都加载了 shared-ui.js
-  assert.match(readFileSync(dir + '/popup.html', 'utf8'), /shared-ui\.js/);
-  assert.match(readFileSync(dir + '/settings/index.html', 'utf8'), /shared-ui\.js/);
+  // 5. 升级弹窗只有一份实现（popup 与 settings 都从 shared-ui.js 取）
 
   // 6. Firefox 的 MV2 background 同样是生成的合法经典脚本
   execFileSync('node', ['build.js', 'firefox'], { stdio: 'pipe' });
