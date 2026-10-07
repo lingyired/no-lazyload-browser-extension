@@ -31,7 +31,9 @@ const MESSAGE_TYPES = {
   REFRESH_ENTITLEMENTS: 'refreshEntitlements',
   REQUEST_PURCHASE: 'requestPurchase',
   RESTORE_PURCHASES: 'restorePurchases',
-  OPEN_HOST_APP: 'openHostApp'
+  OPEN_HOST_APP: 'openHostApp',
+  // 一次性提示展示完必须 ACK，否则同一句"已启用 xxx"每次回到设置页都会再弹一遍
+  ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice'
 };
 
 // ===== Entitlement System 常量（内联自 shared/constants.js）=====
@@ -65,6 +67,7 @@ const DEFAULT_PLACEHOLDER_PATTERNS = [
 // 翻译内容
 const TRANSLATIONS = {
   'zh': {
+    'noticeSiteEnabled': "已解锁 Pro · 已启用 {domain}",
     'siteListTitle': '已配置的网站',
     'emptyState': '暂无配置的网站',
     'globalSettings': '网站配置列表',
@@ -119,6 +122,7 @@ const TRANSLATIONS = {
     'licenseManage': '管理 / 恢复购买'
   },
   'en': {
+    'noticeSiteEnabled': "Pro unlocked · {domain} was enabled",
     'siteListTitle': 'Configured Sites',
     'emptyState': 'No configured sites',
     'globalSettings': 'Site Configuration List',
@@ -173,6 +177,7 @@ const TRANSLATIONS = {
     'licenseManage': 'Manage / Restore'
   },
   'es': {
+    'noticeSiteEnabled': "Pro desbloqueado · {domain} se ha activado",
     'siteListTitle': 'Sitios Configurados',
     'emptyState': 'No hay sitios configurados',
     'globalSettings': 'Lista de Configuración de Sitios',
@@ -206,6 +211,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Nueva pestaña basada en marcadores. Abre carpetas como grupos de pestañas o en vista dividida. 12 temas integrados + temas personalizados ilimitados.'
   },
   'ar': {
+    'noticeSiteEnabled': "تم فتح Pro · تم تفعيل {domain}",
     'siteListTitle': 'المواقع المُعدّة',
     'emptyState': 'لا توجد مواقع مُعدّة',
     'globalSettings': 'قائمة تكوين الموقع',
@@ -239,6 +245,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'علامة تبويب جديدة مدفوعة بالإشارات المرجعية. افتح المجلدات كمجموعات علامات تبويب أو في عرض مقسم. 12 سمًا مدمجًا + سمات مخصصة غير محدودة.'
   },
   'hi': {
+    'noticeSiteEnabled': "Pro अनलॉक हुआ · {domain} सक्षम किया गया",
     'siteListTitle': 'कॉन्फ़िगर की गई साइटें',
     'emptyState': 'कोई कॉन्फ़िगर की गई साइट नहीं',
     'globalSettings': 'वेबसाइट कॉन्फ़िगरेशन सूची',
@@ -272,6 +279,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'बुकमार्क-संचालित नया टैब। फ़ोल्डर को टैब समूहों या स्प्लिट व्यू में खोलें। 12 बिल्ट-इन थीम + असीमित कस्टम थीम।'
   },
   'fr': {
+    'noticeSiteEnabled': "Pro débloqué · {domain} a été activé",
     'siteListTitle': 'Sites Configurés',
     'emptyState': 'Aucun site configuré',
     'globalSettings': 'Liste de Configuration des Sites',
@@ -305,6 +313,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Nouvel onglet basé sur les favoris. Ouvrez les dossiers en groupes d\'onglets ou en vue fractionnée. 12 thèmes intégrés + thèmes personnalisés illimités.'
   },
   'pt': {
+    'noticeSiteEnabled': "Pro desbloqueado · {domain} foi ativado",
     'siteListTitle': 'Sites Configurados',
     'emptyState': 'Nenhum site configurado',
     'globalSettings': 'Lista de Configuração de Sites',
@@ -338,6 +347,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Nova aba baseada em favoritos. Abra pastas como grupos de abas ou em tela dividida. 12 temas integrados + temas personalizados ilimitados.'
   },
   'de': {
+    'noticeSiteEnabled': "Pro freigeschaltet · {domain} wurde aktiviert",
     'siteListTitle': 'Konfigurierte Seiten',
     'emptyState': 'Keine konfigurierten Seiten',
     'globalSettings': 'Website-Konfigurationsliste',
@@ -371,6 +381,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Lesezeichen-gesteuerter neuer Tab. Ordner als Tab-Gruppen oder in geteilter Ansicht öffnen. 12 integrierte Themes + unbegrenzte benutzerdefinierte Themes.'
   },
   'ja': {
+    'noticeSiteEnabled': "Pro を解除しました · {domain} を有効にしました",
     'siteListTitle': '設定済みサイト',
     'emptyState': '設定済みサイトはありません',
     'globalSettings': 'ウェブサイト設定リスト',
@@ -404,6 +415,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'ブックマーク駆動の新しいタブ。フォルダをタブグループまたは分割ビューで開きます。12の内蔵テーマ + 無制限のカスタムテーマ。'
   },
   'ru': {
+    'noticeSiteEnabled': "Pro разблокирован · {domain} включён",
     'siteListTitle': 'Настроенные Сайты',
     'emptyState': 'Нет настроенных сайтов',
     'globalSettings': 'Список Конфигурации Сайтов',
@@ -437,6 +449,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Новая вкладка на основе закладок. Открывайте папки как группы вкладок или в разделённом виде. 12 встроенных тем + неограниченные пользовательские темы.'
   },
   'ko': {
+    'noticeSiteEnabled': "Pro 잠금 해제 · {domain}을 사용하도록 설정했습니다",
     'siteListTitle': '설정된 사이트',
     'emptyState': '설정된 사이트가 없습니다',
     'globalSettings': '사이트 설정 목록',
@@ -478,6 +491,7 @@ const TRANSLATIONS = {
     'newtab01Desc': '북마크 기반 새 탭. 폴더를 탭 그룹이나 분할 보기로 엽니다. 12개 내장 테마 + 무제한 커스텀 테마.'
   },
   'bg': {
+    'noticeSiteEnabled': "Pro е отключен · {domain} е активиран",
     'siteListTitle': 'Конфигурирани сайтове',
     'emptyState': 'Няма конфигурирани сайтове',
     'globalSettings': 'Списък с конфигурации на сайтове',
@@ -519,6 +533,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Нов раздел, задвижван от отметки. Отваряйте папки като групи от раздели или в разделен изглед. 12 вградени теми + неограничени персонализирани теми.',
   },
   'ca': {
+    'noticeSiteEnabled': "Pro desbloquejat · {domain} s'ha activat",
     'siteListTitle': 'Llocs configurats',
     'emptyState': 'Cap lloc configurat',
     'globalSettings': 'Llista de configuració de llocs',
@@ -560,6 +575,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Nova pestanya basada en marcadors. Obre carpetes com a grups de pestanyes o en vista dividida. 12 temes integrats + temes personalitzats il·limitats.',
   },
   'cs': {
+    'noticeSiteEnabled': "Pro odemčeno · {domain} byl povolen",
     'siteListTitle': 'Nakonfigurované stránky',
     'emptyState': 'Žádné nakonfigurované stránky',
     'globalSettings': 'Seznam konfigurací stránek',
@@ -601,6 +617,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Nová karta řízená záložkami. Otevírejte složky jako skupiny karet nebo v rozděleném zobrazení. 12 vestavěných motivů + neomezené vlastní motivy.',
   },
   'da': {
+    'noticeSiteEnabled': "Pro låst op · {domain} blev aktiveret",
     'siteListTitle': 'Konfigurerede hjemmesider',
     'emptyState': 'Ingen konfigurerede hjemmesider',
     'globalSettings': 'Liste over hjemmesidekonfigurationer',
@@ -642,6 +659,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Bogmærke-drevet nyt faneblad. Åbn mapper som fanegrupper eller i opdelt visning. 12 indbyggede temaer + ubegrænsede brugerdefinerede temaer.',
   },
   'el': {
+    'noticeSiteEnabled': "Το Pro ξεκλειδώθηκε · ο {domain} ενεργοποιήθηκε",
     'siteListTitle': 'Ρυθμισμένοι ιστότοποι',
     'emptyState': 'Δεν υπάρχουν ρυθμισμένοι ιστότοποι',
     'globalSettings': 'Λίστα ρυθμίσεων ιστότοπων',
@@ -683,6 +701,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Νέα καρτέλα με γνώμονα τους σελιδοδείκτες. Ανοίξτε φακέλους ως ομάδες καρτελών ή σε διαχωρισμένη προβολή. 12 ενσωματωμένα θέματα + απεριόριστα προσαρμοσμένα θέματα.',
   },
   'fa': {
+    'noticeSiteEnabled': "Pro باز شد · {domain} فعال شد",
     'siteListTitle': 'سایت‌های پیکربندی‌شده',
     'emptyState': 'هیچ سایتی پیکربندی نشده است',
     'globalSettings': 'فهرست پیکربندی سایت‌ها',
@@ -724,6 +743,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'تب جدید مبتنی بر نشانک. پوشه‌ها را به‌عنوان گروه تب یا در نمای تقسیم‌شده باز کنید. ۱۲ تم داخلی + تم سفارشی نامحدود.',
   },
   'fi': {
+    'noticeSiteEnabled': "Pro avattu · {domain} otettiin käyttöön",
     'siteListTitle': 'Määritetyt sivustot',
     'emptyState': 'Ei määritettyjä sivustoja',
     'globalSettings': 'Sivuston määritysluettelo',
@@ -765,6 +785,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Kirjanmerkeillä toimiva uusi välilehti. Avaa kansioita välilehtiryhminä tai jaetussa näkymässä. 12 sisäänrakennettua teemaa + rajattomasti mukautettuja teemoja.',
   },
   'he': {
+    'noticeSiteEnabled': "Pro נפתח · {domain} הופעל",
     'siteListTitle': 'אתרים מוגדרים',
     'emptyState': 'אין אתרים מוגדרים',
     'globalSettings': 'רשימת תצורות אתרים',
@@ -806,6 +827,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'כרטיסייה חדשה מונעת סימניות. פתח תיקיות כקבוצות כרטיסיות או בתצוגה מפוצלת. 12 ערכות נושא מובנות + ערכות נושא מותאמות אישית ללא הגבלה.',
   },
   'hr': {
+    'noticeSiteEnabled': "Pro otključan · {domain} je omogućen",
     'siteListTitle': 'Konfigurirane stranice',
     'emptyState': 'Nema konfiguriranih stranica',
     'globalSettings': 'Popis konfiguracija stranica',
@@ -847,6 +869,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Nova kartica vođena oznakama. Otvorite mape kao grupe kartica ili u podijeljenom prikazu. 12 ugrađenih tema + neograničene prilagođene teme.',
   },
   'hu': {
+    'noticeSiteEnabled': "Pro feloldva · a(z) {domain} engedélyezve",
     'siteListTitle': 'Beállított oldalak',
     'emptyState': 'Nincsenek beállított oldalak',
     'globalSettings': 'Webhelykonfigurációs lista',
@@ -888,6 +911,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Könyvjelző-vezérelt új lap. Nyisson meg mappákat lapcsoportokként vagy osztott nézetben. 12 beépített téma + korlátlan egyéni téma.',
   },
   'id': {
+    'noticeSiteEnabled': "Pro dibuka · {domain} diaktifkan",
     'siteListTitle': 'Situs yang Dikonfigurasi',
     'emptyState': 'Tidak ada situs yang dikonfigurasi',
     'globalSettings': 'Daftar Konfigurasi Situs',
@@ -929,6 +953,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Tab baru berbasis bookmark. Buka folder sebagai grup tab atau dalam tampilan terbagi. 12 tema bawaan + tema kustom tak terbatas.',
   },
   'it': {
+    'noticeSiteEnabled': "Pro sbloccato · {domain} è stato attivato",
     'siteListTitle': 'Siti configurati',
     'emptyState': 'Nessun sito configurato',
     'globalSettings': 'Elenco configurazione siti',
@@ -970,6 +995,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Nuova scheda basata sui segnalibri. Apri le cartelle come gruppi di schede o in vista divisa. 12 temi integrati + temi personalizzati illimitati.',
   },
   'nb': {
+    'noticeSiteEnabled': "Pro låst opp · {domain} ble aktivert",
     'siteListTitle': 'Konfigurerte nettsteder',
     'emptyState': 'Ingen konfigurerte nettsteder',
     'globalSettings': 'Liste over nettstedskonfigurasjoner',
@@ -1011,6 +1037,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Bokmerkestyrt ny fane. Åpne mapper som fanegrupper eller i delt visning. 12 innebygde temaer + ubegrensede egendefinerte temaer.',
   },
   'nl': {
+    'noticeSiteEnabled': "Pro ontgrendeld · {domain} is ingeschakeld",
     'siteListTitle': 'Geconfigureerde sites',
     'emptyState': 'Geen geconfigureerde sites',
     'globalSettings': 'Lijst met siteconfiguraties',
@@ -1052,6 +1079,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Bladwijzer-gestuurde nieuw tabblad. Open mappen als tabgroepen of in gesplitste weergave. 12 ingebouwde thema\'s + onbeperkt aangepaste thema\'s.',
   },
   'pl': {
+    'noticeSiteEnabled': "Pro odblokowane · {domain} zostało włączone",
     'siteListTitle': 'Skonfigurowane strony',
     'emptyState': 'Brak skonfigurowanych stron',
     'globalSettings': 'Lista konfiguracji stron',
@@ -1093,6 +1121,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Nowa karta oparta na zakładkach. Otwieraj foldery jako grupy kart lub w widoku dzielonym. 12 wbudowanych motywów + nieograniczone motywy niestandardowe.',
   },
   'ps': {
+    'noticeSiteEnabled': "Pro پرانیستل شو · {domain} فعال شو",
     'siteListTitle': 'ترتیب شوي سایټونه',
     'emptyState': 'هیڅ ترتیب شوی سایټ نشته',
     'globalSettings': 'د سایټ د تنظیماتو لیست',
@@ -1134,6 +1163,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'د بوکمارک پر بنسټ نوی ټب. فولډرونه د ټب ګروپونو یا ویشل شوي لید په توګه خلاص کړئ. ۱۲ جوړ شوي موضوعات + نامحدود دودیز موضوعات.',
   },
   'ro': {
+    'noticeSiteEnabled': "Pro deblocat · {domain} a fost activat",
     'siteListTitle': 'Site-uri configurate',
     'emptyState': 'Niciun site configurat',
     'globalSettings': 'Lista de configurări a site-urilor',
@@ -1175,6 +1205,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Filă nouă bazată pe marcaje. Deschide folderele ca grupuri de file sau în vizualizare divizată. 12 teme încorporate + teme personalizate nelimitate.',
   },
   'sk': {
+    'noticeSiteEnabled': "Pro odomknuté · {domain} bol povolený",
     'siteListTitle': 'Nakonfigurované stránky',
     'emptyState': 'Žiadne nakonfigurované stránky',
     'globalSettings': 'Zoznam konfigurácií stránok',
@@ -1216,6 +1247,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Nová karta riadená záložkami. Otvárajte priečinky ako skupiny kariet alebo v rozdelenom zobrazení. 12 vstavaných motívov + neobmedzené vlastné motívy.',
   },
   'sv': {
+    'noticeSiteEnabled': "Pro upplåst · {domain} aktiverades",
     'siteListTitle': 'Konfigurerade webbplatser',
     'emptyState': 'Inga konfigurerade webbplatser',
     'globalSettings': 'Lista över webbplatskonfigurationer',
@@ -1257,6 +1289,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Bokmärkesdriven ny flik. Öppna mappar som flikgrupper eller i delad vy. 12 inbyggda teman + obegränsade anpassade teman.',
   },
   'th': {
+    'noticeSiteEnabled': "ปลดล็อก Pro แล้ว · เปิดใช้งาน {domain} แล้ว",
     'siteListTitle': 'เว็บไซต์ที่กำหนดค่าแล้ว',
     'emptyState': 'ยังไม่มีเว็บไซต์ที่กำหนดค่า',
     'globalSettings': 'รายการกำหนดค่าเว็บไซต์',
@@ -1298,6 +1331,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'แท็บใหม่ที่ขับเคลื่อนด้วยบุ๊กมาร์ก เปิดโฟลเดอร์เป็นกลุ่มแท็บหรือในมุมมองแบบแยก ธีมในตัว 12 ธีม + ธีมที่กำหนดเองไม่จำกัด',
   },
   'tr': {
+    'noticeSiteEnabled': "Pro açıldı · {domain} etkinleştirildi",
     'siteListTitle': 'Yapılandırılmış Siteler',
     'emptyState': 'Yapılandırılmış site yok',
     'globalSettings': 'Site Yapılandırma Listesi',
@@ -1339,6 +1373,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Yer imleri odaklı yeni sekme. Klasörleri sekme grupları veya bölünmüş görünüm olarak açın. 12 yerleşik tema + sınırsız özel tema.',
   },
   'uk': {
+    'noticeSiteEnabled': "Pro розблоковано · {domain} увімкнено",
     'siteListTitle': 'Налаштовані сайти',
     'emptyState': 'Немає налаштованих сайтів',
     'globalSettings': 'Список конфігурацій сайтів',
@@ -1380,6 +1415,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Нова вкладка на основі закладок. Відкривайте папки як групи вкладок або у розділеному вигляді. 12 вбудованих тем + необмежена кількість власних тем.',
   },
   'ur': {
+    'noticeSiteEnabled': "Pro کھل گیا · {domain} فعال کر دیا گیا",
     'siteListTitle': 'ترتیب دی گئی سائٹس',
     'emptyState': 'کوئی ترتیب دی گئی سائٹ نہیں',
     'globalSettings': 'سائٹ کنفیگریشن فہرست',
@@ -1421,6 +1457,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'بک مارک پر مبنی نئی ٹیب۔ فولڈرز کو ٹیب گروپس یا تقسیم شدہ ویو کے طور پر کھولیں۔ 12 بلٹ ان تھیمز + لامحدود کسٹم تھیمز۔',
   },
   'vi': {
+    'noticeSiteEnabled': "Đã mở khóa Pro · đã bật {domain}",
     'siteListTitle': 'Các trang đã cấu hình',
     'emptyState': 'Chưa có trang nào được cấu hình',
     'globalSettings': 'Danh sách cấu hình trang',
@@ -1462,6 +1499,7 @@ const TRANSLATIONS = {
     'newtab01Desc': 'Tab mới dựa trên bookmark. Mở thư mục dưới dạng nhóm tab hoặc chế độ xem chia đôi. 12 chủ đề tích hợp + chủ đề tùy chỉnh không giới hạn.',
   },
   'zh_HK': {
+    'noticeSiteEnabled': "已解鎖 Pro · 已啟用 {domain}",
     'siteListTitle': '已設定的網站',
     'emptyState': '暫無設定的網站',
     'globalSettings': '網站設定清單',
@@ -1503,6 +1541,7 @@ const TRANSLATIONS = {
     'newtab01Desc': '書籤驅動的新分頁。將資料夾作為分頁群組或分割檢視開啟。12 種內建主題 + 無限自訂主題。',
   },
   'zh_TW': {
+    'noticeSiteEnabled': "已解鎖 Pro · 已啟用 {domain}",
     'siteListTitle': '已設定的網站',
     'emptyState': '暫無設定的網站',
     'globalSettings': '網站設定清單',
@@ -1789,6 +1828,10 @@ async function sendMessage(type, data = {}) {
 //   · refreshEntitlements()    —— 走原生 App Group 拉最新值，慢但精确
 // 页面渲染一律用快照，绝不因为原生慢而让列表空着。
 
+// 快照可能是"购买前"的：用户刚在 Host App 里买完 Pro，background 手里还是 free，
+// 要等一次原生刷新才知道已经是 pro（Safari 冷启动约 0.5~1s）。
+// 见 importConfig 里"导入撞上限先复核一次"的处理。
+
 /**
  * 快路径：从 background 读取权限快照。不触发任何原生调用。
  */
@@ -1796,10 +1839,8 @@ async function loadCachedEntitlements() {
   try {
     const resp = await sendMessage(MESSAGE_TYPES.GET_ENTITLEMENTS);
     if (resp && resp.success) {
-      _entitlementState = {
-        entitlements: resp.entitlements || [],
-        isLimitEnforced: !!resp.isLimitEnforced,
-      };
+      applyEntitlementSnapshot(resp);
+      await consumeEntitlementNotice(resp);
     }
   } catch (e) {
     console.warn('[Settings] loadCachedEntitlements failed', e);
@@ -1807,28 +1848,81 @@ async function loadCachedEntitlements() {
   return _entitlementState;
 }
 
+/** 把 background 返回的权限快照写进内存状态。 */
+function applyEntitlementSnapshot(resp) {
+  _entitlementState = {
+    entitlements: resp.entitlements || [],
+    isLimitEnforced: !!resp.isLimitEnforced,
+  };
+}
+
+/**
+ * 消费 background 留下的一次性提示（与 popup 同一套语义）。
+ *
+ * @param {object|null} resp GET_ENTITLEMENTS / REFRESH_ENTITLEMENTS 的响应
+ * @returns {Promise<boolean>} 是否消费了一条提示
+ */
+async function consumeEntitlementNotice(resp) {
+  const notice = resp && resp.notice;
+  if (!notice || notice.type !== 'pendingSiteAdded' || !notice.domain) return false;
+
+  showToast(t('noticeSiteEnabled', { domain: notice.domain }));
+  await sendMessage(MESSAGE_TYPES.ACK_ENTITLEMENT_NOTICE);
+  console.log('[Settings] 已提示并确认购买后的待办:', notice.domain);
+  return true;
+}
+
 /**
  * 慢路径：让 background 走原生 App Group 拉最新权限。
- * @returns {Promise<boolean>} 权限状态是否发生了变化
+ *
+ * @returns {Promise<{ok: boolean, changed: boolean, noticed: boolean}>}
+ *   ok      —— 真的从原生拿到了值
+ *   changed —— 权限集合与刷新前不同
+ *   noticed —— 顺带消费掉了一条"已启用 xxx"提示
  */
 async function refreshEntitlements() {
+  const before = JSON.stringify(_entitlementState.entitlements);
   try {
-    const before = JSON.stringify(_entitlementState.entitlements);
     const resp = await sendMessage(MESSAGE_TYPES.REFRESH_ENTITLEMENTS);
     if (resp && resp.success) {
-      _entitlementState = {
-        entitlements: resp.entitlements || [],
-        isLimitEnforced: !!resp.isLimitEnforced,
-      };
+      applyEntitlementSnapshot(resp);
       const after = JSON.stringify(_entitlementState.entitlements);
       console.log('[Settings] 权限刷新:', before, '->', after);
-      return before !== after;
+      const noticed = await consumeEntitlementNotice(resp);
+      dismissUpgradeDialogWhenPro();
+      return { ok: true, changed: before !== after, noticed };
     }
     console.warn('[Settings] 权限刷新失败（原生无响应），继续用快照:', before);
   } catch (e) {
     console.warn('[Settings] refreshEntitlements failed', e);
   }
-  return false;
+  return { ok: false, changed: false, noticed: false };
+}
+
+/** 权限状态变化后，把所有依赖它的界面重画一遍。 */
+function refreshEntitlementUI() {
+  updateLicenseStatus();
+  loadSiteList();
+}
+
+/**
+ * 原生刷新失败时重试几次 —— Safari 冷启动第一次 sendNativeMessage 有可能叫不醒 handler。
+ */
+function retryEntitlementRefresh(left, delayMs = 1200) {
+  // Chrome / Firefox 没有原生桥接，refresh() 必然失败 —— 重试没有意义
+  if (!_entitlementState.isLimitEnforced) return;
+  if (left <= 0) {
+    refreshEntitlementUI();
+    return;
+  }
+  setTimeout(() => {
+    refreshEntitlements()
+      .then(res => (res.ok ? refreshEntitlementUI() : retryEntitlementRefresh(left - 1, delayMs)))
+      .catch(e => {
+        console.warn('[Settings] entitlement retry error', e);
+        retryEntitlementRefresh(left - 1, delayMs);
+      });
+  }, delayMs);
 }
 
 /**
@@ -1870,6 +1964,9 @@ function formatSiteCount(count) {
   return `${count}/${APP_LIMITS.FREE_SITE_LIMIT}`;
 }
 
+/** 当前挂着的升级弹窗的关闭函数（没有弹窗时为 null）。 */
+let _closeUpgradeDialog = null;
+
 /**
  * 显示升级弹窗（内联自 shared/upgrade-dialog.js）
  * @returns {Promise<boolean>} true=用户点击 Upgrade
@@ -1879,6 +1976,7 @@ function showUpgradeDialog() {
   return new Promise((resolve) => {
     const existing = document.getElementById('upgradeDialogOverlay');
     if (existing) existing.remove();
+    _closeUpgradeDialog = null;
 
     const overlay = document.createElement('div');
     overlay.id = 'upgradeDialogOverlay';
@@ -1937,8 +2035,10 @@ function showUpgradeDialog() {
       upgradeBtn.onclick = null;
       overlay.onclick = null;
       document.removeEventListener('keydown', onKey);
+      _closeUpgradeDialog = null;
       resolve(result);
     };
+    _closeUpgradeDialog = close;
 
     cancelBtn.onclick = () => close(false);
     upgradeBtn.onclick = () => close(true);
@@ -1947,6 +2047,17 @@ function showUpgradeDialog() {
     document.addEventListener('keydown', onKey);
     upgradeBtn.focus();
   });
+}
+
+/**
+ * 权限已经到位（Pro）时，把还挂着的升级弹窗收掉 —— 别让已购用户盯着一句"解锁 Pro"。
+ * @returns {boolean} 是否收掉了一个弹窗
+ */
+function dismissUpgradeDialogWhenPro() {
+  if (!_closeUpgradeDialog || !hasUnlimitedSites()) return false;
+  console.log('[Settings] 权限已确认到位，收掉过期的升级弹窗');
+  _closeUpgradeDialog(false);
+  return true;
 }
 
 /**
@@ -2283,11 +2394,23 @@ async function importConfig(file) {
     const totalSites = Object.keys(data.siteConfigs).length;
     let added = 0;
     let limitReached = false;
+    let entitlementChecked = false;
     for (const [domain, config] of Object.entries(data.siteConfigs)) {
-      const resp = await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+      const addSite = () => sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
         domain,
         strategy: config.strategy || STRATEGIES.TECH_BLOCK
       });
+      let resp = await addSite();
+
+      // 撞上限先向原生复核一次权限再决定截断 —— 设置页手里的快照可能还是"购买前"的，
+      // 刚买完 Pro 的用户会在这里白白丢网站（表现同样是"买了却还被限额拦住"）。
+      if (resp && resp.success === false && resp.error === 'LIMIT_REACHED' && !entitlementChecked) {
+        entitlementChecked = true;
+        console.log('[Settings] 导入撞上限，先向原生复核一次权限');
+        await refreshEntitlements();
+        if (hasUnlimitedSites()) resp = await addSite();
+      }
+
       if (resp && resp.success === false && resp.error === 'LIMIT_REACHED') {
         limitReached = true;
         break;
@@ -2341,7 +2464,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadCachedEntitlements();
   updateLicenseStatus();
   refreshEntitlements()
-    .then((changed) => { if (changed) loadSiteList(); })
+    .then((res) => {
+      // 刷新成功就按最新权限重画 —— 快照本身可能就是购买前的旧值，
+      // 只在"权限变了"时才重画会把刚买完的用户留在免费界面。
+      if (res.ok) refreshEntitlementUI();
+      else retryEntitlementRefresh(2);
+    })
     .catch(e => console.warn('[Settings] entitlement refresh error', e));
 
   // 加载数据

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>popup 购买回来自查</title></head>
+<body>
+<!--
+  自查壳（不参与打包）：模拟"用户刚在 Host App 里买完 Pro，回到 Safari 第一次打开 popup"。
+
+  background 此刻手里还是购买前的内存快照（free），只有走一次原生刷新才知道已是 pro，
+  而原生刷新在 Safari 冷启动要 0.5~1s。用户往往在这之前就已经在看 popup 了。
+
+  ?mode=slow   原生刷新 700ms 后才返回 pro（并已补做待办 + 留下 notice）
+  ?mode=fail   原生刷新失败
+  ?click=1     首屏 250ms 时用户点了"添加当前网站"
+  ?measure=1   在页面顶部打印观测结果
+-->
+<script src="chrome-stub.js"></script>
+<script>
+const q = new URLSearchParams(location.search);
+const mode = q.get('mode') || 'slow';
+const clickAt = q.get('click') === '1' ? 250 : -1;
+const delay = Number(q.get('delay') || 700);
+
+window.__LOG__ = [];
+window.__ACK_COUNT__ = 0;
+
+let sites = {
+  'a.com': { strategy: 'tech-block', scrollFallback: false, addedAt: 3 },
+  'b.com': { strategy: 'tech-block', scrollFallback: false, addedAt: 2 },
+  'c.com': { strategy: 'tech-block', scrollFallback: false, addedAt: 1 },
+};
+let pro = false;
+let notice = null;
+let refreshCalls = 0;
+
+const free = { entitlements: [], isLimitEnforced: true, storageAvailable: true };
+const paid = { entitlements: ['unlimitedSites'], isLimitEnforced: true, storageAvailable: true };
+
+function completePurchase() {
+  // 幂等：真实 background 只在"待办还在"时补做一次并写一条 notice
+  if (pro) { window.__LOG__.push('再次原生读: 仍是 pro，无新待办'); return; }
+  pro = true;
+  sites['d.com'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 9 };
+  notice = { type: 'pendingSiteAdded', domain: 'd.com', at: Date.now() };
+  window.__LOG__.push('原生读到已购: pro + d.com(待办补做) + notice');
+}
+
+function respond(message) {
+  switch (message.type) {
+    case 'GET_ALL_CONFIGS':
+      return { success: true, data: JSON.parse(JSON.stringify(sites)) };
+    case 'getEntitlements':
+      return Object.assign({ success: true, pendingAction: null, notice: notice }, pro ? paid : free);
+    case 'refreshEntitlements':
+      if (mode === 'fail') { window.__LOG__.push('refresh#' + refreshCalls + ' 失败'); return { success: false }; }
+      // 原生刷新是"发现购买"的唯一途径，让它在 delay 之后才返回 pro
+      window.__PENDING_REFRESH__ = true;
+      return null; // 占位：真正的响应由下面的异步回调给出
+    case 'SET_SITE_CONFIG': {
+      const key = message.domain;
+      if (!pro && !sites[key] && Object.keys(sites).length >= 3) {
+        window.__LOG__.push('SET_SITE_CONFIG ' + key + ' -> LIMIT_REACHED');
+        return { success: false, error: 'LIMIT_REACHED' };
+      }
+      sites[key] = { strategy: message.strategy, scrollFallback: !!message.scrollFallback, addedAt: Date.now() };
+      window.__LOG__.push('SET_SITE_CONFIG ' + key + ' -> ok');
+      return { success: true };
+    }
+    case 'REMOVE_SITE_CONFIG':
+      delete sites[message.domain];
+      return { success: true };
+    case 'ackEntitlementNotice':
+      window.__ACK_COUNT__++;
+      notice = null;
+      return { success: true };
+    case 'requestPurchase':
+      window.__LOG__.push('requestPurchase -> 打开 Host App');
+      return { success: true };
+    default:
+      return { success: false, error: 'UNKNOWN' };
+  }
+}
+
+function settle(type) {
+  // 真实 background：REFRESH_ENTITLEMENTS 要等原生返回；这里用 delay 复刻冷启动耗时
+  if (type !== 'refreshEntitlements') return 0;
+  if (mode === 'fail') return 0;
+  return delay;
+}
+
+function dual(fn) {
+  return function () {
+    const args = Array.prototype.slice.call(arguments);
+    const cb = typeof args[args.length - 1] === 'function' ? args.pop() : null;
+    const message = args[0] || {};
+    if (message.type === 'refreshEntitlements') refreshCalls++;
+    const wait = settle(message.type);
+    const result = wait > 0 ? null : fn.apply(null, args);
+    return new Promise(function (resolve) {
+      setTimeout(function () {
+        let out = result;
+        if (wait > 0) { completePurchase(); out = Object.assign({ success: true, pendingAction: null, notice: notice }, paid); }
+        if (cb) cb(out);
+        resolve(out);
+      }, wait);
+    });
+  };
+}
+
+window.chrome = {
+  runtime: { sendMessage: dual(respond), openOptionsPage: function () {}, getURL: function (p) { return p; } },
+  storage: { local: { get: dual(function () { return { preferredLanguage: 'zh' }; }), set: dual(function () {}) } },
+  tabs: { query: dual(function () { return [{ id: 1, url: 'https://www.d.com/page' }]; }), reload: dual(function () {}) },
+  i18n: { getUILanguage: function () { return 'zh'; }, getMessage: function () { return ''; } },
+};
+</script>
+<script>
+fetch('../../popup.html')
+  .then(function (r) { return r.text(); })
+  .then(function (html) {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    doc.head.querySelectorAll('style, meta[charset]').forEach(function (n) { document.head.appendChild(n.cloneNode(true)); });
+    document.body.innerHTML = doc.body.innerHTML;
+    const scripts = ['../../dist/safari/locales.js', '../../i18n-manager.js', '../../popup.js'];
+    const loadNext = function () {
+      const src = scripts.shift();
+      if (!src) { document.dispatchEvent(new Event('DOMContentLoaded')); probe(); return; }
+      const el = document.createElement('script');
+      el.src = src; el.onload = loadNext; el.onerror = loadNext;
+      document.body.appendChild(el);
+    };
+    loadNext();
+  });
+
+function state() {
+  const st = document.getElementById('licenseStatus');
+  const toast = document.querySelector('.toast');
+  const dialog = document.getElementById('upgradeDialogOverlay');
+  return 'license="' + (st ? st.textContent : '?') + '"'
+    + ' 站点列表=' + document.querySelectorAll('#siteList .site-item').length
+    + ' 升级弹窗=' + (dialog ? '显示' : '无')
+    + ' toast="' + (toast ? toast.textContent : '') + '"'
+    + ' acks=' + (window.__ACK_COUNT__ || 0) + ' 刷新次数=' + refreshCalls;
+}
+
+function probe() {
+  const rows = [];
+  const snap = function (label) { rows.push(label + ' ' + state()); };
+  snap('t=0ms   首屏 ');
+  if (clickAt > 0) {
+    setTimeout(function () {
+      const list = document.querySelectorAll('#siteList .site-item').length;
+      window.__LOG__.push('t=' + clickAt + 'ms 用户点添加（此刻列表 ' + list + ' 项）');
+      const btn = document.getElementById('toggleBtn');
+      if (btn) btn.click();
+      else window.__LOG__.push('没找到 toggleBtn');
+    }, clickAt);
+  }
+  [300, 900, 1600, 2600, 4000].forEach(function (ms) {
+    setTimeout(function () { snap('t=' + ms + 'ms      '); }, ms);
+  });
+  setTimeout(function () {
+    const pre = document.createElement('pre');
+    pre.id = 'result';
+    pre.textContent = rows.join('\n') + '\nlog: ' + window.__LOG__.join(' | ');
+    document.body.appendChild(pre);
+  }, 4400);
+}
+</script>
+</body>
+</html>

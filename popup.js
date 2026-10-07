@@ -27,7 +27,9 @@ const MESSAGE_TYPES = {
   REFRESH_ENTITLEMENTS: 'refreshEntitlements',
   REQUEST_PURCHASE: 'requestPurchase',
   RESTORE_PURCHASES: 'restorePurchases',
-  OPEN_HOST_APP: 'openHostApp'
+  OPEN_HOST_APP: 'openHostApp',
+  // 一次性提示展示完必须 ACK，否则同一句"已启用 xxx"每次打开 popup 都会再弹一遍
+  ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice'
 };
 
 // ===== Entitlement System 常量（内联自 shared/constants.js）=====
@@ -84,6 +86,7 @@ function detectBrowserLanguage() {
 // 翻译内容（内联，避免依赖 _locales 文件结构）
 const TRANSLATIONS = {
   'zh': {
+    'noticeSiteEnabled': "已解锁 Pro · 已启用 {domain}",
     'currentSite': '当前网站',
     'loading': '加载中...',
     'enabled': '已启用',
@@ -124,6 +127,7 @@ const TRANSLATIONS = {
     'licenseManage': '管理 / 恢复购买'
   },
   'en': {
+    'noticeSiteEnabled': "Pro unlocked · {domain} was enabled",
     'currentSite': 'Current Site',
     'loading': 'Loading...',
     'enabled': 'Enabled',
@@ -164,6 +168,7 @@ const TRANSLATIONS = {
     'licenseManage': 'Manage / Restore'
   },
   'es': {
+    'noticeSiteEnabled': "Pro desbloqueado · {domain} se ha activado",
     'currentSite': 'Sitio Actual',
     'loading': 'Cargando...',
     'enabled': 'Activado',
@@ -192,6 +197,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'ar': {
+    'noticeSiteEnabled': "تم فتح Pro · تم تفعيل {domain}",
     'currentSite': 'الموقع الحالي',
     'loading': 'جاري التحميل...',
     'enabled': 'مفعّل',
@@ -220,6 +226,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'hi': {
+    'noticeSiteEnabled': "Pro अनलॉक हुआ · {domain} सक्षम किया गया",
     'currentSite': 'वर्तमान साइट',
     'loading': 'लोड हो रहा है...',
     'enabled': 'सक्षम',
@@ -248,6 +255,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'fr': {
+    'noticeSiteEnabled': "Pro débloqué · {domain} a été activé",
     'currentSite': 'Site Actuel',
     'loading': 'Chargement...',
     'enabled': 'Activé',
@@ -276,6 +284,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'pt': {
+    'noticeSiteEnabled': "Pro desbloqueado · {domain} foi ativado",
     'currentSite': 'Site Atual',
     'loading': 'Carregando...',
     'enabled': 'Ativado',
@@ -304,6 +313,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'de': {
+    'noticeSiteEnabled': "Pro freigeschaltet · {domain} wurde aktiviert",
     'currentSite': 'Aktuelle Seite',
     'loading': 'Lädt...',
     'enabled': 'Aktiviert',
@@ -332,6 +342,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'ja': {
+    'noticeSiteEnabled': "Pro を解除しました · {domain} を有効にしました",
     'currentSite': '現在のサイト',
     'loading': '読み込み中...',
     'enabled': '有効',
@@ -360,6 +371,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'ru': {
+    'noticeSiteEnabled': "Pro разблокирован · {domain} включён",
     'currentSite': 'Текущий Сайт',
     'loading': 'Загрузка...',
     'enabled': 'Включено',
@@ -388,6 +400,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'ko': {
+    'noticeSiteEnabled': "Pro 잠금 해제 · {domain}을 사용하도록 설정했습니다",
     'currentSite': '현재 사이트',
     'loading': '로딩 중...',
     'enabled': '활성화됨',
@@ -416,6 +429,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'bg': {
+    'noticeSiteEnabled': "Pro е отключен · {domain} е активиран",
     'currentSite': 'Текущ сайт',
     'loading': 'Loading...',
     'enabled': 'Активирано',
@@ -444,6 +458,7 @@ const TRANSLATIONS = {
     'tools': 'Инструменти',
   },
   'ca': {
+    'noticeSiteEnabled': "Pro desbloquejat · {domain} s'ha activat",
     'currentSite': 'Lloc actual',
     'loading': 'Loading...',
     'enabled': 'Habilitat',
@@ -472,6 +487,7 @@ const TRANSLATIONS = {
     'tools': 'Eines',
   },
   'cs': {
+    'noticeSiteEnabled': "Pro odemčeno · {domain} byl povolen",
     'currentSite': 'Aktuální stránka',
     'loading': 'Loading...',
     'enabled': 'Povoleno',
@@ -500,6 +516,7 @@ const TRANSLATIONS = {
     'tools': 'Nástroje',
   },
   'da': {
+    'noticeSiteEnabled': "Pro låst op · {domain} blev aktiveret",
     'currentSite': 'Aktuel hjemmeside',
     'loading': 'Loading...',
     'enabled': 'Aktiveret',
@@ -528,6 +545,7 @@ const TRANSLATIONS = {
     'tools': 'Værktøjer',
   },
   'el': {
+    'noticeSiteEnabled': "Το Pro ξεκλειδώθηκε · ο {domain} ενεργοποιήθηκε",
     'currentSite': 'Τρέχων ιστότοπος',
     'loading': 'Loading...',
     'enabled': 'Ενεργοποιημένο',
@@ -556,6 +574,7 @@ const TRANSLATIONS = {
     'tools': 'Εργαλεία',
   },
   'fa': {
+    'noticeSiteEnabled': "Pro باز شد · {domain} فعال شد",
     'currentSite': 'سایت فعلی',
     'loading': 'Loading...',
     'enabled': 'فعال',
@@ -584,6 +603,7 @@ const TRANSLATIONS = {
     'tools': 'ابزارها',
   },
   'fi': {
+    'noticeSiteEnabled': "Pro avattu · {domain} otettiin käyttöön",
     'currentSite': 'Nykyinen sivusto',
     'loading': 'Loading...',
     'enabled': 'Käytössä',
@@ -612,6 +632,7 @@ const TRANSLATIONS = {
     'tools': 'Työkalut',
   },
   'he': {
+    'noticeSiteEnabled': "Pro נפתח · {domain} הופעל",
     'currentSite': 'האתר הנוכחי',
     'loading': 'Loading...',
     'enabled': 'מופעל',
@@ -640,6 +661,7 @@ const TRANSLATIONS = {
     'tools': 'כלים',
   },
   'hr': {
+    'noticeSiteEnabled': "Pro otključan · {domain} je omogućen",
     'currentSite': 'Trenutna stranica',
     'loading': 'Loading...',
     'enabled': 'Omogućeno',
@@ -668,6 +690,7 @@ const TRANSLATIONS = {
     'tools': 'Alati',
   },
   'hu': {
+    'noticeSiteEnabled': "Pro feloldva · a(z) {domain} engedélyezve",
     'currentSite': 'Jelenlegi oldal',
     'loading': 'Loading...',
     'enabled': 'Engedélyezve',
@@ -696,6 +719,7 @@ const TRANSLATIONS = {
     'tools': 'Eszközök',
   },
   'id': {
+    'noticeSiteEnabled': "Pro dibuka · {domain} diaktifkan",
     'currentSite': 'Situs Saat Ini',
     'loading': 'Loading...',
     'enabled': 'Aktif',
@@ -724,6 +748,7 @@ const TRANSLATIONS = {
     'tools': 'Alat',
   },
   'it': {
+    'noticeSiteEnabled': "Pro sbloccato · {domain} è stato attivato",
     'currentSite': 'Sito corrente',
     'loading': 'Loading...',
     'enabled': 'Attivo',
@@ -752,6 +777,7 @@ const TRANSLATIONS = {
     'tools': 'Strumenti',
   },
   'nb': {
+    'noticeSiteEnabled': "Pro låst opp · {domain} ble aktivert",
     'currentSite': 'Gjeldende nettsted',
     'loading': 'Loading...',
     'enabled': 'Aktivert',
@@ -780,6 +806,7 @@ const TRANSLATIONS = {
     'tools': 'Verktøy',
   },
   'nl': {
+    'noticeSiteEnabled': "Pro ontgrendeld · {domain} is ingeschakeld",
     'currentSite': 'Huidige site',
     'loading': 'Loading...',
     'enabled': 'Ingeschakeld',
@@ -808,6 +835,7 @@ const TRANSLATIONS = {
     'tools': 'Hulpmiddelen',
   },
   'pl': {
+    'noticeSiteEnabled': "Pro odblokowane · {domain} zostało włączone",
     'currentSite': 'Bieżąca strona',
     'loading': 'Loading...',
     'enabled': 'Włączone',
@@ -836,6 +864,7 @@ const TRANSLATIONS = {
     'tools': 'Narzędzia',
   },
   'ps': {
+    'noticeSiteEnabled': "Pro پرانیستل شو · {domain} فعال شو",
     'currentSite': 'اوسنی سایټ',
     'loading': 'Loading...',
     'enabled': 'فعال',
@@ -864,6 +893,7 @@ const TRANSLATIONS = {
     'tools': 'اوزارونه',
   },
   'ro': {
+    'noticeSiteEnabled': "Pro deblocat · {domain} a fost activat",
     'currentSite': 'Site curent',
     'loading': 'Loading...',
     'enabled': 'Activat',
@@ -892,6 +922,7 @@ const TRANSLATIONS = {
     'tools': 'Instrumente',
   },
   'sk': {
+    'noticeSiteEnabled': "Pro odomknuté · {domain} bol povolený",
     'currentSite': 'Aktuálna stránka',
     'loading': 'Loading...',
     'enabled': 'Povolené',
@@ -920,6 +951,7 @@ const TRANSLATIONS = {
     'tools': 'Nástroje',
   },
   'sv': {
+    'noticeSiteEnabled': "Pro upplåst · {domain} aktiverades",
     'currentSite': 'Aktuell webbplats',
     'loading': 'Loading...',
     'enabled': 'Aktiverad',
@@ -948,6 +980,7 @@ const TRANSLATIONS = {
     'tools': 'Verktyg',
   },
   'th': {
+    'noticeSiteEnabled': "ปลดล็อก Pro แล้ว · เปิดใช้งาน {domain} แล้ว",
     'currentSite': 'เว็บไซต์ปัจจุบัน',
     'loading': 'Loading...',
     'enabled': 'เปิดใช้งาน',
@@ -976,6 +1009,7 @@ const TRANSLATIONS = {
     'tools': 'เครื่องมือ',
   },
   'tr': {
+    'noticeSiteEnabled': "Pro açıldı · {domain} etkinleştirildi",
     'currentSite': 'Geçerli Site',
     'loading': 'Loading...',
     'enabled': 'Etkin',
@@ -1004,6 +1038,7 @@ const TRANSLATIONS = {
     'tools': 'Araçlar',
   },
   'uk': {
+    'noticeSiteEnabled': "Pro розблоковано · {domain} увімкнено",
     'currentSite': 'Поточний сайт',
     'loading': 'Loading...',
     'enabled': 'Увімкнено',
@@ -1032,6 +1067,7 @@ const TRANSLATIONS = {
     'tools': 'Інструменти',
   },
   'ur': {
+    'noticeSiteEnabled': "Pro کھل گیا · {domain} فعال کر دیا گیا",
     'currentSite': 'موجودہ سائٹ',
     'loading': 'Loading...',
     'enabled': 'فعال',
@@ -1060,6 +1096,7 @@ const TRANSLATIONS = {
     'tools': 'اوزار',
   },
   'vi': {
+    'noticeSiteEnabled': "Đã mở khóa Pro · đã bật {domain}",
     'currentSite': 'Trang hiện tại',
     'loading': 'Loading...',
     'enabled': 'Đã bật',
@@ -1088,6 +1125,7 @@ const TRANSLATIONS = {
     'tools': 'Công cụ',
   },
   'zh_HK': {
+    'noticeSiteEnabled': "已解鎖 Pro · 已啟用 {domain}",
     'currentSite': '目前網站',
     'loading': 'Loading...',
     'enabled': '已啟用',
@@ -1116,6 +1154,7 @@ const TRANSLATIONS = {
     'tools': '開發工具',
   },
   'zh_TW': {
+    'noticeSiteEnabled': "已解鎖 Pro · 已啟用 {domain}",
     'currentSite': '目前網站',
     'loading': 'Loading...',
     'enabled': '已啟用',
@@ -1224,8 +1263,11 @@ async function sendMessage(type, data = {}) {
 //   · loadCachedEntitlements() —— 读 background 的 storage.local 快照，毫秒级
 //   · refreshEntitlements()    —— 走原生 App Group 拉最新值，慢但精确
 //
-// popup 打开时先用快照瞬间渲染，再异步刷新；刷新回来若状态有变只更新 badge，
-// 绝不因为原生慢/失败而让列表空着。
+// popup 打开时先用快照瞬间渲染，再异步刷新，绝不因为原生慢/失败而让列表空着。
+//
+// ⚠️ 快照可能是"购买前"的：用户刚在 Host App 里买完 Pro，background 手里还是 free，
+//    要等一次原生刷新才知道已经是 pro（Safari 冷启动约 0.5~1s）。
+//    所以"要不要拦住用户"这种决定不能只信快照 —— 见 toggleCurrentSite 里的原生复核。
 
 /**
  * 快路径：从 background 读取权限快照。不触发任何原生调用。
@@ -1234,10 +1276,8 @@ async function loadCachedEntitlements() {
   try {
     const resp = await sendMessage(MESSAGE_TYPES.GET_ENTITLEMENTS);
     if (resp && resp.success) {
-      _entitlementState = {
-        entitlements: resp.entitlements || [],
-        isLimitEnforced: !!resp.isLimitEnforced,
-      };
+      applyEntitlementSnapshot(resp);
+      await consumeEntitlementNotice(resp);
     }
   } catch (e) {
     console.warn('[Popup] loadCachedEntitlements failed', e);
@@ -1245,29 +1285,99 @@ async function loadCachedEntitlements() {
   return _entitlementState;
 }
 
+/** 把 background 返回的权限快照写进内存状态。 */
+function applyEntitlementSnapshot(resp) {
+  _entitlementState = {
+    entitlements: resp.entitlements || [],
+    isLimitEnforced: !!resp.isLimitEnforced,
+  };
+}
+
+/**
+ * 消费 background 留下的一次性提示。
+ *
+ * 撞上限时 background 会把"这次想启用的网站"存成待办；用户买完 Pro 之后
+ * background 补做这次添加，并写一条 notice。popup 下次读到它就提示
+ * 「已解锁 Pro · 已启用 xxx」，然后 ACK 清除 —— 不 ACK 的话每次打开都会再弹一遍，
+ * 用户也会以为"当时明明没加进去"。
+ *
+ * @param {object|null} resp GET_ENTITLEMENTS / REFRESH_ENTITLEMENTS 的响应
+ * @returns {Promise<boolean>} 是否消费了一条提示
+ */
+async function consumeEntitlementNotice(resp) {
+  const notice = resp && resp.notice;
+  if (!notice || notice.type !== 'pendingSiteAdded' || !notice.domain) return false;
+
+  showToast(t('noticeSiteEnabled', { domain: notice.domain }));
+  // 先弹再 ACK：ACK 只是清掉 storage 里那条记录，已经显示的 toast 不受影响
+  await sendMessage(MESSAGE_TYPES.ACK_ENTITLEMENT_NOTICE);
+  console.log('[Popup] 已提示并确认购买后的待办:', notice.domain);
+  return true;
+}
+
 /**
  * 慢路径：让 background 走原生 App Group 拉一次最新权限。
  * StoreKit 购买结果就是通过这条路径进入扩展的。
- * @returns {Promise<boolean>} 权限状态是否发生了变化
+ *
+ * @returns {Promise<{ok: boolean, changed: boolean, noticed: boolean}>}
+ *   ok      —— 真的从原生拿到了值（false 表示内存里还是刷新前的旧快照）
+ *   changed —— 权限集合与刷新前不同
+ *   noticed —— 顺带消费掉了一条"已启用 xxx"提示
  */
 async function refreshEntitlements() {
+  const before = JSON.stringify(_entitlementState.entitlements);
   try {
-    const before = JSON.stringify(_entitlementState.entitlements);
     const resp = await sendMessage(MESSAGE_TYPES.REFRESH_ENTITLEMENTS);
     if (resp && resp.success) {
-      _entitlementState = {
-        entitlements: resp.entitlements || [],
-        isLimitEnforced: !!resp.isLimitEnforced,
-      };
+      applyEntitlementSnapshot(resp);
       const after = JSON.stringify(_entitlementState.entitlements);
       console.log('[Popup] 权限刷新:', before, '->', after);
-      return before !== after;
+      const noticed = await consumeEntitlementNotice(resp);
+      // 刷新回来发现其实已经是 Pro：把还挂着的升级弹窗收掉。
+      // 不收的话，用户屏幕上会顶着一个假的"解锁 Pro"框，而他早就买过了。
+      dismissUpgradeDialogWhenPro();
+      return { ok: true, changed: before !== after, noticed };
     }
     console.warn('[Popup] 权限刷新失败（原生无响应），继续用快照:', before);
   } catch (e) {
     console.warn('[Popup] refreshEntitlements failed', e);
   }
-  return false;
+  return { ok: false, changed: false, noticed: false };
+}
+
+/**
+ * 权限状态变化后，把所有依赖它的界面重画一遍。
+ *
+ * 不重画的话：用户买完 Pro 回来，"当前网站"那一栏和列表可能还停在旧状态，
+ * 看起来就像这次添加没生效（实际上 background 已经补做了）。
+ */
+function refreshEntitlementUI() {
+  updateLicenseRow();
+  checkCurrentSite();
+  loadSiteList();
+}
+
+/**
+ * 原生刷新失败时重试几次。
+ *
+ * Safari 冷启动时第一次 sendNativeMessage 有可能叫不醒 handler；
+ * 不重试的话，刚买完 Pro 的用户可能整个 popup 生命周期都停在免费界面。
+ */
+function retryEntitlementRefresh(left, delayMs = 1200) {
+  // Chrome / Firefox 没有原生桥接，refresh() 必然失败 —— 重试没有意义
+  if (!_entitlementState.isLimitEnforced) return;
+  if (left <= 0) {
+    refreshEntitlementUI();
+    return;
+  }
+  setTimeout(() => {
+    refreshEntitlements()
+      .then(res => (res.ok ? refreshEntitlementUI() : retryEntitlementRefresh(left - 1, delayMs)))
+      .catch(e => {
+        console.warn('[Popup] entitlement retry error', e);
+        retryEntitlementRefresh(left - 1, delayMs);
+      });
+  }, delayMs);
 }
 
 /**
@@ -1333,6 +1443,12 @@ function formatSiteCount(count) {
 }
 
 /**
+ * 当前挂着的升级弹窗的关闭函数（没有弹窗时为 null）。
+ * 权限确认到位后要靠它把弹窗收掉，见 dismissUpgradeDialogWhenPro()。
+ */
+let _closeUpgradeDialog = null;
+
+/**
  * 显示升级弹窗（内联自 shared/upgrade-dialog.js）
  * @returns {Promise<boolean>} true=用户点击 Upgrade
  */
@@ -1341,6 +1457,7 @@ function showUpgradeDialog() {
   return new Promise((resolve) => {
     const existing = document.getElementById('upgradeDialogOverlay');
     if (existing) existing.remove();
+    _closeUpgradeDialog = null;
 
     const overlay = document.createElement('div');
     overlay.id = 'upgradeDialogOverlay';
@@ -1399,8 +1516,10 @@ function showUpgradeDialog() {
       upgradeBtn.onclick = null;
       overlay.onclick = null;
       document.removeEventListener('keydown', onKey);
+      _closeUpgradeDialog = null;
       resolve(result);
     };
+    _closeUpgradeDialog = close;
 
     cancelBtn.onclick = () => close(false);
     upgradeBtn.onclick = () => close(true);
@@ -1409,6 +1528,22 @@ function showUpgradeDialog() {
     document.addEventListener('keydown', onKey);
     upgradeBtn.focus();
   });
+}
+
+/**
+ * 权限已经到位（Pro）时，把还挂着的升级弹窗收掉。
+ *
+ * 场景：用户点"添加" → 被旧快照拦下 → 刚弹出升级框，这一瞬间原生刷新回来发现
+ * 其实早就买过 Pro 了。不收掉的话，Pro 用户屏幕上会一直顶着一个"解锁 Pro"的框，
+ * 看起来就是"我明明买了，还让我再买一次"。
+ *
+ * @returns {boolean} 是否收掉了一个弹窗
+ */
+function dismissUpgradeDialogWhenPro() {
+  if (!_closeUpgradeDialog || !hasUnlimitedSites()) return false;
+  console.log('[Popup] 权限已确认到位，收掉过期的升级弹窗');
+  _closeUpgradeDialog(false);
+  return true;
 }
 
 /**
@@ -1566,31 +1701,47 @@ async function toggleCurrentSite() {
   } else {
     // 添加网站，根据复选框决定是否使用自动滚动
     const scrollFallback = document.getElementById('currentScrollToggle').checked;
-    const addResp = await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+    const addSite = () => sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
       domain: currentDomain,
       strategy: STRATEGIES.TECH_BLOCK,
       scrollFallback
     });
 
-    // 限额拦截：弹出升级对话框
+    let addResp = await addSite();
+    let noticeShown = false;
+
+    // 撞上限时先别急着弹升级框：popup 手里的快照可能还是"购买前"的，
+    // 已买过 Pro 的用户会被自己的旧快照挡在门外（表现为"买了却还让我解锁"）。
+    // 这里强制走一次原生确认再决定 —— background 也会借这次刷新把购买前的待办补做掉。
+    if (addResp && addResp.success === false && addResp.error === 'LIMIT_REACHED') {
+      console.log('[Popup] 撞上限，先向原生复核一次权限');
+      const refreshed = await refreshEntitlements();
+      noticeShown = refreshed.noticed;
+      if (hasUnlimitedSites()) addResp = await addSite();
+    }
+
+    // 原生复核后确认还是免费版，才认为真的需要升级
     if (addResp && addResp.success === false && addResp.error === 'LIMIT_REACHED') {
       const wantUpgrade = await showUpgradeDialog();
       if (wantUpgrade) {
         const sent = await requestUpgrade();
         // Host App 打开后用户去付款；这里轮询等权限生效，等到就把这次添加补上。
-        // 若 popup 中途被关掉，background 在下次 SET_SITE_CONFIG 时会自己走原生确认。
+        // 若 popup 中途被关掉（Safari 切到 Host App 时会关掉 popup），
+        // background 会在下一次原生刷新时自己补做这次添加。
         if (sent && await waitForUnlimitedSites()) {
-          await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
-            domain: currentDomain,
-            strategy: STRATEGIES.TECH_BLOCK,
-            scrollFallback
-          });
+          await addSite();
           showToast(t('siteAdded', { domain: currentDomain }));
         }
       }
       // 用户取消则什么都不做（不显示 siteAdded toast）
-    } else {
-      showToast(scrollFallback ? t('siteAddedWithScroll', { domain: currentDomain }) : t('siteAdded', { domain: currentDomain }));
+    } else if (addResp && addResp.success === true) {
+      // noticeShown：这次添加其实是 background 补做待办时完成的，
+      // 已经弹过「已解锁 Pro · 已启用 xxx」，不再重复一句"已添加"。
+      if (noticeShown) {
+        console.log('[Popup] 添加已完成，跳过重复 toast:', currentDomain);
+      } else {
+        showToast(scrollFallback ? t('siteAddedWithScroll', { domain: currentDomain }) : t('siteAdded', { domain: currentDomain }));
+      }
     }
   }
 
@@ -1723,9 +1874,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadCachedEntitlements();
   updateLicenseRow();
   refreshEntitlements()
-    .then((changed) => {
-      // StoreKit 购买完成后回到 popup：权限变了就重渲染列表、badge 与授权入口
-      if (changed) loadSiteList();
+    .then((res) => {
+      // StoreKit 购买完成后回到 popup：刷新成功就按最新权限重画一遍。
+      // 注意是"成功就重画"，不是"变了才重画" —— 快照本身可能就是购买前的旧值，
+      // 只在权限变化时重画会把刚买完的用户留在免费界面（他以为还得再买一次）。
+      if (res.ok) {
+        refreshEntitlementUI();
+      } else {
+        // 原生第一次没叫醒（Safari handler 冷启动）—— 重试几次，别停在一个假状态上
+        retryEntitlementRefresh(2);
+      }
     })
     .catch(e => console.warn('[Popup] entitlement refresh error', e));
 

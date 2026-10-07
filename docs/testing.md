@@ -151,6 +151,38 @@ npm run build:safari     # 预览壳读的是 dist/safari 下的构建产物
 > 预览壳会真的加载 `popup.html` / `settings/index.html`、`dist/safari` 下的
 > `locales.js`、`shared-ui.js`，并用 `chrome.*` 替身喂数据 —— 渲染的是真实页面，不是手写样例。
 
+### 4.1 购买回来自查（popup）
+
+`tests/visual/popup-purchase-preview.html` 复刻"Safari 里刚买完 Pro 回到 popup"这一刻：
+background 手里还是购买前的旧快照（free），只有走一次原生刷新才知道已经是 pro，
+而这个原生刷新要 0.5~1s。用户往往在这之前就已经在看 popup 了。
+
+```bash
+CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+# slow  = 原生刷新 700ms 后才返回 pro；click=1 = 首屏 250ms 时用户点了"添加当前网站"
+"$CHROME" --headless=new --allow-file-access-from-files --disable-gpu \
+  --virtual-time-budget=12000 --dump-dom \
+  "file://$PWD/tests/visual/popup-purchase-preview.html?mode=slow&click=1" \
+  | python3 -c "import re,sys; d=sys.stdin.read(); print(re.search(r'<pre id=\"result\">(.*?)</pre>', d, re.S).group(1))"
+```
+
+预期（每一次都要满足）：
+
+| 时刻 | license | 站点列表 | 升级弹窗 | toast |
+|---|---|---|---|---|
+| 首屏 | `…` | 0 | 无 | — |
+| 刷新落地前 | 免费版 | 3 | **无**（不拿旧快照拦人） | — |
+| 刷新落地后 | Pro · 无限网站 | 4（第 4 个已补做） | 无 | 已解锁 Pro · 已启用 xxx |
+
+`mode=fail`（原生始终无响应）时允许弹升级框 —— 那是唯一诚实的做法，
+但**不允许**出现"已购用户被拦下且弹窗一直挂着"的组合。
+```bash
+"$CHROME" --headless=new --allow-file-access-from-files --disable-gpu \
+  --virtual-time-budget=12000 --dump-dom \
+  "file://$PWD/tests/visual/popup-purchase-preview.html?mode=fail&click=1" \
+  | python3 -c "import re,sys; d=sys.stdin.read(); print(re.search(r'<pre id=\"result\">(.*?)</pre>', d, re.S).group(1))"
+```
+
 ---
 
 ## 5. 功能测试清单
@@ -163,6 +195,8 @@ npm run build:safari     # 预览壳读的是 dist/safari 下的构建产物
 - [ ] 弹窗点「Not Now」→ 没有添加、没有报错
 - [ ] 弹窗点「Upgrade to Pro」→ Host App 被唤起
 - [ ] **购买过程中直接关掉 popup** → 回到 Safari 打开 popup → 第 4 个网站已被自动启用，并提示「已解锁 Pro · 已启用 xxx」
+- [ ] 买完 Pro 回 popup，**趁原生刷新还没回来立刻点"添加当前网站"** → 不得弹出升级框，第 4 个网站要加进去（§4.1 的 `mode=slow&click=1` 就是这一条）
+- [ ] 同一句「已解锁 Pro · 已启用 xxx」只在买完之后出现一次（ACK 掉，重开 popup 不再弹）
 - [ ] Pro 状态下计数不再显示 `∞`，只显示数量；不出现任何价格与 Buy 按钮
 - [ ] 重启 Safari → 仍是 Pro
 - [ ] 重启 Host App → 仍是 Pro
