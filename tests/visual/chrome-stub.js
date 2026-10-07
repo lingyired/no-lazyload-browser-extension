@@ -17,6 +17,15 @@
     delete sites['example.com'];
     delete sites['news.example.org'];
   }
+  // state=limit：额度已满（3 个），且当前标签页的网站还没启用 ——
+  // 这样才能看到"开关 OFF、点了弹升级框、不会先切 ON 再回滚"
+  if (state === 'limit') {
+    delete sites['example.com'];
+    delete sites['news.example.org'];
+    sites['a.example.com'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 3 };
+    sites['b.example.com'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 2 };
+    sites['c.example.com'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 1 };
+  }
   if (state === 'pro' || state === 'unrestricted' || state === 'notice') {
     sites['blog.example.net'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 1 };
   }
