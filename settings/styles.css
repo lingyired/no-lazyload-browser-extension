@@ -1,12 +1,8 @@
-/* settings/styles.css — 设置页专属布局
+/* settings/styles.css — 设置页布局
  *
- * 颜色 / 间距 / 圆角 / 动效全部来自 ../ui/tokens.css 与 ../ui/components.css，
- * 这里只放"卡片页"特有的排版。
+ * 颜色 / 间距 / 圆角 / 动效全部来自 ../ui/tokens.css 与 ../ui/components.css。
+ * 这一层只负责"卡片页"的排版与层级。
  */
-
-:root {
-  --nl-page-max: 720px;
-}
 
 body {
   min-width: 480px;
@@ -14,238 +10,159 @@ body {
 }
 
 .nl-page {
-  max-width: var(--nl-page-max);
+  max-width: 680px;
   margin: 0 auto;
-  padding: var(--nl-space-5) var(--nl-space-4) var(--nl-space-6, 24px);
+  padding: var(--nl-space-8) var(--nl-space-5) var(--nl-space-8);
   display: flex;
   flex-direction: column;
   gap: var(--nl-space-4);
 }
 
-.nl-page-header h1 {
-  font-size: 20px;
-  font-weight: 600;
+/* ---- 页头：带品牌标识，避免"匿名表单"感 ---- */
+.nl-page-header { margin-bottom: var(--nl-space-2); }
+
+.nl-brand { display: flex; align-items: center; gap: var(--nl-space-3); }
+
+.nl-brand-mark {
+  flex: none;
+  border-radius: var(--nl-radius-sm);
+  box-shadow: var(--nl-shadow-sm);
 }
 
-.nl-page-header .subtitle {
-  margin-top: 2px;
-  font-size: 13px;
-  color: var(--nl-text-secondary);
-}
+.nl-brand-text { min-width: 0; }
+.nl-brand-sub { margin-top: 1px; font-size: 12px; color: var(--nl-text-secondary); }
 
-/* 卡片：一个浅表面 + 细边框，不做大阴影 */
+/* ---- 卡片 ---- */
 .nl-card {
-  padding: var(--nl-space-4) var(--nl-space-5);
+  padding: var(--nl-space-5);
   background: var(--nl-surface);
-  border: 1px solid var(--nl-separator);
+  border: 1px solid var(--nl-border);
   border-radius: var(--nl-radius-md);
+  box-shadow: var(--nl-shadow-sm);
 }
 
-.nl-card h2 {
-  margin-bottom: var(--nl-space-3);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--nl-text);
-}
-
-.nl-card-help {
-  margin-bottom: var(--nl-space-2);
-  font-size: 12px;
-  color: var(--nl-text-secondary);
-}
-
-.nl-card-header {
+.nl-card-head {
   display: flex;
   align-items: center;
   gap: var(--nl-space-2);
   margin-bottom: var(--nl-space-3);
 }
 
-.nl-card-header h2 {
-  margin-bottom: 0;
+.nl-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--nl-text);
 }
 
-.nl-card-header .nl-count {
-  margin-left: auto;
+/* 标题在卡片顶部统一留出与内容的间距（带 head 的卡片由 head 负责） */
+.nl-card > .nl-card-title { margin-bottom: var(--nl-space-3); }
+.nl-card-head .nl-count { margin-left: auto; }
+
+.nl-card-help {
+  margin-bottom: var(--nl-space-3);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--nl-text-secondary);
 }
 
-.nl-card-actions {
-  display: flex;
-  gap: var(--nl-space-2);
-  margin-top: var(--nl-space-4);
-}
+.nl-card-actions { display: flex; gap: var(--nl-space-2); margin-top: var(--nl-space-4); }
+.nl-card-actions .nl-btn-block { width: 100%; }
 
-.nl-card-actions .nl-btn-block {
-  width: 100%;
-}
+/* ---- 网站列表 ---- */
+.nl-site-list .nl-list-item { padding: 8px 0; }
 
-/* 勾选项 */
-.nl-check {
+.nl-privacy-note {
   display: flex;
   align-items: flex-start;
   gap: var(--nl-space-2);
-  padding: var(--nl-space-1) 0;
-  font-size: 13px;
-  cursor: pointer;
-}
-
-.nl-check input[type="checkbox"] {
-  flex: none;
-  width: 15px;
-  height: 15px;
-  margin-top: 2px;
-  accent-color: var(--nl-accent);
-  cursor: pointer;
-}
-
-/* 表单字段 */
-.nl-field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--nl-space-1);
-  margin-bottom: var(--nl-space-3);
-}
-
-.nl-field label,
-.nl-field-label {
-  font-size: 12px;
-  color: var(--nl-text-secondary);
-}
-
-.nl-field input[type="number"],
-.nl-textarea {
-  width: 100%;
-  padding: 5px 8px;
-  font: inherit;
-  font-size: 13px;
-  color: var(--nl-text);
-  background: var(--nl-bg);
-  border: 1px solid var(--nl-separator);
-  border-radius: var(--nl-radius-sm);
-}
-
-.nl-textarea {
-  resize: vertical;
-  margin-bottom: var(--nl-space-3);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 12px;
-}
-
-.nl-field-row {
-  display: flex;
-  gap: var(--nl-space-4);
-  margin-top: var(--nl-space-2);
-}
-
-.nl-field-row .nl-field {
-  flex: 1;
-  min-width: 0;
-}
-
-.nl-select {
-  width: 100%;
-}
-
-/* 网站列表 */
-.nl-site-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.nl-site-list .nl-list-item {
-  padding: 8px 0;
-}
-
-.nl-site-list .nl-mode {
+  margin-top: var(--nl-space-3);
   font-size: 11px;
+  line-height: 1.5;
+  color: var(--nl-text-tertiary);
+}
+
+/* ---- 表单字段 ---- */
+.nl-field { display: flex; flex-direction: column; gap: 5px; margin-bottom: var(--nl-space-4); }
+.nl-field:last-child { margin-bottom: 0; }
+
+.nl-field label, .nl-field-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 500;
   color: var(--nl-text-secondary);
 }
 
-/* 高级：默认折叠 */
+.nl-textarea { margin-bottom: var(--nl-space-4); }
+
+.nl-field-row { display: flex; gap: var(--nl-space-4); margin-top: var(--nl-space-2); }
+.nl-field-row .nl-field { flex: 1; min-width: 0; }
+
+/* ---- 高级：默认折叠 ---- */
 .nl-details summary {
+  display: flex;
+  align-items: center;
+  gap: var(--nl-space-2);
   font-size: 13px;
   font-weight: 500;
   color: var(--nl-text);
   cursor: pointer;
   list-style: none;
+  border-radius: var(--nl-radius-xs);
 }
 
-.nl-details summary::-webkit-details-marker {
-  display: none;
-}
+.nl-details summary::-webkit-details-marker { display: none; }
 
+/* 用 CSS 三角（不引入图标依赖），展开时旋转 90° */
 .nl-details summary::before {
-  content: "▸";
-  display: inline-block;
-  width: 14px;
-  color: var(--nl-text-secondary);
+  content: "";
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-right: 1.8px solid var(--nl-text-tertiary);
+  border-bottom: 1.8px solid var(--nl-text-tertiary);
+  transform: rotate(-45deg);
   transition: transform var(--nl-duration) var(--nl-ease);
 }
 
-.nl-details[open] summary::before {
-  transform: rotate(90deg);
-}
+.nl-details[open] summary::before { transform: rotate(45deg); }
 
-.nl-details-body {
-  padding-top: var(--nl-space-3);
-}
+.nl-details-body { padding-top: var(--nl-space-4); }
 
 .nl-warning {
-  margin-bottom: var(--nl-space-3);
-  padding: var(--nl-space-2) var(--nl-space-3);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--nl-space-2);
+  margin-bottom: var(--nl-space-4);
+  padding: var(--nl-space-3);
   font-size: 12px;
-  color: var(--nl-text);
-  background: color-mix(in srgb, var(--nl-warning) 16%, transparent);
+  line-height: 1.5;
+  color: var(--nl-warning);
+  background: var(--nl-warning-soft);
   border-radius: var(--nl-radius-sm);
 }
 
-/* 套餐 */
-.nl-plan-status {
-  font-size: 13px;
-  color: var(--nl-text-secondary);
-  line-height: 1.6;
-}
+/* ---- 套餐 ---- */
+.nl-plan-status { font-size: 13px; font-weight: 500; color: var(--nl-text); }
 
-.nl-plan-status strong {
-  color: var(--nl-text);
-}
-
-/* 关于页脚 */
+/* ---- 关于 ---- */
 .nl-about {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--nl-space-2);
-  padding-top: var(--nl-space-2);
+  padding: var(--nl-space-2) 0 0;
   font-size: 12px;
   color: var(--nl-text-secondary);
 }
 
-.nl-about a {
-  color: var(--nl-accent);
-  text-decoration: none;
-}
+.nl-about a { color: var(--nl-primary); text-decoration: none; font-weight: 500; }
+.nl-about a:hover { text-decoration: underline; text-underline-offset: 2px; }
+.nl-about-sep { color: var(--nl-text-tertiary); }
 
-.nl-about a:hover {
-  text-decoration: underline;
-}
-
-.nl-about-sep {
-  color: var(--nl-text-tertiary);
-}
-
-/* 窄窗口 */
+/* ---- 窄窗口 ---- */
 @media (max-width: 560px) {
-  .nl-field-row {
-    flex-direction: column;
-    gap: 0;
-  }
-}
-
-/* 权限说明：安静的一行，不抢主要操作 */
-.nl-privacy-note {
-  margin-top: var(--nl-space-2);
-  margin-bottom: 0;
-  font-size: 11px;
-  color: var(--nl-text-tertiary);
+  .nl-field-row { flex-direction: column; gap: 0; }
+  .nl-page { padding: var(--nl-space-5) var(--nl-space-4); }
 }

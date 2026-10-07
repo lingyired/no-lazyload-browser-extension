@@ -96,7 +96,8 @@ export function run() {
     ['--nl-text', '--nl-bg', 4.5, '正文 / 页面底色'],
     ['--nl-text', '--nl-surface', 4.5, '正文 / 分组表面'],
     ['--nl-text-secondary', '--nl-surface', 4.5, '次要文字 / 分组表面'],
-    ['--nl-on-accent', '--nl-accent', 4.5, '主按钮文字 / 强调色'],
+    ['--nl-on-accent', '--nl-accent', 4.5, '强调按钮文字 / 琥珀底'],
+    ['--nl-on-primary', '--nl-primary', 4.5, '主按钮文字 / 品牌青蓝底'],
     ['--nl-danger', '--nl-surface', 3.0, '错误状态（非文字 UI）'],
     ['--nl-success', '--nl-surface', 3.0, '成功状态（非文字 UI）'],
   ];

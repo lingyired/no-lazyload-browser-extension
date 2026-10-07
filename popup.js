@@ -263,7 +263,8 @@ function updateLicenseUI(siteCount) {
     if (upgradeGroup) upgradeGroup.hidden = true;
     if (notice) {
       notice.hidden = false;
-      notice.textContent = t('purchaseUnavailable');
+      const label = notice.querySelector('span');
+      if (label) label.textContent = t('purchaseUnavailable');
     }
     return;
   }
@@ -272,7 +273,8 @@ function updateLicenseUI(siteCount) {
 
   if (mode === LICENSE_MODES.FREE) {
     if (upgradeGroup) upgradeGroup.hidden = false;
-    if (manageBtn) manageBtn.textContent = t('licenseUpgrade');
+    const manageLabel = manageBtn && manageBtn.querySelector('span');
+    if (manageLabel) manageLabel.textContent = t('licenseUpgrade');
     if (upgradeNote) upgradeNote.textContent = t('upgradeNote');
   } else if (upgradeGroup) {
     upgradeGroup.hidden = true;
@@ -550,7 +552,8 @@ async function loadSiteList() {
     removeBtn.dataset.domain = domain;
     removeBtn.title = t('removeSite');
     removeBtn.setAttribute('aria-label', t('removeSite') + ' ' + domain);
-    removeBtn.textContent = '−';
+    // 图标用 SVG，不用文本符号（ui-ux-pro-max：禁止 emoji/字形当图标）
+    removeBtn.innerHTML = '<svg class="nl-icon nl-icon-sm" aria-hidden="true"><use href="#i-minus"></use></svg>';
 
     item.append(domainSpan, modeSpan, removeBtn);
     siteList.appendChild(item);

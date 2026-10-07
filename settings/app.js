@@ -354,14 +354,16 @@ function updateLicenseStatus(siteCount) {
       count,
       limit: APP_LIMITS.FREE_SITE_LIMIT,
     });
-    btn.textContent = t('licenseUpgrade');
-    // 升级按钮是付费版的主 CTA；Pro 用户则降级为次要按钮
-    btn.className = 'nl-btn nl-btn-primary';
+    const freeLabel = btn.querySelector('span');
+    if (freeLabel) freeLabel.textContent = t('licenseUpgrade');
+    // 升级按钮是付费版的主 CTA（琥珀强调）；Pro 用户则降级为普通按钮
+    btn.className = 'nl-btn nl-btn-accent';
     if (planNote) planNote.hidden = false;
   } else {
     // Pro：只说明已解锁 + 管理购买，绝不再出现 Buy CTA
     status.textContent = t('planProDetail');
-    btn.textContent = t('managePurchases');
+    const proLabel = btn.querySelector('span');
+    if (proLabel) proLabel.textContent = t('managePurchases');
     btn.className = 'nl-btn';
     if (planNote) planNote.hidden = true;
   }
@@ -533,7 +535,8 @@ async function loadSiteList() {
       removeBtn.dataset.domain = domain;
       removeBtn.title = t('removeSite');
       removeBtn.setAttribute('aria-label', t('removeSite') + ' ' + domain);
-      removeBtn.textContent = '−';
+      // 图标用 SVG，不用文本符号
+      removeBtn.innerHTML = '<svg class="nl-icon nl-icon-sm" aria-hidden="true"><use href="#i-minus"></use></svg>';
 
       item.append(domainSpan, modeSpan, removeBtn);
       siteList.appendChild(item);
@@ -572,7 +575,8 @@ async function loadSiteList() {
   if (upgradeBox && upgradeBtn) {
     const full = getLicenseMode() === LICENSE_MODES.FREE && count >= APP_LIMITS.FREE_SITE_LIMIT;
     upgradeBox.hidden = !full;
-    upgradeBtn.textContent = t('licenseUpgrade');
+    const label = upgradeBtn.querySelector('span');
+    if (label) label.textContent = t('licenseUpgrade');
   }
 }
 /**

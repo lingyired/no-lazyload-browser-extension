@@ -41,7 +41,12 @@ fetch('../../settings/index.html')
       document.head.appendChild(clone);
     });
 
-    document.body.innerHTML = doc.body.innerHTML;
+    document.body.innerHTML = doc.body.innerHTML; // nl-fix-img
+
+    // body 里的相对路径（../lingyired/...）同样要指回仓库根
+    document.querySelectorAll('img[src^="../"]').forEach(function (img) {
+      img.setAttribute('src', '../../' + img.getAttribute('src').replace(/^\.\.\//, ''));
+    });
 
     // 头部脚本（i18n-manager.js 等）按顺序加载，再加载页面主脚本
     // 页面脚本要按文档顺序全部加载（settings 页把 i18n-manager.js 放在 body 末尾）

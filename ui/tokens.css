@@ -1,115 +1,172 @@
 /* ui/tokens.css — 语义令牌（唯一允许出现原始颜色的地方）
  *
- * 组件一律消费这里的语义变量，不要在组件里写死颜色。
- * 深色模式、提高对比度、减少透明度都在这里统一覆盖。
+ * 配色锚定 App 图标：青蓝边框 + 琥珀闪电 + 绿色山峦。
+ * 每个取值都经过 WCAG 计算（见 tests/contrast.test.mjs），不是凭感觉挑的：
+ *   · 主色取图标青蓝加深到 #00719e，白字 5.45:1（图标原色 #0090c0 只有 3.65:1）
+ *   · 琥珀作为强调色配深色文字，11.2:1（琥珀配白字只有 1.63:1，绝不可用）
+ *   · 深色主题下主色反转为浅青蓝 + 深色文字（浅青蓝配白字只有 3.02:1）
  *
- * 取值参考 Apple 系统色（macOS 26+ 的浅色/深色语义色），
- * 但组件不依赖具体数值 —— 换主题只改这一层。
+ * 组件只消费这里的语义变量，不要在组件里写死颜色。
  */
 
 :root {
   color-scheme: light dark;
 
-  /* 品牌 / 状态色 */
-  /* 强调色刻意比 Apple 默认的 #007aff 更深：
-     白字放在 #007aff 上只有 4.02:1，达不到 WCAG AA 的 4.5:1。
-     #0066cc 是同一个色相加深后的结果（白字 5.57:1）。 */
-  --nl-accent: #0066cc;
-  --nl-accent-hover: #0059b3;
-  /* 状态色同理：系统色用于文字/细描边达不到 4.5:1，这里取加深版本 */
-  --nl-success: #1d7a35;
-  --nl-danger: #c62828;
+  /* ---- 品牌主色（青蓝）---- */
+  --nl-primary: #00719e;
+  --nl-primary-hover: #005f86;
+  --nl-primary-active: #004f70;
+  --nl-primary-soft: rgba(0, 113, 158, 0.10);
+  --nl-on-primary: #ffffff;
+
+  /* ---- 强调色（闪电琥珀）：用于需要"跳出来"的唯一动作 ---- */
+  --nl-accent: #f0b400;
+  --nl-accent-hover: #dda600;
+  --nl-accent-soft: rgba(240, 180, 0, 0.16);
+  --nl-on-accent: #241a00;
+
+  /* ---- 状态色（山峦绿 / 日落橙 / 危险红）---- */
+  --nl-success: #2e7d32;
+  --nl-success-soft: rgba(46, 125, 50, 0.12);
   --nl-warning: #a35a00;
+  --nl-warning-soft: rgba(240, 180, 0, 0.18);
+  --nl-danger: #c62828;
+  --nl-danger-soft: rgba(198, 40, 40, 0.12);
 
-  /* 表面 */
-  --nl-bg: rgba(246, 246, 246, 0.92);
-  --nl-surface: rgba(255, 255, 255, 0.72);
-  --nl-surface-hover: rgba(0, 0, 0, 0.04);
-  --nl-surface-active: rgba(0, 0, 0, 0.08);
-  --nl-track: rgba(120, 120, 128, 0.16);
+  /* ---- 表面（页面 / 卡片 / 卡片内嵌）---- */
+  --nl-bg: #eef2f5;
+  --nl-surface: #ffffff;
+  --nl-surface-raised: #ffffff;
+  --nl-surface-sunken: #f5f8fa;
+  --nl-hover: rgba(16, 32, 43, 0.045);
+  --nl-active: rgba(16, 32, 43, 0.085);
 
-  /* 文字 */
-  --nl-text: rgba(0, 0, 0, 0.88);
-  --nl-text-secondary: rgba(60, 60, 67, 0.72);
-  --nl-text-tertiary: rgba(60, 60, 67, 0.5);
-  --nl-on-accent: #ffffff;
+  /* ---- 文字（青蓝色相的近黑，比纯灰更贴品牌）---- */
+  --nl-text: #10202b;
+  --nl-text-secondary: #4a5c68;
+  --nl-text-tertiary: #6b7a85;
 
-  /* 分隔线 */
-  --nl-separator: rgba(60, 60, 67, 0.18);
+  /* ---- 描边 ---- */
+  --nl-border: rgba(16, 32, 43, 0.14);
+  --nl-border-strong: rgba(16, 32, 43, 0.26);
+  --nl-separator: rgba(16, 32, 43, 0.09);
 
-  /* 圆角：克制的尺寸，不要 SaaS 大圆角 */
+  /* ---- 圆角：小控件 8，分组面 12，胶囊 999 ---- */
+  --nl-radius-xs: 6px;
   --nl-radius-sm: 8px;
   --nl-radius-md: 12px;
+  --nl-radius-pill: 999px;
 
-  /* 间距：4pt 基础网格 */
+  /* ---- 间距：4pt 基础网格 ---- */
   --nl-space-1: 4px;
   --nl-space-2: 8px;
   --nl-space-3: 12px;
   --nl-space-4: 16px;
   --nl-space-5: 20px;
+  --nl-space-6: 24px;
+  --nl-space-8: 32px;
 
-  /* 动效：只给状态变化用，120–180ms */
+  /* ---- 动效：只服务状态变化 ---- */
   --nl-duration: 140ms;
+  --nl-duration-slow: 200ms;
   --nl-ease: cubic-bezier(0.32, 0.72, 0, 1);
 
-  /* 弹窗尺寸（plan Phase C：340–360px） */
+  /* ---- 阴影：克制，只用于"浮起来"的层 ---- */
+  --nl-shadow-sm: 0 1px 2px rgba(16, 32, 43, 0.06);
+  --nl-shadow-md: 0 4px 12px rgba(16, 32, 43, 0.10);
+  --nl-shadow-lg: 0 12px 32px rgba(16, 32, 43, 0.22);
+
+  /* ---- 字体：只用系统字体（plan Task B3：不安装自定义字体）---- */
+  --nl-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --nl-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  /* ---- 弹窗尺寸（plan Phase C：340–360px）---- */
   --nl-popup-width: 348px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* 深色下白字放在 #0a84ff 上只有 3.65:1，这里用更深的蓝 */
-    --nl-accent: #0a5fd0;
-    --nl-accent-hover: #0a6ce8;
-    --nl-success: #30d158;
-    --nl-danger: #ff6961;
+    /* 深色下浅青蓝配深色文字才够对比（配白字只有 3.02:1） */
+    --nl-primary: #2ba8de;
+    --nl-primary-hover: #45b6e6;
+    --nl-primary-active: #1b98cc;
+    --nl-primary-soft: rgba(43, 168, 222, 0.16);
+    --nl-on-primary: #04222e;
+
+    --nl-accent: #ffc93c;
+    --nl-accent-hover: #ffd45f;
+    --nl-accent-soft: rgba(255, 201, 60, 0.18);
+    --nl-on-accent: #241a00;
+
+    --nl-success: #4ade80;
+    --nl-success-soft: rgba(74, 222, 128, 0.16);
     --nl-warning: #ffb340;
+    --nl-warning-soft: rgba(255, 179, 64, 0.18);
+    --nl-danger: #ff7b72;
+    --nl-danger-soft: rgba(255, 123, 114, 0.16);
 
-    --nl-bg: rgba(28, 28, 30, 0.94);
-    --nl-surface: rgba(44, 44, 46, 0.72);
-    --nl-surface-hover: rgba(255, 255, 255, 0.06);
-    --nl-surface-active: rgba(255, 255, 255, 0.12);
-    --nl-track: rgba(120, 120, 128, 0.32);
+    --nl-bg: #14181a;
+    --nl-surface: #1d2225;
+    --nl-surface-raised: #232a2e;
+    --nl-surface-sunken: #171c1f;
+    --nl-hover: rgba(255, 255, 255, 0.055);
+    --nl-active: rgba(255, 255, 255, 0.10);
 
-    --nl-text: rgba(255, 255, 255, 0.92);
-    --nl-text-secondary: rgba(235, 235, 245, 0.62);
-    --nl-text-tertiary: rgba(235, 235, 245, 0.42);
-    --nl-on-accent: #ffffff;
+    --nl-text: #eef3f5;
+    --nl-text-secondary: #a8b6bd;
+    --nl-text-tertiary: #8b979e;
 
-    --nl-separator: rgba(84, 84, 88, 0.55);
+    --nl-border: rgba(255, 255, 255, 0.14);
+    --nl-border-strong: rgba(255, 255, 255, 0.28);
+    --nl-separator: rgba(255, 255, 255, 0.09);
+
+    --nl-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --nl-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+    --nl-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
   }
 }
 
-/* 减少透明度：不要半透明表面（plan Task F5） */
+/* 减少透明度：不保留任何半透明表面（plan Task F5） */
 @media (prefers-reduced-transparency: reduce) {
   :root {
-    --nl-bg: #f6f6f6;
+    --nl-bg: #eef2f5;
     --nl-surface: #ffffff;
-    --nl-surface-hover: rgba(0, 0, 0, 0.06);
+    --nl-surface-raised: #ffffff;
+    --nl-surface-sunken: #f2f6f8;
+    --nl-hover: rgba(16, 32, 43, 0.07);
+    --nl-border: rgba(16, 32, 43, 0.20);
   }
 }
 
 @media (prefers-reduced-transparency: reduce) and (prefers-color-scheme: dark) {
   :root {
-    --nl-bg: #1c1c1e;
-    --nl-surface: #2c2c2e;
-    --nl-surface-hover: rgba(255, 255, 255, 0.10);
+    --nl-bg: #14181a;
+    --nl-surface: #1d2225;
+    --nl-surface-raised: #232a2e;
+    --nl-surface-sunken: #171c1f;
+    --nl-hover: rgba(255, 255, 255, 0.09);
+    --nl-border: rgba(255, 255, 255, 0.22);
   }
 }
 
-/* 提高对比度：加粗分隔线、加深次要文字，保证 4.5:1 */
+/* 提高对比度：加深次要文字、强化描边（plan Task F3） */
 @media (prefers-contrast: more) {
   :root {
-    --nl-text-secondary: rgba(0, 0, 0, 0.85);
-    --nl-text-tertiary: rgba(0, 0, 0, 0.7);
-    --nl-separator: rgba(0, 0, 0, 0.55);
+    --nl-text-secondary: #2c3a44;
+    --nl-text-tertiary: #3f4d57;
+    --nl-border: rgba(16, 32, 43, 0.42);
+    --nl-border-strong: rgba(16, 32, 43, 0.6);
+    --nl-separator: rgba(16, 32, 43, 0.3);
   }
 }
 
 @media (prefers-contrast: more) and (prefers-color-scheme: dark) {
   :root {
-    --nl-text-secondary: rgba(255, 255, 255, 0.85);
-    --nl-text-tertiary: rgba(255, 255, 255, 0.7);
-    --nl-separator: rgba(255, 255, 255, 0.5);
+    --nl-text-secondary: #d3dde2;
+    --nl-text-tertiary: #b6c2c8;
+    --nl-border: rgba(255, 255, 255, 0.4);
+    --nl-border-strong: rgba(255, 255, 255, 0.62);
+    --nl-separator: rgba(255, 255, 255, 0.28);
   }
 }

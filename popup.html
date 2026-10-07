@@ -10,6 +10,33 @@
   <link rel="stylesheet" href="ui/safari.css">
 </head>
 <body>
+  <!-- 图标精灵：统一 1.5 描边、Heroicons 线性风格，不用 emoji（ui-ux-pro-max 规则） -->
+  <svg class="nl-sprite" aria-hidden="true">
+    <symbol id="i-cog" viewBox="0 0 24 24">
+      <path d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+      <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    </symbol>
+    <symbol id="i-reload" viewBox="0 0 24 24">
+      <path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+    </symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24">
+      <path d="M5 12h14" />
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24">
+      <path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="M4.5 12.75l6 6 9-13.5" />
+    </symbol>
+    <symbol id="i-warning" viewBox="0 0 24 24">
+      <path d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+    </symbol>
+    <symbol id="i-image" viewBox="0 0 24 24">
+      <path d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 18h16.5A2.25 2.25 0 0022.5 15.75V6.75A2.25 2.25 0 0020.25 4.5H3.75A2.25 2.25 0 001.5 6.75v9A2.25 2.25 0 003.75 18z" />
+      <path d="M8.25 8.625a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+    </symbol>
+  </svg>
+
   <div class="nl-popup">
     <!-- 当前网站：一个开关 + 一个模式选择，比"添加/移除按钮"直接得多 -->
     <section class="nl-current-site">
@@ -46,32 +73,41 @@
     <!-- 已启用网站 -->
     <section class="nl-list-group">
       <div class="nl-group-header">
-        <span class="nl-group-title" data-i18n="enabledWebsites">已启用的网站</span>
+        <span class="nl-section-title" data-i18n="enabledWebsites">已启用的网站</span>
         <span class="nl-badge" id="planBadge" hidden>PRO</span>
         <span style="flex:1"></span>
         <span class="nl-count" id="siteCount">0</span>
       </div>
       <div class="nl-list" id="siteList"></div>
-      <div class="nl-empty" id="emptyState" data-i18n="noSites">暂无配置的网站</div>
+      <div class="nl-empty" id="emptyState">
+        <svg class="nl-empty-icon" aria-hidden="true"><use href="#i-image"></use></svg>
+        <span class="nl-empty-text" data-i18n="noSites">暂无配置的网站</span>
+      </div>
     </section>
 
     <!-- 免费版升级入口（Pro / Chrome / Firefox 都会隐藏） -->
     <section class="nl-upgrade-group" id="upgradeGroup" hidden>
-      <button type="button" id="manageLicense" class="nl-btn nl-btn-primary nl-btn-block">…</button>
+      <button type="button" id="manageLicense" class="nl-btn nl-btn-accent nl-btn-block">
+        <svg class="nl-icon" aria-hidden="true"><use href="#i-bolt"></use></svg>
+        <span data-i18n="licenseUpgrade">升级到 Pro</span>
+      </button>
       <p class="nl-upgrade-note" id="upgradeNote"></p>
     </section>
 
     <!-- 购买不可用 / 权限存储不可用时的明确提示 -->
-    <p class="nl-notice" id="licenseNotice" hidden></p>
+    <p class="nl-notice" id="licenseNotice" hidden>
+      <svg class="nl-icon nl-icon-sm" aria-hidden="true"><use href="#i-warning"></use></svg>
+      <span></span>
+    </p>
 
     <!-- 页脚 -->
     <footer class="nl-footer">
       <button type="button" id="openSettings" class="nl-link-btn">
-        <span aria-hidden="true">⚙</span>
+        <svg class="nl-icon nl-icon-sm" aria-hidden="true"><use href="#i-cog"></use></svg>
         <span data-i18n="fullSettings">完整设置</span>
       </button>
       <button type="button" id="refreshPage" class="nl-link-btn">
-        <span aria-hidden="true">↻</span>
+        <svg class="nl-icon nl-icon-sm" aria-hidden="true"><use href="#i-reload"></use></svg>
         <span data-i18n="refreshPage">刷新页面</span>
       </button>
     </footer>
