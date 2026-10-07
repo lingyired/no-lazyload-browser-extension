@@ -31,10 +31,10 @@
     "message": "Eliminar Sitio Actual"
   },
   "useAutoScroll": {
-    "message": "Usar desplazamiento automático en lugar de bloqueo técnico"
+    "message": "Usar Compatibility Mode en lugar de Standard"
   },
   "autoScrollDesc": {
-    "message": "Desplazarse hasta el final para activar la carga, adecuado para sitios donde falla el bloqueo técnico"
+    "message": "Desplazarse hasta el final para activar la carga, adecuado para sitios donde Standard falla"
   },
   "configuredSites": {
     "message": "Sitios Configurados"
@@ -52,7 +52,7 @@
     "message": "Agregado {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Agregado {domain} (Desplaz. Auto.)"
+    "message": "Agregado {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Eliminado {domain}"
@@ -61,16 +61,16 @@
     "message": "Eliminado {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Desplazamiento automático activado"
+    "message": "Compatibility Mode activado"
   },
   "autoScrollDisabled": {
-    "message": "Desplazamiento automático desactivado"
+    "message": "Compatibility Mode desactivado"
   },
   "pageRefreshed": {
     "message": "Página actualizada"
   },
   "autoScroll": {
-    "message": "Desplaz. Auto."
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Configuración - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Volver arriba al completar"
   },
   "fallbackToScroll": {
-    "message": "Usar Desplazamiento Automático cuando Falla el Bloqueo Técnico",
+    "message": "Usar Compatibility Mode automáticamente cuando Standard falla",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -247,10 +247,10 @@
     "message": "No hay sitios configurados"
   },
   "autoScrollHelp": {
-    "message": "Deshabilita el bloqueo técnico y activa la carga desplazándose al final"
+    "message": "Deshabilita el Standard y activa la carga desplazándose al final"
   },
   "scrollParams": {
-    "message": "Parámetros de Desplazamiento"
+    "message": "Parámetros de Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Guardar Configuración"
@@ -271,10 +271,10 @@
     "message": "Eliminado"
   },
   "scrollEnabled": {
-    "message": "Desplazamiento automático activado"
+    "message": "Compatibility Mode activado"
   },
   "scrollDisabled": {
-    "message": "Desplazamiento automático desactivado"
+    "message": "Compatibility Mode desactivado"
   },
   "configImported": {
     "message": "Configuración importada"

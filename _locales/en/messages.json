@@ -31,10 +31,10 @@
     "message": "Remove Current Site"
   },
   "useAutoScroll": {
-    "message": "Use auto-scroll instead of tech blocking (for sites where blocking fails)"
+    "message": "Use Compatibility Mode instead of Standard (for sites where blocking fails)"
   },
   "autoScrollDesc": {
-    "message": "Auto-scroll to bottom to trigger loading, suitable for sites where tech blocking fails"
+    "message": "Scroll to the bottom to trigger loading, suitable for sites where Standard fails"
   },
   "configuredSites": {
     "message": "Configured Sites"
@@ -52,7 +52,7 @@
     "message": "Added {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Added {domain} (Auto-scroll)"
+    "message": "Added {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Removed {domain}"
@@ -61,16 +61,16 @@
     "message": "Deleted {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Auto-scroll enabled"
+    "message": "Compatibility Mode enabled"
   },
   "autoScrollDisabled": {
-    "message": "Auto-scroll disabled"
+    "message": "Compatibility Mode disabled"
   },
   "pageRefreshed": {
     "message": "Page refreshed"
   },
   "autoScroll": {
-    "message": "Auto-scroll"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Settings - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Return to top when complete"
   },
   "fallbackToScroll": {
-    "message": "Auto-use Scroll Fallback When Tech Block Fails",
+    "message": "Auto-use Compatibility Mode when Standard fails",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "No configured sites"
   },
   "autoScrollHelp": {
-    "message": "When enabled, disables tech blocking and triggers image loading by auto-scrolling to bottom"
+    "message": "When enabled, disables Standard and triggers image loading by scrolling to the bottom"
   },
   "scrollParams": {
-    "message": "Auto-scroll Parameters"
+    "message": "Compatibility Mode Parameters"
   },
   "saveGlobal": {
     "message": "Save Global Settings"
@@ -272,10 +272,10 @@
     "message": "Deleted"
   },
   "scrollEnabled": {
-    "message": "Auto-scroll enabled"
+    "message": "Compatibility Mode enabled"
   },
   "scrollDisabled": {
-    "message": "Auto-scroll disabled"
+    "message": "Compatibility Mode disabled"
   },
   "configImported": {
     "message": "Config imported"

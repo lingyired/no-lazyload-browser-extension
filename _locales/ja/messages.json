@@ -31,10 +31,10 @@
     "message": "現在のサイトを削除"
   },
   "useAutoScroll": {
-    "message": "技術ブロックの代わりに自動スクロールを使用"
+    "message": "Standardの代わりにCompatibility Modeを使用"
   },
   "autoScrollDesc": {
-    "message": "読み込みをトリガーするために下部までスクロールします。技術的なブロッキングが失敗するサイトに適しています"
+    "message": "読み込みをトリガーするために下部までスクロールします。Standardが失敗するサイトに適しています"
   },
   "configuredSites": {
     "message": "設定済みサイト"
@@ -52,7 +52,7 @@
     "message": "{domain} を追加しました"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} を追加しました（自動スクロール）"
+    "message": "{domain} を追加しました（Compatibility Mode）"
   },
   "siteRemoved": {
     "message": "{domain} を削除しました"
@@ -61,16 +61,16 @@
     "message": "{domain} を削除しました"
   },
   "autoScrollEnabled": {
-    "message": "自動スクロールを有効にしました"
+    "message": "Compatibility Modeを有効にしました"
   },
   "autoScrollDisabled": {
-    "message": "自動スクロールを無効にしました"
+    "message": "Compatibility Modeを無効にしました"
   },
   "pageRefreshed": {
     "message": "ページを更新しました"
   },
   "autoScroll": {
-    "message": "自動スクロール"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "設定 - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "完了後にトップに戻る"
   },
   "fallbackToScroll": {
-    "message": "技術的なブロッキングが失敗した場合、自動スクロールを使用",
+    "message": "Standardが失敗した場合、Compatibility Modeを使用",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -247,10 +247,10 @@
     "message": "設定済みサイトはありません"
   },
   "autoScrollHelp": {
-    "message": "技術ブロックを無効化し、スクロールで読み込みをトリガー"
+    "message": "Standardを無効化し、スクロールで読み込みをトリガー"
   },
   "scrollParams": {
-    "message": "自動スクロール設定"
+    "message": "Compatibility Mode設定"
   },
   "saveGlobal": {
     "message": "設定を保存"
@@ -271,10 +271,10 @@
     "message": "削除しました"
   },
   "scrollEnabled": {
-    "message": "自動スクロールを有効にしました"
+    "message": "Compatibility Modeを有効にしました"
   },
   "scrollDisabled": {
-    "message": "自動スクロールを無効にしました"
+    "message": "Compatibility Modeを無効にしました"
   },
   "configImported": {
     "message": "設定を読み込みました"

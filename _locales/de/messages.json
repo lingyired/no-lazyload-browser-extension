@@ -34,10 +34,10 @@
     "message": "Aktuelle Seite Entfernen"
   },
   "useAutoScroll": {
-    "message": "Automatisches Scrollen statt technischer Blockierung"
+    "message": "Compatibility Mode statt Standard"
   },
   "autoScrollDesc": {
-    "message": "Nach unten scrollen zum Laden auslösen, geeignet für Seiten bei denen das technische Blockieren fehlschlägt"
+    "message": "Nach unten scrollen zum Laden auslösen, geeignet für Seiten bei denen Standard fehlschlägt"
   },
   "configuredSites": {
     "message": "Konfigurierte Seiten"
@@ -55,7 +55,7 @@
     "message": "{domain} Hinzugefügt"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} Hinzugefügt (Auto-Scroll)"
+    "message": "{domain} Hinzugefügt (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "{domain} Entfernt"
@@ -64,16 +64,16 @@
     "message": "{domain} Gelöscht"
   },
   "autoScrollEnabled": {
-    "message": "Automatisches Scrollen aktiviert"
+    "message": "Compatibility Mode aktiviert"
   },
   "autoScrollDisabled": {
-    "message": "Automatisches Scrollen deaktiviert"
+    "message": "Compatibility Mode deaktiviert"
   },
   "pageRefreshed": {
     "message": "Seite aktualisiert"
   },
   "autoScroll": {
-    "message": "Auto-Scroll"
+    "message": "Compatibility Mode-Parameter"
   },
   "settingsTitle": {
     "message": "Einstellungen - No Lazyload",
@@ -92,7 +92,7 @@
     "message": "Nach Abschluss nach oben zurückkehren"
   },
   "fallbackToScroll": {
-    "message": "Automatisches Scrollen verwenden wenn technisches Blockieren fehlschlägt",
+    "message": "Compatibility Mode verwenden wenn Standard fehlschlägt",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -250,10 +250,10 @@
     "message": "Keine konfigurierten Seiten"
   },
   "autoScrollHelp": {
-    "message": "Deaktiviert technische Blockierung und lädt durch Scrollen"
+    "message": "Deaktiviert Standard und lädt durch Scrollen nach unten"
   },
   "scrollParams": {
-    "message": "Scroll-Parameter"
+    "message": "Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Einstellungen Speichern"
@@ -274,10 +274,10 @@
     "message": "Gelöscht"
   },
   "scrollEnabled": {
-    "message": "Automatisches Scrollen aktiviert"
+    "message": "Compatibility Mode aktiviert"
   },
   "scrollDisabled": {
-    "message": "Automatisches Scrollen deaktiviert"
+    "message": "Compatibility Mode deaktiviert"
   },
   "configImported": {
     "message": "Konfiguration importiert"

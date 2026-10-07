@@ -31,10 +31,10 @@
     "message": "حذف سایت فعلی"
   },
   "useAutoScroll": {
-    "message": "استفاده از پیمایش خودکار به جای مسدودسازی فنی"
+    "message": "استفاده از Compatibility Mode به جای Standard"
   },
   "autoScrollDesc": {
-    "message": "برای شروع بارگذاری به‌صورت خودکار به پایین بپیمایید؛ مناسب برای سایت‌هایی که مسدودسازی فنی در آن‌ها شکست می‌خورد"
+    "message": "برای شروع بارگذاری به‌صورت خودکار به پایین بپیمایید؛ مناسب برای سایت‌هایی که Standard در آن‌ها شکست می‌خورد"
   },
   "configuredSites": {
     "message": "سایت‌های پیکربندی‌شده"
@@ -52,7 +52,7 @@
     "message": "{domain} افزوده شد"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} افزوده شد (پیمایش خودکار)"
+    "message": "{domain} افزوده شد (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "{domain} حذف شد"
@@ -61,16 +61,16 @@
     "message": "{domain} حذف شد"
   },
   "autoScrollEnabled": {
-    "message": "پیمایش خودکار فعال شد"
+    "message": "Compatibility Mode فعال شد"
   },
   "autoScrollDisabled": {
-    "message": "پیمایش خودکار غیرفعال شد"
+    "message": "Compatibility Mode غیرفعال شد"
   },
   "pageRefreshed": {
     "message": "صفحه بازخوانی شد"
   },
   "autoScroll": {
-    "message": "پیمایش خودکار"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "تنظیمات - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "بازگشت به بالا پس از اتمام"
   },
   "fallbackToScroll": {
-    "message": "هنگام شکست مسدودسازی فنی، به‌طور خودکار از پیمایش به‌عنوان جایگزین استفاده کن",
+    "message": "هنگام شکست Standard، به‌طور خودکار از پیمایش به‌عنوان جایگزین استفاده کن",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "هیچ سایتی پیکربندی نشده است"
   },
   "autoScrollHelp": {
-    "message": "هنگام فعال بودن، مسدودسازی فنی را غیرفعال می‌کند و با پیمایش خودکار به پایین، بارگذاری را فعال می‌کند"
+    "message": "هنگام فعال بودن، Standard را غیرفعال می‌کند و با پیمایش به پایین، بارگذاری را فعال می‌کند"
   },
   "scrollParams": {
-    "message": "پارامترهای پیمایش خودکار"
+    "message": "پارامترهای Compatibility Mode"
   },
   "saveGlobal": {
     "message": "ذخیره تنظیمات سراسری"
@@ -272,10 +272,10 @@
     "message": "حذف شد"
   },
   "scrollEnabled": {
-    "message": "پیمایش خودکار فعال شد"
+    "message": "Compatibility Mode فعال شد"
   },
   "scrollDisabled": {
-    "message": "پیمایش خودکار غیرفعال شد"
+    "message": "Compatibility Mode غیرفعال شد"
   },
   "configImported": {
     "message": "پیکربندی وارد شد"

@@ -31,10 +31,10 @@
     "message": "הסר את האתר הנוכחי"
   },
   "useAutoScroll": {
-    "message": "השתמש בגלילה אוטומטית במקום חסימה טכנית"
+    "message": "השתמש בCompatibility Mode במקום Standard"
   },
   "autoScrollDesc": {
-    "message": "גלול אוטומטית למטה כדי להפעיל את הטעינה; מתאים לאתרים שבהם החסימה הטכנית נכשלת"
+    "message": "גלול אוטומטית למטה כדי להפעיל את הטעינה; מתאים לאתרים שבהם Standard נכשלת"
   },
   "configuredSites": {
     "message": "אתרים מוגדרים"
@@ -52,7 +52,7 @@
     "message": "נוסף {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "נוסף {domain} (גלילה אוטומטית)"
+    "message": "נוסף {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "הוסר {domain}"
@@ -61,16 +61,16 @@
     "message": "נמחק {domain}"
   },
   "autoScrollEnabled": {
-    "message": "גלילה אוטומטית מופעלת"
+    "message": "Compatibility Mode מופעלת"
   },
   "autoScrollDisabled": {
-    "message": "גלילה אוטומטית מושבתת"
+    "message": "Compatibility Mode מושבתת"
   },
   "pageRefreshed": {
     "message": "הדף רוענן"
   },
   "autoScroll": {
-    "message": "גלילה אוטומטית"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "הגדרות - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "חזור לראש לאחר השלמה"
   },
   "fallbackToScroll": {
-    "message": "השתמש אוטומטית בגלילה כגיבוי כאשר החסימה הטכנית נכשלת",
+    "message": "השתמש אוטומטית בגלילה כגיבוי כאשר Standard נכשלת",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "אין אתרים מוגדרים"
   },
   "autoScrollHelp": {
-    "message": "כאשר מופעל, משבית חסימה טכנית ומפעיל טעינה על ידי גלילה אוטומטית למטה"
+    "message": "כאשר מופעל, משבית Standard ומפעיל טעינה על ידי גלילה למטה"
   },
   "scrollParams": {
-    "message": "פרמטרים של גלילה אוטומטית"
+    "message": "פרמטרים של Compatibility Mode"
   },
   "saveGlobal": {
     "message": "שמור הגדרות כלליות"
@@ -272,10 +272,10 @@
     "message": "נמחק"
   },
   "scrollEnabled": {
-    "message": "גלילה אוטומטית מופעלת"
+    "message": "Compatibility Mode מופעלת"
   },
   "scrollDisabled": {
-    "message": "גלילה אוטומטית מושבתת"
+    "message": "Compatibility Mode מושבתת"
   },
   "configImported": {
     "message": "התצורה יובאה"

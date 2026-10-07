@@ -31,10 +31,10 @@
     "message": "Hapus Situs Saat Ini"
   },
   "useAutoScroll": {
-    "message": "Gunakan gulir otomatis, bukan pemblokiran teknis"
+    "message": "Gunakan Compatibility Mode, bukan Standard"
   },
   "autoScrollDesc": {
-    "message": "Gulir otomatis ke bawah untuk memicu pemuatan; cocok untuk situs di mana pemblokiran teknis gagal"
+    "message": "Gulir otomatis ke bawah untuk memicu pemuatan; cocok untuk situs di mana Standard gagal"
   },
   "configuredSites": {
     "message": "Situs yang Dikonfigurasi"
@@ -52,7 +52,7 @@
     "message": "Ditambahkan {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Ditambahkan {domain} (Gulir Otomatis)"
+    "message": "Ditambahkan {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Dihapus {domain}"
@@ -61,16 +61,16 @@
     "message": "Dihapus {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Gulir otomatis aktif"
+    "message": "Compatibility Mode aktif"
   },
   "autoScrollDisabled": {
-    "message": "Gulir otomatis nonaktif"
+    "message": "Compatibility Mode nonaktif"
   },
   "pageRefreshed": {
     "message": "Halaman dimuat ulang"
   },
   "autoScroll": {
-    "message": "Gulir Otomatis"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Pengaturan - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Kembali ke Atas Setelah Selesai"
   },
   "fallbackToScroll": {
-    "message": "Gunakan gulir cadangan secara otomatis saat pemblokiran teknis gagal",
+    "message": "Gunakan gulir cadangan secara otomatis saat Standard gagal",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Tidak ada situs yang dikonfigurasi"
   },
   "autoScrollHelp": {
-    "message": "Saat diaktifkan, menonaktifkan pemblokiran teknis dan memicu pemuatan dengan menggulir otomatis ke bawah"
+    "message": "Saat diaktifkan, menonaktifkan Standard dan memicu pemuatan dengan menggulir ke bawah"
   },
   "scrollParams": {
-    "message": "Parameter Gulir Otomatis"
+    "message": "Parameter Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Simpan Pengaturan Global"
@@ -268,10 +268,10 @@
     "message": "Dihapus"
   },
   "scrollEnabled": {
-    "message": "Gulir otomatis diaktifkan"
+    "message": "Compatibility Mode aktif"
   },
   "scrollDisabled": {
-    "message": "Gulir otomatis dinonaktifkan"
+    "message": "Compatibility Mode nonaktif"
   },
   "configImported": {
     "message": "Konfigurasi diimpor"

@@ -31,10 +31,10 @@
     "message": "Poista nykyinen sivusto"
   },
   "useAutoScroll": {
-    "message": "Käytä automaattista vieritystä teknisen eston sijaan"
+    "message": "Käytä Compatibility Mode Standard sijaan"
   },
   "autoScrollDesc": {
-    "message": "Vieritä automaattisesti alas käynnistääksesi lataamisen; sopii sivustoille, joissa tekninen esto epäonnistuu"
+    "message": "Vieritä automaattisesti alas käynnistääksesi lataamisen; sopii sivustoille, joissa Standard epäonnistuu"
   },
   "configuredSites": {
     "message": "Määritetyt sivustot"
@@ -52,7 +52,7 @@
     "message": "Lisätty {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Lisätty {domain} (Automaattinen vieritys)"
+    "message": "Lisätty {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Poistettu {domain}"
@@ -61,16 +61,16 @@
     "message": "Poistettu {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Automaattinen vieritys käytössä"
+    "message": "Compatibility Mode käytössä"
   },
   "autoScrollDisabled": {
-    "message": "Automaattinen vieritys pois käytöstä"
+    "message": "Compatibility Mode pois käytöstä"
   },
   "pageRefreshed": {
     "message": "Sivu päivitetty"
   },
   "autoScroll": {
-    "message": "Automaattinen vieritys"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Asetukset - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Palaa ylös valmistumisen jälkeen"
   },
   "fallbackToScroll": {
-    "message": "Käytä automaattisesti vieritystä varana, kun tekninen esto epäonnistuu",
+    "message": "Käytä automaattisesti Compatibility Mode varana, kun Standard epäonnistuu",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Ei määritettyjä sivustoja"
   },
   "autoScrollHelp": {
-    "message": "Kun käytössä, poistaa teknisen eston käytöstä ja käynnistää lataamisen vierittämällä alas"
+    "message": "Kun käytössä, poistaa Standard käytöstä ja käynnistää lataamisen vierittämällä alas"
   },
   "scrollParams": {
-    "message": "Automaattisen vierityksen parametrit"
+    "message": "Compatibility Mode -parametrit"
   },
   "saveGlobal": {
     "message": "Tallenna yleiset asetukset"
@@ -272,10 +272,10 @@
     "message": "Poistettu"
   },
   "scrollEnabled": {
-    "message": "Automaattinen vieritys käytössä"
+    "message": "Compatibility Mode käytössä"
   },
   "scrollDisabled": {
-    "message": "Automaattinen vieritys pois käytöstä"
+    "message": "Compatibility Mode pois käytöstä"
   },
   "configImported": {
     "message": "Kokoonpano tuotu"

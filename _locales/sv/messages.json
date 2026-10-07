@@ -31,10 +31,10 @@
     "message": "Ta bort aktuell webbplats"
   },
   "useAutoScroll": {
-    "message": "Använd automatisk rullning istället för teknisk blockering"
+    "message": "Använd Compatibility Mode istället för Standard"
   },
   "autoScrollDesc": {
-    "message": "Rulla automatiskt till botten för att utlösa inladdning; lämpligt för webbplatser där teknisk blockering misslyckas"
+    "message": "Rulla automatiskt till botten för att utlösa inladdning; lämpligt för webbplatser där Standard misslyckas"
   },
   "configuredSites": {
     "message": "Konfigurerade webbplatser"
@@ -52,7 +52,7 @@
     "message": "Tillagd {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Tillagd {domain} (Automatisk rullning)"
+    "message": "Tillagd {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Borttagen {domain}"
@@ -61,16 +61,16 @@
     "message": "Raderad {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Automatisk rullning aktiverad"
+    "message": "Compatibility Mode aktiverad"
   },
   "autoScrollDisabled": {
-    "message": "Automatisk rullning inaktiverad"
+    "message": "Compatibility Mode inaktiverad"
   },
   "pageRefreshed": {
     "message": "Sidan uppdaterad"
   },
   "autoScroll": {
-    "message": "Automatisk rullning"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Inställningar - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Återgå till toppen efter slutförande"
   },
   "fallbackToScroll": {
-    "message": "Använd automatiskt rullning som reserv när teknisk blockering misslyckas",
+    "message": "Använd Compatibility Mode automatiskt som reserv när Standard misslyckas",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Inga konfigurerade webbplatser"
   },
   "autoScrollHelp": {
-    "message": "När aktiverad, inaktiverar teknisk blockering och utlöser inladdning genom automatisk rullning till botten"
+    "message": "När aktiverad, inaktiverar Standard och utlöser inladdning genom att rulla till botten"
   },
   "scrollParams": {
-    "message": "Parametrar för automatisk rullning"
+    "message": "Parametrar för Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Spara globala inställningar"
@@ -268,10 +268,10 @@
     "message": "Borttagen"
   },
   "scrollEnabled": {
-    "message": "Automatisk rullning aktiverad"
+    "message": "Compatibility Mode aktiverad"
   },
   "scrollDisabled": {
-    "message": "Automatisk rullning inaktiverad"
+    "message": "Compatibility Mode inaktiverad"
   },
   "configImported": {
     "message": "Konfiguration importerad"

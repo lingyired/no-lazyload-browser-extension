@@ -31,10 +31,10 @@
     "message": "Премахване на текущия сайт"
   },
   "useAutoScroll": {
-    "message": "Използвай автоматично превъртане вместо техническо блокиране"
+    "message": "Използвай Compatibility Mode вместо техническо блокиране"
   },
   "autoScrollDesc": {
-    "message": "Превъртете автоматично надолу, за да задействате зареждането; подходящо за сайтове, където техническата блокировка не сработва"
+    "message": "Превъртете автоматично надолу, за да задействате зареждането; подходящо за сайтове, където Standard не сработва"
   },
   "configuredSites": {
     "message": "Конфигурирани сайтове"
@@ -52,7 +52,7 @@
     "message": "Добавен {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Добавен {domain} (Автоматично превъртане)"
+    "message": "Добавен {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Премахнат {domain}"
@@ -61,16 +61,16 @@
     "message": "Изтрит {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Автоматичното превъртане е активирано"
+    "message": "Compatibility Mode е активирано"
   },
   "autoScrollDisabled": {
-    "message": "Автоматичното превъртане е деактивирано"
+    "message": "Compatibility Mode е деактивирано"
   },
   "pageRefreshed": {
     "message": "Страницата е опреснена"
   },
   "autoScroll": {
-    "message": "Автоматично превъртане"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Настройки - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Връщане нагоре след завършване"
   },
   "fallbackToScroll": {
-    "message": "Автоматично използвайте превъртане като резерв, когато техническата блокировка не сработва",
+    "message": "Автоматично използвайте Compatibility Mode като резерв, когато Standard не сработва",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Няма конфигурирани сайтове"
   },
   "autoScrollHelp": {
-    "message": "Когато е активирано, деактивира техническото блокиране и задейства зареждането чрез автоматично превъртане до долу"
+    "message": "Когато е активирано, деактивира Standard и задейства зареждането с превъртане до долу"
   },
   "scrollParams": {
-    "message": "Параметри за автоматично превъртане"
+    "message": "Параметри за Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Запази глобалните настройки"
@@ -272,10 +272,10 @@
     "message": "Изтрито"
   },
   "scrollEnabled": {
-    "message": "Автоматичното превъртане е активирано"
+    "message": "Compatibility Mode е активирано"
   },
   "scrollDisabled": {
-    "message": "Автоматичното превъртане е деактивирано"
+    "message": "Compatibility Mode е деактивирано"
   },
   "configImported": {
     "message": "Конфигурацията е импортирана"

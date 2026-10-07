@@ -31,10 +31,10 @@
     "message": "Odebrat aktuální stránku"
   },
   "useAutoScroll": {
-    "message": "Použít automatické posouvání místo technického blokování"
+    "message": "Použít Compatibility Mode místo Standard"
   },
   "autoScrollDesc": {
-    "message": "Automaticky posuňte dolů pro spuštění načítání; vhodné pro stránky, kde technické blokování selže"
+    "message": "Automaticky posuňte dolů pro spuštění načítání; vhodné pro stránky, kde Standard selže"
   },
   "configuredSites": {
     "message": "Nakonfigurované stránky"
@@ -52,7 +52,7 @@
     "message": "Přidáno {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Přidáno {domain} (Automatické posouvání)"
+    "message": "Přidáno {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Odebráno {domain}"
@@ -61,16 +61,16 @@
     "message": "Smazáno {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Automatické posouvání povoleno"
+    "message": "Compatibility Mode povoleno"
   },
   "autoScrollDisabled": {
-    "message": "Automatické posouvání zakázáno"
+    "message": "Compatibility Mode zakázáno"
   },
   "pageRefreshed": {
     "message": "Stránka obnovena"
   },
   "autoScroll": {
-    "message": "Automatické posouvání"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Nastavení - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Po dokončení se vraťte nahoru"
   },
   "fallbackToScroll": {
-    "message": "Při selhání technického blokování automaticky použijte posouvání jako zálohu",
+    "message": "Při selhání Standard automaticky použijte Compatibility Mode jako zálohu",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Žádné nakonfigurované stránky"
   },
   "autoScrollHelp": {
-    "message": "Když je povoleno, zakáže technické blokování a spustí načítání automatickým posunutím dolů"
+    "message": "Když je povoleno, zakáže Standard a spustí načítání posouváním dolů"
   },
   "scrollParams": {
-    "message": "Parametry automatického posouvání"
+    "message": "Parametry Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Uložit globální nastavení"
@@ -272,10 +272,10 @@
     "message": "Smazáno"
   },
   "scrollEnabled": {
-    "message": "Automatické posouvání povoleno"
+    "message": "Compatibility Mode povoleno"
   },
   "scrollDisabled": {
-    "message": "Automatické posouvání zakázáno"
+    "message": "Compatibility Mode zakázáno"
   },
   "configImported": {
     "message": "Konfigurace importována"

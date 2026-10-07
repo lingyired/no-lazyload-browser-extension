@@ -31,10 +31,10 @@
     "message": "Supprimer le Site Actuel"
   },
   "useAutoScroll": {
-    "message": "Utiliser défilement auto au lieu du blocage technique"
+    "message": "Utiliser Compatibility Mode au lieu du Standard"
   },
   "autoScrollDesc": {
-    "message": "Défiler jusqu'en bas pour déclencher le chargement, adapté aux sites où le blocage technique échoue"
+    "message": "Défiler jusqu'en bas pour déclencher le chargement, adapté aux sites où le Standard échoue"
   },
   "configuredSites": {
     "message": "Sites Configurés"
@@ -52,7 +52,7 @@
     "message": "Ajouté {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Ajouté {domain} (Défil. Auto.)"
+    "message": "Ajouté {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Supprimé {domain}"
@@ -61,16 +61,16 @@
     "message": "Supprimé {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Défilement automatique activé"
+    "message": "Compatibility Mode activé"
   },
   "autoScrollDisabled": {
-    "message": "Défilement automatique désactivé"
+    "message": "Compatibility Mode désactivé"
   },
   "pageRefreshed": {
     "message": "Page actualisée"
   },
   "autoScroll": {
-    "message": "Défil. Auto."
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Paramètres - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Retour en haut à la fin"
   },
   "fallbackToScroll": {
-    "message": "Utiliser le Défilement Auto quand le Blocage Technique Échoue",
+    "message": "Utiliser le Compatibility Mode quand le Standard Échoue",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -247,10 +247,10 @@
     "message": "Aucun site configuré"
   },
   "autoScrollHelp": {
-    "message": "Désactive le blocage technique et déclenche le chargement en défilant"
+    "message": "Désactive le Standard et déclenche le chargement en défilant"
   },
   "scrollParams": {
-    "message": "Paramètres de Défilement"
+    "message": "Paramètres de Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Enregistrer"
@@ -271,10 +271,10 @@
     "message": "Supprimé"
   },
   "scrollEnabled": {
-    "message": "Défilement automatique activé"
+    "message": "Compatibility Mode activé"
   },
   "scrollDisabled": {
-    "message": "Défilement automatique désactivé"
+    "message": "Compatibility Mode désactivé"
   },
   "configImported": {
     "message": "Configuration importée"

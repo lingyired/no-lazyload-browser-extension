@@ -31,10 +31,10 @@
     "message": "Xóa trang hiện tại"
   },
   "useAutoScroll": {
-    "message": "Dùng tự động cuộn thay cho chặn kỹ thuật"
+    "message": "Dùng Compatibility Mode thay cho Standard"
   },
   "autoScrollDesc": {
-    "message": "Tự động cuộn xuống dưới để kích hoạt tải; phù hợp với các trang mà chặn kỹ thuật thất bại"
+    "message": "Cuộn xuống dưới để kích hoạt tải; phù hợp với các trang mà Standard thất bại"
   },
   "configuredSites": {
     "message": "Các trang đã cấu hình"
@@ -52,7 +52,7 @@
     "message": "Đã thêm {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Đã thêm {domain} (Tự động cuộn)"
+    "message": "Đã thêm {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Đã xóa {domain}"
@@ -61,16 +61,16 @@
     "message": "Đã xóa {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Đã bật tự động cuộn"
+    "message": "Đã bật Compatibility Mode"
   },
   "autoScrollDisabled": {
-    "message": "Đã tắt tự động cuộn"
+    "message": "Đã tắt Compatibility Mode"
   },
   "pageRefreshed": {
     "message": "Trang đã làm mới"
   },
   "autoScroll": {
-    "message": "Tự động cuộn"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Cài đặt - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Quay lại đầu trang sau khi hoàn tất"
   },
   "fallbackToScroll": {
-    "message": "Tự động dùng cuộn dự phòng khi chặn kỹ thuật thất bại",
+    "message": "Tự động dùng Compatibility Mode khi Standard thất bại",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Chưa có trang nào được cấu hình"
   },
   "autoScrollHelp": {
-    "message": "Khi bật, tắt chặn kỹ thuật và kích hoạt tải bằng cách tự động cuộn xuống dưới"
+    "message": "Khi bật, tắt Standard và kích hoạt tải bằng cách cuộn xuống dưới"
   },
   "scrollParams": {
-    "message": "Tham số tự động cuộn"
+    "message": "Tham số Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Lưu cài đặt chung"
@@ -268,10 +268,10 @@
     "message": "Đã xóa"
   },
   "scrollEnabled": {
-    "message": "Đã bật tự động cuộn"
+    "message": "Đã bật Compatibility Mode"
   },
   "scrollDisabled": {
-    "message": "Đã tắt tự động cuộn"
+    "message": "Đã tắt Compatibility Mode"
   },
   "configImported": {
     "message": "Đã nhập cấu hình"

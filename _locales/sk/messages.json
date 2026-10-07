@@ -31,10 +31,10 @@
     "message": "Odstrániť aktuálnu stránku"
   },
   "useAutoScroll": {
-    "message": "Použiť automatické posúvanie namiesto technického blokovania"
+    "message": "Použiť Compatibility Mode namiesto Standard"
   },
   "autoScrollDesc": {
-    "message": "Automaticky posuňte nadol na spustenie načítavania; vhodné pre stránky, kde technické blokovanie zlyhá"
+    "message": "Automaticky posuňte nadol na spustenie načítavania; vhodné pre stránky, kde Standard zlyhá"
   },
   "configuredSites": {
     "message": "Nakonfigurované stránky"
@@ -52,7 +52,7 @@
     "message": "Pridané {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Pridané {domain} (Automatické posúvanie)"
+    "message": "Pridané {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Odstránené {domain}"
@@ -61,16 +61,16 @@
     "message": "Vymazané {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Automatické posúvanie povolené"
+    "message": "Compatibility Mode povolené"
   },
   "autoScrollDisabled": {
-    "message": "Automatické posúvanie zakázané"
+    "message": "Compatibility Mode zakázané"
   },
   "pageRefreshed": {
     "message": "Stránka obnovená"
   },
   "autoScroll": {
-    "message": "Automatické posúvanie"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Nastavenia - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Návrat hore po dokončení"
   },
   "fallbackToScroll": {
-    "message": "Pri zlyhaní technického blokovania automaticky použiť posúvanie ako zálohu",
+    "message": "Pri zlyhaní Standard automaticky použiť Compatibility Mode ako zálohu",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,7 +248,7 @@
     "message": "Žiadne nakonfigurované stránky"
   },
   "autoScrollHelp": {
-    "message": "Keď je povolené, zakáže technické blokovanie a spustí načítavanie automatickým posúvaním nadol"
+    "message": "Keď je povolené, zakáže Standard a spustí načítavanie posúvaním nadol"
   },
   "scrollParams": {
     "message": "Parametre automatického posúvania"
@@ -272,10 +272,10 @@
     "message": "Vymazané"
   },
   "scrollEnabled": {
-    "message": "Automatické posúvanie povolené"
+    "message": "Compatibility Mode povolené"
   },
   "scrollDisabled": {
-    "message": "Automatické posúvanie zakázané"
+    "message": "Compatibility Mode zakázané"
   },
   "configImported": {
     "message": "Konfigurácia importovaná"

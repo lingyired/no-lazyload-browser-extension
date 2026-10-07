@@ -31,10 +31,10 @@
     "message": "Удалить Текущий Сайт"
   },
   "useAutoScroll": {
-    "message": "Использовать автопрокрутку вместо технической блокировки"
+    "message": "Использовать Compatibility Mode вместо Standard"
   },
   "autoScrollDesc": {
-    "message": "Прокрутить вниз для активации загрузки, подходит для сайтов где техническая блокировка не работает"
+    "message": "Прокрутить вниз для активации загрузки, подходит для сайтов где Standard не работает"
   },
   "configuredSites": {
     "message": "Настроенные Сайты"
@@ -52,7 +52,7 @@
     "message": "Добавлен {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Добавлен {domain} (Автопрокрутка)"
+    "message": "Добавлен {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Удалён {domain}"
@@ -61,16 +61,16 @@
     "message": "Удалён {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Автопрокрутка включена"
+    "message": "Compatibility Mode включена"
   },
   "autoScrollDisabled": {
-    "message": "Автопрокрутка выключена"
+    "message": "Compatibility Mode выключена"
   },
   "pageRefreshed": {
     "message": "Страница обновлена"
   },
   "autoScroll": {
-    "message": "Автопрокрутка"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Настройки - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Вернуться наверх по завершении"
   },
   "fallbackToScroll": {
-    "message": "Использовать Автопрокрутку При Неудаче Технической Блокировки",
+    "message": "Использовать Compatibility Mode при неудаче Standard",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Нет настроенных сайтов"
   },
   "autoScrollHelp": {
-    "message": "Отключает техническую блокировку и загружает прокруткой"
+    "message": "Отключает Standard и загружает прокруткой вниз"
   },
   "scrollParams": {
-    "message": "Параметры Автопрокрутки"
+    "message": "Параметры Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Сохранить Настройки"
@@ -268,10 +268,10 @@
     "message": "Удалено"
   },
   "scrollEnabled": {
-    "message": "Автопрокрутка включена"
+    "message": "Compatibility Mode включена"
   },
   "scrollDisabled": {
-    "message": "Автопрокрутка выключена"
+    "message": "Compatibility Mode выключена"
   },
   "configImported": {
     "message": "Конфигурация импортирована"

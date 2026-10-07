@@ -31,10 +31,10 @@
     "message": "Elimină site-ul curent"
   },
   "useAutoScroll": {
-    "message": "Folosește derularea automată în locul blocării tehnice"
+    "message": "Folosește Compatibility Mode în locul Standard"
   },
   "autoScrollDesc": {
-    "message": "Derulează automat în jos pentru a declanșa încărcarea; potrivit pentru site-urile unde blocarea tehnică eșuează"
+    "message": "Derulează automat în jos pentru a declanșa încărcarea; potrivit pentru site-urile unde Standard eșuează"
   },
   "configuredSites": {
     "message": "Site-uri configurate"
@@ -52,7 +52,7 @@
     "message": "Adăugat {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Adăugat {domain} (Derulare automată)"
+    "message": "Adăugat {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Eliminat {domain}"
@@ -61,16 +61,16 @@
     "message": "Șters {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Derulare automată activată"
+    "message": "Compatibility Mode activată"
   },
   "autoScrollDisabled": {
-    "message": "Derulare automată dezactivată"
+    "message": "Compatibility Mode dezactivată"
   },
   "pageRefreshed": {
     "message": "Pagina reîmprospătată"
   },
   "autoScroll": {
-    "message": "Derulare automată"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Setări - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Întoarce-te sus după finalizare"
   },
   "fallbackToScroll": {
-    "message": "Folosește automat derularea ca rezervă când blocarea tehnică eșuează",
+    "message": "Folosește automat Compatibility Mode ca rezervă când Standard eșuează",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Niciun site configurat"
   },
   "autoScrollHelp": {
-    "message": "Când este activat, dezactivează blocarea tehnică și declanșează încărcarea prin derulare automată în jos"
+    "message": "Când este activat, dezactivează Standard și declanșează încărcarea prin derulare în jos"
   },
   "scrollParams": {
-    "message": "Parametri de derulare automată"
+    "message": "Parametri Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Salvează setările globale"
@@ -272,10 +272,10 @@
     "message": "Șters"
   },
   "scrollEnabled": {
-    "message": "Derulare automată activată"
+    "message": "Compatibility Mode activată"
   },
   "scrollDisabled": {
-    "message": "Derulare automată dezactivată"
+    "message": "Compatibility Mode dezactivată"
   },
   "configImported": {
     "message": "Configurație importată"

@@ -31,10 +31,10 @@
     "message": "Rimuovi sito corrente"
   },
   "useAutoScroll": {
-    "message": "Usa scorrimento automatico invece del blocco tecnico"
+    "message": "Usa Compatibility Mode invece di Standard"
   },
   "autoScrollDesc": {
-    "message": "Scorri automaticamente fino in fondo per attivare il caricamento; adatto ai siti in cui il blocco tecnico fallisce"
+    "message": "Scorri automaticamente fino in fondo per attivare il caricamento; adatto ai siti in cui Standard fallisce"
   },
   "configuredSites": {
     "message": "Siti configurati"
@@ -52,7 +52,7 @@
     "message": "Aggiunto {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Aggiunto {domain} (Scorrimento automatico)"
+    "message": "Aggiunto {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Rimosso {domain}"
@@ -61,16 +61,16 @@
     "message": "Eliminato {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Scorrimento automatico attivo"
+    "message": "Compatibility Mode attivo"
   },
   "autoScrollDisabled": {
-    "message": "Scorrimento automatico disattivo"
+    "message": "Compatibility Mode disattivo"
   },
   "pageRefreshed": {
     "message": "Pagina aggiornata"
   },
   "autoScroll": {
-    "message": "Scorrimento automatico"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Impostazioni - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Torna in cima al completamento"
   },
   "fallbackToScroll": {
-    "message": "Usa automaticamente lo scorrimento come fallback quando il blocco tecnico fallisce",
+    "message": "Usa automaticamente lo scorrimento come fallback quando il Standard fallisce",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -247,10 +247,10 @@
     "message": "Nessun sito configurato"
   },
   "autoScrollHelp": {
-    "message": "Quando attivo, disattiva il blocco tecnico e attiva il caricamento tramite scorrimento automatico in fondo"
+    "message": "Quando attivo, disattiva Standard e attiva il caricamento con lo scorrimento fino in fondo"
   },
   "scrollParams": {
-    "message": "Parametri di scorrimento automatico"
+    "message": "Parametri di Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Salva impostazioni globali"
@@ -271,10 +271,10 @@
     "message": "Eliminato"
   },
   "scrollEnabled": {
-    "message": "Scorrimento automatico attivato"
+    "message": "Compatibility Mode attivo"
   },
   "scrollDisabled": {
-    "message": "Scorrimento automatico disattivato"
+    "message": "Compatibility Mode disattivo"
   },
   "configImported": {
     "message": "Configurazione importata"

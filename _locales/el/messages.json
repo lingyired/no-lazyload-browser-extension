@@ -31,7 +31,7 @@
     "message": "Κατάργηση τρέχοντος ιστότοπου"
   },
   "useAutoScroll": {
-    "message": "Χρήση αυτόματης κύλισης αντί τεχνικού αποκλεισμού"
+    "message": "Χρήση Compatibility Mode αντί Standard"
   },
   "autoScrollDesc": {
     "message": "Κυλήστε αυτόματα προς τα κάτω για να ενεργοποιήσετε τη φόρτωση· κατάλληλο για ιστότοπους όπου η τεχνική αποκλεισμού αποτυγχάνει"
@@ -52,7 +52,7 @@
     "message": "Προστέθηκε {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Προστέθηκε {domain} (Αυτόματη κύλιση)"
+    "message": "Προστέθηκε {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Καταργήθηκε {domain}"
@@ -61,16 +61,16 @@
     "message": "Διαγράφηκε {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Η αυτόματη κύλιση είναι ενεργοποιημένη"
+    "message": "Η Compatibility Mode είναι ενεργοποιημένη"
   },
   "autoScrollDisabled": {
-    "message": "Η αυτόματη κύλιση είναι απενεργοποιημένη"
+    "message": "Η Compatibility Mode είναι απενεργοποιημένη"
   },
   "pageRefreshed": {
     "message": "Η σελίδα ανανεώθηκε"
   },
   "autoScroll": {
-    "message": "Αυτόματη κύλιση"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Ρυθμίσεις - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Επιστροφή στην κορυφή μετά την ολοκλήρωση"
   },
   "fallbackToScroll": {
-    "message": "Χρήση αυτόματης κύλισης ως εφεδρείας όταν αποτυγχάνει ο τεχνικός αποκλεισμός",
+    "message": "Χρήση Compatibility Mode ως εφεδρείας όταν αποτυγχάνει ο τεχνικός αποκλεισμός",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Δεν υπάρχουν ρυθμισμένοι ιστότοποι"
   },
   "autoScrollHelp": {
-    "message": "Όταν ενεργοποιηθεί, απενεργοποιεί τον τεχνικό αποκλεισμό και ενεργοποιεί τη φόρτωση με αυτόματη κύλιση προς τα κάτω"
+    "message": "Όταν ενεργοποιηθεί, απενεργοποιεί τον Standard και ενεργοποιεί τη φόρτωση με κύλιση προς τα κάτω"
   },
   "scrollParams": {
-    "message": "Παράμετροι αυτόματης κύλισης"
+    "message": "Παράμετροι Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Αποθήκευση καθολικών ρυθμίσεων"
@@ -272,10 +272,10 @@
     "message": "Διαγράφηκε"
   },
   "scrollEnabled": {
-    "message": "Η αυτόματη κύλιση ενεργοποιήθηκε"
+    "message": "Η Compatibility Mode είναι ενεργοποιημένη"
   },
   "scrollDisabled": {
-    "message": "Η αυτόματη κύλιση απενεργοποιήθηκε"
+    "message": "Η Compatibility Mode είναι απενεργοποιημένη"
   },
   "configImported": {
     "message": "Η διαμόρφωση εισήχθη"

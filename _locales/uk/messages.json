@@ -31,10 +31,10 @@
     "message": "Видалити поточний сайт"
   },
   "useAutoScroll": {
-    "message": "Використовувати автопрокрутку замість технічного блокування"
+    "message": "Використовувати Compatibility Mode замість Standard"
   },
   "autoScrollDesc": {
-    "message": "Автоматично прокручуйте вниз, щоб запустити завантаження; підходить для сайтів, де технічне блокування не спрацьовує"
+    "message": "Автоматично прокручуйте вниз, щоб запустити завантаження; підходить для сайтів, де Standard не спрацьовує"
   },
   "configuredSites": {
     "message": "Налаштовані сайти"
@@ -52,7 +52,7 @@
     "message": "Додано {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Додано {domain} (Автопрокрутка)"
+    "message": "Додано {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Видалено {domain}"
@@ -61,16 +61,16 @@
     "message": "Видалено {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Автопрокрутку увімкнено"
+    "message": "Compatibility Mode увімкнено"
   },
   "autoScrollDisabled": {
-    "message": "Автопрокрутку вимкнено"
+    "message": "Compatibility Mode вимкнено"
   },
   "pageRefreshed": {
     "message": "Сторінку оновлено"
   },
   "autoScroll": {
-    "message": "Автопрокрутка"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Налаштування - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Повернутися догори після завершення"
   },
   "fallbackToScroll": {
-    "message": "Автоматично використовувати прокрутку як запасний варіант, коли технічне блокування не спрацьовує",
+    "message": "Автоматично використовувати Compatibility Mode як запасний варіант, коли Standard не спрацьовує",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Немає налаштованих сайтів"
   },
   "autoScrollHelp": {
-    "message": "Коли увімкнено, вимикає технічне блокування та запускає завантаження автоматичною прокруткою донизу"
+    "message": "Коли увімкнено, вимикає Standard та запускає завантаження автоматичною прокруткою донизу"
   },
   "scrollParams": {
-    "message": "Параметри автопрокрутки"
+    "message": "Параметри Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Зберегти глобальні налаштування"
@@ -268,10 +268,10 @@
     "message": "Видалено"
   },
   "scrollEnabled": {
-    "message": "Автопрокрутку увімкнено"
+    "message": "Compatibility Mode увімкнено"
   },
   "scrollDisabled": {
-    "message": "Автопрокрутку вимкнено"
+    "message": "Compatibility Mode вимкнено"
   },
   "configImported": {
     "message": "Конфігурацію імпортовано"

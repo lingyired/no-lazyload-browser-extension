@@ -31,10 +31,10 @@
     "message": "Fjern gjeldende nettsted"
   },
   "useAutoScroll": {
-    "message": "Bruk automatisk rulling i stedet for teknisk blokkering"
+    "message": "Bruk Compatibility Mode i stedet for Standard"
   },
   "autoScrollDesc": {
-    "message": "Rull automatisk til bunnen for å utløse lasting; egnet for nettsteder der teknisk blokkering feiler"
+    "message": "Rull automatisk til bunnen for å utløse lasting; egnet for nettsteder der Standard feiler"
   },
   "configuredSites": {
     "message": "Konfigurerte nettsteder"
@@ -52,7 +52,7 @@
     "message": "Lagt til {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Lagt til {domain} (Automatisk rulling)"
+    "message": "Lagt til {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "Fjernet {domain}"
@@ -61,16 +61,16 @@
     "message": "Slettet {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Automatisk rulling aktivert"
+    "message": "Compatibility Mode aktivert"
   },
   "autoScrollDisabled": {
-    "message": "Automatisk rulling deaktivert"
+    "message": "Compatibility Mode deaktivert"
   },
   "pageRefreshed": {
     "message": "Siden oppdatert"
   },
   "autoScroll": {
-    "message": "Automatisk rulling"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Innstillinger - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Tilbake til toppen etter fullføring"
   },
   "fallbackToScroll": {
-    "message": "Bruk automatisk rulling som reserve når teknisk blokkering feiler",
+    "message": "Bruk Compatibility Mode som reserve når Standard feiler",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Ingen konfigurerte nettsteder"
   },
   "autoScrollHelp": {
-    "message": "Når aktivert, deaktiverer teknisk blokkering og utløser lasting ved automatisk å rulle til bunnen"
+    "message": "Når aktivert, deaktiverer Standard og utløser lasting ved å rulle til bunnen"
   },
   "scrollParams": {
-    "message": "Parametere for automatisk rulling"
+    "message": "Parametere for Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Lagre globale innstillinger"
@@ -272,10 +272,10 @@
     "message": "Slettet"
   },
   "scrollEnabled": {
-    "message": "Automatisk rulling aktivert"
+    "message": "Compatibility Mode aktivert"
   },
   "scrollDisabled": {
-    "message": "Automatisk rulling deaktivert"
+    "message": "Compatibility Mode deaktivert"
   },
   "configImported": {
     "message": "Konfigurasjon importert"

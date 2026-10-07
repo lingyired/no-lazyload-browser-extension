@@ -31,10 +31,10 @@
     "message": "إزالة الموقع الحالي"
   },
   "useAutoScroll": {
-    "message": "استخدام التمرير التلقائي بدلاً من الحظر التقني"
+    "message": "استخدام Compatibility Mode بدلاً من Standard"
   },
   "autoScrollDesc": {
-    "message": "التمرير للأسفل لتفعيل التحميل، مناسب للمواقع التي يفشل فيها الحظر التقني"
+    "message": "التمرير للأسفل لتفعيل التحميل، مناسب للمواقع التي يفشل فيها Standard"
   },
   "configuredSites": {
     "message": "المواقع المُعدّة"
@@ -52,7 +52,7 @@
     "message": "تمت إضافة {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "تمت إضافة {domain} (تمرير تلقائي)"
+    "message": "تمت إضافة {domain} (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "تمت إزالة {domain}"
@@ -61,16 +61,16 @@
     "message": "تم حذف {domain}"
   },
   "autoScrollEnabled": {
-    "message": "التمرير التلقائي مفعّل"
+    "message": "Compatibility Mode مفعّل"
   },
   "autoScrollDisabled": {
-    "message": "التمرير التلقائي معطّل"
+    "message": "Compatibility Mode معطّل"
   },
   "pageRefreshed": {
     "message": "تم تحديث الصفحة"
   },
   "autoScroll": {
-    "message": "تمرير تلقائي"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "الإعدادات - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "العودة للأعلى عند الانتهاء"
   },
   "fallbackToScroll": {
-    "message": "استخدام التمرير التلقائي عند فشل الحظر التقني",
+    "message": "استخدام Compatibility Mode عند فشل Standard",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "لا توجد مواقع مُعدّة"
   },
   "autoScrollHelp": {
-    "message": "يعطل الحظر التقني ويُفعّل التحميل بالتمرير للأسفل"
+    "message": "يعطل Standard ويُفعّل التحميل بالتمرير للأسفل"
   },
   "scrollParams": {
-    "message": "معايير التمرير التلقائي"
+    "message": "معايير Compatibility Mode"
   },
   "saveGlobal": {
     "message": "حفظ الإعدادات"
@@ -268,10 +268,10 @@
     "message": "تم الحذف"
   },
   "scrollEnabled": {
-    "message": "تم تفعيل التمرير التلقائي"
+    "message": "Compatibility Mode مفعّل"
   },
   "scrollDisabled": {
-    "message": "تم تعطيل التمرير التلقائي"
+    "message": "Compatibility Mode معطّل"
   },
   "configImported": {
     "message": "تم استيراد الإعدادات"

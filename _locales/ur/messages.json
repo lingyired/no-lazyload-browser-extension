@@ -31,10 +31,10 @@
     "message": "موجودہ سائٹ ہٹائیں"
   },
   "useAutoScroll": {
-    "message": "تکنیکی بلاک کی بجائے خودکار سکرول استعمال کریں"
+    "message": "Standard کی بجائے Compatibility Mode استعمال کریں"
   },
   "autoScrollDesc": {
-    "message": "لوڈنگ کو متحرک کرنے کے لیے خودکار نیچے اسکرول کریں؛ ان سائٹس کے لیے موزوں جنہیں تکنیکی روک غیر مؤثر ہے"
+    "message": "لوڈنگ کو متحرک کرنے کے لیے نیچے اسکرول کریں؛ ان سائٹس کے لیے موزوں جن میں Standard ناکام ہوتا ہے"
   },
   "configuredSites": {
     "message": "ترتیب دی گئی سائٹس"
@@ -52,7 +52,7 @@
     "message": "{domain} شامل کیا گیا"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} شامل کیا گیا (خودکار سکرول)"
+    "message": "{domain} شامل کیا گیا (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "{domain} ہٹایا گیا"
@@ -61,16 +61,16 @@
     "message": "{domain} حذف کیا گیا"
   },
   "autoScrollEnabled": {
-    "message": "خودکار سکرول فعال"
+    "message": "Compatibility Mode فعال"
   },
   "autoScrollDisabled": {
-    "message": "خودکار سکرول غیر فعال"
+    "message": "Compatibility Mode غیر فعال"
   },
   "pageRefreshed": {
     "message": "صفحہ ریفریش ہو گیا"
   },
   "autoScroll": {
-    "message": "خودکار سکرول"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "ترتیبات - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "مکمل ہونے کے بعد اوپر واپس جائیں"
   },
   "fallbackToScroll": {
-    "message": "جب تکنیکی روک ناکام ہو تو خودکار سکرول کو بطور بیک اپ استعمال کریں",
+    "message": "جب Standard ناکام ہو تو Compatibility Mode کو بطور بیک اپ استعمال کریں",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "کوئی ترتیب دی گئی سائٹ نہیں"
   },
   "autoScrollHelp": {
-    "message": "فعال ہونے پر، تکنیکی بلاک کو غیر فعال کرتا ہے اور خودکار نیچے سکرول کرکے لوڈنگ کو متحرک کرتا ہے"
+    "message": "فعال ہونے پر، Standard کو غیر فعال کرتا ہے اور خودکار نیچے سکرول کرکے لوڈنگ کو متحرک کرتا ہے"
   },
   "scrollParams": {
-    "message": "خودکار سکرول کے پیرامیٹرز"
+    "message": "Compatibility Mode کے پیرامیٹرز"
   },
   "saveGlobal": {
     "message": "عالمی ترتیبات محفوظ کریں"
@@ -272,10 +272,10 @@
     "message": "حذف ہو گیا"
   },
   "scrollEnabled": {
-    "message": "خودکار سکرول فعال"
+    "message": "Compatibility Mode فعال"
   },
   "scrollDisabled": {
-    "message": "خودکار سکرول غیر فعال"
+    "message": "Compatibility Mode غیر فعال"
   },
   "configImported": {
     "message": "کنفیگریشن درآمد ہوئی"

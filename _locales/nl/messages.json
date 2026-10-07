@@ -31,10 +31,10 @@
     "message": "Huidige site verwijderen"
   },
   "useAutoScroll": {
-    "message": "Gebruik automatisch scrollen in plaats van technische blokkering"
+    "message": "Gebruik Compatibility Mode in plaats van Standard"
   },
   "autoScrollDesc": {
-    "message": "Scroll automatisch naar beneden om laden te activeren; geschikt voor sites waar technische blokkering faalt"
+    "message": "Scroll automatisch naar beneden om laden te activeren; geschikt voor sites waar Standard faalt"
   },
   "configuredSites": {
     "message": "Geconfigureerde sites"
@@ -52,7 +52,7 @@
     "message": "{domain} toegevoegd"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} toegevoegd (Automatisch scrollen)"
+    "message": "{domain} toegevoegd (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "{domain} verwijderd"
@@ -61,16 +61,16 @@
     "message": "{domain} verwijderd"
   },
   "autoScrollEnabled": {
-    "message": "Automatisch scrollen ingeschakeld"
+    "message": "Compatibility Mode ingeschakeld"
   },
   "autoScrollDisabled": {
-    "message": "Automatisch scrollen uitgeschakeld"
+    "message": "Compatibility Mode uitgeschakeld"
   },
   "pageRefreshed": {
     "message": "Pagina vernieuwd"
   },
   "autoScroll": {
-    "message": "Automatisch scrollen"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "Instellingen - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "Keer na voltooiing naar boven"
   },
   "fallbackToScroll": {
-    "message": "Gebruik automatisch scrollen als terugval wanneer technische blokkering faalt",
+    "message": "Gebruik Compatibility Mode als terugval wanneer Standard faalt",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -247,10 +247,10 @@
     "message": "Geen geconfigureerde sites"
   },
   "autoScrollHelp": {
-    "message": "Wanneer ingeschakeld, schakelt het technische blokkering uit en activeert het laden door automatisch naar beneden te scrollen"
+    "message": "Wanneer ingeschakeld, schakelt het Standard uit en activeert het laden door naar beneden te scrollen"
   },
   "scrollParams": {
-    "message": "Parameters voor automatisch scrollen"
+    "message": "Parameters voor Compatibility Mode"
   },
   "saveGlobal": {
     "message": "Sla globale instellingen op"
@@ -271,10 +271,10 @@
     "message": "Verwijderd"
   },
   "scrollEnabled": {
-    "message": "Automatisch scrollen ingeschakeld"
+    "message": "Compatibility Mode ingeschakeld"
   },
   "scrollDisabled": {
-    "message": "Automatisch scrollen uitgeschakeld"
+    "message": "Compatibility Mode uitgeschakeld"
   },
   "configImported": {
     "message": "Configuratie geïmporteerd"

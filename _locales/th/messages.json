@@ -31,10 +31,10 @@
     "message": "ลบเว็บไซต์ปัจจุบัน"
   },
   "useAutoScroll": {
-    "message": "ใช้การเลื่อนอัตโนมัติแทนการบล็อกทางเทคนิค"
+    "message": "ใช้ Compatibility Mode แทน Standard"
   },
   "autoScrollDesc": {
-    "message": "เลื่อนอัตโนมัติลงด้านล่างเพื่อกระตุ้นการโหลด เหมาะสำหรับเว็บไซต์ที่การบล็อกแบบเทคนิคล้มเหลว"
+    "message": "เลื่อนลงด้านล่างเพื่อกระตุ้นการโหลด เหมาะสำหรับเว็บไซต์ที่ Standard ล้มเหลว"
   },
   "configuredSites": {
     "message": "เว็บไซต์ที่กำหนดค่าแล้ว"
@@ -52,7 +52,7 @@
     "message": "เพิ่ม {domain} แล้ว"
   },
   "siteAddedWithScroll": {
-    "message": "เพิ่ม {domain} แล้ว (เลื่อนอัตโนมัติ)"
+    "message": "เพิ่ม {domain} แล้ว (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "ลบ {domain} แล้ว"
@@ -61,16 +61,16 @@
     "message": "ลบ {domain} แล้ว"
   },
   "autoScrollEnabled": {
-    "message": "เปิดใช้งานการเลื่อนอัตโนมัติ"
+    "message": "เปิดใช้งาน Compatibility Mode"
   },
   "autoScrollDisabled": {
-    "message": "ปิดใช้งานการเลื่อนอัตโนมัติ"
+    "message": "ปิดใช้งาน Compatibility Mode"
   },
   "pageRefreshed": {
     "message": "รีเฟรชหน้าแล้ว"
   },
   "autoScroll": {
-    "message": "เลื่อนอัตโนมัติ"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "การตั้งค่า - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "กลับไปด้านบนหลังเสร็จสิ้น"
   },
   "fallbackToScroll": {
-    "message": "ใช้การเลื่อนเป็นทางสำรองโดยอัตโนมัติเมื่อการบล็อกแบบเทคนิคล้มเหลว",
+    "message": "ใช้การเลื่อนเป็นทางสำรองโดยอัตโนมัติเมื่อStandardล้มเหลว",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "ยังไม่มีเว็บไซต์ที่กำหนดค่า"
   },
   "autoScrollHelp": {
-    "message": "เมื่อเปิดใช้งาน จะปิดการบล็อกแบบเทคนิคและเรียกการโหลดด้วยการเลื่อนอัตโนมัติลงด้านล่าง"
+    "message": "เมื่อเปิดใช้งาน จะปิด Standard และเรียกการโหลดด้วยการเลื่อนลงด้านล่าง"
   },
   "scrollParams": {
-    "message": "พารามิเตอร์การเลื่อนอัตโนมัติ"
+    "message": "พารามิเตอร์ Compatibility Mode"
   },
   "saveGlobal": {
     "message": "บันทึกการตั้งค่าส่วนกลาง"
@@ -268,10 +268,10 @@
     "message": "ลบแล้ว"
   },
   "scrollEnabled": {
-    "message": "เปิดใช้งานการเลื่อนอัตโนมัติ"
+    "message": "เปิดใช้งาน Compatibility Mode"
   },
   "scrollDisabled": {
-    "message": "ปิดใช้งานการเลื่อนอัตโนมัติ"
+    "message": "ปิดใช้งาน Compatibility Mode"
   },
   "configImported": {
     "message": "นำเข้าการกำหนดค่าแล้ว"

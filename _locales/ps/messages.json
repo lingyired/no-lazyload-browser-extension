@@ -31,10 +31,10 @@
     "message": "اوسنی سایټ لرې کړئ"
   },
   "useAutoScroll": {
-    "message": "د تخنیکي بندیز پر ځای اتوماتیک سکرول وکاروئ"
+    "message": "د Standard پر ځای Compatibility Mode وکاروئ"
   },
   "autoScrollDesc": {
-    "message": "د بار کولو د فعالولو لپاره اتوماتیک ښکته سکرول کړئ؛ د هغو سایټونو لپاره مناسب چیرې چې تخنیکي بندیز ناکامیږي"
+    "message": "د بار کولو د فعالولو لپاره اتوماتیک ښکته سکرول کړئ؛ د هغو سایټونو لپاره مناسب چیرې چې Standard ناکامیږي"
   },
   "configuredSites": {
     "message": "ترتیب شوي سایټونه"
@@ -52,7 +52,7 @@
     "message": "{domain} زیات شو"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} زیات شو (اتوماتیک سکرول)"
+    "message": "{domain} زیات شو (Compatibility Mode)"
   },
   "siteRemoved": {
     "message": "{domain} لرې شو"
@@ -61,16 +61,16 @@
     "message": "{domain} ګذارل شو"
   },
   "autoScrollEnabled": {
-    "message": "اتوماتیک سکرول فعال دی"
+    "message": "Compatibility Mode فعال دی"
   },
   "autoScrollDisabled": {
-    "message": "اتوماتیک سکرول غیر فعال دی"
+    "message": "Compatibility Mode غیر فعال دی"
   },
   "pageRefreshed": {
     "message": "پاڼه تازه شوه"
   },
   "autoScroll": {
-    "message": "اتوماتیک سکرول"
+    "message": "Compatibility Mode"
   },
   "settingsTitle": {
     "message": "تنظیمات - No Lazyload",
@@ -89,7 +89,7 @@
     "message": "د بشپړیدو وروسته پورته ته راستون شئ"
   },
   "fallbackToScroll": {
-    "message": "کله چې تخنیکي بندیز ناکام شي، اتوماتیک سکرول د ژغور په توګه وکاروئ",
+    "message": "کله چې Standard ناکام شي، Compatibility Mode د ژغور په توګه وکاروئ",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "هیڅ ترتیب شوی سایټ نشته"
   },
   "autoScrollHelp": {
-    "message": "کله چې فعال شي، تخنیکي بندیز نافعالوي او د ښکته اتوماتیک سکرول سره بارول پیلوي"
+    "message": "کله چې فعال شي، Standard نافعالوي او د ښکته سکرول سره بارول پیلوي"
   },
   "scrollParams": {
-    "message": "د اتوماتیک سکرول پارامترونه"
+    "message": "د Compatibility Mode پارامترونه"
   },
   "saveGlobal": {
     "message": "نړیوالې تنظیمات خوندي کړئ"
@@ -272,10 +272,10 @@
     "message": "ړنګ شو"
   },
   "scrollEnabled": {
-    "message": "اتوماتیک سکرول فعال شو"
+    "message": "Compatibility Mode فعال دی"
   },
   "scrollDisabled": {
-    "message": "اتوماتیک سکرول غیر فعال شو"
+    "message": "Compatibility Mode غیر فعال دی"
   },
   "configImported": {
     "message": "کنفیگریشن درآمد شو"
