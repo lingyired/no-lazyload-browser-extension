@@ -80,10 +80,10 @@
     "message": "Danh sách cấu hình trang"
   },
   "scrollSpeed": {
-    "message": "Tốc độ cuộn (ms)"
+    "message": "Tốc độ cuộn (giây)"
   },
   "stayDuration": {
-    "message": "Thời gian lưu lại (ms)"
+    "message": "Thời gian lưu lại (giây)"
   },
   "returnToTop": {
     "message": "Quay lại đầu trang sau khi hoàn tất"

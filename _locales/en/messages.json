@@ -80,10 +80,10 @@
     "message": "Site Configuration List"
   },
   "scrollSpeed": {
-    "message": "Scroll Speed (ms)"
+    "message": "Scroll Speed (seconds)"
   },
   "stayDuration": {
-    "message": "Stay Duration at Bottom (ms)"
+    "message": "Stay Duration at Bottom (seconds)"
   },
   "returnToTop": {
     "message": "Return to top when complete"

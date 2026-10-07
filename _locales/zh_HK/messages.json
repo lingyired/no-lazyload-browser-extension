@@ -80,10 +80,10 @@
     "message": "網站設定清單"
   },
   "scrollSpeed": {
-    "message": "捲動速度（毫秒）"
+    "message": "捲動速度（秒）"
   },
   "stayDuration": {
-    "message": "停留時長（毫秒）"
+    "message": "停留時長（秒）"
   },
   "returnToTop": {
     "message": "完成後返回頁面頂部"

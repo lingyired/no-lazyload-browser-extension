@@ -80,10 +80,10 @@
     "message": "Liste over hjemmesidekonfigurationer"
   },
   "scrollSpeed": {
-    "message": "Rullehastighed (ms)"
+    "message": "Rullehastighed (sekunder)"
   },
   "stayDuration": {
-    "message": "Opholdstid (ms)"
+    "message": "Opholdstid (sekunder)"
   },
   "returnToTop": {
     "message": "Vend tilbage til toppen efter fuldførelse"

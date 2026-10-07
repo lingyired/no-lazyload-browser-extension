@@ -80,10 +80,10 @@
     "message": "Webhelykonfigurációs lista"
   },
   "scrollSpeed": {
-    "message": "Görgetési sebesség (ms)"
+    "message": "Görgetési sebesség (másodperc)"
   },
   "stayDuration": {
-    "message": "Várakozási idő (ms)"
+    "message": "Várakozási idő (másodperc)"
   },
   "returnToTop": {
     "message": "Visszatérés a tetejére a befejezés után"

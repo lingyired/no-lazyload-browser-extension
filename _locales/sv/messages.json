@@ -80,10 +80,10 @@
     "message": "Lista över webbplatskonfigurationer"
   },
   "scrollSpeed": {
-    "message": "Rullningshastighet (ms)"
+    "message": "Rullningshastighet (sekunder)"
   },
   "stayDuration": {
-    "message": "Vistelsetid (ms)"
+    "message": "Vistelsetid (sekunder)"
   },
   "returnToTop": {
     "message": "Återgå till toppen efter slutförande"

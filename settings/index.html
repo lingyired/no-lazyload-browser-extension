@@ -547,12 +547,12 @@
       <h3 data-i18n="scrollParams">自动滚动参数</h3>
       <div class="form-row">
         <div class="form-group">
-          <label for="scrollSpeed">滚动速度（毫秒）</label>
-          <input type="number" id="scrollSpeed" min="100" max="5000" value="800">
+          <label for="scrollSpeed">滚动速度（秒）</label>
+          <input type="number" id="scrollSpeed" min="0.1" max="5" step="0.1" value="0.8">
         </div>
         <div class="form-group">
-          <label for="stayDuration">底部停留时间（毫秒）</label>
-          <input type="number" id="stayDuration" min="0" max="10000" value="2000">
+          <label for="stayDuration">底部停留时间（秒）</label>
+          <input type="number" id="stayDuration" min="0" max="10" step="0.1" value="2.0">
         </div>
       </div>
       <div class="form-group">

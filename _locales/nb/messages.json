@@ -80,10 +80,10 @@
     "message": "Liste over nettstedskonfigurasjoner"
   },
   "scrollSpeed": {
-    "message": "Rullehastighet (ms)"
+    "message": "Rullehastighet (sekunder)"
   },
   "stayDuration": {
-    "message": "Oppholdstid (ms)"
+    "message": "Oppholdstid (sekunder)"
   },
   "returnToTop": {
     "message": "Tilbake til toppen etter fullføring"

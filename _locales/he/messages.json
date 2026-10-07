@@ -80,10 +80,10 @@
     "message": "רשימת תצורות אתרים"
   },
   "scrollSpeed": {
-    "message": "מהירות גלילה (מ״ש)"
+    "message": "מהירות גלילה (שניות)"
   },
   "stayDuration": {
-    "message": "משך שהייה (מ״ש)"
+    "message": "משך שהייה (שניות)"
   },
   "returnToTop": {
     "message": "חזור לראש לאחר השלמה"

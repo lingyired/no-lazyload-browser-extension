@@ -80,10 +80,10 @@
     "message": "Popis konfiguracija stranica"
   },
   "scrollSpeed": {
-    "message": "Brzina pomicanja (ms)"
+    "message": "Brzina pomicanja (sekunde)"
   },
   "stayDuration": {
-    "message": "Trajanje zadržavanja (ms)"
+    "message": "Trajanje zadržavanja (sekunde)"
   },
   "returnToTop": {
     "message": "Vrati se na vrh nakon završetka"

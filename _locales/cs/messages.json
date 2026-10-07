@@ -80,10 +80,10 @@
     "message": "Seznam konfigurací stránek"
   },
   "scrollSpeed": {
-    "message": "Rychlost posouvání (ms)"
+    "message": "Rychlost posouvání (sekundy)"
   },
   "stayDuration": {
-    "message": "Doba setrvání (ms)"
+    "message": "Doba setrvání (sekundy)"
   },
   "returnToTop": {
     "message": "Po dokončení se vraťte nahoru"

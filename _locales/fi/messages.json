@@ -80,10 +80,10 @@
     "message": "Sivuston määritysluettelo"
   },
   "scrollSpeed": {
-    "message": "Vieritysnopeus (ms)"
+    "message": "Vieritysnopeus (sekuntia)"
   },
   "stayDuration": {
-    "message": "Viipymisaika (ms)"
+    "message": "Viipymisaika (sekuntia)"
   },
   "returnToTop": {
     "message": "Palaa ylös valmistumisen jälkeen"

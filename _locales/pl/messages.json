@@ -80,10 +80,10 @@
     "message": "Lista konfiguracji stron"
   },
   "scrollSpeed": {
-    "message": "Prędkość przewijania (ms)"
+    "message": "Prędkość przewijania (sekundy)"
   },
   "stayDuration": {
-    "message": "Czas pozostawania (ms)"
+    "message": "Czas pozostawania (sekundy)"
   },
   "returnToTop": {
     "message": "Powrót do góry po zakończeniu"

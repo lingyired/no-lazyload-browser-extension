@@ -80,10 +80,10 @@
     "message": "Daftar Konfigurasi Situs"
   },
   "scrollSpeed": {
-    "message": "Kecepatan Gulir (ms)"
+    "message": "Kecepatan Gulir (detik)"
   },
   "stayDuration": {
-    "message": "Durasi Tinggal (ms)"
+    "message": "Durasi Tinggal (detik)"
   },
   "returnToTop": {
     "message": "Kembali ke Atas Setelah Selesai"

@@ -80,10 +80,10 @@
     "message": "ウェブサイト設定リスト"
   },
   "scrollSpeed": {
-    "message": "速度（ミリ秒）"
+    "message": "速度（秒）"
   },
   "stayDuration": {
-    "message": "停止時間（ミリ秒）"
+    "message": "停止時間（秒）"
   },
   "returnToTop": {
     "message": "完了後にトップに戻る"

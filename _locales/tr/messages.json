@@ -80,10 +80,10 @@
     "message": "Site Yapılandırma Listesi"
   },
   "scrollSpeed": {
-    "message": "Kaydırma Hızı (ms)"
+    "message": "Kaydırma Hızı (saniye)"
   },
   "stayDuration": {
-    "message": "Bekleme Süresi (ms)"
+    "message": "Bekleme Süresi (saniye)"
   },
   "returnToTop": {
     "message": "Tamamlandığında Başa Dön"

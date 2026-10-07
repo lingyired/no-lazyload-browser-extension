@@ -80,10 +80,10 @@
     "message": "Lista de Configuración de Sitios"
   },
   "scrollSpeed": {
-    "message": "Velocidad (ms)"
+    "message": "Velocidad (segundos)"
   },
   "stayDuration": {
-    "message": "Duración de Estancia (ms)"
+    "message": "Duración de Estancia (segundos)"
   },
   "returnToTop": {
     "message": "Volver arriba al completar"

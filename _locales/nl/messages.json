@@ -80,10 +80,10 @@
     "message": "Lijst met siteconfiguraties"
   },
   "scrollSpeed": {
-    "message": "Scrollsnelheid (ms)"
+    "message": "Scrollsnelheid (seconden)"
   },
   "stayDuration": {
-    "message": "Verblijfsduur (ms)"
+    "message": "Verblijfsduur (seconden)"
   },
   "returnToTop": {
     "message": "Keer na voltooiing naar boven"

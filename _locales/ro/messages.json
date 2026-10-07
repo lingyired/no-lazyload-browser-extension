@@ -80,10 +80,10 @@
     "message": "Lista de configurări a site-urilor"
   },
   "scrollSpeed": {
-    "message": "Viteza de derulare (ms)"
+    "message": "Viteza de derulare (secunde)"
   },
   "stayDuration": {
-    "message": "Durata de staționare (ms)"
+    "message": "Durata de staționare (secunde)"
   },
   "returnToTop": {
     "message": "Întoarce-te sus după finalizare"

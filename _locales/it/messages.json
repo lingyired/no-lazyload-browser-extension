@@ -80,10 +80,10 @@
     "message": "Elenco configurazione siti"
   },
   "scrollSpeed": {
-    "message": "Velocità di scorrimento (ms)"
+    "message": "Velocità di scorrimento (secondi)"
   },
   "stayDuration": {
-    "message": "Durata permanenza (ms)"
+    "message": "Durata permanenza (secondi)"
   },
   "returnToTop": {
     "message": "Torna in cima al completamento"

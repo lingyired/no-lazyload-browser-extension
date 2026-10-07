@@ -80,10 +80,10 @@
     "message": "Llista de configuració de llocs"
   },
   "scrollSpeed": {
-    "message": "Velocitat de desplaçament (ms)"
+    "message": "Velocitat de desplaçament (segons)"
   },
   "stayDuration": {
-    "message": "Durada de l'estada (ms)"
+    "message": "Durada de l'estada (segons)"
   },
   "returnToTop": {
     "message": "Torna a dalt en acabar"

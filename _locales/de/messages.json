@@ -83,10 +83,10 @@
     "message": "Website-Konfigurationsliste"
   },
   "scrollSpeed": {
-    "message": "Geschwindigkeit (ms)"
+    "message": "Geschwindigkeit (Sekunden)"
   },
   "stayDuration": {
-    "message": "Verweildauer (ms)"
+    "message": "Verweildauer (Sekunden)"
   },
   "returnToTop": {
     "message": "Nach Abschluss nach oben zurückkehren"

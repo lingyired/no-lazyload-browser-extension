@@ -86,10 +86,10 @@
     "message": "网站配置列表"
   },
   "scrollSpeed": {
-    "message": "滚动速度（毫秒）"
+    "message": "滚动速度（秒）"
   },
   "stayDuration": {
-    "message": "停留时长（毫秒）",
+    "message": "停留时长（秒）",
     "description": "Stay duration label"
   },
   "returnToTop": {
