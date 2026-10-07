@@ -2354,6 +2354,30 @@ async function exportConfig() {
   showToast(t('configExported'));
 }
 
+// 域名规范化的唯一实现见 shared/domain.js（构建时打进 shared-ui.js）。
+// settings 页是经典脚本，不能 import，这里内联同一套规则 —— 别改行为，要改先改 shared/domain.js。
+function normalizeHostname(hostname) {
+  if (typeof hostname !== 'string') return '';
+
+  let host = hostname.trim().toLowerCase();
+  if (!host) return '';
+
+  if (host.startsWith('[')) {
+    const end = host.indexOf(']');
+    if (end !== -1) host = host.slice(0, end + 1);
+  } else {
+    const colon = host.lastIndexOf(':');
+    if (colon !== -1 && /^\d+$/.test(host.slice(colon + 1))) {
+      host = host.slice(0, colon);
+    }
+  }
+
+  while (host.endsWith('.')) host = host.slice(0, -1);
+  if (!host) return '';
+
+  return host.replace(/^www\./, '');
+}
+
 /**
  * 导入配置
  */
@@ -2371,11 +2395,24 @@ async function importConfig(file) {
     const totalSites = Object.keys(data.siteConfigs).length;
     let added = 0;
     let limitReached = false;
-    for (const [domain, config] of Object.entries(data.siteConfigs)) {
-      const resp = await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, {
+    for (const [rawDomain, config] of Object.entries(data.siteConfigs)) {
+      // 导出文件的键可能带 www. / 大写 / 端口，先规范化，保证与 background 的键一致
+      const domain = normalizeHostname(rawDomain);
+      if (!domain) continue;
+
+      const payload = {
         domain,
-        strategy: config.strategy || STRATEGIES.TECH_BLOCK
-      });
+        strategy: config.strategy || STRATEGIES.TECH_BLOCK,
+        // 少了这两个字段，"导出→清空→导入"就不是无损的：
+        //   scrollFallback 丢了 → 勾过自动滚动的网站变回技术拦截
+        //   addedAt 丢了     → 所有网站的添加时间都变成"现在"，列表顺序全乱
+        scrollFallback: config.scrollFallback === true,
+        // 批量导入被限额截断不算"用户想启用这一个网站"，background 据此不写购买待办
+        source: 'import',
+      };
+      if (Number.isFinite(config.addedAt)) payload.addedAt = config.addedAt;
+
+      const resp = await sendMessage(MESSAGE_TYPES.SET_SITE_CONFIG, payload);
       if (resp && resp.success === false && resp.error === 'LIMIT_REACHED') {
         limitReached = true;
         break;
