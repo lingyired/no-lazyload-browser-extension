@@ -94,3 +94,8 @@ https://addons.mozilla.org/firefox/addon/no-lazyload/
 ## License
 
 [MIT](LICENSE)
+
+## 开发与测试
+
+- 测试指南（自动化 + 真机 + StoreKit + 视觉清单）：[docs/testing.md](docs/testing.md)
+- Safari/macOS 兼容性矩阵：[docs/safari-compatibility.md](docs/safari-compatibility.md)
