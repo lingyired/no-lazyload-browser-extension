@@ -31,10 +31,10 @@
     "message": "Odebrat aktuální stránku"
   },
   "useAutoScroll": {
-    "message": "Použít Compatibility Mode místo Standard"
+    "message": "Použít automatické posouvání místo technického blokování"
   },
   "autoScrollDesc": {
-    "message": "Automaticky posuňte dolů pro spuštění načítání; vhodné pro stránky, kde Standard selže"
+    "message": "Automaticky posuňte dolů pro spuštění načítání; vhodné pro stránky, kde technické blokování selže"
   },
   "configuredSites": {
     "message": "Nakonfigurované stránky"
@@ -52,7 +52,7 @@
     "message": "Přidáno {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Přidáno {domain} (Compatibility Mode)"
+    "message": "Přidáno {domain} (Automatické posouvání)"
   },
   "siteRemoved": {
     "message": "Odebráno {domain}"
@@ -61,16 +61,16 @@
     "message": "Smazáno {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode povoleno"
+    "message": "Automatické posouvání povoleno"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode zakázáno"
+    "message": "Automatické posouvání zakázáno"
   },
   "pageRefreshed": {
     "message": "Stránka obnovena"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Automatické posouvání"
   },
   "settingsTitle": {
     "message": "Nastavení - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Seznam konfigurací stránek"
   },
   "scrollSpeed": {
-    "message": "Rychlost posouvání (sekundy)"
+    "message": "Rychlost posouvání (ms)"
   },
   "stayDuration": {
-    "message": "Doba setrvání (sekundy)"
+    "message": "Doba setrvání (ms)"
   },
   "returnToTop": {
     "message": "Po dokončení se vraťte nahoru"
   },
   "fallbackToScroll": {
-    "message": "Při selhání Standard automaticky použijte Compatibility Mode jako zálohu",
+    "message": "Při selhání technického blokování automaticky použijte posouvání jako zálohu",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Žádné nakonfigurované stránky"
   },
   "autoScrollHelp": {
-    "message": "Když je povoleno, zakáže Standard a spustí načítání posouváním dolů"
+    "message": "Když je povoleno, zakáže technické blokování a spustí načítání automatickým posunutím dolů"
   },
   "scrollParams": {
-    "message": "Parametry Compatibility Mode"
+    "message": "Parametry automatického posouvání"
   },
   "saveGlobal": {
     "message": "Uložit globální nastavení"
@@ -272,10 +272,10 @@
     "message": "Smazáno"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode povoleno"
+    "message": "Automatické posouvání povoleno"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode zakázáno"
+    "message": "Automatické posouvání zakázáno"
   },
   "configImported": {
     "message": "Konfigurace importována"

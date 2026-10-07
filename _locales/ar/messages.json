@@ -31,10 +31,10 @@
     "message": "إزالة الموقع الحالي"
   },
   "useAutoScroll": {
-    "message": "استخدام Compatibility Mode بدلاً من Standard"
+    "message": "استخدام التمرير التلقائي بدلاً من الحظر التقني"
   },
   "autoScrollDesc": {
-    "message": "التمرير للأسفل لتفعيل التحميل، مناسب للمواقع التي يفشل فيها Standard"
+    "message": "التمرير للأسفل لتفعيل التحميل، مناسب للمواقع التي يفشل فيها الحظر التقني"
   },
   "configuredSites": {
     "message": "المواقع المُعدّة"
@@ -52,7 +52,7 @@
     "message": "تمت إضافة {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "تمت إضافة {domain} (Compatibility Mode)"
+    "message": "تمت إضافة {domain} (تمرير تلقائي)"
   },
   "siteRemoved": {
     "message": "تمت إزالة {domain}"
@@ -61,16 +61,16 @@
     "message": "تم حذف {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode مفعّل"
+    "message": "التمرير التلقائي مفعّل"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode معطّل"
+    "message": "التمرير التلقائي معطّل"
   },
   "pageRefreshed": {
     "message": "تم تحديث الصفحة"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "تمرير تلقائي"
   },
   "settingsTitle": {
     "message": "الإعدادات - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "قائمة تكوين الموقع"
   },
   "scrollSpeed": {
-    "message": "سرعة التمرير (ثوانٍ)"
+    "message": "سرعة التمرير (مللي ثانية)"
   },
   "stayDuration": {
-    "message": "مدة البقاء (ثوانٍ)"
+    "message": "مدة البقاء (مللي ثانية)"
   },
   "returnToTop": {
     "message": "العودة للأعلى عند الانتهاء"
   },
   "fallbackToScroll": {
-    "message": "استخدام Compatibility Mode عند فشل Standard",
+    "message": "استخدام التمرير التلقائي عند فشل الحظر التقني",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "لا توجد مواقع مُعدّة"
   },
   "autoScrollHelp": {
-    "message": "يعطل Standard ويُفعّل التحميل بالتمرير للأسفل"
+    "message": "يعطل الحظر التقني ويُفعّل التحميل بالتمرير للأسفل"
   },
   "scrollParams": {
-    "message": "معايير Compatibility Mode"
+    "message": "معايير التمرير التلقائي"
   },
   "saveGlobal": {
     "message": "حفظ الإعدادات"
@@ -268,10 +268,10 @@
     "message": "تم الحذف"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode مفعّل"
+    "message": "تم تفعيل التمرير التلقائي"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode معطّل"
+    "message": "تم تعطيل التمرير التلقائي"
   },
   "configImported": {
     "message": "تم استيراد الإعدادات"

@@ -31,10 +31,10 @@
     "message": "Elimină site-ul curent"
   },
   "useAutoScroll": {
-    "message": "Folosește Compatibility Mode în locul Standard"
+    "message": "Folosește derularea automată în locul blocării tehnice"
   },
   "autoScrollDesc": {
-    "message": "Derulează automat în jos pentru a declanșa încărcarea; potrivit pentru site-urile unde Standard eșuează"
+    "message": "Derulează automat în jos pentru a declanșa încărcarea; potrivit pentru site-urile unde blocarea tehnică eșuează"
   },
   "configuredSites": {
     "message": "Site-uri configurate"
@@ -52,7 +52,7 @@
     "message": "Adăugat {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Adăugat {domain} (Compatibility Mode)"
+    "message": "Adăugat {domain} (Derulare automată)"
   },
   "siteRemoved": {
     "message": "Eliminat {domain}"
@@ -61,16 +61,16 @@
     "message": "Șters {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode activată"
+    "message": "Derulare automată activată"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode dezactivată"
+    "message": "Derulare automată dezactivată"
   },
   "pageRefreshed": {
     "message": "Pagina reîmprospătată"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Derulare automată"
   },
   "settingsTitle": {
     "message": "Setări - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Lista de configurări a site-urilor"
   },
   "scrollSpeed": {
-    "message": "Viteza de derulare (secunde)"
+    "message": "Viteza de derulare (ms)"
   },
   "stayDuration": {
-    "message": "Durata de staționare (secunde)"
+    "message": "Durata de staționare (ms)"
   },
   "returnToTop": {
     "message": "Întoarce-te sus după finalizare"
   },
   "fallbackToScroll": {
-    "message": "Folosește automat Compatibility Mode ca rezervă când Standard eșuează",
+    "message": "Folosește automat derularea ca rezervă când blocarea tehnică eșuează",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Niciun site configurat"
   },
   "autoScrollHelp": {
-    "message": "Când este activat, dezactivează Standard și declanșează încărcarea prin derulare în jos"
+    "message": "Când este activat, dezactivează blocarea tehnică și declanșează încărcarea prin derulare automată în jos"
   },
   "scrollParams": {
-    "message": "Parametri Compatibility Mode"
+    "message": "Parametri de derulare automată"
   },
   "saveGlobal": {
     "message": "Salvează setările globale"
@@ -272,10 +272,10 @@
     "message": "Șters"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode activată"
+    "message": "Derulare automată activată"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode dezactivată"
+    "message": "Derulare automată dezactivată"
   },
   "configImported": {
     "message": "Configurație importată"

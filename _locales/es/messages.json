@@ -31,10 +31,10 @@
     "message": "Eliminar Sitio Actual"
   },
   "useAutoScroll": {
-    "message": "Usar Compatibility Mode en lugar de Standard"
+    "message": "Usar desplazamiento automático en lugar de bloqueo técnico"
   },
   "autoScrollDesc": {
-    "message": "Desplazarse hasta el final para activar la carga, adecuado para sitios donde Standard falla"
+    "message": "Desplazarse hasta el final para activar la carga, adecuado para sitios donde falla el bloqueo técnico"
   },
   "configuredSites": {
     "message": "Sitios Configurados"
@@ -52,7 +52,7 @@
     "message": "Agregado {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Agregado {domain} (Compatibility Mode)"
+    "message": "Agregado {domain} (Desplaz. Auto.)"
   },
   "siteRemoved": {
     "message": "Eliminado {domain}"
@@ -61,16 +61,16 @@
     "message": "Eliminado {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode activado"
+    "message": "Desplazamiento automático activado"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode desactivado"
+    "message": "Desplazamiento automático desactivado"
   },
   "pageRefreshed": {
     "message": "Página actualizada"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Desplaz. Auto."
   },
   "settingsTitle": {
     "message": "Configuración - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Lista de Configuración de Sitios"
   },
   "scrollSpeed": {
-    "message": "Velocidad (segundos)"
+    "message": "Velocidad (ms)"
   },
   "stayDuration": {
-    "message": "Duración de Estancia (segundos)"
+    "message": "Duración de Estancia (ms)"
   },
   "returnToTop": {
     "message": "Volver arriba al completar"
   },
   "fallbackToScroll": {
-    "message": "Usar Compatibility Mode automáticamente cuando Standard falla",
+    "message": "Usar Desplazamiento Automático cuando Falla el Bloqueo Técnico",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -247,10 +247,10 @@
     "message": "No hay sitios configurados"
   },
   "autoScrollHelp": {
-    "message": "Deshabilita el Standard y activa la carga desplazándose al final"
+    "message": "Deshabilita el bloqueo técnico y activa la carga desplazándose al final"
   },
   "scrollParams": {
-    "message": "Parámetros de Compatibility Mode"
+    "message": "Parámetros de Desplazamiento"
   },
   "saveGlobal": {
     "message": "Guardar Configuración"
@@ -271,10 +271,10 @@
     "message": "Eliminado"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode activado"
+    "message": "Desplazamiento automático activado"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode desactivado"
+    "message": "Desplazamiento automático desactivado"
   },
   "configImported": {
     "message": "Configuración importada"

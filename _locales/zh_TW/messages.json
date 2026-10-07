@@ -34,10 +34,10 @@
     "message": "移除目前網站"
   },
   "useAutoScroll": {
-    "message": "使用Compatibility Mode代替Standard"
+    "message": "使用自動捲動代替技術攔截"
   },
   "autoScrollDesc": {
-    "message": "Compatibility Mode到底部觸發載入，適合Standard失效的網站"
+    "message": "自動捲動到底部觸發載入，適合技術攔截失效的網站"
   },
   "configuredSites": {
     "message": "已設定的網站"
@@ -55,7 +55,7 @@
     "message": "已加入 {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "已加入 {domain}（Compatibility Mode）"
+    "message": "已加入 {domain}（自動捲動）"
   },
   "siteRemoved": {
     "message": "已移除 {domain}"
@@ -64,16 +64,16 @@
     "message": "已刪除 {domain}"
   },
   "autoScrollEnabled": {
-    "message": "已開啟Compatibility Mode"
+    "message": "已開啟自動捲動"
   },
   "autoScrollDisabled": {
-    "message": "已關閉Compatibility Mode"
+    "message": "已關閉自動捲動"
   },
   "pageRefreshed": {
     "message": "頁面已重新整理"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "自動捲動"
   },
   "settingsTitle": {
     "message": "設定 - No Lazyload",
@@ -83,16 +83,16 @@
     "message": "網站設定清單"
   },
   "scrollSpeed": {
-    "message": "捲動速度（秒）"
+    "message": "捲動速度（毫秒）"
   },
   "stayDuration": {
-    "message": "停留時長（秒）"
+    "message": "停留時長（毫秒）"
   },
   "returnToTop": {
     "message": "完成後返回頁面頂部"
   },
   "fallbackToScroll": {
-    "message": "Standard不生效時自動使用Compatibility Mode",
+    "message": "技術攔截不生效時自動使用捲動兜底",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -250,10 +250,10 @@
     "message": "暫無設定的網站"
   },
   "autoScrollHelp": {
-    "message": "開啟後停用Standard，Compatibility Mode到底部觸發載入"
+    "message": "開啟後停用技術攔截，自動捲動到底部觸發載入"
   },
   "scrollParams": {
-    "message": "Compatibility Mode參數"
+    "message": "自動捲動參數"
   },
   "saveGlobal": {
     "message": "儲存全域設定"
@@ -274,10 +274,10 @@
     "message": "已刪除"
   },
   "scrollEnabled": {
-    "message": "已開啟Compatibility Mode"
+    "message": "已開啟自動捲動"
   },
   "scrollDisabled": {
-    "message": "已關閉Compatibility Mode"
+    "message": "已關閉自動捲動"
   },
   "configImported": {
     "message": "設定已匯入"

@@ -31,10 +31,10 @@
     "message": "Ta bort aktuell webbplats"
   },
   "useAutoScroll": {
-    "message": "Använd Compatibility Mode istället för Standard"
+    "message": "Använd automatisk rullning istället för teknisk blockering"
   },
   "autoScrollDesc": {
-    "message": "Rulla automatiskt till botten för att utlösa inladdning; lämpligt för webbplatser där Standard misslyckas"
+    "message": "Rulla automatiskt till botten för att utlösa inladdning; lämpligt för webbplatser där teknisk blockering misslyckas"
   },
   "configuredSites": {
     "message": "Konfigurerade webbplatser"
@@ -52,7 +52,7 @@
     "message": "Tillagd {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Tillagd {domain} (Compatibility Mode)"
+    "message": "Tillagd {domain} (Automatisk rullning)"
   },
   "siteRemoved": {
     "message": "Borttagen {domain}"
@@ -61,16 +61,16 @@
     "message": "Raderad {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode aktiverad"
+    "message": "Automatisk rullning aktiverad"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode inaktiverad"
+    "message": "Automatisk rullning inaktiverad"
   },
   "pageRefreshed": {
     "message": "Sidan uppdaterad"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Automatisk rullning"
   },
   "settingsTitle": {
     "message": "Inställningar - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Lista över webbplatskonfigurationer"
   },
   "scrollSpeed": {
-    "message": "Rullningshastighet (sekunder)"
+    "message": "Rullningshastighet (ms)"
   },
   "stayDuration": {
-    "message": "Vistelsetid (sekunder)"
+    "message": "Vistelsetid (ms)"
   },
   "returnToTop": {
     "message": "Återgå till toppen efter slutförande"
   },
   "fallbackToScroll": {
-    "message": "Använd Compatibility Mode automatiskt som reserv när Standard misslyckas",
+    "message": "Använd automatiskt rullning som reserv när teknisk blockering misslyckas",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Inga konfigurerade webbplatser"
   },
   "autoScrollHelp": {
-    "message": "När aktiverad, inaktiverar Standard och utlöser inladdning genom att rulla till botten"
+    "message": "När aktiverad, inaktiverar teknisk blockering och utlöser inladdning genom automatisk rullning till botten"
   },
   "scrollParams": {
-    "message": "Parametrar för Compatibility Mode"
+    "message": "Parametrar för automatisk rullning"
   },
   "saveGlobal": {
     "message": "Spara globala inställningar"
@@ -268,10 +268,10 @@
     "message": "Borttagen"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode aktiverad"
+    "message": "Automatisk rullning aktiverad"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode inaktiverad"
+    "message": "Automatisk rullning inaktiverad"
   },
   "configImported": {
     "message": "Konfiguration importerad"

@@ -31,10 +31,10 @@
     "message": "حذف سایت فعلی"
   },
   "useAutoScroll": {
-    "message": "استفاده از Compatibility Mode به جای Standard"
+    "message": "استفاده از پیمایش خودکار به جای مسدودسازی فنی"
   },
   "autoScrollDesc": {
-    "message": "برای شروع بارگذاری به‌صورت خودکار به پایین بپیمایید؛ مناسب برای سایت‌هایی که Standard در آن‌ها شکست می‌خورد"
+    "message": "برای شروع بارگذاری به‌صورت خودکار به پایین بپیمایید؛ مناسب برای سایت‌هایی که مسدودسازی فنی در آن‌ها شکست می‌خورد"
   },
   "configuredSites": {
     "message": "سایت‌های پیکربندی‌شده"
@@ -52,7 +52,7 @@
     "message": "{domain} افزوده شد"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} افزوده شد (Compatibility Mode)"
+    "message": "{domain} افزوده شد (پیمایش خودکار)"
   },
   "siteRemoved": {
     "message": "{domain} حذف شد"
@@ -61,16 +61,16 @@
     "message": "{domain} حذف شد"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode فعال شد"
+    "message": "پیمایش خودکار فعال شد"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode غیرفعال شد"
+    "message": "پیمایش خودکار غیرفعال شد"
   },
   "pageRefreshed": {
     "message": "صفحه بازخوانی شد"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "پیمایش خودکار"
   },
   "settingsTitle": {
     "message": "تنظیمات - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "فهرست پیکربندی سایت‌ها"
   },
   "scrollSpeed": {
-    "message": "سرعت پیمایش (ثانیه)"
+    "message": "سرعت پیمایش (میلی‌ثانیه)"
   },
   "stayDuration": {
-    "message": "مدت اقامت (ثانیه)"
+    "message": "مدت اقامت (میلی‌ثانیه)"
   },
   "returnToTop": {
     "message": "بازگشت به بالا پس از اتمام"
   },
   "fallbackToScroll": {
-    "message": "هنگام شکست Standard، به‌طور خودکار از پیمایش به‌عنوان جایگزین استفاده کن",
+    "message": "هنگام شکست مسدودسازی فنی، به‌طور خودکار از پیمایش به‌عنوان جایگزین استفاده کن",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "هیچ سایتی پیکربندی نشده است"
   },
   "autoScrollHelp": {
-    "message": "هنگام فعال بودن، Standard را غیرفعال می‌کند و با پیمایش به پایین، بارگذاری را فعال می‌کند"
+    "message": "هنگام فعال بودن، مسدودسازی فنی را غیرفعال می‌کند و با پیمایش خودکار به پایین، بارگذاری را فعال می‌کند"
   },
   "scrollParams": {
-    "message": "پارامترهای Compatibility Mode"
+    "message": "پارامترهای پیمایش خودکار"
   },
   "saveGlobal": {
     "message": "ذخیره تنظیمات سراسری"
@@ -272,10 +272,10 @@
     "message": "حذف شد"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode فعال شد"
+    "message": "پیمایش خودکار فعال شد"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode غیرفعال شد"
+    "message": "پیمایش خودکار غیرفعال شد"
   },
   "configImported": {
     "message": "پیکربندی وارد شد"

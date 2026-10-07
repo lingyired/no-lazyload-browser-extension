@@ -31,10 +31,10 @@
     "message": "Ukloni trenutnu stranicu"
   },
   "useAutoScroll": {
-    "message": "Koristi Compatibility Mode umjesto Standard"
+    "message": "Koristi automatsko pomicanje umjesto tehničkog blokiranja"
   },
   "autoScrollDesc": {
-    "message": "Automatski se pomaknite prema dolje da biste pokrenuli učitavanje; pogodno za stranice gdje Standard ne uspijeva"
+    "message": "Automatski se pomaknite prema dolje da biste pokrenuli učitavanje; pogodno za stranice gdje tehničko blokiranje ne uspijeva"
   },
   "configuredSites": {
     "message": "Konfigurirane stranice"
@@ -52,7 +52,7 @@
     "message": "Dodana {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Dodana {domain} (Compatibility Mode)"
+    "message": "Dodana {domain} (Automatsko pomicanje)"
   },
   "siteRemoved": {
     "message": "Uklonjena {domain}"
@@ -61,16 +61,16 @@
     "message": "Izbrisana {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode omogućeno"
+    "message": "Automatsko pomicanje omogućeno"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode onemogućeno"
+    "message": "Automatsko pomicanje onemogućeno"
   },
   "pageRefreshed": {
     "message": "Stranica osvježena"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Automatsko pomicanje"
   },
   "settingsTitle": {
     "message": "Postavke - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Popis konfiguracija stranica"
   },
   "scrollSpeed": {
-    "message": "Brzina pomicanja (sekunde)"
+    "message": "Brzina pomicanja (ms)"
   },
   "stayDuration": {
-    "message": "Trajanje zadržavanja (sekunde)"
+    "message": "Trajanje zadržavanja (ms)"
   },
   "returnToTop": {
     "message": "Vrati se na vrh nakon završetka"
   },
   "fallbackToScroll": {
-    "message": "Automatski koristi pomicanje kao zamjenu kad Standard ne uspije",
+    "message": "Automatski koristi pomicanje kao zamjenu kad tehničko blokiranje ne uspije",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Nema konfiguriranih stranica"
   },
   "autoScrollHelp": {
-    "message": "Kada je omogućeno, onemogućuje Standard i pokreće učitavanje pomicanjem prema dolje"
+    "message": "Kada je omogućeno, onemogućuje tehničko blokiranje i pokreće učitavanje automatskim pomicanjem prema dolje"
   },
   "scrollParams": {
-    "message": "Parametri Compatibility Mode"
+    "message": "Parametri automatskog pomicanja"
   },
   "saveGlobal": {
     "message": "Spremi globalne postavke"
@@ -272,10 +272,10 @@
     "message": "Izbrisano"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode omogućeno"
+    "message": "Automatsko pomicanje omogućeno"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode onemogućeno"
+    "message": "Automatsko pomicanje onemogućeno"
   },
   "configImported": {
     "message": "Konfiguracija uvezena"

@@ -31,10 +31,10 @@
     "message": "Hapus Situs Saat Ini"
   },
   "useAutoScroll": {
-    "message": "Gunakan Compatibility Mode, bukan Standard"
+    "message": "Gunakan gulir otomatis, bukan pemblokiran teknis"
   },
   "autoScrollDesc": {
-    "message": "Gulir otomatis ke bawah untuk memicu pemuatan; cocok untuk situs di mana Standard gagal"
+    "message": "Gulir otomatis ke bawah untuk memicu pemuatan; cocok untuk situs di mana pemblokiran teknis gagal"
   },
   "configuredSites": {
     "message": "Situs yang Dikonfigurasi"
@@ -52,7 +52,7 @@
     "message": "Ditambahkan {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Ditambahkan {domain} (Compatibility Mode)"
+    "message": "Ditambahkan {domain} (Gulir Otomatis)"
   },
   "siteRemoved": {
     "message": "Dihapus {domain}"
@@ -61,16 +61,16 @@
     "message": "Dihapus {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode aktif"
+    "message": "Gulir otomatis aktif"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode nonaktif"
+    "message": "Gulir otomatis nonaktif"
   },
   "pageRefreshed": {
     "message": "Halaman dimuat ulang"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Gulir Otomatis"
   },
   "settingsTitle": {
     "message": "Pengaturan - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Daftar Konfigurasi Situs"
   },
   "scrollSpeed": {
-    "message": "Kecepatan Gulir (detik)"
+    "message": "Kecepatan Gulir (ms)"
   },
   "stayDuration": {
-    "message": "Durasi Tinggal (detik)"
+    "message": "Durasi Tinggal (ms)"
   },
   "returnToTop": {
     "message": "Kembali ke Atas Setelah Selesai"
   },
   "fallbackToScroll": {
-    "message": "Gunakan gulir cadangan secara otomatis saat Standard gagal",
+    "message": "Gunakan gulir cadangan secara otomatis saat pemblokiran teknis gagal",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Tidak ada situs yang dikonfigurasi"
   },
   "autoScrollHelp": {
-    "message": "Saat diaktifkan, menonaktifkan Standard dan memicu pemuatan dengan menggulir ke bawah"
+    "message": "Saat diaktifkan, menonaktifkan pemblokiran teknis dan memicu pemuatan dengan menggulir otomatis ke bawah"
   },
   "scrollParams": {
-    "message": "Parameter Compatibility Mode"
+    "message": "Parameter Gulir Otomatis"
   },
   "saveGlobal": {
     "message": "Simpan Pengaturan Global"
@@ -268,10 +268,10 @@
     "message": "Dihapus"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode aktif"
+    "message": "Gulir otomatis diaktifkan"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode nonaktif"
+    "message": "Gulir otomatis dinonaktifkan"
   },
   "configImported": {
     "message": "Konfigurasi diimpor"

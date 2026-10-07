@@ -31,10 +31,10 @@
     "message": "Geçerli Siteyi Kaldır"
   },
   "useAutoScroll": {
-    "message": "Standard yerine Compatibility Mode kullan"
+    "message": "Teknik engelleme yerine otomatik kaydırmayı kullan"
   },
   "autoScrollDesc": {
-    "message": "Yüklemeyi tetiklemek için otomatik olarak en alta kaydır; Standard başarısız olduğu siteler için uygundur"
+    "message": "Yüklemeyi tetiklemek için otomatik olarak en alta kaydır; teknik engellemenin başarısız olduğu siteler için uygundur"
   },
   "configuredSites": {
     "message": "Yapılandırılmış Siteler"
@@ -52,7 +52,7 @@
     "message": "{domain} eklendi"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} eklendi (Compatibility Mode)"
+    "message": "{domain} eklendi (Otomatik Kaydırma)"
   },
   "siteRemoved": {
     "message": "{domain} kaldırıldı"
@@ -61,16 +61,16 @@
     "message": "{domain} silindi"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode etkin"
+    "message": "Otomatik kaydırma etkin"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode devre dışı"
+    "message": "Otomatik kaydırma devre dışı"
   },
   "pageRefreshed": {
     "message": "Sayfa yenilendi"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Otomatik kaydırma"
   },
   "settingsTitle": {
     "message": "Ayarlar - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Site Yapılandırma Listesi"
   },
   "scrollSpeed": {
-    "message": "Kaydırma Hızı (saniye)"
+    "message": "Kaydırma Hızı (ms)"
   },
   "stayDuration": {
-    "message": "Bekleme Süresi (saniye)"
+    "message": "Bekleme Süresi (ms)"
   },
   "returnToTop": {
     "message": "Tamamlandığında Başa Dön"
   },
   "fallbackToScroll": {
-    "message": "Standard başarısız olduğunda otomatik olarak kaydırma yedeğini kullan",
+    "message": "Teknik engelleme başarısız olduğunda otomatik olarak kaydırma yedeğini kullan",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Yapılandırılmış site yok"
   },
   "autoScrollHelp": {
-    "message": "Etkinleştirildiğinde, Standard devre dışı bırakır ve otomatik olarak alta kaydırarak yüklemeyi tetikler"
+    "message": "Etkinleştirildiğinde, teknik engellemeyi devre dışı bırakır ve otomatik olarak alta kaydırarak yüklemeyi tetikler"
   },
   "scrollParams": {
-    "message": "Compatibility Mode Parametreleri"
+    "message": "Otomatik Kaydırma Parametreleri"
   },
   "saveGlobal": {
     "message": "Genel Ayarları Kaydet"
@@ -268,10 +268,10 @@
     "message": "Silindi"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode etkin"
+    "message": "Otomatik kaydırma etkinleştirildi"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode devre dışı"
+    "message": "Otomatik kaydırma devre dışı bırakıldı"
   },
   "configImported": {
     "message": "Yapılandırma içe aktarıldı"

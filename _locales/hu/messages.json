@@ -31,10 +31,10 @@
     "message": "Jelenlegi oldal eltávolítása"
   },
   "useAutoScroll": {
-    "message": "Compatibility Mode használata Standard helyett"
+    "message": "Automatikus görgetés használata technikai blokkolás helyett"
   },
   "autoScrollDesc": {
-    "message": "Görgessen automatikusan az aljára a betöltés indításához; olyan oldalakhoz megfelelő, ahol a Standard nem működik"
+    "message": "Görgessen automatikusan az aljára a betöltés indításához; olyan oldalakhoz megfelelő, ahol a technikai blokkolás nem működik"
   },
   "configuredSites": {
     "message": "Beállított oldalak"
@@ -52,7 +52,7 @@
     "message": "Hozzáadva: {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Hozzáadva: {domain} (Compatibility Mode)"
+    "message": "Hozzáadva: {domain} (Automatikus görgetés)"
   },
   "siteRemoved": {
     "message": "Eltávolítva: {domain}"
@@ -61,16 +61,16 @@
     "message": "Törölve: {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode engedélyezve"
+    "message": "Automatikus görgetés engedélyezve"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode letiltva"
+    "message": "Automatikus görgetés letiltva"
   },
   "pageRefreshed": {
     "message": "Oldal frissítve"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Automatikus görgetés"
   },
   "settingsTitle": {
     "message": "Beállítások - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Webhelykonfigurációs lista"
   },
   "scrollSpeed": {
-    "message": "Görgetési sebesség (másodperc)"
+    "message": "Görgetési sebesség (ms)"
   },
   "stayDuration": {
-    "message": "Várakozási idő (másodperc)"
+    "message": "Várakozási idő (ms)"
   },
   "returnToTop": {
     "message": "Visszatérés a tetejére a befejezés után"
   },
   "fallbackToScroll": {
-    "message": "Compatibility Mode használata tartalékként, ha a Standard nem működik",
+    "message": "Automatikus görgetés használata tartalékként, ha a technikai blokkolás nem működik",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Nincsenek beállított oldalak"
   },
   "autoScrollHelp": {
-    "message": "Bekapcsoláskor letiltja a Standard, és görgetéssel indítja a betöltést"
+    "message": "Bekapcsoláskor letiltja a technikai blokkolást, és automatikus görgetéssel indítja a betöltést"
   },
   "scrollParams": {
-    "message": "Compatibility Mode paraméterei"
+    "message": "Automatikus görgetés paraméterei"
   },
   "saveGlobal": {
     "message": "Globális beállítások mentése"
@@ -272,10 +272,10 @@
     "message": "Törölve"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode engedélyezve"
+    "message": "Automatikus görgetés engedélyezve"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode letiltva"
+    "message": "Automatikus görgetés letiltva"
   },
   "configImported": {
     "message": "Konfiguráció importálva"

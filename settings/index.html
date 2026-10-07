@@ -500,9 +500,8 @@
       <div class="subtitle">禁用图片懒加载 - 完整设置</div>
     </div>
 
-    <!-- 授权入口：免费限额路径在升级后不会再触发，所以这里必须有常驻入口。
-         id 供 updateLicenseStatus() 按平台整卡隐藏（Chrome/Firefox 不显示授权卡）。 -->
-    <section class="card" id="licenseCard">
+    <!-- 授权入口：免费限额路径在升级后不会再触发，所以这里必须有常驻入口 -->
+    <section class="card">
       <h2 data-i18n="licenseTitle">授权</h2>
       <p class="license-status-text" id="licenseStatus">…</p>
       <div class="btn-group">
@@ -537,22 +536,22 @@
       <div class="form-group">
         <label>
           <input type="checkbox" id="fallbackToScroll">
-          <span>使用 Compatibility Mode 代替 Standard（适合 Standard 失效的网站）</span>
+          <span>使用自动滚动代替技术拦截（适合拦截失败的网站）</span>
         </label>
         <p class="help-text" style="margin-left: 24px; margin-top: 4px; color: #999; font-size: 12px;">
-          开启后禁用 Standard，通过滚动到底部触发图片加载
+          开启后禁用技术拦截，通过自动滚动到底部触发图片加载
         </p>
       </div>
 
-      <h3 data-i18n="scrollParams">Compatibility Mode 参数</h3>
+      <h3 data-i18n="scrollParams">自动滚动参数</h3>
       <div class="form-row">
         <div class="form-group">
-          <label for="scrollSpeed">滚动速度（秒）</label>
-          <input type="number" id="scrollSpeed" min="0.1" max="5" step="0.1" value="0.8">
+          <label for="scrollSpeed">滚动速度（毫秒）</label>
+          <input type="number" id="scrollSpeed" min="100" max="5000" value="800">
         </div>
         <div class="form-group">
-          <label for="stayDuration">底部停留时间（秒）</label>
-          <input type="number" id="stayDuration" min="0" max="10" step="0.1" value="2.0">
+          <label for="stayDuration">底部停留时间（毫秒）</label>
+          <input type="number" id="stayDuration" min="0" max="10000" value="2000">
         </div>
       </div>
       <div class="form-group">

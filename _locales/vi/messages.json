@@ -31,10 +31,10 @@
     "message": "Xóa trang hiện tại"
   },
   "useAutoScroll": {
-    "message": "Dùng Compatibility Mode thay cho Standard"
+    "message": "Dùng tự động cuộn thay cho chặn kỹ thuật"
   },
   "autoScrollDesc": {
-    "message": "Cuộn xuống dưới để kích hoạt tải; phù hợp với các trang mà Standard thất bại"
+    "message": "Tự động cuộn xuống dưới để kích hoạt tải; phù hợp với các trang mà chặn kỹ thuật thất bại"
   },
   "configuredSites": {
     "message": "Các trang đã cấu hình"
@@ -52,7 +52,7 @@
     "message": "Đã thêm {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Đã thêm {domain} (Compatibility Mode)"
+    "message": "Đã thêm {domain} (Tự động cuộn)"
   },
   "siteRemoved": {
     "message": "Đã xóa {domain}"
@@ -61,16 +61,16 @@
     "message": "Đã xóa {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Đã bật Compatibility Mode"
+    "message": "Đã bật tự động cuộn"
   },
   "autoScrollDisabled": {
-    "message": "Đã tắt Compatibility Mode"
+    "message": "Đã tắt tự động cuộn"
   },
   "pageRefreshed": {
     "message": "Trang đã làm mới"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Tự động cuộn"
   },
   "settingsTitle": {
     "message": "Cài đặt - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Danh sách cấu hình trang"
   },
   "scrollSpeed": {
-    "message": "Tốc độ cuộn (giây)"
+    "message": "Tốc độ cuộn (ms)"
   },
   "stayDuration": {
-    "message": "Thời gian lưu lại (giây)"
+    "message": "Thời gian lưu lại (ms)"
   },
   "returnToTop": {
     "message": "Quay lại đầu trang sau khi hoàn tất"
   },
   "fallbackToScroll": {
-    "message": "Tự động dùng Compatibility Mode khi Standard thất bại",
+    "message": "Tự động dùng cuộn dự phòng khi chặn kỹ thuật thất bại",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Chưa có trang nào được cấu hình"
   },
   "autoScrollHelp": {
-    "message": "Khi bật, tắt Standard và kích hoạt tải bằng cách cuộn xuống dưới"
+    "message": "Khi bật, tắt chặn kỹ thuật và kích hoạt tải bằng cách tự động cuộn xuống dưới"
   },
   "scrollParams": {
-    "message": "Tham số Compatibility Mode"
+    "message": "Tham số tự động cuộn"
   },
   "saveGlobal": {
     "message": "Lưu cài đặt chung"
@@ -268,10 +268,10 @@
     "message": "Đã xóa"
   },
   "scrollEnabled": {
-    "message": "Đã bật Compatibility Mode"
+    "message": "Đã bật tự động cuộn"
   },
   "scrollDisabled": {
-    "message": "Đã tắt Compatibility Mode"
+    "message": "Đã tắt tự động cuộn"
   },
   "configImported": {
     "message": "Đã nhập cấu hình"

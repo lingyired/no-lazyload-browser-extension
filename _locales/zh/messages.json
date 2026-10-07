@@ -31,10 +31,10 @@
     "message": "移除当前网站"
   },
   "useAutoScroll": {
-    "message": "使用 Compatibility Mode 代替 Standard（适合 Standard 失效的网站）"
+    "message": "使用自动滚动代替技术拦截（适合拦截失败的网站）"
   },
   "autoScrollDesc": {
-    "message": "滚动到底部触发加载，适合 Standard 失效的网站"
+    "message": "自动滚动到底部触发加载，适合技术拦截失效的网站"
   },
   "configuredSites": {
     "message": "已配置的网站"
@@ -52,7 +52,7 @@
     "message": "已添加 {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "已添加 {domain}（Compatibility Mode）"
+    "message": "已添加 {domain}（自动滚动）"
   },
   "siteRemoved": {
     "message": "已移除 {domain}"
@@ -61,16 +61,16 @@
     "message": "已删除 {domain}"
   },
   "autoScrollEnabled": {
-    "message": "已开启 Compatibility Mode"
+    "message": "已开启自动滚动"
   },
   "autoScrollDisabled": {
-    "message": "已关闭 Compatibility Mode"
+    "message": "已关闭自动滚动"
   },
   "pageRefreshed": {
     "message": "页面已刷新"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "自动滚动"
   },
   "settingsTitle": {
     "message": "设置 - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "网站配置列表"
   },
   "scrollSpeed": {
-    "message": "滚动速度（秒）"
+    "message": "滚动速度（毫秒）"
   },
   "stayDuration": {
-    "message": "底部停留时间（秒）"
+    "message": "底部停留时间（毫秒）"
   },
   "returnToTop": {
     "message": "完成后返回页面顶部"
   },
   "fallbackToScroll": {
-    "message": "Standard 不生效时自动使用 Compatibility Mode",
+    "message": "技术拦截不生效时自动使用滚动兜底",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "暂无配置的网站"
   },
   "autoScrollHelp": {
-    "message": "开启后禁用 Standard，通过滚动到底部触发图片加载"
+    "message": "开启后禁用技术拦截，通过自动滚动到底部触发图片加载"
   },
   "scrollParams": {
-    "message": "Compatibility Mode 参数"
+    "message": "自动滚动参数"
   },
   "saveGlobal": {
     "message": "保存全局设置"
@@ -268,10 +268,10 @@
     "message": "已删除"
   },
   "scrollEnabled": {
-    "message": "已开启 Compatibility Mode"
+    "message": "已开启自动滚动"
   },
   "scrollDisabled": {
-    "message": "已关闭 Compatibility Mode"
+    "message": "已关闭自动滚动"
   },
   "configImported": {
     "message": "配置已导入"

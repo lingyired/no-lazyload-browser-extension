@@ -31,10 +31,10 @@
     "message": "Премахване на текущия сайт"
   },
   "useAutoScroll": {
-    "message": "Използвай Compatibility Mode вместо техническо блокиране"
+    "message": "Използвай автоматично превъртане вместо техническо блокиране"
   },
   "autoScrollDesc": {
-    "message": "Превъртете автоматично надолу, за да задействате зареждането; подходящо за сайтове, където Standard не сработва"
+    "message": "Превъртете автоматично надолу, за да задействате зареждането; подходящо за сайтове, където техническата блокировка не сработва"
   },
   "configuredSites": {
     "message": "Конфигурирани сайтове"
@@ -52,7 +52,7 @@
     "message": "Добавен {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Добавен {domain} (Compatibility Mode)"
+    "message": "Добавен {domain} (Автоматично превъртане)"
   },
   "siteRemoved": {
     "message": "Премахнат {domain}"
@@ -61,16 +61,16 @@
     "message": "Изтрит {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode е активирано"
+    "message": "Автоматичното превъртане е активирано"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode е деактивирано"
+    "message": "Автоматичното превъртане е деактивирано"
   },
   "pageRefreshed": {
     "message": "Страницата е опреснена"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Автоматично превъртане"
   },
   "settingsTitle": {
     "message": "Настройки - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Списък с конфигурации на сайтове"
   },
   "scrollSpeed": {
-    "message": "Скорост на превъртане (секунди)"
+    "message": "Скорост на превъртане (мс)"
   },
   "stayDuration": {
-    "message": "Продължителност на престоя (секунди)"
+    "message": "Продължителност на престоя (мс)"
   },
   "returnToTop": {
     "message": "Връщане нагоре след завършване"
   },
   "fallbackToScroll": {
-    "message": "Автоматично използвайте Compatibility Mode като резерв, когато Standard не сработва",
+    "message": "Автоматично използвайте превъртане като резерв, когато техническата блокировка не сработва",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Няма конфигурирани сайтове"
   },
   "autoScrollHelp": {
-    "message": "Когато е активирано, деактивира Standard и задейства зареждането с превъртане до долу"
+    "message": "Когато е активирано, деактивира техническото блокиране и задейства зареждането чрез автоматично превъртане до долу"
   },
   "scrollParams": {
-    "message": "Параметри за Compatibility Mode"
+    "message": "Параметри за автоматично превъртане"
   },
   "saveGlobal": {
     "message": "Запази глобалните настройки"
@@ -272,10 +272,10 @@
     "message": "Изтрито"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode е активирано"
+    "message": "Автоматичното превъртане е активирано"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode е деактивирано"
+    "message": "Автоматичното превъртане е деактивирано"
   },
   "configImported": {
     "message": "Конфигурацията е импортирана"

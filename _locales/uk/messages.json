@@ -31,10 +31,10 @@
     "message": "Видалити поточний сайт"
   },
   "useAutoScroll": {
-    "message": "Використовувати Compatibility Mode замість Standard"
+    "message": "Використовувати автопрокрутку замість технічного блокування"
   },
   "autoScrollDesc": {
-    "message": "Автоматично прокручуйте вниз, щоб запустити завантаження; підходить для сайтів, де Standard не спрацьовує"
+    "message": "Автоматично прокручуйте вниз, щоб запустити завантаження; підходить для сайтів, де технічне блокування не спрацьовує"
   },
   "configuredSites": {
     "message": "Налаштовані сайти"
@@ -52,7 +52,7 @@
     "message": "Додано {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Додано {domain} (Compatibility Mode)"
+    "message": "Додано {domain} (Автопрокрутка)"
   },
   "siteRemoved": {
     "message": "Видалено {domain}"
@@ -61,16 +61,16 @@
     "message": "Видалено {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode увімкнено"
+    "message": "Автопрокрутку увімкнено"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode вимкнено"
+    "message": "Автопрокрутку вимкнено"
   },
   "pageRefreshed": {
     "message": "Сторінку оновлено"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Автопрокрутка"
   },
   "settingsTitle": {
     "message": "Налаштування - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Список конфігурацій сайтів"
   },
   "scrollSpeed": {
-    "message": "Швидкість прокрутки (секунди)"
+    "message": "Швидкість прокрутки (мс)"
   },
   "stayDuration": {
-    "message": "Тривалість перебування (секунди)"
+    "message": "Тривалість перебування (мс)"
   },
   "returnToTop": {
     "message": "Повернутися догори після завершення"
   },
   "fallbackToScroll": {
-    "message": "Автоматично використовувати Compatibility Mode як запасний варіант, коли Standard не спрацьовує",
+    "message": "Автоматично використовувати прокрутку як запасний варіант, коли технічне блокування не спрацьовує",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Немає налаштованих сайтів"
   },
   "autoScrollHelp": {
-    "message": "Коли увімкнено, вимикає Standard та запускає завантаження автоматичною прокруткою донизу"
+    "message": "Коли увімкнено, вимикає технічне блокування та запускає завантаження автоматичною прокруткою донизу"
   },
   "scrollParams": {
-    "message": "Параметри Compatibility Mode"
+    "message": "Параметри автопрокрутки"
   },
   "saveGlobal": {
     "message": "Зберегти глобальні налаштування"
@@ -268,10 +268,10 @@
     "message": "Видалено"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode увімкнено"
+    "message": "Автопрокрутку увімкнено"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode вимкнено"
+    "message": "Автопрокрутку вимкнено"
   },
   "configImported": {
     "message": "Конфігурацію імпортовано"

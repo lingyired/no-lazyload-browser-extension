@@ -31,10 +31,10 @@
     "message": "Remover Site Atual"
   },
   "useAutoScroll": {
-    "message": "Usar Compatibility Mode em vez de Standard"
+    "message": "Usar rolagem automática em vez de bloqueio técnico"
   },
   "autoScrollDesc": {
-    "message": "Rolar até o final para acionar o carregamento, adequado para sites onde o Standard falha"
+    "message": "Rolar até o final para acionar o carregamento, adequado para sites onde o bloqueio técnico falha"
   },
   "configuredSites": {
     "message": "Sites Configurados"
@@ -52,7 +52,7 @@
     "message": "Adicionado {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Adicionado {domain} (Compatibility Mode)"
+    "message": "Adicionado {domain} (Rolagem Auto)"
   },
   "siteRemoved": {
     "message": "Removido {domain}"
@@ -61,16 +61,16 @@
     "message": "Excluído {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode ativado"
+    "message": "Rolagem automática ativada"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode desativado"
+    "message": "Rolagem automática desativada"
   },
   "pageRefreshed": {
     "message": "Página atualizada"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Rolagem Auto"
   },
   "settingsTitle": {
     "message": "Configurações - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Lista de Configuração de Sites"
   },
   "scrollSpeed": {
-    "message": "Velocidade (segundos)"
+    "message": "Velocidade (ms)"
   },
   "stayDuration": {
-    "message": "Duração de Estadia (segundos)"
+    "message": "Duração de Estadia (ms)"
   },
   "returnToTop": {
     "message": "Voltar ao topo ao concluir"
   },
   "fallbackToScroll": {
-    "message": "Usar Compatibility Mode quando o Standard Falhar",
+    "message": "Usar Rolagem Automática quando o Bloqueio Técnico Falhar",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -247,10 +247,10 @@
     "message": "Nenhum site configurado"
   },
   "autoScrollHelp": {
-    "message": "Desativa o Standard e ativa o carregamento rolando até o final"
+    "message": "Desativa o bloqueio técnico e ativa o carregamento rolando até o final"
   },
   "scrollParams": {
-    "message": "Parâmetros de Compatibility Mode"
+    "message": "Parâmetros de Rolagem"
   },
   "saveGlobal": {
     "message": "Salvar Configurações"
@@ -271,10 +271,10 @@
     "message": "Excluído"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode ativado"
+    "message": "Rolagem automática ativada"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode desativado"
+    "message": "Rolagem automática desativada"
   },
   "configImported": {
     "message": "Configuração importada"

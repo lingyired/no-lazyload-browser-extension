@@ -34,10 +34,10 @@
     "message": "Aktuelle Seite Entfernen"
   },
   "useAutoScroll": {
-    "message": "Compatibility Mode statt Standard"
+    "message": "Automatisches Scrollen statt technischer Blockierung"
   },
   "autoScrollDesc": {
-    "message": "Nach unten scrollen zum Laden auslösen, geeignet für Seiten bei denen Standard fehlschlägt"
+    "message": "Nach unten scrollen zum Laden auslösen, geeignet für Seiten bei denen das technische Blockieren fehlschlägt"
   },
   "configuredSites": {
     "message": "Konfigurierte Seiten"
@@ -55,7 +55,7 @@
     "message": "{domain} Hinzugefügt"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} Hinzugefügt (Compatibility Mode)"
+    "message": "{domain} Hinzugefügt (Auto-Scroll)"
   },
   "siteRemoved": {
     "message": "{domain} Entfernt"
@@ -64,16 +64,16 @@
     "message": "{domain} Gelöscht"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode aktiviert"
+    "message": "Automatisches Scrollen aktiviert"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode deaktiviert"
+    "message": "Automatisches Scrollen deaktiviert"
   },
   "pageRefreshed": {
     "message": "Seite aktualisiert"
   },
   "autoScroll": {
-    "message": "Compatibility Mode-Parameter"
+    "message": "Auto-Scroll"
   },
   "settingsTitle": {
     "message": "Einstellungen - No Lazyload",
@@ -83,16 +83,16 @@
     "message": "Website-Konfigurationsliste"
   },
   "scrollSpeed": {
-    "message": "Geschwindigkeit (Sekunden)"
+    "message": "Geschwindigkeit (ms)"
   },
   "stayDuration": {
-    "message": "Verweildauer (Sekunden)"
+    "message": "Verweildauer (ms)"
   },
   "returnToTop": {
     "message": "Nach Abschluss nach oben zurückkehren"
   },
   "fallbackToScroll": {
-    "message": "Compatibility Mode verwenden wenn Standard fehlschlägt",
+    "message": "Automatisches Scrollen verwenden wenn technisches Blockieren fehlschlägt",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -250,10 +250,10 @@
     "message": "Keine konfigurierten Seiten"
   },
   "autoScrollHelp": {
-    "message": "Deaktiviert Standard und lädt durch Scrollen nach unten"
+    "message": "Deaktiviert technische Blockierung und lädt durch Scrollen"
   },
   "scrollParams": {
-    "message": "Compatibility Mode"
+    "message": "Scroll-Parameter"
   },
   "saveGlobal": {
     "message": "Einstellungen Speichern"
@@ -274,10 +274,10 @@
     "message": "Gelöscht"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode aktiviert"
+    "message": "Automatisches Scrollen aktiviert"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode deaktiviert"
+    "message": "Automatisches Scrollen deaktiviert"
   },
   "configImported": {
     "message": "Konfiguration importiert"

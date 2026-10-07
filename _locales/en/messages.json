@@ -31,10 +31,10 @@
     "message": "Remove Current Site"
   },
   "useAutoScroll": {
-    "message": "Use Compatibility Mode instead of Standard (for sites where blocking fails)"
+    "message": "Use auto-scroll instead of tech blocking (for sites where blocking fails)"
   },
   "autoScrollDesc": {
-    "message": "Scroll to the bottom to trigger loading, suitable for sites where Standard fails"
+    "message": "Auto-scroll to bottom to trigger loading, suitable for sites where tech blocking fails"
   },
   "configuredSites": {
     "message": "Configured Sites"
@@ -52,7 +52,7 @@
     "message": "Added {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Added {domain} (Compatibility Mode)"
+    "message": "Added {domain} (Auto-scroll)"
   },
   "siteRemoved": {
     "message": "Removed {domain}"
@@ -61,16 +61,16 @@
     "message": "Deleted {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode enabled"
+    "message": "Auto-scroll enabled"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode disabled"
+    "message": "Auto-scroll disabled"
   },
   "pageRefreshed": {
     "message": "Page refreshed"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Auto-scroll"
   },
   "settingsTitle": {
     "message": "Settings - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Site Configuration List"
   },
   "scrollSpeed": {
-    "message": "Scroll Speed (seconds)"
+    "message": "Scroll Speed (ms)"
   },
   "stayDuration": {
-    "message": "Stay Duration at Bottom (seconds)"
+    "message": "Stay Duration at Bottom (ms)"
   },
   "returnToTop": {
     "message": "Return to top when complete"
   },
   "fallbackToScroll": {
-    "message": "Auto-use Compatibility Mode when Standard fails",
+    "message": "Auto-use Scroll Fallback When Tech Block Fails",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "No configured sites"
   },
   "autoScrollHelp": {
-    "message": "When enabled, disables Standard and triggers image loading by scrolling to the bottom"
+    "message": "When enabled, disables tech blocking and triggers image loading by auto-scrolling to bottom"
   },
   "scrollParams": {
-    "message": "Compatibility Mode Parameters"
+    "message": "Auto-scroll Parameters"
   },
   "saveGlobal": {
     "message": "Save Global Settings"
@@ -272,10 +272,10 @@
     "message": "Deleted"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode enabled"
+    "message": "Auto-scroll enabled"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode disabled"
+    "message": "Auto-scroll disabled"
   },
   "configImported": {
     "message": "Config imported"

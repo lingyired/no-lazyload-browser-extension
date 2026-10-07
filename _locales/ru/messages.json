@@ -31,10 +31,10 @@
     "message": "Удалить Текущий Сайт"
   },
   "useAutoScroll": {
-    "message": "Использовать Compatibility Mode вместо Standard"
+    "message": "Использовать автопрокрутку вместо технической блокировки"
   },
   "autoScrollDesc": {
-    "message": "Прокрутить вниз для активации загрузки, подходит для сайтов где Standard не работает"
+    "message": "Прокрутить вниз для активации загрузки, подходит для сайтов где техническая блокировка не работает"
   },
   "configuredSites": {
     "message": "Настроенные Сайты"
@@ -52,7 +52,7 @@
     "message": "Добавлен {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Добавлен {domain} (Compatibility Mode)"
+    "message": "Добавлен {domain} (Автопрокрутка)"
   },
   "siteRemoved": {
     "message": "Удалён {domain}"
@@ -61,16 +61,16 @@
     "message": "Удалён {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode включена"
+    "message": "Автопрокрутка включена"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode выключена"
+    "message": "Автопрокрутка выключена"
   },
   "pageRefreshed": {
     "message": "Страница обновлена"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Автопрокрутка"
   },
   "settingsTitle": {
     "message": "Настройки - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Список Конфигурации Сайтов"
   },
   "scrollSpeed": {
-    "message": "Скорость (секунды)"
+    "message": "Скорость (мс)"
   },
   "stayDuration": {
-    "message": "Время Остановки (секунды)"
+    "message": "Время Остановки (мс)"
   },
   "returnToTop": {
     "message": "Вернуться наверх по завершении"
   },
   "fallbackToScroll": {
-    "message": "Использовать Compatibility Mode при неудаче Standard",
+    "message": "Использовать Автопрокрутку При Неудаче Технической Блокировки",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Нет настроенных сайтов"
   },
   "autoScrollHelp": {
-    "message": "Отключает Standard и загружает прокруткой вниз"
+    "message": "Отключает техническую блокировку и загружает прокруткой"
   },
   "scrollParams": {
-    "message": "Параметры Compatibility Mode"
+    "message": "Параметры Автопрокрутки"
   },
   "saveGlobal": {
     "message": "Сохранить Настройки"
@@ -268,10 +268,10 @@
     "message": "Удалено"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode включена"
+    "message": "Автопрокрутка включена"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode выключена"
+    "message": "Автопрокрутка выключена"
   },
   "configImported": {
     "message": "Конфигурация импортирована"

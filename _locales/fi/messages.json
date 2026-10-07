@@ -31,10 +31,10 @@
     "message": "Poista nykyinen sivusto"
   },
   "useAutoScroll": {
-    "message": "Käytä Compatibility Mode Standard sijaan"
+    "message": "Käytä automaattista vieritystä teknisen eston sijaan"
   },
   "autoScrollDesc": {
-    "message": "Vieritä automaattisesti alas käynnistääksesi lataamisen; sopii sivustoille, joissa Standard epäonnistuu"
+    "message": "Vieritä automaattisesti alas käynnistääksesi lataamisen; sopii sivustoille, joissa tekninen esto epäonnistuu"
   },
   "configuredSites": {
     "message": "Määritetyt sivustot"
@@ -52,7 +52,7 @@
     "message": "Lisätty {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Lisätty {domain} (Compatibility Mode)"
+    "message": "Lisätty {domain} (Automaattinen vieritys)"
   },
   "siteRemoved": {
     "message": "Poistettu {domain}"
@@ -61,16 +61,16 @@
     "message": "Poistettu {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode käytössä"
+    "message": "Automaattinen vieritys käytössä"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode pois käytöstä"
+    "message": "Automaattinen vieritys pois käytöstä"
   },
   "pageRefreshed": {
     "message": "Sivu päivitetty"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Automaattinen vieritys"
   },
   "settingsTitle": {
     "message": "Asetukset - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Sivuston määritysluettelo"
   },
   "scrollSpeed": {
-    "message": "Vieritysnopeus (sekuntia)"
+    "message": "Vieritysnopeus (ms)"
   },
   "stayDuration": {
-    "message": "Viipymisaika (sekuntia)"
+    "message": "Viipymisaika (ms)"
   },
   "returnToTop": {
     "message": "Palaa ylös valmistumisen jälkeen"
   },
   "fallbackToScroll": {
-    "message": "Käytä automaattisesti Compatibility Mode varana, kun Standard epäonnistuu",
+    "message": "Käytä automaattisesti vieritystä varana, kun tekninen esto epäonnistuu",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Ei määritettyjä sivustoja"
   },
   "autoScrollHelp": {
-    "message": "Kun käytössä, poistaa Standard käytöstä ja käynnistää lataamisen vierittämällä alas"
+    "message": "Kun käytössä, poistaa teknisen eston käytöstä ja käynnistää lataamisen vierittämällä alas"
   },
   "scrollParams": {
-    "message": "Compatibility Mode -parametrit"
+    "message": "Automaattisen vierityksen parametrit"
   },
   "saveGlobal": {
     "message": "Tallenna yleiset asetukset"
@@ -272,10 +272,10 @@
     "message": "Poistettu"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode käytössä"
+    "message": "Automaattinen vieritys käytössä"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode pois käytöstä"
+    "message": "Automaattinen vieritys pois käytöstä"
   },
   "configImported": {
     "message": "Kokoonpano tuotu"

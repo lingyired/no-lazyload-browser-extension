@@ -31,10 +31,10 @@
     "message": "वर्तमान साइट हटाएं"
   },
   "useAutoScroll": {
-    "message": "Standard के बजाय Compatibility Mode का उपयोग करें"
+    "message": "तकनीकी ब्लॉकिंग के बजाय ऑटो-स्क्रॉल का उपयोग करें"
   },
   "autoScrollDesc": {
-    "message": "लोड ट्रिगर करने के लिए नीचे स्क्रॉल करें, Standard विफल होने पर उपयुक्त"
+    "message": "लोड ट्रिगर करने के लिए नीचे स्क्रॉल करें, तकनीकी ब्लॉकिंग विफल होने पर उपयुक्त"
   },
   "configuredSites": {
     "message": "कॉन्फ़िगर की गई साइटें"
@@ -52,7 +52,7 @@
     "message": "{domain} जोड़ा गया"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} जोड़ा गया (Compatibility Mode)"
+    "message": "{domain} जोड़ा गया (ऑटो-स्क्रॉल)"
   },
   "siteRemoved": {
     "message": "{domain} हटाया गया"
@@ -61,16 +61,16 @@
     "message": "{domain} हटाया गया"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode सक्षम"
+    "message": "ऑटो-स्क्रॉल सक्षम"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode अक्षम"
+    "message": "ऑटो-स्क्रॉल अक्षम"
   },
   "pageRefreshed": {
     "message": "पेज रिफ्रेश किया गया"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "ऑटो-स्क्रॉल"
   },
   "settingsTitle": {
     "message": "सेटिंग्स - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "वेबसाइट कॉन्फ़िगरेशन सूची"
   },
   "scrollSpeed": {
-    "message": "स्क्रॉल गति (सेकंड)"
+    "message": "स्क्रॉल गति (मि.से.)"
   },
   "stayDuration": {
-    "message": "रुकने की अवधि (सेकंड)"
+    "message": "रुकने की अवधि (मि.से.)"
   },
   "returnToTop": {
     "message": "पूर्ण होने पर ऊपर जाएं"
   },
   "fallbackToScroll": {
-    "message": "Standard विफल होने पर Compatibility Mode का उपयोग करें",
+    "message": "तकनीकी ब्लॉकिंग विफल होने पर ऑटो-स्क्रॉल का उपयोग करें",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "कोई कॉन्फ़िगर की गई साइट नहीं"
   },
   "autoScrollHelp": {
-    "message": "Standard को अक्षम करता है और नीचे स्क्रॉल करके लोड करता है"
+    "message": "तकनीकी ब्लॉकिंग को अक्षम करता है और नीचे स्क्रॉल करके लोड करता है"
   },
   "scrollParams": {
-    "message": "Compatibility Mode पैरामीटर"
+    "message": "ऑटो-स्क्रॉल पैरामीटर"
   },
   "saveGlobal": {
     "message": "सेटिंग्स सहेजें"
@@ -268,10 +268,10 @@
     "message": "हटाया गया"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode सक्षम"
+    "message": "ऑटो-स्क्रॉल सक्षम"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode अक्षम"
+    "message": "ऑटो-स्क्रॉल अक्षम"
   },
   "configImported": {
     "message": "कॉन्फ़िगरेशन आयात किया गया"

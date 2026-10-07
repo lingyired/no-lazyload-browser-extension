@@ -31,10 +31,10 @@
     "message": "Usuń bieżącą stronę"
   },
   "useAutoScroll": {
-    "message": "Użyj Compatibility Mode zamiast Standard"
+    "message": "Użyj automatycznego przewijania zamiast blokady technicznej"
   },
   "autoScrollDesc": {
-    "message": "Automatycznie przewiń do dołu, aby wyzwolić ładowanie; przydatne na stronach, gdzie Standard zawodzi"
+    "message": "Automatycznie przewiń do dołu, aby wyzwolić ładowanie; przydatne na stronach, gdzie blokada techniczna zawodzi"
   },
   "configuredSites": {
     "message": "Skonfigurowane strony"
@@ -52,7 +52,7 @@
     "message": "Dodano {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Dodano {domain} (Compatibility Mode)"
+    "message": "Dodano {domain} (Autoprzewijanie)"
   },
   "siteRemoved": {
     "message": "Usunięto {domain}"
@@ -61,16 +61,16 @@
     "message": "Usunięto {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode włączone"
+    "message": "Autoprzewijanie włączone"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode wyłączone"
+    "message": "Autoprzewijanie wyłączone"
   },
   "pageRefreshed": {
     "message": "Strona odświeżona"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Autoprzewijanie"
   },
   "settingsTitle": {
     "message": "Ustawienia - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Lista konfiguracji stron"
   },
   "scrollSpeed": {
-    "message": "Prędkość przewijania (sekundy)"
+    "message": "Prędkość przewijania (ms)"
   },
   "stayDuration": {
-    "message": "Czas pozostawania (sekundy)"
+    "message": "Czas pozostawania (ms)"
   },
   "returnToTop": {
     "message": "Powrót do góry po zakończeniu"
   },
   "fallbackToScroll": {
-    "message": "Automatycznie użyj Compatibility Mode jako rozwiązania zastępczego, gdy Standard zawodzi",
+    "message": "Automatycznie użyj przewijania jako rozwiązania zastępczego, gdy blokada techniczna zawodzi",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -244,10 +244,10 @@
     "message": "Brak skonfigurowanych stron"
   },
   "autoScrollHelp": {
-    "message": "Po włączeniu wyłącza Standard i wyzwala ładowanie przez przewijanie do dołu"
+    "message": "Po włączeniu wyłącza blokadę techniczną i wyzwala ładowanie przez automatyczne przewijanie do dołu"
   },
   "scrollParams": {
-    "message": "Parametry Compatibility Mode"
+    "message": "Parametry automatycznego przewijania"
   },
   "saveGlobal": {
     "message": "Zapisz ustawienia globalne"
@@ -268,10 +268,10 @@
     "message": "Usunięto"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode włączone"
+    "message": "Autoprzewijanie włączone"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode wyłączone"
+    "message": "Autoprzewijanie wyłączone"
   },
   "configImported": {
     "message": "Konfiguracja zaimportowana"

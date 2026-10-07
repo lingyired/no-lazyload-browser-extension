@@ -31,10 +31,10 @@
     "message": "Elimina el lloc actual"
   },
   "useAutoScroll": {
-    "message": "Fes servir Compatibility Mode en lloc de Standard"
+    "message": "Fes servir el desplaçament automàtic en lloc del bloqueig tècnic"
   },
   "autoScrollDesc": {
-    "message": "Desplaça automàticament cap avall per activar la càrrega; adequat per a llocs on Standard falla"
+    "message": "Desplaça automàticament cap avall per activar la càrrega; adequat per a llocs on el bloqueig tècnic falla"
   },
   "configuredSites": {
     "message": "Llocs configurats"
@@ -52,7 +52,7 @@
     "message": "Afegit {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Afegit {domain} (Compatibility Mode)"
+    "message": "Afegit {domain} (Desplaçament automàtic)"
   },
   "siteRemoved": {
     "message": "Eliminat {domain}"
@@ -61,16 +61,16 @@
     "message": "Suprimit {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode habilitat"
+    "message": "Desplaçament automàtic habilitat"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode inhabilitat"
+    "message": "Desplaçament automàtic inhabilitat"
   },
   "pageRefreshed": {
     "message": "Pàgina actualitzada"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Desplaçament automàtic"
   },
   "settingsTitle": {
     "message": "Configuració - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Llista de configuració de llocs"
   },
   "scrollSpeed": {
-    "message": "Velocitat de desplaçament (segons)"
+    "message": "Velocitat de desplaçament (ms)"
   },
   "stayDuration": {
-    "message": "Durada de l'estada (segons)"
+    "message": "Durada de l'estada (ms)"
   },
   "returnToTop": {
     "message": "Torna a dalt en acabar"
   },
   "fallbackToScroll": {
-    "message": "Fes servir automàticament Compatibility Mode com a alternativa quan Standard falla",
+    "message": "Fes servir automàticament el desplaçament com a alternativa quan el bloqueig tècnic falla",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Cap lloc configurat"
   },
   "autoScrollHelp": {
-    "message": "Quan està activat, desactiva Standard i activa la càrrega desplaçant-se al final"
+    "message": "Quan està activat, desactiva el bloqueig tècnic i activa la càrrega mitjançant el desplaçament automàtic al final"
   },
   "scrollParams": {
-    "message": "Paràmetres de Compatibility Mode"
+    "message": "Paràmetres de desplaçament automàtic"
   },
   "saveGlobal": {
     "message": "Desa la configuració global"
@@ -272,10 +272,10 @@
     "message": "Suprimit"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode habilitat"
+    "message": "Desplaçament automàtic activat"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode inhabilitat"
+    "message": "Desplaçament automàtic desactivat"
   },
   "configImported": {
     "message": "Configuració importada"

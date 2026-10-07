@@ -31,10 +31,10 @@
     "message": "Huidige site verwijderen"
   },
   "useAutoScroll": {
-    "message": "Gebruik Compatibility Mode in plaats van Standard"
+    "message": "Gebruik automatisch scrollen in plaats van technische blokkering"
   },
   "autoScrollDesc": {
-    "message": "Scroll automatisch naar beneden om laden te activeren; geschikt voor sites waar Standard faalt"
+    "message": "Scroll automatisch naar beneden om laden te activeren; geschikt voor sites waar technische blokkering faalt"
   },
   "configuredSites": {
     "message": "Geconfigureerde sites"
@@ -52,7 +52,7 @@
     "message": "{domain} toegevoegd"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} toegevoegd (Compatibility Mode)"
+    "message": "{domain} toegevoegd (Automatisch scrollen)"
   },
   "siteRemoved": {
     "message": "{domain} verwijderd"
@@ -61,16 +61,16 @@
     "message": "{domain} verwijderd"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode ingeschakeld"
+    "message": "Automatisch scrollen ingeschakeld"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode uitgeschakeld"
+    "message": "Automatisch scrollen uitgeschakeld"
   },
   "pageRefreshed": {
     "message": "Pagina vernieuwd"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Automatisch scrollen"
   },
   "settingsTitle": {
     "message": "Instellingen - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Lijst met siteconfiguraties"
   },
   "scrollSpeed": {
-    "message": "Scrollsnelheid (seconden)"
+    "message": "Scrollsnelheid (ms)"
   },
   "stayDuration": {
-    "message": "Verblijfsduur (seconden)"
+    "message": "Verblijfsduur (ms)"
   },
   "returnToTop": {
     "message": "Keer na voltooiing naar boven"
   },
   "fallbackToScroll": {
-    "message": "Gebruik Compatibility Mode als terugval wanneer Standard faalt",
+    "message": "Gebruik automatisch scrollen als terugval wanneer technische blokkering faalt",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -247,10 +247,10 @@
     "message": "Geen geconfigureerde sites"
   },
   "autoScrollHelp": {
-    "message": "Wanneer ingeschakeld, schakelt het Standard uit en activeert het laden door naar beneden te scrollen"
+    "message": "Wanneer ingeschakeld, schakelt het technische blokkering uit en activeert het laden door automatisch naar beneden te scrollen"
   },
   "scrollParams": {
-    "message": "Parameters voor Compatibility Mode"
+    "message": "Parameters voor automatisch scrollen"
   },
   "saveGlobal": {
     "message": "Sla globale instellingen op"
@@ -271,10 +271,10 @@
     "message": "Verwijderd"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode ingeschakeld"
+    "message": "Automatisch scrollen ingeschakeld"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode uitgeschakeld"
+    "message": "Automatisch scrollen uitgeschakeld"
   },
   "configImported": {
     "message": "Configuratie geïmporteerd"

@@ -31,10 +31,10 @@
     "message": "현재 사이트 제거"
   },
   "useAutoScroll": {
-    "message": "Standard 대신 Compatibility Mode 사용 (차단이 실패하는 사이트에 적합)"
+    "message": "기술 차단 대신 자동 스크롤 사용 (차단이 실패하는 사이트에 적합)"
   },
   "autoScrollDesc": {
-    "message": "하단까지 스크롤하여 로딩을 트리거합니다. Standard가 실패하는 사이트에 적합합니다"
+    "message": "하단까지 자동 스크롤하여 로딩을 트리거합니다. 기술적 차단이 실패하는 사이트에 적합합니다"
   },
   "configuredSites": {
     "message": "설정된 사이트"
@@ -52,7 +52,7 @@
     "message": "{domain} 추가됨"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} 추가됨 (Compatibility Mode)"
+    "message": "{domain} 추가됨 (자동 스크롤)"
   },
   "siteRemoved": {
     "message": "{domain} 제거됨"
@@ -61,16 +61,16 @@
     "message": "{domain} 삭제됨"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode 활성화됨"
+    "message": "자동 스크롤 활성화됨"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode 비활성화됨"
+    "message": "자동 스크롤 비활성화됨"
   },
   "pageRefreshed": {
     "message": "페이지가 새로고침되었습니다"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "자동 스크롤"
   },
   "settingsTitle": {
     "message": "설정 - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "사이트 설정 목록"
   },
   "scrollSpeed": {
-    "message": "스크롤 속도 (초)"
+    "message": "스크롤 속도 (밀리초)"
   },
   "stayDuration": {
-    "message": "하단 체류 시간 (초)"
+    "message": "하단 체류 시간 (밀리초)"
   },
   "returnToTop": {
     "message": "완료 후 상단으로 돌아가기"
   },
   "fallbackToScroll": {
-    "message": "Standard 실패 시 Compatibility Mode 사용",
+    "message": "기술적 차단 실패 시 자동 스크롤 사용",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -247,10 +247,10 @@
     "message": "설정된 사이트가 없습니다"
   },
   "autoScrollHelp": {
-    "message": "활성화 시 Standard을 비활성화하고 하단까지 스크롤하여 이미지 로딩을 트리거합니다"
+    "message": "활성화 시 기술 차단을 비활성화하고 하단까지 자동 스크롤하여 이미지 로딩을 트리거합니다"
   },
   "scrollParams": {
-    "message": "Compatibility Mode 매개변수"
+    "message": "자동 스크롤 매개변수"
   },
   "saveGlobal": {
     "message": "전체 설정 저장"
@@ -271,10 +271,10 @@
     "message": "삭제됨"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode 활성화됨"
+    "message": "자동 스크롤 활성화됨"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode 비활성화됨"
+    "message": "자동 스크롤 비활성화됨"
   },
   "configImported": {
     "message": "설정을 가져왔습니다"

@@ -31,10 +31,10 @@
     "message": "Fjern gjeldende nettsted"
   },
   "useAutoScroll": {
-    "message": "Bruk Compatibility Mode i stedet for Standard"
+    "message": "Bruk automatisk rulling i stedet for teknisk blokkering"
   },
   "autoScrollDesc": {
-    "message": "Rull automatisk til bunnen for å utløse lasting; egnet for nettsteder der Standard feiler"
+    "message": "Rull automatisk til bunnen for å utløse lasting; egnet for nettsteder der teknisk blokkering feiler"
   },
   "configuredSites": {
     "message": "Konfigurerte nettsteder"
@@ -52,7 +52,7 @@
     "message": "Lagt til {domain}"
   },
   "siteAddedWithScroll": {
-    "message": "Lagt til {domain} (Compatibility Mode)"
+    "message": "Lagt til {domain} (Automatisk rulling)"
   },
   "siteRemoved": {
     "message": "Fjernet {domain}"
@@ -61,16 +61,16 @@
     "message": "Slettet {domain}"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode aktivert"
+    "message": "Automatisk rulling aktivert"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode deaktivert"
+    "message": "Automatisk rulling deaktivert"
   },
   "pageRefreshed": {
     "message": "Siden oppdatert"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "Automatisk rulling"
   },
   "settingsTitle": {
     "message": "Innstillinger - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "Liste over nettstedskonfigurasjoner"
   },
   "scrollSpeed": {
-    "message": "Rullehastighet (sekunder)"
+    "message": "Rullehastighet (ms)"
   },
   "stayDuration": {
-    "message": "Oppholdstid (sekunder)"
+    "message": "Oppholdstid (ms)"
   },
   "returnToTop": {
     "message": "Tilbake til toppen etter fullføring"
   },
   "fallbackToScroll": {
-    "message": "Bruk Compatibility Mode som reserve når Standard feiler",
+    "message": "Bruk automatisk rulling som reserve når teknisk blokkering feiler",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "Ingen konfigurerte nettsteder"
   },
   "autoScrollHelp": {
-    "message": "Når aktivert, deaktiverer Standard og utløser lasting ved å rulle til bunnen"
+    "message": "Når aktivert, deaktiverer teknisk blokkering og utløser lasting ved automatisk å rulle til bunnen"
   },
   "scrollParams": {
-    "message": "Parametere for Compatibility Mode"
+    "message": "Parametere for automatisk rulling"
   },
   "saveGlobal": {
     "message": "Lagre globale innstillinger"
@@ -272,10 +272,10 @@
     "message": "Slettet"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode aktivert"
+    "message": "Automatisk rulling aktivert"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode deaktivert"
+    "message": "Automatisk rulling deaktivert"
   },
   "configImported": {
     "message": "Konfigurasjon importert"

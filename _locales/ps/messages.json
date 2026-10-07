@@ -31,10 +31,10 @@
     "message": "اوسنی سایټ لرې کړئ"
   },
   "useAutoScroll": {
-    "message": "د Standard پر ځای Compatibility Mode وکاروئ"
+    "message": "د تخنیکي بندیز پر ځای اتوماتیک سکرول وکاروئ"
   },
   "autoScrollDesc": {
-    "message": "د بار کولو د فعالولو لپاره اتوماتیک ښکته سکرول کړئ؛ د هغو سایټونو لپاره مناسب چیرې چې Standard ناکامیږي"
+    "message": "د بار کولو د فعالولو لپاره اتوماتیک ښکته سکرول کړئ؛ د هغو سایټونو لپاره مناسب چیرې چې تخنیکي بندیز ناکامیږي"
   },
   "configuredSites": {
     "message": "ترتیب شوي سایټونه"
@@ -52,7 +52,7 @@
     "message": "{domain} زیات شو"
   },
   "siteAddedWithScroll": {
-    "message": "{domain} زیات شو (Compatibility Mode)"
+    "message": "{domain} زیات شو (اتوماتیک سکرول)"
   },
   "siteRemoved": {
     "message": "{domain} لرې شو"
@@ -61,16 +61,16 @@
     "message": "{domain} ګذارل شو"
   },
   "autoScrollEnabled": {
-    "message": "Compatibility Mode فعال دی"
+    "message": "اتوماتیک سکرول فعال دی"
   },
   "autoScrollDisabled": {
-    "message": "Compatibility Mode غیر فعال دی"
+    "message": "اتوماتیک سکرول غیر فعال دی"
   },
   "pageRefreshed": {
     "message": "پاڼه تازه شوه"
   },
   "autoScroll": {
-    "message": "Compatibility Mode"
+    "message": "اتوماتیک سکرول"
   },
   "settingsTitle": {
     "message": "تنظیمات - No Lazyload",
@@ -80,16 +80,16 @@
     "message": "د سایټ د تنظیماتو لیست"
   },
   "scrollSpeed": {
-    "message": "د سکرول سرعت (ثانیې)"
+    "message": "د سکرول سرعت (ملی ثانیه)"
   },
   "stayDuration": {
-    "message": "د ځایډیروالی موده (ثانیې)"
+    "message": "د ځایډیروالی موده (ملی ثانیه)"
   },
   "returnToTop": {
     "message": "د بشپړیدو وروسته پورته ته راستون شئ"
   },
   "fallbackToScroll": {
-    "message": "کله چې Standard ناکام شي، Compatibility Mode د ژغور په توګه وکاروئ",
+    "message": "کله چې تخنیکي بندیز ناکام شي، اتوماتیک سکرول د ژغور په توګه وکاروئ",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -248,10 +248,10 @@
     "message": "هیڅ ترتیب شوی سایټ نشته"
   },
   "autoScrollHelp": {
-    "message": "کله چې فعال شي، Standard نافعالوي او د ښکته سکرول سره بارول پیلوي"
+    "message": "کله چې فعال شي، تخنیکي بندیز نافعالوي او د ښکته اتوماتیک سکرول سره بارول پیلوي"
   },
   "scrollParams": {
-    "message": "د Compatibility Mode پارامترونه"
+    "message": "د اتوماتیک سکرول پارامترونه"
   },
   "saveGlobal": {
     "message": "نړیوالې تنظیمات خوندي کړئ"
@@ -272,10 +272,10 @@
     "message": "ړنګ شو"
   },
   "scrollEnabled": {
-    "message": "Compatibility Mode فعال دی"
+    "message": "اتوماتیک سکرول فعال شو"
   },
   "scrollDisabled": {
-    "message": "Compatibility Mode غیر فعال دی"
+    "message": "اتوماتیک سکرول غیر فعال شو"
   },
   "configImported": {
     "message": "کنفیگریشن درآمد شو"
