@@ -120,6 +120,42 @@ async function roundtrip() {
   document.body.appendChild(pre);
 }
 
+// ?times=1 验证 D4：界面用秒、存储仍毫秒，保存后回读一致。
+async function timesCheck() {
+  const rt = window.chrome.runtime;
+  const speedEl = document.getElementById('scrollSpeed');
+  const stayEl = document.getElementById('stayDuration');
+  const rows = [];
+  rows.push('initial labels=' + speedEl.previousElementSibling.textContent
+    + ' / ' + stayEl.previousElementSibling.textContent);
+  rows.push('initial inputs=' + speedEl.value + ' / ' + stayEl.value);
+
+  await window.saveGlobalSettings();
+  const stored = (await rt.sendMessage({ type: 'GET_GLOBAL_CONFIG' })).data;
+  rows.push('stored ms=' + stored.scrollSpeed + ' / ' + stored.stayDuration);
+
+  await window.loadGlobalSettings();
+  rows.push('reread inputs=' + speedEl.value + ' / ' + stayEl.value);
+
+  // 非整数秒也不能丢精度
+  speedEl.value = '0.25';
+  stayEl.value = '1.5';
+  await window.saveGlobalSettings();
+  const stored2 = (await rt.sendMessage({ type: 'GET_GLOBAL_CONFIG' })).data;
+  await window.loadGlobalSettings();
+  rows.push('0.25/1.5 -> ms=' + stored2.scrollSpeed + '/' + stored2.stayDuration
+    + ' reread=' + speedEl.value + '/' + stayEl.value);
+
+  const pre = document.createElement('pre');
+  pre.id = 'times-report';
+  pre.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#ff0;color:#000;font-size:11px;padding:4px;margin:0;white-space:pre-wrap';
+  pre.textContent = rows.join(' | ') + ' errors=' + JSON.stringify(window.__ERR__);
+  document.body.appendChild(pre);
+}
+if (params.get('times') === '1') {
+  document.addEventListener('DOMContentLoaded', function () { setTimeout(timesCheck, 200); });
+}
+
 if (params.get('measure') === '1') setTimeout(showErrors, 800);
 if (params.get('roundtrip') === '1') {
   document.addEventListener('DOMContentLoaded', function () { setTimeout(roundtrip, 200); });
