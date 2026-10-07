@@ -17,7 +17,7 @@
     delete sites['example.com'];
     delete sites['news.example.org'];
   }
-  if (state === 'pro' || state === 'unrestricted') {
+  if (state === 'pro' || state === 'unrestricted' || state === 'notice') {
     sites['blog.example.net'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 1 };
   }
 
@@ -28,7 +28,13 @@
     empty: { entitlements: [], isLimitEnforced: true, licenseMode: 'free', storageAvailable: true },
     limit: { entitlements: [], isLimitEnforced: true, licenseMode: 'free', storageAvailable: true },
     unavailable: { entitlements: [], isLimitEnforced: true, licenseMode: 'free', storageAvailable: false },
+    notice: { entitlements: ['unlimitedSites'], isLimitEnforced: true, licenseMode: 'pro', storageAvailable: true },
   }[state];
+
+  // state=notice 模拟"买完 Pro 回来"：background 已补做第 4 个网站，并留下一次性提示
+  let noticeData = state === 'notice'
+    ? { type: 'pendingSiteAdded', domain: 'blog.example.net', at: 1700000000000 }
+    : null;
 
   const limitHit = state === 'limit';
 
@@ -38,7 +44,7 @@
         return { success: true, data: JSON.parse(JSON.stringify(sites)) };
       case 'getEntitlements':
       case 'refreshEntitlements':
-        return Object.assign({ success: true, pendingAction: null, notice: null }, entitlement);
+        return Object.assign({ success: true, pendingAction: null, notice: noticeData }, entitlement);
       case 'SET_SITE_CONFIG':
         if (limitHit && !sites[message.domain] && entitlement.entitlements.length === 0) {
           return { success: false, error: 'LIMIT_REACHED' };
@@ -53,6 +59,8 @@
         delete sites[message.domain];
         return { success: true };
       case 'ackEntitlementNotice':
+        window.__ACK_COUNT__ = (window.__ACK_COUNT__ || 0) + 1;
+        noticeData = null;   // 一次性：ACK 之后不该再弹
         return { success: true };
       case 'requestPurchase':
         return { success: false, error: 'PREVIEW' };

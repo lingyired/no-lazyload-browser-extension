@@ -91,6 +91,8 @@ function measure() {
   rows.push('i18n=' + (typeof window.i18nManager)
     + ' msgs=' + (window.i18nManager ? Object.keys(window.i18nManager.messages || {}).length : -1)
     + ' lang=' + (window.i18nManager ? window.i18nManager.currentLang : '?'));
+  rows.push('toast=' + ((document.querySelector('.toast') || {}).textContent || '')
+    + ' acks=' + (window.__ACK_COUNT__ || 0));
   rows.push('errors=' + JSON.stringify(window.__ERRORS__));
   const pre = document.createElement('pre');
   pre.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#ff0;color:#000;font-size:10px;padding:4px;white-space:pre-wrap;margin:0';

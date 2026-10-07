@@ -51,7 +51,9 @@ function showErrors() {
   pre.textContent = 'errors: ' + JSON.stringify(window.__ERR__, null, 1)
     + '\nvalues: scrollSpeed=' + (document.getElementById('scrollSpeed')||{}).value
     + ' stayDuration=' + (document.getElementById('stayDuration')||{}).value
-    + ' licenseStatus=' + (document.getElementById('licenseStatus')||{}).textContent;
+    + ' licenseStatus=' + (document.getElementById('licenseStatus')||{}).textContent
+    + ' | toast=' + ((document.querySelector('.toast') || {}).textContent || '')
+    + ' acks=' + (window.__ACK_COUNT__ || 0);
   document.body.appendChild(pre);
 }
 if (params.get('measure') === '1') setTimeout(showErrors, 800);
