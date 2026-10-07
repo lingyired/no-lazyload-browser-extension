@@ -36,3 +36,6 @@ npm-debug.log*
 # Temporary files
 *.tmp
 
+
+# Agent 工具生成的技能目录（本地环境产物，不入库）
+.agents/
