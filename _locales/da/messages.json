@@ -132,9 +132,6 @@
   "author": {
     "message": "af"
   },
-  "tools": {
-    "message": "Værktøjer"
-  },
   "languageSettings": {
     "message": "Sprogindstillinger"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload virker kun på de hjemmesider, du aktiverer. Andre hjemmesider berøres ikke."
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }

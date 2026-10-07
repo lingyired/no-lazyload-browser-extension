@@ -132,9 +132,6 @@
   "author": {
     "message": "tekijä"
   },
-  "tools": {
-    "message": "Työkalut"
-  },
   "languageSettings": {
     "message": "Kieliasetukset"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload vaikuttaa vain sivustoihin, jotka otat käyttöön. Muut sivustot jäävät ennalleen."
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }

@@ -132,9 +132,6 @@
   "author": {
     "message": "przez"
   },
-  "tools": {
-    "message": "Narzędzia"
-  },
   "languageSettings": {
     "message": "Ustawienia języka"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload działa tylko na stronach, które włączysz. Pozostałe strony nie są zmieniane."
+  },
+  "enableForThisSite": {
+    "message": "Włącz na tej stronie"
   }
 }

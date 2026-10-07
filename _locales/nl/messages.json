@@ -132,9 +132,6 @@
   "author": {
     "message": "door"
   },
-  "tools": {
-    "message": "Hulpmiddelen"
-  },
   "languageSettings": {
     "message": "Taalinstellingen"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload werkt alleen op de websites die u inschakelt. Andere websites blijven onaangetast."
+  },
+  "enableForThisSite": {
+    "message": "Inschakelen op deze website"
   }
 }

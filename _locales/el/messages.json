@@ -132,9 +132,6 @@
   "author": {
     "message": "από"
   },
-  "tools": {
-    "message": "Εργαλεία"
-  },
   "languageSettings": {
     "message": "Ρυθμίσεις γλώσσας"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "Το No Lazyload ενεργεί μόνο στους ιστότοπους που ενεργοποιείτε. Οι υπόλοιποι ιστότοποι δεν επηρεάζονται."
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }

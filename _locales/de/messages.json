@@ -135,9 +135,6 @@
   "author": {
     "message": "von"
   },
-  "tools": {
-    "message": "Entwicklerwerkzeuge"
-  },
   "languageSettings": {
     "message": "Spracheinstellungen"
   },
@@ -380,5 +377,8 @@
   },
   "privacy": {
     "message": "Datenschutz"
+  },
+  "enableForThisSite": {
+    "message": "Auf dieser Website aktivieren"
   }
 }

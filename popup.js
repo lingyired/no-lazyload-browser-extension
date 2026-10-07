@@ -263,8 +263,7 @@ function updateLicenseUI(siteCount) {
     if (upgradeGroup) upgradeGroup.hidden = true;
     if (notice) {
       notice.hidden = false;
-      const label = notice.querySelector('span');
-      if (label) label.textContent = t('purchaseUnavailable');
+      notice.textContent = t('purchaseUnavailable');
     }
     return;
   }
@@ -376,6 +375,31 @@ function setSwitchState({ checked, disabled, busy }) {
   el.setAttribute('aria-label', checked ? t('removeSite') : t('addCurrentSite'));
 }
 
+/**
+ * 状态胶囊（原始版本的视觉元素）：已启用 = 绿底胶囊，未启用 = 灰底胶囊。
+ * 颜色之外还有文字与圆点，不靠颜色单独表达状态。
+ */
+function setStatusPill(state) {
+  const statusEl = document.getElementById('currentStatus');
+  const dotEl = document.getElementById('statusDot');
+  const textEl = document.getElementById('statusText');
+  if (!statusEl || !dotEl || !textEl) return;
+
+  statusEl.className = 'site-status ' + state;
+
+  if (state === 'enabled') {
+    const compat = currentSiteConfig && currentSiteConfig.scrollFallback === true;
+    dotEl.textContent = compat ? '↓' : '✓';
+    textEl.textContent = t('enabled');
+  } else if (state === 'disabled') {
+    dotEl.textContent = '○';
+    textEl.textContent = t('disabled');
+  } else {
+    dotEl.textContent = '○';
+    textEl.textContent = t('notAvailable');
+  }
+}
+
 function updateModeHelp(mode) {
   const help = document.getElementById('modeHelp');
   if (!help) return;
@@ -399,8 +423,9 @@ async function checkCurrentSite() {
 
   if (!currentDomain) {
     if (domainEl) domainEl.textContent = t('nonWebPage');
-    if (siteHelp) siteHelp.textContent = t('notAvailable');
+    if (siteHelp) siteHelp.textContent = '';
     setSwitchState({ checked: false, disabled: true, busy: false });
+    setStatusPill('unavailable');
     if (modeSelect) modeSelect.disabled = true;
     updateModeHelp(STRATEGIES.TECH_BLOCK);
     currentSiteConfig = null;
@@ -420,6 +445,7 @@ async function checkCurrentSite() {
   if (domainEl) domainEl.textContent = currentDomain;
   if (siteHelp) siteHelp.textContent = t('siteSwitchHelp');
   setSwitchState({ checked: isEnabled, disabled: false, busy: false });
+  setStatusPill(isEnabled ? 'enabled' : 'disabled');
 
   if (modeSelect) {
     modeSelect.disabled = !isEnabled;
@@ -532,34 +558,33 @@ async function loadSiteList() {
     const config = entry[1];
 
     const item = document.createElement('div');
-    item.className = 'nl-list-item';
+    item.className = 'site-item';
 
     const domainSpan = document.createElement('span');
-    domainSpan.className = 'nl-domain';
+    domainSpan.className = 'domain';
     domainSpan.title = domain;
     domainSpan.textContent = domain;
 
     // 只显示"标准 / 兼容"，不暴露 IntersectionObserver、data-src 这类实现细节
     const modeSpan = document.createElement('span');
-    modeSpan.className = 'nl-mode';
+    modeSpan.className = 'mode-tag';
     modeSpan.textContent = config.scrollFallback === true
       ? t('compatibilityMode')
       : t('standardMode');
 
     const removeBtn = document.createElement('button');
     removeBtn.type = 'button';
-    removeBtn.className = 'nl-icon-btn';
+    removeBtn.className = 'delete-btn';
     removeBtn.dataset.domain = domain;
     removeBtn.title = t('removeSite');
     removeBtn.setAttribute('aria-label', t('removeSite') + ' ' + domain);
-    // 图标用 SVG，不用文本符号（ui-ux-pro-max：禁止 emoji/字形当图标）
-    removeBtn.innerHTML = '<svg class="nl-icon nl-icon-sm" aria-hidden="true"><use href="#i-minus"></use></svg>';
+    removeBtn.textContent = '×';
 
     item.append(domainSpan, modeSpan, removeBtn);
     siteList.appendChild(item);
   });
 
-  siteList.querySelectorAll('.nl-icon-btn').forEach(function (btn) {
+  siteList.querySelectorAll('.delete-btn').forEach(function (btn) {
     btn.addEventListener('click', async function (e) {
       const domain = e.currentTarget.dataset.domain;
       const removedConfig = configs[domain];

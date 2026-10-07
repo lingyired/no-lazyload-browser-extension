@@ -132,9 +132,6 @@
   "author": {
     "message": "от"
   },
-  "tools": {
-    "message": "Инструменты"
-  },
   "languageSettings": {
     "message": "Настройки Языка"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload работает только на сайтах, которые вы включили. Остальные сайты не затрагиваются."
+  },
+  "enableForThisSite": {
+    "message": "Включить на этом сайте"
   }
 }

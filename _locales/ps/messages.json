@@ -132,9 +132,6 @@
   "author": {
     "message": "له خوا"
   },
-  "tools": {
-    "message": "اوزارونه"
-  },
   "languageSettings": {
     "message": "د ژبې تنظیمات"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload یوازې په هغو سایټونو عمل کوي چې تاسو یې فعالوئ. نور سایټونه بې بدلونه پاتې کیږي."
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }

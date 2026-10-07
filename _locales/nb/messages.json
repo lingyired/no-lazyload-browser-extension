@@ -132,9 +132,6 @@
   "author": {
     "message": "av"
   },
-  "tools": {
-    "message": "Verktøy"
-  },
   "languageSettings": {
     "message": "Språkinnstillinger"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload virker bare på nettstedene du aktiverer. Andre nettsteder berøres ikke."
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }

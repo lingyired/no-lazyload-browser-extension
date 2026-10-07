@@ -132,9 +132,6 @@
   "author": {
     "message": "tarafından"
   },
-  "tools": {
-    "message": "Araçlar"
-  },
   "languageSettings": {
     "message": "Dil Ayarları"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload yalnızca etkinleştirdiğiniz web sitelerinde çalışır. Diğer web sitelerine dokunulmaz."
+  },
+  "enableForThisSite": {
+    "message": "Bu web sitesinde etkinleştir"
   }
 }

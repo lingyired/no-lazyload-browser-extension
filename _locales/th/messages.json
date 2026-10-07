@@ -132,9 +132,6 @@
   "author": {
     "message": "โดย"
   },
-  "tools": {
-    "message": "เครื่องมือ"
-  },
   "languageSettings": {
     "message": "การตั้งค่าภาษา"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload ทำงานเฉพาะกับเว็บไซต์ที่คุณเปิดใช้งานเท่านั้น เว็บไซต์อื่นไม่ถูกแตะต้อง"
+  },
+  "enableForThisSite": {
+    "message": "เปิดใช้งานบนเว็บไซต์นี้"
   }
 }

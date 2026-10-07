@@ -132,9 +132,6 @@
   "author": {
     "message": "بواسطة"
   },
-  "tools": {
-    "message": "أدوات المطورين"
-  },
   "languageSettings": {
     "message": "إعدادات اللغة"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "يعمل No Lazyload فقط على المواقع التي تفعّلها، ولا يمس أي موقع آخر."
+  },
+  "enableForThisSite": {
+    "message": "تفعيل على هذا الموقع"
   }
 }

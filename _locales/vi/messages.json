@@ -132,9 +132,6 @@
   "author": {
     "message": "bởi"
   },
-  "tools": {
-    "message": "Công cụ"
-  },
   "languageSettings": {
     "message": "Cài đặt ngôn ngữ"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload chỉ tác động đến những trang web bạn bật. Các trang web khác không bị ảnh hưởng."
+  },
+  "enableForThisSite": {
+    "message": "Bật trên trang web này"
   }
 }

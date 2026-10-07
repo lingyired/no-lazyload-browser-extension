@@ -132,9 +132,6 @@
   "author": {
     "message": "از"
   },
-  "tools": {
-    "message": "اوزار"
-  },
   "languageSettings": {
     "message": "زبان کی ترتیبات"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload صرف ان سائٹس پر عمل کرتا ہے جو آپ فعال کرتے ہیں۔ باقی سائٹس میں کوئی تبدیلی نہیں کی جاتی۔"
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }

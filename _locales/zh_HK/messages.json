@@ -132,9 +132,6 @@
   "author": {
     "message": "作者"
   },
-  "tools": {
-    "message": "開發工具"
-  },
   "languageSettings": {
     "message": "語言設定"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload 只作用於你啟用的網站，其它網站不做任何改動。"
+  },
+  "enableForThisSite": {
+    "message": "在此網站啟用"
   }
 }

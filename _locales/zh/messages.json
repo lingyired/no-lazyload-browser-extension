@@ -132,9 +132,6 @@
   "author": {
     "message": "作者"
   },
-  "tools": {
-    "message": "Kimi 2.5 + ClaudeCode + superpowers"
-  },
   "languageSettings": {
     "message": "语言设置"
   },
@@ -380,5 +377,8 @@
   },
   "proActivated": {
     "message": "Pro activated! Unlimited websites unlocked."
+  },
+  "enableForThisSite": {
+    "message": "在此网站启用"
   }
 }

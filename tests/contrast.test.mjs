@@ -96,8 +96,8 @@ export function run() {
     ['--nl-text', '--nl-bg', 4.5, '正文 / 页面底色'],
     ['--nl-text', '--nl-surface', 4.5, '正文 / 分组表面'],
     ['--nl-text-secondary', '--nl-surface', 4.5, '次要文字 / 分组表面'],
-    ['--nl-on-accent', '--nl-accent', 4.5, '强调按钮文字 / 琥珀底'],
-    ['--nl-on-primary', '--nl-primary', 4.5, '主按钮文字 / 品牌青蓝底'],
+    ['--nl-on-primary', '--nl-primary', 4.5, '主按钮文字 / 品牌绿底'],
+    ['--nl-success', '--nl-success-bg', 4.5, '状态胶囊文字 / 胶囊底色'],
     ['--nl-danger', '--nl-surface', 3.0, '错误状态（非文字 UI）'],
     ['--nl-success', '--nl-surface', 3.0, '成功状态（非文字 UI）'],
   ];
@@ -136,7 +136,7 @@ export function run() {
   assert.deepEqual(failures, [], '对比度不达标:\n' + failures.join('\n'));
 
   // 焦点环必须基于强调色（plan Task F2：不允许去掉 outline 而不给替代）
-  assert.match(css, /--nl-accent:/, 'tokens.css 必须定义强调色');
+  assert.match(css, /--nl-primary:/, 'tokens.css 必须定义品牌主色');
   const components = readFileSync('ui/components.css', 'utf8');
   assert.match(components, /:focus-visible\s*\{[^}]*outline:/s,
     'components.css 必须为 :focus-visible 提供可见的 outline');

@@ -319,7 +319,7 @@ function updateLicenseStatus(siteCount) {
 
   const count = typeof siteCount === 'number'
     ? siteCount
-    : document.querySelectorAll('#siteList .nl-list-item').length;
+    : document.querySelectorAll('#siteList .site-item').length;
 
   const badge = document.getElementById('planBadge');
   if (badge) {
@@ -354,17 +354,16 @@ function updateLicenseStatus(siteCount) {
       count,
       limit: APP_LIMITS.FREE_SITE_LIMIT,
     });
-    const freeLabel = btn.querySelector('span');
-    if (freeLabel) freeLabel.textContent = t('licenseUpgrade');
-    // 升级按钮是付费版的主 CTA（琥珀强调）；Pro 用户则降级为普通按钮
-    btn.className = 'nl-btn nl-btn-accent';
+    btn.textContent = t('licenseUpgrade');
+    // 免费版：升级是主 CTA
+    btn.className = 'btn btn-primary';
     if (planNote) planNote.hidden = false;
   } else {
     // Pro：只说明已解锁 + 管理购买，绝不再出现 Buy CTA
     status.textContent = t('planProDetail');
-    const proLabel = btn.querySelector('span');
-    if (proLabel) proLabel.textContent = t('managePurchases');
-    btn.className = 'nl-btn';
+    btn.textContent = t('managePurchases');
+    // Pro：不再有 Buy CTA，降级为次要按钮
+    btn.className = 'btn btn-secondary';
     if (planNote) planNote.hidden = true;
   }
 }
@@ -518,31 +517,30 @@ async function loadSiteList() {
 
     entries.forEach(([domain, config]) => {
       const item = document.createElement('div');
-      item.className = 'nl-list-item';
+      item.className = 'site-item';
 
       const domainSpan = document.createElement('span');
-      domainSpan.className = 'nl-domain';
+      domainSpan.className = 'domain';
       domainSpan.title = domain;
       domainSpan.textContent = domain;
 
       const modeSpan = document.createElement('span');
-      modeSpan.className = 'nl-mode';
+      modeSpan.className = 'mode-tag';
       modeSpan.textContent = modeOf(config);
 
       const removeBtn = document.createElement('button');
       removeBtn.type = 'button';
-      removeBtn.className = 'nl-icon-btn';
+      removeBtn.className = 'delete-btn';
       removeBtn.dataset.domain = domain;
       removeBtn.title = t('removeSite');
       removeBtn.setAttribute('aria-label', t('removeSite') + ' ' + domain);
-      // 图标用 SVG，不用文本符号
-      removeBtn.innerHTML = '<svg class="nl-icon nl-icon-sm" aria-hidden="true"><use href="#i-minus"></use></svg>';
+      removeBtn.textContent = '×';
 
       item.append(domainSpan, modeSpan, removeBtn);
       siteList.appendChild(item);
     });
 
-    siteList.querySelectorAll('.nl-icon-btn').forEach((btn) => {
+    siteList.querySelectorAll('.delete-btn').forEach((btn) => {
       btn.addEventListener('click', async (e) => {
         const domain = e.currentTarget.dataset.domain;
         const removedConfig = configs[domain];
@@ -575,8 +573,7 @@ async function loadSiteList() {
   if (upgradeBox && upgradeBtn) {
     const full = getLicenseMode() === LICENSE_MODES.FREE && count >= APP_LIMITS.FREE_SITE_LIMIT;
     upgradeBox.hidden = !full;
-    const label = upgradeBtn.querySelector('span');
-    if (label) label.textContent = t('licenseUpgrade');
+    upgradeBtn.textContent = t('licenseUpgrade');
   }
 }
 /**

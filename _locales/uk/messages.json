@@ -132,9 +132,6 @@
   "author": {
     "message": "автор"
   },
-  "tools": {
-    "message": "Інструменти"
-  },
   "languageSettings": {
     "message": "Налаштування мови"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload діє лише на сайтах, які ви увімкнули. Інші сайти не змінюються."
+  },
+  "enableForThisSite": {
+    "message": "Увімкнути на цьому сайті"
   }
 }

@@ -132,9 +132,6 @@
   "author": {
     "message": "per"
   },
-  "tools": {
-    "message": "Eines"
-  },
   "languageSettings": {
     "message": "Configuració d'idioma"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload només actua als llocs web que activeu. La resta de llocs web no es modifiquen."
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }

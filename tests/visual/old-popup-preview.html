@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>原始 popup 预览</title></head>
+<body>
+<!-- 渲染改动前的原始 popup，用于新旧对比（不参与打包） -->
+<script src="../chrome-stub.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+
+fetch('popup.html')
+  .then(function (r) { return r.text(); })
+  .then(function (html) {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    document.title = doc.title;
+    // 原始页面的样式是内联的，直接搬 <style>
+    doc.head.querySelectorAll('style, meta[charset], meta[name=color-scheme]').forEach(function (n) {
+      document.head.appendChild(n.cloneNode(true));
+    });
+    document.body.innerHTML = doc.body.innerHTML;
+
+    const scripts = ['../../i18n-manager.js', 'popup.js'];
+    const loadNext = function () {
+      const src = scripts.shift();
+      if (!src) { document.dispatchEvent(new Event('DOMContentLoaded')); return; }
+      const el = document.createElement('script');
+      el.src = src;
+      el.onload = loadNext;
+      el.onerror = loadNext;
+      document.body.appendChild(el);
+    };
+    loadNext();
+  });
+</script>
+</body>
+</html>

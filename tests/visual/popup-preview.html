@@ -74,6 +74,15 @@ function measure() {
     const r = el.getBoundingClientRect();
     rows.push(sel + ' x=' + Math.round(r.left) + ' w=' + Math.round(r.width) + ' h=' + Math.round(r.height));
   });
+  const sw = document.getElementById('siteSwitch');
+  if (sw) {
+    const cs = getComputedStyle(sw);
+    const after = getComputedStyle(sw, '::after');
+    rows.push('switch: bg=' + cs.backgroundColor + ' transform(after)=' + after.transform + ' afterBg=' + after.backgroundColor + ' opacity=' + cs.opacity + ' disabled=' + sw.disabled);
+  }
+  rows.push('switch aria-checked=' + (document.getElementById('siteSwitch') || {}).getAttribute?.('aria-checked')
+    + ' pill=' + (document.getElementById('currentStatus') || {}).className
+    + ' domain=' + (document.getElementById('currentDomain') || {}).textContent);
   rows.push('count=' + (document.getElementById('siteCount') || {}).textContent
     + ' items=' + document.querySelectorAll('#siteList .nl-list-item').length);
   rows.push('i18n=' + (typeof window.i18nManager)

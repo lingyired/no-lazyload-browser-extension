@@ -135,9 +135,6 @@
   "author": {
     "message": "作者"
   },
-  "tools": {
-    "message": "開發工具"
-  },
   "languageSettings": {
     "message": "語言設定"
   },
@@ -380,5 +377,8 @@
   },
   "privacy": {
     "message": "隱私權政策"
+  },
+  "enableForThisSite": {
+    "message": "在此網站啟用"
   }
 }

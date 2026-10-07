@@ -132,9 +132,6 @@
   "author": {
     "message": "készítette:"
   },
-  "tools": {
-    "message": "Eszközök"
-  },
   "languageSettings": {
     "message": "Nyelvi beállítások"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "A No Lazyload csak az Ön által engedélyezett webhelyeken működik. Más webhelyeket nem érint."
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }

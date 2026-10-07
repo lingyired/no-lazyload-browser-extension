@@ -132,9 +132,6 @@
   "author": {
     "message": "od"
   },
-  "tools": {
-    "message": "Alati"
-  },
   "languageSettings": {
     "message": "Jezične postavke"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload djeluje samo na stranice koje omogućite. Ostale stranice ostaju netaknute."
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }

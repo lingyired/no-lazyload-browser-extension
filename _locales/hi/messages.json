@@ -132,9 +132,6 @@
   "author": {
     "message": "द्वारा"
   },
-  "tools": {
-    "message": "Kimi 2.5 + ClaudeCode + superpowers"
-  },
   "languageSettings": {
     "message": "भाषा सेटिंग्स"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload केवल उन वेबसाइटों पर कार्य करता है जिन्हें आप सक्षम करते हैं। अन्य वेबसाइटें अछूती रहती हैं।"
+  },
+  "enableForThisSite": {
+    "message": "इस वेबसाइट पर सक्षम करें"
   }
 }

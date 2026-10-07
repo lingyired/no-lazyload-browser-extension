@@ -132,9 +132,6 @@
   "author": {
     "message": "מאת"
   },
-  "tools": {
-    "message": "כלים"
-  },
   "languageSettings": {
     "message": "הגדרות שפה"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload פועל רק באתרים שאתם מפעילים. שאר האתרים נשארים ללא שינוי."
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }

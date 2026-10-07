@@ -132,9 +132,6 @@
   "author": {
     "message": "oleh"
   },
-  "tools": {
-    "message": "Alat"
-  },
   "languageSettings": {
     "message": "Pengaturan Bahasa"
   },
@@ -380,5 +377,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload hanya bertindak di situs web yang Anda aktifkan. Situs web lain tidak tersentuh."
+  },
+  "enableForThisSite": {
+    "message": "Aktifkan di situs web ini"
   }
 }

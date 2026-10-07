@@ -132,9 +132,6 @@
   "author": {
     "message": "by"
   },
-  "tools": {
-    "message": "Kimi 2.5 + ClaudeCode + superpowers"
-  },
   "languageSettings": {
     "message": "Language Settings"
   },
@@ -381,5 +378,8 @@
   },
   "privacyNote": {
     "message": "No Lazyload only acts on the websites you enable. Other websites are untouched."
+  },
+  "enableForThisSite": {
+    "message": "Enable on this website"
   }
 }
