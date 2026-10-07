@@ -27,7 +27,9 @@ const MESSAGE_TYPES = {
   REFRESH_ENTITLEMENTS: 'refreshEntitlements',
   REQUEST_PURCHASE: 'requestPurchase',
   RESTORE_PURCHASES: 'restorePurchases',
-  OPEN_HOST_APP: 'openHostApp'
+  OPEN_HOST_APP: 'openHostApp',
+  // 一次性提示展示完要 ACK，否则同一句"已启用 xxx"每次打开都再弹一遍
+  ACK_ENTITLEMENT_NOTICE: 'ackEntitlementNotice'
 };
 
 // ===== Entitlement System 常量（内联自 shared/constants.js）=====
@@ -91,6 +93,7 @@ function detectBrowserLanguage() {
 // 翻译内容（内联，避免依赖 _locales 文件结构）
 const TRANSLATIONS = {
   'zh': {
+    'noticeSiteEnabled': '已解锁 Pro · 已启用 {domain}',
     'currentSite': '当前网站',
     'loading': '加载中...',
     'enabled': '已启用',
@@ -131,6 +134,7 @@ const TRANSLATIONS = {
     'licenseManage': '管理 / 恢复购买'
   },
   'en': {
+    'noticeSiteEnabled': 'Pro unlocked · {domain} was enabled',
     'currentSite': 'Current Site',
     'loading': 'Loading...',
     'enabled': 'Enabled',
@@ -171,6 +175,7 @@ const TRANSLATIONS = {
     'licenseManage': 'Manage / Restore'
   },
   'es': {
+    'noticeSiteEnabled': 'Pro desbloqueado · {domain} se ha activado',
     'currentSite': 'Sitio Actual',
     'loading': 'Cargando...',
     'enabled': 'Activado',
@@ -199,6 +204,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'ar': {
+    'noticeSiteEnabled': 'تم فتح Pro · تم تفعيل {domain}',
     'currentSite': 'الموقع الحالي',
     'loading': 'جاري التحميل...',
     'enabled': 'مفعّل',
@@ -227,6 +233,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'hi': {
+    'noticeSiteEnabled': 'Pro अनलॉक हुआ · {domain} सक्षम किया गया',
     'currentSite': 'वर्तमान साइट',
     'loading': 'लोड हो रहा है...',
     'enabled': 'सक्षम',
@@ -255,6 +262,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'fr': {
+    'noticeSiteEnabled': 'Pro débloqué · {domain} a été activé',
     'currentSite': 'Site Actuel',
     'loading': 'Chargement...',
     'enabled': 'Activé',
@@ -283,6 +291,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'pt': {
+    'noticeSiteEnabled': 'Pro desbloqueado · {domain} foi ativado',
     'currentSite': 'Site Atual',
     'loading': 'Carregando...',
     'enabled': 'Ativado',
@@ -311,6 +320,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'de': {
+    'noticeSiteEnabled': 'Pro freigeschaltet · {domain} wurde aktiviert',
     'currentSite': 'Aktuelle Seite',
     'loading': 'Lädt...',
     'enabled': 'Aktiviert',
@@ -339,6 +349,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'ja': {
+    'noticeSiteEnabled': 'Pro を解除しました · {domain} を有効にしました',
     'currentSite': '現在のサイト',
     'loading': '読み込み中...',
     'enabled': '有効',
@@ -367,6 +378,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'ru': {
+    'noticeSiteEnabled': 'Pro разблокирован · {domain} включён',
     'currentSite': 'Текущий Сайт',
     'loading': 'Загрузка...',
     'enabled': 'Включено',
@@ -395,6 +407,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'ko': {
+    'noticeSiteEnabled': 'Pro 잠금 해제 · {domain}을 사용하도록 설정했습니다',
     'currentSite': '현재 사이트',
     'loading': '로딩 중...',
     'enabled': '활성화됨',
@@ -423,6 +436,7 @@ const TRANSLATIONS = {
     'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
   },
   'bg': {
+    'noticeSiteEnabled': 'Pro е отключен · {domain} е активиран',
     'currentSite': 'Текущ сайт',
     'loading': 'Loading...',
     'enabled': 'Активирано',
@@ -451,6 +465,7 @@ const TRANSLATIONS = {
     'tools': 'Инструменти',
   },
   'ca': {
+    'noticeSiteEnabled': 'Pro desbloquejat · {domain} s\'ha activat',
     'currentSite': 'Lloc actual',
     'loading': 'Loading...',
     'enabled': 'Habilitat',
@@ -479,6 +494,7 @@ const TRANSLATIONS = {
     'tools': 'Eines',
   },
   'cs': {
+    'noticeSiteEnabled': 'Pro odemčeno · {domain} byl povolen',
     'currentSite': 'Aktuální stránka',
     'loading': 'Loading...',
     'enabled': 'Povoleno',
@@ -507,6 +523,7 @@ const TRANSLATIONS = {
     'tools': 'Nástroje',
   },
   'da': {
+    'noticeSiteEnabled': 'Pro låst op · {domain} blev aktiveret',
     'currentSite': 'Aktuel hjemmeside',
     'loading': 'Loading...',
     'enabled': 'Aktiveret',
@@ -535,6 +552,7 @@ const TRANSLATIONS = {
     'tools': 'Værktøjer',
   },
   'el': {
+    'noticeSiteEnabled': 'Το Pro ξεκλειδώθηκε · ο {domain} ενεργοποιήθηκε',
     'currentSite': 'Τρέχων ιστότοπος',
     'loading': 'Loading...',
     'enabled': 'Ενεργοποιημένο',
@@ -563,6 +581,7 @@ const TRANSLATIONS = {
     'tools': 'Εργαλεία',
   },
   'fa': {
+    'noticeSiteEnabled': 'Pro باز شد · {domain} فعال شد',
     'currentSite': 'سایت فعلی',
     'loading': 'Loading...',
     'enabled': 'فعال',
@@ -591,6 +610,7 @@ const TRANSLATIONS = {
     'tools': 'ابزارها',
   },
   'fi': {
+    'noticeSiteEnabled': 'Pro avattu · {domain} otettiin käyttöön',
     'currentSite': 'Nykyinen sivusto',
     'loading': 'Loading...',
     'enabled': 'Käytössä',
@@ -619,6 +639,7 @@ const TRANSLATIONS = {
     'tools': 'Työkalut',
   },
   'he': {
+    'noticeSiteEnabled': 'Pro נפתח · {domain} הופעל',
     'currentSite': 'האתר הנוכחי',
     'loading': 'Loading...',
     'enabled': 'מופעל',
@@ -647,6 +668,7 @@ const TRANSLATIONS = {
     'tools': 'כלים',
   },
   'hr': {
+    'noticeSiteEnabled': 'Pro otključan · {domain} je omogućen',
     'currentSite': 'Trenutna stranica',
     'loading': 'Loading...',
     'enabled': 'Omogućeno',
@@ -675,6 +697,7 @@ const TRANSLATIONS = {
     'tools': 'Alati',
   },
   'hu': {
+    'noticeSiteEnabled': 'Pro feloldva · a(z) {domain} engedélyezve',
     'currentSite': 'Jelenlegi oldal',
     'loading': 'Loading...',
     'enabled': 'Engedélyezve',
@@ -703,6 +726,7 @@ const TRANSLATIONS = {
     'tools': 'Eszközök',
   },
   'id': {
+    'noticeSiteEnabled': 'Pro dibuka · {domain} diaktifkan',
     'currentSite': 'Situs Saat Ini',
     'loading': 'Loading...',
     'enabled': 'Aktif',
@@ -731,6 +755,7 @@ const TRANSLATIONS = {
     'tools': 'Alat',
   },
   'it': {
+    'noticeSiteEnabled': 'Pro sbloccato · {domain} è stato attivato',
     'currentSite': 'Sito corrente',
     'loading': 'Loading...',
     'enabled': 'Attivo',
@@ -759,6 +784,7 @@ const TRANSLATIONS = {
     'tools': 'Strumenti',
   },
   'nb': {
+    'noticeSiteEnabled': 'Pro låst opp · {domain} ble aktivert',
     'currentSite': 'Gjeldende nettsted',
     'loading': 'Loading...',
     'enabled': 'Aktivert',
@@ -787,6 +813,7 @@ const TRANSLATIONS = {
     'tools': 'Verktøy',
   },
   'nl': {
+    'noticeSiteEnabled': 'Pro ontgrendeld · {domain} is ingeschakeld',
     'currentSite': 'Huidige site',
     'loading': 'Loading...',
     'enabled': 'Ingeschakeld',
@@ -815,6 +842,7 @@ const TRANSLATIONS = {
     'tools': 'Hulpmiddelen',
   },
   'pl': {
+    'noticeSiteEnabled': 'Pro odblokowane · {domain} zostało włączone',
     'currentSite': 'Bieżąca strona',
     'loading': 'Loading...',
     'enabled': 'Włączone',
@@ -843,6 +871,7 @@ const TRANSLATIONS = {
     'tools': 'Narzędzia',
   },
   'ps': {
+    'noticeSiteEnabled': 'Pro پرانیستل شو · {domain} فعال شو',
     'currentSite': 'اوسنی سایټ',
     'loading': 'Loading...',
     'enabled': 'فعال',
@@ -871,6 +900,7 @@ const TRANSLATIONS = {
     'tools': 'اوزارونه',
   },
   'ro': {
+    'noticeSiteEnabled': 'Pro deblocat · {domain} a fost activat',
     'currentSite': 'Site curent',
     'loading': 'Loading...',
     'enabled': 'Activat',
@@ -899,6 +929,7 @@ const TRANSLATIONS = {
     'tools': 'Instrumente',
   },
   'sk': {
+    'noticeSiteEnabled': 'Pro odomknuté · {domain} bol povolený',
     'currentSite': 'Aktuálna stránka',
     'loading': 'Loading...',
     'enabled': 'Povolené',
@@ -927,6 +958,7 @@ const TRANSLATIONS = {
     'tools': 'Nástroje',
   },
   'sv': {
+    'noticeSiteEnabled': 'Pro upplåst · {domain} aktiverades',
     'currentSite': 'Aktuell webbplats',
     'loading': 'Loading...',
     'enabled': 'Aktiverad',
@@ -955,6 +987,7 @@ const TRANSLATIONS = {
     'tools': 'Verktyg',
   },
   'th': {
+    'noticeSiteEnabled': 'ปลดล็อก Pro แล้ว · เปิดใช้งาน {domain} แล้ว',
     'currentSite': 'เว็บไซต์ปัจจุบัน',
     'loading': 'Loading...',
     'enabled': 'เปิดใช้งาน',
@@ -983,6 +1016,7 @@ const TRANSLATIONS = {
     'tools': 'เครื่องมือ',
   },
   'tr': {
+    'noticeSiteEnabled': 'Pro açıldı · {domain} etkinleştirildi',
     'currentSite': 'Geçerli Site',
     'loading': 'Loading...',
     'enabled': 'Etkin',
@@ -1011,6 +1045,7 @@ const TRANSLATIONS = {
     'tools': 'Araçlar',
   },
   'uk': {
+    'noticeSiteEnabled': 'Pro розблоковано · {domain} увімкнено',
     'currentSite': 'Поточний сайт',
     'loading': 'Loading...',
     'enabled': 'Увімкнено',
@@ -1039,6 +1074,7 @@ const TRANSLATIONS = {
     'tools': 'Інструменти',
   },
   'ur': {
+    'noticeSiteEnabled': 'Pro کھل گیا · {domain} فعال کر دیا گیا',
     'currentSite': 'موجودہ سائٹ',
     'loading': 'Loading...',
     'enabled': 'فعال',
@@ -1067,6 +1103,7 @@ const TRANSLATIONS = {
     'tools': 'اوزار',
   },
   'vi': {
+    'noticeSiteEnabled': 'Đã mở khóa Pro · đã bật {domain}',
     'currentSite': 'Trang hiện tại',
     'loading': 'Loading...',
     'enabled': 'Đã bật',
@@ -1245,11 +1282,33 @@ async function loadCachedEntitlements() {
         entitlements: resp.entitlements || [],
         isLimitEnforced: !!resp.isLimitEnforced,
       };
+      await consumeEntitlementNotice(resp);
     }
   } catch (e) {
     console.warn('[Popup] loadCachedEntitlements failed', e);
   }
   return _entitlementState;
+}
+
+/**
+ * 消费 background 留下的一次性提示。
+ *
+ * 场景：免费额度用完时点"添加"，background 把这次添加存成待办并唤起 Host App；
+ * 用户买完 Pro 后 background 补做这次添加、写一条 notice。popup 下次打开读到它，
+ * 提示"已解锁 Pro · 已启用 xxx"，然后 ACK 清除 —— 不 ACK 的话每次打开都会再弹一遍。
+ *
+ * @param {object|null} resp GET_ENTITLEMENTS / REFRESH_ENTITLEMENTS 的响应
+ * @returns {Promise<boolean>} 是否消费了一条提示
+ */
+async function consumeEntitlementNotice(resp) {
+  const notice = resp && resp.notice;
+  if (!notice || notice.type !== 'pendingSiteAdded' || !notice.domain) return false;
+
+  showToast(t('noticeSiteEnabled', { domain: notice.domain }));
+  // 先弹再 ACK：ACK 只是清掉 storage 里那条记录，已经显示的 toast 不受影响
+  await sendMessage(MESSAGE_TYPES.ACK_ENTITLEMENT_NOTICE);
+  console.log('[Popup] 已提示并确认购买后的待办:', notice.domain);
+  return true;
 }
 
 /**
@@ -1268,6 +1327,8 @@ async function refreshEntitlements() {
       };
       const after = JSON.stringify(_entitlementState.entitlements);
       console.log('[Popup] 权限刷新:', before, '->', after);
+      // 原生刷新是唯一能看到"刚买完 Pro，background 补做了待办"这条提示的时机
+      await consumeEntitlementNotice(resp);
       return before !== after;
     }
     console.warn('[Popup] 权限刷新失败（原生无响应），继续用快照:', before);
