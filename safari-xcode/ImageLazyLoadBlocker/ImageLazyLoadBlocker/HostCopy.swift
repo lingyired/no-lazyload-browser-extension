@@ -2,10 +2,18 @@
 //  HostCopy.swift
 //  ImageLazyLoadBlocker
 //
-//  Host App 的全部用户可见文案集中在这里，接入 Localizable.xcstrings 后
-//  只需在 String Catalog 里提供翻译，不再维护 JS 翻译表。
+//  Host App 的全部用户可见文案集中在这里，翻译在同目录的
+//  Localizable.xcstrings（String Catalog）里维护，不再另建 JS 翻译表。
 //
-//  规则：Release 里绝不出现 Xcode / StoreKit 配置 / 签名等实现细节。
+//  规则：
+//   1. Release 里绝不出现 Xcode / StoreKit 配置 / 签名等实现细节。
+//   2. 新增文案必须同时加进 Localizable.xcstrings，否则只有开发语言有值。
+//   3. 目前只提供 en / zh-Hans / zh-Hant；其它语言自动回退到 en
+//      （Catalog 里缺哪条，系统就退回 defaultValue）。
+//
+//  加一门语言：在 Localizable.xcstrings 每条 stringUnit 里补一个语言键
+//  （BCP-47 码，如 ja / ko / zh-Hant），构建后会自动生成
+//  <lang>.lproj/Localizable.strings。
 //
 
 import Foundation

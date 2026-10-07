@@ -18,6 +18,7 @@
 		E2000014000000000000000A /* HostDesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000014000000000000000A /* HostDesignTokens.swift */; };
 		E2000015000000000000000A /* ExtensionStateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1000015000000000000000A /* ExtensionStateService.swift */; };
 		E200000F000000000000000A /* HostCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E100000F000000000000000A /* HostCopy.swift */; };
+		E2000090000000000000000A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E1000090000000000000000A /* Localizable.xcstrings */; };
 		3C7BD5D23009E02000F4D44D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D13009E02000F4D44D /* AppDelegate.swift */; };
 		3C7BD5D83009E02000F4D44D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C7BD5D73009E02000F4D44D /* Icon.png */; };
 		3C7BD5DE3009E02000F4D44D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BD5DD3009E02000F4D44D /* ViewController.swift */; };
@@ -109,6 +110,7 @@
 		E1000006000000000000000A /* PurchaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseProvider.swift; sourceTree = "<group>"; };
 		E1000008000000000000000A /* StoreKitPurchaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitPurchaseProvider.swift; sourceTree = "<group>"; };
 		E100000F000000000000000A /* HostCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostCopy.swift; sourceTree = "<group>"; };
+		E1000090000000000000000A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E1000010000000000000000A /* HostRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostRootView.swift; sourceTree = "<group>"; };
 		E1000011000000000000000A /* HostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewModel.swift; sourceTree = "<group>"; };
 		E1000012000000000000000A /* ExtensionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionStatusView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				3C7BD5D13009E02000F4D44D /* AppDelegate.swift */,
 				3C7BD5DD3009E02000F4D44D /* ViewController.swift */,
 				E100000F000000000000000A /* HostCopy.swift */,
+				E1000090000000000000000A /* Localizable.xcstrings */,
 				E3000010000000000000000A /* Host */,
 				E3000011000000000000000A /* Services */,
 				3C7BD5DF3009E02000F4D44D /* Main.storyboard */,
@@ -314,6 +317,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 3C7BD5C53009E02000F4D44D;
 			minimizedProjectReferenceProxies = 1;
@@ -336,6 +341,7 @@
 				3C7BD5D83009E02000F4D44D /* Icon.png in Resources */,
 				3C7BD5E13009E02000F4D44D /* Main.storyboard in Resources */,
 				3C7BD5E33009E02100F4D44D /* Assets.xcassets in Resources */,
+				E2000090000000000000000A /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
