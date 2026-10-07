@@ -152,7 +152,11 @@
     },
     storage: {
       local: {
-        get: dual(function () { return { preferredLanguage: 'en' }; }),
+        // ?lang=zh 可切换预览语言（默认 en），便于检查中文等文案的实际排版
+        get: dual(function () {
+          const lang = new URLSearchParams(location.search).get('lang') || 'en';
+          return { preferredLanguage: lang };
+        }),
         set: dual(function () { return undefined; }),
       },
     },
