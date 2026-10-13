@@ -9,8 +9,6 @@ A cross-browser extension (Chrome / Firefox) that disables image lazy loading on
 [![GitHub release](https://img.shields.io/github/v/release/lingyired/no-lazyload-browser-extension?style=for-the-badge&logo=github)](https://github.com/lingyired/no-lazyload-browser-extension/releases/latest)
 [![License](https://img.shields.io/github/license/lingyired/no-lazyload-browser-extension?style=for-the-badge)](LICENSE)
 
-Built with Kimi 2.5 + ClaudeCode + Superpowers
-
 ## Features
 
 - **Tech Interception** — CSS + JavaScript overrides for common lazy-load mechanisms

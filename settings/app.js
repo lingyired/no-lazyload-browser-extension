@@ -97,6 +97,8 @@ const TRANSLATIONS = {
     'saveLanguage': '保存语言设置',
     'languageSaved': "语言设置已保存",
     'advancedSettings': '高级设置',
+    'advancedProOnly': "高级设置是 Pro 功能",
+    'advancedProOnlyDesc': "升级到 Pro 后可自定义检测规则",
     'lazyAttributes': '懒加载属性',
     'lazyAttributesHelp': '检测这些属性来加载图片，用逗号分隔',
     'placeholderPatterns': '占位符检测',
@@ -152,6 +154,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Save Language',
     'languageSaved': "Language saved",
     'advancedSettings': 'Advanced Settings',
+    'advancedProOnly': "Advanced Settings are a Pro feature",
+    'advancedProOnlyDesc': "Upgrade to Pro to customize detection rules",
     'lazyAttributes': 'Lazy Load Attributes',
     'lazyAttributesHelp': 'Detect these attributes to load images, comma-separated',
     'placeholderPatterns': 'Placeholder Detection',
@@ -199,6 +203,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Guardar Idioma',
     'languageSaved': "Idioma guardado",
     'advancedSettings': 'Configuración Avanzada',
+    'advancedProOnly': "La Configuración Avanzada es una función Pro",
+    'advancedProOnlyDesc': "Actualiza a Pro para personalizar las reglas de detección",
     'lazyAttributes': 'Atributos de Carga Perezosa',
     'lazyAttributesHelp': 'Detectar estos atributos para cargar imágenes, separados por comas',
     'placeholderPatterns': 'Detección de Marcadores',
@@ -233,6 +239,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'حفظ اللغة',
     'languageSaved': "تم حفظ اللغة",
     'advancedSettings': 'إعدادات متقدمة',
+    'advancedProOnly': "الإعدادات المتقدمة ميزة في Pro",
+    'advancedProOnlyDesc': "قم بالترقية إلى Pro لتخصيص قواعد الكشف",
     'lazyAttributes': 'سمات التحميل الكسول',
     'lazyAttributesHelp': 'اكتشاف هذه السمات لتحميل الصور، مفصولة بفاصلة',
     'placeholderPatterns': 'كشف العناصر النائبة',
@@ -267,6 +275,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'भाषा सहेजें',
     'languageSaved': "भाषा सहेजी गई",
     'advancedSettings': 'उन्नत सेटिंग्स',
+    'advancedProOnly': "उन्नत सेटिंग्स एक Pro सुविधा है",
+    'advancedProOnlyDesc': "डिटेक्शन नियमों को अनुकूलित करने के लिए Pro में अपग्रेड करें",
     'lazyAttributes': 'लेजी लोड गुण',
     'lazyAttributesHelp': 'छवियों को लोड करने के लिए इन गुणों का पता लगाएं, अल्पविराम से अलग',
     'placeholderPatterns': 'प्लेसहोल्डर का पता लगाना',
@@ -301,6 +311,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Enregistrer Langue',
     'languageSaved': "Langue enregistrée",
     'advancedSettings': 'Paramètres Avancés',
+    'advancedProOnly': "Les Paramètres Avancés sont une fonctionnalité Pro",
+    'advancedProOnlyDesc': "Passez à Pro pour personnaliser les règles de détection",
     'lazyAttributes': 'Attributs de Chargement Paresseux',
     'lazyAttributesHelp': 'Détecter ces attributs pour charger les images, séparés par des virgules',
     'placeholderPatterns': 'Détection de Placeholders',
@@ -335,6 +347,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Salvar Idioma',
     'languageSaved': "Idioma salvo",
     'advancedSettings': 'Configurações Avançadas',
+    'advancedProOnly': "As Configurações Avançadas são um recurso Pro",
+    'advancedProOnlyDesc': "Atualize para o Pro para personalizar as regras de detecção",
     'lazyAttributes': 'Atributos de Carregamento Preguiçoso',
     'lazyAttributesHelp': 'Detectar esses atributos para carregar imagens, separados por vírgulas',
     'placeholderPatterns': 'Detecção de Marcadores',
@@ -369,6 +383,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Sprache Speichern',
     'languageSaved': "Sprache gespeichert",
     'advancedSettings': 'Erweiterte Einstellungen',
+    'advancedProOnly': "Erweiterte Einstellungen sind eine Pro-Funktion",
+    'advancedProOnlyDesc': "Upgrade auf Pro, um Erkennungsregeln anzupassen",
     'lazyAttributes': 'Lazy-Load Attribute',
     'lazyAttributesHelp': 'Diese Attribute zum Laden von Bildern erkennen, kommagetrennt',
     'placeholderPatterns': 'Platzhalter-Erkennung',
@@ -403,6 +419,8 @@ const TRANSLATIONS = {
     'saveLanguage': '言語を保存',
     'languageSaved': "言語を保存しました",
     'advancedSettings': '詳細設定',
+    'advancedProOnly': "詳細設定は Pro の機能です",
+    'advancedProOnlyDesc': "Pro にアップグレードすると検出ルールをカスタマイズできます",
     'lazyAttributes': '遅延読み込み属性',
     'lazyAttributesHelp': '画像を読み込むためのこれらの属性を検出、カンマ区切り',
     'placeholderPatterns': 'プレースホルダー検出',
@@ -437,6 +455,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Сохранить Язык',
     'languageSaved': "Язык сохранен",
     'advancedSettings': 'Расширенные Настройки',
+    'advancedProOnly': "Расширенные настройки — функция Pro",
+    'advancedProOnlyDesc': "Обновитесь до Pro, чтобы настроить правила обнаружения",
     'lazyAttributes': 'Атрибуты Отложенной Загрузки',
     'lazyAttributesHelp': 'Обнаруживать эти атрибуты для загрузки изображений, через запятую',
     'placeholderPatterns': 'Обнаружение Заглушек',
@@ -479,6 +499,8 @@ const TRANSLATIONS = {
     'saveLanguage': '언어 저장',
     'languageSaved': "언어가 저장되었습니다",
     'advancedSettings': '고급 설정',
+    'advancedProOnly': "고급 설정은 Pro 기능입니다",
+    'advancedProOnlyDesc': "Pro로 업그레이드하면 감지 규칙을 사용자 지정할 수 있습니다",
     'lazyAttributes': '지연 로딩 속성',
     'lazyAttributesHelp': '이미지를 로드하기 위한 속성을 감지합니다. 쉼표로 구분',
     'placeholderPatterns': '플레이스홀더 감지',
@@ -521,6 +543,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Запази езика',
     'languageSaved': "Езикът е запазен",
     'advancedSettings': 'Разширени настройки',
+    'advancedProOnly': "Разширените настройки са функция на Pro",
+    'advancedProOnlyDesc': "Надградете до Pro, за да персонализирате правилата за засичане",
     'lazyAttributes': 'Атрибути за мързеливо зареждане',
     'lazyAttributesHelp': 'Засичай тези атрибути за зареждане на изображения, разделени със запетая',
     'placeholderPatterns': 'Откриване на контейнери',
@@ -563,6 +587,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Desa l\'idioma',
     'languageSaved': "Idioma desat",
     'advancedSettings': 'Configuració avançada',
+    'advancedProOnly': "La Configuració avançada és una funció Pro",
+    'advancedProOnlyDesc': "Actualitza a Pro per personalitzar les regles de detecció",
     'lazyAttributes': 'Atributs de càrrega mandrosa',
     'lazyAttributesHelp': 'Detecta aquests atributs per carregar imatges, separats per comes',
     'placeholderPatterns': 'Detecció de marcadors',
@@ -605,6 +631,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Uložit jazyk',
     'languageSaved': "Jazyk uložen",
     'advancedSettings': 'Pokročilá nastavení',
+    'advancedProOnly': "Pokročilá nastavení jsou funkce Pro",
+    'advancedProOnlyDesc': "Přejděte na Pro a upravte pravidla detekce",
     'lazyAttributes': 'Atributy líného načítání',
     'lazyAttributesHelp': 'Detekujte tyto atributy pro načítání obrázků, oddělené čárkami',
     'placeholderPatterns': 'Detekce zástupných symbolů',
@@ -647,6 +675,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Gem sprog',
     'languageSaved': "Sprog gemt",
     'advancedSettings': 'Avancerede indstillinger',
+    'advancedProOnly': "Avancerede indstillinger er en Pro-funktion",
+    'advancedProOnlyDesc': "Opgrader til Pro for at tilpasse detekteringsregler",
     'lazyAttributes': 'Doven indlæsning-attributter',
     'lazyAttributesHelp': 'Detekter disse attributter for at indlæse billeder, kommasepareret',
     'placeholderPatterns': 'Pladsholder-detektering',
@@ -689,6 +719,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Αποθήκευση γλώσσας',
     'languageSaved': "Η γλώσσα αποθηκεύτηκε",
     'advancedSettings': 'Σύνθετες ρυθμίσεις',
+    'advancedProOnly': "Οι Σύνθετες ρυθμίσεις είναι λειτουργία Pro",
+    'advancedProOnlyDesc': "Αναβαθμίστε σε Pro για να προσαρμόσετε τους κανόνες ανίχνευσης",
     'lazyAttributes': 'Χαρακτηριστικά τεμπέλικης φόρτωσης',
     'lazyAttributesHelp': 'Ανίχνευση αυτών των χαρακτηριστικών για φόρτωση εικόνων, χωρισμένα με κόμμα',
     'placeholderPatterns': 'Ανίχνευση placeholders',
@@ -731,6 +763,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'ذخیره زبان',
     'languageSaved': "زبان ذخیره شد",
     'advancedSettings': 'تنظیمات پیشرفته',
+    'advancedProOnly': "تنظیمات پیشرفته از ویژگی‌های Pro است",
+    'advancedProOnlyDesc': "برای سفارشی‌سازی قواعد تشخیص به Pro ارتقا دهید",
     'lazyAttributes': 'ویژگی‌های بارگذاری تنبل',
     'lazyAttributesHelp': 'این ویژگی‌ها را برای بارگذاری تصاویر شناسایی کن، با کاما جدا شده',
     'placeholderPatterns': 'تشخیص مکان‌نگهدار',
@@ -773,6 +807,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Tallenna kieli',
     'languageSaved': "Kieli tallennettu",
     'advancedSettings': 'Lisäasetukset',
+    'advancedProOnly': "Lisäasetukset ovat Pro-ominaisuus",
+    'advancedProOnlyDesc': "Päivitä Pro-versioon mukauttaaksesi tunnistussääntöjä",
     'lazyAttributes': 'Laiskan latauksen määritteet',
     'lazyAttributesHelp': 'Tunnista nämä määritteet kuvien lataamiseksi, pilkulla erotettuna',
     'placeholderPatterns': 'Paikkamerkkien tunnistus',
@@ -815,6 +851,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'שמור שפה',
     'languageSaved': "השפה נשמרה",
     'advancedSettings': 'הגדרות מתקדמות',
+    'advancedProOnly': "הגדרות מתקדמות הן תכונת Pro",
+    'advancedProOnlyDesc': "שדרגו ל-Pro כדי להתאים אישית את כללי הזיהוי",
     'lazyAttributes': 'מאפייני טעינה עצלה',
     'lazyAttributesHelp': 'זהה מאפיינים אלה לטעינת תמונות, מופרדים בפסיק',
     'placeholderPatterns': 'זיהוי מצייני מיקום',
@@ -857,6 +895,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Spremi jezik',
     'languageSaved': "Jezik spremljen",
     'advancedSettings': 'Napredne postavke',
+    'advancedProOnly': "Napredne postavke su Pro značajka",
+    'advancedProOnlyDesc': "Nadogradite na Pro za prilagodbu pravila otkrivanja",
     'lazyAttributes': 'Atributi lijevog učitavanja',
     'lazyAttributesHelp': 'Otkrijte ove atribute za učitavanje slika, odvojene zarezom',
     'placeholderPatterns': 'Otkrivanje rezerviranih mjesta',
@@ -899,6 +939,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Nyelv mentése',
     'languageSaved': "Nyelv mentve",
     'advancedSettings': 'Speciális beállítások',
+    'advancedProOnly': "A Speciális beállítások Pro-funkció",
+    'advancedProOnlyDesc': "Frissíts Pro-ra az észlelési szabályok testreszabásához",
     'lazyAttributes': 'Lusta betöltés attribútumai',
     'lazyAttributesHelp': 'Ezen attribútumok észlelése a képek betöltéséhez, vesszővel elválasztva',
     'placeholderPatterns': 'Helyőrző minták észlelése',
@@ -941,6 +983,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Simpan Bahasa',
     'languageSaved': "Bahasa disimpan",
     'advancedSettings': 'Pengaturan Lanjutan',
+    'advancedProOnly': "Pengaturan Lanjutan adalah fitur Pro",
+    'advancedProOnlyDesc': "Tingkatkan ke Pro untuk menyesuaikan aturan deteksi",
     'lazyAttributes': 'Atribut Pemuatan Malas',
     'lazyAttributesHelp': 'Deteksi atribut ini untuk memuat gambar, dipisahkan koma',
     'placeholderPatterns': 'Deteksi Placeholder',
@@ -983,6 +1027,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Salva lingua',
     'languageSaved': "Lingua salvata",
     'advancedSettings': 'Impostazioni avanzate',
+    'advancedProOnly': "Le Impostazioni avanzate sono una funzione Pro",
+    'advancedProOnlyDesc': "Passa a Pro per personalizzare le regole di rilevamento",
     'lazyAttributes': 'Attributi di caricamento lazy',
     'lazyAttributesHelp': 'Rileva questi attributi per caricare le immagini, separati da virgola',
     'placeholderPatterns': 'Rilevamento segnaposto',
@@ -1025,6 +1071,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Lagre språk',
     'languageSaved': "Språk lagret",
     'advancedSettings': 'Avanserte innstillinger',
+    'advancedProOnly': "Avanserte innstillinger er en Pro-funksjon",
+    'advancedProOnlyDesc': "Oppgrader til Pro for å tilpasse deteksjonsregler",
     'lazyAttributes': 'Late lastingsattributter',
     'lazyAttributesHelp': 'Oppdag disse attributtene for å laste bilder, kommaseparert',
     'placeholderPatterns': 'Plassholder-deteksjon',
@@ -1067,6 +1115,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Taal opslaan',
     'languageSaved': "Taal opgeslagen",
     'advancedSettings': 'Geavanceerde instellingen',
+    'advancedProOnly': "Geavanceerde instellingen zijn een Pro-functie",
+    'advancedProOnlyDesc': "Upgrade naar Pro om detectieregels aan te passen",
     'lazyAttributes': 'Lazy-load attributen',
     'lazyAttributesHelp': 'Detecteer deze attributen om afbeeldingen te laden, kommagescheiden',
     'placeholderPatterns': 'Tijdelijke aanduiding detectie',
@@ -1109,6 +1159,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Zapisz język',
     'languageSaved': "Język zapisany",
     'advancedSettings': 'Ustawienia zaawansowane',
+    'advancedProOnly': "Ustawienia zaawansowane to funkcja Pro",
+    'advancedProOnlyDesc': "Przejdź na Pro, aby dostosować reguły wykrywania",
     'lazyAttributes': 'Atrybuty leniwego ładowania',
     'lazyAttributesHelp': 'Wykryj te atrybuty do ładowania obrazów, oddzielone przecinkami',
     'placeholderPatterns': 'Wykrywanie placeholderów',
@@ -1151,6 +1203,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'ژبه خوندي کړئ',
     'languageSaved': "ژبه خوندي شوه",
     'advancedSettings': 'پرمختللي تنظیمات',
+    'advancedProOnly': "پرمختللي تنظیمات د Pro ځانګړنه ده",
+    'advancedProOnlyDesc': "د کشف قواعدو د تنظیم لپاره Pro ته لوړ کړئ",
     'lazyAttributes': 'د ستړي بارولو ځانګړتیاوې',
     'lazyAttributesHelp': 'د انځورونو د بارولو لپاره دا ځانګړتیاوې وپیژنئ، په کامه جلا شوي',
     'placeholderPatterns': 'د ځای نښه کوونکو پیژندنه',
@@ -1193,6 +1247,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Salvează limba',
     'languageSaved': "Limba salvată",
     'advancedSettings': 'Setări avansate',
+    'advancedProOnly': "Setările avansate sunt o funcție Pro",
+    'advancedProOnlyDesc': "Faceți upgrade la Pro pentru a personaliza regulile de detectare",
     'lazyAttributes': 'Atribute de încărcare leneșă',
     'lazyAttributesHelp': 'Detectează aceste atribute pentru a încărca imagini, separate prin virgulă',
     'placeholderPatterns': 'Detectare substituenți',
@@ -1235,6 +1291,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Uložiť jazyk',
     'languageSaved': "Jazyk uložený",
     'advancedSettings': 'Pokročilé nastavenia',
+    'advancedProOnly': "Pokročilé nastavenia sú funkcia Pro",
+    'advancedProOnlyDesc': "Prejdite na Pro a upravte pravidlá detekcie",
     'lazyAttributes': 'Atribúty lenivého načítavania',
     'lazyAttributesHelp': 'Rozpoznajte tieto atribúty na načítanie obrázkov, oddelené čiarkami',
     'placeholderPatterns': 'Detekcia zástupných symbolov',
@@ -1277,6 +1335,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Spara språk',
     'languageSaved': "Språk sparat",
     'advancedSettings': 'Avancerade inställningar',
+    'advancedProOnly': "Avancerade inställningar är en Pro-funktion",
+    'advancedProOnlyDesc': "Uppgradera till Pro för att anpassa detekteringsregler",
     'lazyAttributes': 'Lat inladdningsattribut',
     'lazyAttributesHelp': 'Identifiera dessa attribut för att ladda bilder, kommaseparerade',
     'placeholderPatterns': 'Platshållaridentifiering',
@@ -1319,6 +1379,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'บันทึกภาษา',
     'languageSaved': "บันทึกภาษาแล้ว",
     'advancedSettings': 'การตั้งค่าขั้นสูง',
+    'advancedProOnly': "การตั้งค่าขั้นสูงเป็นฟีเจอร์ Pro",
+    'advancedProOnlyDesc': "อัปเกรดเป็น Pro เพื่อปรับแต่งกฎการตรวจจับ",
     'lazyAttributes': 'แอตทริบิวต์การโหลดแบบขี้เกียจ',
     'lazyAttributesHelp': 'ตรวจจับแอตทริบิวต์เหล่านี้เพื่อโหลดรูปภาพ คั่นด้วยเครื่องหมายจุลภาค',
     'placeholderPatterns': 'การตรวจจับตัวยึดตำแหน่ง',
@@ -1361,6 +1423,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Dili Kaydet',
     'languageSaved': "Dil kaydedildi",
     'advancedSettings': 'Gelişmiş Ayarlar',
+    'advancedProOnly': "Gelişmiş Ayarlar bir Pro özelliğidir",
+    'advancedProOnlyDesc': "Algılama kurallarını özelleştirmek için Pro'ya yükseltin",
     'lazyAttributes': 'Tembel Yükleme Öznitelikleri',
     'lazyAttributesHelp': 'Görselleri yüklemek için bu öznitelikleri algıla, virgülle ayrılmış',
     'placeholderPatterns': 'Yer Tutucu Algılama',
@@ -1403,6 +1467,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Зберегти мову',
     'languageSaved': "Мову збережено",
     'advancedSettings': 'Розширені налаштування',
+    'advancedProOnly': "Розширені налаштування — функція Pro",
+    'advancedProOnlyDesc': "Оновіться до Pro, щоб налаштувати правила виявлення",
     'lazyAttributes': 'Атрибути лінивого завантаження',
     'lazyAttributesHelp': 'Виявляйте ці атрибути для завантаження зображень, через кому',
     'placeholderPatterns': 'Виявлення заповнювачів',
@@ -1445,6 +1511,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'زبان محفوظ کریں',
     'languageSaved': "زبان محفوظ ہو گئی",
     'advancedSettings': 'اعلیٰ ترتیبات',
+    'advancedProOnly': "اعلیٰ ترتیبات Pro کی خصوصیت ہیں",
+    'advancedProOnlyDesc': "پتہ لگانے کے قواعد کو حسب ضرورت بنانے کے لیے Pro پر اپ گریڈ کریں",
     'lazyAttributes': 'سست لوڈنگ کی خصوصیات',
     'lazyAttributesHelp': 'تصاویر لوڈ کرنے کے لیے ان خصوصیات کا پتہ لگائیں، کاما سے الگ',
     'placeholderPatterns': 'پلیس ہولڈر کا پتہ لگانا',
@@ -1487,6 +1555,8 @@ const TRANSLATIONS = {
     'saveLanguage': 'Lưu ngôn ngữ',
     'languageSaved': "Đã lưu ngôn ngữ",
     'advancedSettings': 'Cài đặt nâng cao',
+    'advancedProOnly': "Cài đặt nâng cao là tính năng Pro",
+    'advancedProOnlyDesc': "Nâng cấp lên Pro để tùy chỉnh quy tắc phát hiện",
     'lazyAttributes': 'Thuộc tính tải lười',
     'lazyAttributesHelp': 'Phát hiện các thuộc tính này để tải hình ảnh, phân tách bằng dấu phẩy',
     'placeholderPatterns': 'Phát hiện placeholder',
@@ -1529,6 +1599,8 @@ const TRANSLATIONS = {
     'saveLanguage': '儲存語言',
     'languageSaved': "語言已儲存",
     'advancedSettings': '進階設定',
+    'advancedProOnly': "進階設定是 Pro 功能",
+    'advancedProOnlyDesc': "升級至 Pro 後即可自訂偵測規則",
     'lazyAttributes': '延遲載入屬性',
     'lazyAttributesHelp': '偵測這些屬性以載入圖片，以逗號分隔',
     'placeholderPatterns': '佔位符偵測',
@@ -1571,6 +1643,8 @@ const TRANSLATIONS = {
     'saveLanguage': '儲存語言',
     'languageSaved': "語言已儲存",
     'advancedSettings': '進階設定',
+    'advancedProOnly': "進階設定是 Pro 功能",
+    'advancedProOnlyDesc': "升級至 Pro 後即可自訂偵測規則",
     'lazyAttributes': '延遲載入屬性',
     'lazyAttributesHelp': '偵測這些屬性以載入圖片，以逗號分隔',
     'placeholderPatterns': '佔位符偵測',
@@ -1785,6 +1859,9 @@ function applyTranslations() {
   // 更新空状态
   const emptyState = document.getElementById('emptyState');
   if (emptyState) emptyState.textContent = t('emptyState');
+
+  // 高级设置的锁定横幅文案也走 data-i18n，但控件可用性由权限决定，需单独重算
+  updateAdvancedSettingsLock();
 }
 
 /**
@@ -1848,12 +1925,16 @@ async function loadCachedEntitlements() {
   return _entitlementState;
 }
 
+/** 权限快照是否已经拿到过一份。没拿到之前不渲染锁定态，避免先解锁后上锁的闪烁。 */
+let _entitlementLoaded = false;
+
 /** 把 background 返回的权限快照写进内存状态。 */
 function applyEntitlementSnapshot(resp) {
   _entitlementState = {
     entitlements: resp.entitlements || [],
     isLimitEnforced: !!resp.isLimitEnforced,
   };
+  _entitlementLoaded = true;
 }
 
 /**
@@ -1902,6 +1983,7 @@ async function refreshEntitlements() {
 /** 权限状态变化后，把所有依赖它的界面重画一遍。 */
 function refreshEntitlementUI() {
   updateLicenseStatus();
+  updateAdvancedSettingsLock();
   loadSiteList();
 }
 
@@ -1962,6 +2044,42 @@ function hasUnlimitedSites() {
 function formatSiteCount(count) {
   if (hasUnlimitedSites()) return '∞';
   return `${count}/${APP_LIMITS.FREE_SITE_LIMIT}`;
+}
+
+/**
+ * 高级设置是否被锁在 Pro 后面。
+ *
+ * 只有 Safari 会锁：Chrome/Firefox 的 isLimitEnforced 恒为 false（不限额平台，
+ * 没有付费体系），它们永远拿到完整功能，也不会看到任何付费 UI。
+ * App Group 不可用时 isLimitEnforced 为 true 且权限为空 —— 按 fail closed 处理成锁定，
+ * 与 background 侧拒绝写入的行为一致。
+ */
+function isAdvancedLocked() {
+  return _entitlementState.isLimitEnforced === true && !hasUnlimitedSites();
+}
+
+/**
+ * 渲染高级设置的锁定态：免费版显示锁定横幅并把控件设为不可用。
+ *
+ * 用 disabled 而不是 hidden —— 用户要能看见"有这个能力"，只是现在改不了。
+ * 输入框内容照常回填（只读展示），避免出现一片空白的错觉。
+ */
+function updateAdvancedSettingsLock() {
+  const lock = document.getElementById('advancedLock');
+  const body = document.getElementById('advancedBody');
+  if (!lock || !body) return;
+  // 快照未到位时保持 HTML 的初始态（横幅 hidden、控件可用），别闪
+  if (!_entitlementLoaded) return;
+
+  const locked = isAdvancedLocked();
+
+  lock.hidden = !locked;
+  body.setAttribute('aria-disabled', locked ? 'true' : 'false');
+
+  // 只禁用内容区里的控件，锁定横幅自己的升级按钮必须保持可点
+  body.querySelectorAll('textarea, button').forEach((el) => {
+    el.disabled = locked;
+  });
 }
 
 /** 当前挂着的升级弹窗的关闭函数（没有弹窗时为 null）。 */
@@ -2306,6 +2424,13 @@ async function loadCustomAttributes() {
  * 保存自定义属性配置
  */
 async function saveCustomAttributes() {
+  // 双重保险：锁定态下控件已是 disabled（点不到），键盘/脚本仍可能触发 ——
+  // 真正拦住越权写入的是 background 的 PRO_REQUIRED 校验。
+  if (_entitlementLoaded && isAdvancedLocked()) {
+    showToast(t('advancedProOnly'));
+    return;
+  }
+
   const lazyInput = document.getElementById('lazyAttributesInput');
   const placeholderInput = document.getElementById('placeholderPatternsInput');
 
@@ -2334,6 +2459,11 @@ async function saveCustomAttributes() {
  * 重置自定义属性配置为默认值
  */
 async function resetCustomAttributes() {
+  if (_entitlementLoaded && isAdvancedLocked()) {
+    showToast(t('advancedProOnly'));
+    return;
+  }
+
   const response = await sendMessage(MESSAGE_TYPES.RESET_CUSTOM_ATTRIBUTES);
   if (response?.success && response.data) {
     const { lazyAttributes, placeholderPatterns } = response.data;
@@ -2463,6 +2593,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   //   2) 异步走原生刷新 —— 慢，绝不 await，失败也不影响页面可用性
   await loadCachedEntitlements();
   updateLicenseStatus();
+  updateAdvancedSettingsLock();
   refreshEntitlements()
     .then((res) => {
       // 刷新成功就按最新权限重画 —— 快照本身可能就是购买前的旧值，
@@ -2482,6 +2613,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   const manageLicenseBtn = document.getElementById('manageLicenseBtn');
   if (manageLicenseBtn) {
     manageLicenseBtn.addEventListener('click', () => { requestUpgrade(); });
+  }
+
+  // 高级设置锁定横幅里的升级入口：与授权卡走同一个购买流程
+  const advancedUpgradeBtn = document.getElementById('advancedUpgradeBtn');
+  if (advancedUpgradeBtn) {
+    advancedUpgradeBtn.addEventListener('click', () => { requestUpgrade(); });
   }
 
   document.getElementById('saveGlobalBtn').addEventListener('click', saveGlobalSettings);

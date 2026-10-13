@@ -93,4 +93,48 @@ export async function run() {
   });
   assert.equal(update.success, true, '更新已有网站不受限额影响');
   assert.equal(ctx4.store.siteConfigs['x.com'].scrollFallback, true);
+
+  // ---- 高级设置是 Pro 专属：免费版写入被拒 ----
+  const ctx5 = installChromeStub();
+  const free5 = makeManager({ enforceLimit: true, entitlements: [] });
+  setupMessageHandler(free5);
+
+  const deniedWrite = await ctx5.dispatch({
+    type: 'SET_CUSTOM_ATTRIBUTES',
+    lazyAttributes: ['data-x'],
+    placeholderPatterns: ['x'],
+  });
+  assert.deepEqual({ success: deniedWrite.success, error: deniedWrite.error },
+                   { success: false, error: 'PRO_REQUIRED' });
+  assert.equal(ctx5.store.customAttributes, undefined, '被拒的写入不能落盘');
+
+  const deniedReset = await ctx5.dispatch({ type: 'RESET_CUSTOM_ATTRIBUTES' });
+  assert.deepEqual({ success: deniedReset.success, error: deniedReset.error },
+                   { success: false, error: 'PRO_REQUIRED' });
+  assert.equal(ctx5.store.customAttributes, undefined, '被拒的重置不能落盘');
+
+  // 读取不受限：免费版下 content script 仍要拿到（可能是降级前保存的）规则
+  const readFree = await ctx5.dispatch({ type: 'GET_CUSTOM_ATTRIBUTES' });
+  assert.equal(readFree.success, true, '免费版仍可读取检测规则');
+  assert.ok(Array.isArray(readFree.data.lazyAttributes) && readFree.data.lazyAttributes.length > 0);
+
+  // Pro 生效后写入放行
+  free5.setEntitlements(['unlimitedSites']);
+  const allowedWrite = await ctx5.dispatch({
+    type: 'SET_CUSTOM_ATTRIBUTES',
+    lazyAttributes: ['data-x'],
+    placeholderPatterns: ['x'],
+  });
+  assert.equal(allowedWrite.success, true, 'Pro 用户应可写入');
+  assert.deepEqual(ctx5.store.customAttributes.lazyAttributes, ['data-x']);
+
+  // Chrome/Firefox（不限额）永远放行，也不会被误判成 Pro
+  const ctx6 = installChromeStub();
+  setupMessageHandler(makeManager({ enforceLimit: false }));
+  const chromeWrite = await ctx6.dispatch({
+    type: 'SET_CUSTOM_ATTRIBUTES',
+    lazyAttributes: ['data-y'],
+    placeholderPatterns: ['y'],
+  });
+  assert.equal(chromeWrite.success, true, 'Chrome/Firefox 不受 Pro 限制');
 }

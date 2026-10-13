@@ -112,7 +112,6 @@ const TRANSLATIONS = {
     'autoScroll': '自动滚动',
     'delete': '删除',
     'author': '作者',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers',
     'upgradeTitle': '解锁 Pro',
     'upgradeBody': '免费版最多支持 3 个网站。升级以解锁无限网站及未来的高级功能。',
     'upgradeButton': '升级',
@@ -153,7 +152,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Auto-scroll',
     'delete': 'Delete',
     'author': 'by',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers',
     'upgradeTitle': 'Unlock Pro',
     'upgradeBody': 'Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features.',
     'upgradeButton': 'Upgrade',
@@ -193,8 +191,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'Página actualizada',
     'autoScroll': 'Desplaz. Auto.',
     'delete': 'Eliminar',
-    'author': 'por',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'por'
   },
   'ar': {
     'noticeSiteEnabled': "تم فتح Pro · تم تفعيل {domain}",
@@ -222,8 +219,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'تم تحديث الصفحة',
     'autoScroll': 'تمرير تلقائي',
     'delete': 'حذف',
-    'author': 'بواسطة',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'بواسطة'
   },
   'hi': {
     'noticeSiteEnabled': "Pro अनलॉक हुआ · {domain} सक्षम किया गया",
@@ -251,8 +247,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'पेज रिफ्रेश किया गया',
     'autoScroll': 'ऑटो-स्क्रॉल',
     'delete': 'हटाएं',
-    'author': 'द्वारा',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'द्वारा'
   },
   'fr': {
     'noticeSiteEnabled': "Pro débloqué · {domain} a été activé",
@@ -280,8 +275,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'Page actualisée',
     'autoScroll': 'Défil. Auto.',
     'delete': 'Supprimer',
-    'author': 'par',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'par'
   },
   'pt': {
     'noticeSiteEnabled': "Pro desbloqueado · {domain} foi ativado",
@@ -309,8 +303,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'Página atualizada',
     'autoScroll': 'Rolagem Auto',
     'delete': 'Excluir',
-    'author': 'por',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'por'
   },
   'de': {
     'noticeSiteEnabled': "Pro freigeschaltet · {domain} wurde aktiviert",
@@ -338,8 +331,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'Seite aktualisiert',
     'autoScroll': 'Auto-Scroll',
     'delete': 'Löschen',
-    'author': 'von',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'von'
   },
   'ja': {
     'noticeSiteEnabled': "Pro を解除しました · {domain} を有効にしました",
@@ -367,8 +359,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'ページを更新しました',
     'autoScroll': '自動スクロール',
     'delete': '削除',
-    'author': '作成者',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': '作成者'
   },
   'ru': {
     'noticeSiteEnabled': "Pro разблокирован · {domain} включён",
@@ -396,8 +387,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'Страница обновлена',
     'autoScroll': 'Автопрокрутка',
     'delete': 'Удалить',
-    'author': 'от',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'от'
   },
   'ko': {
     'noticeSiteEnabled': "Pro 잠금 해제 · {domain}을 사용하도록 설정했습니다",
@@ -425,8 +415,7 @@ const TRANSLATIONS = {
     'pageRefreshed': '페이지가 새로고침되었습니다',
     'autoScroll': '자동 스크롤',
     'delete': '삭제',
-    'author': '작성자',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': '작성자'
   },
   'bg': {
     'noticeSiteEnabled': "Pro е отключен · {domain} е активиран",

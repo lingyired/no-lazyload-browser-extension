@@ -109,7 +109,6 @@ const TRANSLATIONS = {
     'autoScroll': '自动滚动',
     'delete': '删除',
     'author': '作者',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers',
     'upgradeTitle': '解锁 Pro',
     'upgradeBody': '免费版最多支持 3 个网站。升级以解锁无限网站及未来的高级功能。',
     'upgradeButton': '升级',
@@ -149,7 +148,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Auto-scroll',
     'delete': 'Delete',
     'author': 'by',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers',
     'upgradeTitle': 'Unlock Pro',
     'upgradeBody': 'Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features.',
     'upgradeButton': 'Upgrade',
@@ -188,8 +186,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'Página actualizada',
     'autoScroll': 'Desplaz. Auto.',
     'delete': 'Eliminar',
-    'author': 'por',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'por'
   },
   'ar': {
     'currentSite': 'الموقع الحالي',
@@ -216,8 +213,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'تم تحديث الصفحة',
     'autoScroll': 'تمرير تلقائي',
     'delete': 'حذف',
-    'author': 'بواسطة',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'بواسطة'
   },
   'hi': {
     'currentSite': 'वर्तमान साइट',
@@ -244,8 +240,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'पेज रिफ्रेश किया गया',
     'autoScroll': 'ऑटो-स्क्रॉल',
     'delete': 'हटाएं',
-    'author': 'द्वारा',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'द्वारा'
   },
   'fr': {
     'currentSite': 'Site Actuel',
@@ -272,8 +267,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'Page actualisée',
     'autoScroll': 'Défil. Auto.',
     'delete': 'Supprimer',
-    'author': 'par',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'par'
   },
   'pt': {
     'currentSite': 'Site Atual',
@@ -300,8 +294,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'Página atualizada',
     'autoScroll': 'Rolagem Auto',
     'delete': 'Excluir',
-    'author': 'por',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'por'
   },
   'de': {
     'currentSite': 'Aktuelle Seite',
@@ -328,8 +321,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'Seite aktualisiert',
     'autoScroll': 'Auto-Scroll',
     'delete': 'Löschen',
-    'author': 'von',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'von'
   },
   'ja': {
     'currentSite': '現在のサイト',
@@ -356,8 +348,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'ページを更新しました',
     'autoScroll': '自動スクロール',
     'delete': '削除',
-    'author': '作成者',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': '作成者'
   },
   'ru': {
     'currentSite': 'Текущий Сайт',
@@ -384,8 +375,7 @@ const TRANSLATIONS = {
     'pageRefreshed': 'Страница обновлена',
     'autoScroll': 'Автопрокрутка',
     'delete': 'Удалить',
-    'author': 'от',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': 'от'
   },
   'ko': {
     'currentSite': '현재 사이트',
@@ -412,8 +402,7 @@ const TRANSLATIONS = {
     'pageRefreshed': '페이지가 새로고침되었습니다',
     'autoScroll': '자동 스크롤',
     'delete': '삭제',
-    'author': '작성자',
-    'tools': 'Kimi 2.5 + ClaudeCode + superpowers'
+    'author': '작성자'
   },
   'bg': {
     'currentSite': 'Текущ сайт',
@@ -441,7 +430,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Автоматично превъртане',
     'delete': 'Delete',
     'author': 'от',
-    'tools': 'Инструменти',
   },
   'ca': {
     'currentSite': 'Lloc actual',
@@ -469,7 +457,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Desplaçament automàtic',
     'delete': 'Delete',
     'author': 'per',
-    'tools': 'Eines',
   },
   'cs': {
     'currentSite': 'Aktuální stránka',
@@ -497,7 +484,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Automatické posouvání',
     'delete': 'Delete',
     'author': 'od',
-    'tools': 'Nástroje',
   },
   'da': {
     'currentSite': 'Aktuel hjemmeside',
@@ -525,7 +511,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Automatisk rulning',
     'delete': 'Delete',
     'author': 'af',
-    'tools': 'Værktøjer',
   },
   'el': {
     'currentSite': 'Τρέχων ιστότοπος',
@@ -553,7 +538,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Αυτόματη κύλιση',
     'delete': 'Delete',
     'author': 'από',
-    'tools': 'Εργαλεία',
   },
   'fa': {
     'currentSite': 'سایت فعلی',
@@ -581,7 +565,6 @@ const TRANSLATIONS = {
     'autoScroll': 'پیمایش خودکار',
     'delete': 'Delete',
     'author': 'توسط',
-    'tools': 'ابزارها',
   },
   'fi': {
     'currentSite': 'Nykyinen sivusto',
@@ -609,7 +592,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Automaattinen vieritys',
     'delete': 'Delete',
     'author': 'tekijä',
-    'tools': 'Työkalut',
   },
   'he': {
     'currentSite': 'האתר הנוכחי',
@@ -637,7 +619,6 @@ const TRANSLATIONS = {
     'autoScroll': 'גלילה אוטומטית',
     'delete': 'Delete',
     'author': 'מאת',
-    'tools': 'כלים',
   },
   'hr': {
     'currentSite': 'Trenutna stranica',
@@ -665,7 +646,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Automatsko pomicanje',
     'delete': 'Delete',
     'author': 'od',
-    'tools': 'Alati',
   },
   'hu': {
     'currentSite': 'Jelenlegi oldal',
@@ -693,7 +673,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Automatikus görgetés',
     'delete': 'Delete',
     'author': 'készítette:',
-    'tools': 'Eszközök',
   },
   'id': {
     'currentSite': 'Situs Saat Ini',
@@ -721,7 +700,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Gulir otomatis',
     'delete': 'Delete',
     'author': 'oleh',
-    'tools': 'Alat',
   },
   'it': {
     'currentSite': 'Sito corrente',
@@ -749,7 +727,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Scorrimento automatico',
     'delete': 'Delete',
     'author': 'di',
-    'tools': 'Strumenti',
   },
   'nb': {
     'currentSite': 'Gjeldende nettsted',
@@ -777,7 +754,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Automatisk rulling',
     'delete': 'Delete',
     'author': 'av',
-    'tools': 'Verktøy',
   },
   'nl': {
     'currentSite': 'Huidige site',
@@ -805,7 +781,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Automatisch scrollen',
     'delete': 'Delete',
     'author': 'door',
-    'tools': 'Hulpmiddelen',
   },
   'pl': {
     'currentSite': 'Bieżąca strona',
@@ -833,7 +808,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Autoprzewijanie',
     'delete': 'Delete',
     'author': 'przez',
-    'tools': 'Narzędzia',
   },
   'ps': {
     'currentSite': 'اوسنی سایټ',
@@ -861,7 +835,6 @@ const TRANSLATIONS = {
     'autoScroll': 'اتوماتیک سکرول',
     'delete': 'Delete',
     'author': 'له خوا',
-    'tools': 'اوزارونه',
   },
   'ro': {
     'currentSite': 'Site curent',
@@ -889,7 +862,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Derulare automată',
     'delete': 'Delete',
     'author': 'de',
-    'tools': 'Instrumente',
   },
   'sk': {
     'currentSite': 'Aktuálna stránka',
@@ -917,7 +889,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Automatické posúvanie',
     'delete': 'Delete',
     'author': 'od',
-    'tools': 'Nástroje',
   },
   'sv': {
     'currentSite': 'Aktuell webbplats',
@@ -945,7 +916,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Automatisk rullning',
     'delete': 'Delete',
     'author': 'av',
-    'tools': 'Verktyg',
   },
   'th': {
     'currentSite': 'เว็บไซต์ปัจจุบัน',
@@ -973,7 +943,6 @@ const TRANSLATIONS = {
     'autoScroll': 'เลื่อนอัตโนมัติ',
     'delete': 'Delete',
     'author': 'โดย',
-    'tools': 'เครื่องมือ',
   },
   'tr': {
     'currentSite': 'Geçerli Site',
@@ -1001,7 +970,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Otomatik kaydırma',
     'delete': 'Delete',
     'author': 'tarafından',
-    'tools': 'Araçlar',
   },
   'uk': {
     'currentSite': 'Поточний сайт',
@@ -1029,7 +997,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Автопрокрутка',
     'delete': 'Delete',
     'author': 'автор',
-    'tools': 'Інструменти',
   },
   'ur': {
     'currentSite': 'موجودہ سائٹ',
@@ -1057,7 +1024,6 @@ const TRANSLATIONS = {
     'autoScroll': 'خودکار سکرول',
     'delete': 'Delete',
     'author': 'از',
-    'tools': 'اوزار',
   },
   'vi': {
     'currentSite': 'Trang hiện tại',
@@ -1085,7 +1051,6 @@ const TRANSLATIONS = {
     'autoScroll': 'Tự động cuộn',
     'delete': 'Delete',
     'author': 'bởi',
-    'tools': 'Công cụ',
   },
   'zh_HK': {
     'currentSite': '目前網站',
@@ -1113,7 +1078,6 @@ const TRANSLATIONS = {
     'autoScroll': '自動捲動',
     'delete': 'Delete',
     'author': '作者',
-    'tools': '開發工具',
   },
   'zh_TW': {
     'currentSite': '目前網站',
@@ -1141,7 +1105,6 @@ const TRANSLATIONS = {
     'autoScroll': '自動捲動',
     'delete': 'Delete',
     'author': '作者',
-    'tools': '開發工具',
   },
 
 };

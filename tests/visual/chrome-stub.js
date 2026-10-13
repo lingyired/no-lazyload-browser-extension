@@ -55,6 +55,12 @@
     showInterceptionToast: false,
   };
 
+  const DEFAULT_CUSTOM_ATTRIBUTES = {
+    lazyAttributes: ['data-src', 'data-original', 'data-lazy-src', 'data-srcset', 'data-lazy-srcset'],
+    placeholderPatterns: ['thumb', 'placeholder', 'loading', 'spinner', 'blank', 'empty', 'lazy', 'preview', 'temp', 'default'],
+  };
+  let customAttributes = JSON.parse(JSON.stringify(DEFAULT_CUSTOM_ATTRIBUTES));
+
   function respond(message) {
     switch (message.type) {
       case 'GET_ALL_CONFIGS':
@@ -85,6 +91,26 @@
       case 'REMOVE_SITE_CONFIG':
         delete sites[message.domain];
         return { success: true };
+      case 'GET_CUSTOM_ATTRIBUTES':
+        return { success: true, data: JSON.parse(JSON.stringify(customAttributes)) };
+      case 'SET_CUSTOM_ATTRIBUTES': {
+        // 对齐 background：高级设置是 Pro 专属，免费版写入被拒
+        if (entitlement.isLimitEnforced && entitlement.entitlements.length === 0) {
+          return { success: false, error: 'PRO_REQUIRED' };
+        }
+        customAttributes = {
+          lazyAttributes: message.lazyAttributes || [],
+          placeholderPatterns: message.placeholderPatterns || [],
+        };
+        return { success: true };
+      }
+      case 'RESET_CUSTOM_ATTRIBUTES': {
+        if (entitlement.isLimitEnforced && entitlement.entitlements.length === 0) {
+          return { success: false, error: 'PRO_REQUIRED' };
+        }
+        customAttributes = JSON.parse(JSON.stringify(DEFAULT_CUSTOM_ATTRIBUTES));
+        return { success: true, data: JSON.parse(JSON.stringify(customAttributes)) };
+      }
       case 'ackEntitlementNotice':
         window.__ACK_COUNT__ = (window.__ACK_COUNT__ || 0) + 1;
         noticeData = null;   // 一次性：ACK 之后不该再弹

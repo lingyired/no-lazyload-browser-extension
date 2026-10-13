@@ -1,6 +1,6 @@
 // background/messageHandler.js
 
-import { MESSAGE_TYPES } from '../shared/constants.js';
+import { MESSAGE_TYPES, ENTITLEMENTS } from '../shared/constants.js';
 import {
   getSiteConfig,
   setSiteConfig,
@@ -127,12 +127,24 @@ function setupMessageHandler(jsEntitlementManager) {
             sendResponse({ success: true, data: customAttrs });
             break;
 
+          // 高级设置（懒加载属性 / 占位符）是 Pro 专属：写入路径必须在 background 拦住。
+          // 只拦写、不拦读 —— content script 仍需 GET 到用户已保存的规则，
+          // 而且 Safari 免费版降级后，之前保存过的规则应当继续生效而不是被清空。
+          // Chrome/Firefox 的 manager 恒为 has=true，这段对它们无副作用。
           case MESSAGE_TYPES.SET_CUSTOM_ATTRIBUTES:
+            if (!jsEntitlementManager.has(ENTITLEMENTS.UNLIMITED_SITES)) {
+              sendResponse({ success: false, error: 'PRO_REQUIRED' });
+              break;
+            }
             await setCustomAttributes(request.lazyAttributes, request.placeholderPatterns);
             sendResponse({ success: true });
             break;
 
           case MESSAGE_TYPES.RESET_CUSTOM_ATTRIBUTES:
+            if (!jsEntitlementManager.has(ENTITLEMENTS.UNLIMITED_SITES)) {
+              sendResponse({ success: false, error: 'PRO_REQUIRED' });
+              break;
+            }
             const resetAttrs = await resetCustomAttributes();
             sendResponse({ success: true, data: resetAttrs });
             break;

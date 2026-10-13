@@ -111,6 +111,7 @@ Web 界面（popup / 设置页）被我反复重做，用户三次反馈"不如�
 | 7 | **C2 术语改名** | 所有 \`_locales/*/messages.json\` 的 \`useAutoScroll\`/\`autoScroll\`/\`autoScrollDesc\`；\`popup.html:541-542\` | 用户可见：技术拦截 → **Standard**，自动滚动 → **Compatibility Mode**。popup 里不要出现 IntersectionObserver / data-src | 38 个语言包都要补/改，注意占位符 |
 | 8 | **C3 计数去掉 ∞** | \`popup.js:1331\`；\`settings/app.js:1869\` | Free 显示 \`2/3\`，Pro 只显示数字 \`7\`，Chrome 只显示数字 | 与 A1 同源，建议同批做 |
 | 9 | **D5 高级折叠** | \`settings/index.html:626-646\` 高级设置卡 | 用 \`<details>\` 包住「懒加载属性 / 占位符检测」，默认收起，加一句警告文案 | 折叠控件样式要贴合原始内联 CSS |
+| 10 | **高级设置 Pro 门禁（已完成）** | \`settings/index.html\` \`#advancedCard/#advancedLock/#advancedBody\`；\`settings/app.js\` \`isAdvancedLocked/updateAdvancedSettingsLock\`；\`background/messageHandler.js\` 的 \`SET/RESET_CUSTOM_ATTRIBUTES\` | 免费版显示但锁定（横幅 + 控件禁用 + 升级按钮）；写路径返回 \`PRO_REQUIRED\`；读路径与 content script 不受影响。**判据统一用 \`unlimitedSites\`**（Swift 购买只授予这一项，\`advancedRules\` 仍是预留 case） | 若日后要把「高级设置」与「无限网站」拆成两个商品，需先让 StoreKit 侧真正 grant \`.advancedRules\` |
 
 ---
 
@@ -190,8 +191,8 @@ git checkout origin/safari-support -- popup.html popup.js settings/
    子代理自报不确定项：fa/ps/ur 用了本地数字、ps 整份为尽力翻译
    （\`loading\`/\`undo\`/\`generalSettings\`）、hu 的 \`planProDetail\` 生硬、
    de 的 \`privacyNote\` 用了 du（页面其它处 du/Sie 混用）。建议母语者过一遍。
-4. **\`tests/visual/old/\`（244KB）** 是我保存的"改动前快照"，**含"Built with Kimi..."字样**，
-   不参与构建。用户可决定保留（便于新旧对比）或删除。
+4. **\`tests/visual/old/\`（244KB）** 是我保存的"改动前快照"，不参与构建。
+   作者署名已随主分支一起改成 lingAI。用户可决定保留（便于新旧对比）或删除。
 5. **未实测项**：真机 Safari 扩展注入、macOS 26.5 之前的 Host App 外观、
    App Store 沙盒（非 Xcode 本地）购买/恢复/退款、辅助功能真机视觉、VoiceOver。
    \`docs/safari-compatibility.md\` 里有 table 标了 ⚠️，**不要改成 ✅**。

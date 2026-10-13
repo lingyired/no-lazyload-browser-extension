@@ -9,8 +9,6 @@
 [![GitHub release](https://img.shields.io/github/v/release/lingyired/no-lazyload-browser-extension?style=for-the-badge&logo=github)](https://github.com/lingyired/no-lazyload-browser-extension/releases/latest)
 [![License](https://img.shields.io/github/license/lingyired/no-lazyload-browser-extension?style=for-the-badge)](LICENSE)
 
-Built with Kimi 2.5 + ClaudeCode + Superpowers
-
 ## 功能特点
 
 - **技术拦截**：使用 CSS + JavaScript 拦截常见的懒加载机制
