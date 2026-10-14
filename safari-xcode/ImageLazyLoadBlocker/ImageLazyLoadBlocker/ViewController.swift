@@ -52,7 +52,8 @@ class ViewController: NSViewController {
         if let window = view.window {
             window.makeKeyAndOrderFront(nil)
             // 标准 macOS 窗口：可缩放但不过分，给一个合理的最小尺寸。
-            window.minSize = NSSize(width: 420, height: 480)
+            // 与 HostRootView 的 minWidth / minHeight 保持一致，避免默认尺寸就出现滚动条。
+            window.minSize = NSSize(width: HostLayout.minWidth, height: HostLayout.minHeight)
         }
     }
 }

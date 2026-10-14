@@ -6,7 +6,7 @@
 //     扩展状态 → 怎么用 → 套餐 → （需要时才）升级
 //  购买不是首要信息，Host App 也不是付费墙。
 //
-//  视觉：系统组件 + 系统语义色 + 4pt 网格，不自己做 Liquid Glass。
+//  视觉：系统字体 + 系统语义色 + 4pt 网格，不自己做 Liquid Glass。
 //  macOS 26 的观感由系统材质/控件自然给出，老系统自动退化为标准外观。
 //
 
@@ -14,6 +14,7 @@ import SwiftUI
 
 struct HostRootView: View {
     @ObservedObject var viewModel: HostViewModel
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         VStack(spacing: 0) {
@@ -23,6 +24,7 @@ struct HostRootView: View {
 
                     if let banner = viewModel.banner {
                         BannerView(banner: banner)
+                            .transition(reduceMotion ? .opacity : .move(edge: .top).combined(with: .opacity))
                     }
 
                     ExtensionStatusView(viewModel: viewModel)
@@ -30,13 +32,16 @@ struct HostRootView: View {
                     PlanView(viewModel: viewModel)
                 }
                 .padding(HostSpacing.contentPadding)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                // 窗口被拉宽时限制正文宽度并居中，避免出现 900pt 宽的一行文字
+                .frame(maxWidth: HostLayout.contentMaxWidth, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .center)
             }
+            .animation(reduceMotion ? nil : .easeOut(duration: 0.18), value: viewModel.banner)
 
             HostFooterView(viewModel: viewModel)
         }
-        .frame(minWidth: 420, minHeight: 480)
-        .background(Color(nsColor: .windowBackgroundColor))
+        .frame(minWidth: HostLayout.minWidth, minHeight: HostLayout.minHeight)
+        .background(HostColor.windowSurface)
         .task { await viewModel.refresh() }
         // 扩展 popup 唤起本 App 后，用户在别处（Safari）完成购买，
         // 回到前台时重新读一次 App Group，避免显示过期状态。
@@ -50,45 +55,69 @@ private struct HeaderView: View {
     let plan: HostPlan
 
     var body: some View {
-        HStack(spacing: HostSpacing.x3) {
+        HStack(alignment: .top, spacing: HostSpacing.x3) {
             Image(nsImage: NSApplication.shared.applicationIconImage)
                 .resizable()
-                .frame(width: 40, height: 40)
+                .frame(width: HostLayout.appIcon, height: HostLayout.appIcon)
                 .accessibilityHidden(true)
 
-            Text(HostCopy.appName)
-                .font(.title2.weight(.semibold))
-
-            if plan == .pro {
-                Text(HostCopy.proBadge)
-                    .font(.caption.bold())
-                    .padding(.horizontal, HostSpacing.x2)
-                    .padding(.vertical, 2)
-                    .background(Capsule().fill(HostColor.success.opacity(0.15)))
-                    .foregroundStyle(HostColor.success)
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(spacing: HostSpacing.x2) {
+                    Text(HostCopy.appName)
+                        .font(.title2.weight(.semibold))
+                        .foregroundStyle(HostColor.primaryText)
+                    if plan == .pro {
+                        HostChip(text: HostCopy.proBadge)
+                    }
+                }
+                // 先说清楚这个 App 是干什么的，再谈状态和套餐
+                Text(HostCopy.appSubtitle)
+                    .font(.callout)
+                    .foregroundStyle(HostColor.secondaryText)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
             Spacer(minLength: 0)
         }
+        .accessibilityElement(children: .combine)
     }
 }
 
 private struct BannerView: View {
     let banner: HostViewModel.Banner
 
+    private var tint: Color {
+        switch banner.tone {
+        case .success: return HostColor.success
+        case .info: return HostColor.accent
+        case .error: return HostColor.danger
+        }
+    }
+
+    private var symbol: String {
+        switch banner.tone {
+        case .success: return "checkmark.circle.fill"
+        case .info: return "info.circle.fill"
+        case .error: return "exclamationmark.triangle.fill"
+        }
+    }
+
     var body: some View {
-        HStack(alignment: .top, spacing: HostSpacing.x2) {
-            Image(systemName: banner.isError ? "exclamationmark.triangle.fill" : "info.circle.fill")
-                .foregroundStyle(banner.isError ? HostColor.danger : HostColor.success)
+        HStack(alignment: .top, spacing: HostSpacing.x3) {
+            Image(systemName: symbol)
+                .foregroundStyle(tint)
+                .accessibilityHidden(true)
             Text(banner.text)
                 .font(.callout)
+                .foregroundStyle(HostColor.primaryText)
                 .fixedSize(horizontal: false, vertical: true)
             Spacer(minLength: 0)
         }
         .padding(HostSpacing.x3)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: HostRadius.control, style: .continuous)
-                .fill((banner.isError ? HostColor.danger : HostColor.success).opacity(0.10))
+                .fill(tint.opacity(0.12))
         )
         // 状态变化不该只靠颜色表达，图标 + 文案已经说明结果
         .accessibilityElement(children: .combine)

@@ -3,12 +3,29 @@
 //  ImageLazyLoadBlocker
 //
 //  Host App 里最优先的信息：Safari 扩展到底启用了没有，以及没启用时怎么办。
+//  三种状态（已启用 / 明确未启用 / 暂时读不到）各有各的说明，绝不混为一谈。
 //
 
 import SwiftUI
 
 struct ExtensionStatusView: View {
     @ObservedObject var viewModel: HostViewModel
+
+    private var badgeText: String {
+        switch viewModel.extensionEnabled {
+        case .some(true): return HostCopy.extensionEnabled
+        case .some(false): return HostCopy.extensionDisabled
+        case .none: return HostCopy.extensionStatusUnknown
+        }
+    }
+
+    private var badgeTone: HostStatusBadge.Tone {
+        switch viewModel.extensionEnabled {
+        case .some(true): return .ok
+        case .some(false): return .idle
+        case .none: return .warning
+        }
+    }
 
     private var hintText: String {
         switch viewModel.extensionEnabled {
@@ -19,26 +36,19 @@ struct ExtensionStatusView: View {
     }
 
     var body: some View {
-        HostGroup(title: HostCopy.safariExtension) {
+        HostSection(title: HostCopy.safariExtension) {
             HStack(spacing: HostSpacing.x2) {
-                HostStatusDot(
-                    isOn: viewModel.extensionEnabled == true,
-                    onText: HostCopy.extensionEnabled,
-                    offText: viewModel.extensionEnabled == nil
-                        ? HostCopy.extensionStatusUnknown
-                        : HostCopy.extensionDisabled,
-                    isUnknown: viewModel.extensionEnabled == nil
-                )
+                HostStatusBadge(text: badgeText, tone: badgeTone)
                 Spacer(minLength: 0)
             }
 
-            // 三种状态给三种说明：已启用 / 明确未启用 / 暂时读不到（不是"未启用"）
             Text(hintText)
-                .font(.callout)
+                .font(.body)
                 .foregroundStyle(HostColor.secondaryText)
                 .fixedSize(horizontal: false, vertical: true)
 
             if viewModel.extensionEnabled != true {
+                // 主操作：扩展没启用时，这是用户唯一需要做的事
                 Button {
                     viewModel.openSafariSettings()
                 } label: {
@@ -47,7 +57,6 @@ struct ExtensionStatusView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                // 主操作：扩展没启用时，这是用户唯一需要做的事
                 .keyboardShortcut(.defaultAction)
             }
         }
@@ -56,8 +65,8 @@ struct ExtensionStatusView: View {
 
 struct HowToUseView: View {
     var body: some View {
-        HostGroup(title: HostCopy.howToUse) {
-            VStack(alignment: .leading, spacing: HostSpacing.x2) {
+        HostSection(title: HostCopy.howToUse) {
+            VStack(alignment: .leading, spacing: HostSpacing.x3) {
                 StepRow(index: 1, text: HostCopy.stepOpenWebsite)
                 StepRow(index: 2, text: HostCopy.stepOpenExtension)
                 StepRow(index: 3, text: HostCopy.stepEnableSite)
@@ -71,14 +80,22 @@ private struct StepRow: View {
     let text: String
 
     var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: HostSpacing.x3) {
-            Text("\(index).")
-                .font(.body.monospacedDigit())
+        HStack(alignment: .center, spacing: HostSpacing.x3) {
+            Text("\(index)")
+                .font(.caption.weight(.semibold).monospacedDigit())
                 .foregroundStyle(HostColor.secondaryText)
-                .frame(width: 16, alignment: .trailing)
+                .frame(width: 20, height: 20)
+                .background(Circle().fill(HostColor.subtleFill))
+                .accessibilityHidden(true)
+
             Text(text)
                 .font(.body)
+                .foregroundStyle(HostColor.primaryText)
                 .fixedSize(horizontal: false, vertical: true)
+
+            Spacer(minLength: 0)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(index). \(text)")
     }
 }

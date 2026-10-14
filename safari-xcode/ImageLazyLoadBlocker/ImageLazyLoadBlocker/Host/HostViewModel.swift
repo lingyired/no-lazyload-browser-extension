@@ -31,10 +31,20 @@ final class HostViewModel: ObservableObject {
         case restore
     }
 
+    /// 一次操作的结果提示。语气决定图标与颜色，但不改变文案本身。
     struct Banner: Identifiable, Equatable {
+        enum Tone {
+            /// 操作成功（已解锁 / 已恢复）
+            case success
+            /// 中性进展（等待批准 / 没有可恢复的购买）
+            case info
+            /// 失败
+            case error
+        }
+
         let id = UUID()
         let text: String
-        let isError: Bool
+        let tone: Tone
     }
 
     // MARK: - 扩展状态
@@ -75,15 +85,6 @@ final class HostViewModel: ObservableObject {
 
     var isBusy: Bool { busy != .none }
 
-    /// 只有免费版才展示升级入口；Pro 用户不再看到 Buy CTA。
-    var showsUpgrade: Bool { plan == .free && storeAvailable && storageAvailable }
-
-    /// 价格文案：取不到真实价格时绝不用假价格，只显示"一次性购买"。
-    var priceLine: String {
-        if let price { return "\(price) · \(HostCopy.oneTimePurchase)" }
-        return HostCopy.oneTimePurchase
-    }
-
     // MARK: - 刷新
 
     func refresh() async {
@@ -121,15 +122,15 @@ final class HostViewModel: ObservableObject {
             switch try await purchaseProvider.purchase() {
             case .purchased:
                 reloadEntitlements()
-                banner = Banner(text: HostCopy.purchaseUnlocked, isError: false)
+                banner = Banner(text: HostCopy.purchaseUnlocked, tone: .success)
             case .cancelled:
                 break // 用户主动取消，不提示、不报错
             case .pending:
-                banner = Banner(text: HostCopy.purchasePending, isError: false)
+                banner = Banner(text: HostCopy.purchasePending, tone: .info)
             }
         } catch {
             os_log(.error, "purchase failed: %{public}@", String(describing: error))
-            banner = Banner(text: HostCopy.purchaseFailed, isError: true)
+            banner = Banner(text: HostCopy.purchaseFailed, tone: .error)
         }
     }
 
@@ -142,14 +143,14 @@ final class HostViewModel: ObservableObject {
             switch try await purchaseProvider.restore() {
             case .restored:
                 reloadEntitlements()
-                banner = Banner(text: HostCopy.purchaseRestored, isError: false)
+                banner = Banner(text: HostCopy.purchaseRestored, tone: .success)
             case .nothingToRestore:
                 // 中性提示：这个 Apple ID 下确实没有可恢复的购买
-                banner = Banner(text: HostCopy.nothingToRestore, isError: false)
+                banner = Banner(text: HostCopy.nothingToRestore, tone: .info)
             }
         } catch {
             os_log(.error, "restore failed: %{public}@", String(describing: error))
-            banner = Banner(text: HostCopy.purchaseFailed, isError: true)
+            banner = Banner(text: HostCopy.purchaseFailed, tone: .error)
         }
     }
 

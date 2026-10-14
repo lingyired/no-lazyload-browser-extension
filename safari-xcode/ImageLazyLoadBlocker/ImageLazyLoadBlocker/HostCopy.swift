@@ -25,6 +25,12 @@ enum HostCopy {
         String(localized: "appName", defaultValue: "No Lazyload")
     }
 
+    /// 标题下一行：说清楚这个 App 是干什么的，用户不必猜。
+    static var appSubtitle: String {
+        String(localized: "appSubtitle",
+               defaultValue: "Loads every image on the sites you enable in Safari.")
+    }
+
     // MARK: - Safari 扩展状态
 
     static var safariExtension: String {
@@ -152,6 +158,11 @@ enum HostCopy {
 
     static var nothingToRestore: String {
         String(localized: "nothingToRestore", defaultValue: "No previous purchase was found.")
+    }
+
+    /// 页脚忙碌指示（购买 / 恢复进行中）的无障碍标签。
+    static var working: String {
+        String(localized: "working", defaultValue: "Working…")
     }
 
     static var purchaseFailed: String {
