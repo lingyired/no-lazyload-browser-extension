@@ -5,6 +5,7 @@
 //   · 未翻译条目数量上限 —— 用来发现"加了文案但没翻译"
 
 import assert from 'node:assert/strict';
+import { runInNewContext } from 'node:vm';
 import { readFileSync, readdirSync } from 'node:fs';
 
 export const name = '_locales';
@@ -51,6 +52,60 @@ export function run() {
       messages[k].message === en[k].message && !ALLOWED_IDENTICAL.has(k));
     assert.ok(identical.length <= 8,
       `${lang} 有 ${identical.length} 条与英文完全相同，疑似未翻译: ${identical.join(', ')}`);
+  }
+
+  // Test the shared region/script resolver and RTL document metadata.
+  const fakeWindow = { __LOCALES__: Object.fromEntries(langs.map(code => [code, {}])) };
+  runInNewContext(readFileSync('i18n/language.js', 'utf8'), { window: fakeWindow });
+  const resolver = fakeWindow.NoLazyloadLanguage;
+  for (const [input, expected] of [
+    ['zh-CN', 'zh'], ['zh-SG', 'zh'], ['zh-Hans', 'zh'],
+    ['zh-TW', 'zh_TW'], ['zh-Hant', 'zh_TW'], ['zh-Hant-TW', 'zh_TW'],
+    ['zh-HK', 'zh_HK'], ['zh-MO', 'zh_HK'], ['zh-Hant-HK', 'zh_HK'],
+    ['zh_TW', 'zh_TW'], ['en-GB', 'en'], ['pt-BR', 'pt']
+  ]) {
+    assert.equal(resolver.resolveLanguage(input, langs), expected, input);
+  }
+  assert.equal(resolver.resolveLanguage('not-a-language', langs), null);
+  assert.equal(resolver.detectBrowserLanguage(
+    { i18n: { getUILanguage: () => 'zh-HK' } }, 'en-US', langs), 'zh_HK');
+  assert.equal(resolver.detectBrowserLanguage(
+    { i18n: { getUILanguage: () => 'xx-YY' } }, 'zh-TW', langs), 'zh_TW');
+  const fakeDoc = { documentElement: {} };
+  for (const code of ['ar', 'fa', 'he', 'ps', 'ur']) {
+    resolver.applyDocumentLanguage(code, fakeDoc);
+    assert.equal(fakeDoc.documentElement.dir, 'rtl', code);
+  }
+  resolver.applyDocumentLanguage('zh_TW', fakeDoc);
+  assert.equal(fakeDoc.documentElement.lang, 'zh-TW');
+  assert.equal(fakeDoc.documentElement.dir, 'ltr');
+
+  // Host help must quote the same button text that actually appears in the extension.
+  const catalog = JSON.parse(readFileSync(
+    'safari-xcode/ImageLazyLoadBlocker/ImageLazyLoadBlocker/Localizable.xcstrings', 'utf8'
+  ));
+  for (const [hostLanguage, extensionLanguage] of [
+    ['en', 'en'], ['zh-Hans', 'zh'], ['zh-Hant', 'zh_TW'],
+    ['ja', 'ja'], ['ko', 'ko'], ['de', 'de'], ['fr', 'fr'],
+    ['es', 'es'], ['th', 'th']
+  ]) {
+    const extension = JSON.parse(readFileSync(
+      `_locales/${extensionLanguage}/messages.json`, 'utf8'
+    ));
+    for (const [hostKey, extensionKey] of [
+      ['stepEnableSite', 'addCurrentSite'],
+      ['troubleshoot3Body', 'removeCurrentSite'],
+      ['troubleshoot1Body', 'refreshPage']
+    ]) {
+      const native = catalog.strings[hostKey].localizations[hostLanguage].stringUnit.value;
+      const label = extension[extensionKey].message;
+      assert.ok(native.toLocaleLowerCase().includes(label.toLocaleLowerCase()),
+        `${hostLanguage} host ${hostKey} must quote extension button ${extensionKey}: ${label}`);
+    }
+  }
+  for (const code of ['zh', 'zh_CN', 'zh_TW', 'zh_HK']) {
+    const messages = JSON.parse(readFileSync(`_locales/${code}/messages.json`, 'utf8'));
+    assert.equal(messages.appName.message, 'No Lazyload', `brand name in ${code}`);
   }
 
   // 4. 待翻译列表必须仍然是一个真实的待办（防止已完成的语言留在列表里蒙混过关）

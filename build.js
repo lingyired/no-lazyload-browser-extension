@@ -254,6 +254,7 @@ function writeLocalesBundle(targetDir) {
     '// ⚠️ 本文件由 build.js 从 _locales 目录生成，请勿手工修改。',
     '// 改文案请改 _locales，然后重新构建。',
     'window.__LOCALES__ = ' + JSON.stringify(bundle, null, 2) + ';',
+    fs.readFileSync(path.join(SRC_DIR, 'i18n/language.js'), 'utf8'),
     '',
   ].join('\n');
 

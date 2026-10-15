@@ -28,10 +28,10 @@
     "message": "Kann Nicht Hinzufügen"
   },
   "addCurrentSite": {
-    "message": "Aktuelle Seite Hinzufügen"
+    "message": "Aktuelle Seite hinzufügen"
   },
   "removeCurrentSite": {
-    "message": "Aktuelle Seite Entfernen"
+    "message": "Aktuelle Seite entfernen"
   },
   "configuredSites": {
     "message": "Konfigurierte Seiten"
@@ -43,7 +43,7 @@
     "message": "Vollständige Einstellungen"
   },
   "refreshPage": {
-    "message": "Seite Aktualisieren"
+    "message": "Seite neu laden"
   },
   "siteAdded": {
     "message": "{domain} Hinzugefügt"

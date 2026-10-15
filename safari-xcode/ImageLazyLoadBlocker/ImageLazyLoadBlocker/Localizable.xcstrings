@@ -1673,8 +1673,8 @@
         },
         "ja": {
           "stringUnit": {
-            "state": "needs_review",
-            "value": "未設定"
+            "state": "translated",
+            "value": "無効"
           }
         },
         "ko": {
@@ -4696,7 +4696,7 @@
         "de": {
           "stringUnit": {
             "state": "needs_review",
-            "value": "Klicke auf „Aktuelle Seite Hinzufügen“ – die Bilder werden sofort geladen"
+            "value": "Klicke auf „Aktuelle Seite hinzufügen“ – die Bilder werden sofort geladen"
           }
         },
         "el": {
@@ -4708,7 +4708,7 @@
         "es": {
           "stringUnit": {
             "state": "needs_review",
-            "value": "Haz clic en «Agregar Sitio Actual»: las imágenes se cargan al instante"
+            "value": "Haz clic en «Agregar sitio actual»: las imágenes se cargan al instante"
           }
         },
         "fa": {
@@ -4726,7 +4726,7 @@
         "fr": {
           "stringUnit": {
             "state": "needs_review",
-            "value": "Cliquez sur « Ajouter le Site Actuel » — les images se chargent immédiatement"
+            "value": "Cliquez sur « Ajouter le site actuel » — les images se chargent immédiatement"
           }
         },
         "he": {
@@ -5497,7 +5497,7 @@
         "th": {
           "stringUnit": {
             "state": "needs_review",
-            "value": "ตรวจสอบว่าเว็บไซต์เปิดใช้ในป๊อปอัปแล้วหรือยัง ถ้าเปิดแล้วให้ลองโหมดเข้ากันได้ ยังไม่ได้ผลใช่ไหม ใช้ “โหลดหน้าใหม่”"
+            "value": "ตรวจสอบว่าเว็บไซต์เปิดใช้ในป๊อปอัปแล้วหรือยัง ถ้าเปิดแล้วให้ลองโหมดเข้ากันได้ ยังไม่ได้ผลใช่ไหม ใช้ “รีเฟรชหน้า”"
           }
         },
         "tr": {
@@ -6243,7 +6243,7 @@
         "de": {
           "stringUnit": {
             "state": "needs_review",
-            "value": "Öffne das Popup und klicke auf „Aktuelle Seite Entfernen“"
+            "value": "Öffne das Popup und klicke auf „Aktuelle Seite entfernen“"
           }
         },
         "el": {
@@ -6255,7 +6255,7 @@
         "es": {
           "stringUnit": {
             "state": "needs_review",
-            "value": "Abre la ventana emergente y haz clic en «Eliminar Sitio Actual»"
+            "value": "Abre la ventana emergente y haz clic en «Eliminar sitio actual»"
           }
         },
         "fa": {
@@ -6273,7 +6273,7 @@
         "fr": {
           "stringUnit": {
             "state": "needs_review",
-            "value": "Ouvrez la fenêtre contextuelle et cliquez sur « Supprimer le Site Actuel »"
+            "value": "Ouvrez la fenêtre contextuelle et cliquez sur « Supprimer le site actuel »"
           }
         },
         "he": {

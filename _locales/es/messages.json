@@ -3,7 +3,7 @@
     "message": "No Lazyload"
   },
   "appDescription": {
-    "message": "Desactiva la carga perezosa de imágenes en sitios web, carga todas las imágenes de una vez",
+    "message": "Desactiva la carga diferida de imágenes en sitios web y carga las imágenes sin esperar a desplazarte por la página.",
     "description": "Extension description"
   },
   "currentSite": {
@@ -25,10 +25,10 @@
     "message": "No Se Puede Agregar"
   },
   "addCurrentSite": {
-    "message": "Agregar Sitio Actual"
+    "message": "Agregar sitio actual"
   },
   "removeCurrentSite": {
-    "message": "Eliminar Sitio Actual"
+    "message": "Eliminar sitio actual"
   },
   "configuredSites": {
     "message": "Sitios Configurados"
@@ -40,7 +40,7 @@
     "message": "Configuración Completa"
   },
   "refreshPage": {
-    "message": "Actualizar Página"
+    "message": "Actualizar página"
   },
   "siteAdded": {
     "message": "Agregado {domain}"

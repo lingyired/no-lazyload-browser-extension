@@ -3,7 +3,7 @@
     "message": "No Lazyload"
   },
   "appDescription": {
-    "message": "禁用网站图片懒加载，一次性加载完整所有图片",
+    "message": "禁用网站图片懒加载，自动加载页面中的图片。",
     "description": "Extension description"
   },
   "currentSite": {
@@ -74,7 +74,7 @@
     "message": "完成后返回页面顶部"
   },
   "fallbackToScroll": {
-    "message": "技术拦截不生效时自动使用滚动兜底",
+    "message": "标准模式无法加载图片时，自动尝试滚动页面",
     "description": "Fallback option"
   },
   "showInterceptionToast": {
@@ -136,13 +136,13 @@
     "message": "模式"
   },
   "standardMode": {
-    "message": "标准"
+    "message": "标准模式"
   },
   "compatibilityMode": {
     "message": "兼容模式"
   },
   "standardModeHelp": {
-    "message": "用 No Lazyload 的常规引擎立即加载图片。"
+    "message": "直接处理图片懒加载，适用于大多数网站。"
   },
   "compatibilityModeHelp": {
     "message": "自动滚动页面来触发图片加载。仅在标准模式无效时使用。"
@@ -241,7 +241,7 @@
     "message": "自动滚动页面来触发图片加载。仅在标准模式无效时使用。"
   },
   "generalSettings": {
-    "message": "一般"
+    "message": "常规设置"
   },
   "settingsSubtitle": {
     "message": "禁用图片懒加载 · 完整设置"

@@ -3,7 +3,7 @@
     "message": "No Lazyload"
   },
   "appDescription": {
-    "message": "Désactive le chargement paresseux des images sur les sites web, charge toutes les images en une fois",
+    "message": "Désactive le chargement différé des images sur les sites web et charge les images sans attendre le défilement.",
     "description": "Extension description"
   },
   "currentSite": {
@@ -25,10 +25,10 @@
     "message": "Impossible d'ajouter"
   },
   "addCurrentSite": {
-    "message": "Ajouter le Site Actuel"
+    "message": "Ajouter le site actuel"
   },
   "removeCurrentSite": {
-    "message": "Supprimer le Site Actuel"
+    "message": "Supprimer le site actuel"
   },
   "configuredSites": {
     "message": "Sites Configurés"
@@ -40,7 +40,7 @@
     "message": "Paramètres Complets"
   },
   "refreshPage": {
-    "message": "Actualiser la Page"
+    "message": "Actualiser la page"
   },
   "siteAdded": {
     "message": "Ajouté {domain}"
@@ -220,7 +220,7 @@
     "message": "Détection de Placeholders"
   },
   "placeholderPatternsHelp": {
-    "message": "Les images dont le src contient ces mots-clés seront traitées comme des placeholders, séparés par des virgules"
+    "message": "Les images dont l’attribut src contient l’un de ces mots-clés seront traitées comme des images de remplacement. Séparez les mots-clés par des virgules."
   },
   "resetToDefault": {
     "message": "Réinitialiser par Défaut"
