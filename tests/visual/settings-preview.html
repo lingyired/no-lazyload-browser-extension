@@ -4,7 +4,7 @@
 <body>
 <!--
   渲染当前 settings/index.html（原始视觉 + 最小功能改动）。
-  state: free(默认) | pro | unrestricted | empty | unavailable
+  state: default(默认) | empty | many
 -->
 <script src="chrome-stub.js"></script>
 <script>
@@ -30,10 +30,8 @@ fetch('../../settings/index.html')
       const node = scripts.shift();
       if (!node) { document.dispatchEvent(new Event('DOMContentLoaded')); return; }
       let src = node.getAttribute('src');
-      // locales.js / shared-ui.js 是构建产物，预览时读 dist/safari 下的副本
+      // locales.js 是构建产物，预览时读 dist/safari 下的副本
       if (src === '../locales.js') src = '../../dist/safari/locales.js';
-      else if (src === '../shared-ui.js') src = '../../dist/safari/shared-ui.js';
-      else if (src === '../i18n-manager.js') src = '../../i18n-manager.js';
       else if (src === 'app.js') src = '../../settings/app.js';
       else src = src.replace(/^\.\.\//, '../../');
       const el = document.createElement('script');
@@ -51,9 +49,7 @@ function showErrors() {
   pre.textContent = 'errors: ' + JSON.stringify(window.__ERR__, null, 1)
     + '\nvalues: scrollSpeed=' + (document.getElementById('scrollSpeed')||{}).value
     + ' stayDuration=' + (document.getElementById('stayDuration')||{}).value
-    + ' licenseStatus=' + (document.getElementById('licenseStatus')||{}).textContent
-    + ' | toast=' + ((document.querySelector('.toast') || {}).textContent || '')
-    + ' acks=' + (window.__ACK_COUNT__ || 0);
+    + ' | toast=' + ((document.querySelector('.toast') || {}).textContent || '');
   document.body.appendChild(pre);
 }
 // ?roundtrip=1 验证"导出 → 清空 → 导入 无损"（A7 的验收条件）。

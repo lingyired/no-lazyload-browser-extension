@@ -4,10 +4,13 @@
 // ⚠️ 必须同时支持回调式与 Promise 式调用：MV3 里 popup.js 用
 //    `await chrome.tabs.query(...)`（Promise），却用回调形式 sendMessage。
 //    行为对齐 background 的真实返回。
+//
+// 三个平台（Chrome / Firefox / Safari）现在完全一致：免费且无限制，
+// 没有内购、没有授权查询，也没有站点数量上限。
 (function () {
   // 直接读 URL：本脚本在预览页内联脚本之前执行，
   // 那时 window.__PREVIEW_STATE__ 还没赋值。
-  const state = new URLSearchParams(location.search).get('state') || 'free';
+  const state = new URLSearchParams(location.search).get('state') || 'default';
 
   const sites = {
     'example.com': { strategy: 'tech-block', scrollFallback: false, addedAt: 3 },
@@ -17,35 +20,14 @@
     delete sites['example.com'];
     delete sites['news.example.org'];
   }
-  // state=limit：额度已满（3 个），且当前标签页的网站还没启用 ——
-  // 这样才能看到"开关 OFF、点了弹升级框、不会先切 ON 再回滚"
-  if (state === 'limit') {
+  // state=many：超过旧免费版 3 个上限，用来确认现在不再有任何截断
+  if (state === 'many') {
     delete sites['example.com'];
     delete sites['news.example.org'];
-    sites['a.example.com'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 3 };
-    sites['b.example.com'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 2 };
-    sites['c.example.com'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 1 };
+    ['a', 'b', 'c', 'd', 'e'].forEach(function (name, i) {
+      sites[name + '.example.com'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 9 - i };
+    });
   }
-  if (state === 'pro' || state === 'unrestricted' || state === 'notice') {
-    sites['blog.example.net'] = { strategy: 'tech-block', scrollFallback: false, addedAt: 1 };
-  }
-
-  const entitlement = {
-    free: { entitlements: [], isLimitEnforced: true, licenseMode: 'free', storageAvailable: true },
-    pro: { entitlements: ['unlimitedSites'], isLimitEnforced: true, licenseMode: 'pro', storageAvailable: true },
-    unrestricted: { entitlements: [], isLimitEnforced: false, licenseMode: 'unrestricted', storageAvailable: null },
-    empty: { entitlements: [], isLimitEnforced: true, licenseMode: 'free', storageAvailable: true },
-    limit: { entitlements: [], isLimitEnforced: true, licenseMode: 'free', storageAvailable: true },
-    unavailable: { entitlements: [], isLimitEnforced: true, licenseMode: 'free', storageAvailable: false },
-    notice: { entitlements: ['unlimitedSites'], isLimitEnforced: true, licenseMode: 'pro', storageAvailable: true },
-  }[state];
-
-  // state=notice 模拟"买完 Pro 回来"：background 已补做第 4 个网站，并留下一次性提示
-  let noticeData = state === 'notice'
-    ? { type: 'pendingSiteAdded', domain: 'blog.example.net', at: 1700000000000 }
-    : null;
-
-  const limitHit = state === 'limit';
 
   let globalConfig = {
     scrollSpeed: 800,
@@ -65,15 +47,13 @@
     switch (message.type) {
       case 'GET_ALL_CONFIGS':
         return { success: true, data: JSON.parse(JSON.stringify(sites)) };
-      case 'getEntitlements':
-      case 'refreshEntitlements':
-        return Object.assign({ success: true, pendingAction: null, notice: noticeData }, entitlement);
+      case 'GET_SITE_CONFIG': {
+        const key = normalizeHostname((message.url || '').replace(/^https?:\/\//, '').split('/')[0]);
+        return { success: true, data: sites[key] ? JSON.parse(JSON.stringify(sites[key])) : null };
+      }
       case 'SET_SITE_CONFIG': {
         // 对齐 background：键做规范化；addedAt 有限时保留（导入排序要用）
         const key = normalizeHostname(message.domain) || message.domain;
-        if (limitHit && !sites[key] && entitlement.entitlements.length === 0) {
-          return { success: false, error: 'LIMIT_REACHED' };
-        }
         window.__SET_CALLS__ = window.__SET_CALLS__ || [];
         window.__SET_CALLS__.push(JSON.parse(JSON.stringify(message)));
         sites[key] = {
@@ -93,30 +73,15 @@
         return { success: true };
       case 'GET_CUSTOM_ATTRIBUTES':
         return { success: true, data: JSON.parse(JSON.stringify(customAttributes)) };
-      case 'SET_CUSTOM_ATTRIBUTES': {
-        // 对齐 background：高级设置是 Pro 专属，免费版写入被拒
-        if (entitlement.isLimitEnforced && entitlement.entitlements.length === 0) {
-          return { success: false, error: 'PRO_REQUIRED' };
-        }
+      case 'SET_CUSTOM_ATTRIBUTES':
         customAttributes = {
           lazyAttributes: message.lazyAttributes || [],
           placeholderPatterns: message.placeholderPatterns || [],
         };
         return { success: true };
-      }
-      case 'RESET_CUSTOM_ATTRIBUTES': {
-        if (entitlement.isLimitEnforced && entitlement.entitlements.length === 0) {
-          return { success: false, error: 'PRO_REQUIRED' };
-        }
+      case 'RESET_CUSTOM_ATTRIBUTES':
         customAttributes = JSON.parse(JSON.stringify(DEFAULT_CUSTOM_ATTRIBUTES));
         return { success: true, data: JSON.parse(JSON.stringify(customAttributes)) };
-      }
-      case 'ackEntitlementNotice':
-        window.__ACK_COUNT__ = (window.__ACK_COUNT__ || 0) + 1;
-        noticeData = null;   // 一次性：ACK 之后不该再弹
-        return { success: true };
-      case 'requestPurchase':
-        return { success: false, error: 'PREVIEW' };
       default:
         return { success: false, error: 'PREVIEW_UNKNOWN' };
     }
@@ -155,20 +120,6 @@
       });
     };
   }
-
-  // i18n-manager.js 用 runtime.getURL('_locales/<lang>/messages.json') + fetch 读文案。
-  // 预览页在 tests/visual/ 下，把 URL 指回仓库根目录。
-  const localeUrl = function (p) {
-    return '../../' + p.replace(/^\.\.\//, '');
-  };
-  const originalFetch = window.fetch ? window.fetch.bind(window) : null;
-  window.fetch = function (input, init) {
-    const url = typeof input === 'string' ? input : (input && input.url) || '';
-    if (url.indexOf('_locales/') !== -1) {
-      return originalFetch(localeUrl(url), init);
-    }
-    return originalFetch(input, init);
-  };
 
   window.chrome = {
     runtime: {

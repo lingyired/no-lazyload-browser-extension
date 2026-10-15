@@ -1,140 +1,96 @@
 // tests/messageHandler.test.mjs
 // background/messageHandler.js 的行为回归：
-//   · 免费额度撞上限 → 拒绝新增 + 写入购买待办
-//   · 批量导入被截断 → 不写待办
-//   · 权限刷新后 → 自动补做待办并留下一次性 notice
-//   · 权限快照 → 带上 licenseMode / storageAvailable
+//   · 网站配置的增删改查
+//   · 自定义检测规则（懒加载属性 / 占位符）读写
+//   · 三个平台一视同仁 —— 没有站点数量上限，也没有 Pro 门禁
 
 import assert from 'node:assert/strict';
-import { installChromeStub, makeManager } from './helpers/chrome-stub.mjs';
+import { installChromeStub } from './helpers/chrome-stub.mjs';
 
 export const name = 'background/messageHandler.js';
 
 export async function run() {
   const ctx = installChromeStub();
   const { setupMessageHandler } = await import('../background/messageHandler.js');
+  setupMessageHandler();
 
-  // ---- Safari Free：第 4 个网站被拦，并留下待办 ----
-  const freeManager = makeManager({ enforceLimit: true, entitlements: [] });
-  setupMessageHandler(freeManager);
-
-  for (const domain of ['a.com', 'b.com', 'c.com']) {
+  // ---- 网站配置：新增 / 读取 / 更新 / 删除 ----
+  for (const [i, domain] of ['a.com', 'b.com', 'c.com', 'www.d.com', 'e.com'].entries()) {
     const r = await ctx.dispatch({ type: 'SET_SITE_CONFIG', domain, strategy: 'tech-block' });
-    assert.equal(r.success, true, domain + ' 应当可以添加');
+    assert.equal(r.success, true, domain + ' 应当可以添加（没有数量上限）');
   }
+  assert.deepEqual(Object.keys(ctx.store.siteConfigs).sort(),
+                   ['a.com', 'b.com', 'c.com', 'd.com', 'e.com'],
+                   '域名键必须规范化，www. 前缀不入库');
 
-  const denied = await ctx.dispatch({
-    type: 'SET_SITE_CONFIG', domain: 'www.d.com', strategy: 'tech-block', scrollFallback: true,
+  const single = await ctx.dispatch({ type: 'GET_SITE_CONFIG', url: 'https://www.b.com/x' });
+  assert.equal(single.success, true);
+  assert.equal(single.data.strategy, 'tech-block');
+
+  const updated = await ctx.dispatch({
+    type: 'SET_SITE_CONFIG', domain: 'a.com', strategy: 'scroll-fallback', scrollFallback: true,
   });
-  assert.deepEqual({ success: denied.success, error: denied.error },
-                   { success: false, error: 'LIMIT_REACHED' });
+  assert.equal(updated.success, true, '更新已有网站应成功');
+  assert.equal(ctx.store.siteConfigs['a.com'].scrollFallback, true);
+  assert.equal(ctx.store.siteConfigs['a.com'].strategy, 'scroll-fallback');
 
-  const pending = ctx.store.pendingEntitlementAction;
-  assert.ok(pending, '撞上限时必须写入待办');
-  assert.equal(pending.domain, 'd.com', '待办域名必须规范化');
-  assert.equal(pending.scrollFallback, true);
-  assert.equal(pending.version, 1);
-  assert.equal(pending.action, 'addSite');
+  const all = await ctx.dispatch({ type: 'GET_ALL_CONFIGS' });
+  assert.equal(Object.keys(all.data).length, 5);
 
-  // 导入被截断不应覆盖待办
-  await ctx.dispatch({ type: 'SET_SITE_CONFIG', domain: 'e.com', source: 'import' });
-  assert.equal(ctx.store.pendingEntitlementAction.domain, 'd.com', '导入不应改写待办');
+  const removed = await ctx.dispatch({ type: 'REMOVE_SITE_CONFIG', domain: 'e.com' });
+  assert.equal(removed.success, true);
+  assert.equal(ctx.store.siteConfigs['e.com'], undefined);
 
-  // ---- 购买完成后刷新权限 → 自动补做待办 ----
-  freeManager.setEntitlements(['unlimitedSites']);
-  const refreshed = await ctx.dispatch({ type: 'refreshEntitlements' });
-  assert.equal(refreshed.licenseMode, 'pro');
-  assert.ok(ctx.store.siteConfigs['d.com'], 'Pro 生效后应补做待办');
-  assert.equal(ctx.store.siteConfigs['d.com'].scrollFallback, true, '补做时保留兼容模式设置');
-  assert.equal(ctx.store.pendingEntitlementAction, undefined, '待办应被消费');
-  assert.equal(refreshed.notice.type, 'pendingSiteAdded');
-  assert.equal(refreshed.notice.domain, 'd.com');
+  // ---- addedAt 透传（导入排序依赖它）----
+  await ctx.dispatch({ type: 'SET_SITE_CONFIG', domain: 'sorted.com', addedAt: 12345 });
+  assert.equal(ctx.store.siteConfigs['sorted.com'].addedAt, 12345, '导入时必须保留原始 addedAt');
 
-  // ACK 后 notice 消失
-  await ctx.dispatch({ type: 'ackEntitlementNotice' });
-  const after = await ctx.dispatch({ type: 'getEntitlements' });
-  assert.equal(after.notice, null);
+  // ---- 全局配置 ----
+  const globalDefault = await ctx.dispatch({ type: 'GET_GLOBAL_CONFIG' });
+  assert.equal(globalDefault.success, true);
+  assert.equal(globalDefault.data.defaultStrategy, 'disabled', '未配置时返回默认策略');
 
-  // ---- Chrome/Firefox：不限额，永不产生待办 ----
+  await ctx.dispatch({ type: 'SET_GLOBAL_CONFIG', config: { scrollSpeed: 900 } });
+  const globalAfter = await ctx.dispatch({ type: 'GET_GLOBAL_CONFIG' });
+  assert.equal(globalAfter.data.scrollSpeed, 900);
+
+  // ---- 自定义检测规则：任何平台都可读写 ----
+  const attrsDefault = await ctx.dispatch({ type: 'GET_CUSTOM_ATTRIBUTES' });
+  assert.equal(attrsDefault.success, true);
+  assert.ok(Array.isArray(attrsDefault.data.lazyAttributes) && attrsDefault.data.lazyAttributes.length > 0);
+  assert.ok(Array.isArray(attrsDefault.data.placeholderPatterns));
+
+  const writeAttrs = await ctx.dispatch({
+    type: 'SET_CUSTOM_ATTRIBUTES',
+    lazyAttributes: ['data-x'],
+    placeholderPatterns: ['x'],
+  });
+  assert.equal(writeAttrs.success, true, '高级设置对所有平台开放');
+  assert.deepEqual(ctx.store.customAttributes.lazyAttributes, ['data-x']);
+
+  const resetAttrs = await ctx.dispatch({ type: 'RESET_CUSTOM_ATTRIBUTES' });
+  assert.equal(resetAttrs.success, true);
+  assert.ok(resetAttrs.data.lazyAttributes.length > 1, '重置应回到默认列表');
+  assert.deepEqual(ctx.store.customAttributes.lazyAttributes, resetAttrs.data.lazyAttributes);
+
+  // ---- 批量导入：不受任何数量上限截断 ----
   const ctx2 = installChromeStub();
-  const chromeManager = makeManager({ enforceLimit: false });
-  setupMessageHandler(chromeManager);
+  setupMessageHandler();
   for (let i = 0; i < 10; i++) {
     const r = await ctx2.dispatch({ type: 'SET_SITE_CONFIG', domain: 'site' + i + '.com' });
-    assert.equal(r.success, true);
+    assert.equal(r.success, true, '第 ' + (i + 1) + ' 个网站也不该被拒绝');
   }
-  assert.equal(ctx2.store.pendingEntitlementAction, undefined, '免费平台不该出现待办');
+  assert.equal(Object.keys(ctx2.store.siteConfigs).length, 10, '10 个网站必须全部写入');
 
-  const snap = await ctx2.dispatch({ type: 'getEntitlements' });
-  assert.equal(snap.licenseMode, 'unrestricted', 'Chrome/Firefox 不是 Pro');
+  // ---- 未知消息类型明确报错，不静默成功 ----
+  const unknown = await ctx.dispatch({ type: 'NOPE' });
+  assert.deepEqual({ success: unknown.success, error: unknown.error },
+                   { success: false, error: 'Unknown message type' });
 
-  // ---- 过期待办会被丢弃 ----
-  const ctx3 = installChromeStub({
-    pendingEntitlementAction: {
-      version: 1, action: 'addSite', domain: 'old.com',
-      strategy: 'tech-block', scrollFallback: false,
-      createdAt: Date.now() - 25 * 60 * 60 * 1000,
-    },
-  });
-  const proManager = makeManager({ enforceLimit: true, entitlements: ['unlimitedSites'] });
-  setupMessageHandler(proManager);
-  await ctx3.dispatch({ type: 'refreshEntitlements' });
-  assert.equal(ctx3.store.siteConfigs && ctx3.store.siteConfigs['old.com'], undefined,
-               '超过 24 小时的待办必须被丢弃');
-
-  // ---- 已存在的网站在限额下仍可更新策略 ----
-  const ctx4 = installChromeStub({
-    siteConfigs: { 'x.com': { strategy: 'tech-block', scrollFallback: false, addedAt: 1 } },
-  });
-  const free4 = makeManager({ enforceLimit: true });
-  setupMessageHandler(free4);
-  const update = await ctx4.dispatch({
-    type: 'SET_SITE_CONFIG', domain: 'x.com', strategy: 'scroll-fallback', scrollFallback: true,
-  });
-  assert.equal(update.success, true, '更新已有网站不受限额影响');
-  assert.equal(ctx4.store.siteConfigs['x.com'].scrollFallback, true);
-
-  // ---- 高级设置是 Pro 专属：免费版写入被拒 ----
-  const ctx5 = installChromeStub();
-  const free5 = makeManager({ enforceLimit: true, entitlements: [] });
-  setupMessageHandler(free5);
-
-  const deniedWrite = await ctx5.dispatch({
-    type: 'SET_CUSTOM_ATTRIBUTES',
-    lazyAttributes: ['data-x'],
-    placeholderPatterns: ['x'],
-  });
-  assert.deepEqual({ success: deniedWrite.success, error: deniedWrite.error },
-                   { success: false, error: 'PRO_REQUIRED' });
-  assert.equal(ctx5.store.customAttributes, undefined, '被拒的写入不能落盘');
-
-  const deniedReset = await ctx5.dispatch({ type: 'RESET_CUSTOM_ATTRIBUTES' });
-  assert.deepEqual({ success: deniedReset.success, error: deniedReset.error },
-                   { success: false, error: 'PRO_REQUIRED' });
-  assert.equal(ctx5.store.customAttributes, undefined, '被拒的重置不能落盘');
-
-  // 读取不受限：免费版下 content script 仍要拿到（可能是降级前保存的）规则
-  const readFree = await ctx5.dispatch({ type: 'GET_CUSTOM_ATTRIBUTES' });
-  assert.equal(readFree.success, true, '免费版仍可读取检测规则');
-  assert.ok(Array.isArray(readFree.data.lazyAttributes) && readFree.data.lazyAttributes.length > 0);
-
-  // Pro 生效后写入放行
-  free5.setEntitlements(['unlimitedSites']);
-  const allowedWrite = await ctx5.dispatch({
-    type: 'SET_CUSTOM_ATTRIBUTES',
-    lazyAttributes: ['data-x'],
-    placeholderPatterns: ['x'],
-  });
-  assert.equal(allowedWrite.success, true, 'Pro 用户应可写入');
-  assert.deepEqual(ctx5.store.customAttributes.lazyAttributes, ['data-x']);
-
-  // Chrome/Firefox（不限额）永远放行，也不会被误判成 Pro
-  const ctx6 = installChromeStub();
-  setupMessageHandler(makeManager({ enforceLimit: false }));
-  const chromeWrite = await ctx6.dispatch({
-    type: 'SET_CUSTOM_ATTRIBUTES',
-    lazyAttributes: ['data-y'],
-    placeholderPatterns: ['y'],
-  });
-  assert.equal(chromeWrite.success, true, 'Chrome/Firefox 不受 Pro 限制');
+  // ---- 内购 / 授权相关的消息类型已彻底移除 ----
+  for (const legacy of ['getEntitlements', 'refreshEntitlements', 'requestPurchase',
+                        'restorePurchases', 'openHostApp', 'ackEntitlementNotice']) {
+    const r = await ctx.dispatch({ type: legacy });
+    assert.equal(r.success, false, legacy + ' 不应再被处理');
+  }
 }

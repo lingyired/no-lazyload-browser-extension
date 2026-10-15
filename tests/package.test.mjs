@@ -88,7 +88,7 @@ function assertPackageIntact(root, label) {
 /**
  * Safari 的扩展资源不是靠 build.js 的文件清单打包的，而是靠 Xcode 工程里
  * 逐个 PBXFileReference —— 两份清单同样会漂移。
- * 真实案例：新增 locales.js / shared-ui.js / ui/ / privacy-policy.html 后
+ * 真实案例：新增 locales.js / ui/ / privacy-policy.html 后
  * 忘了加进 pbxproj，App 能编译通过，但扩展里 popup.html 引用的 JS 全是 404。
  */
 function assertXcodeProjectCoversResources() {
