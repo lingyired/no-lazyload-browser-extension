@@ -40,31 +40,15 @@ const DEFAULT_PLACEHOLDER_PATTERNS = [
 ];
 
 
-let currentLanguage = 'zh';
+let currentLanguage = 'en';
 
 /**
  * 检测浏览器语言并返回最匹配的支持语言
  */
 function detectBrowserLanguage() {
-  const supportedLangs = Object.keys(window.__LOCALES__ || {});
-  const runtime = getRuntime();
-
-  // 优先使用 chrome.i18n API 获取浏览器 UI 语言
-  if (runtime && runtime.i18n) {
-    const uiLang = runtime.i18n.getUILanguage();
-    const langCode = uiLang.split('-')[0];
-    if (supportedLangs.includes(langCode)) {
-      return langCode;
-    }
-  }
-
-  // 回退：使用 navigator.language
-  const navLang = navigator.language.split('-')[0];
-  if (supportedLangs.includes(navLang)) {
-    return navLang;
-  }
-
-  return 'en';
+  return window.NoLazyloadLanguage.detectBrowserLanguage(
+    getRuntime(), navigator.language, Object.keys(window.__LOCALES__ || {})
+  );
 }
 
 // 获取运行时 API - 必须在任何函数之前定义
@@ -138,7 +122,9 @@ async function loadLanguageSetting() {
       return;
     }
     storage.local.get([LANGUAGE_STORAGE_KEY], (result) => {
-      currentLanguage = result[LANGUAGE_STORAGE_KEY] || detectBrowserLanguage();
+      currentLanguage = window.NoLazyloadLanguage.resolveLanguage(
+        result[LANGUAGE_STORAGE_KEY], Object.keys(window.__LOCALES__ || {})
+      ) || detectBrowserLanguage();
 
       // 设置下拉框
       const langSelect = document.getElementById('languageSelect');
@@ -183,8 +169,9 @@ async function saveLanguageSetting() {
  * 应用翻译到页面
  */
 function applyTranslations() {
+  window.NoLazyloadLanguage.applyDocumentLanguage(currentLanguage);
   // 更新页面标题
-  document.title = `Image Lazy Load Blocker - ${t('globalSettings')}`;
+  document.title = `No Lazyload - ${t('globalSettings')}`;
 
   // 更新副标题
   const subtitle = document.querySelector('.header .subtitle');
@@ -368,6 +355,7 @@ async function loadSiteList() {
       const domainSpan = document.createElement('span');
       domainSpan.className = 'domain';
       domainSpan.title = domain;
+      domainSpan.dir = 'ltr';
       domainSpan.textContent = domain;
 
       const scrollLabel = document.createElement('label');

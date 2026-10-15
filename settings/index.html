@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,7 +115,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-right: 16px;
+      margin-inline-end: 16px;
       font-size: 12px;
       color: #666;
       cursor: pointer;
@@ -381,7 +381,7 @@
       border-radius: 8px;
       object-fit: contain;
       flex-shrink: 0;
-      margin-right: 14px;
+      margin-inline-end: 14px;
     }
 
     .extension-info {
@@ -405,7 +405,7 @@
     .extension-arrow {
       color: #ccc;
       font-size: 18px;
-      margin-left: 12px;
+      margin-inline-start: 12px;
       flex-shrink: 0;
     }
 
@@ -534,7 +534,7 @@
           <input type="checkbox" id="fallbackToScroll">
           <span>使用自动滚动代替技术拦截（适合拦截失败的网站）</span>
         </label>
-        <p class="help-text" style="margin-left: 24px; margin-top: 4px; color: #999; font-size: 12px;">
+        <p class="help-text" style="margin-inline-start: 24px; margin-top: 4px; color: #999; font-size: 12px;">
           开启后禁用技术拦截，通过自动滚动到底部触发图片加载
         </p>
       </div>
@@ -626,13 +626,13 @@
         <h3 data-i18n="lazyAttributes">懒加载属性</h3>
         <p class="help-text" data-i18n="lazyAttributesHelp">检测这些属性来加载图片，用逗号分隔</p>
         <div class="form-group">
-          <textarea id="lazyAttributesInput" class="textarea" rows="3">data-src, data-original, data-lazy-src, data-srcset, data-lazy-srcset, data-custom-src, data-lazy, data-defer-src, data-async, data-img-url, data-url, data-image, data-image-src, data-href</textarea>
+          <textarea id="lazyAttributesInput" dir="ltr" class="textarea" rows="3">data-src, data-original, data-lazy-src, data-srcset, data-lazy-srcset, data-custom-src, data-lazy, data-defer-src, data-async, data-img-url, data-url, data-image, data-image-src, data-href</textarea>
         </div>
 
         <h3 data-i18n="placeholderPatterns">占位符检测</h3>
         <p class="help-text" data-i18n="placeholderPatternsHelp">如果图片 src 包含这些关键词，将被视为占位符并替换，用逗号分隔</p>
         <div class="form-group">
-          <textarea id="placeholderPatternsInput" class="textarea" rows="2">thumb, placeholder, loading, spinner, blank, empty, lazy, preview, temp, default</textarea>
+          <textarea id="placeholderPatternsInput" dir="ltr" class="textarea" rows="2">thumb, placeholder, loading, spinner, blank, empty, lazy, preview, temp, default</textarea>
         </div>
 
         <div class="btn-group">

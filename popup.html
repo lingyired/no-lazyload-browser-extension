@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -218,7 +218,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-right: 12px;
+      margin-inline-end: 12px;
       font-size: 11px;
       color: #666;
       cursor: pointer;
@@ -463,7 +463,7 @@
   <div class="current-site">
     <h2 data-i18n="currentSite">当前网站</h2>
     <div class="site-info">
-      <span class="site-domain" id="currentDomain" data-i18n="loading">加载中...</span>
+      <span class="site-domain" dir="ltr" id="currentDomain" data-i18n="loading">加载中...</span>
       <span class="site-status disabled" id="currentStatus">
         <span class="dot">○</span>
         <span id="statusText" data-i18n="disabled">未启用</span>
