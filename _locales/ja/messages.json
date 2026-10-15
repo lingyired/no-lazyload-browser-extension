@@ -40,7 +40,7 @@
     "message": "詳細設定"
   },
   "refreshPage": {
-    "message": "ページを更新"
+    "message": "ページを再読み込み"
   },
   "siteAdded": {
     "message": "{domain} を追加しました"

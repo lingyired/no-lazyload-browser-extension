@@ -78,7 +78,7 @@
     "description": "Fallback option"
   },
   "showInterceptionToast": {
-    "message": "Show interception success toast (top-right, 2s)"
+    "message": "Show a success notification (top-right, 2 seconds)"
   },
   "save": {
     "message": "Save"
@@ -142,7 +142,7 @@
     "message": "Compatibility"
   },
   "standardModeHelp": {
-    "message": "Loads images immediately using No Lazyload's normal engine."
+    "message": "Bypasses image lazy loading directly. Works on most websites."
   },
   "compatibilityModeHelp": {
     "message": "Automatically scrolls the page to trigger images. Use this only when Standard mode does not work."
@@ -220,7 +220,7 @@
     "message": "Placeholder Detection"
   },
   "placeholderPatternsHelp": {
-    "message": "Images with src containing these keywords will be treated as placeholders, comma-separated"
+    "message": "Images whose src contains any of these comma-separated keywords are treated as placeholders."
   },
   "resetToDefault": {
     "message": "Reset to Default"
