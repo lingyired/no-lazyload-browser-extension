@@ -3,7 +3,7 @@
     "message": "No Lazyload"
   },
   "appDescription": {
-    "message": "ปิดการโหลดรูปภาพแบบขี้เกียจบนเว็บไซต์ โหลดรูปภาพทั้งหมดในครั้งเดียว",
+    "message": "ปิดการโหลดรูปภาพแบบ Lazy Loading บนเว็บไซต์ เพื่อให้รูปภาพโหลดได้โดยไม่ต้องเลื่อนหน้า",
     "description": "Extension description"
   },
   "currentSite": {
@@ -74,7 +74,7 @@
     "message": "กลับไปด้านบนหลังเสร็จสิ้น"
   },
   "fallbackToScroll": {
-    "message": "ใช้การเลื่อนเป็นทางสำรองโดยอัตโนมัติเมื่อการบล็อกแบบเทคนิคล้มเหลว",
+    "message": "ใช้การเลื่อนหน้าอัตโนมัติเมื่อโหมดมาตรฐานไม่สามารถโหลดรูปภาพได้",
     "description": "Fallback option"
   },
   "showInterceptionToast": {

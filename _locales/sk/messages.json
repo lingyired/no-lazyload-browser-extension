@@ -3,7 +3,7 @@
     "message": "No Lazyload"
   },
   "appDescription": {
-    "message": "Zakážte lintvé načítavanie obrázkov na webových stránkach, načítajte všetky obrázky naraz",
+    "message": "Vypnite odložené načítavanie obrázkov na webových stránkach a načítajte obrázky bez posúvania.",
     "description": "Extension description"
   },
   "currentSite": {

@@ -162,6 +162,7 @@ async function saveLanguageSetting() {
 
   currentLanguage = newLang;
   applyTranslations();
+  await loadSiteList(); // Re-render labels created dynamically using the new language.
   showToast(t('saved'));
 }
 
