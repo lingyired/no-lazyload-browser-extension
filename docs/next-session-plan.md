@@ -1,6 +1,13 @@
 # No Lazyload Safari — 下一会话执行计划（UI 补齐）
 
-> **本文档是给全新会话的自包含交接说明。** 新会话没有历史上下文，所有必要事实都写在这里。
+> ⚠️ **本文档已过时（2026-10 起）。**
+> Safari 版本已移除内购，与 Chrome / Firefox 对齐为完全免费：
+> 本文提到的 StoreKit 购买链路、Entitlement 权限体系、licenseMode 三态、
+> 站点数量上限、pendingEntitlementAction 待办、高级设置 Pro 门禁**均已删除**。
+> 保留本文只是为了留下当时的决策记录（尤其是 §1 的 UI 铁律，仍然有效）。
+> 当前的测试与验收口径见 [testing.md](testing.md)。
+
+> **本文档原本是给全新会话的自包含交接说明。** 新会话没有历史上下文，所有必要事实都写在这里。
 > 生成时间：2026-10-07 ｜ 对应提交：\`bc6049d\`
 > 前置 plan：\`/Users/lingsmbp/Downloads/no-lazyload-safari-appstore-macos26-plan.md\`
 

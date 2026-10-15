@@ -30,44 +30,36 @@
 - 仓库当前值：`MACOSX_DEPLOYMENT_TARGET = 26.5`（App 与 Extension 两个 target）
 - 这与扩展声明的 Safari 15.4+ 形成**有意的**不一致：
   - **扩展本身**可以在远低于 26.5 的系统上运行（它是 WebExtension，不受 Xcode 部署目标限制）；
-  - **Host App**（购买界面）只会在 26.5+ 上启动。
-- 影响：macOS 26.5 之前的用户仍然可以使用扩展，但**无法完成购买**（Host App 打不开）。
-- 因此发布前必须二选一：
-  1. **降低部署目标**到产品实际支持的最低 macOS（推荐 macOS 13.0）。
-     代码层面已经准备好了：`StoreKitPurchaseProvider` 里的
-     `Product.purchase(confirmIn:)` 用 `#available(macOS 14.0, *)` 包着，
-     `HostDesignTokens` 与所有 SwiftUI 视图只使用 macOS 13 起可用的 API，
-     `SFSafariExtensionManager` 等都更早。改 pbxproj 的 4 处即可。
-  2. **保持 26.5** 并把 App Store 的"兼容性"明确写成 macOS 26.5+，
-     接受丢掉存量用户。
-
-  未降低的原因：本仓库无法在低于当前系统版本的 macOS 上做真机验证，
+  - **Host App** 只会在 26.5+ 上启动（它的作用只是承载扩展并引导用户启用）。
+- 影响：macOS 26.5 之前的用户仍然可以使用扩展的**全部功能** ——
+  扩展不依赖 Host App，内购移除后也不再有任何"必须打开 App 才能完成"的操作。
+- 发布前仍然建议把部署目标降到产品实际支持的最低 macOS（推荐 macOS 13.0）：
+  当前的 SwiftUI 视图与 `SFSafariExtensionManager` 都只用到 macOS 13 起可用的 API，
+  改 pbxproj 的 4 处即可。未降低的原因：本仓库无法在低于当前系统版本的 macOS 上做真机验证，
   而不经验证就声明"支持 macOS 13"违反本文档开头的原则。
 
 ## 3. 功能在各平台的行为
 
-| 能力 | Chrome | Firefox | Safari 免费 | Safari Pro |
-|---|---|---|---|---|
-| 懒加载拦截引擎 | 是 | 是 | 是 | 是 |
-| 已启用网站数量 | 不限 | 不限 | 3 | 不限 |
-| 购买 UI | 无 | 无 | 升级入口 | 无（只显示 PRO） |
-| 恢复购买 | 不适用 | 不适用 | Host App | Host App |
-| 设置页套餐分区 | 隐藏 | 隐藏 | 显示 | 显示 |
+**三个平台完全一致：免费、无内购、无数量限制。**
+Safari 版本曾经是唯一有"免费版 / Pro"之分的平台，该区分已于 2026-10 移除。
 
-平台判定不依赖 UA，而是依赖**是否启用限额**：
-`isLimitEnforced = false`（Chrome/Firefox）→ `licenseMode = 'unrestricted'`；
-Safari → `'free'` 或 `'pro'`。详见 `shared/constants.js` 的 `getLicenseModeFor()`。
+| 能力 | Chrome | Firefox | Safari |
+|---|---|---|---|
+| 懒加载拦截引擎 | 是 | 是 | 是 |
+| 已启用网站数量 | 不限 | 不限 | 不限 |
+| 高级设置（检测规则自定义） | 可用 | 可用 | 可用 |
+| 购买 / 恢复购买 UI | 无 | 无 | 无 |
+| 扩展需要的权限 | storage, activeTab | storage, activeTab | storage, activeTab |
 
 ## 4. 已实测 / 未实测
 
 | 项目 | 状态 |
 |---|---|
 | Xcode Debug + Release 构建 | ✅ 已实测（`xcodebuild ... CODE_SIGNING_ALLOWED=NO`） |
-| Host App 在 macOS 26 上渲染（Pro 态、深色模式） | ✅ 已实测（截图确认） |
+| Host App 在 macOS 26 上渲染（深色模式） | ✅ 已实测（截图确认） |
 | popup / 设置页在浅色 + 深色下的布局 | ✅ 已实测（headless Chrome + `tests/visual/` 预览壳） |
 | 扩展在真实 Safari 中启用 + 站内注入 | ⚠️ 未实测（需要签名与真机 Safari） |
 | macOS 26 之前的 Host App 外观 | ⚠️ 未实测 |
-| App Store 沙盒购买 / 恢复 / 退款回收 | ⚠️ 未实测（需要 App Store Connect 商品） |
 | 提高对比度 / 减少透明度 / 减少动画 | ⚠️ 仅代码层面支持，未做真机视觉确认 |
 | VoiceOver | ⚠️ 未实测 |
 

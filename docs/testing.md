@@ -1,7 +1,7 @@
 # 测试指南
 
 > 面向本仓库的两种测试：**自动化测试**（毫秒级、每次改完都跑）和
-> **手工测试**（涉及真机 Safari / StoreKit / 视觉，无法自动化）。
+> **手工测试**（涉及真机 Safari / 宿主 App / 视觉，无法自动化）。
 
 ---
 
@@ -63,7 +63,7 @@ open safari-xcode/ImageLazyLoadBlocker/ImageLazyLoadBlocker.xcodeproj
 Xcode 里：
 
 1. 选 `ImageLazyLoadBlocker` scheme
-2. **两个 target 都要设置 Signing → Team**（App 与 Extension，缺 App Group 会 fail closed）
+2. **两个 target 都要设置 Signing → Team**
 3. Cmd+R 运行（会启动 Host App）
 4. Safari → 设置 → 扩展 → 勾选 **No Lazyload**
 5. 若列表里没出现，回到 Host App 点「Open Safari Settings」
@@ -73,50 +73,38 @@ Xcode 里：
 
 ---
 
-## 3. StoreKit 本地测试
+## 3. 宿主 App 行为检查
 
-scheme 已经挂好 `ImageLazyLoadBlocker.storekit`（`Product.purchase` 走本地测试环境，不联网、不扣款）。
+宿主 App 是扩展的打包容器 + 首次使用引导。五个区块：
+**扩展状态 → 使用方法 → 两种模式 → 遇到问题 → 页脚**。
 
-**必须用 Xcode Cmd+R 运行。** 在 Finder 里双击 `.app` 不会注入 StoreKit 配置，
-商品列表会为空，UI 会显示「Purchases are temporarily unavailable.」——
-这是刻意设计（绝不显示假价格），不是 bug。
-
-### 想测的场景与做法
+**它不包含任何内购 / 授权 / 套餐界面**（2026-10 起与 Chrome/Firefox 版本对齐为完全免费）。
+它和扩展之间**没有运行期数据通道**，所以除「扩展是否已启用」外的一切内容都是静态文案 ——
+不要期望它显示站点配置。
 
 | 场景 | 做法 | 期望 |
 |---|---|---|
-| 购买成功 | 点 Upgrade to Pro → 系统面板确认 | 「Pro unlocked.」，Plan 区变成 Pro，**不再出现价格与 Buy 按钮** |
-| 用户取消 | 系统面板点取消 | 静默，无错误提示 |
-| 待批准（Ask to Buy） | Xcode → Debug → StoreKit → Manage Transactions 里把购买设为 Ask to Buy / 或 `.storekit` 里开 `_failTransactionsEnabled` 相关开关 | 「Purchase pending. You'll get Pro automatically after the purchase is approved.」 |
-| 无购买可恢复 | 先 Reset Transactions，再点 Restore Purchases | 「No previous purchase was found.」（中性提示，不是错误） |
-| 退款/撤销 | StoreKit Transaction Manager 里 Refund | 重新打开 App/扩展应回到免费态（权限按交易历史整体重算） |
-| 商品加载失败 | 用 Finder 双击 app 运行 | 「Purchases are temporarily unavailable. Please try again later.」 |
+| 扩展已启用 | Safari 设置里勾选扩展后重开 App | 状态徽标 = 已启用（绿），不再显示主按钮，**不显示启用步骤** |
+| 扩展未启用 | Safari 设置里取消勾选后回到 App | 徽标 = 未启用（橙）+ 主按钮，且**显示「启用步骤」三行** |
+| 扩展状态读不到 | 在非签名构建下运行 | 徽标 = 状态不可用 + 明确说明，**不冒充"未启用"，也不显示启用步骤** |
+| 点「打开 Safari 设置」 | 点击按钮 | Safari 打开并跳到扩展设置页，随后 App 退出 |
+| 术语一致性 | 读「两种模式」区块 | 只出现「标准模式 / 兼容模式」，不得出现「技术拦截 / 自动滚动」 |
+| 窗口最小尺寸 | 缩到 420×560 | 不破版、无横向滚动 |
+| 三语 | 系统语言切 en / zh-Hans / zh-Hant | 无文案溢出、无未翻译回落 |
 
-### 直接看权限存储（排查 Free/Pro 不一致）
+> 「未启用」和「状态不可用」两种状态没法在签名构建下稳定复现：
+> 前者需要真的去 Safari 取消勾选，后者需要未签名构建。
+> 临时验证可以在 `ExtensionStateService.isExtensionEnabled()` 里加环境变量开关，
+> 但**验证完必须移除**（本次开发就是这么做的）。
 
-```bash
-# 正式签名（App Group 生效）
-plutil -p ~/Library/Group\ Containers/group.com.lingyi01.imagelazyloadblocker/Library/Preferences/group.com.lingyi01.imagelazyloadblocker.plist
-
-# 未签名 / 缺 App Group entitlement 的本地运行（此时扩展读不到，会 fail closed）
-plutil -p ~/Library/Preferences/group.com.lingyi01.imagelazyloadblocker.plist
-```
-
-写成免费态（用于验证限额）：
-
-```bash
-plutil -replace entitlements -json '[]' <上面的路径>
-killall cfprefsd
-```
-
-### Host App 日志
+### 日志
 
 ```bash
 log stream --predicate 'process == "ImageLazyLoadBlocker"' --level debug
 ```
 
-Debug 构建会打出版本号、StoreKit 商品加载、权限同步结果；
-**Release 构建不会向用户展示任何 Xcode/签名细节**。
+Debug 构建会打出版本号与扩展状态读取结果；
+**Release 构建不会向用户展示任何 Xcode / 签名细节**。
 
 ---
 
@@ -128,88 +116,58 @@ Debug 构建会打出版本号、StoreKit 商品加载、权限同步结果；
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 npm run build:safari     # 预览壳读的是 dist/safari 下的构建产物
 
-# popup：免费版 + 深色
+# popup：默认 + 深色
 "$CHROME" --headless=new --allow-file-access-from-files --hide-scrollbars \
   --window-size=380,520 --blink-settings=preferredColorScheme=2 \
   --screenshot=/tmp/popup.png \
-  "file://$PWD/tests/visual/popup-preview.html?state=free"
+  "file://$PWD/tests/visual/popup-preview.html?state=default"
 
-# 设置页：Pro + 浅色
+# 设置页：5 个已启用网站 + 浅色
 "$CHROME" --headless=new --allow-file-access-from-files --hide-scrollbars \
   --window-size=760,1180 --blink-settings=preferredColorScheme=1 \
   --screenshot=/tmp/settings.png \
-  "file://$PWD/tests/visual/settings-preview.html?state=pro"
+  "file://$PWD/tests/visual/settings-preview.html?state=many"
 ```
 
 参数：
 
-- `state`：`free`（默认，2/3 站点） / `pro` / `unrestricted`（Chrome/Firefox） / `empty` / `limit` / `unavailable`
-- `dialog=1`（popup）：直接打开升级弹窗
+- `state`：`default`（默认，2 个站点） / `empty` / `many`（5 个站点，超过旧免费版上限）
 - `measure=1`：页面顶部打印关键元素的实际尺寸与计算样式，用于排查布局
 - `preferredColorScheme=1` 浅色 / `2` 深色
 
 > 预览壳会真的加载 `popup.html` / `settings/index.html`、`dist/safari` 下的
 > `locales.js`、`shared-ui.js`，并用 `chrome.*` 替身喂数据 —— 渲染的是真实页面，不是手写样例。
 
-### 4.1 购买回来自查（popup）
+### 4.1 无内购回归（三个平台）
 
-`tests/visual/popup-purchase-preview.html` 复刻"Safari 里刚买完 Pro 回到 popup"这一刻：
-background 手里还是购买前的旧快照（free），只有走一次原生刷新才知道已经是 pro，
-而这个原生刷新要 0.5~1s。用户往往在这之前就已经在看 popup 了。
+内购移除后，下面这些**必须全部为空**：
 
 ```bash
-CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-# slow  = 原生刷新 700ms 后才返回 pro；click=1 = 首屏 250ms 时用户点了"添加当前网站"
-"$CHROME" --headless=new --allow-file-access-from-files --disable-gpu \
-  --virtual-time-budget=12000 --dump-dom \
-  "file://$PWD/tests/visual/popup-purchase-preview.html?mode=slow&click=1" \
-  | python3 -c "import re,sys; d=sys.stdin.read(); print(re.search(r'<pre id=\"result\">(.*?)</pre>', d, re.S).group(1))"
+# 源码里不得再有内购相关标识
+grep -rn "entitlement\|Entitlement\|requestPurchase\|openHostApp\|unlimitedSites" \
+  popup.js settings/app.js background shared content || echo "✅ 源码干净"
+
+# 构建产物里同样不得有
+grep -c "Entitlement\|upgradeDialog\|LIMIT_REACHED" dist/safari/background-safari.js \
+  dist/safari/shared-ui.js
 ```
 
-预期（每一次都要满足）：
-
-| 时刻 | license | 站点列表 | 升级弹窗 | toast |
-|---|---|---|---|---|
-| 首屏 | `…` | 0 | 无 | — |
-| 刷新落地前 | 免费版 | 3 | **无**（不拿旧快照拦人） | — |
-| 刷新落地后 | Pro · 无限网站 | 4（第 4 个已补做） | 无 | 已解锁 Pro · 已启用 xxx |
-
-`mode=fail`（原生始终无响应）时允许弹升级框 —— 那是唯一诚实的做法，
-但**不允许**出现"已购用户被拦下且弹窗一直挂着"的组合。
-```bash
-"$CHROME" --headless=new --allow-file-access-from-files --disable-gpu \
-  --virtual-time-budget=12000 --dump-dom \
-  "file://$PWD/tests/visual/popup-purchase-preview.html?mode=fail&click=1" \
-  | python3 -c "import re,sys; d=sys.stdin.read(); print(re.search(r'<pre id=\"result\">(.*?)</pre>', d, re.S).group(1))"
-```
+> `tests/bundle.test.mjs` 已经把这组断言固化成自动化测试，不需要每次手跑上面的命令。
 
 ---
 
 ## 5. 功能测试清单
 
-### 5.1 授权与限额（Safari）
+### 5.1 无限制（三个平台一致）
 
-- [ ] 全新安装 → 免费版，计数显示 `0/3`，有「Upgrade to Pro」
-- [ ] 添加第 1、2、3 个网站都成功
-- [ ] 第 4 个网站 → 弹出升级弹窗，**开关不会先变 ON**
-- [ ] 弹窗点「Not Now」→ 没有添加、没有报错
-- [ ] 弹窗点「Upgrade to Pro」→ Host App 被唤起
-- [ ] **购买过程中直接关掉 popup** → 回到 Safari 打开 popup → 第 4 个网站已被自动启用，并提示「已解锁 Pro · 已启用 xxx」
-- [ ] 买完 Pro 回 popup，**趁原生刷新还没回来立刻点"添加当前网站"** → 不得弹出升级框，第 4 个网站要加进去（§4.1 的 `mode=slow&click=1` 就是这一条）
-- [ ] 同一句「已解锁 Pro · 已启用 xxx」只在买完之后出现一次（ACK 掉，重开 popup 不再弹）
-- [ ] Pro 状态下计数不再显示 `∞`，只显示数量；不出现任何价格与 Buy 按钮
-- [ ] 重启 Safari → 仍是 Pro
-- [ ] 重启 Host App → 仍是 Pro
-- [ ] 恢复购买（同 Apple ID）→ 恢复 Pro
-- [ ] 无可恢复购买 → 「No previous purchase was found.」
-- [ ] 退款/撤销后 → 回到免费行为
-
-### 5.2 免费限额放宽后的行为
-
-- [ ] Pro 用户已有 >3 个网站，失去 Pro 后：**配置不被删除**
-- [ ] 免费态且已有 ≥3 个 → 不能新增，但**可以删除**
-- [ ] 删到 <3 后又能新增
-- [ ] 「删除 → 撤销」能把网站还原（含原模式）
+- [ ] 全新安装 → 计数显示 `0`，**没有任何升级入口 / 价格 / PRO 徽章**
+- [ ] 连续添加 5 个以上网站 → 全部成功，**不出现任何上限提示**
+- [ ] 计数 badge 只显示数字（不显示 `0/3` 或 `∞`）
+- [ ] 设置页**没有「授权」卡片**
+- [ ] 设置页「高级设置」**直接可用**：改检测规则 → 保存 → 提示已保存
+- [ ] 「重置为默认」能恢复默认列表
+- [ ] popup / 设置页都不出现「升级」「购买」「恢复购买」字样
+- [ ] 宿主 App 只有扩展状态与用法，**没有套餐区、没有价格、没有恢复购买**
 
 ### 5.3 域名规范化（plan §15 Domain）
 
@@ -224,9 +182,8 @@ CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 ### 5.4 导入 / 导出
 
-- [ ] 免费版空配置导入 5 个站 → 只导入 3 个，提示说明实际发生了什么
-- [ ] 已有 2 个站再导入 5 个 → 只再进 1 个
-- [ ] Pro 导入 5 个 → 全部导入
+- [ ] 空配置导入 5 个站 → **5 个全部导入**（不再有截断）
+- [ ] 已有 2 个站再导入 5 个 → 共 7 个
 - [ ] 导出 → 清空 → 导入：`domain` / `strategy` / `scrollFallback` / 全局配置 **无损**
 - [ ] 导入的域名里带 `www.` 时，规范化后不会产生重复条目
 
@@ -246,12 +203,13 @@ open http://localhost:8080/test-pages/index.html
 - [ ] 兼容模式（自动滚动）单独验证一遍
 - [ ] 未启用的网站**不做任何改动**（对照组）
 
-### 5.6 平台差异
+### 5.6 平台一致性
 
-- [ ] Chrome：没有任何付费 UI（无 PRO、无 ∞、无升级按钮、设置页无「套餐」卡）
-- [ ] Firefox：同上
-- [ ] Safari 免费版：有升级入口
-- [ ] Safari Pro：只有 PRO 徽章，无购买 CTA
+三个平台的功能与界面应当完全一致，逐项对照：
+
+- [ ] Chrome / Firefox / Safari 都**没有任何付费 UI**（无 PRO、无 ∞、无升级按钮、设置页无「授权」卡）
+- [ ] 三者的网站数量上限都**不存在**
+- [ ] 三者的「高级设置」都可直接编辑保存
 
 ---
 
@@ -265,7 +223,6 @@ open http://localhost:8080/test-pages/index.html
 - [ ] 减少透明度
 - [ ] 减少动态效果
 - [ ] 键盘：Tab 能到所有控件；Space/Enter 能激活；开关可键盘切换；模式下拉可键盘操作
-- [ ] Esc 能关掉升级弹窗；关闭后焦点回到触发它的控件
 - [ ] 焦点环始终可见（不允许无替代地去掉 outline）
 - [ ] VoiceOver 基本走查
 - [ ] 窗口缩放：最小 420×480 不破版
@@ -282,7 +239,7 @@ open http://localhost:8080/test-pages/index.html
 - [ ] zh_CN（简体）
 - [ ] zh_TW（繁體，台灣）
 - [ ] zh_HK（繁體，香港——用「私隱」而非「隱私」）
-- [ ] German（`Upgrade`、`Standard` 与英文同形，属正常）
+- [ ] German（`Standard` 与英文同形，属正常）
 - [ ] Japanese
 - [ ] Arabic / RTL
 - [ ] 最长的两种：Hindi、Thai（看有没有溢出）
@@ -296,9 +253,7 @@ open http://localhost:8080/test-pages/index.html
 
 - [ ] 真机 Safari 里扩展的启用与内容脚本注入
 - [ ] macOS 26.5 之前的 Host App 外观（当前部署目标是 26.5）
-- [ ] App Store 沙盒（非 Xcode 本地 StoreKit）购买 / 恢复 / 退款
 - [ ] 提高对比度 / 减少透明度 / 减少动画的真机视觉
 - [ ] VoiceOver
-- [ ] 沙盒购买在**完全退出 Safari 再重开**后的持久性
 
 详见 [safari-compatibility.md](safari-compatibility.md) 的「已实测 / 未实测」表。
