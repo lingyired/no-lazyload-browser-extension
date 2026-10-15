@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "現在のサイトを削除"
   },
-  "useAutoScroll": {
-    "message": "技術ブロックの代わりに自動スクロールを使用"
-  },
-  "autoScrollDesc": {
-    "message": "読み込みをトリガーするために下部までスクロールします。技術的なブロッキングが失敗するサイトに適しています"
-  },
   "configuredSites": {
     "message": "設定済みサイト"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "{domain} を削除しました"
   },
-  "autoScrollEnabled": {
-    "message": "自動スクロールを有効にしました"
-  },
-  "autoScrollDisabled": {
-    "message": "自動スクロールを無効にしました"
-  },
   "pageRefreshed": {
     "message": "ページを更新しました"
-  },
-  "autoScroll": {
-    "message": "自動スクロール"
   },
   "settingsTitle": {
     "message": "設定 - No Lazyload",
@@ -135,59 +120,11 @@
   "languageSettings": {
     "message": "言語設定"
   },
-  "upgradeTitle": {
-    "message": "No Lazyload Pro を解除"
-  },
-  "upgradeBody": {
-    "message": "無料版は 3 サイトまでです。アップグレードすると無制限のサイトで使えます。"
-  },
-  "upgradeButton": {
-    "message": "アップグレード"
-  },
-  "proActivated": {
-    "message": "Pro が有効になりました。サイト数は無制限です。"
-  },
-  "cancelUpgrade": {
-    "message": "キャンセル"
-  },
-  "siteLimitReached": {
-    "message": "サイト数の上限に達しました"
-  },
-  "importPartial": {
-    "message": "{added}/{total} 件のサイトを読み込みました。無料版の上限は 3 件です。"
-  },
   "loading": {
     "message": "読み込み中..."
   },
   "delete": {
     "message": "削除"
-  },
-  "openingHostApp": {
-    "message": "ホスト App を開いています。購入を完了してから戻ってください"
-  },
-  "upgradeOpenFailed": {
-    "message": "App を自動で開けませんでした。No Lazyload を手動で起動して購入を完了してください"
-  },
-  "licenseFree": {
-    "message": "無料版 · 最大 3 サイト"
-  },
-  "licensePro": {
-    "message": "Pro · サイト数無制限"
-  },
-  "licenseUpgrade": {
-    "message": "Pro にアップグレード"
-  },
-  "licenseManage": {
-    "message": "購入の管理 / 復元"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro を解除しました · {domain} を有効にしました"
-  },
-  "purchaseUnavailable": {
-    "message": "購入を一時的に利用できません。しばらくしてからお試しください"
   },
   "currentWebsite": {
     "message": "現在の Web サイト"
@@ -219,35 +156,11 @@
   "undo": {
     "message": "取り消す"
   },
-  "upgradeNote": {
-    "message": "サイト数無制限 · 買い切り、サブスクリプションなし"
-  },
-  "upgradePrice": {
-    "message": "買い切り"
-  },
-  "oneTimePurchase": {
-    "message": "買い切り"
-  },
-  "noSubscription": {
-    "message": "サブスクリプションなし"
-  },
-  "upgradeToPro": {
-    "message": "Pro にアップグレード"
-  },
-  "notNow": {
-    "message": "後で"
-  },
-  "upgradeBodyLimit": {
-    "message": "無料の 3 サイトを使い切りました。一度アップグレードすると無制限のサイトで No Lazyload を有効にできます。"
-  },
   "siteListTitle": {
     "message": "設定済みサイト"
   },
   "emptyState": {
     "message": "設定済みサイトはありません"
-  },
-  "autoScrollHelp": {
-    "message": "技術ブロックを無効化し、スクロールで読み込みをトリガー"
   },
   "scrollParams": {
     "message": "自動スクロール設定"
@@ -324,9 +237,6 @@
   "newtab01Desc": {
     "message": "ブックマーク駆動の新しいタブ。フォルダをタブグループまたは分割ビューで開きます。12の内蔵テーマ + 無制限のカスタムテーマ。"
   },
-  "licenseTitle": {
-    "message": "ライセンス"
-  },
   "compatibilityModeHelpSection": {
     "message": "ページを自動スクロールして画像を読み込みます。標準モードで効果がない場合のみ使用してください。"
   },
@@ -356,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "ファイルには各 Web サイトのモードとすべての全体設定が含まれます。"
-  },
-  "plan": {
-    "message": "プラン"
-  },
-  "planFreeDetail": {
-    "message": "無料版 · {limit} サイト中 {count} サイトが有効"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · サイト数無制限"
-  },
-  "managePurchases": {
-    "message": "購入を管理"
   },
   "github": {
     "message": "GitHub"

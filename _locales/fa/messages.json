@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "حذف سایت فعلی"
   },
-  "useAutoScroll": {
-    "message": "استفاده از پیمایش خودکار به جای مسدودسازی فنی"
-  },
-  "autoScrollDesc": {
-    "message": "برای شروع بارگذاری به‌صورت خودکار به پایین بپیمایید؛ مناسب برای سایت‌هایی که مسدودسازی فنی در آن‌ها شکست می‌خورد"
-  },
   "configuredSites": {
     "message": "سایت‌های پیکربندی‌شده"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "{domain} حذف شد"
   },
-  "autoScrollEnabled": {
-    "message": "پیمایش خودکار فعال شد"
-  },
-  "autoScrollDisabled": {
-    "message": "پیمایش خودکار غیرفعال شد"
-  },
   "pageRefreshed": {
     "message": "صفحه بازخوانی شد"
-  },
-  "autoScroll": {
-    "message": "پیمایش خودکار"
   },
   "settingsTitle": {
     "message": "تنظیمات - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "حذف"
   },
-  "upgradeTitle": {
-    "message": "باز کردن Pro"
-  },
-  "upgradeBody": {
-    "message": "نسخه رایگان از حداکثر ۳ سایت پشتیبانی می‌کند. برای باز کردن سایت‌های نامحدود و قابلیت‌های ویژه آینده ارتقا دهید."
-  },
-  "upgradeButton": {
-    "message": "ارتقا"
-  },
-  "proActivated": {
-    "message": "Pro فعال شد. سایت‌های نامحدود باز شد.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "لغو"
-  },
-  "siteLimitReached": {
-    "message": "به محدودیت تعداد سایت رسیدید"
-  },
-  "importPartial": {
-    "message": "{added} از {total} سایت وارد شد. محدودیت نسخه رایگان ۳ است."
-  },
-  "openingHostApp": {
-    "message": "در حال باز کردن برنامه میزبان برای تکمیل خرید…"
-  },
-  "upgradeOpenFailed": {
-    "message": "برنامه باز نشد. برای تکمیل خرید، No Lazy Load را به‌صورت دستی اجرا کنید."
-  },
-  "licenseFree": {
-    "message": "رایگان · حداکثر ۳ سایت"
-  },
-  "licensePro": {
-    "message": "Pro · سایت‌های نامحدود"
-  },
-  "licenseUpgrade": {
-    "message": "ارتقا به Pro"
-  },
-  "licenseManage": {
-    "message": "مدیریت / بازیابی"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro باز شد · {domain} فعال شد"
-  },
-  "purchaseUnavailable": {
-    "message": "خریدها موقتاً در دسترس نیستند. لطفاً بعداً دوباره تلاش کنید."
-  },
   "currentWebsite": {
     "message": "سایت فعلی"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "واگرد"
   },
-  "upgradeNote": {
-    "message": "سایت‌های نامحدود · خرید یک‌باره، بدون اشتراک"
-  },
-  "upgradePrice": {
-    "message": "خرید یک‌باره"
-  },
-  "oneTimePurchase": {
-    "message": "خرید یک‌باره"
-  },
-  "noSubscription": {
-    "message": "بدون اشتراک"
-  },
-  "upgradeToPro": {
-    "message": "ارتقا به Pro"
-  },
-  "notNow": {
-    "message": "اکنون نه"
-  },
-  "upgradeBodyLimit": {
-    "message": "از هر ۳ سایت رایگان استفاده می‌کنید. یک‌بار ارتقا دهید تا No Lazyload روی سایت‌های نامحدود فعال شود."
-  },
   "siteListTitle": {
     "message": "سایت‌های پیکربندی‌شده"
   },
   "emptyState": {
     "message": "هیچ سایتی پیکربندی نشده است"
-  },
-  "autoScrollHelp": {
-    "message": "هنگام فعال بودن، مسدودسازی فنی را غیرفعال می‌کند و با پیمایش خودکار به پایین، بارگذاری را فعال می‌کند"
   },
   "scrollParams": {
     "message": "پارامترهای پیمایش خودکار"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "تب جدید مبتنی بر نشانک. پوشه‌ها را به‌عنوان گروه تب یا در نمای تقسیم‌شده باز کنید. ۱۲ تم داخلی + تم سفارشی نامحدود."
   },
-  "licenseTitle": {
-    "message": "مجوز"
-  },
   "compatibilityModeHelpSection": {
     "message": "صفحه را به‌صورت خودکار پیمایش می‌کند تا بارگذاری تصاویر فعال شود. فقط زمانی استفاده کنید که حالت استاندارد کار نمی‌کند."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "فایل شامل حالت هر سایت و همه تنظیمات کلی است."
-  },
-  "plan": {
-    "message": "طرح"
-  },
-  "planFreeDetail": {
-    "message": "رایگان · {count} از {limit} سایت فعال است"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · سایت‌های نامحدود باز شد"
-  },
-  "managePurchases": {
-    "message": "مدیریت خریدها"
   },
   "github": {
     "message": "GitHub"

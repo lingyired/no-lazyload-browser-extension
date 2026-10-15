@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Xóa trang hiện tại"
   },
-  "useAutoScroll": {
-    "message": "Dùng tự động cuộn thay cho chặn kỹ thuật"
-  },
-  "autoScrollDesc": {
-    "message": "Tự động cuộn xuống dưới để kích hoạt tải; phù hợp với các trang mà chặn kỹ thuật thất bại"
-  },
   "configuredSites": {
     "message": "Các trang đã cấu hình"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Đã xóa {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Đã bật tự động cuộn"
-  },
-  "autoScrollDisabled": {
-    "message": "Đã tắt tự động cuộn"
-  },
   "pageRefreshed": {
     "message": "Trang đã làm mới"
-  },
-  "autoScroll": {
-    "message": "Tự động cuộn"
   },
   "settingsTitle": {
     "message": "Cài đặt - No Lazyload",
@@ -141,51 +126,6 @@
   "delete": {
     "message": "Xóa"
   },
-  "upgradeTitle": {
-    "message": "Mở khóa Pro"
-  },
-  "upgradeBody": {
-    "message": "Bản miễn phí hỗ trợ tối đa 3 trang web. Nâng cấp để mở khóa không giới hạn trang web và các tính năng cao cấp trong tương lai."
-  },
-  "upgradeButton": {
-    "message": "Nâng cấp"
-  },
-  "cancelUpgrade": {
-    "message": "Hủy"
-  },
-  "siteLimitReached": {
-    "message": "Đã đạt giới hạn trang web"
-  },
-  "importPartial": {
-    "message": "Đã nhập {added} trong {total} trang. Giới hạn bản miễn phí là 3."
-  },
-  "openingHostApp": {
-    "message": "Đang mở ứng dụng chính để hoàn tất giao dịch…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Không thể mở ứng dụng. Vui lòng mở No Lazyload thủ công để hoàn tất giao dịch."
-  },
-  "licenseFree": {
-    "message": "Miễn phí · tối đa 3 trang web"
-  },
-  "licensePro": {
-    "message": "Pro · không giới hạn trang web"
-  },
-  "licenseUpgrade": {
-    "message": "Nâng cấp lên Pro"
-  },
-  "licenseManage": {
-    "message": "Quản lý / Khôi phục"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Đã mở khóa Pro · đã bật {domain}"
-  },
-  "purchaseUnavailable": {
-    "message": "Tạm thời không thể mua. Vui lòng thử lại sau."
-  },
   "currentWebsite": {
     "message": "Trang web hiện tại"
   },
@@ -216,35 +156,11 @@
   "undo": {
     "message": "Hoàn tác"
   },
-  "upgradeNote": {
-    "message": "Không giới hạn trang web · Mua một lần, không đăng ký định kỳ"
-  },
-  "upgradePrice": {
-    "message": "Mua một lần"
-  },
-  "oneTimePurchase": {
-    "message": "Mua một lần"
-  },
-  "noSubscription": {
-    "message": "Không đăng ký định kỳ"
-  },
-  "upgradeToPro": {
-    "message": "Nâng cấp lên Pro"
-  },
-  "notNow": {
-    "message": "Để sau"
-  },
-  "upgradeBodyLimit": {
-    "message": "Bạn đã dùng hết 3 trang web miễn phí. Nâng cấp một lần để bật No Lazyload trên không giới hạn trang web."
-  },
   "siteListTitle": {
     "message": "Các trang đã cấu hình"
   },
   "emptyState": {
     "message": "Chưa có trang nào được cấu hình"
-  },
-  "autoScrollHelp": {
-    "message": "Khi bật, tắt chặn kỹ thuật và kích hoạt tải bằng cách tự động cuộn xuống dưới"
   },
   "scrollParams": {
     "message": "Tham số tự động cuộn"
@@ -321,9 +237,6 @@
   "newtab01Desc": {
     "message": "Tab mới dựa trên bookmark. Mở thư mục dưới dạng nhóm tab hoặc chế độ xem chia đôi. 12 chủ đề tích hợp + chủ đề tùy chỉnh không giới hạn."
   },
-  "licenseTitle": {
-    "message": "Giấy phép"
-  },
   "compatibilityModeHelpSection": {
     "message": "Tự động cuộn trang để kích hoạt tải hình ảnh. Chỉ dùng khi chế độ Tiêu chuẩn không hoạt động."
   },
@@ -354,26 +267,11 @@
   "importExportHelp": {
     "message": "Tệp bao gồm chế độ của từng trang web và toàn bộ cài đặt chung."
   },
-  "plan": {
-    "message": "Gói"
-  },
-  "planFreeDetail": {
-    "message": "Miễn phí · đã bật {count} trong {limit} trang web"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · Đã mở khóa không giới hạn trang web"
-  },
-  "managePurchases": {
-    "message": "Quản lý giao dịch"
-  },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
     "message": "Quyền riêng tư"
-  },
-  "proActivated": {
-    "message": "Đã kích hoạt Pro. Đã mở khóa không giới hạn trang web."
   },
   "privacyNote": {
     "message": "No Lazyload chỉ tác động đến những trang web bạn bật. Các trang web khác không bị ảnh hưởng."

@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Hapus Situs Saat Ini"
   },
-  "useAutoScroll": {
-    "message": "Gunakan gulir otomatis, bukan pemblokiran teknis"
-  },
-  "autoScrollDesc": {
-    "message": "Gulir otomatis ke bawah untuk memicu pemuatan; cocok untuk situs di mana pemblokiran teknis gagal"
-  },
   "configuredSites": {
     "message": "Situs yang Dikonfigurasi"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Dihapus {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Gulir otomatis aktif"
-  },
-  "autoScrollDisabled": {
-    "message": "Gulir otomatis nonaktif"
-  },
   "pageRefreshed": {
     "message": "Halaman dimuat ulang"
-  },
-  "autoScroll": {
-    "message": "Gulir Otomatis"
   },
   "settingsTitle": {
     "message": "Pengaturan - No Lazyload",
@@ -141,51 +126,6 @@
   "delete": {
     "message": "Hapus"
   },
-  "upgradeTitle": {
-    "message": "Buka Pro"
-  },
-  "upgradeBody": {
-    "message": "Versi gratis mendukung hingga 3 situs web. Tingkatkan untuk membuka situs web tanpa batas dan fitur premium mendatang."
-  },
-  "upgradeButton": {
-    "message": "Tingkatkan"
-  },
-  "cancelUpgrade": {
-    "message": "Batal"
-  },
-  "siteLimitReached": {
-    "message": "Batas situs tercapai"
-  },
-  "importPartial": {
-    "message": "Mengimpor {added} dari {total} situs. Batas gratis adalah 3."
-  },
-  "openingHostApp": {
-    "message": "Membuka Aplikasi Utama untuk menyelesaikan pembelian…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Tidak dapat membuka aplikasi. Jalankan No Lazyload secara manual untuk menyelesaikan pembelian."
-  },
-  "licenseFree": {
-    "message": "Gratis · hingga 3 situs web"
-  },
-  "licensePro": {
-    "message": "Pro · situs web tanpa batas"
-  },
-  "licenseUpgrade": {
-    "message": "Tingkatkan ke Pro"
-  },
-  "licenseManage": {
-    "message": "Kelola / Pulihkan"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro dibuka · {domain} diaktifkan"
-  },
-  "purchaseUnavailable": {
-    "message": "Pembelian sementara tidak tersedia. Coba lagi nanti."
-  },
   "currentWebsite": {
     "message": "Situs Web Saat Ini"
   },
@@ -216,35 +156,11 @@
   "undo": {
     "message": "Urungkan"
   },
-  "upgradeNote": {
-    "message": "Situs web tanpa batas · Pembelian sekali, tanpa langganan"
-  },
-  "upgradePrice": {
-    "message": "Pembelian sekali"
-  },
-  "oneTimePurchase": {
-    "message": "Pembelian sekali"
-  },
-  "noSubscription": {
-    "message": "Tanpa langganan"
-  },
-  "upgradeToPro": {
-    "message": "Tingkatkan ke Pro"
-  },
-  "notNow": {
-    "message": "Nanti Saja"
-  },
-  "upgradeBodyLimit": {
-    "message": "Anda menggunakan ketiga situs web gratis. Tingkatkan sekali untuk mengaktifkan No Lazyload di situs web tanpa batas."
-  },
   "siteListTitle": {
     "message": "Situs yang Dikonfigurasi"
   },
   "emptyState": {
     "message": "Tidak ada situs yang dikonfigurasi"
-  },
-  "autoScrollHelp": {
-    "message": "Saat diaktifkan, menonaktifkan pemblokiran teknis dan memicu pemuatan dengan menggulir otomatis ke bawah"
   },
   "scrollParams": {
     "message": "Parameter Gulir Otomatis"
@@ -321,9 +237,6 @@
   "newtab01Desc": {
     "message": "Tab baru berbasis bookmark. Buka folder sebagai grup tab atau dalam tampilan terbagi. 12 tema bawaan + tema kustom tak terbatas."
   },
-  "licenseTitle": {
-    "message": "Lisensi"
-  },
   "compatibilityModeHelpSection": {
     "message": "Menggulir halaman secara otomatis untuk memicu pemuatan gambar. Gunakan ini hanya jika mode Standar tidak berfungsi."
   },
@@ -354,26 +267,11 @@
   "importExportHelp": {
     "message": "File ini menyertakan mode setiap situs web dan semua pengaturan global."
   },
-  "plan": {
-    "message": "Paket"
-  },
-  "planFreeDetail": {
-    "message": "Gratis · {count} dari {limit} situs web aktif"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · Situs web tanpa batas telah dibuka"
-  },
-  "managePurchases": {
-    "message": "Kelola Pembelian"
-  },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
     "message": "Privasi"
-  },
-  "proActivated": {
-    "message": "Pro diaktifkan. Situs web tanpa batas telah dibuka."
   },
   "privacyNote": {
     "message": "No Lazyload hanya bertindak di situs web yang Anda aktifkan. Situs web lain tidak tersentuh."

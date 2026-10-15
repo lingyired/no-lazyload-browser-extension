@@ -33,12 +33,6 @@
   "removeCurrentSite": {
     "message": "Aktuelle Seite Entfernen"
   },
-  "useAutoScroll": {
-    "message": "Automatisches Scrollen statt technischer Blockierung"
-  },
-  "autoScrollDesc": {
-    "message": "Nach unten scrollen zum Laden auslösen, geeignet für Seiten bei denen das technische Blockieren fehlschlägt"
-  },
   "configuredSites": {
     "message": "Konfigurierte Seiten"
   },
@@ -63,17 +57,8 @@
   "siteDeleted": {
     "message": "{domain} Gelöscht"
   },
-  "autoScrollEnabled": {
-    "message": "Automatisches Scrollen aktiviert"
-  },
-  "autoScrollDisabled": {
-    "message": "Automatisches Scrollen deaktiviert"
-  },
   "pageRefreshed": {
     "message": "Seite aktualisiert"
-  },
-  "autoScroll": {
-    "message": "Auto-Scroll"
   },
   "settingsTitle": {
     "message": "Einstellungen - No Lazyload",
@@ -138,59 +123,11 @@
   "languageSettings": {
     "message": "Spracheinstellungen"
   },
-  "upgradeTitle": {
-    "message": "No Lazyload Pro freischalten"
-  },
-  "upgradeBody": {
-    "message": "Die kostenlose Version unterstützt bis zu 3 Websites. Mit dem Upgrade gilt No Lazyload für unbegrenzt viele Websites."
-  },
-  "upgradeButton": {
-    "message": "Upgrade"
-  },
-  "proActivated": {
-    "message": "Pro aktiviert! Unbegrenzte Websites freigeschaltet."
-  },
-  "cancelUpgrade": {
-    "message": "Abbrechen"
-  },
-  "siteLimitReached": {
-    "message": "Website-Limit erreicht"
-  },
-  "importPartial": {
-    "message": "{added} von {total} Websites importiert. Das kostenlose Limit liegt bei 3."
-  },
   "loading": {
     "message": "Lädt..."
   },
   "delete": {
     "message": "Löschen"
-  },
-  "openingHostApp": {
-    "message": "Host-App wird geöffnet. Schließe den Kauf ab und kehre dann zurück"
-  },
-  "upgradeOpenFailed": {
-    "message": "Die App konnte nicht automatisch geöffnet werden. Starte No Lazyload bitte manuell, um den Kauf abzuschließen"
-  },
-  "licenseFree": {
-    "message": "Kostenlos · bis zu 3 Websites"
-  },
-  "licensePro": {
-    "message": "Pro · unbegrenzte Websites"
-  },
-  "licenseUpgrade": {
-    "message": "Auf Pro upgraden"
-  },
-  "licenseManage": {
-    "message": "Käufe verwalten / wiederherstellen"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro freigeschaltet · {domain} wurde aktiviert"
-  },
-  "purchaseUnavailable": {
-    "message": "Käufe sind vorübergehend nicht verfügbar. Bitte später erneut versuchen"
   },
   "currentWebsite": {
     "message": "Aktuelle Website"
@@ -222,35 +159,11 @@
   "undo": {
     "message": "Rückgängig"
   },
-  "upgradeNote": {
-    "message": "Unbegrenzte Websites · Einmalkauf, kein Abo"
-  },
-  "upgradePrice": {
-    "message": "Einmalkauf"
-  },
-  "oneTimePurchase": {
-    "message": "Einmalkauf"
-  },
-  "noSubscription": {
-    "message": "Kein Abo"
-  },
-  "upgradeToPro": {
-    "message": "Auf Pro upgraden"
-  },
-  "notNow": {
-    "message": "Nicht jetzt"
-  },
-  "upgradeBodyLimit": {
-    "message": "Du nutzt alle 3 kostenlosen Websites. Mit einem einmaligen Upgrade gilt No Lazyload für unbegrenzt viele Websites."
-  },
   "siteListTitle": {
     "message": "Konfigurierte Seiten"
   },
   "emptyState": {
     "message": "Keine konfigurierten Seiten"
-  },
-  "autoScrollHelp": {
-    "message": "Deaktiviert technische Blockierung und lädt durch Scrollen"
   },
   "scrollParams": {
     "message": "Scroll-Parameter"
@@ -327,9 +240,6 @@
   "newtab01Desc": {
     "message": "Lesezeichen-gesteuerter neuer Tab. Ordner als Tab-Gruppen oder in geteilter Ansicht öffnen. 12 integrierte Themes + unbegrenzte benutzerdefinierte Themes."
   },
-  "licenseTitle": {
-    "message": "Lizenz"
-  },
   "compatibilityModeHelpSection": {
     "message": "Scrollt die Seite automatisch, um Bilder auszulösen. Nur verwenden, wenn der Standardmodus nicht funktioniert."
   },
@@ -359,18 +269,6 @@
   },
   "importExportHelp": {
     "message": "Die Datei enthält den Modus jeder Website und alle globalen Einstellungen."
-  },
-  "plan": {
-    "message": "Tarif"
-  },
-  "planFreeDetail": {
-    "message": "Kostenlos · {count} von {limit} Websites aktiviert"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · Unbegrenzte Websites freigeschaltet"
-  },
-  "managePurchases": {
-    "message": "Käufe verwalten"
   },
   "github": {
     "message": "GitHub"

@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "הסר את האתר הנוכחי"
   },
-  "useAutoScroll": {
-    "message": "השתמש בגלילה אוטומטית במקום חסימה טכנית"
-  },
-  "autoScrollDesc": {
-    "message": "גלול אוטומטית למטה כדי להפעיל את הטעינה; מתאים לאתרים שבהם החסימה הטכנית נכשלת"
-  },
   "configuredSites": {
     "message": "אתרים מוגדרים"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "נמחק {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "גלילה אוטומטית מופעלת"
-  },
-  "autoScrollDisabled": {
-    "message": "גלילה אוטומטית מושבתת"
-  },
   "pageRefreshed": {
     "message": "הדף רוענן"
-  },
-  "autoScroll": {
-    "message": "גלילה אוטומטית"
   },
   "settingsTitle": {
     "message": "הגדרות - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "מחק"
   },
-  "upgradeTitle": {
-    "message": "פתיחת Pro"
-  },
-  "upgradeBody": {
-    "message": "הגרסה החינמית תומכת בעד 3 אתרים. שדרגו כדי לפתוח אתרים ללא הגבלה ותכונות פרימיום עתידיות."
-  },
-  "upgradeButton": {
-    "message": "שדרוג"
-  },
-  "proActivated": {
-    "message": "Pro הופעל. נפתחו אתרים ללא הגבלה.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "ביטול"
-  },
-  "siteLimitReached": {
-    "message": "הגעתם למגבלת האתרים"
-  },
-  "importPartial": {
-    "message": "יובאו {added} מתוך {total} אתרים. המגבלה בחינם היא 3."
-  },
-  "openingHostApp": {
-    "message": "פותח את אפליקציית המארח להשלמת הרכישה…"
-  },
-  "upgradeOpenFailed": {
-    "message": "לא ניתן היה לפתוח את האפליקציה. יש להפעיל את No Lazy Load ידנית כדי להשלים את הרכישה."
-  },
-  "licenseFree": {
-    "message": "חינם · עד 3 אתרים"
-  },
-  "licensePro": {
-    "message": "Pro · אתרים ללא הגבלה"
-  },
-  "licenseUpgrade": {
-    "message": "שדרוג ל-Pro"
-  },
-  "licenseManage": {
-    "message": "ניהול / שחזור"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro נפתח · {domain} הופעל"
-  },
-  "purchaseUnavailable": {
-    "message": "רכישות אינן זמינות באופן זמני. נסו שוב מאוחר יותר."
-  },
   "currentWebsite": {
     "message": "האתר הנוכחי"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "ביטול פעולה"
   },
-  "upgradeNote": {
-    "message": "אתרים ללא הגבלה · רכישה חד-פעמית, ללא מנוי"
-  },
-  "upgradePrice": {
-    "message": "רכישה חד-פעמית"
-  },
-  "oneTimePurchase": {
-    "message": "רכישה חד-פעמית"
-  },
-  "noSubscription": {
-    "message": "ללא מנוי"
-  },
-  "upgradeToPro": {
-    "message": "שדרוג ל-Pro"
-  },
-  "notNow": {
-    "message": "לא עכשיו"
-  },
-  "upgradeBodyLimit": {
-    "message": "אתם משתמשים בכל 3 האתרים החינמיים. שדרגו פעם אחת כדי להפעיל את No Lazyload באתרים ללא הגבלה."
-  },
   "siteListTitle": {
     "message": "אתרים מוגדרים"
   },
   "emptyState": {
     "message": "אין אתרים מוגדרים"
-  },
-  "autoScrollHelp": {
-    "message": "כאשר מופעל, משבית חסימה טכנית ומפעיל טעינה על ידי גלילה אוטומטית למטה"
   },
   "scrollParams": {
     "message": "פרמטרים של גלילה אוטומטית"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "כרטיסייה חדשה מונעת סימניות. פתח תיקיות כקבוצות כרטיסיות או בתצוגה מפוצלת. 12 ערכות נושא מובנות + ערכות נושא מותאמות אישית ללא הגבלה."
   },
-  "licenseTitle": {
-    "message": "רישיון"
-  },
   "compatibilityModeHelpSection": {
     "message": "גולל את הדף אוטומטית כדי להפעיל טעינת תמונות. יש להשתמש רק כשהמצב הרגיל אינו עובד."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "הקובץ כולל את המצב של כל אתר ואת כל ההגדרות הגלובליות."
-  },
-  "plan": {
-    "message": "תוכנית"
-  },
-  "planFreeDetail": {
-    "message": "חינם · {count} מתוך {limit} אתרים מופעלים"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · נפתחו אתרים ללא הגבלה"
-  },
-  "managePurchases": {
-    "message": "ניהול רכישות"
   },
   "github": {
     "message": "GitHub"

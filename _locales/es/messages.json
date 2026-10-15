@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Eliminar Sitio Actual"
   },
-  "useAutoScroll": {
-    "message": "Usar desplazamiento automático en lugar de bloqueo técnico"
-  },
-  "autoScrollDesc": {
-    "message": "Desplazarse hasta el final para activar la carga, adecuado para sitios donde falla el bloqueo técnico"
-  },
   "configuredSites": {
     "message": "Sitios Configurados"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Eliminado {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Desplazamiento automático activado"
-  },
-  "autoScrollDisabled": {
-    "message": "Desplazamiento automático desactivado"
-  },
   "pageRefreshed": {
     "message": "Página actualizada"
-  },
-  "autoScroll": {
-    "message": "Desplaz. Auto."
   },
   "settingsTitle": {
     "message": "Configuración - No Lazyload",
@@ -135,59 +120,11 @@
   "languageSettings": {
     "message": "Configuración de Idioma"
   },
-  "upgradeTitle": {
-    "message": "Desbloquear Pro"
-  },
-  "upgradeBody": {
-    "message": "La versión gratuita admite hasta 3 sitios web. Actualiza para desbloquear sitios web ilimitados y futuras funciones premium."
-  },
-  "upgradeButton": {
-    "message": "Actualizar"
-  },
-  "proActivated": {
-    "message": "Pro activado. Sitios web ilimitados desbloqueados."
-  },
-  "cancelUpgrade": {
-    "message": "Cancelar"
-  },
-  "siteLimitReached": {
-    "message": "Se alcanzó el límite de sitios web"
-  },
-  "importPartial": {
-    "message": "Se importaron {added} de {total} sitios web. El límite gratuito es 3."
-  },
   "loading": {
     "message": "Cargando..."
   },
   "delete": {
     "message": "Eliminar"
-  },
-  "openingHostApp": {
-    "message": "Abriendo la app anfitriona para completar la compra…"
-  },
-  "upgradeOpenFailed": {
-    "message": "No se pudo abrir la app. Inicia No Lazyload manualmente para completar la compra"
-  },
-  "licenseFree": {
-    "message": "Gratis · hasta 3 sitios web"
-  },
-  "licensePro": {
-    "message": "Pro · sitios web ilimitados"
-  },
-  "licenseUpgrade": {
-    "message": "Actualizar a Pro"
-  },
-  "licenseManage": {
-    "message": "Gestionar / Restaurar"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro desbloqueado · {domain} se ha activado"
-  },
-  "purchaseUnavailable": {
-    "message": "Las compras no están disponibles temporalmente. Inténtalo de nuevo más tarde."
   },
   "currentWebsite": {
     "message": "Sitio web actual"
@@ -219,35 +156,11 @@
   "undo": {
     "message": "Deshacer"
   },
-  "upgradeNote": {
-    "message": "Sitios web ilimitados · Pago único, sin suscripción"
-  },
-  "upgradePrice": {
-    "message": "Pago único"
-  },
-  "oneTimePurchase": {
-    "message": "Pago único"
-  },
-  "noSubscription": {
-    "message": "Sin suscripción"
-  },
-  "upgradeToPro": {
-    "message": "Actualizar a Pro"
-  },
-  "notNow": {
-    "message": "Ahora no"
-  },
-  "upgradeBodyLimit": {
-    "message": "Estás usando los 3 sitios web gratuitos. Actualiza una vez para activar No Lazyload en sitios web ilimitados."
-  },
   "siteListTitle": {
     "message": "Sitios Configurados"
   },
   "emptyState": {
     "message": "No hay sitios configurados"
-  },
-  "autoScrollHelp": {
-    "message": "Deshabilita el bloqueo técnico y activa la carga desplazándose al final"
   },
   "scrollParams": {
     "message": "Parámetros de Desplazamiento"
@@ -324,9 +237,6 @@
   "newtab01Desc": {
     "message": "Nueva pestaña basada en marcadores. Abre carpetas como grupos de pestañas o en vista dividida. 12 temas integrados + temas personalizados ilimitados."
   },
-  "licenseTitle": {
-    "message": "Licencia"
-  },
   "compatibilityModeHelpSection": {
     "message": "Desplaza la página automáticamente para activar la carga de las imágenes. Úsalo solo cuando el modo Estándar no funcione."
   },
@@ -356,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "El archivo incluye el modo de cada sitio web y toda la configuración global."
-  },
-  "plan": {
-    "message": "Plan"
-  },
-  "planFreeDetail": {
-    "message": "Gratis · {count} de {limit} sitios web activados"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · Sitios web ilimitados desbloqueados"
-  },
-  "managePurchases": {
-    "message": "Gestionar compras"
   },
   "github": {
     "message": "GitHub"

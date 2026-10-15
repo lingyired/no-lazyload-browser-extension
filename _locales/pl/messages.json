@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Usuń bieżącą stronę"
   },
-  "useAutoScroll": {
-    "message": "Użyj automatycznego przewijania zamiast blokady technicznej"
-  },
-  "autoScrollDesc": {
-    "message": "Automatycznie przewiń do dołu, aby wyzwolić ładowanie; przydatne na stronach, gdzie blokada techniczna zawodzi"
-  },
   "configuredSites": {
     "message": "Skonfigurowane strony"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Usunięto {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Autoprzewijanie włączone"
-  },
-  "autoScrollDisabled": {
-    "message": "Autoprzewijanie wyłączone"
-  },
   "pageRefreshed": {
     "message": "Strona odświeżona"
-  },
-  "autoScroll": {
-    "message": "Autoprzewijanie"
   },
   "settingsTitle": {
     "message": "Ustawienia - No Lazyload",
@@ -141,51 +126,6 @@
   "delete": {
     "message": "Usuń"
   },
-  "upgradeTitle": {
-    "message": "Odblokuj Pro"
-  },
-  "upgradeBody": {
-    "message": "Darmowa wersja obsługuje do 3 stron. Uaktualnij, aby odblokować nieograniczoną liczbę stron i przyszłe funkcje premium."
-  },
-  "upgradeButton": {
-    "message": "Uaktualnij"
-  },
-  "cancelUpgrade": {
-    "message": "Anuluj"
-  },
-  "siteLimitReached": {
-    "message": "Osiągnięto limit stron"
-  },
-  "importPartial": {
-    "message": "Zaimportowano {added} z {total} stron. Darmowy limit to 3."
-  },
-  "openingHostApp": {
-    "message": "Otwieranie aplikacji w celu dokończenia zakupu…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Nie udało się otworzyć aplikacji. Uruchom No Lazyload ręcznie, aby dokończyć zakup."
-  },
-  "licenseFree": {
-    "message": "Bezpłatnie · do 3 stron"
-  },
-  "licensePro": {
-    "message": "Pro · nieograniczona liczba stron"
-  },
-  "licenseUpgrade": {
-    "message": "Uaktualnij do Pro"
-  },
-  "licenseManage": {
-    "message": "Zarządzaj / Przywróć"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro odblokowane · {domain} zostało włączone"
-  },
-  "purchaseUnavailable": {
-    "message": "Zakupy są tymczasowo niedostępne. Spróbuj ponownie później."
-  },
   "currentWebsite": {
     "message": "Bieżąca strona"
   },
@@ -216,35 +156,11 @@
   "undo": {
     "message": "Cofnij"
   },
-  "upgradeNote": {
-    "message": "Nieograniczona liczba stron · Jednorazowy zakup, bez subskrypcji"
-  },
-  "upgradePrice": {
-    "message": "Jednorazowy zakup"
-  },
-  "oneTimePurchase": {
-    "message": "Jednorazowy zakup"
-  },
-  "noSubscription": {
-    "message": "Bez subskrypcji"
-  },
-  "upgradeToPro": {
-    "message": "Uaktualnij do Pro"
-  },
-  "notNow": {
-    "message": "Nie teraz"
-  },
-  "upgradeBodyLimit": {
-    "message": "Wykorzystujesz wszystkie 3 darmowe strony. Uaktualnij raz, aby włączyć No Lazyload na nieograniczonej liczbie stron."
-  },
   "siteListTitle": {
     "message": "Skonfigurowane strony"
   },
   "emptyState": {
     "message": "Brak skonfigurowanych stron"
-  },
-  "autoScrollHelp": {
-    "message": "Po włączeniu wyłącza blokadę techniczną i wyzwala ładowanie przez automatyczne przewijanie do dołu"
   },
   "scrollParams": {
     "message": "Parametry automatycznego przewijania"
@@ -321,9 +237,6 @@
   "newtab01Desc": {
     "message": "Nowa karta oparta na zakładkach. Otwieraj foldery jako grupy kart lub w widoku dzielonym. 12 wbudowanych motywów + nieograniczone motywy niestandardowe."
   },
-  "licenseTitle": {
-    "message": "Licencja"
-  },
   "compatibilityModeHelpSection": {
     "message": "Automatycznie przewija stronę, aby wywołać wczytywanie obrazów. Używaj tylko wtedy, gdy tryb standardowy nie działa."
   },
@@ -354,26 +267,11 @@
   "importExportHelp": {
     "message": "Plik zawiera tryb każdej strony i wszystkie ustawienia globalne."
   },
-  "plan": {
-    "message": "Plan"
-  },
-  "planFreeDetail": {
-    "message": "Bezpłatnie · włączono {count} z {limit} stron"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · Nieograniczona liczba stron odblokowana"
-  },
-  "managePurchases": {
-    "message": "Zarządzaj zakupami"
-  },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
     "message": "Prywatność"
-  },
-  "proActivated": {
-    "message": "Pro aktywowane. Nieograniczona liczba stron odblokowana."
   },
   "privacyNote": {
     "message": "No Lazyload działa tylko na stronach, które włączysz. Pozostałe strony nie są zmieniane."

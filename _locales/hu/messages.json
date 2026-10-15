@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Jelenlegi oldal eltávolítása"
   },
-  "useAutoScroll": {
-    "message": "Automatikus görgetés használata technikai blokkolás helyett"
-  },
-  "autoScrollDesc": {
-    "message": "Görgessen automatikusan az aljára a betöltés indításához; olyan oldalakhoz megfelelő, ahol a technikai blokkolás nem működik"
-  },
   "configuredSites": {
     "message": "Beállított oldalak"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Törölve: {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Automatikus görgetés engedélyezve"
-  },
-  "autoScrollDisabled": {
-    "message": "Automatikus görgetés letiltva"
-  },
   "pageRefreshed": {
     "message": "Oldal frissítve"
-  },
-  "autoScroll": {
-    "message": "Automatikus görgetés"
   },
   "settingsTitle": {
     "message": "Beállítások - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "Törlés"
   },
-  "upgradeTitle": {
-    "message": "Pro feloldása"
-  },
-  "upgradeBody": {
-    "message": "Az ingyenes verzió legfeljebb 3 webhelyet támogat. Frissítsen a korlátlan webhelyek és a jövőbeli prémium funkciók feloldásához."
-  },
-  "upgradeButton": {
-    "message": "Frissítés"
-  },
-  "proActivated": {
-    "message": "A Pro aktiválva. Korlátlan webhely feloldva.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Mégse"
-  },
-  "siteLimitReached": {
-    "message": "Elérte a webhelykorlátot"
-  },
-  "importPartial": {
-    "message": "Importálva {added}/{total} webhely. Az ingyenes korlát 3."
-  },
-  "openingHostApp": {
-    "message": "A gazdaalkalmazás megnyitása a vásárlás befejezéséhez…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Az alkalmazást nem sikerült megnyitni. A vásárlás befejezéséhez indítsa el kézzel a No Lazy Load alkalmazást."
-  },
-  "licenseFree": {
-    "message": "Ingyenes · legfeljebb 3 webhely"
-  },
-  "licensePro": {
-    "message": "Pro · korlátlan webhely"
-  },
-  "licenseUpgrade": {
-    "message": "Frissítés Pro-ra"
-  },
-  "licenseManage": {
-    "message": "Kezelés / visszaállítás"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro feloldva · a(z) {domain} engedélyezve"
-  },
-  "purchaseUnavailable": {
-    "message": "A vásárlás átmenetileg nem elérhető. Próbálja újra később."
-  },
   "currentWebsite": {
     "message": "Jelenlegi webhely"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Visszavonás"
   },
-  "upgradeNote": {
-    "message": "Korlátlan webhely · egyszeri vásárlás, előfizetés nélkül"
-  },
-  "upgradePrice": {
-    "message": "Egyszeri vásárlás"
-  },
-  "oneTimePurchase": {
-    "message": "Egyszeri vásárlás"
-  },
-  "noSubscription": {
-    "message": "Előfizetés nélkül"
-  },
-  "upgradeToPro": {
-    "message": "Frissítés Pro-ra"
-  },
-  "notNow": {
-    "message": "Most nem"
-  },
-  "upgradeBodyLimit": {
-    "message": "Mind a 3 ingyenes webhelyet használja. Egyszeri frissítéssel korlátlan webhelyen engedélyezheti a No Lazyloadot."
-  },
   "siteListTitle": {
     "message": "Beállított oldalak"
   },
   "emptyState": {
     "message": "Nincsenek beállított oldalak"
-  },
-  "autoScrollHelp": {
-    "message": "Bekapcsoláskor letiltja a technikai blokkolást, és automatikus görgetéssel indítja a betöltést"
   },
   "scrollParams": {
     "message": "Automatikus görgetés paraméterei"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Könyvjelző-vezérelt új lap. Nyisson meg mappákat lapcsoportokként vagy osztott nézetben. 12 beépített téma + korlátlan egyéni téma."
   },
-  "licenseTitle": {
-    "message": "Licenc"
-  },
   "compatibilityModeHelpSection": {
     "message": "Automatikusan görgeti az oldalt a képek betöltéséhez. Csak akkor használja, ha a normál mód nem működik."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "A fájl tartalmazza az egyes webhelyek módját és az összes globális beállítást."
-  },
-  "plan": {
-    "message": "Csomag"
-  },
-  "planFreeDetail": {
-    "message": "Ingyenes · {count}/{limit} webhely engedélyezve"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · korlátlan webhely feloldva"
-  },
-  "managePurchases": {
-    "message": "Vásárlások kezelése"
   },
   "github": {
     "message": "GitHub"

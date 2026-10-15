@@ -456,66 +456,6 @@
         background: #555;
       }
     }
-    /* 授权入口 —— Pro 用户重新打开购买/恢复界面的唯一常驻入口 */
-    .license-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      background: #fafafa;
-      border-top: 1px solid #eee;
-      font-size: 12px;
-    }
-    .license-row .license-status {
-      flex: 1;
-      min-width: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      color: #777;
-    }
-    .license-row .license-status.pro {
-      color: #34c759;
-      font-weight: 600;
-    }
-    .license-row .license-manage {
-      flex: none;
-      padding: 4px 10px;
-      font-size: 12px;
-      font-family: inherit;
-      border: 1px solid #d2d2d7;
-      border-radius: 6px;
-      background: #fff;
-      color: #007aff;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .license-row .license-manage:hover {
-      background: #f0f0f5;
-    }
-    .license-row .license-manage:active {
-      opacity: 0.7;
-    }
-    @media (prefers-color-scheme: dark) {
-      .license-row {
-        background: #1e1e1e;
-        border-top-color: #3a3a3a;
-      }
-      .license-row .license-status {
-        color: #888;
-      }
-      .license-row .license-status.pro {
-        color: #6abf6a;
-      }
-      .license-row .license-manage {
-        background: #333;
-        border-color: #444;
-        color: #6ab0ff;
-      }
-      .license-row .license-manage:hover {
-        background: #3a3a3a;
-      }
-    }
   </style>
 </head>
 <body>
@@ -534,8 +474,8 @@
     <div class="scroll-option disabled" id="scrollOption">
       <input type="checkbox" id="currentScrollToggle" disabled>
       <label for="currentScrollToggle">
-        <span data-i18n="useAutoScroll">使用自动滚动代替技术拦截</span>
-        <span class="scroll-desc" data-i18n="autoScrollDesc">自动滚动到底部触发加载，适合技术拦截失效的网站</span>
+        <span data-i18n="compatibilityMode">兼容模式</span>
+        <span class="scroll-desc" data-i18n="compatibilityModeHelp">自动滚动页面来触发图片加载。仅在标准模式无效时使用。</span>
       </label>
     </div>
 
@@ -571,19 +511,13 @@
     </button>
   </div>
 
-  <!-- 授权入口：免费限额路径在升级后不会再触发，所以这里必须有常驻入口 -->
-  <div class="license-row">
-    <span class="license-status" id="licenseStatus">…</span>
-    <button class="license-manage" id="manageLicense">…</button>
-  </div>
-
   <!-- Author -->
   <div class="author">
     <span class="version">v<span id="extensionVersion">1.0.0</span></span> |
     by <a href="https://lingai.net/" target="_blank">lingAI</a>
   </div>
 
-  <script src="i18n-manager.js"></script>
+  <script src="locales.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

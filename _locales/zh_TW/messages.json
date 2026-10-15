@@ -33,12 +33,6 @@
   "removeCurrentSite": {
     "message": "移除目前網站"
   },
-  "useAutoScroll": {
-    "message": "使用自動捲動代替技術攔截"
-  },
-  "autoScrollDesc": {
-    "message": "自動捲動到底部觸發載入，適合技術攔截失效的網站"
-  },
   "configuredSites": {
     "message": "已設定的網站"
   },
@@ -63,17 +57,8 @@
   "siteDeleted": {
     "message": "已刪除 {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "已開啟自動捲動"
-  },
-  "autoScrollDisabled": {
-    "message": "已關閉自動捲動"
-  },
   "pageRefreshed": {
     "message": "頁面已重新整理"
-  },
-  "autoScroll": {
-    "message": "自動捲動"
   },
   "settingsTitle": {
     "message": "設定 - No Lazyload",
@@ -138,59 +123,11 @@
   "languageSettings": {
     "message": "語言設定"
   },
-  "upgradeTitle": {
-    "message": "解鎖 No Lazyload Pro"
-  },
-  "upgradeBody": {
-    "message": "免費版最多支援 3 個網站。升級後可在無限網站上使用 No Lazyload。"
-  },
-  "upgradeButton": {
-    "message": "升級"
-  },
-  "proActivated": {
-    "message": "Pro 已啟用！無限網站已解鎖。"
-  },
-  "cancelUpgrade": {
-    "message": "取消"
-  },
-  "siteLimitReached": {
-    "message": "已達網站數量上限"
-  },
-  "importPartial": {
-    "message": "已匯入 {added}/{total} 個網站，免費版上限為 3 個。"
-  },
   "loading": {
     "message": "載入中..."
   },
   "delete": {
     "message": "刪除"
-  },
-  "openingHostApp": {
-    "message": "正在開啟宿主 App，請完成購買後返回擴充功能"
-  },
-  "upgradeOpenFailed": {
-    "message": "無法自動開啟 App，請手動啟動 No Lazyload 完成購買"
-  },
-  "licenseFree": {
-    "message": "免費版 · 最多 3 個網站"
-  },
-  "licensePro": {
-    "message": "Pro · 無限網站"
-  },
-  "licenseUpgrade": {
-    "message": "升級到 Pro"
-  },
-  "licenseManage": {
-    "message": "管理 / 恢復購買"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "已解鎖 Pro · 已啟用 {domain}"
-  },
-  "purchaseUnavailable": {
-    "message": "購買服務暫時無法使用，請稍後再試"
   },
   "currentWebsite": {
     "message": "目前網站"
@@ -222,35 +159,11 @@
   "undo": {
     "message": "復原"
   },
-  "upgradeNote": {
-    "message": "無限網站 · 一次性購買，無訂閱"
-  },
-  "upgradePrice": {
-    "message": "一次性購買"
-  },
-  "oneTimePurchase": {
-    "message": "一次性購買"
-  },
-  "noSubscription": {
-    "message": "無訂閱"
-  },
-  "upgradeToPro": {
-    "message": "升級到 Pro"
-  },
-  "notNow": {
-    "message": "暫不升級"
-  },
-  "upgradeBodyLimit": {
-    "message": "你已用完 3 個免費網站。升級一次即可在無限網站上啟用 No Lazyload。"
-  },
   "siteListTitle": {
     "message": "已設定的網站"
   },
   "emptyState": {
     "message": "暫無設定的網站"
-  },
-  "autoScrollHelp": {
-    "message": "開啟後停用技術攔截，自動捲動到底部觸發載入"
   },
   "scrollParams": {
     "message": "自動捲動參數"
@@ -327,9 +240,6 @@
   "newtab01Desc": {
     "message": "書籤驅動的新分頁。將資料夾作為分頁群組或分割檢視開啟。12 種內建主題 + 無限自訂主題。"
   },
-  "licenseTitle": {
-    "message": "授權"
-  },
   "compatibilityModeHelpSection": {
     "message": "自動捲動頁面來觸發圖片載入。僅在標準模式無效時使用。"
   },
@@ -359,18 +269,6 @@
   },
   "importExportHelp": {
     "message": "設定檔包含每個網站的模式與全部全域設定。"
-  },
-  "plan": {
-    "message": "方案"
-  },
-  "planFreeDetail": {
-    "message": "免費版 · 已啟用 {count} / {limit} 個網站"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · 無限網站已解鎖"
-  },
-  "managePurchases": {
-    "message": "管理購買"
   },
   "github": {
     "message": "GitHub"

@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Remove Current Site"
   },
-  "useAutoScroll": {
-    "message": "Use auto-scroll instead of tech blocking (for sites where blocking fails)"
-  },
-  "autoScrollDesc": {
-    "message": "Auto-scroll to bottom to trigger loading, suitable for sites where tech blocking fails"
-  },
   "configuredSites": {
     "message": "Configured Sites"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Deleted {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Auto-scroll enabled"
-  },
-  "autoScrollDisabled": {
-    "message": "Auto-scroll disabled"
-  },
   "pageRefreshed": {
     "message": "Page refreshed"
-  },
-  "autoScroll": {
-    "message": "Auto-scroll"
   },
   "settingsTitle": {
     "message": "Settings - No Lazyload",
@@ -135,60 +120,11 @@
   "languageSettings": {
     "message": "Language Settings"
   },
-  "upgradeTitle": {
-    "message": "Unlock Pro"
-  },
-  "upgradeBody": {
-    "message": "Free version supports up to 3 websites. Upgrade to unlock unlimited websites and future premium features."
-  },
-  "upgradeButton": {
-    "message": "Upgrade"
-  },
-  "proActivated": {
-    "message": "Pro activated! Unlimited websites unlocked.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Cancel"
-  },
-  "siteLimitReached": {
-    "message": "Site limit reached"
-  },
-  "importPartial": {
-    "message": "Imported {added} of {total} sites. Free limit is 3."
-  },
   "loading": {
     "message": "Loading..."
   },
   "delete": {
     "message": "Delete"
-  },
-  "openingHostApp": {
-    "message": "Opening Host App to complete purchase…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Could not open the app. Please launch No Lazyload manually to complete the purchase."
-  },
-  "licenseFree": {
-    "message": "Free · up to 3 websites"
-  },
-  "licensePro": {
-    "message": "Pro · unlimited websites"
-  },
-  "licenseUpgrade": {
-    "message": "Upgrade to Pro"
-  },
-  "licenseManage": {
-    "message": "Manage / Restore"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro unlocked · {domain} was enabled"
-  },
-  "purchaseUnavailable": {
-    "message": "Purchases are temporarily unavailable. Please try again later."
   },
   "currentWebsite": {
     "message": "Current Website"
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Undo"
   },
-  "upgradeNote": {
-    "message": "Unlimited websites · One-time purchase, no subscription"
-  },
-  "upgradePrice": {
-    "message": "One-time purchase"
-  },
-  "oneTimePurchase": {
-    "message": "One-time purchase"
-  },
-  "noSubscription": {
-    "message": "No subscription"
-  },
-  "upgradeToPro": {
-    "message": "Upgrade to Pro"
-  },
-  "notNow": {
-    "message": "Not Now"
-  },
-  "upgradeBodyLimit": {
-    "message": "You're using all 3 free websites. Upgrade once to enable No Lazyload on unlimited websites."
-  },
   "siteListTitle": {
     "message": "Configured Sites"
   },
   "emptyState": {
     "message": "No configured sites"
-  },
-  "autoScrollHelp": {
-    "message": "When enabled, disables tech blocking and triggers image loading by auto-scrolling to bottom"
   },
   "scrollParams": {
     "message": "Auto-scroll Parameters"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Bookmark-driven new tab. Open folders as tab groups or in split view. 12 built-in themes + unlimited custom themes."
   },
-  "licenseTitle": {
-    "message": "License"
-  },
   "compatibilityModeHelpSection": {
     "message": "Automatically scrolls the page to trigger image loading. Use this only when Standard mode does not work."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "The file includes each website mode and all global settings."
-  },
-  "plan": {
-    "message": "Plan"
-  },
-  "planFreeDetail": {
-    "message": "Free · {count} of {limit} websites enabled"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · Unlimited websites unlocked"
-  },
-  "managePurchases": {
-    "message": "Manage Purchases"
   },
   "github": {
     "message": "GitHub"

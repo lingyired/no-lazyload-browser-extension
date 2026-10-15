@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Κατάργηση τρέχοντος ιστότοπου"
   },
-  "useAutoScroll": {
-    "message": "Χρήση αυτόματης κύλισης αντί τεχνικού αποκλεισμού"
-  },
-  "autoScrollDesc": {
-    "message": "Κυλήστε αυτόματα προς τα κάτω για να ενεργοποιήσετε τη φόρτωση· κατάλληλο για ιστότοπους όπου η τεχνική αποκλεισμού αποτυγχάνει"
-  },
   "configuredSites": {
     "message": "Ρυθμισμένοι ιστότοποι"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Διαγράφηκε {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Η αυτόματη κύλιση είναι ενεργοποιημένη"
-  },
-  "autoScrollDisabled": {
-    "message": "Η αυτόματη κύλιση είναι απενεργοποιημένη"
-  },
   "pageRefreshed": {
     "message": "Η σελίδα ανανεώθηκε"
-  },
-  "autoScroll": {
-    "message": "Αυτόματη κύλιση"
   },
   "settingsTitle": {
     "message": "Ρυθμίσεις - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "Διαγραφή"
   },
-  "upgradeTitle": {
-    "message": "Ξεκλείδωμα Pro"
-  },
-  "upgradeBody": {
-    "message": "Η δωρεάν έκδοση υποστηρίζει έως 3 ιστότοπους. Αναβαθμίστε για να ξεκλειδώσετε απεριόριστους ιστότοπους και μελλοντικές λειτουργίες premium."
-  },
-  "upgradeButton": {
-    "message": "Αναβάθμιση"
-  },
-  "proActivated": {
-    "message": "Το Pro ενεργοποιήθηκε. Ξεκλειδώθηκαν απεριόριστοι ιστότοποι.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Ακύρωση"
-  },
-  "siteLimitReached": {
-    "message": "Συμπληρώθηκε το όριο ιστότοπων"
-  },
-  "importPartial": {
-    "message": "Εισήχθησαν {added} από {total} ιστότοπους. Το δωρεάν όριο είναι 3."
-  },
-  "openingHostApp": {
-    "message": "Άνοιγμα της εφαρμογής υποδοχής για ολοκλήρωση της αγοράς…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Δεν ήταν δυνατό το άνοιγμα της εφαρμογής. Εκκινήστε το No Lazy Load χειροκίνητα για να ολοκληρώσετε την αγορά."
-  },
-  "licenseFree": {
-    "message": "Δωρεάν · έως 3 ιστότοποι"
-  },
-  "licensePro": {
-    "message": "Pro · απεριόριστοι ιστότοποι"
-  },
-  "licenseUpgrade": {
-    "message": "Αναβάθμιση σε Pro"
-  },
-  "licenseManage": {
-    "message": "Διαχείριση / Επαναφορά"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Το Pro ξεκλειδώθηκε · ο {domain} ενεργοποιήθηκε"
-  },
-  "purchaseUnavailable": {
-    "message": "Οι αγορές δεν είναι προσωρινά διαθέσιμες. Δοκιμάστε ξανά αργότερα."
-  },
   "currentWebsite": {
     "message": "Τρέχων ιστότοπος"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Αναίρεση"
   },
-  "upgradeNote": {
-    "message": "Απεριόριστοι ιστότοποι · εφάπαξ αγορά, χωρίς συνδρομή"
-  },
-  "upgradePrice": {
-    "message": "Εφάπαξ αγορά"
-  },
-  "oneTimePurchase": {
-    "message": "Εφάπαξ αγορά"
-  },
-  "noSubscription": {
-    "message": "Χωρίς συνδρομή"
-  },
-  "upgradeToPro": {
-    "message": "Αναβάθμιση σε Pro"
-  },
-  "notNow": {
-    "message": "Όχι τώρα"
-  },
-  "upgradeBodyLimit": {
-    "message": "Χρησιμοποιείτε και τους 3 δωρεάν ιστότοπους. Αναβαθμίστε μία φορά για να ενεργοποιήσετε το No Lazyload σε απεριόριστους ιστότοπους."
-  },
   "siteListTitle": {
     "message": "Ρυθμισμένοι ιστότοποι"
   },
   "emptyState": {
     "message": "Δεν υπάρχουν ρυθμισμένοι ιστότοποι"
-  },
-  "autoScrollHelp": {
-    "message": "Όταν ενεργοποιηθεί, απενεργοποιεί τον τεχνικό αποκλεισμό και ενεργοποιεί τη φόρτωση με αυτόματη κύλιση προς τα κάτω"
   },
   "scrollParams": {
     "message": "Παράμετροι αυτόματης κύλισης"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Νέα καρτέλα με γνώμονα τους σελιδοδείκτες. Ανοίξτε φακέλους ως ομάδες καρτελών ή σε διαχωρισμένη προβολή. 12 ενσωματωμένα θέματα + απεριόριστα προσαρμοσμένα θέματα."
   },
-  "licenseTitle": {
-    "message": "Άδεια"
-  },
   "compatibilityModeHelpSection": {
     "message": "Κυλά αυτόματα τη σελίδα για να ενεργοποιήσει τη φόρτωση εικόνων. Χρησιμοποιήστε το μόνο όταν η τυπική λειτουργία δεν λειτουργεί."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "Το αρχείο περιλαμβάνει τη λειτουργία κάθε ιστότοπου και όλες τις καθολικές ρυθμίσεις."
-  },
-  "plan": {
-    "message": "Πλάνο"
-  },
-  "planFreeDetail": {
-    "message": "Δωρεάν · {count} από {limit} ιστότοποι ενεργοποιημένοι"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · ξεκλειδώθηκαν απεριόριστοι ιστότοποι"
-  },
-  "managePurchases": {
-    "message": "Διαχείριση αγορών"
   },
   "github": {
     "message": "GitHub"

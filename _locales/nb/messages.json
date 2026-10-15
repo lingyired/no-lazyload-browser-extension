@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Fjern gjeldende nettsted"
   },
-  "useAutoScroll": {
-    "message": "Bruk automatisk rulling i stedet for teknisk blokkering"
-  },
-  "autoScrollDesc": {
-    "message": "Rull automatisk til bunnen for å utløse lasting; egnet for nettsteder der teknisk blokkering feiler"
-  },
   "configuredSites": {
     "message": "Konfigurerte nettsteder"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Slettet {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Automatisk rulling aktivert"
-  },
-  "autoScrollDisabled": {
-    "message": "Automatisk rulling deaktivert"
-  },
   "pageRefreshed": {
     "message": "Siden oppdatert"
-  },
-  "autoScroll": {
-    "message": "Automatisk rulling"
   },
   "settingsTitle": {
     "message": "Innstillinger - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "Slett"
   },
-  "upgradeTitle": {
-    "message": "Lås opp Pro"
-  },
-  "upgradeBody": {
-    "message": "Gratisversjonen støtter opptil 3 nettsteder. Oppgrader for å låse opp ubegrensede nettsteder og fremtidige premiumfunksjoner."
-  },
-  "upgradeButton": {
-    "message": "Oppgrader"
-  },
-  "proActivated": {
-    "message": "Pro aktivert. Ubegrensede nettsteder er låst opp.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Avbryt"
-  },
-  "siteLimitReached": {
-    "message": "Grensen for nettsteder er nådd"
-  },
-  "importPartial": {
-    "message": "Importerte {added} av {total} nettsteder. Gratisgrensen er 3."
-  },
-  "openingHostApp": {
-    "message": "Åpner vertsappen for å fullføre kjøpet…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Kunne ikke åpne appen. Start No Lazy Load manuelt for å fullføre kjøpet."
-  },
-  "licenseFree": {
-    "message": "Gratis · opptil 3 nettsteder"
-  },
-  "licensePro": {
-    "message": "Pro · ubegrensede nettsteder"
-  },
-  "licenseUpgrade": {
-    "message": "Oppgrader til Pro"
-  },
-  "licenseManage": {
-    "message": "Administrer / gjenopprett"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro låst opp · {domain} ble aktivert"
-  },
-  "purchaseUnavailable": {
-    "message": "Kjøp er midlertidig utilgjengelige. Prøv igjen senere."
-  },
   "currentWebsite": {
     "message": "Gjeldende nettsted"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Angre"
   },
-  "upgradeNote": {
-    "message": "Ubegrensede nettsteder · engangskjøp, ingen abonnement"
-  },
-  "upgradePrice": {
-    "message": "Engangskjøp"
-  },
-  "oneTimePurchase": {
-    "message": "Engangskjøp"
-  },
-  "noSubscription": {
-    "message": "Ingen abonnement"
-  },
-  "upgradeToPro": {
-    "message": "Oppgrader til Pro"
-  },
-  "notNow": {
-    "message": "Ikke nå"
-  },
-  "upgradeBodyLimit": {
-    "message": "Du bruker alle 3 gratis nettstedene. Oppgrader én gang for å aktivere No Lazyload på ubegrensede nettsteder."
-  },
   "siteListTitle": {
     "message": "Konfigurerte nettsteder"
   },
   "emptyState": {
     "message": "Ingen konfigurerte nettsteder"
-  },
-  "autoScrollHelp": {
-    "message": "Når aktivert, deaktiverer teknisk blokkering og utløser lasting ved automatisk å rulle til bunnen"
   },
   "scrollParams": {
     "message": "Parametere for automatisk rulling"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Bokmerkestyrt ny fane. Åpne mapper som fanegrupper eller i delt visning. 12 innebygde temaer + ubegrensede egendefinerte temaer."
   },
-  "licenseTitle": {
-    "message": "Lisens"
-  },
   "compatibilityModeHelpSection": {
     "message": "Ruller automatisk på siden for å utløse innlasting av bilder. Bruk dette bare når standardmodus ikke fungerer."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "Filen inneholder modusen for hvert nettsted og alle globale innstillinger."
-  },
-  "plan": {
-    "message": "Plan"
-  },
-  "planFreeDetail": {
-    "message": "Gratis · {count} av {limit} nettsteder aktivert"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · ubegrensede nettsteder låst opp"
-  },
-  "managePurchases": {
-    "message": "Administrer kjøp"
   },
   "github": {
     "message": "GitHub"

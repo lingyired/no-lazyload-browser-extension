@@ -11,8 +11,7 @@
   "description": "__MSG_appDescription__",
   "permissions": [
     "storage",
-    "activeTab",
-    "nativeMessaging"
+    "activeTab"
   ],
   "host_permissions": [
     "<all_urls>"

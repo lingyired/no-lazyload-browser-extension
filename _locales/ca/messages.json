@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Elimina el lloc actual"
   },
-  "useAutoScroll": {
-    "message": "Fes servir el desplaçament automàtic en lloc del bloqueig tècnic"
-  },
-  "autoScrollDesc": {
-    "message": "Desplaça automàticament cap avall per activar la càrrega; adequat per a llocs on el bloqueig tècnic falla"
-  },
   "configuredSites": {
     "message": "Llocs configurats"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Suprimit {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Desplaçament automàtic habilitat"
-  },
-  "autoScrollDisabled": {
-    "message": "Desplaçament automàtic inhabilitat"
-  },
   "pageRefreshed": {
     "message": "Pàgina actualitzada"
-  },
-  "autoScroll": {
-    "message": "Desplaçament automàtic"
   },
   "settingsTitle": {
     "message": "Configuració - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "Suprimeix"
   },
-  "upgradeTitle": {
-    "message": "Desbloqueja Pro"
-  },
-  "upgradeBody": {
-    "message": "La versió gratuïta admet fins a 3 llocs web. Actualitza per desbloquejar llocs web il·limitats i futures funcions premium."
-  },
-  "upgradeButton": {
-    "message": "Actualitza"
-  },
-  "proActivated": {
-    "message": "Pro activat. S'han desbloquejat llocs web il·limitats.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Cancel·la"
-  },
-  "siteLimitReached": {
-    "message": "S'ha assolit el límit de llocs"
-  },
-  "importPartial": {
-    "message": "S'han importat {added} de {total} llocs. El límit gratuït és de 3."
-  },
-  "openingHostApp": {
-    "message": "S'està obrint l'aplicació amfitriona per completar la compra…"
-  },
-  "upgradeOpenFailed": {
-    "message": "No s'ha pogut obrir l'aplicació. Inicieu No Lazy Load manualment per completar la compra."
-  },
-  "licenseFree": {
-    "message": "Gratuït · fins a 3 llocs web"
-  },
-  "licensePro": {
-    "message": "Pro · llocs web il·limitats"
-  },
-  "licenseUpgrade": {
-    "message": "Actualitza a Pro"
-  },
-  "licenseManage": {
-    "message": "Gestiona / Restaura"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro desbloquejat · {domain} s'ha activat"
-  },
-  "purchaseUnavailable": {
-    "message": "Les compres no estan disponibles temporalment. Torneu-ho a provar més tard."
-  },
   "currentWebsite": {
     "message": "Lloc web actual"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Desfés"
   },
-  "upgradeNote": {
-    "message": "Llocs web il·limitats · compra única, sense subscripció"
-  },
-  "upgradePrice": {
-    "message": "Compra única"
-  },
-  "oneTimePurchase": {
-    "message": "Compra única"
-  },
-  "noSubscription": {
-    "message": "Sense subscripció"
-  },
-  "upgradeToPro": {
-    "message": "Actualitza a Pro"
-  },
-  "notNow": {
-    "message": "Ara no"
-  },
-  "upgradeBodyLimit": {
-    "message": "Esteu utilitzant els 3 llocs web gratuïts. Actualitzeu una vegada per activar No Lazyload en llocs web il·limitats."
-  },
   "siteListTitle": {
     "message": "Llocs configurats"
   },
   "emptyState": {
     "message": "Cap lloc configurat"
-  },
-  "autoScrollHelp": {
-    "message": "Quan està activat, desactiva el bloqueig tècnic i activa la càrrega mitjançant el desplaçament automàtic al final"
   },
   "scrollParams": {
     "message": "Paràmetres de desplaçament automàtic"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Nova pestanya basada en marcadors. Obre carpetes com a grups de pestanyes o en vista dividida. 12 temes integrats + temes personalitzats il·limitats."
   },
-  "licenseTitle": {
-    "message": "Llicència"
-  },
   "compatibilityModeHelpSection": {
     "message": "Desplaça la pàgina automàticament per activar la càrrega d'imatges. Utilitzeu-ho només quan el mode Estàndard no funcioni."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "El fitxer inclou el mode de cada lloc web i tota la configuració global."
-  },
-  "plan": {
-    "message": "Pla"
-  },
-  "planFreeDetail": {
-    "message": "Gratuït · {count} de {limit} llocs web activats"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · llocs web il·limitats desbloquejats"
-  },
-  "managePurchases": {
-    "message": "Gestiona les compres"
   },
   "github": {
     "message": "GitHub"

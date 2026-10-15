@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "إزالة الموقع الحالي"
   },
-  "useAutoScroll": {
-    "message": "استخدام التمرير التلقائي بدلاً من الحظر التقني"
-  },
-  "autoScrollDesc": {
-    "message": "التمرير للأسفل لتفعيل التحميل، مناسب للمواقع التي يفشل فيها الحظر التقني"
-  },
   "configuredSites": {
     "message": "المواقع المُعدّة"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "تم حذف {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "التمرير التلقائي مفعّل"
-  },
-  "autoScrollDisabled": {
-    "message": "التمرير التلقائي معطّل"
-  },
   "pageRefreshed": {
     "message": "تم تحديث الصفحة"
-  },
-  "autoScroll": {
-    "message": "تمرير تلقائي"
   },
   "settingsTitle": {
     "message": "الإعدادات - No Lazyload",
@@ -141,51 +126,6 @@
   "delete": {
     "message": "حذف"
   },
-  "upgradeTitle": {
-    "message": "فتح No Lazyload Pro"
-  },
-  "upgradeBody": {
-    "message": "تدعم النسخة المجانية حتى 3 مواقع. بعد الترقية يعمل No Lazyload على عدد غير محدود من المواقع."
-  },
-  "upgradeButton": {
-    "message": "ترقية"
-  },
-  "cancelUpgrade": {
-    "message": "إلغاء"
-  },
-  "siteLimitReached": {
-    "message": "تم بلوغ حد المواقع"
-  },
-  "importPartial": {
-    "message": "تم استيراد {added} من {total} موقعًا. الحد المجاني هو 3."
-  },
-  "openingHostApp": {
-    "message": "جارٍ فتح تطبيق المضيف. أكمل الشراء ثم عُد"
-  },
-  "upgradeOpenFailed": {
-    "message": "تعذّر فتح التطبيق تلقائيًا. شغّل No Lazyload يدويًا لإكمال الشراء"
-  },
-  "licenseFree": {
-    "message": "مجاني · حتى 3 مواقع"
-  },
-  "licensePro": {
-    "message": "Pro · مواقع غير محدودة"
-  },
-  "licenseUpgrade": {
-    "message": "الترقية إلى Pro"
-  },
-  "licenseManage": {
-    "message": "إدارة / استعادة الشراء"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "تم فتح Pro · تم تفعيل {domain}"
-  },
-  "purchaseUnavailable": {
-    "message": "الشراء غير متاح مؤقتًا. حاول مرة أخرى لاحقًا"
-  },
   "currentWebsite": {
     "message": "الموقع الحالي"
   },
@@ -216,35 +156,11 @@
   "undo": {
     "message": "تراجع"
   },
-  "upgradeNote": {
-    "message": "مواقع غير محدودة · شراء لمرة واحدة، بدون اشتراك"
-  },
-  "upgradePrice": {
-    "message": "شراء لمرة واحدة"
-  },
-  "oneTimePurchase": {
-    "message": "شراء لمرة واحدة"
-  },
-  "noSubscription": {
-    "message": "بدون اشتراك"
-  },
-  "upgradeToPro": {
-    "message": "الترقية إلى Pro"
-  },
-  "notNow": {
-    "message": "ليس الآن"
-  },
-  "upgradeBodyLimit": {
-    "message": "لقد استخدمت المواقع المجانية الثلاثة. ترقية واحدة تكفي لتفعيل No Lazyload على عدد غير محدود من المواقع."
-  },
   "siteListTitle": {
     "message": "المواقع المُعدّة"
   },
   "emptyState": {
     "message": "لا توجد مواقع مُعدّة"
-  },
-  "autoScrollHelp": {
-    "message": "يعطل الحظر التقني ويُفعّل التحميل بالتمرير للأسفل"
   },
   "scrollParams": {
     "message": "معايير التمرير التلقائي"
@@ -321,9 +237,6 @@
   "newtab01Desc": {
     "message": "علامة تبويب جديدة مدفوعة بالإشارات المرجعية. افتح المجلدات كمجموعات علامات تبويب أو في عرض مقسم. 12 سمًا مدمجًا + سمات مخصصة غير محدودة."
   },
-  "licenseTitle": {
-    "message": "الترخيص"
-  },
   "compatibilityModeHelpSection": {
     "message": "يمرّر الصفحة تلقائيًا لتحميل الصور. استخدمه فقط إذا لم يعمل الوضع القياسي."
   },
@@ -354,26 +267,11 @@
   "importExportHelp": {
     "message": "يتضمن الملف وضع كل موقع وكل الإعدادات العامة."
   },
-  "plan": {
-    "message": "الخطة"
-  },
-  "planFreeDetail": {
-    "message": "مجاني · {count} من {limit} مواقع مفعّلة"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · مواقع غير محدودة"
-  },
-  "managePurchases": {
-    "message": "إدارة عمليات الشراء"
-  },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
     "message": "الخصوصية"
-  },
-  "proActivated": {
-    "message": "تم تفعيل Pro! عدد المواقع غير محدود."
   },
   "privacyNote": {
     "message": "يعمل No Lazyload فقط على المواقع التي تفعّلها، ولا يمس أي موقع آخر."

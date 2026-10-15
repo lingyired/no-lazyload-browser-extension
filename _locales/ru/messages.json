@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Удалить Текущий Сайт"
   },
-  "useAutoScroll": {
-    "message": "Использовать автопрокрутку вместо технической блокировки"
-  },
-  "autoScrollDesc": {
-    "message": "Прокрутить вниз для активации загрузки, подходит для сайтов где техническая блокировка не работает"
-  },
   "configuredSites": {
     "message": "Настроенные Сайты"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Удалён {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Автопрокрутка включена"
-  },
-  "autoScrollDisabled": {
-    "message": "Автопрокрутка выключена"
-  },
   "pageRefreshed": {
     "message": "Страница обновлена"
-  },
-  "autoScroll": {
-    "message": "Автопрокрутка"
   },
   "settingsTitle": {
     "message": "Настройки - No Lazyload",
@@ -141,51 +126,6 @@
   "delete": {
     "message": "Удалить"
   },
-  "upgradeTitle": {
-    "message": "Разблокировать Pro"
-  },
-  "upgradeBody": {
-    "message": "Бесплатная версия поддерживает до 3 сайтов. Обновитесь, чтобы получить неограниченное число сайтов и будущие премиум-функции."
-  },
-  "upgradeButton": {
-    "message": "Обновиться"
-  },
-  "cancelUpgrade": {
-    "message": "Отмена"
-  },
-  "siteLimitReached": {
-    "message": "Достигнут лимит сайтов"
-  },
-  "importPartial": {
-    "message": "Импортировано {added} из {total} сайтов. Бесплатный лимит — 3."
-  },
-  "openingHostApp": {
-    "message": "Открываем приложение для завершения покупки…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Не удалось открыть приложение. Запустите No Lazyload вручную, чтобы завершить покупку."
-  },
-  "licenseFree": {
-    "message": "Бесплатно · до 3 сайтов"
-  },
-  "licensePro": {
-    "message": "Pro · неограниченное число сайтов"
-  },
-  "licenseUpgrade": {
-    "message": "Обновиться до Pro"
-  },
-  "licenseManage": {
-    "message": "Управление / Восстановить"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro разблокирован · {domain} включён"
-  },
-  "purchaseUnavailable": {
-    "message": "Покупки временно недоступны. Попробуйте позже."
-  },
   "currentWebsite": {
     "message": "Текущий сайт"
   },
@@ -216,35 +156,11 @@
   "undo": {
     "message": "Отменить"
   },
-  "upgradeNote": {
-    "message": "Неограниченное число сайтов · Разовая покупка, без подписки"
-  },
-  "upgradePrice": {
-    "message": "Разовая покупка"
-  },
-  "oneTimePurchase": {
-    "message": "Разовая покупка"
-  },
-  "noSubscription": {
-    "message": "Без подписки"
-  },
-  "upgradeToPro": {
-    "message": "Обновиться до Pro"
-  },
-  "notNow": {
-    "message": "Не сейчас"
-  },
-  "upgradeBodyLimit": {
-    "message": "Вы используете все 3 бесплатных сайта. Обновитесь один раз, чтобы включить No Lazyload на неограниченном числе сайтов."
-  },
   "siteListTitle": {
     "message": "Настроенные Сайты"
   },
   "emptyState": {
     "message": "Нет настроенных сайтов"
-  },
-  "autoScrollHelp": {
-    "message": "Отключает техническую блокировку и загружает прокруткой"
   },
   "scrollParams": {
     "message": "Параметры Автопрокрутки"
@@ -321,9 +237,6 @@
   "newtab01Desc": {
     "message": "Новая вкладка на основе закладок. Открывайте папки как группы вкладок или в разделённом виде. 12 встроенных тем + неограниченные пользовательские темы."
   },
-  "licenseTitle": {
-    "message": "Лицензия"
-  },
   "compatibilityModeHelpSection": {
     "message": "Автоматически прокручивает страницу, чтобы запустить загрузку изображений. Используйте только если стандартный режим не работает."
   },
@@ -354,26 +267,11 @@
   "importExportHelp": {
     "message": "Файл содержит режим для каждого сайта и все глобальные настройки."
   },
-  "plan": {
-    "message": "Тариф"
-  },
-  "planFreeDetail": {
-    "message": "Бесплатно · включено {count} из {limit} сайтов"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · Неограниченное число сайтов разблокировано"
-  },
-  "managePurchases": {
-    "message": "Управление покупками"
-  },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
     "message": "Конфиденциальность"
-  },
-  "proActivated": {
-    "message": "Pro активирован. Неограниченное число сайтов разблокировано."
   },
   "privacyNote": {
     "message": "No Lazyload работает только на сайтах, которые вы включили. Остальные сайты не затрагиваются."

@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Fjern aktuel hjemmeside"
   },
-  "useAutoScroll": {
-    "message": "Brug automatisk rulning i stedet for teknisk blokering"
-  },
-  "autoScrollDesc": {
-    "message": "Rul automatisk til bunden for at udløse indlæsning; egnet til sider hvor teknisk blokering fejler"
-  },
   "configuredSites": {
     "message": "Konfigurerede hjemmesider"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Slettet {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Automatisk rulning aktiveret"
-  },
-  "autoScrollDisabled": {
-    "message": "Automatisk rulning deaktiveret"
-  },
   "pageRefreshed": {
     "message": "Side opdateret"
-  },
-  "autoScroll": {
-    "message": "Automatisk rulning"
   },
   "settingsTitle": {
     "message": "Indstillinger - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "Slet"
   },
-  "upgradeTitle": {
-    "message": "Lås Pro op"
-  },
-  "upgradeBody": {
-    "message": "Gratisversionen understøtter op til 3 hjemmesider. Opgrader for at låse ubegrænsede hjemmesider og kommende premiumfunktioner op."
-  },
-  "upgradeButton": {
-    "message": "Opgrader"
-  },
-  "proActivated": {
-    "message": "Pro aktiveret. Ubegrænsede hjemmesider er låst op.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Annullér"
-  },
-  "siteLimitReached": {
-    "message": "Grænsen for hjemmesider er nået"
-  },
-  "importPartial": {
-    "message": "Importerede {added} af {total} hjemmesider. Gratisgrænsen er 3."
-  },
-  "openingHostApp": {
-    "message": "Åbner værtsappen for at gennemføre købet…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Appen kunne ikke åbnes. Start No Lazy Load manuelt for at gennemføre købet."
-  },
-  "licenseFree": {
-    "message": "Gratis · op til 3 hjemmesider"
-  },
-  "licensePro": {
-    "message": "Pro · ubegrænsede hjemmesider"
-  },
-  "licenseUpgrade": {
-    "message": "Opgrader til Pro"
-  },
-  "licenseManage": {
-    "message": "Administrér / gendan"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro låst op · {domain} blev aktiveret"
-  },
-  "purchaseUnavailable": {
-    "message": "Køb er midlertidigt utilgængelige. Prøv igen senere."
-  },
   "currentWebsite": {
     "message": "Aktuel hjemmeside"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Fortryd"
   },
-  "upgradeNote": {
-    "message": "Ubegrænsede hjemmesider · engangskøb, intet abonnement"
-  },
-  "upgradePrice": {
-    "message": "Engangskøb"
-  },
-  "oneTimePurchase": {
-    "message": "Engangskøb"
-  },
-  "noSubscription": {
-    "message": "Intet abonnement"
-  },
-  "upgradeToPro": {
-    "message": "Opgrader til Pro"
-  },
-  "notNow": {
-    "message": "Ikke nu"
-  },
-  "upgradeBodyLimit": {
-    "message": "Du bruger alle 3 gratis hjemmesider. Opgrader én gang for at aktivere No Lazyload på ubegrænsede hjemmesider."
-  },
   "siteListTitle": {
     "message": "Konfigurerede hjemmesider"
   },
   "emptyState": {
     "message": "Ingen konfigurerede hjemmesider"
-  },
-  "autoScrollHelp": {
-    "message": "Når aktiveret, deaktiverer teknisk blokering og udløser indlæsning ved automatisk rulning til bunden"
   },
   "scrollParams": {
     "message": "Parametre for automatisk rulning"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Bogmærke-drevet nyt faneblad. Åbn mapper som fanegrupper eller i opdelt visning. 12 indbyggede temaer + ubegrænsede brugerdefinerede temaer."
   },
-  "licenseTitle": {
-    "message": "Licens"
-  },
   "compatibilityModeHelpSection": {
     "message": "Ruller automatisk på siden for at udløse indlæsning af billeder. Brug kun dette, når standardtilstanden ikke virker."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "Filen indeholder hver hjemmesides tilstand og alle globale indstillinger."
-  },
-  "plan": {
-    "message": "Plan"
-  },
-  "planFreeDetail": {
-    "message": "Gratis · {count} af {limit} hjemmesider aktiveret"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · ubegrænsede hjemmesider låst op"
-  },
-  "managePurchases": {
-    "message": "Administrér køb"
   },
   "github": {
     "message": "GitHub"

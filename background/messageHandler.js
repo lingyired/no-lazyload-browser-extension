@@ -1,6 +1,9 @@
 // background/messageHandler.js
+//
+// 所有平台（Chrome / Firefox / Safari）都是免费且无限制的：
+// 这里不存在站点数量上限，也不存在"高级设置需要 Pro"这类门禁。
 
-import { MESSAGE_TYPES, ENTITLEMENTS } from '../shared/constants.js';
+import { MESSAGE_TYPES } from '../shared/constants.js';
 import {
   getSiteConfig,
   setSiteConfig,
@@ -12,54 +15,11 @@ import {
   setCustomAttributes,
   resetCustomAttributes
 } from './siteConfigManager.js';
-import {
-  buildPendingAction,
-  savePendingAction,
-  loadPendingAction,
-  clearPendingAction,
-  setEntitlementNotice,
-  getEntitlementNotice,
-  clearEntitlementNotice,
-} from './pendingAction.js';
-
-/**
- * 权限到位后补做"购买前被限额拦住的那次添加"。
- *
- * 只有真正能新增网站时才执行；执行完写一条 notice 让 UI 提示用户。
- * 幂等：待办一次性消费，成功或已存在都会清掉。
- *
- * @param {import('../shared/entitlements.js').JSEntitlementManager} manager
- * @returns {Promise<object|null>} 补做成功的待办
- */
-async function completePendingEntitlementAction(manager) {
-  const pending = await loadPendingAction();
-  if (!pending) return null;
-
-  const configs = await getAllSiteConfigs();
-  const count = Object.keys(configs).length;
-
-  if (!manager.canAddSite(count)) return null;
-
-  if (!configs[pending.domain]) {
-    await setSiteConfig(pending.domain, pending.strategy, pending.scrollFallback);
-  }
-  await clearPendingAction();
-
-  const notice = {
-    type: 'pendingSiteAdded',
-    domain: pending.domain,
-    at: Date.now(),
-  };
-  await setEntitlementNotice(notice);
-  console.log('[BG] 已补做购买前的待办:', pending.domain);
-  return notice;
-}
 
 /**
  * 处理来自 content script 或 settings 页面的消息
- * @param {import('../shared/entitlements.js').JSEntitlementManager} jsEntitlementManager
  */
-function setupMessageHandler(jsEntitlementManager) {
+function setupMessageHandler() {
   const runtime = typeof browser !== 'undefined'
     ? browser.runtime
     : chrome.runtime;
@@ -73,34 +33,12 @@ function setupMessageHandler(jsEntitlementManager) {
             sendResponse({ success: true, data: config });
             break;
 
-          case MESSAGE_TYPES.SET_SITE_CONFIG: {
-            // 限额只拦"新增"，更新已有网站的设置不受限。
-            // Chrome/Firefox 的 manager 恒为 canAddSite=true，所以这段对它们无副作用。
-            const existingConfigs = await getAllSiteConfigs();
-            const isNewAdd = !existingConfigs[request.domain];
-            if (isNewAdd) {
-              const currentCount = Object.keys(existingConfigs).length;
-              if (!jsEntitlementManager.canAddSite(currentCount)) {
-                // 批量导入被截断不算"用户想启用这一个网站"，不写待办，
-                // 否则买完 Pro 会莫名多出一个导入里的网站。
-                if (request.source !== 'import') {
-                  const pending = buildPendingAction({
-                    domain: request.domain,
-                    strategy: request.strategy,
-                    scrollFallback: request.scrollFallback,
-                  });
-                  await savePendingAction(pending);
-                }
-                sendResponse({ success: false, error: 'LIMIT_REACHED' });
-                break;
-              }
-            }
+          case MESSAGE_TYPES.SET_SITE_CONFIG:
             await setSiteConfig(request.domain, request.strategy, request.scrollFallback, {
               addedAt: request.addedAt,
             });
             sendResponse({ success: true });
             break;
-          }
 
           case MESSAGE_TYPES.REMOVE_SITE_CONFIG:
             await removeSiteConfig(request.domain);
@@ -127,72 +65,15 @@ function setupMessageHandler(jsEntitlementManager) {
             sendResponse({ success: true, data: customAttrs });
             break;
 
-          // 高级设置（懒加载属性 / 占位符）是 Pro 专属：写入路径必须在 background 拦住。
-          // 只拦写、不拦读 —— content script 仍需 GET 到用户已保存的规则，
-          // 而且 Safari 免费版降级后，之前保存过的规则应当继续生效而不是被清空。
-          // Chrome/Firefox 的 manager 恒为 has=true，这段对它们无副作用。
           case MESSAGE_TYPES.SET_CUSTOM_ATTRIBUTES:
-            if (!jsEntitlementManager.has(ENTITLEMENTS.UNLIMITED_SITES)) {
-              sendResponse({ success: false, error: 'PRO_REQUIRED' });
-              break;
-            }
             await setCustomAttributes(request.lazyAttributes, request.placeholderPatterns);
             sendResponse({ success: true });
             break;
 
           case MESSAGE_TYPES.RESET_CUSTOM_ATTRIBUTES:
-            if (!jsEntitlementManager.has(ENTITLEMENTS.UNLIMITED_SITES)) {
-              sendResponse({ success: false, error: 'PRO_REQUIRED' });
-              break;
-            }
             const resetAttrs = await resetCustomAttributes();
             sendResponse({ success: true, data: resetAttrs });
             break;
-
-          // ===== Entitlement / Purchase 处理（Chrome/Firefox: 无限额，全部视为已授权）=====
-          // 无原生桥接，GET 与 REFRESH 返回同一份内存状态。
-          case MESSAGE_TYPES.GET_ENTITLEMENTS:
-            sendResponse({
-              success: true,
-              // snapshot() 已包含 entitlements / isLimitEnforced / freeSiteLimit / licenseMode
-              ...jsEntitlementManager.snapshot(),
-              pendingAction: await loadPendingAction(),
-              notice: await getEntitlementNotice(),
-            });
-            break;
-
-          case MESSAGE_TYPES.REFRESH_ENTITLEMENTS: {
-            const ok = await jsEntitlementManager.refresh();
-            // 权限到位后补做购买前的待办（关掉 popup 也不会丢）
-            await completePendingEntitlementAction(jsEntitlementManager);
-            sendResponse({
-              success: ok,
-              ...jsEntitlementManager.snapshot(),
-              pendingAction: await loadPendingAction(),
-              notice: await getEntitlementNotice(),
-            });
-            break;
-          }
-
-          // UI 展示完一次性提示后确认清除
-          case MESSAGE_TYPES.ACK_ENTITLEMENT_NOTICE:
-            await clearEntitlementNotice();
-            sendResponse({ success: true });
-            break;
-
-          // 购买与恢复都只做一件事：唤起 Host App（StoreKit 付款面板只能由它弹出）。
-          // Chrome/Firefox 没有原生桥接，明确返回"不支持"，不静默假装成功。
-          case MESSAGE_TYPES.REQUEST_PURCHASE:
-          case MESSAGE_TYPES.RESTORE_PURCHASES:
-          case MESSAGE_TYPES.OPEN_HOST_APP: {
-            const opened = await jsEntitlementManager.openHostApp();
-            if (!opened && !jsEntitlementManager.nativeBundleId) {
-              sendResponse({ success: false, error: 'NOT_SUPPORTED' });
-            } else {
-              sendResponse({ success: opened, openedHostApp: opened });
-            }
-            break;
-          }
 
           default:
             sendResponse({ success: false, error: 'Unknown message type' });

@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Poista nykyinen sivusto"
   },
-  "useAutoScroll": {
-    "message": "Käytä automaattista vieritystä teknisen eston sijaan"
-  },
-  "autoScrollDesc": {
-    "message": "Vieritä automaattisesti alas käynnistääksesi lataamisen; sopii sivustoille, joissa tekninen esto epäonnistuu"
-  },
   "configuredSites": {
     "message": "Määritetyt sivustot"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Poistettu {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Automaattinen vieritys käytössä"
-  },
-  "autoScrollDisabled": {
-    "message": "Automaattinen vieritys pois käytöstä"
-  },
   "pageRefreshed": {
     "message": "Sivu päivitetty"
-  },
-  "autoScroll": {
-    "message": "Automaattinen vieritys"
   },
   "settingsTitle": {
     "message": "Asetukset - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "Poista"
   },
-  "upgradeTitle": {
-    "message": "Avaa Pro"
-  },
-  "upgradeBody": {
-    "message": "Ilmainen versio tukee enintään 3 sivustoa. Päivitä avataksesi rajattoman määrän sivustoja ja tulevia premium-ominaisuuksia."
-  },
-  "upgradeButton": {
-    "message": "Päivitä"
-  },
-  "proActivated": {
-    "message": "Pro aktivoitu. Rajaton määrä sivustoja avattu.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Peruuta"
-  },
-  "siteLimitReached": {
-    "message": "Sivustoraja saavutettu"
-  },
-  "importPartial": {
-    "message": "Tuotiin {added}/{total} sivustoa. Ilmaisraja on 3."
-  },
-  "openingHostApp": {
-    "message": "Avataan isäntäsovellusta ostoksen viimeistelyä varten…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Sovellusta ei voitu avata. Käynnistä No Lazy Load manuaalisesti ostoksen viimeistelemiseksi."
-  },
-  "licenseFree": {
-    "message": "Ilmainen · enintään 3 sivustoa"
-  },
-  "licensePro": {
-    "message": "Pro · rajaton määrä sivustoja"
-  },
-  "licenseUpgrade": {
-    "message": "Päivitä Pro-versioon"
-  },
-  "licenseManage": {
-    "message": "Hallinnoi / palauta"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro avattu · {domain} otettiin käyttöön"
-  },
-  "purchaseUnavailable": {
-    "message": "Ostokset eivät ole väliaikaisesti käytettävissä. Yritä myöhemmin uudelleen."
-  },
   "currentWebsite": {
     "message": "Nykyinen sivusto"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Kumoa"
   },
-  "upgradeNote": {
-    "message": "Rajaton määrä sivustoja · kertaostos, ei tilausta"
-  },
-  "upgradePrice": {
-    "message": "Kertaostos"
-  },
-  "oneTimePurchase": {
-    "message": "Kertaostos"
-  },
-  "noSubscription": {
-    "message": "Ei tilausta"
-  },
-  "upgradeToPro": {
-    "message": "Päivitä Pro-versioon"
-  },
-  "notNow": {
-    "message": "Ei nyt"
-  },
-  "upgradeBodyLimit": {
-    "message": "Käytät kaikki 3 ilmaista sivustoa. Päivitä kerran, niin No Lazyload toimii rajattomalla määrällä sivustoja."
-  },
   "siteListTitle": {
     "message": "Määritetyt sivustot"
   },
   "emptyState": {
     "message": "Ei määritettyjä sivustoja"
-  },
-  "autoScrollHelp": {
-    "message": "Kun käytössä, poistaa teknisen eston käytöstä ja käynnistää lataamisen vierittämällä alas"
   },
   "scrollParams": {
     "message": "Automaattisen vierityksen parametrit"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Kirjanmerkeillä toimiva uusi välilehti. Avaa kansioita välilehtiryhminä tai jaetussa näkymässä. 12 sisäänrakennettua teemaa + rajattomasti mukautettuja teemoja."
   },
-  "licenseTitle": {
-    "message": "Lisenssi"
-  },
   "compatibilityModeHelpSection": {
     "message": "Vierittää sivua automaattisesti kuvien lataamiseksi. Käytä vain, jos vakiotila ei toimi."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "Tiedosto sisältää kunkin sivuston tilan ja kaikki yleiset asetukset."
-  },
-  "plan": {
-    "message": "Paketti"
-  },
-  "planFreeDetail": {
-    "message": "Ilmainen · {count}/{limit} sivustoa käytössä"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · rajaton määrä sivustoja avattu"
-  },
-  "managePurchases": {
-    "message": "Hallinnoi ostoksia"
   },
   "github": {
     "message": "GitHub"

@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Ta bort aktuell webbplats"
   },
-  "useAutoScroll": {
-    "message": "Använd automatisk rullning istället för teknisk blockering"
-  },
-  "autoScrollDesc": {
-    "message": "Rulla automatiskt till botten för att utlösa inladdning; lämpligt för webbplatser där teknisk blockering misslyckas"
-  },
   "configuredSites": {
     "message": "Konfigurerade webbplatser"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Raderad {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Automatisk rullning aktiverad"
-  },
-  "autoScrollDisabled": {
-    "message": "Automatisk rullning inaktiverad"
-  },
   "pageRefreshed": {
     "message": "Sidan uppdaterad"
-  },
-  "autoScroll": {
-    "message": "Automatisk rullning"
   },
   "settingsTitle": {
     "message": "Inställningar - No Lazyload",
@@ -141,51 +126,6 @@
   "delete": {
     "message": "Ta bort"
   },
-  "upgradeTitle": {
-    "message": "Lås upp Pro"
-  },
-  "upgradeBody": {
-    "message": "Gratisversionen stöder upp till 3 webbplatser. Uppgradera för att låsa upp obegränsat antal webbplatser och framtida premiumfunktioner."
-  },
-  "upgradeButton": {
-    "message": "Uppgradera"
-  },
-  "cancelUpgrade": {
-    "message": "Avbryt"
-  },
-  "siteLimitReached": {
-    "message": "Gränsen för antal webbplatser har nåtts"
-  },
-  "importPartial": {
-    "message": "Importerade {added} av {total} webbplatser. Gratisgränsen är 3."
-  },
-  "openingHostApp": {
-    "message": "Öppnar värdappen för att slutföra köpet…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Det gick inte att öppna appen. Starta No Lazyload manuellt för att slutföra köpet."
-  },
-  "licenseFree": {
-    "message": "Gratis · upp till 3 webbplatser"
-  },
-  "licensePro": {
-    "message": "Pro · obegränsat antal webbplatser"
-  },
-  "licenseUpgrade": {
-    "message": "Uppgradera till Pro"
-  },
-  "licenseManage": {
-    "message": "Hantera / Återställ"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro upplåst · {domain} aktiverades"
-  },
-  "purchaseUnavailable": {
-    "message": "Köp är tillfälligt otillgängliga. Försök igen senare."
-  },
   "currentWebsite": {
     "message": "Aktuell webbplats"
   },
@@ -216,35 +156,11 @@
   "undo": {
     "message": "Ångra"
   },
-  "upgradeNote": {
-    "message": "Obegränsat antal webbplatser · Engångsköp, ingen prenumeration"
-  },
-  "upgradePrice": {
-    "message": "Engångsköp"
-  },
-  "oneTimePurchase": {
-    "message": "Engångsköp"
-  },
-  "noSubscription": {
-    "message": "Ingen prenumeration"
-  },
-  "upgradeToPro": {
-    "message": "Uppgradera till Pro"
-  },
-  "notNow": {
-    "message": "Inte nu"
-  },
-  "upgradeBodyLimit": {
-    "message": "Du använder alla 3 gratissajter. Uppgradera en gång för att aktivera No Lazyload på obegränsat antal webbplatser."
-  },
   "siteListTitle": {
     "message": "Konfigurerade webbplatser"
   },
   "emptyState": {
     "message": "Inga konfigurerade webbplatser"
-  },
-  "autoScrollHelp": {
-    "message": "När aktiverad, inaktiverar teknisk blockering och utlöser inladdning genom automatisk rullning till botten"
   },
   "scrollParams": {
     "message": "Parametrar för automatisk rullning"
@@ -321,9 +237,6 @@
   "newtab01Desc": {
     "message": "Bokmärkesdriven ny flik. Öppna mappar som flikgrupper eller i delad vy. 12 inbyggda teman + obegränsade anpassade teman."
   },
-  "licenseTitle": {
-    "message": "Licens"
-  },
   "compatibilityModeHelpSection": {
     "message": "Rullar automatiskt sidan för att utlösa bildinladdning. Använd detta endast när Standard inte fungerar."
   },
@@ -354,26 +267,11 @@
   "importExportHelp": {
     "message": "Filen innehåller varje webbplats läge och alla globala inställningar."
   },
-  "plan": {
-    "message": "Paket"
-  },
-  "planFreeDetail": {
-    "message": "Gratis · {count} av {limit} webbplatser aktiverade"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · Obegränsat antal webbplatser upplåsta"
-  },
-  "managePurchases": {
-    "message": "Hantera köp"
-  },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
     "message": "Integritet"
-  },
-  "proActivated": {
-    "message": "Pro aktiverat. Obegränsat antal webbplatser upplåsta."
   },
   "privacyNote": {
     "message": "No Lazyload agerar endast på de webbplatser du aktiverar. Andra webbplatser påverkas inte."

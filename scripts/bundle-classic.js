@@ -4,7 +4,6 @@
  *
  * 把 ES module 源码打包成一个「经典脚本」（无 import/export），
  * 供只能跑经典脚本的场景使用：
- *   · shared-ui.js   —— popup.html / settings/index.html 共用（常量 + 域名 + 升级弹窗）
  *   · background-safari.js —— Safari MV3 的 service worker
  *     （Safari 16.4 之前 "type": "module" 不稳定，沿用经典脚本）
  *

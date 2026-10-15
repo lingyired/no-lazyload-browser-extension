@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Ukloni trenutnu stranicu"
   },
-  "useAutoScroll": {
-    "message": "Koristi automatsko pomicanje umjesto tehničkog blokiranja"
-  },
-  "autoScrollDesc": {
-    "message": "Automatski se pomaknite prema dolje da biste pokrenuli učitavanje; pogodno za stranice gdje tehničko blokiranje ne uspijeva"
-  },
   "configuredSites": {
     "message": "Konfigurirane stranice"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Izbrisana {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Automatsko pomicanje omogućeno"
-  },
-  "autoScrollDisabled": {
-    "message": "Automatsko pomicanje onemogućeno"
-  },
   "pageRefreshed": {
     "message": "Stranica osvježena"
-  },
-  "autoScroll": {
-    "message": "Automatsko pomicanje"
   },
   "settingsTitle": {
     "message": "Postavke - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "Izbriši"
   },
-  "upgradeTitle": {
-    "message": "Otključaj Pro"
-  },
-  "upgradeBody": {
-    "message": "Besplatna verzija podržava do 3 stranice. Nadogradite za neograničen broj stranica i buduće premium značajke."
-  },
-  "upgradeButton": {
-    "message": "Nadogradi"
-  },
-  "proActivated": {
-    "message": "Pro je aktiviran. Otključan je neograničen broj stranica.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Odustani"
-  },
-  "siteLimitReached": {
-    "message": "Dosegnuto je ograničenje stranica"
-  },
-  "importPartial": {
-    "message": "Uvezeno je {added} od {total} stranica. Besplatno ograničenje je 3."
-  },
-  "openingHostApp": {
-    "message": "Otvaranje matične aplikacije za dovršetak kupnje…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Aplikaciju nije bilo moguće otvoriti. Pokrenite No Lazy Load ručno da dovršite kupnju."
-  },
-  "licenseFree": {
-    "message": "Besplatno · do 3 stranice"
-  },
-  "licensePro": {
-    "message": "Pro · neograničen broj stranica"
-  },
-  "licenseUpgrade": {
-    "message": "Nadogradi na Pro"
-  },
-  "licenseManage": {
-    "message": "Upravljanje / vraćanje"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro otključan · {domain} je omogućen"
-  },
-  "purchaseUnavailable": {
-    "message": "Kupnja trenutačno nije dostupna. Pokušajte ponovno kasnije."
-  },
   "currentWebsite": {
     "message": "Trenutna stranica"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Poništi"
   },
-  "upgradeNote": {
-    "message": "Neograničen broj stranica · jednokratna kupnja, bez pretplate"
-  },
-  "upgradePrice": {
-    "message": "Jednokratna kupnja"
-  },
-  "oneTimePurchase": {
-    "message": "Jednokratna kupnja"
-  },
-  "noSubscription": {
-    "message": "Bez pretplate"
-  },
-  "upgradeToPro": {
-    "message": "Nadogradi na Pro"
-  },
-  "notNow": {
-    "message": "Ne sada"
-  },
-  "upgradeBodyLimit": {
-    "message": "Koristite sve 3 besplatne stranice. Nadogradite jednom za No Lazyload na neograničenom broju stranica."
-  },
   "siteListTitle": {
     "message": "Konfigurirane stranice"
   },
   "emptyState": {
     "message": "Nema konfiguriranih stranica"
-  },
-  "autoScrollHelp": {
-    "message": "Kada je omogućeno, onemogućuje tehničko blokiranje i pokreće učitavanje automatskim pomicanjem prema dolje"
   },
   "scrollParams": {
     "message": "Parametri automatskog pomicanja"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Nova kartica vođena oznakama. Otvorite mape kao grupe kartica ili u podijeljenom prikazu. 12 ugrađenih tema + neograničene prilagođene teme."
   },
-  "licenseTitle": {
-    "message": "Licenca"
-  },
   "compatibilityModeHelpSection": {
     "message": "Automatski pomiče stranicu radi učitavanja slika. Koristite samo kada standardni način rada ne funkcionira."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "Datoteka sadrži način rada svake stranice i sve globalne postavke."
-  },
-  "plan": {
-    "message": "Paket"
-  },
-  "planFreeDetail": {
-    "message": "Besplatno · omogućeno {count} od {limit} stranica"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · otključan neograničen broj stranica"
-  },
-  "managePurchases": {
-    "message": "Upravljanje kupnjama"
   },
   "github": {
     "message": "GitHub"

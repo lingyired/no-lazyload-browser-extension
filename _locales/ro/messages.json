@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Elimină site-ul curent"
   },
-  "useAutoScroll": {
-    "message": "Folosește derularea automată în locul blocării tehnice"
-  },
-  "autoScrollDesc": {
-    "message": "Derulează automat în jos pentru a declanșa încărcarea; potrivit pentru site-urile unde blocarea tehnică eșuează"
-  },
   "configuredSites": {
     "message": "Site-uri configurate"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Șters {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Derulare automată activată"
-  },
-  "autoScrollDisabled": {
-    "message": "Derulare automată dezactivată"
-  },
   "pageRefreshed": {
     "message": "Pagina reîmprospătată"
-  },
-  "autoScroll": {
-    "message": "Derulare automată"
   },
   "settingsTitle": {
     "message": "Setări - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "Șterge"
   },
-  "upgradeTitle": {
-    "message": "Deblochează Pro"
-  },
-  "upgradeBody": {
-    "message": "Versiunea gratuită acceptă până la 3 site-uri. Actualizați pentru a debloca site-uri nelimitate și funcții premium viitoare."
-  },
-  "upgradeButton": {
-    "message": "Actualizează"
-  },
-  "proActivated": {
-    "message": "Pro activat. Site-uri nelimitate deblocate.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Anulează"
-  },
-  "siteLimitReached": {
-    "message": "Limita de site-uri a fost atinsă"
-  },
-  "importPartial": {
-    "message": "S-au importat {added} din {total} site-uri. Limita gratuită este 3."
-  },
-  "openingHostApp": {
-    "message": "Se deschide aplicația gazdă pentru finalizarea achiziției…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Aplicația nu a putut fi deschisă. Lansați No Lazy Load manual pentru a finaliza achiziția."
-  },
-  "licenseFree": {
-    "message": "Gratuit · până la 3 site-uri"
-  },
-  "licensePro": {
-    "message": "Pro · site-uri nelimitate"
-  },
-  "licenseUpgrade": {
-    "message": "Actualizează la Pro"
-  },
-  "licenseManage": {
-    "message": "Gestionează / Restaurează"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro deblocat · {domain} a fost activat"
-  },
-  "purchaseUnavailable": {
-    "message": "Achizițiile sunt temporar indisponibile. Încercați din nou mai târziu."
-  },
   "currentWebsite": {
     "message": "Site actual"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Anulare"
   },
-  "upgradeNote": {
-    "message": "Site-uri nelimitate · achiziție unică, fără abonament"
-  },
-  "upgradePrice": {
-    "message": "Achiziție unică"
-  },
-  "oneTimePurchase": {
-    "message": "Achiziție unică"
-  },
-  "noSubscription": {
-    "message": "Fără abonament"
-  },
-  "upgradeToPro": {
-    "message": "Actualizează la Pro"
-  },
-  "notNow": {
-    "message": "Nu acum"
-  },
-  "upgradeBodyLimit": {
-    "message": "Folosiți toate cele 3 site-uri gratuite. Actualizați o singură dată pentru a activa No Lazyload pe site-uri nelimitate."
-  },
   "siteListTitle": {
     "message": "Site-uri configurate"
   },
   "emptyState": {
     "message": "Niciun site configurat"
-  },
-  "autoScrollHelp": {
-    "message": "Când este activat, dezactivează blocarea tehnică și declanșează încărcarea prin derulare automată în jos"
   },
   "scrollParams": {
     "message": "Parametri de derulare automată"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Filă nouă bazată pe marcaje. Deschide folderele ca grupuri de file sau în vizualizare divizată. 12 teme încorporate + teme personalizate nelimitate."
   },
-  "licenseTitle": {
-    "message": "Licență"
-  },
   "compatibilityModeHelpSection": {
     "message": "Derulează automat pagina pentru a declanșa încărcarea imaginilor. Folosiți numai când modul Standard nu funcționează."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "Fișierul include modul fiecărui site și toate setările globale."
-  },
-  "plan": {
-    "message": "Plan"
-  },
-  "planFreeDetail": {
-    "message": "Gratuit · {count} din {limit} site-uri activate"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · site-uri nelimitate deblocate"
-  },
-  "managePurchases": {
-    "message": "Gestionează achizițiile"
   },
   "github": {
     "message": "GitHub"

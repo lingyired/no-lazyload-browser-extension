@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "ลบเว็บไซต์ปัจจุบัน"
   },
-  "useAutoScroll": {
-    "message": "ใช้การเลื่อนอัตโนมัติแทนการบล็อกทางเทคนิค"
-  },
-  "autoScrollDesc": {
-    "message": "เลื่อนอัตโนมัติลงด้านล่างเพื่อกระตุ้นการโหลด เหมาะสำหรับเว็บไซต์ที่การบล็อกแบบเทคนิคล้มเหลว"
-  },
   "configuredSites": {
     "message": "เว็บไซต์ที่กำหนดค่าแล้ว"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "ลบ {domain} แล้ว"
   },
-  "autoScrollEnabled": {
-    "message": "เปิดใช้งานการเลื่อนอัตโนมัติ"
-  },
-  "autoScrollDisabled": {
-    "message": "ปิดใช้งานการเลื่อนอัตโนมัติ"
-  },
   "pageRefreshed": {
     "message": "รีเฟรชหน้าแล้ว"
-  },
-  "autoScroll": {
-    "message": "เลื่อนอัตโนมัติ"
   },
   "settingsTitle": {
     "message": "การตั้งค่า - No Lazyload",
@@ -141,51 +126,6 @@
   "delete": {
     "message": "ลบ"
   },
-  "upgradeTitle": {
-    "message": "ปลดล็อก Pro"
-  },
-  "upgradeBody": {
-    "message": "เวอร์ชันฟรีรองรับสูงสุด 3 เว็บไซต์ อัปเกรดเพื่อปลดล็อกเว็บไซต์ไม่จำกัดและฟีเจอร์พรีเมียมในอนาคต"
-  },
-  "upgradeButton": {
-    "message": "อัปเกรด"
-  },
-  "cancelUpgrade": {
-    "message": "ยกเลิก"
-  },
-  "siteLimitReached": {
-    "message": "ถึงขีดจำกัดเว็บไซต์แล้ว"
-  },
-  "importPartial": {
-    "message": "นำเข้าแล้ว {added} จาก {total} เว็บไซต์ ข้อจำกัดเวอร์ชันฟรีคือ 3"
-  },
-  "openingHostApp": {
-    "message": "กำลังเปิดแอปหลักเพื่อดำเนินการซื้อให้เสร็จสิ้น…"
-  },
-  "upgradeOpenFailed": {
-    "message": "ไม่สามารถเปิดแอปได้ โปรดเปิด No Lazyload ด้วยตนเองเพื่อดำเนินการซื้อให้เสร็จสิ้น"
-  },
-  "licenseFree": {
-    "message": "ฟรี · สูงสุด 3 เว็บไซต์"
-  },
-  "licensePro": {
-    "message": "Pro · เว็บไซต์ไม่จำกัด"
-  },
-  "licenseUpgrade": {
-    "message": "อัปเกรดเป็น Pro"
-  },
-  "licenseManage": {
-    "message": "จัดการ / กู้คืน"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "ปลดล็อก Pro แล้ว · เปิดใช้งาน {domain} แล้ว"
-  },
-  "purchaseUnavailable": {
-    "message": "การซื้อไม่พร้อมใช้งานชั่วคราว โปรดลองอีกครั้งภายหลัง"
-  },
   "currentWebsite": {
     "message": "เว็บไซต์ปัจจุบัน"
   },
@@ -216,35 +156,11 @@
   "undo": {
     "message": "เลิกทำ"
   },
-  "upgradeNote": {
-    "message": "เว็บไซต์ไม่จำกัด · ซื้อครั้งเดียว ไม่มีค่าสมาชิก"
-  },
-  "upgradePrice": {
-    "message": "ซื้อครั้งเดียว"
-  },
-  "oneTimePurchase": {
-    "message": "ซื้อครั้งเดียว"
-  },
-  "noSubscription": {
-    "message": "ไม่มีค่าสมาชิก"
-  },
-  "upgradeToPro": {
-    "message": "อัปเกรดเป็น Pro"
-  },
-  "notNow": {
-    "message": "ไว้ทีหลัง"
-  },
-  "upgradeBodyLimit": {
-    "message": "คุณใช้เว็บไซต์ฟรีครบ 3 แห่งแล้ว อัปเกรดครั้งเดียวเพื่อเปิดใช้ No Lazyload กับเว็บไซต์ไม่จำกัด"
-  },
   "siteListTitle": {
     "message": "เว็บไซต์ที่กำหนดค่าแล้ว"
   },
   "emptyState": {
     "message": "ยังไม่มีเว็บไซต์ที่กำหนดค่า"
-  },
-  "autoScrollHelp": {
-    "message": "เมื่อเปิดใช้งาน จะปิดการบล็อกแบบเทคนิคและเรียกการโหลดด้วยการเลื่อนอัตโนมัติลงด้านล่าง"
   },
   "scrollParams": {
     "message": "พารามิเตอร์การเลื่อนอัตโนมัติ"
@@ -321,9 +237,6 @@
   "newtab01Desc": {
     "message": "แท็บใหม่ที่ขับเคลื่อนด้วยบุ๊กมาร์ก เปิดโฟลเดอร์เป็นกลุ่มแท็บหรือในมุมมองแบบแยก ธีมในตัว 12 ธีม + ธีมที่กำหนดเองไม่จำกัด"
   },
-  "licenseTitle": {
-    "message": "ใบอนุญาต"
-  },
   "compatibilityModeHelpSection": {
     "message": "เลื่อนหน้าเว็บโดยอัตโนมัติเพื่อกระตุ้นการโหลดรูปภาพ ใช้เฉพาะเมื่อโหมดมาตรฐานไม่ทำงาน"
   },
@@ -354,26 +267,11 @@
   "importExportHelp": {
     "message": "ไฟล์นี้รวมโหมดของแต่ละเว็บไซต์และการตั้งค่าส่วนกลางทั้งหมด"
   },
-  "plan": {
-    "message": "แพ็กเกจ"
-  },
-  "planFreeDetail": {
-    "message": "ฟรี · เปิดใช้งาน {count} จาก {limit} เว็บไซต์"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · ปลดล็อกเว็บไซต์ไม่จำกัด"
-  },
-  "managePurchases": {
-    "message": "จัดการการซื้อ"
-  },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
     "message": "ความเป็นส่วนตัว"
-  },
-  "proActivated": {
-    "message": "เปิดใช้งาน Pro แล้ว ปลดล็อกเว็บไซต์ไม่จำกัดแล้ว"
   },
   "privacyNote": {
     "message": "No Lazyload ทำงานเฉพาะกับเว็บไซต์ที่คุณเปิดใช้งานเท่านั้น เว็บไซต์อื่นไม่ถูกแตะต้อง"

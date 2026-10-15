@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Huidige site verwijderen"
   },
-  "useAutoScroll": {
-    "message": "Gebruik automatisch scrollen in plaats van technische blokkering"
-  },
-  "autoScrollDesc": {
-    "message": "Scroll automatisch naar beneden om laden te activeren; geschikt voor sites waar technische blokkering faalt"
-  },
   "configuredSites": {
     "message": "Geconfigureerde sites"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "{domain} verwijderd"
   },
-  "autoScrollEnabled": {
-    "message": "Automatisch scrollen ingeschakeld"
-  },
-  "autoScrollDisabled": {
-    "message": "Automatisch scrollen uitgeschakeld"
-  },
   "pageRefreshed": {
     "message": "Pagina vernieuwd"
-  },
-  "autoScroll": {
-    "message": "Automatisch scrollen"
   },
   "settingsTitle": {
     "message": "Instellingen - No Lazyload",
@@ -135,59 +120,11 @@
   "languageSettings": {
     "message": "Taalinstellingen"
   },
-  "upgradeTitle": {
-    "message": "Pro ontgrendelen"
-  },
-  "upgradeBody": {
-    "message": "De gratis versie ondersteunt maximaal 3 websites. Upgraden om onbeperkt websites en toekomstige premiumfuncties te ontgrendelen."
-  },
-  "upgradeButton": {
-    "message": "Upgraden"
-  },
-  "proActivated": {
-    "message": "Pro geactiveerd. Onbeperkt websites ontgrendeld."
-  },
-  "cancelUpgrade": {
-    "message": "Annuleren"
-  },
-  "siteLimitReached": {
-    "message": "Limiet voor websites bereikt"
-  },
-  "importPartial": {
-    "message": "{added} van {total} websites geïmporteerd. De gratis limiet is 3."
-  },
   "loading": {
     "message": "Laden..."
   },
   "delete": {
     "message": "Verwijderen"
-  },
-  "openingHostApp": {
-    "message": "Host-app wordt geopend om de aankoop te voltooien…"
-  },
-  "upgradeOpenFailed": {
-    "message": "De app kon niet worden geopend. Start No Lazyload handmatig om de aankoop te voltooien"
-  },
-  "licenseFree": {
-    "message": "Gratis · tot 3 websites"
-  },
-  "licensePro": {
-    "message": "Pro · onbeperkt websites"
-  },
-  "licenseUpgrade": {
-    "message": "Upgraden naar Pro"
-  },
-  "licenseManage": {
-    "message": "Beheren / Herstellen"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro ontgrendeld · {domain} is ingeschakeld"
-  },
-  "purchaseUnavailable": {
-    "message": "Aankopen zijn tijdelijk niet beschikbaar. Probeer het later opnieuw."
   },
   "currentWebsite": {
     "message": "Huidige website"
@@ -219,35 +156,11 @@
   "undo": {
     "message": "Ongedaan maken"
   },
-  "upgradeNote": {
-    "message": "Onbeperkt websites · Eenmalige aankoop, geen abonnement"
-  },
-  "upgradePrice": {
-    "message": "Eenmalige aankoop"
-  },
-  "oneTimePurchase": {
-    "message": "Eenmalige aankoop"
-  },
-  "noSubscription": {
-    "message": "Geen abonnement"
-  },
-  "upgradeToPro": {
-    "message": "Upgraden naar Pro"
-  },
-  "notNow": {
-    "message": "Niet nu"
-  },
-  "upgradeBodyLimit": {
-    "message": "U gebruikt alle 3 gratis websites. Upgrade eenmalig om No Lazyload op onbeperkt websites in te schakelen."
-  },
   "siteListTitle": {
     "message": "Geconfigureerde sites"
   },
   "emptyState": {
     "message": "Geen geconfigureerde sites"
-  },
-  "autoScrollHelp": {
-    "message": "Wanneer ingeschakeld, schakelt het technische blokkering uit en activeert het laden door automatisch naar beneden te scrollen"
   },
   "scrollParams": {
     "message": "Parameters voor automatisch scrollen"
@@ -324,9 +237,6 @@
   "newtab01Desc": {
     "message": "Bladwijzer-gestuurde nieuw tabblad. Open mappen als tabgroepen of in gesplitste weergave. 12 ingebouwde thema's + onbeperkt aangepaste thema's."
   },
-  "licenseTitle": {
-    "message": "Licentie"
-  },
   "compatibilityModeHelpSection": {
     "message": "Scrolt de pagina automatisch om het laden van afbeeldingen te activeren. Gebruik dit alleen als de modus Standaard niet werkt."
   },
@@ -356,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "Het bestand bevat de modus van elke website en alle algemene instellingen."
-  },
-  "plan": {
-    "message": "Pakket"
-  },
-  "planFreeDetail": {
-    "message": "Gratis · {count} van {limit} websites ingeschakeld"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · Onbeperkt websites ontgrendeld"
-  },
-  "managePurchases": {
-    "message": "Aankopen beheren"
   },
   "github": {
     "message": "GitHub"

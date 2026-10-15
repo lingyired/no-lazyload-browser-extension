@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Видалити поточний сайт"
   },
-  "useAutoScroll": {
-    "message": "Використовувати автопрокрутку замість технічного блокування"
-  },
-  "autoScrollDesc": {
-    "message": "Автоматично прокручуйте вниз, щоб запустити завантаження; підходить для сайтів, де технічне блокування не спрацьовує"
-  },
   "configuredSites": {
     "message": "Налаштовані сайти"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Видалено {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Автопрокрутку увімкнено"
-  },
-  "autoScrollDisabled": {
-    "message": "Автопрокрутку вимкнено"
-  },
   "pageRefreshed": {
     "message": "Сторінку оновлено"
-  },
-  "autoScroll": {
-    "message": "Автопрокрутка"
   },
   "settingsTitle": {
     "message": "Налаштування - No Lazyload",
@@ -141,51 +126,6 @@
   "delete": {
     "message": "Видалити"
   },
-  "upgradeTitle": {
-    "message": "Розблокувати Pro"
-  },
-  "upgradeBody": {
-    "message": "Безкоштовна версія підтримує до 3 сайтів. Оновіться, щоб отримати необмежену кількість сайтів і майбутні преміум-функції."
-  },
-  "upgradeButton": {
-    "message": "Оновитися"
-  },
-  "cancelUpgrade": {
-    "message": "Скасувати"
-  },
-  "siteLimitReached": {
-    "message": "Досягнуто ліміту сайтів"
-  },
-  "importPartial": {
-    "message": "Імпортовано {added} з {total} сайтів. Безкоштовний ліміт — 3."
-  },
-  "openingHostApp": {
-    "message": "Відкриваємо застосунок для завершення покупки…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Не вдалося відкрити застосунок. Запустіть No Lazyload вручну, щоб завершити покупку."
-  },
-  "licenseFree": {
-    "message": "Безкоштовно · до 3 сайтів"
-  },
-  "licensePro": {
-    "message": "Pro · необмежена кількість сайтів"
-  },
-  "licenseUpgrade": {
-    "message": "Оновитися до Pro"
-  },
-  "licenseManage": {
-    "message": "Керування / Відновити"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro розблоковано · {domain} увімкнено"
-  },
-  "purchaseUnavailable": {
-    "message": "Покупки тимчасово недоступні. Спробуйте пізніше."
-  },
   "currentWebsite": {
     "message": "Поточний сайт"
   },
@@ -216,35 +156,11 @@
   "undo": {
     "message": "Скасувати"
   },
-  "upgradeNote": {
-    "message": "Необмежена кількість сайтів · Одноразова покупка, без підписки"
-  },
-  "upgradePrice": {
-    "message": "Одноразова покупка"
-  },
-  "oneTimePurchase": {
-    "message": "Одноразова покупка"
-  },
-  "noSubscription": {
-    "message": "Без підписки"
-  },
-  "upgradeToPro": {
-    "message": "Оновитися до Pro"
-  },
-  "notNow": {
-    "message": "Не зараз"
-  },
-  "upgradeBodyLimit": {
-    "message": "Ви використовуєте всі 3 безкоштовні сайти. Оновіться один раз, щоб увімкнути No Lazyload на необмеженій кількості сайтів."
-  },
   "siteListTitle": {
     "message": "Налаштовані сайти"
   },
   "emptyState": {
     "message": "Немає налаштованих сайтів"
-  },
-  "autoScrollHelp": {
-    "message": "Коли увімкнено, вимикає технічне блокування та запускає завантаження автоматичною прокруткою донизу"
   },
   "scrollParams": {
     "message": "Параметри автопрокрутки"
@@ -321,9 +237,6 @@
   "newtab01Desc": {
     "message": "Нова вкладка на основі закладок. Відкривайте папки як групи вкладок або у розділеному вигляді. 12 вбудованих тем + необмежена кількість власних тем."
   },
-  "licenseTitle": {
-    "message": "Ліцензія"
-  },
   "compatibilityModeHelpSection": {
     "message": "Автоматично прокручує сторінку, щоб запустити завантаження зображень. Використовуйте лише якщо стандартний режим не працює."
   },
@@ -354,26 +267,11 @@
   "importExportHelp": {
     "message": "Файл містить режим для кожного сайту та всі глобальні налаштування."
   },
-  "plan": {
-    "message": "Тариф"
-  },
-  "planFreeDetail": {
-    "message": "Безкоштовно · увімкнено {count} з {limit} сайтів"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · Необмежену кількість сайтів розблоковано"
-  },
-  "managePurchases": {
-    "message": "Керування покупками"
-  },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
     "message": "Конфіденційність"
-  },
-  "proActivated": {
-    "message": "Pro активовано. Необмежену кількість сайтів розблоковано."
   },
   "privacyNote": {
     "message": "No Lazyload діє лише на сайтах, які ви увімкнули. Інші сайти не змінюються."

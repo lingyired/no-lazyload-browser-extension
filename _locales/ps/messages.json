@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "اوسنی سایټ لرې کړئ"
   },
-  "useAutoScroll": {
-    "message": "د تخنیکي بندیز پر ځای اتوماتیک سکرول وکاروئ"
-  },
-  "autoScrollDesc": {
-    "message": "د بار کولو د فعالولو لپاره اتوماتیک ښکته سکرول کړئ؛ د هغو سایټونو لپاره مناسب چیرې چې تخنیکي بندیز ناکامیږي"
-  },
   "configuredSites": {
     "message": "ترتیب شوي سایټونه"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "{domain} ګذارل شو"
   },
-  "autoScrollEnabled": {
-    "message": "اتوماتیک سکرول فعال دی"
-  },
-  "autoScrollDisabled": {
-    "message": "اتوماتیک سکرول غیر فعال دی"
-  },
   "pageRefreshed": {
     "message": "پاڼه تازه شوه"
-  },
-  "autoScroll": {
-    "message": "اتوماتیک سکرول"
   },
   "settingsTitle": {
     "message": "تنظیمات - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "ړنګول"
   },
-  "upgradeTitle": {
-    "message": "د Pro پرانیستل"
-  },
-  "upgradeBody": {
-    "message": "وړیا نسخه تر ۳ سایټونو پورې ملاتړ کوي. د نامحدود سایټونو او راتلونکو پریمیم ځانګړتیاوو د پرانیستلو لپاره ارتقا وکړئ."
-  },
-  "upgradeButton": {
-    "message": "ارتقا"
-  },
-  "proActivated": {
-    "message": "Pro فعال شو. نامحدود سایټونه پرانیستل شول.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "لغوه کول"
-  },
-  "siteLimitReached": {
-    "message": "د سایټ حد ته ورسیدل"
-  },
-  "importPartial": {
-    "message": "له {total} سایټونو څخه {added} درآمد شول. وړیا حد ۳ دی."
-  },
-  "openingHostApp": {
-    "message": "د پیرودلو د بشپړولو لپاره کوربه اپلیکیشن پرانیستل کیږي…"
-  },
-  "upgradeOpenFailed": {
-    "message": "اپلیکیشن نه شو پرانیستل. د پیرودلو د بشپړولو لپاره No Lazy Load په لاسي ډول پیل کړئ."
-  },
-  "licenseFree": {
-    "message": "وړیا · تر ۳ سایټونو پورې"
-  },
-  "licensePro": {
-    "message": "Pro · نامحدود سایټونه"
-  },
-  "licenseUpgrade": {
-    "message": "Pro ته ارتقا"
-  },
-  "licenseManage": {
-    "message": "مدیریت / بحالي"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro پرانیستل شو · {domain} فعال شو"
-  },
-  "purchaseUnavailable": {
-    "message": "پیرودنې په لنډمهاله توګه شتون نلري. مهرباني وکړئ وروسته بیا هڅه وکړئ."
-  },
   "currentWebsite": {
     "message": "اوسنی سایټ"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "بیرته اخیستل"
   },
-  "upgradeNote": {
-    "message": "نامحدود سایټونه · یو ځلي پیرود، پرته له ګډون"
-  },
-  "upgradePrice": {
-    "message": "یو ځلي پیرود"
-  },
-  "oneTimePurchase": {
-    "message": "یو ځلي پیرود"
-  },
-  "noSubscription": {
-    "message": "پرته له ګډون"
-  },
-  "upgradeToPro": {
-    "message": "Pro ته ارتقا"
-  },
-  "notNow": {
-    "message": "اوس نه"
-  },
-  "upgradeBodyLimit": {
-    "message": "تاسو ټول ۳ وړیا سایټونه کاروئ. یو ځل ارتقا وکړئ ترڅو No Lazyload په نامحدود سایټونو کې فعال شي."
-  },
   "siteListTitle": {
     "message": "ترتیب شوي سایټونه"
   },
   "emptyState": {
     "message": "هیڅ ترتیب شوی سایټ نشته"
-  },
-  "autoScrollHelp": {
-    "message": "کله چې فعال شي، تخنیکي بندیز نافعالوي او د ښکته اتوماتیک سکرول سره بارول پیلوي"
   },
   "scrollParams": {
     "message": "د اتوماتیک سکرول پارامترونه"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "د بوکمارک پر بنسټ نوی ټب. فولډرونه د ټب ګروپونو یا ویشل شوي لید په توګه خلاص کړئ. ۱۲ جوړ شوي موضوعات + نامحدود دودیز موضوعات."
   },
-  "licenseTitle": {
-    "message": "جواز"
-  },
   "compatibilityModeHelpSection": {
     "message": "د انځورونو د بارولو د فعالولو لپاره پاڼه په اتوماتیک ډول سکرول کوي. یوازې هغه وخت وکاروئ چې معیاري حالت کار نه کوي."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "فایل د هر سایټ حالت او ټول عمومي تنظیمات لري."
-  },
-  "plan": {
-    "message": "پلان"
-  },
-  "planFreeDetail": {
-    "message": "وړیا · {count} له {limit} سایټونو فعال دي"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · نامحدود سایټونه پرانیستل شول"
-  },
-  "managePurchases": {
-    "message": "د پیرودنو مدیریت"
   },
   "github": {
     "message": "GitHub"

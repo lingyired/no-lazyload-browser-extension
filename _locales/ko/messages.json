@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "현재 사이트 제거"
   },
-  "useAutoScroll": {
-    "message": "기술 차단 대신 자동 스크롤 사용 (차단이 실패하는 사이트에 적합)"
-  },
-  "autoScrollDesc": {
-    "message": "하단까지 자동 스크롤하여 로딩을 트리거합니다. 기술적 차단이 실패하는 사이트에 적합합니다"
-  },
   "configuredSites": {
     "message": "설정된 사이트"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "{domain} 삭제됨"
   },
-  "autoScrollEnabled": {
-    "message": "자동 스크롤 활성화됨"
-  },
-  "autoScrollDisabled": {
-    "message": "자동 스크롤 비활성화됨"
-  },
   "pageRefreshed": {
     "message": "페이지가 새로고침되었습니다"
-  },
-  "autoScroll": {
-    "message": "자동 스크롤"
   },
   "settingsTitle": {
     "message": "설정 - No Lazyload",
@@ -135,59 +120,11 @@
   "languageSettings": {
     "message": "언어 설정"
   },
-  "upgradeTitle": {
-    "message": "Pro 잠금 해제"
-  },
-  "upgradeBody": {
-    "message": "무료 버전은 사이트를 최대 3개까지 지원합니다. 업그레이드하면 사이트 수 제한 없이 사용할 수 있고 향후 프리미엄 기능도 이용할 수 있습니다."
-  },
-  "upgradeButton": {
-    "message": "업그레이드"
-  },
-  "proActivated": {
-    "message": "Pro가 활성화되었습니다. 사이트 수 제한이 해제되었습니다."
-  },
-  "cancelUpgrade": {
-    "message": "취소"
-  },
-  "siteLimitReached": {
-    "message": "사이트 한도에 도달했습니다"
-  },
-  "importPartial": {
-    "message": "사이트 {total}개 중 {added}개를 가져왔습니다. 무료 한도는 3개입니다."
-  },
   "loading": {
     "message": "로딩 중..."
   },
   "delete": {
     "message": "삭제"
-  },
-  "openingHostApp": {
-    "message": "구매를 완료하기 위해 호스트 앱을 여는 중…"
-  },
-  "upgradeOpenFailed": {
-    "message": "앱을 열 수 없습니다. 구매를 완료하려면 No Lazyload를 직접 실행하세요"
-  },
-  "licenseFree": {
-    "message": "무료 · 사이트 3개까지"
-  },
-  "licensePro": {
-    "message": "Pro · 사이트 무제한"
-  },
-  "licenseUpgrade": {
-    "message": "Pro로 업그레이드"
-  },
-  "licenseManage": {
-    "message": "관리 / 구매 복원"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro 잠금 해제 · {domain}을 사용하도록 설정했습니다"
-  },
-  "purchaseUnavailable": {
-    "message": "현재 구매를 이용할 수 없습니다. 나중에 다시 시도하세요."
   },
   "currentWebsite": {
     "message": "현재 사이트"
@@ -219,35 +156,11 @@
   "undo": {
     "message": "실행 취소"
   },
-  "upgradeNote": {
-    "message": "사이트 무제한 · 1회 구매, 구독 없음"
-  },
-  "upgradePrice": {
-    "message": "1회 구매"
-  },
-  "oneTimePurchase": {
-    "message": "1회 구매"
-  },
-  "noSubscription": {
-    "message": "구독 없음"
-  },
-  "upgradeToPro": {
-    "message": "Pro로 업그레이드"
-  },
-  "notNow": {
-    "message": "나중에"
-  },
-  "upgradeBodyLimit": {
-    "message": "무료 사이트 3개를 모두 사용 중입니다. 한 번 업그레이드하면 사이트 수 제한 없이 No Lazyload를 사용할 수 있습니다."
-  },
   "siteListTitle": {
     "message": "설정된 사이트"
   },
   "emptyState": {
     "message": "설정된 사이트가 없습니다"
-  },
-  "autoScrollHelp": {
-    "message": "활성화 시 기술 차단을 비활성화하고 하단까지 자동 스크롤하여 이미지 로딩을 트리거합니다"
   },
   "scrollParams": {
     "message": "자동 스크롤 매개변수"
@@ -324,9 +237,6 @@
   "newtab01Desc": {
     "message": "북마크 기반 새 탭. 폴더를 탭 그룹이나 분할 보기로 엽니다. 12개 내장 테마 + 무제한 커스텀 테마."
   },
-  "licenseTitle": {
-    "message": "라이선스"
-  },
   "compatibilityModeHelpSection": {
     "message": "페이지를 자동으로 스크롤하여 이미지 로딩을 유발합니다. 표준 모드가 작동하지 않을 때만 사용하세요."
   },
@@ -356,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "파일에는 각 사이트의 모드와 모든 전역 설정이 포함됩니다."
-  },
-  "plan": {
-    "message": "요금제"
-  },
-  "planFreeDetail": {
-    "message": "무료 · 사이트 {limit}개 중 {count}개 사용"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · 사이트 무제한 잠금 해제됨"
-  },
-  "managePurchases": {
-    "message": "구매 관리"
   },
   "github": {
     "message": "GitHub"

@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "موجودہ سائٹ ہٹائیں"
   },
-  "useAutoScroll": {
-    "message": "تکنیکی بلاک کی بجائے خودکار سکرول استعمال کریں"
-  },
-  "autoScrollDesc": {
-    "message": "لوڈنگ کو متحرک کرنے کے لیے خودکار نیچے اسکرول کریں؛ ان سائٹس کے لیے موزوں جنہیں تکنیکی روک غیر مؤثر ہے"
-  },
   "configuredSites": {
     "message": "ترتیب دی گئی سائٹس"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "{domain} حذف کیا گیا"
   },
-  "autoScrollEnabled": {
-    "message": "خودکار سکرول فعال"
-  },
-  "autoScrollDisabled": {
-    "message": "خودکار سکرول غیر فعال"
-  },
   "pageRefreshed": {
     "message": "صفحہ ریفریش ہو گیا"
-  },
-  "autoScroll": {
-    "message": "خودکار سکرول"
   },
   "settingsTitle": {
     "message": "ترتیبات - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "حذف"
   },
-  "upgradeTitle": {
-    "message": "Pro کھولیں"
-  },
-  "upgradeBody": {
-    "message": "مفت ورژن زیادہ سے زیادہ ۳ سائٹس کی معاونت کرتا ہے۔ لامحدود سائٹس اور مستقبل کی پریمیم خصوصیات کھولنے کے لیے اپ گریڈ کریں۔"
-  },
-  "upgradeButton": {
-    "message": "اپ گریڈ"
-  },
-  "proActivated": {
-    "message": "Pro فعال ہو گیا۔ لامحدود سائٹس کھول دی گئیں۔",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "منسوخ کریں"
-  },
-  "siteLimitReached": {
-    "message": "سائٹ کی حد پوری ہو گئی"
-  },
-  "importPartial": {
-    "message": "{total} میں سے {added} سائٹس درآمد ہوئیں۔ مفت حد ۳ ہے۔"
-  },
-  "openingHostApp": {
-    "message": "خریداری مکمل کرنے کے لیے میزبان ایپ کھولی جا رہی ہے…"
-  },
-  "upgradeOpenFailed": {
-    "message": "ایپ نہیں کھل سکی۔ خریداری مکمل کرنے کے لیے No Lazy Load کو دستی طور پر شروع کریں۔"
-  },
-  "licenseFree": {
-    "message": "مفت · زیادہ سے زیادہ ۳ سائٹس"
-  },
-  "licensePro": {
-    "message": "Pro · لامحدود سائٹس"
-  },
-  "licenseUpgrade": {
-    "message": "Pro پر اپ گریڈ کریں"
-  },
-  "licenseManage": {
-    "message": "انتظام / بحالی"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro کھل گیا · {domain} فعال کر دیا گیا"
-  },
-  "purchaseUnavailable": {
-    "message": "خریداری عارضی طور پر دستیاب نہیں ہے۔ براہ کرم بعد میں دوبارہ کوشش کریں۔"
-  },
   "currentWebsite": {
     "message": "موجودہ سائٹ"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "واپس لیں"
   },
-  "upgradeNote": {
-    "message": "لامحدود سائٹس · ایک بار کی خریداری، کوئی سبسکرپشن نہیں"
-  },
-  "upgradePrice": {
-    "message": "ایک بار کی خریداری"
-  },
-  "oneTimePurchase": {
-    "message": "ایک بار کی خریداری"
-  },
-  "noSubscription": {
-    "message": "کوئی سبسکرپشن نہیں"
-  },
-  "upgradeToPro": {
-    "message": "Pro پر اپ گریڈ کریں"
-  },
-  "notNow": {
-    "message": "ابھی نہیں"
-  },
-  "upgradeBodyLimit": {
-    "message": "آپ تمام ۳ مفت سائٹس استعمال کر رہے ہیں۔ ایک بار اپ گریڈ کریں تاکہ No Lazyload لامحدود سائٹس پر فعال ہو جائے۔"
-  },
   "siteListTitle": {
     "message": "ترتیب دی گئی سائٹس"
   },
   "emptyState": {
     "message": "کوئی ترتیب دی گئی سائٹ نہیں"
-  },
-  "autoScrollHelp": {
-    "message": "فعال ہونے پر، تکنیکی بلاک کو غیر فعال کرتا ہے اور خودکار نیچے سکرول کرکے لوڈنگ کو متحرک کرتا ہے"
   },
   "scrollParams": {
     "message": "خودکار سکرول کے پیرامیٹرز"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "بک مارک پر مبنی نئی ٹیب۔ فولڈرز کو ٹیب گروپس یا تقسیم شدہ ویو کے طور پر کھولیں۔ 12 بلٹ ان تھیمز + لامحدود کسٹم تھیمز۔"
   },
-  "licenseTitle": {
-    "message": "لائسنس"
-  },
   "compatibilityModeHelpSection": {
     "message": "تصاویر کی لوڈنگ کو متحرک کرنے کے لیے صفحہ خود بخود سکرول کرتا ہے۔ یہ صرف اس وقت استعمال کریں جب معیاری موڈ کام نہ کرے۔"
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "فائل میں ہر سائٹ کا موڈ اور تمام عالمی ترتیبات شامل ہیں۔"
-  },
-  "plan": {
-    "message": "پلان"
-  },
-  "planFreeDetail": {
-    "message": "مفت · {limit} میں سے {count} سائٹس فعال"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · لامحدود سائٹس کھول دی گئیں"
-  },
-  "managePurchases": {
-    "message": "خریداریوں کا انتظام"
   },
   "github": {
     "message": "GitHub"

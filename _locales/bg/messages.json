@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Премахване на текущия сайт"
   },
-  "useAutoScroll": {
-    "message": "Използвай автоматично превъртане вместо техническо блокиране"
-  },
-  "autoScrollDesc": {
-    "message": "Превъртете автоматично надолу, за да задействате зареждането; подходящо за сайтове, където техническата блокировка не сработва"
-  },
   "configuredSites": {
     "message": "Конфигурирани сайтове"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Изтрит {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Автоматичното превъртане е активирано"
-  },
-  "autoScrollDisabled": {
-    "message": "Автоматичното превъртане е деактивирано"
-  },
   "pageRefreshed": {
     "message": "Страницата е опреснена"
-  },
-  "autoScroll": {
-    "message": "Автоматично превъртане"
   },
   "settingsTitle": {
     "message": "Настройки - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "Изтриване"
   },
-  "upgradeTitle": {
-    "message": "Отключване на Pro"
-  },
-  "upgradeBody": {
-    "message": "Безплатната версия поддържа до 3 сайта. Надградете, за да отключите неограничен брой сайтове и бъдещи премиум функции."
-  },
-  "upgradeButton": {
-    "message": "Надграждане"
-  },
-  "proActivated": {
-    "message": "Pro е активиран. Отключени са неограничен брой сайтове.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Отказ"
-  },
-  "siteLimitReached": {
-    "message": "Достигнат е лимитът за сайтове"
-  },
-  "importPartial": {
-    "message": "Импортирани са {added} от {total} сайта. Безплатният лимит е 3."
-  },
-  "openingHostApp": {
-    "message": "Отваряне на приложението домакин за завършване на покупката…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Приложението не можа да се отвори. Стартирайте No Lazy Load ръчно, за да завършите покупката."
-  },
-  "licenseFree": {
-    "message": "Безплатна · до 3 сайта"
-  },
-  "licensePro": {
-    "message": "Pro · неограничен брой сайтове"
-  },
-  "licenseUpgrade": {
-    "message": "Надграждане до Pro"
-  },
-  "licenseManage": {
-    "message": "Управление / възстановяване"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro е отключен · {domain} е активиран"
-  },
-  "purchaseUnavailable": {
-    "message": "Покупките временно не са налични. Опитайте отново по-късно."
-  },
   "currentWebsite": {
     "message": "Текущ сайт"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Отмяна"
   },
-  "upgradeNote": {
-    "message": "Неограничен брой сайтове · еднократна покупка, без абонамент"
-  },
-  "upgradePrice": {
-    "message": "Еднократна покупка"
-  },
-  "oneTimePurchase": {
-    "message": "Еднократна покупка"
-  },
-  "noSubscription": {
-    "message": "Без абонамент"
-  },
-  "upgradeToPro": {
-    "message": "Надграждане до Pro"
-  },
-  "notNow": {
-    "message": "Не сега"
-  },
-  "upgradeBodyLimit": {
-    "message": "Използвате всичките 3 безплатни сайта. Надградете еднократно, за да активирате No Lazyload на неограничен брой сайтове."
-  },
   "siteListTitle": {
     "message": "Конфигурирани сайтове"
   },
   "emptyState": {
     "message": "Няма конфигурирани сайтове"
-  },
-  "autoScrollHelp": {
-    "message": "Когато е активирано, деактивира техническото блокиране и задейства зареждането чрез автоматично превъртане до долу"
   },
   "scrollParams": {
     "message": "Параметри за автоматично превъртане"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Нов раздел, задвижван от отметки. Отваряйте папки като групи от раздели или в разделен изглед. 12 вградени теми + неограничени персонализирани теми."
   },
-  "licenseTitle": {
-    "message": "Лиценз"
-  },
   "compatibilityModeHelpSection": {
     "message": "Автоматично превърта страницата, за да задейства зареждането на изображения. Използвайте само когато стандартният режим не работи."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "Файлът включва режима на всеки сайт и всички глобални настройки."
-  },
-  "plan": {
-    "message": "План"
-  },
-  "planFreeDetail": {
-    "message": "Безплатен · активирани {count} от {limit} сайта"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · отключени неограничен брой сайтове"
-  },
-  "managePurchases": {
-    "message": "Управление на покупки"
   },
   "github": {
     "message": "GitHub"

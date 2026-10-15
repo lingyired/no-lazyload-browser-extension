@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "वर्तमान साइट हटाएं"
   },
-  "useAutoScroll": {
-    "message": "तकनीकी ब्लॉकिंग के बजाय ऑटो-स्क्रॉल का उपयोग करें"
-  },
-  "autoScrollDesc": {
-    "message": "लोड ट्रिगर करने के लिए नीचे स्क्रॉल करें, तकनीकी ब्लॉकिंग विफल होने पर उपयुक्त"
-  },
   "configuredSites": {
     "message": "कॉन्फ़िगर की गई साइटें"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "{domain} हटाया गया"
   },
-  "autoScrollEnabled": {
-    "message": "ऑटो-स्क्रॉल सक्षम"
-  },
-  "autoScrollDisabled": {
-    "message": "ऑटो-स्क्रॉल अक्षम"
-  },
   "pageRefreshed": {
     "message": "पेज रिफ्रेश किया गया"
-  },
-  "autoScroll": {
-    "message": "ऑटो-स्क्रॉल"
   },
   "settingsTitle": {
     "message": "सेटिंग्स - No Lazyload",
@@ -141,51 +126,6 @@
   "delete": {
     "message": "हटाएं"
   },
-  "upgradeTitle": {
-    "message": "Pro अनलॉक करें"
-  },
-  "upgradeBody": {
-    "message": "मुफ़्त संस्करण अधिकतम 3 वेबसाइटों का समर्थन करता है। असीमित वेबसाइटों और भविष्य की प्रीमियम सुविधाओं के लिए अपग्रेड करें।"
-  },
-  "upgradeButton": {
-    "message": "अपग्रेड करें"
-  },
-  "cancelUpgrade": {
-    "message": "रद्द करें"
-  },
-  "siteLimitReached": {
-    "message": "साइट सीमा पूरी हो गई"
-  },
-  "importPartial": {
-    "message": "{total} में से {added} साइटें आयात की गईं। मुफ़्त सीमा 3 है।"
-  },
-  "openingHostApp": {
-    "message": "खरीद पूरी करने के लिए होस्ट ऐप खोला जा रहा है…"
-  },
-  "upgradeOpenFailed": {
-    "message": "ऐप खोला नहीं जा सका। खरीद पूरी करने के लिए कृपया No Lazyload को मैन्युअल रूप से खोलें।"
-  },
-  "licenseFree": {
-    "message": "मुफ़्त · अधिकतम 3 वेबसाइटें"
-  },
-  "licensePro": {
-    "message": "Pro · असीमित वेबसाइटें"
-  },
-  "licenseUpgrade": {
-    "message": "Pro में अपग्रेड करें"
-  },
-  "licenseManage": {
-    "message": "प्रबंधित करें / पुनर्स्थापित करें"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro अनलॉक हुआ · {domain} सक्षम किया गया"
-  },
-  "purchaseUnavailable": {
-    "message": "खरीदारी फ़िलहाल उपलब्ध नहीं है। कृपया बाद में पुनः प्रयास करें।"
-  },
   "currentWebsite": {
     "message": "वर्तमान वेबसाइट"
   },
@@ -216,35 +156,11 @@
   "undo": {
     "message": "पूर्ववत करें"
   },
-  "upgradeNote": {
-    "message": "असीमित वेबसाइटें · एकमुश्त खरीद, कोई सदस्यता नहीं"
-  },
-  "upgradePrice": {
-    "message": "एकमुश्त खरीद"
-  },
-  "oneTimePurchase": {
-    "message": "एकमुश्त खरीद"
-  },
-  "noSubscription": {
-    "message": "कोई सदस्यता नहीं"
-  },
-  "upgradeToPro": {
-    "message": "Pro में अपग्रेड करें"
-  },
-  "notNow": {
-    "message": "अभी नहीं"
-  },
-  "upgradeBodyLimit": {
-    "message": "आपने तीनों मुफ़्त वेबसाइटें उपयोग कर ली हैं। असीमित वेबसाइटों पर No Lazyload सक्षम करने के लिए एक बार अपग्रेड करें।"
-  },
   "siteListTitle": {
     "message": "कॉन्फ़िगर की गई साइटें"
   },
   "emptyState": {
     "message": "कोई कॉन्फ़िगर की गई साइट नहीं"
-  },
-  "autoScrollHelp": {
-    "message": "तकनीकी ब्लॉकिंग को अक्षम करता है और नीचे स्क्रॉल करके लोड करता है"
   },
   "scrollParams": {
     "message": "ऑटो-स्क्रॉल पैरामीटर"
@@ -321,9 +237,6 @@
   "newtab01Desc": {
     "message": "बुकमार्क-संचालित नया टैब। फ़ोल्डर को टैब समूहों या स्प्लिट व्यू में खोलें। 12 बिल्ट-इन थीम + असीमित कस्टम थीम।"
   },
-  "licenseTitle": {
-    "message": "लाइसेंस"
-  },
   "compatibilityModeHelpSection": {
     "message": "इमेज लोड करने के लिए पेज को स्वतः स्क्रॉल करता है। इसका उपयोग तभी करें जब मानक मोड काम न करे।"
   },
@@ -354,26 +267,11 @@
   "importExportHelp": {
     "message": "फ़ाइल में प्रत्येक वेबसाइट का मोड और सभी वैश्विक सेटिंग्स शामिल हैं।"
   },
-  "plan": {
-    "message": "प्लान"
-  },
-  "planFreeDetail": {
-    "message": "मुफ़्त · {limit} में से {count} वेबसाइटें सक्षम"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · असीमित वेबसाइटें अनलॉक"
-  },
-  "managePurchases": {
-    "message": "खरीदारी प्रबंधित करें"
-  },
   "github": {
     "message": "GitHub"
   },
   "privacy": {
     "message": "गोपनीयता"
-  },
-  "proActivated": {
-    "message": "Pro सक्रिय हो गया। असीमित वेबसाइटें अनलॉक हो गईं।"
   },
   "privacyNote": {
     "message": "No Lazyload केवल उन वेबसाइटों पर कार्य करता है जिन्हें आप सक्षम करते हैं। अन्य वेबसाइटें अछूती रहती हैं।"

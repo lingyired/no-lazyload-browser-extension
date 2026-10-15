@@ -27,7 +27,7 @@ const VERSION_FILE = 'version.json';
 
 // Safari 构建配置
 // Xcode 工程已"冻结"在仓库根目录 safari-xcode/（被 git 跟踪），
-// 这样工程里的 Swift 代码（EntitlementManager 等）不会被重建覆盖。
+// 这样工程里的 Swift 代码不会被重建覆盖。
 // build:safari 只构建 dist/safari/（JS/HTML 等扩展源）并同步进工程的 Resources 目录。
 // 首次生成工程用 `node build.js safari-init`。
 const SAFARI_CONFIG = {
@@ -179,9 +179,7 @@ function ensureVersionPlaceholder(filePath) {
 const COMMON_FILES = [
   'popup.html',
   'popup.js',
-  // 注意：shared-ui.js 是生成的，不在这里复制（见 writeSharedUiBundle）
-  'i18n.js',
-  'i18n-manager.js',
+  // 注意：locales.js 是生成的，不在这里复制（见 writeLocalesBundle）
   // 设置页页脚的隐私政策入口指向它，必须一起打包
   'privacy-policy.html',
   'content/index.js',
@@ -209,11 +207,9 @@ const CHROME_FILES = {
   'background/index.js': 'background/index.js',
   'background/badge.js': 'background/badge.js',
   'background/messageHandler.js': 'background/messageHandler.js',
-  'background/pendingAction.js': 'background/pendingAction.js',
   'background/siteConfigManager.js': 'background/siteConfigManager.js',
   'shared/constants.js': 'shared/constants.js',
   'shared/domain.js': 'shared/domain.js',
-  'shared/entitlements.js': 'shared/entitlements.js',
 };
 
 // Firefox specific files
@@ -289,7 +285,7 @@ function writeFirefoxBackgroundBundle(targetDir) {
  * siteConfigManager / shared/*），构建时打包成单个经典脚本 ——
  * Safari 16.4 之前 "type": "module" 的 service worker 不稳定。
  *
- * 这样权限逻辑只写一次：改 shared/entitlements.js 或 messageHandler.js，
+ * 这样业务逻辑只写一次：改 messageHandler.js 或 shared/constants.js，
  * Safari 与 Chrome 同时生效，不再需要"记得同步那边"。
  */
 function writeSafariBackgroundBundle(targetDir) {
@@ -305,32 +301,6 @@ function writeSafariBackgroundBundle(targetDir) {
   console.log('  🧩 Generated background-safari.js (' + out.split('\n').length + ' lines)');
 }
 
-/**
- * 生成 popup / settings 共用的经典脚本包。
- *
- * shared/*.js 是 ES module（background 用 import 消费），
- * 但 popup.html / settings/index.html 是经典脚本页面，无法 import，
- * 所以构建时打包成一份 shared-ui.js。
- *
- * 好处：常量与升级弹窗只有一份实现，改一次到处生效。
- */
-function writeSharedUiBundle(targetDir) {
-  const out = bundleClassic([
-    'shared/upgrade-dialog.js',
-    'shared/domain.js',
-    'shared/constants.js',
-  ], {
-    banner: [
-      '// ⚠️ 本文件由 build.js / scripts/bundle-classic.js 生成，请勿手工修改。',
-      '// 源文件：shared/{upgrade-dialog,domain,constants}.js',
-      '// 修改后重新运行: npm run build:safari（或 build:chrome / build:firefox）',
-    ].join('\n'),
-  });
-
-  fs.writeFileSync(path.join(targetDir, 'shared-ui.js'), out);
-  console.log('  🧩 Generated shared-ui.js (' + out.split('\n').length + ' lines)');
-}
-
 // 确保目录存在（不删除内容）
 function ensureDir(dir) {
   if (!fs.existsSync(dir)) {
@@ -339,25 +309,9 @@ function ensureDir(dir) {
   }
 }
 
-// 删除旧版本 zip 包
-function removeOldZipFiles(browser, newVersion) {
-  if (!fs.existsSync(BUILD_DIR)) return;
-
-  const files = fs.readdirSync(BUILD_DIR);
-  const pattern = new RegExp(`^${browser}-\\d+\\.\\d+\\.\\d+\\.zip$`);
-
-  for (const file of files) {
-    if (pattern.test(file)) {
-      const filePath = path.join(BUILD_DIR, file);
-      // 提取版本号
-      const match = file.match(/-(\d+\.\d+\.\d+)\.zip$/);
-      if (match && match[1] !== newVersion) {
-        fs.unlinkSync(filePath);
-        console.log(`  🗑️ Removed old version: ${file}`);
-      }
-    }
-  }
-}
+// 注意：构建【不会】删除 dist/ 下的历史 zip —— 这是刻意的（见 commit 777e7f5
+// "preserve old zip files instead of removing them"）。产物会随版本累积，
+// 需要清理时手动删除 dist/ 下非当前版本的 zip，或 `npm run clean` 清空整个 dist/。
 
 // 创建 zip 包
 function createZip(sourceDir, zipPath) {
@@ -453,7 +407,6 @@ function buildChrome(version) {
   }
 
   writeLocalesBundle(chromeDir);
-  writeSharedUiBundle(chromeDir);
 
   // 更新版本号到 HTML
   // Update settings/index.html
@@ -508,7 +461,6 @@ function buildFirefox(version) {
 
   writeFirefoxBackgroundBundle(firefoxDir);
   writeLocalesBundle(firefoxDir);
-  writeSharedUiBundle(firefoxDir);
 
   // 更新版本号到 HTML
   // Update settings/index.html
@@ -565,7 +517,6 @@ function buildSafari(version, buildNumber = getBuildNumber()) {
 
   writeSafariBackgroundBundle(safariDir);
   writeLocalesBundle(safariDir);
-  writeSharedUiBundle(safariDir);
 
   // 更新版本号到 HTML
   // Update settings/index.html
@@ -748,7 +699,7 @@ function initSafariXcodeProject() {
   console.log('   接下来在 Xcode 里:');
   console.log('     1. open "' + path.join(projectDir, `${projectName}.xcodeproj`) + '"');
   console.log('     2. 两个 target 都选 Signing → Team');
-  console.log('     3. 按 plan 文档添加 Shared/ Swift 文件与 App Group 能力');
+  console.log('     3. 在 Xcode 里把 Shared/ 下的 Swift 文件加入两个 target');
   console.log('     4. Cmd+R 运行');
 }
 

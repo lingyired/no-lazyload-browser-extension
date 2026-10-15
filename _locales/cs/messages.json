@@ -30,12 +30,6 @@
   "removeCurrentSite": {
     "message": "Odebrat aktuální stránku"
   },
-  "useAutoScroll": {
-    "message": "Použít automatické posouvání místo technického blokování"
-  },
-  "autoScrollDesc": {
-    "message": "Automaticky posuňte dolů pro spuštění načítání; vhodné pro stránky, kde technické blokování selže"
-  },
   "configuredSites": {
     "message": "Nakonfigurované stránky"
   },
@@ -60,17 +54,8 @@
   "siteDeleted": {
     "message": "Smazáno {domain}"
   },
-  "autoScrollEnabled": {
-    "message": "Automatické posouvání povoleno"
-  },
-  "autoScrollDisabled": {
-    "message": "Automatické posouvání zakázáno"
-  },
   "pageRefreshed": {
     "message": "Stránka obnovena"
-  },
-  "autoScroll": {
-    "message": "Automatické posouvání"
   },
   "settingsTitle": {
     "message": "Nastavení - No Lazyload",
@@ -141,55 +126,6 @@
   "delete": {
     "message": "Smazat"
   },
-  "upgradeTitle": {
-    "message": "Odemknout Pro"
-  },
-  "upgradeBody": {
-    "message": "Bezplatná verze podporuje až 3 stránky. Upgradujte a odemkněte neomezený počet stránek a budoucí prémiové funkce."
-  },
-  "upgradeButton": {
-    "message": "Upgradovat"
-  },
-  "proActivated": {
-    "message": "Pro aktivováno. Odemčen neomezený počet stránek.",
-    "description": "Toast shown after successful Mock purchase"
-  },
-  "cancelUpgrade": {
-    "message": "Zrušit"
-  },
-  "siteLimitReached": {
-    "message": "Dosažen limit stránek"
-  },
-  "importPartial": {
-    "message": "Importováno {added} z {total} stránek. Bezplatný limit jsou 3."
-  },
-  "openingHostApp": {
-    "message": "Otevírá se hostitelská aplikace pro dokončení nákupu…"
-  },
-  "upgradeOpenFailed": {
-    "message": "Aplikaci se nepodařilo otevřít. Nákup dokončete ručním spuštěním aplikace No Lazy Load."
-  },
-  "licenseFree": {
-    "message": "Zdarma · až 3 stránky"
-  },
-  "licensePro": {
-    "message": "Pro · neomezený počet stránek"
-  },
-  "licenseUpgrade": {
-    "message": "Upgradovat na Pro"
-  },
-  "licenseManage": {
-    "message": "Spravovat / obnovit"
-  },
-  "proBadge": {
-    "message": "PRO"
-  },
-  "noticeSiteEnabled": {
-    "message": "Pro odemčeno · {domain} byl povolen"
-  },
-  "purchaseUnavailable": {
-    "message": "Nákupy jsou dočasně nedostupné. Zkuste to prosím později."
-  },
   "currentWebsite": {
     "message": "Aktuální stránka"
   },
@@ -220,35 +156,11 @@
   "undo": {
     "message": "Zpět"
   },
-  "upgradeNote": {
-    "message": "Neomezený počet stránek · jednorázový nákup, bez předplatného"
-  },
-  "upgradePrice": {
-    "message": "Jednorázový nákup"
-  },
-  "oneTimePurchase": {
-    "message": "Jednorázový nákup"
-  },
-  "noSubscription": {
-    "message": "Bez předplatného"
-  },
-  "upgradeToPro": {
-    "message": "Upgradovat na Pro"
-  },
-  "notNow": {
-    "message": "Teď ne"
-  },
-  "upgradeBodyLimit": {
-    "message": "Využíváte všechny 3 bezplatné stránky. Jednorázovým upgradem povolíte No Lazyload na neomezeném počtu stránek."
-  },
   "siteListTitle": {
     "message": "Nakonfigurované stránky"
   },
   "emptyState": {
     "message": "Žádné nakonfigurované stránky"
-  },
-  "autoScrollHelp": {
-    "message": "Když je povoleno, zakáže technické blokování a spustí načítání automatickým posunutím dolů"
   },
   "scrollParams": {
     "message": "Parametry automatického posouvání"
@@ -325,9 +237,6 @@
   "newtab01Desc": {
     "message": "Nová karta řízená záložkami. Otevírejte složky jako skupiny karet nebo v rozděleném zobrazení. 12 vestavěných motivů + neomezené vlastní motivy."
   },
-  "licenseTitle": {
-    "message": "Licence"
-  },
   "compatibilityModeHelpSection": {
     "message": "Automaticky posouvá stránku a aktivuje načítání obrázků. Použijte pouze tehdy, když standardní režim nefunguje."
   },
@@ -357,18 +266,6 @@
   },
   "importExportHelp": {
     "message": "Soubor obsahuje režim každé stránky a všechna globální nastavení."
-  },
-  "plan": {
-    "message": "Plán"
-  },
-  "planFreeDetail": {
-    "message": "Zdarma · povoleno {count} z {limit} stránek"
-  },
-  "planProDetail": {
-    "message": "No Lazyload Pro · odemčen neomezený počet stránek"
-  },
-  "managePurchases": {
-    "message": "Správa nákupů"
   },
   "github": {
     "message": "GitHub"
