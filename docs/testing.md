@@ -97,6 +97,28 @@ Xcode 里：
 > 临时验证可以在 `ExtensionStateService.isExtensionEnabled()` 里加环境变量开关，
 > 但**验证完必须移除**（本次开发就是这么做的）。
 
+### 3.1 Safari 里出现两个同名扩展
+
+**症状**：Safari → 设置 → 扩展 里有两个 `No lazyload`，都被勾选。
+
+**原因**：**每次签名构建**（Xcode Cmd+R 或 `xcodebuild -allowProvisioningUpdates`）
+都会把 DerivedData 里那份 `.appex` 也注册进 Safari。
+另一条来自已安装的副本（`~/Applications`）。这是 Xcode 为调试扩展做的正常行为，不是 bug。
+
+> 未签名构建（`CODE_SIGNING_ALLOWED=NO`）**不会**触发 —— pluginkit 不接受 ad-hoc 签名的 appex。
+
+**处理**：
+
+```bash
+npm run fix-safari-dup              # 删掉 DerivedData 那条，保留已安装副本
+npm run fix-safari-dup -- --dry-run # 只看会删什么
+```
+
+脚本只删路径含 `/DerivedData/` 的注册；若发现**一条已安装副本都没有**，
+它会拒绝删除并提示先安装 —— 否则扩展会彻底从 Safari 消失。
+
+Safari 设置页可能不会立即刷新，关掉设置窗口重开即可。
+
 ### 日志
 
 ```bash
