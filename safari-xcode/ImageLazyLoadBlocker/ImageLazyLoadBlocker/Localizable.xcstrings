@@ -21,6 +21,204 @@
             "state": "translated",
             "value": "No Lazyload"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
+          }
         }
       }
     },
@@ -43,6 +241,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "在你於 Safari 中啟用的網站上，立即載入所有圖片。"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "يحمّل كل الصور في المواقع التي تمكّنها في Safari."
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Зарежда всички изображения в сайтовете, които разрешите в Safari."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Carrega totes les imatges dels llocs que activis al Safari."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Načte všechny obrázky na webech, které v Safari povolíte."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Indlæser alle billeder på de websteder, du aktiverer i Safari."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Lädt jedes Bild auf den Websites, die du in Safari aktivierst."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Φορτώνει όλες τις εικόνες στους ιστότοπους που ενεργοποιείς στο Safari."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Carga todas las imágenes de los sitios que actives en Safari."
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "همه تصاویر را در سایت‌هایی که در Safari فعال می‌کنید بارگذاری می‌کند."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Lataa kaikki kuvat niillä sivustoilla, jotka otat käyttöön Safarissa."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Charge toutes les images des sites que vous activez dans Safari."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "טוען את כל התמונות באתרים שתפעיל ב-Safari."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari में आपके द्वारा सक्षम की गई साइटों पर सभी छवियाँ लोड करता है।"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Učitava sve slike na web-mjestima koja omogućite u Safariju."
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Betölti az összes képet azokon az oldalakon, amelyeket engedélyezel a Safariban."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Memuat semua gambar di situs yang Anda aktifkan di Safari."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Carica tutte le immagini sui siti che abiliti in Safari."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari で有効にしたサイトの画像をすべて読み込みます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari에서 활성화한 사이트의 모든 이미지를 불러옵니다."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Laster alle bilder på nettstedene du aktiverer i Safari."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Laadt elke afbeelding op de websites die je in Safari inschakelt."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Wczytuje wszystkie obrazy w witrynach włączonych w Safari."
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "په Safari کې د هغو وېبپاڼو ټول انځورونه باروي چې تاسو یې فعالوئ."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Carrega todas as imagens nos sites que você ativar no Safari."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Încarcă toate imaginile de pe site-urile pe care le activezi în Safari."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Загружает все изображения на сайтах, которые вы включите в Safari."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Načíta všetky obrázky na weboch, ktoré v Safari povolíte."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Laddar alla bilder på de webbplatser du aktiverar i Safari."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "โหลดรูปภาพทั้งหมดบนเว็บไซต์ที่คุณเปิดใช้ใน Safari"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari’de etkinleştirdiğiniz sitelerdeki tüm görselleri yükler."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Завантажує всі зображення на сайтах, які ви ввімкнете в Safari."
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari میں آپ کے فعال کردہ تمام سائٹس پر ہر تصویر لوڈ کرتا ہے۔"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tải mọi hình ảnh trên những trang web bạn bật trong Safari."
           }
         }
       }
@@ -67,6 +463,204 @@
             "state": "translated",
             "value": "若要在 Safari 中使用 No Lazyload，請先啟用擴充功能。"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "مكّن الإضافة لاستخدام No Lazyload في Safari."
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Разрешете разширението, за да използвате No Lazyload в Safari."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Activa l’extensió per fer servir No Lazyload al Safari."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Chcete-li používat No Lazyload v Safari, povolte rozšíření."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Aktivér udvidelsen for at bruge No Lazyload i Safari."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Aktiviere die Erweiterung, um No Lazyload in Safari zu nutzen."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ενεργοποίησε την επέκταση για να χρησιμοποιήσεις το No Lazyload στο Safari."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Activa la extensión para usar No Lazyload en Safari."
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "برای استفاده از No Lazyload در Safari افزونه را فعال کنید."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ota laajennus käyttöön, niin voit käyttää No Lazyloadia Safarissa."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Activez l’extension pour utiliser No Lazyload dans Safari."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "הפעל את התוסף כדי להשתמש ב-No Lazyload ב-Safari."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari में No Lazyload इस्तेमाल करने के लिए एक्सटेंशन सक्षम करें।"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Omogućite proširenje da biste koristili No Lazyload u Safariju."
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Engedélyezd a bővítményt a No Lazyload Safari alatti használatához."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Aktifkan ekstensi untuk memakai No Lazyload di Safari."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Abilita l’estensione per usare No Lazyload in Safari."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari で No Lazyload を使うには、機能拡張を有効にしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari에서 No Lazyload를 사용하려면 확장 기능을 활성화하세요."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Aktiver utvidelsen for å bruke No Lazyload i Safari."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Schakel de extensie in om No Lazyload in Safari te gebruiken."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Włącz rozszerzenie, aby korzystać z No Lazyload w Safari."
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "په Safari کې د No Lazyload کارولو لپاره غځونکی فعال کړئ."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ative a extensão para usar o No Lazyload no Safari."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Activează extensia pentru a folosi No Lazyload în Safari."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Включите расширение, чтобы использовать No Lazyload в Safari."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ak chcete používať No Lazyload v Safari, povoľte rozšírenie."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Aktivera tillägget för att använda No Lazyload i Safari."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "เปิดใช้ส่วนขยายเพื่อใช้ No Lazyload ใน Safari"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload’ı Safari’de kullanmak için uzantıyı etkinleştirin."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Увімкніть розширення, щоб користуватися No Lazyload у Safari."
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari میں No Lazyload استعمال کرنے کے لیے ایکسٹینشن فعال کریں۔"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bật tiện ích để dùng No Lazyload trong Safari."
+          }
         }
       }
     },
@@ -89,6 +683,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "點下面的按鈕開啟 Safari 擴充功能設定"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "اضغط الزر أدناه لفتح إعدادات إضافات Safari"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Натиснете бутона по-долу, за да отворите настройките на разширенията на Safari"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Fes clic al botó de sota per obrir la configuració d’extensions del Safari"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kliknutím na tlačítko níže otevřete nastavení rozšíření Safari"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klik på knappen nedenfor for at åbne Safari-udvidelsesindstillinger"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klicke auf die Schaltfläche unten, um die Safari-Erweiterungseinstellungen zu öffnen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Πάτησε το κουμπί παρακάτω για να ανοίξεις τις ρυθμίσεις επεκτάσεων του Safari"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Haz clic en el botón de abajo para abrir los ajustes de extensiones de Safari"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "برای باز کردن تنظیمات افزونه‌های Safari روی دکمه زیر کلیک کنید"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Avaa Safarin laajennusasetukset napsauttamalla alla olevaa painiketta"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cliquez sur le bouton ci-dessous pour ouvrir les réglages d’extensions de Safari"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "לחץ על הכפתור למטה כדי לפתוח את הגדרות התוספים של Safari"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari एक्सटेंशन सेटिंग खोलने के लिए नीचे दिया बटन दबाएँ"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kliknite gumb u nastavku da biste otvorili postavke proširenja Safarija"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kattints az alábbi gombra a Safari bővítménybeállításainak megnyitásához"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klik tombol di bawah untuk membuka pengaturan ekstensi Safari"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Fai clic sul pulsante qui sotto per aprire le impostazioni delle estensioni di Safari"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "下のボタンをクリックして Safari の機能拡張設定を開きます"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "아래 버튼을 클릭해 Safari 확장 기능 설정을 여세요"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klikk på knappen nedenfor for å åpne Safari-utvidelsesinnstillinger"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klik op de knop hieronder om de Safari-extensie-instellingen te openen"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kliknij poniższy przycisk, aby otworzyć ustawienia rozszerzeń Safari"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "د Safari د غځونکو تنظیماتو پرانیستلو لپاره لاندې تڼۍ کېکاږئ"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Clique no botão abaixo para abrir os ajustes de extensões do Safari"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Apasă butonul de mai jos pentru a deschide setările extensiilor Safari"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Нажмите кнопку ниже, чтобы открыть настройки расширений Safari"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kliknutím na tlačidlo nižšie otvoríte nastavenia rozšírení Safari"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klicka på knappen nedan för att öppna Safari-tilläggsinställningarna"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "คลิกปุ่มด้านล่างเพื่อเปิดการตั้งค่าส่วนขยาย Safari"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari uzantı ayarlarını açmak için aşağıdaki düğmeye tıklayın"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Натисніть кнопку нижче, щоб відкрити налаштування розширень Safari"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari ایکسٹینشن ترتیبات کھولنے کے لیے نیچے والا بٹن دبائیں"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nhấn nút bên dưới để mở cài đặt tiện ích Safari"
           }
         }
       }
@@ -113,6 +905,204 @@
             "state": "translated",
             "value": "在列表裡勾選 No Lazyload"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "شغّل No Lazyload في القائمة"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Включете No Lazyload в списъка"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Activa No Lazyload a la llista"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Povolte No Lazyload v seznamu"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Slå No Lazyload til på listen"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Aktiviere No Lazyload in der Liste"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ενεργοποίησε το No Lazyload στη λίστα"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Activa No Lazyload en la lista"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload را در فهرست روشن کنید"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ota No Lazyload käyttöön luettelossa"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Activez No Lazyload dans la liste"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "הפעל את No Lazyload ברשימה"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सूची में No Lazyload चालू करें"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Uključite No Lazyload na popisu"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kapcsold be a No Lazyloadot a listában"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Aktifkan No Lazyload dalam daftar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Attiva No Lazyload nell’elenco"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "一覧で No Lazyload をオンにします"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "목록에서 No Lazyload를 켜세요"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Slå på No Lazyload i listen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Schakel No Lazyload in de lijst in"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Włącz No Lazyload na liście"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "په لیست کې No Lazyload وچولوئ"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ative o No Lazyload na lista"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Activează No Lazyload în listă"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Включите No Lazyload в списке"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Povoľte No Lazyload v zozname"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Aktivera No Lazyload i listan"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "เปิด No Lazyload ในรายการ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Listede No Lazyload’ı açın"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Увімкніть No Lazyload у списку"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "فہرست میں No Lazyload آن کریں"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bật No Lazyload trong danh sách"
+          }
         }
       }
     },
@@ -135,6 +1125,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "回到 Safari，工具列上就會出現按鈕"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "عند العودة إلى Safari سيظهر الزر في شريط الأدوات"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Щом се върнете в Safari, бутонът ще се появи в лентата с инструменти"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "En tornar al Safari, el botó apareix a la barra d’eines"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Po návratu do Safari se tlačítko objeví na panelu nástrojů"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tilbage i Safari vises knappen i værktøjslinjen"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Zurück in Safari erscheint die Schaltfläche in der Symbolleiste"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Επιστρέφοντας στο Safari, το κουμπί εμφανίζεται στη γραμμή εργαλείων"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Al volver a Safari, el botón aparece en la barra de herramientas"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "با بازگشت به Safari، دکمه در نوار ابزار ظاهر می‌شود"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kun palaat Safariin, painike näkyy työkalupalkissa"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "De retour dans Safari, le bouton apparaît dans la barre d’outils"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "בחזרה ל-Safari, הכפתור יופיע בסרגל הכלים"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari में लौटने पर टूलबार पर बटन दिखाई देगा"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kad se vratite u Safari, gumb će se pojaviti na alatnoj traci"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "A Safariba visszatérve megjelenik a gomb az eszköztáron"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Setelah kembali ke Safari, tombol akan muncul di bilah alat"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tornando in Safari, il pulsante compare nella barra degli strumenti"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari に戻ると、ツールバーにボタンが表示されます"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari로 돌아오면 도구 막대에 버튼이 나타납니다"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tilbake i Safari vises knappen i verktøylinjen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Terug in Safari verschijnt de knop in de werkbalk"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Po powrocie do Safari przycisk pojawi się na pasku narzędzi"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari ته په ستنېدو، تڼۍ به په وسیله پټه ښکاره شي"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "De volta ao Safari, o botão aparece na barra de ferramentas"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "În Safari, butonul va apărea în bara de instrumente"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Вернувшись в Safari, вы увидите кнопку на панели инструментов"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Po návrate do Safari sa tlačidlo zobrazí na paneli nástrojov"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tillbaka i Safari visas knappen i verktygsfältet"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "เมื่อกลับไปที่ Safari ปุ่มจะปรากฏบนแถบเครื่องมือ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari’ye döndüğünüzde düğme araç çubuğunda görünür"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Повернувшись у Safari, ви побачите кнопку на панелі інструментів"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari میں واپس آنے پر بٹن ٹول بار پر ظاہر ہوگا"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Quay lại Safari, nút sẽ xuất hiện trên thanh công cụ"
           }
         }
       }
@@ -159,6 +1347,204 @@
             "state": "translated",
             "value": "啟用步驟"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "كيف تمكّنها"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Как да го разрешите"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Com activar-la"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Jak ji povolit"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sådan aktiverer du den"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "So aktivierst du sie"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Πώς να το ενεργοποιήσεις"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Para activarla"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "روش فعال‌سازی"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Näin otat sen käyttöön"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pour l’activer"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "איך מפעילים"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इसे कैसे सक्षम करें"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kako ga omogućiti"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Az engedélyezés lépései"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cara mengaktifkan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Per abilitarla"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "有効にする手順"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "활성화 방법"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Slik aktiverer du den"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Zo schakel je hem in"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Jak ją włączyć"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "څنګه یې فعال کړو"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Para ativá-la"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cum o activezi"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Как включить"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ako ju povoliť"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Så aktiverar du det"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "วิธีเปิดใช้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nasıl etkinleştirilir"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Як увімкнути"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "اسے کیسے فعال کریں"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cách bật"
+          }
         }
       }
     },
@@ -181,6 +1567,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "未啟用"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "غير ممكّنة"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Не е разрешено"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No activada"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nepovoleno"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ikke aktiveret"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nicht aktiviert"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Μη ενεργή"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No activada"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "فعال نشده"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ei käytössä"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Non activée"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "לא מופעל"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "सक्षम नहीं"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nije omogućeno"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nincs engedélyezve"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tidak aktif"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Non abilitata"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "未設定"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "활성화되지 않음"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ikke aktivert"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Niet ingeschakeld"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nie włączono"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "فعال نه دی"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Não ativada"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Neactivată"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Не включено"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nepovolené"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Inte aktiverat"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ยังไม่เปิดใช้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Etkin değil"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Не ввімкнено"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "فعال نہیں"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Chưa bật"
           }
         }
       }
@@ -205,6 +1789,204 @@
             "state": "translated",
             "value": "已啟用"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مفعّل"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Активирано"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Habilitat"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Povoleno"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktiveret"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktiviert"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ενεργοποιημένο"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activado"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فعال"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Käytössä"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activé"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "מופעל"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सक्षम"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Omogućeno"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Engedélyezve"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktif"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attivo"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "有効"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "활성화됨"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktivert"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingeschakeld"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Włączone"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فعال"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ativado"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activat"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включено"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Povolené"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktiverad"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เปิดใช้งาน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Etkin"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Увімкнено"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فعال"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã bật"
+          }
         }
       }
     },
@@ -227,6 +2009,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "No Lazyload 已就緒。"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload جاهز."
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload е готов."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload està a punt."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload je připraven."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload er klar."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload ist bereit."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Το No Lazyload είναι έτοιμο."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload está listo."
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload آماده است."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload on valmis."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload est prêt."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload מוכן."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload तैयार है।"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload je spreman."
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "A No Lazyload készen áll."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload siap digunakan."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload è pronto."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload の準備ができました。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload를 사용할 준비가 되었습니다."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload er klar."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload is klaar."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload jest gotowe."
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload چمتو دی."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "O No Lazyload está pronto."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload este pregătit."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload готов к работе."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload je pripravený."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload är redo."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload พร้อมใช้งาน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload hazır."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload готовий до роботи."
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload تیار ہے۔"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No Lazyload đã sẵn sàng."
           }
         }
       }
@@ -251,6 +2231,204 @@
             "state": "translated",
             "value": "狀態無法取得"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "الحالة غير متاحة"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Състоянието не е налично"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Estat no disponible"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Stav není k dispozici"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Status ikke tilgængelig"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Status nicht verfügbar"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Η κατάσταση δεν είναι διαθέσιμη"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Estado no disponible"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "وضعیت در دسترس نیست"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tila ei saatavilla"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "État indisponible"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "הסטטוס אינו זמין"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "स्थिति उपलब्ध नहीं"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Status nije dostupan"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Az állapot nem érhető el"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Status tidak tersedia"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Stato non disponibile"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "状態を取得できません"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "상태를 확인할 수 없음"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Status utilgjengelig"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Status niet beschikbaar"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Stan niedostępny"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "حالت شتون نلري"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Status indisponível"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Stare indisponibilă"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Состояние недоступно"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Stav nie je k dispozícii"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Status ej tillgänglig"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ไม่สามารถดูสถานะได้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Durum kullanılamıyor"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Стан недоступний"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "حالت دستیاب نہیں"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Không có trạng thái"
+          }
         }
       }
     },
@@ -273,6 +2451,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "無法讀取 Safari 擴充功能狀態。請開啟 Safari 設定檢查。"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "تعذّر قراءة حالة إضافة Safari. افتح إعدادات Safari للتحقق."
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Състоянието на разширението на Safari не можа да бъде прочетено. Проверете в настройките на Safari."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No s’ha pogut llegir l’estat de l’extensió del Safari. Comprova-ho a la configuració del Safari."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Stav rozšíření Safari se nepodařilo načíst. Zkontrolujte jej v nastavení Safari."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kunne ikke læse Safari-udvidelsens status. Åbn Safari-indstillingerne for at kontrollere."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Der Status der Safari-Erweiterung konnte nicht gelesen werden. Öffne die Safari-Einstellungen, um ihn zu prüfen."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Δεν ήταν δυνατή η ανάγνωση της κατάστασης της επέκτασης Safari. Έλεγξέ την στις ρυθμίσεις του Safari."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No se pudo leer el estado de la extensión de Safari. Abre los ajustes de Safari para comprobarlo."
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "وضعیت افزونه Safari خوانده نشد. برای بررسی، تنظیمات Safari را باز کنید."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari-laajennuksen tilaa ei voitu lukea. Tarkista se avaamalla Safarin asetukset."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Impossible de lire l’état de l’extension Safari. Ouvrez les réglages de Safari pour le vérifier."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "לא ניתן לקרוא את סטטוס התוסף של Safari. בדוק בהגדרות Safari."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari एक्सटेंशन की स्थिति पढ़ी नहीं जा सकी। जाँचने के लिए Safari सेटिंग खोलें।"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nije bilo moguće pročitati status proširenja Safarija. Provjerite u postavkama Safarija."
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nem sikerült beolvasni a Safari bővítmény állapotát. Ellenőrizd a Safari beállításaiban."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tidak dapat membaca status ekstensi Safari. Periksa di pengaturan Safari."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Impossibile leggere lo stato dell’estensione Safari. Apri le impostazioni di Safari per verificarlo."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari 機能拡張の状態を読み取れませんでした。Safari の設定で確認してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari 확장 기능 상태를 읽을 수 없습니다. Safari 설정에서 확인하세요."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kunne ikke lese statusen til Safari-utvidelsen. Åpne Safari-innstillingene for å sjekke."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "De status van de Safari-extensie kon niet worden gelezen. Open de Safari-instellingen om het te controleren."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nie udało się odczytać stanu rozszerzenia Safari. Otwórz ustawienia Safari, aby to sprawdzić."
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "د Safari د غځونکي حالت ونه لوستل شو. د کتنې لپاره د Safari تنظیمات پرانیستل."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Não foi possível ler o status da extensão do Safari. Abra os ajustes do Safari para verificar."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Starea extensiei Safari nu a putut fi citită. Deschide setările Safari pentru a o verifica."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Не удалось прочитать состояние расширения Safari. Проверьте в настройках Safari."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Stav rozšírenia Safari sa nepodarilo načítať. Skontrolujte ho v nastaveniach Safari."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kunde inte läsa Safari-tilläggets status. Öppna Safari-inställningarna för att kontrollera."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "อ่านสถานะส่วนขยาย Safari ไม่ได้ กรุณาตรวจสอบในการตั้งค่า Safari"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari uzantısının durumu okunamadı. Kontrol etmek için Safari ayarlarını açın."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Не вдалося прочитати стан розширення Safari. Перевірте в налаштуваннях Safari."
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari ایکسٹینشن کی حالت پڑھی نہیں جا سکی۔ جانچنے کے لیے Safari ترتیبات کھولیں۔"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Không đọc được trạng thái tiện ích Safari. Hãy kiểm tra trong cài đặt Safari."
           }
         }
       }
@@ -297,6 +2673,204 @@
             "state": "translated",
             "value": "使用方式"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "طريقة الاستخدام"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Как се използва"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Com es fa servir"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Použití"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sådan bruges den"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Verwendung"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Χρήση"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cómo se usa"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "روش استفاده"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Käyttö"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Utilisation"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "אופן השימוש"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "इस्तेमाल कैसे करें"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kako koristiti"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Használat"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cara pakai"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Come si usa"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "使い方"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "사용 방법"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Slik bruker du den"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Gebruik"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Jak używać"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "د کارولو ډول"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Como usar"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Utilizare"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Как пользоваться"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Použitie"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Användning"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "วิธีใช้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nasıl kullanılır"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Як користуватися"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "استعمال کا طریقہ"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cách dùng"
+          }
         }
       }
     },
@@ -319,6 +2893,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "自動捲動頁面到底部觸發載入。只在標準模式沒效果時使用"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "يمرّر الصفحة إلى الأسفل لبدء التحميل. استخدمه فقط إذا لم يعمل الوضع القياسي"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Превърта страницата до дъното, което задейства зареждането. Използвайте го само ако стандартният режим не работи"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Desplaça la pàgina fins avall per activar la càrrega. Fes-lo servir només si el mode Estàndard no funciona"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Posune stránku dolů a tím spustí načítání. Použijte jen tehdy, když standardní režim nefunguje"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ruller siden til bunden for at udløse indlæsning. Brug kun, hvis standardtilstanden ikke virker"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Scrollt die Seite nach unten, um das Laden auszulösen. Nur verwenden, wenn der Standardmodus nicht funktioniert"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Κυλά τη σελίδα στο κάτω μέρος για να ξεκινήσει η φόρτωση. Χρησιμοποίησέ το μόνο αν η τυπική λειτουργία δεν δουλεύει"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Desplaza la página hasta abajo para activar la carga. Úsalo solo si el modo Estándar no funciona"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "صفحه را تا پایین می‌لغزاند تا بارگذاری آغاز شود. فقط وقتی حالت استاندارد کار نکرد استفاده کنید"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vierittää sivun alas, mikä käynnistää latauksen. Käytä vain, jos vakiomuoto ei toimi"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Fait défiler la page jusqu’en bas pour déclencher le chargement. À n’utiliser que si le mode Standard ne fonctionne pas"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "גולל את העמוד עד למטה כדי להפעיל טעינה. השתמש בזה רק אם המצב הרגיל לא עובד"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लोडिंग शुरू करने के लिए पेज को नीचे तक स्क्रॉल करता है। सिर्फ़ तब इस्तेमाल करें जब मानक मोड काम न करे"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pomiče stranicu do dna i time pokreće učitavanje. Koristite samo ako standardni način ne radi"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Az oldal aljára lapoz, ezzel elindítja a betöltést. Csak akkor használd, ha a normál mód nem működik"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Menggulir halaman ke bawah untuk memicu pemuatan. Pakai hanya jika mode Standar tidak berhasil"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Scorre la pagina fino in fondo per attivare il caricamento. Usalo solo se la modalità Standard non funziona"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ページを最下部までスクロールして読み込みを促します。標準モードで効果がない場合のみ使ってください"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "페이지를 아래 끝까지 스크롤해 불러오기를 유도합니다. 표준 모드가 효과 없을 때만 사용하세요"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ruller siden til bunnen for å utløse lasting. Bruk bare hvis standardmodusen ikke virker"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Scrolt de pagina naar beneden om het laden te activeren. Gebruik dit alleen als de standaardmodus niet werkt"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Przewija stronę na dół, aby wyzwolić wczytywanie. Używaj tylko wtedy, gdy tryb standardowy nie działa"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "د بارولو د پیل لپاره پاڼه تر ښکته سکرولوي. یوازې هغه وخت وکاروئ چې معیاري حالت کار ونکړي"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Rola a página até o fim para disparar o carregamento. Use apenas se o modo Padrão não funcionar"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Derulează pagina până jos pentru a declanșa încărcarea. Folosește-o doar dacă modul Standard nu funcționează"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Прокручивает страницу до низа, вызывая загрузку. Используйте только если стандартный режим не помогает"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Posunie stránku nadol a spustí načítavanie. Použite len vtedy, keď štandardný režim nefunguje"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Rullar sidan till botten för att utlösa laddning. Använd bara om standardläget inte fungerar"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "เลื่อนหน้าไปล่างสุดเพื่อกระตุ้นการโหลด ใช้เฉพาะเมื่อโหมดมาตรฐานไม่ได้ผล"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Yüklemeyi tetiklemek için sayfayı en alta kaydırır. Yalnızca Standart mod işe yaramazsa kullanın"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Прокручує сторінку донизу, що запускає завантаження. Використовуйте лише якщо стандартний режим не працює"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "لوڈنگ شروع کرنے کے لیے صفحہ کو نیچے تک سکرول کرتا ہے۔ صرف اُس وقت استعمال کریں جب معیاری موڈ کام نہ کرے"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cuộn trang xuống cuối để kích hoạt tải. Chỉ dùng khi chế độ Tiêu chuẩn không hiệu quả"
           }
         }
       }
@@ -343,6 +3115,204 @@
             "state": "translated",
             "value": "相容模式"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التوافق"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Съвместимост"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compatibilitat"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompatibilita"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompatibilitet"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompatibilität"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Συμβατότητα"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compatibilidad"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سازگاری"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yhteensopivuus"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compatibilité"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "תאימות"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अनुकूलता"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompatibilnost"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompatibilitás"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompatibilitas"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compatibilità"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "互換モード"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "호환 모드"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompatibilitet"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compatibiliteit"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zgodność"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مطابقت"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compatibilidade"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compatibilitate"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Совместимость"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompatibilita"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kompatibilitet"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ความเข้ากันได้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uyumluluk"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сумісність"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مطابقت"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tương thích"
+          }
         }
       }
     },
@@ -365,6 +3335,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "直接攔截延遲載入。預設方式，絕大多數網站用這個"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "يمنع التحميل الكسول مباشرة. الوضع الافتراضي، يعمل في معظم المواقع"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Блокира директно отложеното зареждане. Режимът по подразбиране, работи в повечето сайтове"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bloqueja directament la càrrega diferida. És el mode per defecte i funciona a la majoria de llocs"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Přímo blokuje líné načítání. Výchozí režim, funguje na většině webů"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Blokerer lazy loading direkte. Standardtilstanden, virker på de fleste websteder"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Blockiert Lazy Loading direkt. Der Standard, funktioniert auf den meisten Websites"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Αποκλείει απευθείας τη νωχελική φόρτωση. Η προεπιλογή, δουλεύει στους περισσότερους ιστότοπους"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bloquea directamente la carga diferida. Es el modo predeterminado y funciona en la mayoría de los sitios"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "بارگذاری تنبل را مستقیم مسدود می‌کند. حالت پیش‌فرض، در بیشتر سایت‌ها کار می‌کند"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Estää lazy loadingin suoraan. Oletusasetus, toimii useimmilla sivustoilla"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bloque directement le chargement différé. Le mode par défaut, efficace sur la plupart des sites"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "חוסם טעינה עצלה ישירות. מצב ברירת המחדל, עובד ברוב האתרים"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "लेज़ी लोडिंग को सीधे रोकता है। डिफ़ॉल्ट मोड, ज़्यादातर साइटों पर काम करता है"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Izravno blokira lijeno učitavanje. Zadani način, radi na većini web-mjesta"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Közvetlenül blokkolja a lusta betöltést. Az alapértelmezett mód, a legtöbb oldalon működik"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Memblokir lazy loading secara langsung. Mode bawaan, berhasil di sebagian besar situs"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Blocca direttamente il lazy loading. È la modalità predefinita e funziona sulla maggior parte dei siti"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "遅延読み込みを直接ブロックします。既定のモードで、ほとんどのサイトで効果があります"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "지연 로딩을 직접 차단합니다. 기본 모드이며 대부분의 사이트에서 작동합니다"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Blokkerer lazy loading direkte. Standardmodusen, virker på de fleste nettsteder"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Blokkeert lazy loading direct. De standaardmodus, werkt op de meeste websites"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Blokuje leniwe wczytywanie bezpośrednio. Domyślny tryb, działa w większości witryn"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "سست بارول مستقیم بندوي. تلوالی حالت، په ډېرو وېبپاڼو کار کوي"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bloqueia diretamente o carregamento lento. É o padrão e funciona na maioria dos sites"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Blochează direct încărcarea lentă. Modul implicit, funcționează pe majoritatea site-urilor"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Напрямую блокирует ленивую загрузку. Режим по умолчанию, работает на большинстве сайтов"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Priamo blokuje lenivé načítavanie. Predvolený režim, funguje na väčšine webov"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Blockerar lazy loading direkt. Standardläget, fungerar på de flesta webbplatser"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "บล็อกการโหลดแบบเลื่อนเวลาโดยตรง เป็นโหมดเริ่มต้นและได้ผลกับเว็บไซต์ส่วนใหญ่"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tembel yüklemeyi doğrudan engeller. Varsayılan mod, çoğu sitede çalışır"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Напряму блокує ліниве завантаження. Режим за замовчуванням, працює на більшості сайтів"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "سست لوڈنگ کو براہِ راست روکتا ہے۔ طے شدہ موڈ، زیادہ تر سائٹس پر کام کرتا ہے"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Chặn trực tiếp việc tải chậm. Chế độ mặc định, hiệu quả với hầu hết trang web"
           }
         }
       }
@@ -389,6 +3557,204 @@
             "state": "translated",
             "value": "標準模式"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قياسي"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стандартен"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estàndard"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standardní"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Τυπική"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estándar"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "استاندارد"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vakio"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "רגיל"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मानक"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standardno"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Normál"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "標準"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "표준"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standaard"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standardowy"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "معیاري"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padrão"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стандартный"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Štandardný"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "มาตรฐาน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standart"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стандартний"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "معیاری"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tiêu chuẩn"
+          }
         }
       }
     },
@@ -411,6 +3777,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "兩種模式"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "وضعان"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Два режима"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Dos modes"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Dva režimy"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "To tilstande"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Zwei Modi"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Δύο λειτουργίες"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Dos modos"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "دو حالت"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kaksi tilaa"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Deux modes"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "שני מצבים"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "दो मोड"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Dva načina"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Két mód"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Dua mode"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Due modalità"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "2 つのモード"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "두 가지 모드"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "To moduser"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Twee modi"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Dwa tryby"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "دوه حالتونه"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Dois modos"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Două moduri"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Два режима"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Dva režimy"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Två lägen"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "สองโหมด"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "İki mod"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Два режими"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "دو موڈ"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Hai chế độ"
           }
         }
       }
@@ -435,6 +3999,204 @@
             "state": "translated",
             "value": "開啟 Safari 設定"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "فتح إعدادات Safari"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Отвори настройките на Safari"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Obre la configuració del Safari"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otevřít nastavení Safari"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Åbn Safari-indstillinger"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari-Einstellungen öffnen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Άνοιγμα ρυθμίσεων Safari"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Abrir ajustes de Safari"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "باز کردن تنظیمات Safari"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Avaa Safarin asetukset"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ouvrir les réglages de Safari"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "פתח הגדרות Safari"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari सेटिंग खोलें"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otvori postavke Safarija"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari beállítások megnyitása"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Buka pengaturan Safari"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Apri impostazioni Safari"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari の設定を開く"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari 설정 열기"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Åpne Safari-innstillinger"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari-instellingen openen"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otwórz ustawienia Safari"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "د Safari تنظیمات پرانیستل"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Abrir ajustes do Safari"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Deschide setările Safari"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Открыть настройки Safari"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otvoriť nastavenia Safari"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Öppna Safari-inställningar"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "เปิดการตั้งค่า Safari"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari ayarlarını aç"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Відкрити налаштування Safari"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari ترتیبات کھولیں"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Mở cài đặt Safari"
+          }
         }
       }
     },
@@ -457,6 +4219,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "No Lazyload 只作用於你啟用的網站，其它網站不做任何改動"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يعمل No Lazyload فقط على المواقع التي تفعّلها، ولا يمس أي موقع آخر."
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload действа само върху сайтовете, които активирате. Останалите сайтове остават незасегнати."
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload només actua als llocs web que activeu. La resta de llocs web no es modifiquen."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload působí pouze na stránky, které povolíte. Ostatní stránky zůstávají nedotčené."
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload virker kun på de hjemmesider, du aktiverer. Andre hjemmesider berøres ikke."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload wirkt nur auf Websites, die du aktivierst. Andere Websites bleiben unberührt."
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Το No Lazyload ενεργεί μόνο στους ιστότοπους που ενεργοποιείτε. Οι υπόλοιποι ιστότοποι δεν επηρεάζονται."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload solo actúa en los sitios web que actives. Los demás sitios web no se modifican."
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload فقط روی سایت‌هایی که فعال می‌کنید عمل می‌کند. سایر سایت‌ها دست‌نخورده می‌مانند."
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload vaikuttaa vain sivustoihin, jotka otat käyttöön. Muut sivustot jäävät ennalleen."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload n'agit que sur les sites web que vous activez. Les autres sites web ne sont pas modifiés."
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload פועל רק באתרים שאתם מפעילים. שאר האתרים נשארים ללא שינוי."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload केवल उन वेबसाइटों पर कार्य करता है जिन्हें आप सक्षम करते हैं। अन्य वेबसाइटें अछूती रहती हैं।"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload djeluje samo na stranice koje omogućite. Ostale stranice ostaju netaknute."
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A No Lazyload csak az Ön által engedélyezett webhelyeken működik. Más webhelyeket nem érint."
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload hanya bertindak di situs web yang Anda aktifkan. Situs web lain tidak tersentuh."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload agisce solo sui siti web che attivi. Gli altri siti web non vengono modificati."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload は有効にした Web サイトでのみ動作します。その他の Web サイトには何も影響しません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload는 사용자가 활성화한 사이트에만 적용됩니다. 다른 사이트는 변경되지 않습니다."
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload virker bare på nettstedene du aktiverer. Andre nettsteder berøres ikke."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload werkt alleen op de websites die u inschakelt. Andere websites blijven onaangetast."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload działa tylko na stronach, które włączysz. Pozostałe strony nie są zmieniane."
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload یوازې په هغو سایټونو عمل کوي چې تاسو یې فعالوئ. نور سایټونه بې بدلونه پاتې کیږي."
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O No Lazyload atua apenas nos sites que você ativar. Os outros sites não são alterados."
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload acționează doar asupra site-urilor pe care le activați. Celelalte site-uri rămân neatinse."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload работает только на сайтах, которые вы включили. Остальные сайты не затрагиваются."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload pôsobí iba na stránky, ktoré povolíte. Ostatné stránky zostávajú nedotknuté."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload agerar endast på de webbplatser du aktiverar. Andra webbplatser påverkas inte."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload ทำงานเฉพาะกับเว็บไซต์ที่คุณเปิดใช้งานเท่านั้น เว็บไซต์อื่นไม่ถูกแตะต้อง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload yalnızca etkinleştirdiğiniz web sitelerinde çalışır. Diğer web sitelerine dokunulmaz."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload діє лише на сайтах, які ви увімкнули. Інші сайти не змінюються."
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload صرف ان سائٹس پر عمل کرتا ہے جو آپ فعال کرتے ہیں۔ باقی سائٹس میں کوئی تبدیلی نہیں کی جاتی۔"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload chỉ tác động đến những trang web bạn bật. Các trang web khác không bị ảnh hưởng."
           }
         }
       }
@@ -481,6 +4441,204 @@
             "state": "translated",
             "value": "Safari 擴充功能"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "إضافة Safari"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Разширение за Safari"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Extensió del Safari"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Rozšíření Safari"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari-udvidelse"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari-Erweiterung"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Επέκταση Safari"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Extensión de Safari"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "افزونه Safari"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari-laajennus"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Extension Safari"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "תוסף Safari"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari एक्सटेंशन"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Proširenje Safarija"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari bővítmény"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ekstensi Safari"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Estensione Safari"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari 機能拡張"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari 확장 기능"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari-utvidelse"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari-extensie"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Rozszerzenie Safari"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "د Safari غځونکی"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Extensão do Safari"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Extensie Safari"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Расширение Safari"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Rozšírenie Safari"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari-tillägg"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ส่วนขยาย Safari"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari Uzantısı"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Розширення Safari"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari ایکسٹینشن"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tiện ích Safari"
+          }
         }
       }
     },
@@ -503,6 +4661,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "點一下「加入目前網站」，圖片會立即全部載入"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "اضغط «إضافة الموقع الحالي» — ستُحمَّل الصور فورًا"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Натиснете „Добавяне на текущия сайт“ — изображенията се зареждат веднага"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Fes clic a «Afegeix el lloc actual»: les imatges es carreguen a l’instant"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klikněte na „Přidat aktuální stránku“ – obrázky se načtou okamžitě"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klik på “Tilføj aktuel hjemmeside” – billederne indlæses med det samme"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klicke auf „Aktuelle Seite Hinzufügen“ – die Bilder werden sofort geladen"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Πάτησε «Προσθήκη τρέχοντος ιστότοπου» — οι εικόνες φορτώνουν αμέσως"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Haz clic en «Agregar Sitio Actual»: las imágenes se cargan al instante"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "روی «افزودن سایت فعلی» کلیک کنید — تصاویر بی‌درنگ بارگذاری می‌شوند"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Napsauta ”Lisää nykyinen sivusto” – kuvat latautuvat heti"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cliquez sur « Ajouter le Site Actuel » — les images se chargent immédiatement"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "לחץ על ״הוסף את האתר הנוכחי״ — התמונות ייטענו מיד"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "“वर्तमान साइट जोड़ें” दबाएँ — छवियाँ तुरंत लोड हो जाएँगी"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kliknite „Dodaj trenutnu stranicu” — slike se učitavaju odmah"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kattints a(z) „Jelenlegi oldal hozzáadása” gombra – a képek azonnal betöltődnek"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klik “Tambah Situs Saat Ini” — gambar langsung dimuat"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Fai clic su «Aggiungi sito corrente»: le immagini si caricano subito"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "「現在のサイトを追加」をクリックすると、画像がすぐに読み込まれます"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "‘현재 사이트 추가’를 클릭하면 이미지가 곧바로 불러와집니다"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klikk på «Legg til gjeldende nettsted» – bildene lastes med en gang"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klik op ‘Huidige site toevoegen’ — de afbeeldingen worden meteen geladen"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kliknij „Dodaj bieżącą stronę” — obrazy wczytają się od razu"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "«اوسنی سایټ زیات کړئ» کېکاږئ — انځورونه سمدلاسه بار شي"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Clique em «Adicionar Site Atual» — as imagens carregam na hora"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Apasă „Adaugă site-ul curent” — imaginile se încarcă imediat"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Нажмите «Добавить Текущий Сайт» — изображения загрузятся сразу"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kliknite na „Pridať aktuálnu stránku“ – obrázky sa načítajú okamžite"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klicka på ”Lägg till aktuell webbplats” – bilderna laddas direkt"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "คลิก “เพิ่มเว็บไซต์ปัจจุบัน” — รูปภาพจะโหลดทันที"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "«Geçerli Siteyi Ekle» düğmesine tıklayın — görseller anında yüklenir"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Натисніть «Додати поточний сайт» — зображення завантажаться одразу"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "«موجودہ سائٹ شامل کریں» دبائیں — تصاویر فوراً لوڈ ہو جائیں گی"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nhấn “Thêm trang hiện tại” — hình ảnh tải ngay lập tức"
           }
         }
       }
@@ -527,6 +4883,204 @@
             "state": "translated",
             "value": "點一下 No Lazyload 工具列按鈕"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "اضغط زر No Lazyload في شريط الأدوات"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Натиснете бутона No Lazyload в лентата с инструменти"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Fes clic al botó No Lazyload de la barra d’eines"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klikněte na tlačítko No Lazyload na panelu nástrojů"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klik på No Lazyload-knappen i værktøjslinjen"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klicke auf die No Lazyload-Schaltfläche in der Symbolleiste"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Πάτησε το κουμπί No Lazyload στη γραμμή εργαλείων"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Haz clic en el botón No Lazyload de la barra de herramientas"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "روی دکمه No Lazyload در نوار ابزار کلیک کنید"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Napsauta työkalupalkin No Lazyload -painiketta"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Cliquez sur le bouton No Lazyload dans la barre d’outils"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "לחץ על כפתור No Lazyload בסרגל הכלים"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "टूलबार पर No Lazyload बटन दबाएँ"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kliknite gumb No Lazyload na alatnoj traci"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kattints a No Lazyload gombra az eszköztáron"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klik tombol No Lazyload di bilah alat"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Fai clic sul pulsante No Lazyload nella barra degli strumenti"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ツールバーの No Lazyload ボタンをクリックします"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "도구 막대의 No Lazyload 버튼을 클릭하세요"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klikk på No Lazyload-knappen i verktøylinjen"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klik op de knop No Lazyload in de werkbalk"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kliknij przycisk No Lazyload na pasku narzędzi"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "په وسیله پټه کې No Lazyload تڼۍ کېکاږئ"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Clique no botão No Lazyload na barra de ferramentas"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Apasă butonul No Lazyload din bara de instrumente"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Нажмите кнопку No Lazyload на панели инструментов"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kliknite na tlačidlo No Lazyload na paneli nástrojov"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Klicka på No Lazyload-knappen i verktygsfältet"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "คลิกปุ่ม No Lazyload บนแถบเครื่องมือ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Araç çubuğundaki No Lazyload düğmesine tıklayın"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Натисніть кнопку No Lazyload на панелі інструментів"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ٹول بار پر No Lazyload بٹن دبائیں"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nhấn nút No Lazyload trên thanh công cụ"
+          }
         }
       }
     },
@@ -549,6 +5103,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "在 Safari 中開啟一個網站"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "افتح موقعًا في Safari"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Отворете сайт в Safari"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Obre un lloc web al Safari"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otevřete web v Safari"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Åbn et websted i Safari"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Öffne eine Website in Safari"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Άνοιξε έναν ιστότοπο στο Safari"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Abre un sitio web en Safari"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "یک وب‌سایت را در Safari باز کنید"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Avaa sivusto Safarissa"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ouvrez un site dans Safari"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "פתח אתר ב-Safari"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari में कोई वेबसाइट खोलें"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otvorite web-mjesto u Safariju"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nyiss meg egy webhelyet a Safariban"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Buka situs web di Safari"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Apri un sito web in Safari"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari でサイトを開きます"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari에서 웹사이트를 여세요"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Åpne et nettsted i Safari"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Open een website in Safari"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otwórz witrynę w Safari"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "په Safari کې یوه وېبپاڼه پرانیستل"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Abra um site no Safari"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Deschide un site în Safari"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Откройте сайт в Safari"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otvorte web v Safari"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Öppna en webbplats i Safari"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "เปิดเว็บไซต์ใน Safari"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari’de bir web sitesi açın"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Відкрийте сайт у Safari"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari میں کوئی ویب سائٹ کھولیں"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Mở một trang web trong Safari"
           }
         }
       }
@@ -573,6 +5325,204 @@
             "state": "translated",
             "value": "先確認這個網站已在 popup 裡啟用；再試試相容模式；還不行就用 popup 底部的「重新整理頁面」"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "تأكد من تمكين الموقع في النافذة المنبثقة. إن كان ممكّنًا، جرّب وضع التوافق. ما زال لا يعمل؟ استخدم «تحديث الصفحة»"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Проверете дали сайтът е разрешен в изскачащия прозорец. Ако е, опитайте режима за съвместимост. Все още нищо? Използвайте „Презареди страницата“"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Comprova que el lloc estigui activat a la finestra emergent. Si ho està, prova el mode Compatibilitat. Encara res? Fes servir «Actualitza la pàgina»"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Zkontrolujte, zda je web povolený ve vyskakovacím okně. Pokud ano, zkuste režim kompatibility. Stále nic? Použijte „Obnovit stránku“"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kontrollér, at webstedet er aktiveret i pop op-vinduet. Hvis det er, prøv kompatibilitetstilstanden. Stadig intet? Brug “Opdater side”"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Prüfe, ob die Website im Popup aktiviert ist. Wenn ja, probiere den Kompatibilitätsmodus. Immer noch nichts? Nutze „Seite neu laden“"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Έλεγξε ότι ο ιστότοπος είναι ενεργοποιημένος στο αναδυόμενο παράθυρο. Αν είναι, δοκίμασε τη λειτουργία συμβατότητας. Ακόμα τίποτα; Χρησιμοποίησε «Ανανέωση σελίδας»"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Comprueba que el sitio esté activado en la ventana emergente. Si lo está, prueba el modo Compatibilidad. ¿Sigue sin funcionar? Usa «Actualizar página»"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "بررسی کنید که سایت در پنجره بازشو فعال شده باشد. اگر فعال است، حالت سازگاری را امتحان کنید. هنوز نشد؟ از «بازخوانی صفحه» استفاده کنید"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Varmista, että sivusto on otettu käyttöön ponnahdusikkunassa. Jos on, kokeile yhteensopivuustilaa. Eikö vieläkään toimi? Käytä ”Päivitä sivu”"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vérifiez que le site est activé dans la fenêtre contextuelle. Si oui, essayez le mode Compatibilité. Toujours rien ? Utilisez « Actualiser la page »"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ודא שהאתר מופעל בחלון הקופץ. אם כן, נסה את מצב התאימות. עדיין לא? השתמש ב״רענן עמוד״"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "देखें कि साइट पॉपअप में सक्षम है या नहीं। अगर है, तो संगतता मोड आज़माएँ। फिर भी नहीं? “पेज रीफ़्रेश करें” इस्तेमाल करें"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Provjerite je li web-mjesto omogućeno u skočnom prozoru. Ako jest, isprobajte način rada za kompatibilnost. Još uvijek ništa? Upotrijebite „Osvježi stranicu”"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ellenőrizd, hogy az oldal engedélyezve van-e a felugró ablakban. Ha igen, próbáld a kompatibilitási módot. Még mindig semmi? Használd az „Oldal frissítése” lehetőséget"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pastikan situs sudah diaktifkan di popup. Jika sudah, coba mode Kompatibilitas. Masih tidak bisa? Pakai “Muat ulang halaman”"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Verifica che il sito sia abilitato nel popup. Se lo è, prova la modalità Compatibilità. Ancora niente? Usa «Aggiorna pagina»"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ポップアップでこのサイトが有効になっているか確認してください。有効なら互換モードを試してください。それでもだめなら「ページを再読み込み」を使ってください"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "팝업에서 이 사이트가 활성화되어 있는지 확인하세요. 활성화되어 있다면 호환 모드를 시도하세요. 그래도 안 되면 ‘페이지 새로 고침’을 사용하세요"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sjekk at nettstedet er aktivert i popup-vinduet. Hvis det er det, prøv kompatibilitetsmodusen. Fortsatt ingenting? Bruk «Oppdater siden»"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Controleer of de website in de pop-up is ingeschakeld. Zo ja, probeer de compatibiliteitsmodus. Nog steeds niets? Gebruik ‘Pagina vernieuwen’"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sprawdź, czy witryna jest włączona w oknie podręcznym. Jeśli tak, wypróbuj tryb zgodności. Nadal nic? Użyj „Odśwież stronę”"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "وګورئ چې وېبپاڼه په پاپ اپ کې فعاله ده که نه. که فعاله وي، مطابقت حالت وآزموئ. لا هم نه؟ «پاڼه تازه کړئ» وکاروئ"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Confirme que o site está ativado na janela pop-up. Se estiver, experimente o modo Compatibilidade. Ainda nada? Use «Atualizar página»"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Verifică dacă site-ul este activat în fereastra pop-up. Dacă da, încearcă modul Compatibilitate. Tot nimic? Folosește „Reîmprospătează pagina”"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Проверьте, включён ли сайт во всплывающем окне. Если да, попробуйте режим совместимости. Всё ещё ничего? Используйте «Обновить страницу»"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Skontrolujte, či je web povolený vo vyskakovacom okne. Ak áno, vyskúšajte režim kompatibility. Stále nič? Použite „Obnoviť stránku“"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kontrollera att webbplatsen är aktiverad i popup-fönstret. Om den är det, prova kompatibilitetsläget. Fortfarande inget? Använd ”Uppdatera sidan”"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ตรวจสอบว่าเว็บไซต์เปิดใช้ในป๊อปอัปแล้วหรือยัง ถ้าเปิดแล้วให้ลองโหมดเข้ากันได้ ยังไม่ได้ผลใช่ไหม ใช้ “โหลดหน้าใหม่”"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sitenin açılır pencerede etkinleştirildiğinden emin olun. Etkinse uyumluluk modunu deneyin. Hâlâ olmuyor mu? «Sayfayı yenile» seçeneğini kullanın"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Перевірте, чи сайт увімкнено у спливному вікні. Якщо так, спробуйте режим сумісності. Усе ще нічого? Скористайтеся «Оновити сторінку»"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "دیکھیں کہ سائٹ پاپ اپ میں فعال ہے یا نہیں۔ اگر ہے تو مطابقت موڈ آزمائیں۔ پھر بھی نہیں؟ «صفحہ تازہ کریں» استعمال کریں"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Kiểm tra xem trang web đã được bật trong cửa sổ bật lên chưa. Nếu rồi, thử chế độ Tương thích. Vẫn không được? Dùng “Tải lại trang”"
+          }
         }
       }
     },
@@ -595,6 +5545,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "圖片還是沒載入？"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "الصور لا تُحمَّل بعد؟"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Изображенията все още не се зареждат?"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Les imatges encara no es carreguen?"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Obrázky se stále nenačítají?"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Indlæses billederne stadig ikke?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bilder laden immer noch nicht?"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Οι εικόνες δεν φορτώνουν ακόμα;"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "¿Las imágenes siguen sin cargarse?"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "تصاویر هنوز بارگذاری نمی‌شوند؟"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Eivätkö kuvat vieläkään lataudu?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Les images ne se chargent toujours pas ?"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "התמונות עדיין לא נטענות?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "छवियाँ अब भी लोड नहीं हो रहीं?"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Slike se još uvijek ne učitavaju?"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "A képek még mindig nem töltődnek be?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Gambar masih belum dimuat?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Le immagini non si caricano ancora?"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "画像が読み込まれない？"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "이미지가 계속 안 불러와지나요?"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Lastes ikke bildene fortsatt?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Laden de afbeeldingen nog steeds niet?"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Obrazy nadal się nie wczytują?"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "انځورونه لا هم نه بارېږي؟"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "As imagens ainda não carregam?"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Imaginile tot nu se încarcă?"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Изображения всё ещё не загружаются?"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Obrázky sa stále nenačítavajú?"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Laddas bilderna fortfarande inte?"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "รูปภาพยังไม่โหลด?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Görseller hâlâ yüklenmiyor mu?"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Зображення досі не завантажуються?"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "تصاویر اب بھی لوڈ نہیں ہو رہیں؟"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Hình ảnh vẫn không tải?"
           }
         }
       }
@@ -619,6 +5767,204 @@
             "state": "translated",
             "value": "到 Safari → 設定 → 擴充功能，確認 No Lazyload 已勾選"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "افتح Safari ← الإعدادات ← الإضافات وتأكد من تشغيل No Lazyload"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Отворете Safari → Настройки → Разширения и се уверете, че No Lazyload е включено"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ves a Safari → Configuració → Extensions i assegura’t que No Lazyload estigui activada"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Přejděte do Safari → Nastavení → Rozšíření a ujistěte se, že je No Lazyload povolené"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Gå til Safari → Indstillinger → Udvidelser, og sørg for at No Lazyload er slået til"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Prüfe Safari → Einstellungen → Erweiterungen und stelle sicher, dass No Lazyload aktiviert ist"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Πήγαινε σε Safari → Ρυθμίσεις → Επεκτάσεις και βεβαιώσου ότι το No Lazyload είναι ενεργό"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ve a Safari → Ajustes → Extensiones y asegúrate de que No Lazyload esté activada"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "به Safari ← تنظیمات ← افزونه‌ها بروید و مطمئن شوید No Lazyload روشن است"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tarkista Safari → Asetukset → Laajennukset ja varmista, että No Lazyload on käytössä"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vérifiez Safari → Réglages → Extensions et assurez-vous que No Lazyload est activé"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "עבור אל Safari ← הגדרות ← תוספים וודא ש-No Lazyload מופעל"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari → सेटिंग → एक्सटेंशन में जाकर देखें कि No Lazyload चालू है"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otvorite Safari → Postavke → Proširenja i provjerite je li No Lazyload uključen"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nyisd meg a Safari → Beállítások → Bővítmények menüpontot, és győződj meg róla, hogy a No Lazyload be van kapcsolva"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Buka Safari → Pengaturan → Ekstensi dan pastikan No Lazyload aktif"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vai su Safari → Impostazioni → Estensioni e assicurati che No Lazyload sia attiva"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari → 設定 → 機能拡張 で No Lazyload がオンになっているか確認してください"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari → 설정 → 확장 기능에서 No Lazyload가 켜져 있는지 확인하세요"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Gå til Safari → Innstillinger → Utvidelser og sørg for at No Lazyload er slått på"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ga naar Safari → Instellingen → Extensies en zorg dat No Lazyload is ingeschakeld"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sprawdź Safari → Ustawienia → Rozszerzenia i upewnij się, że No Lazyload jest włączone"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari ← تنظیمات ← غځونکي ته لاړ شئ او ډاډ ترلاسه کړئ چې No Lazyload وچول شوی"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Verifique Safari → Ajustes → Extensões e confirme que o No Lazyload está ativado"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Verifică Safari → Setări → Extensii și asigură-te că No Lazyload este activată"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Откройте Safari → Настройки → Расширения и убедитесь, что No Lazyload включено"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Prejdite do Safari → Nastavenia → Rozšírenia a uistite sa, že je No Lazyload povolené"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Gå till Safari → Inställningar → Tillägg och se till att No Lazyload är aktiverat"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ไปที่ Safari → การตั้งค่า → ส่วนขยาย แล้วตรวจสอบว่าเปิด No Lazyload อยู่"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari → Ayarlar → Uzantılar yolunu izleyin ve No Lazyload’ın açık olduğundan emin olun"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Відкрийте Safari → Налаштування → Розширення та переконайтеся, що No Lazyload увімкнено"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Safari ← ترتیبات ← ایکسٹینشنز میں جا کر یقینی بنائیں کہ No Lazyload آن ہے"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vào Safari → Cài đặt → Tiện ích và đảm bảo No Lazyload đã bật"
+          }
         }
       }
     },
@@ -641,6 +5987,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "工具列上沒有按鈕？"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "لا يوجد زر في شريط الأدوات؟"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Няма бутон в лентата с инструменти?"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "No hi ha botó a la barra d’eines?"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Na panelu nástrojů není tlačítko?"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ingen knap i værktøjslinjen?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Keine Schaltfläche in der Symbolleiste?"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Δεν υπάρχει κουμπί στη γραμμή εργαλείων;"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "¿No aparece el botón en la barra de herramientas?"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "دکمه‌ای در نوار ابزار نیست؟"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Eikö työkalupalkissa ole painiketta?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pas de bouton dans la barre d’outils ?"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "אין כפתור בסרגל הכלים?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "टूलबार पर बटन नहीं है?"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nema gumba na alatnoj traci?"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nincs gomb az eszköztáron?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Tidak ada tombol di bilah alat?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nessun pulsante nella barra degli strumenti?"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ツールバーにボタンがない？"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "도구 막대에 버튼이 없나요?"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ingen knapp i verktøylinjen?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Geen knop in de werkbalk?"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Brak przycisku na pasku narzędzi?"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "په وسیله پټه کې تڼۍ نشته؟"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sem botão na barra de ferramentas?"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nu apare butonul în bara de instrumente?"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "На панели инструментов нет кнопки?"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Na paneli nástrojov nie je tlačidlo?"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ingen knapp i verktygsfältet?"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ไม่มีปุ่มบนแถบเครื่องมือ?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Araç çubuğunda düğme yok mu?"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Немає кнопки на панелі інструментів?"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ٹول بار پر بٹن نہیں ہے؟"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Không thấy nút trên thanh công cụ?"
           }
         }
       }
@@ -665,6 +6209,204 @@
             "state": "translated",
             "value": "開啟 popup，點一下「移除目前網站」"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "افتح النافذة المنبثقة واضغط «إزالة الموقع الحالي»"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Отворете изскачащия прозорец и натиснете „Премахване на текущия сайт“"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Obre la finestra emergent i fes clic a «Elimina el lloc actual»"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otevřete vyskakovací okno a klikněte na „Odebrat aktuální stránku“"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Åbn pop op-vinduet, og klik på “Fjern aktuel hjemmeside”"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Öffne das Popup und klicke auf „Aktuelle Seite Entfernen“"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Άνοιξε το αναδυόμενο παράθυρο και πάτησε «Κατάργηση τρέχοντος ιστότοπου»"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Abre la ventana emergente y haz clic en «Eliminar Sitio Actual»"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "پنجره بازشو را باز کنید و روی «حذف سایت فعلی» کلیک کنید"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Avaa ponnahdusikkuna ja napsauta ”Poista nykyinen sivusto”"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ouvrez la fenêtre contextuelle et cliquez sur « Supprimer le Site Actuel »"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "פתח את החלון הקופץ ולחץ על ״הסר את האתר הנוכחי״"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "पॉपअप खोलें और “वर्तमान साइट हटाएं” दबाएँ"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otvorite skočni prozor i kliknite „Ukloni trenutnu stranicu”"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Nyisd meg a felugró ablakot, és kattints a(z) „Jelenlegi oldal eltávolítása” gombra"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Buka popup dan klik “Hapus Situs Saat Ini”"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Apri il popup e fai clic su «Rimuovi sito corrente»"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ポップアップを開き「現在のサイトを削除」をクリックします"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "팝업을 열고 ‘현재 사이트 제거’를 클릭하세요"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Åpne popup-vinduet og klikk på «Fjern gjeldende nettsted»"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Open de pop-up en klik op ‘Huidige site verwijderen’"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otwórz okno podręczne i kliknij „Usuń bieżącą stronę”"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "پاپ اپ پرانیستل او «اوسنی سایټ لرې کړئ» کېکاږئ"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Abra a janela pop-up e clique em «Remover Site Atual»"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Deschide fereastra pop-up și apasă „Elimină site-ul curent”"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Откройте всплывающее окно и нажмите «Удалить Текущий Сайт»"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Otvorte vyskakovacie okno a kliknite na „Odstrániť aktuálnu stránku“"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Öppna popup-fönstret och klicka på ”Ta bort aktuell webbplats”"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "เปิดป๊อปอัปแล้วคลิก “ลบเว็บไซต์ปัจจุบัน”"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Açılır pencereyi açın ve «Geçerli Siteyi Kaldır» düğmesine tıklayın"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Відкрийте спливне вікно та натисніть «Видалити поточний сайт»"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "پاپ اپ کھولیں اور «موجودہ سائٹ ہٹائیں» دبائیں"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Mở cửa sổ bật lên và nhấn “Xóa trang hiện tại”"
+          }
         }
       }
     },
@@ -687,6 +6429,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "想停用某個網站？"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "تريد إيقاف موقع؟"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Искате да изключите сайт?"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vols desactivar un lloc?"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Chcete web vypnout?"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vil du slå et websted fra?"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Möchtest du eine Website deaktivieren?"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Θέλεις να απενεργοποιήσεις έναν ιστότοπο;"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "¿Quieres desactivar un sitio?"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "می‌خواهید سایتی را خاموش کنید؟"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Haluatko poistaa sivuston käytöstä?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vous voulez désactiver un site ?"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "רוצה לכבות אתר?"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "कोई साइट बंद करनी है?"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Želite isključiti web-mjesto?"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ki szeretnél kapcsolni egy oldalt?"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Ingin menonaktifkan sebuah situs?"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vuoi disattivare un sito?"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "サイトを無効にしたい？"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "사이트를 끄고 싶나요?"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vil du slå av et nettsted?"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Wil je een website uitschakelen?"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Chcesz wyłączyć witrynę?"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "غواړئ یوه وېبپاڼه بنده کړئ؟"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Quer desativar um site?"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vrei să dezactivezi un site?"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Хотите отключить сайт?"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Chcete web vypnúť?"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vill du stänga av en webbplats?"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ต้องการปิดเว็บไซต์หนึ่งแห่ง?"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Bir siteyi kapatmak mı istiyorsunuz?"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Хочете вимкнути сайт?"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "کوئی سائٹ بند کرنی ہے؟"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Muốn tắt một trang web?"
           }
         }
       }
@@ -711,6 +6651,204 @@
             "state": "translated",
             "value": "遇到問題？"
           }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "حل المشكلات"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Отстраняване на проблеми"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Solució de problemes"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Řešení problémů"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Fejlfinding"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Fehlerbehebung"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Αντιμετώπιση προβλημάτων"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Solución de problemas"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "رفع مشکل"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Vianmääritys"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Dépannage"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "פתרון בעיות"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "समस्या निवारण"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Rješavanje problema"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Hibaelhárítás"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Pemecahan masalah"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Risoluzione dei problemi"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "困ったときは"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "문제 해결"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Feilsøking"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Problemen oplossen"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Rozwiązywanie problemów"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "د ستونزو حل"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Solução de problemas"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Depanare"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Решение проблем"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Riešenie problémov"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Felsökning"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "การแก้ปัญหา"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sorun giderme"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Вирішення проблем"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "مسائل کا حل"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Xử lý sự cố"
+          }
         }
       }
     },
@@ -733,6 +6871,204 @@
           "stringUnit": {
             "state": "translated",
             "value": "版本 %@"
+          }
+        },
+        "ar": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "الإصدار %@"
+          }
+        },
+        "bg": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Версия %@"
+          }
+        },
+        "ca": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Versió %@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Verze %@"
+          }
+        },
+        "da": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Version %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Version %@"
+          }
+        },
+        "el": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Έκδοση %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Versión %@"
+          }
+        },
+        "fa": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "نسخه %@"
+          }
+        },
+        "fi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Versio %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Version %@"
+          }
+        },
+        "he": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "גרסה %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "संस्करण %@"
+          }
+        },
+        "hr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Verzija %@"
+          }
+        },
+        "hu": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "%@ verzió"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Versi %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Versione %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "バージョン %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "버전 %@"
+          }
+        },
+        "nb": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Versjon %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Versie %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Wersja %@"
+          }
+        },
+        "ps": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "نسخه %@"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Versão %@"
+          }
+        },
+        "ro": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Versiunea %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Версия %@"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Verzia %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Version %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "เวอร์ชัน %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Sürüm %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Версія %@"
+          }
+        },
+        "ur": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "ورژن %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "needs_review",
+            "value": "Phiên bản %@"
           }
         }
       }
