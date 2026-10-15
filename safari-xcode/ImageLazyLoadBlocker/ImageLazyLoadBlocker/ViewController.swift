@@ -16,7 +16,7 @@ import os.log
 
 class ViewController: NSViewController {
 
-    private let viewModel = HostViewModel.makeDefault()
+    private let viewModel = HostViewModel()
     private var hostingView: NSHostingView<HostRootView>?
 
     override func viewDidLoad() {

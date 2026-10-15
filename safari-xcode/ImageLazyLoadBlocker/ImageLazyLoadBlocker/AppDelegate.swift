@@ -2,14 +2,11 @@
 //  AppDelegate.swift
 //  ImageLazyLoadBlocker
 //
-//  Host App。持有唯一的 PurchaseProvider（StoreKit）。
-//  购买只能在这里发生：Safari Extension 无法弹出系统付款面板。
+//  Host App。Safari Web Extension 的宿主容器 —— 扩展本身不能独立安装，
+//  必须由一个 App 打包分发，这个 App 就是那个容器。
 //
-//  流程：
-//    扩展 popup 点 Upgrade → background 发 native message 'openHostApp'
-//    → 本 App 被唤起并置前 → 用户点 Buy Now → StoreKit 付款面板
-//    → 验证交易 → EntitlementManager 写入 App Group
-//    → 用户回到 Safari 重新打开 popup → Extension 从 App Group 读到 Pro
+//  它不做任何内购：扩展是免费的，功能也没有任何限制。
+//  用户界面（HostRootView）只负责说明扩展启用了没有、怎么用。
 //
 
 import Cocoa
@@ -18,26 +15,14 @@ import os.log
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    /// StoreKit 实现。交易历史是唯一真实来源，启动时同步一次。
-    let purchaseProvider: PurchaseProvider = StoreKitPurchaseProvider()
-
     func applicationDidFinishLaunching(_ notification: Notification) {
-        Task {
-            // 启动即从 StoreKit 交易历史重算权限并写入 App Group。
-            await purchaseProvider.fetchEntitlements()
-        }
+        let info = Bundle.main.infoDictionary
+        let short = (info?["CFBundleShortVersionString"] as? String) ?? "?"
+        let build = (info?["CFBundleVersion"] as? String) ?? "?"
+        os_log(.default, "Host App launched: version=%{public}@ build=%{public}@", short, build)
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         return true
     }
-
-    /// 处理 URL Scheme: imagelazyloadblocker://upgrade
-    func application(_ application: NSApplication, open urls: [URL]) {
-        NSApplication.shared.activate(ignoringOtherApps: true)
-        for url in urls {
-            os_log(.default, "Host App opened via URL scheme: %{public}@", url.absoluteString)
-        }
-    }
-
 }

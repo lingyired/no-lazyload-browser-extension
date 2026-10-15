@@ -5,6 +5,9 @@
 //  Host App 里最优先的信息：Safari 扩展到底启用了没有，以及没启用时怎么办。
 //  三种状态（已启用 / 明确未启用 / 暂时读不到）各有各的说明，绝不混为一谈。
 //
+//  只有「明确未启用」才展示启用步骤 —— 状态读不到时给步骤是误导，
+//  用户照着做也没用（可能早就启用了）。
+//
 
 import SwiftUI
 
@@ -35,6 +38,11 @@ struct ExtensionStatusView: View {
         }
     }
 
+    /// 只有明确未启用时才给步骤。
+    private var showsEnableSteps: Bool {
+        viewModel.extensionEnabled == false
+    }
+
     var body: some View {
         HostSection(title: HostCopy.safariExtension) {
             HStack(spacing: HostSpacing.x2) {
@@ -47,8 +55,12 @@ struct ExtensionStatusView: View {
                 .foregroundStyle(HostColor.secondaryText)
                 .fixedSize(horizontal: false, vertical: true)
 
+            if showsEnableSteps {
+                enableSteps
+            }
+
             if viewModel.extensionEnabled != true {
-                // 主操作：扩展没启用时，这是用户唯一需要做的事
+                // 主操作：扩展没启用（或状态未知）时，这是用户唯一需要做的事
                 Button {
                     viewModel.openSafariSettings()
                 } label: {
@@ -61,41 +73,21 @@ struct ExtensionStatusView: View {
             }
         }
     }
-}
 
-struct HowToUseView: View {
-    var body: some View {
-        HostSection(title: HostCopy.howToUse) {
+    private var enableSteps: some View {
+        VStack(alignment: .leading, spacing: HostSpacing.x2) {
+            Text(HostCopy.enableStepsTitle)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(HostColor.primaryText)
+                .accessibilityAddTraits(.isHeader)
+
             VStack(alignment: .leading, spacing: HostSpacing.x3) {
-                StepRow(index: 1, text: HostCopy.stepOpenWebsite)
-                StepRow(index: 2, text: HostCopy.stepOpenExtension)
-                StepRow(index: 3, text: HostCopy.stepEnableSite)
+                HostStepRow(index: 1, text: HostCopy.enableStep1)
+                HostStepRow(index: 2, text: HostCopy.enableStep2)
+                HostStepRow(index: 3, text: HostCopy.enableStep3)
             }
         }
-    }
-}
-
-private struct StepRow: View {
-    let index: Int
-    let text: String
-
-    var body: some View {
-        HStack(alignment: .center, spacing: HostSpacing.x3) {
-            Text("\(index)")
-                .font(.caption.weight(.semibold).monospacedDigit())
-                .foregroundStyle(HostColor.secondaryText)
-                .frame(width: 20, height: 20)
-                .background(Circle().fill(HostColor.subtleFill))
-                .accessibilityHidden(true)
-
-            Text(text)
-                .font(.body)
-                .foregroundStyle(HostColor.primaryText)
-                .fixedSize(horizontal: false, vertical: true)
-
-            Spacer(minLength: 0)
-        }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(index). \(text)")
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.top, HostSpacing.x1)
     }
 }

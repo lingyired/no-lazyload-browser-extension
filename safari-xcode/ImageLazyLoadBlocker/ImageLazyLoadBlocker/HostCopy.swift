@@ -6,10 +6,12 @@
 //  Localizable.xcstrings（String Catalog）里维护，不再另建 JS 翻译表。
 //
 //  规则：
-//   1. Release 里绝不出现 Xcode / StoreKit 配置 / 签名等实现细节。
+//   1. Release 里绝不出现 Xcode 配置 / 签名等实现细节。
 //   2. 新增文案必须同时加进 Localizable.xcstrings，否则只有开发语言有值。
 //   3. 目前只提供 en / zh-Hans / zh-Hant；其它语言自动回退到 en
 //      （Catalog 里缺哪条，系统就退回 defaultValue）。
+//   4. 文案里提到的按钮名（"Add Current Site" / "Remove Current Site"）
+//      必须与扩展 _locales 里的实际值一致 —— 用户要在 popup 里对得上同一个按钮。
 //
 //  加一门语言：在 Localizable.xcstrings 每条 stringUnit 里补一个语言键
 //  （BCP-47 码，如 ja / ko / zh-Hant），构建后会自动生成
@@ -69,6 +71,27 @@ enum HostCopy {
                defaultValue: "Couldn't read the Safari extension status. Open Safari Settings to check it.")
     }
 
+    // MARK: - 启用步骤（仅在扩展未启用时显示）
+
+    static var enableStepsTitle: String {
+        String(localized: "enableStepsTitle", defaultValue: "To enable it")
+    }
+
+    static var enableStep1: String {
+        String(localized: "enableStep1",
+               defaultValue: "Click the button below to open Safari extension settings")
+    }
+
+    static var enableStep2: String {
+        String(localized: "enableStep2",
+               defaultValue: "Turn on No Lazyload in the list")
+    }
+
+    static var enableStep3: String {
+        String(localized: "enableStep3",
+               defaultValue: "Back in Safari, the toolbar button appears")
+    }
+
     // MARK: - 使用说明
 
     static var howToUse: String {
@@ -86,96 +109,72 @@ enum HostCopy {
 
     static var stepEnableSite: String {
         String(localized: "stepEnableSite",
-               defaultValue: "Turn on No Lazyload for that website")
+               defaultValue: "Click “Add Current Site” — images load at once")
     }
 
-    // MARK: - 套餐
+    // MARK: - 两种模式
 
-    static var plan: String {
-        String(localized: "plan", defaultValue: "Plan")
+    static var modesTitle: String {
+        String(localized: "modesTitle", defaultValue: "Two modes")
     }
 
-    static var freePlan: String {
-        String(localized: "freePlan", defaultValue: "Free Plan")
+    static var modeStandardName: String {
+        String(localized: "modeStandardName", defaultValue: "Standard")
     }
 
-    static var freePlanDetail: String {
-        String(localized: "freePlanDetail", defaultValue: "Up to 3 enabled websites")
+    static var modeStandardHelp: String {
+        String(localized: "modeStandardHelp",
+               defaultValue: "Blocks lazy loading directly. The default, and works on most sites")
     }
 
-    static var proPlan: String {
-        String(localized: "proPlan", defaultValue: "No Lazyload Pro")
+    static var modeCompatibilityName: String {
+        String(localized: "modeCompatibilityName", defaultValue: "Compatibility")
     }
 
-    static var proUnlocked: String {
-        String(localized: "proUnlocked", defaultValue: "Unlimited websites unlocked.")
+    static var modeCompatibilityHelp: String {
+        String(localized: "modeCompatibilityHelp",
+               defaultValue: "Scrolls the page to the bottom to trigger loading. Use it only when Standard mode does not work")
     }
 
-    static var proThanks: String {
-        String(localized: "proThanks",
-               defaultValue: "Thank you for supporting No Lazyload.")
+    // MARK: - 遇到问题？
+
+    static var troubleshootingTitle: String {
+        String(localized: "troubleshootingTitle", defaultValue: "Troubleshooting")
     }
 
-    static var proBadge: String {
-        String(localized: "proBadge", defaultValue: "PRO")
+    static var troubleshoot1Title: String {
+        String(localized: "troubleshoot1Title", defaultValue: "Images still not loading?")
     }
 
-    static var upgradeToPro: String {
-        String(localized: "upgradeToPro", defaultValue: "Upgrade to Pro")
+    static var troubleshoot1Body: String {
+        String(localized: "troubleshoot1Body",
+               defaultValue: "Make sure the site is enabled in the popup. If it is, try Compatibility mode. Still nothing? Use Refresh Page")
     }
 
-    static var oneTimePurchase: String {
-        String(localized: "oneTimePurchase", defaultValue: "One-time purchase")
+    static var troubleshoot2Title: String {
+        String(localized: "troubleshoot2Title", defaultValue: "No toolbar button?")
     }
 
-    static var noSubscription: String {
-        String(localized: "noSubscription", defaultValue: "No subscription")
+    static var troubleshoot2Body: String {
+        String(localized: "troubleshoot2Body",
+               defaultValue: "Check Safari → Settings → Extensions and make sure No Lazyload is on")
     }
 
-    static var restorePurchases: String {
-        String(localized: "restorePurchases", defaultValue: "Restore Purchases")
+    static var troubleshoot3Title: String {
+        String(localized: "troubleshoot3Title", defaultValue: "Want to turn a site off?")
     }
 
-    static var storageUnavailable: String {
-        String(localized: "entitlementStorageUnavailable",
-               defaultValue: "Your purchase status can't be read right now. Please restart the app and try again.")
+    static var troubleshoot3Body: String {
+        String(localized: "troubleshoot3Body",
+               defaultValue: "Open the popup and click “Remove Current Site”")
     }
 
-    // MARK: - 购买结果
+    // MARK: - 隐私与页脚
 
-    static var purchaseUnlocked: String {
-        String(localized: "purchaseUnlocked", defaultValue: "Pro unlocked.")
+    static var privacyNote: String {
+        String(localized: "privacyNote",
+               defaultValue: "No Lazyload only acts on the websites you enable. Other websites are untouched")
     }
-
-    static var purchasePending: String {
-        String(localized: "purchasePending",
-               defaultValue: "Purchase pending. You'll get Pro automatically after the purchase is approved.")
-    }
-
-    static var purchaseRestored: String {
-        String(localized: "purchaseRestored", defaultValue: "Your purchase has been restored.")
-    }
-
-    static var nothingToRestore: String {
-        String(localized: "nothingToRestore", defaultValue: "No previous purchase was found.")
-    }
-
-    /// 页脚忙碌指示（购买 / 恢复进行中）的无障碍标签。
-    static var working: String {
-        String(localized: "working", defaultValue: "Working…")
-    }
-
-    static var purchaseFailed: String {
-        String(localized: "purchaseErrorGeneric",
-               defaultValue: "Unable to complete the purchase. Please try again.")
-    }
-
-    static var storeUnavailable: String {
-        String(localized: "purchaseUnavailable",
-               defaultValue: "Purchases are temporarily unavailable. Please try again later.")
-    }
-
-    // MARK: - 页脚
 
     static func versionLine(_ version: String) -> String {
         String(format: String(localized: "versionFormat", defaultValue: "Version %@"), version)

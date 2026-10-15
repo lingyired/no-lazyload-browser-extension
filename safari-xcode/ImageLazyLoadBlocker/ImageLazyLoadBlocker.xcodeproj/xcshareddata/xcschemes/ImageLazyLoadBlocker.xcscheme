@@ -50,9 +50,6 @@
             ReferencedContainer = "container:ImageLazyLoadBlocker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <StoreKitConfigurationFileReference
-         identifier = "../../ImageLazyLoadBlocker.storekit">
-      </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

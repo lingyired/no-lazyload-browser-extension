@@ -1,768 +1,743 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "·" : {
-
-    },
-    "appName" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Lazyload"
+  "sourceLanguage": "en",
+  "strings": {
+    "appName": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Lazyload"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Lazyload"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload"
           }
         }
       }
     },
-    "appSubtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Loads every image on the sites you enable in Safari."
+    "appSubtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loads every image on the sites you enable in Safari."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在你于 Safari 中启用的网站上，立即加载所有图片。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在你于 Safari 中启用的网站上，立即加载所有图片。"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在你於 Safari 中啟用的網站上，立即載入所有圖片。"
-          }
-        }
-      }
-    },
-    "enableExtensionHint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enable the extension to use No Lazyload in Safari."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "要在 Safari 中使用 No Lazyload，需要先启用扩展。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "若要在 Safari 中使用 No Lazyload，請先啟用擴充功能。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在你於 Safari 中啟用的網站上，立即載入所有圖片。"
           }
         }
       }
     },
-    "entitlementStorageUnavailable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your purchase status can't be read right now. Please restart the app and try again."
+    "enableExtensionHint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable the extension to use No Lazyload in Safari."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "现在无法读取你的购买状态。请重启 App 后再试。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "要在 Safari 中使用 No Lazyload，需要先启用扩展。"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "目前無法讀取你的購買狀態。請重新啟動 App 後再試。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "若要在 Safari 中使用 No Lazyload，請先啟用擴充功能。"
           }
         }
       }
     },
-    "extensionDisabled" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not Enabled"
+    "enableStep1": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click the button below to open Safari extension settings"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未启用"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点下面的按钮打开 Safari 扩展设置"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未啟用"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "點下面的按鈕開啟 Safari 擴充功能設定"
           }
         }
       }
     },
-    "extensionEnabled" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enabled"
+    "enableStep2": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn on No Lazyload in the list"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已启用"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在列表里勾选 No Lazyload"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已啟用"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在列表裡勾選 No Lazyload"
           }
         }
       }
     },
-    "extensionReady" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Lazyload is ready."
+    "enableStep3": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back in Safari, the toolbar button appears"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Lazyload 已就绪。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回到 Safari，工具栏上就会出现按钮"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Lazyload 已就緒。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "回到 Safari，工具列上就會出現按鈕"
           }
         }
       }
     },
-    "extensionStatusUnknown" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Status unavailable"
+    "enableStepsTitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To enable it"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "状态不可用"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "启用步骤"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "狀態無法取得"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "啟用步驟"
           }
         }
       }
     },
-    "extensionStatusUnknownHint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Couldn't read the Safari extension status. Open Safari Settings to check it."
+    "extensionDisabled": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not Enabled"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "无法读取 Safari 扩展状态。请打开 Safari 设置检查。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未启用"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無法讀取 Safari 擴充功能狀態。請開啟 Safari 設定檢查。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未啟用"
           }
         }
       }
     },
-    "freePlan" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Free Plan"
+    "extensionEnabled": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enabled"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "免费版"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已启用"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "免費版"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已啟用"
           }
         }
       }
     },
-    "freePlanDetail" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Up to 3 enabled websites"
+    "extensionReady": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload is ready."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "最多启用 3 个网站"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload 已就绪。"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "最多啟用 3 個網站"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload 已就緒。"
           }
         }
       }
     },
-    "howToUse" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "How to use"
+    "extensionStatusUnknown": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status unavailable"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用方法"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "状态不可用"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "使用方式"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "狀態無法取得"
           }
         }
       }
     },
-    "nothingToRestore" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No previous purchase was found."
+    "extensionStatusUnknownHint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't read the Safari extension status. Open Safari Settings to check it."
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "没有找到之前的购买记录。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法读取 Safari 扩展状态。请打开 Safari 设置检查。"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "找不到先前的購買記錄。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無法讀取 Safari 擴充功能狀態。請開啟 Safari 設定檢查。"
           }
         }
       }
     },
-    "oneTimePurchase" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "One-time purchase"
+    "howToUse": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How to use"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一次性购买"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用方法"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "一次性購買"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用方式"
           }
         }
       }
     },
-    "openSafariSettings" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Safari Settings"
+    "modeCompatibilityHelp": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrolls the page to the bottom to trigger loading. Use it only when Standard mode does not work"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "打开 Safari 设置"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自动滚动页面到底部触发加载。只在标准模式没效果时使用"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "開啟 Safari 設定"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自動捲動頁面到底部觸發載入。只在標準模式沒效果時使用"
           }
         }
       }
     },
-    "plan" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plan"
+    "modeCompatibilityName": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compatibility"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "套餐"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "兼容模式"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "方案"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "相容模式"
           }
         }
       }
     },
-    "proBadge" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRO"
+    "modeStandardHelp": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blocks lazy loading directly. The default, and works on most sites"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRO"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "直接拦截懒加载。默认方式，绝大多数网站用这个"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PRO"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "直接攔截延遲載入。預設方式，絕大多數網站用這個"
           }
         }
       }
     },
-    "proPlan" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Lazyload Pro"
+    "modeStandardName": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Lazyload Pro"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "标准模式"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Lazyload Pro"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "標準模式"
           }
         }
       }
     },
-    "proThanks" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Thank you for supporting No Lazyload."
+    "modesTitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Two modes"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "感谢你支持 No Lazyload。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "两种模式"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "感謝你支持 No Lazyload。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "兩種模式"
           }
         }
       }
     },
-    "proUnlocked" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unlimited websites unlocked."
+    "openSafariSettings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Safari Settings"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已解锁无限网站。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开 Safari 设置"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已解鎖無限網站。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開啟 Safari 設定"
           }
         }
       }
     },
-    "purchaseErrorGeneric" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unable to complete the purchase. Please try again."
+    "privacyNote": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload only acts on the websites you enable. Other websites are untouched"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "购买未能完成，请重试。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload 只作用于你启用的网站，其它网站不做任何改动"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "購買未能完成，請再試一次。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Lazyload 只作用於你啟用的網站，其它網站不做任何改動"
           }
         }
       }
     },
-    "purchasePending" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Purchase pending. You'll get Pro automatically after the purchase is approved."
+    "safariExtension": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safari Extension"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "购买待批准。批准后会自动解锁 Pro。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safari 扩展"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "購買待核准。核准後會自動解鎖 Pro。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safari 擴充功能"
           }
         }
       }
     },
-    "purchaseRestored" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your purchase has been restored."
+    "stepEnableSite": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click “Add Current Site” — images load at once"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "购买已恢复。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点「添加当前网站」，图片会立即全部加载"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "購買已回復。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "點一下「加入目前網站」，圖片會立即全部載入"
           }
         }
       }
     },
-    "purchaseUnavailable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Purchases are temporarily unavailable. Please try again later."
+    "stepOpenExtension": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click the No Lazyload toolbar button"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "购买服务暂时不可用，请稍后再试"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击 No Lazyload 工具栏按钮"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "購買服務暫時無法使用，請稍後再試"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "點一下 No Lazyload 工具列按鈕"
           }
         }
       }
     },
-    "purchaseUnlocked" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pro unlocked."
+    "stepOpenWebsite": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open a website in Safari"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已解锁 Pro。"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 Safari 中打开一个网站"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "已解鎖 Pro。"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 Safari 中開啟一個網站"
           }
         }
       }
     },
-    "restorePurchases" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restore Purchases"
+    "troubleshoot1Body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make sure the site is enabled in the popup. If it is, try Compatibility mode. Still nothing? Use Refresh Page"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "恢复购买"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先确认这个网站已在 popup 里启用；再试试兼容模式；还不行就用 popup 底部的「刷新页面」"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "回復購買"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先確認這個網站已在 popup 裡啟用；再試試相容模式；還不行就用 popup 底部的「重新整理頁面」"
           }
         }
       }
     },
-    "safariExtension" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Safari Extension"
+    "troubleshoot1Title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Images still not loading?"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Safari 扩展"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "图片还是没加载？"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Safari 擴充功能"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "圖片還是沒載入？"
           }
         }
       }
     },
-    "stepEnableSite" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Turn on No Lazyload for that website"
+    "troubleshoot2Body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check Safari → Settings → Extensions and make sure No Lazyload is on"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "为该网站打开 No Lazyload"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "到 Safari → 设置 → 扩展，确认 No Lazyload 已勾选"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "為該網站開啟 No Lazyload"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "到 Safari → 設定 → 擴充功能，確認 No Lazyload 已勾選"
           }
         }
       }
     },
-    "stepOpenExtension" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Click the No Lazyload toolbar button"
+    "troubleshoot2Title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No toolbar button?"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "点击 No Lazyload 工具栏按钮"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "工具栏上没有按钮？"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "點一下 No Lazyload 工具列按鈕"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "工具列上沒有按鈕？"
           }
         }
       }
     },
-    "stepOpenWebsite" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open a website in Safari"
+    "troubleshoot3Body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open the popup and click “Remove Current Site”"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在 Safari 中打开一个网站"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开 popup，点「移除当前网站」"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在 Safari 中開啟一個網站"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "開啟 popup，點一下「移除目前網站」"
           }
         }
       }
     },
-    "upgradeToPro" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Upgrade to Pro"
+    "troubleshoot3Title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Want to turn a site off?"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "升级到 Pro"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "想停用某个网站？"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "升級到 Pro"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "想停用某個網站？"
           }
         }
       }
     },
-    "versionFormat" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version %@"
+    "troubleshootingTitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Troubleshooting"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "版本 %@"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "遇到问题？"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "版本 %@"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "遇到問題？"
           }
         }
       }
     },
-    "working" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Working…"
+    "versionFormat": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
           }
         },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "处理中…"
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "版本 %@"
           }
         },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "處理中…"
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "版本 %@"
           }
         }
       }
-    }
+    },
+    "·": {}
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

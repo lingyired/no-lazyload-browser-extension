@@ -175,3 +175,77 @@ struct HostNoticeText: View {
         .accessibilityElement(children: .combine)
     }
 }
+
+/// 带序号的步骤行。
+///
+/// 编号圆点只是装饰（accessibilityHidden），真正传达顺序的是
+/// 无障碍标签里的 "1." 前缀 —— 屏幕阅读器不会把视觉顺序读出来。
+struct HostStepRow: View {
+    let index: Int
+    let text: String
+
+    private var accessibilityText: String {
+        String(index) + ". " + text
+    }
+
+    var body: some View {
+        HStack(alignment: .center, spacing: HostSpacing.x3) {
+            Text(String(index))
+                .font(.caption.weight(.semibold).monospacedDigit())
+                .foregroundStyle(HostColor.secondaryText)
+                .frame(width: 20, height: 20)
+                .background(Circle().fill(HostColor.subtleFill))
+                .accessibilityHidden(true)
+
+            Text(text)
+                .font(.body)
+                .foregroundStyle(HostColor.primaryText)
+                .fixedSize(horizontal: false, vertical: true)
+
+            Spacer(minLength: 0)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(accessibilityText)
+    }
+}
+
+/// 一条「问题 → 说明」的排查条目。
+struct HostQALine: View {
+    let question: String
+    let answer: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: HostSpacing.x1) {
+            Text(question)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(HostColor.primaryText)
+                .fixedSize(horizontal: false, vertical: true)
+            Text(answer)
+                .font(.callout)
+                .foregroundStyle(HostColor.secondaryText)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .accessibilityElement(children: .combine)
+    }
+}
+
+/// 一条「模式名 → 说明」的并列说明。
+struct HostModeLine: View {
+    let name: String
+    let detail: String
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: HostSpacing.x1) {
+            Text(name)
+                .font(.headline)
+                .foregroundStyle(HostColor.primaryText)
+            Text(detail)
+                .font(.callout)
+                .foregroundStyle(HostColor.secondaryText)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .accessibilityElement(children: .combine)
+    }
+}
